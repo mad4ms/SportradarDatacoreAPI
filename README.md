@@ -29,10 +29,6 @@ git clone https://github.com/mad4ms/SportradarDatacoreAPI.git
 cd SportradarDatacoreAPI
 pip install .
 ```
-or
-```
-poetry install
-```
 You'll need Python 3.10+ and an active Sportradar DataCore account with proper credentials.
 
 ## Setup

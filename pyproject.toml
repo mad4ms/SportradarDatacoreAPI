@@ -1,30 +1,33 @@
-[tool.poetry]
+[project]
 name = "sportradar-datacore-api"
 version = "0.1.0"
-description = "A Python wrapper for accessing and processing sportradar data."
-authors = ["Michael Adams <m@ad4ms.de>"]
-license = "MIT"
+description = "A Python wrapper for accessing and processing Sportradar DataCore data."
+authors = [
+    { name = "Michael Adams", email = "m@ad4ms.de" }
+]
+license = { text = "MIT" }
 readme = "README.md"
-homepage = "https://github.com/mad4ms/SportradarDatacoreAPI"
-repository = "https://github.com/mad4ms/SportradarDatacoreAPI"
+requires-python = ">=3.10"
+dependencies = [
+    "requests>=2.31.0",
+    "pandas>=2.2.2"
+]
 keywords = ["handball", "sportradar", "api", "data", "wrapper"]
-packages = [{ include = "sportradar_datacore_api", from = "src" }]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License"
+]
 
+[project.urls]
+Homepage = "https://github.com/mad4ms/SportradarDatacoreAPI"
+Repository = "https://github.com/mad4ms/SportradarDatacoreAPI"
 
-[tool.poetry.dependencies]
-python = "^3.10"
-requests = "^2.31.0"
-pandas = "^2.2.2"
-
-[tool.poetry.group.dev.dependencies]
-pytest = "^8.1.1"
-black = "^24.4.2"
-mypy = "^1.9.0"
-flake8 = "^6.1.0"
+[tool.setuptools.packages.find]
+where = ["src"]
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
 
 [tool.flake8]
 max-line-length = 88
