@@ -1,14 +1,23 @@
+"""Handball API Test Script
+This script tests various endpoints of the Sportradar DataCore API for handball.
+It includes functions to retrieve organizations, leagues, competitions, seasons,
+fixtures, persons, teams, and static resources.
+Author: Michael Adams, 2025
+"""
+
+# ---------------------- Imports ----------------------
 import os
 import json
 from pathlib import Path
 from dotenv import load_dotenv
 from sportradar_datacore_api import HandballAPI
 
-
 # ---------------------- Configuration ----------------------
 
+# Load credentials from .env_prd file
 load_dotenv(".env_prd", override=True)
 
+# Initialize API client with environment-based credentials
 api = HandballAPI(
     base_url=os.getenv("BASE_URL", ""),
     auth_url=os.getenv("AUTH_URL", ""),
@@ -19,11 +28,13 @@ api = HandballAPI(
     sport="handball",
 )
 
-
 # ---------------------- Utility ----------------------
 
 
 def print_result(title: str, data: dict | list):
+    """
+    Pretty-print and persist test output to JSON file for inspection.
+    """
     print(f"{title.upper()} {'*' * (70 - len(title))}")
     print(json.dumps(data, indent=2))
     print(f"END OF {title.upper()} {'*' * (70 - len(title))}\n")
@@ -37,11 +48,18 @@ def print_result(title: str, data: dict | list):
 
 
 def test_organizations():
+    """
+    Test retrieval of all organizations.
+    """
     orgs = api.get_organizations()
     print_result("organizations", orgs.get("data", []))
 
 
 def test_leagues_and_competitions():
+    """
+    Test league listing and competition lookup by name.
+    Returns a sample competition ID for downstream tests.
+    """
     leagues = api.get_leagues()
     print_result("leagues", leagues.get("data", []))
 
@@ -52,6 +70,10 @@ def test_leagues_and_competitions():
 
 
 def test_seasons(competition_id: str):
+    """
+    Retrieve seasons for a given competition and verify season details.
+    Returns a season ID.
+    """
     seasons = api.get_seasons(
         competition_id, params={"startDate": "2024-01-01"}
     )
@@ -64,6 +86,9 @@ def test_seasons(competition_id: str):
 
 
 def test_season_entities(season_id: str):
+    """
+    Filter teams in a season by name, returning a sample team ID.
+    """
     params = {
         "external": "entityId,personId",
         "fields": "entity,organization,seasonId,status,added",
@@ -80,10 +105,15 @@ def test_season_entities(season_id: str):
 
 
 def test_season_fixtures(season_id: str, competition_id: str, team_id: str):
+    """
+    Query fixtures by season, competition, and team.
+    Also tests fixture and play-by-play endpoints.
+    """
     params = {
         "include": "entities,organizations,persons",
         "external": "entityId,personId",
     }
+
     season_fixtures = api.get_season_fixtures(season_id, params)
     print_result("season_fixtures", season_fixtures)
 
@@ -96,7 +126,6 @@ def test_season_fixtures(season_id: str, competition_id: str, team_id: str):
     print_result("season_team_fixtures", season_team_fixtures)
 
     fixture_id = season_fixtures.get("data", [{}])[0].get("fixtureId")
-
     if not fixture_id:
         return
 
@@ -106,7 +135,7 @@ def test_season_fixtures(season_id: str, competition_id: str, team_id: str):
     playbyplay = api.get_playbyplay(fixture_id, params)
     print_result("playbyplay", playbyplay)
 
-    # Flatten relevant fields from each event
+    # Extract key fields into a flattened structure for easier inspection
     events = []
     for event in playbyplay.get("data", []):
         ev = {
@@ -132,11 +161,13 @@ def test_season_fixtures(season_id: str, competition_id: str, team_id: str):
 
         events.append(ev)
 
-    # print(events)
     print_result("playbyplay_flattened", events)
 
 
 def test_person_lookup(season_id: str):
+    """
+    Lookup player by name and fetch related season/person metadata.
+    """
     persons = api.get_persons(params={"nameFullLocalContains": "Zerbe"})
     print_result("persons", persons.get("data", []))
 
@@ -155,16 +186,13 @@ def test_person_lookup(season_id: str):
     person_seasons = api.get_person_seasons(person_id)
     print_result("person_seasons", person_seasons)
 
-    # season_person = api.get_season_person(season_id, person_id)
-    # print_result("season_person", season_person.get("data", {}))
-
 
 def test_entity_lookup(season_id: str):
+    """
+    Lookup team by name and inspect related metadata and season linkage.
+    """
     params = {
-        # "external": "entityId,personId",
-        # "fields": "entity,organization,seasonId,status,added",
         "nameFullLatinContains": "TBV Lemgo",
-        # "include": "entities,organizations",
     }
 
     teams = api.get_teams(params)
@@ -189,6 +217,9 @@ def test_entity_lookup(season_id: str):
 
 
 def test_static_resources():
+    """
+    Test retrieval of static reference data.
+    """
     clubs = api.get_clubs()
     print_result("clubs", clubs.get("data", []))
 

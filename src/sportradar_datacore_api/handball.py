@@ -1,6 +1,8 @@
 """Handball API wrapper for Sportradar DataCore API.
 Handles authentication, token management, and API requests.
 Provides methods to access handball-related endpoints.
+
+Author: Michael Adams, 2025
 """
 
 from typing import Any, Dict, Optional

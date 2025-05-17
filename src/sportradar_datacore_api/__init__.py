@@ -1,3 +1,6 @@
-"""Initialization file for the sportradar_datacore_api package."""
+"""Initialization file for the sportradar_datacore_api package.
+
+Author: Michael Adams, 2025
+"""
 
 from .handball import HandballAPI
