@@ -13,13 +13,9 @@ import requests
 class APIAuthenticationError(Exception):
     """Exception raised for authentication errors."""
 
-    pass
-
 
 class APIRequestError(Exception):
     """Exception raised for request errors."""
-
-    pass
 
 
 class DataCoreAPI:
