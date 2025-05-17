@@ -27,6 +27,10 @@ Built for engineers who need structure, clarity, and just the right amount of sa
 ```bash
 git clone https://github.com/mad4ms/SportradarDatacoreAPI.git
 cd SportradarDatacoreAPI
+pip install .
+```
+or
+```
 poetry install
 ```
 You'll need Python 3.10+ and an active Sportradar DataCore account with proper credentials.
