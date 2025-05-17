@@ -2,7 +2,7 @@ import os
 import json
 from pathlib import Path
 from dotenv import load_dotenv
-from sportradar_datacore_api.handball import HandballAPI
+from sportradar_datacore_api import HandballAPI
 
 
 # ---------------------- Configuration ----------------------
@@ -79,13 +79,21 @@ def test_season_entities(season_id: str):
     return team_data.get("id").split(":")[-1] if team_data else None
 
 
-def test_season_fixtures(season_id: str):
+def test_season_fixtures(season_id: str, competition_id: str, team_id: str):
     params = {
         "include": "entities,organizations,persons",
         "external": "entityId,personId",
     }
     season_fixtures = api.get_season_fixtures(season_id, params)
     print_result("season_fixtures", season_fixtures)
+
+    competition_fixtures = api.get_competition_fixtures(competition_id, params)
+    print_result("competition_fixtures", competition_fixtures)
+
+    season_team_fixtures = api.get_season_team_fixtures(
+        season_id, team_id, params={}
+    )
+    print_result("season_team_fixtures", season_team_fixtures)
 
     fixture_id = season_fixtures.get("data", [{}])[0].get("fixtureId")
 
@@ -204,7 +212,7 @@ if __name__ == "__main__":
     entity_id = test_season_entities(season_id)
     assert entity_id, "No entity ID found"
 
-    test_season_fixtures(season_id)
+    test_season_fixtures(season_id, competition_id, entity_id)
     test_person_lookup(season_id)
     test_entity_lookup(season_id)
     test_static_resources()

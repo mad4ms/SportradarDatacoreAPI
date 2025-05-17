@@ -1,15 +1,22 @@
-# sportradar_datacore_api/api.py
+"""Sportradar DataCore API Client
+Handles authentication, token management, and API requests.
+Provides methods to access various endpoints.
+"""
 
+from typing import Any, Dict, Optional, List
 import time
 import requests
-from typing import Any, Dict, Optional, List
 
 
 class APIAuthenticationError(Exception):
+    """Exception raised for authentication errors."""
+
     pass
 
 
 class APIRequestError(Exception):
+    """Exception raised for request errors."""
+
     pass
 
 
