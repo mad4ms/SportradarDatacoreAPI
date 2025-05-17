@@ -69,13 +69,13 @@ def test_leagues_and_competitions():
     return comps.get("data", [{}])[0].get("competitionId")
 
 
-def test_seasons(competition_id: str):
+def test_seasons(id_competition: str):
     """
     Retrieve seasons for a given competition and verify season details.
     Returns a season ID.
     """
     seasons = api.get_seasons(
-        competition_id, params={"startDate": "2024-01-01"}
+        id_competition, params={"startDate": "2024-01-01"}
     )
     print_result("seasons", seasons.get("data", []))
 
@@ -85,7 +85,7 @@ def test_seasons(competition_id: str):
     return seasons.get("data", [{}])[0].get("seasonId")
 
 
-def test_season_entities(season_id: str):
+def test_season_entities(id_season: str):
     """
     Filter teams in a season by name, returning a sample team ID.
     """
@@ -97,14 +97,14 @@ def test_season_entities(season_id: str):
         "entityNameFullLocalContains": "TBV",
     }
 
-    teams = api.get_season_teams(season_id, params)
+    teams = api.get_season_teams(id_season, params)
     print_result("season_teams", teams)
 
     team_data = teams.get("data", [{}])[0].get("entity")
     return team_data.get("id").split(":")[-1] if team_data else None
 
 
-def test_season_fixtures(season_id: str, competition_id: str, team_id: str):
+def test_season_fixtures(id_season: str, id_competition: str, team_id: str):
     """
     Query fixtures by season, competition, and team.
     Also tests fixture and play-by-play endpoints.
@@ -114,14 +114,14 @@ def test_season_fixtures(season_id: str, competition_id: str, team_id: str):
         "external": "entityId,personId",
     }
 
-    season_fixtures = api.get_season_fixtures(season_id, params)
+    season_fixtures = api.get_season_fixtures(id_season, params)
     print_result("season_fixtures", season_fixtures)
 
-    competition_fixtures = api.get_competition_fixtures(competition_id, params)
+    competition_fixtures = api.get_competition_fixtures(id_competition, params)
     print_result("competition_fixtures", competition_fixtures)
 
     season_team_fixtures = api.get_season_team_fixtures(
-        season_id, team_id, params={}
+        id_season, team_id, params={}
     )
     print_result("season_team_fixtures", season_team_fixtures)
 
@@ -164,7 +164,7 @@ def test_season_fixtures(season_id: str, competition_id: str, team_id: str):
     print_result("playbyplay_flattened", events)
 
 
-def test_person_lookup(season_id: str):
+def test_person_lookup(id_season: str):
     """
     Lookup player by name and fetch related season/person metadata.
     """
@@ -179,7 +179,7 @@ def test_person_lookup(season_id: str):
     print_result("person", person.get("data", {}))
 
     season_persons = api.get_season_persons(
-        season_id, params={"include": "entities,organizations"}
+        id_season, params={"include": "entities,organizations"}
     )
     print_result("season_persons", season_persons)
 
@@ -187,7 +187,7 @@ def test_person_lookup(season_id: str):
     print_result("person_seasons", person_seasons)
 
 
-def test_entity_lookup(season_id: str):
+def test_entity_lookup(id_season: str):
     """
     Lookup team by name and inspect related metadata and season linkage.
     """
@@ -197,22 +197,22 @@ def test_entity_lookup(season_id: str):
 
     teams = api.get_teams(params)
     print_result("teams", teams)
-    entity_id = teams.get("data", [{}])[0].get("entityId")
-    if not entity_id:
+    id_entity = teams.get("data", [{}])[0].get("entityId")
+    if not id_entity:
         return
 
     team = api.get_team(
-        entity_id, params={"include": "entities,organizations"}
+        id_entity, params={"include": "entities,organizations"}
     )
     print_result("team", team)
 
-    team_seasons = api.get_team_seasons(entity_id)
+    team_seasons = api.get_team_seasons(id_entity)
     print_result("team_seasons", team_seasons)
 
-    season_teams = api.get_season_teams(season_id)
+    season_teams = api.get_season_teams(id_season)
     print_result("season_teams", season_teams)
 
-    season_team = api.get_season_team(season_id, entity_id)
+    season_team = api.get_season_team(id_season, id_entity)
     print_result("season_team", season_team)
 
 
