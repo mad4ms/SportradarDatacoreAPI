@@ -1,4 +1,4 @@
-# Sportradar DataCore API – Handball Edition
+# Sportradar DataCore API
 
 _“Because sometimes you just need to know who scored and exactly when.”_
 
@@ -81,3 +81,13 @@ This will:
 5. Extract play-by-play events with coordinates, timestamps, and score deltas.
 
 All results are logged as formatted JSON in the /log directory for inspection.
+
+## License
+
+MIT – go nuts.
+
+## Author
+Developed by Michael Adams – part-time handball detective.
+
+## Disclaimer
+This library is unofficial and unaffiliated with Sportradar. If it breaks, it’s probably your fault. Or theirs. But definitely not mine.
