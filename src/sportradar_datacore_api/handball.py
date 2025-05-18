@@ -207,3 +207,29 @@ class HandballAPI(DataCoreAPI):
     ) -> Dict[str, Any]:
         """Retrieve detailed play-by-play data for a fixture."""
         return self._get("fixtures", fixture_id, "playbyplay", params=params)
+
+    def get_match_events_export(
+        self, fixture_id: str, params: Optional[Dict[str, Any]] = None
+    ) -> Dict[str, Any]:
+        """
+        Export full list of events for a fixture (play-by-play and setup events).
+
+        Args:
+            fixture_id (str): Unique identifier of the fixture (UUID).
+            params (Optional[Dict[str, Any]]): Optional query parameters such as:
+                - external
+                - fields
+                - hideNull
+                - include
+                - limit
+                - offset
+                - onlySetup
+                - periodId
+                - withScores
+
+        Returns:
+            Dict[str, Any]: Exported match event data.
+        """
+        return self._get(
+            "fixtures", fixture_id, "events", "export", params=params
+        )
