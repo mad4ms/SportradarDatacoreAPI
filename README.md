@@ -82,6 +82,8 @@ This will:
 
 All results are logged as formatted JSON in the /log directory for inspection.
 
+Run the provided notebooks to download and save season events. 
+
 ## License
 
 MIT – go nuts.
