@@ -169,13 +169,19 @@ class HandballAPI(DataCoreAPI):
     def get_season_fixtures(
         self, season_id: str, params: Optional[Dict[str, Any]] = None
     ) -> Dict[str, Any]:
-        """List all fixtures of a season."""
+        """
+        List all fixtures of a season.
+        Link: https://developer.connect.sportradar.com/datacore/handball_rest.html#tag/Matches/operation/fixture_list
+        """  # noqa
         return self._get("seasons", season_id, "fixtures", params=params)
 
     def get_fixture(
         self, fixture_id: str, params: Optional[Dict[str, Any]] = None
     ) -> Dict[str, Any]:
-        """Get details of a specific fixture (match)."""
+        """
+        Get details of a specific fixture (match).
+        Link: https://developer.connect.sportradar.com/datacore/handball_rest.html#tag/Matches/operation/fixture_detail
+        """  # noqa
         return self._get("fixtures", fixture_id, params=params)
 
     def get_season_team_fixtures(
@@ -233,3 +239,27 @@ class HandballAPI(DataCoreAPI):
         return self._get(
             "fixtures", fixture_id, "events", "export", params=params
         )
+
+    # TODO: Does not return anything useful, only [], needs investigation
+    def get_fixture_persons(
+        self, fixture_id: str, params: Optional[Dict[str, Any]] = None
+    ) -> Dict[str, Any]:
+        """
+        Return a list of persons for a match.
+
+        Args:
+            fixture_id (str): Unique identifier of the fixture (UUID).
+            params (Optional[Dict[str, Any]]): Optional query parameters, e.g.:
+                - added (str): Record added after this UTC datetime.
+                - external (str): Comma-separated list of external fields.
+                - fields (str): Comma-separated list of fields for partial response.
+                - hideNull (bool): Exclude null/empty fields.
+                - include (str): Comma-separated list of resource types to include.
+                - limit (int): Max number of records to return.
+                - offset (int): Offset for pagination.
+                - updated (str): Record updated after this UTC datetime.
+
+        Returns:
+            Dict[str, Any]: List of persons for the given fixture.
+        """
+        return self._get("fixtures", fixture_id, "persons", params=params)
