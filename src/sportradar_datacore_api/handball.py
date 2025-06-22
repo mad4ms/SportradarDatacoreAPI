@@ -12,13 +12,15 @@ from sportradar_datacore_api.api import DataCoreAPI
 class HandballAPI(DataCoreAPI):
     """
     Unified API wrapper for handball-related endpoints.
-    Provides access to organizations, leagues, competitions, entities, persons, fixtures, etc.
+    Provides access to organizations, leagues, competitions,
+    entities, persons, fixtures, etc.
     """
 
     def _get(
         self, *parts: str, params: Optional[Dict[str, Any]] = None
     ) -> Dict[str, Any]:
-        """Internal helper to construct and execute GET requests with organization context."""
+        """Internal helper to construct and execute
+        GET requests with organization context."""
         path = "/".join(
             ["handball", "o", self.org_id] + [p.strip("/") for p in parts if p]
         )
