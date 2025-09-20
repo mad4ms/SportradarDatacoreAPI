@@ -2,21 +2,44 @@
 name = "sportradar-datacore-api"
 version = "0.1.0"
 description = "A Python wrapper for accessing and processing Sportradar DataCore data."
-authors = [
-    { name = "Michael Adams", email = "m@ad4ms.de" }
-]
+authors = [{ name = "Michael Adams", email = "m@ad4ms.de" }]
 license = { text = "MIT" }
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.13"
+
+# Runtime deps for your wrapper + generated client
 dependencies = [
-    "requests>=2.31.0",
-    "pandas>=2.2.2",
+    "httpx>=0.27.0", # generated client uses httpx
+    "pydantic>=2.6", # generated models target Pydantic v2
+    "typing-extensions>=4.8", # safety on older 3.10
+    "pandas>=2.2.2", # your wrapper/processing
     "python-dotenv>=1.1.0",
+    # Keep 'requests' ONLY if your own wrapper uses it (else remove):
+    # "requests>=2.31.0",
+    "requests>=2.32.5",
+    "pytest>=8.4.2",
+    "pytest-order>=1.3.0",
+    "attrs>=25.3.0",
 ]
+
 keywords = ["handball", "sportradar", "api", "data", "wrapper"]
 classifiers = [
     "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License"
+    "License :: OSI Approved :: MIT License",
+]
+
+[project.optional-dependencies]
+dev = [
+    # Codegen & spec validation are dev-only
+    "openapi-python-client>=0.26.1",
+    "openapi-spec-validator>=0.7.2",
+    # Tooling
+    "pytest>=8.4.2",
+    "pytest-order>=1.3.0",
+    "pytest-cov>=4.1",
+    "respx>=0.21.1",          # httpx mocking
+    "ruff>=0.5.0",
+    "mypy>=1.10.0",
 ]
 
 [project.urls]
@@ -24,11 +47,33 @@ Homepage = "https://github.com/mad4ms/SportradarDatacoreAPI"
 Repository = "https://github.com/mad4ms/SportradarDatacoreAPI"
 
 [tool.setuptools.packages.find]
-where = ["src"]
+where = ["src", "src/_vendor"]
+
+[tool.setuptools.package-dir]
+"" = "src"
 
 [build-system]
-requires = ["setuptools>=61.0"]
+requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
-[tool.flake8]
-max-line-length = 88
+# --- Tooling (optional but recommended) ---
+
+[tool.ruff]
+line-length = 100
+select = ["E","F","I","UP","B","SIM","PGH","PL","RUF"]
+ignore = ["E501"] # handled by line-length
+target-version = "py313"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+addopts = "-q -ra --maxfail=1"
+testpaths = ["tests"]
+
+[tool.mypy]
+python_version = "3.13"
+plugins = ["pydantic.mypy"]
+warn_unused_ignores = true
+warn_redundant_casts = true
+strict_optional = true
+check_untyped_defs = true
+disallow_untyped_defs = true

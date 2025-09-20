@@ -5,9 +5,11 @@ Provides methods to access various endpoints.
 Author: Michael Adams, 2025
 """
 
-from typing import Any, Dict, Optional, List
 import time
-import requests
+from typing import Any, Dict, List, Optional
+
+import httpx
+from datacore_client import AuthenticatedClient
 
 
 class APIAuthenticationError(Exception):
@@ -51,12 +53,20 @@ class DataCoreAPI:
         self._token: Optional[str] = None
         self._expires_at: float = 0.0
 
-        self.session = requests.Session()
+        self.session = httpx.Client()
         self.session.headers.update(
             {
                 "Accept": "application/json",
                 "Content-Type": "application/json",
             }
+        )
+        self._authenticate()
+
+        self.client = AuthenticatedClient(
+            base_url=self.base_url,
+            token=self._token,
+            verify_ssl=True,  # enforce SSL in production
+            raise_on_unexpected_status=True,
         )
 
     def _authenticate(self) -> None:
@@ -74,15 +84,13 @@ class DataCoreAPI:
                 self.auth_url, json=payload, timeout=self.timeout
             )
             response.raise_for_status()
-        except requests.RequestException as e:
+        except httpx.HTTPError as e:
             raise APIAuthenticationError(f"Authentication failed: {e}") from e
 
         data = response.json().get("data", {})
         self._token = data.get("token")
         if not self._token:
-            raise APIAuthenticationError(
-                "Token missing in authentication response."
-            )
+            raise APIAuthenticationError("Token missing in authentication response.")
 
         expires_in = data.get("expires_in", 3600)
         self._expires_at = time.time() + expires_in - self._TOKEN_BUFFER
@@ -91,32 +99,3 @@ class DataCoreAPI:
     def _ensure_token(self) -> None:
         if not self._token or time.time() >= self._expires_at:
             self._authenticate()
-
-    def _make_request(
-        self,
-        endpoint: str,
-        method: str = "GET",
-        params: Optional[Dict[str, Any]] = None,
-        json: Optional[Dict[str, Any]] = None,
-    ) -> Dict[str, Any]:
-        self._ensure_token()
-        time.sleep(self.rate_limit_sleep)
-
-        url = (
-            endpoint
-            if endpoint.startswith("http")
-            else f"{self.base_url}/{endpoint.lstrip('/')}"
-        )
-        try:
-            response = self.session.request(
-                method=method.upper(),
-                url=url,
-                params=params or {},
-                json=json,
-                timeout=self.timeout,
-            )
-            response.raise_for_status()
-        except requests.RequestException as e:
-            raise APIRequestError(f"Request failed: {e}") from e
-
-        return response.json()

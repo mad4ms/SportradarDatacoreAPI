@@ -1,0 +1,16 @@
+from enum import Enum
+
+
+class ConductListConductType(str, Enum):
+    CITATION = "CITATION"
+    CONCUSSION = "CONCUSSION"
+    CORRUPTION = "CORRUPTION"
+    DOPING = "DOPING"
+    MATCH_FIXING = "MATCH_FIXING"
+    SWEARING = "SWEARING"
+    TOUCHLINE_SUSPENSION = "TOUCHLINE_SUSPENSION"
+    UNSPORTSMANLIKE_CONDUCT = "UNSPORTSMANLIKE_CONDUCT"
+    VIOLENT_CONDUCT = "VIOLENT_CONDUCT"
+
+    def __str__(self) -> str:
+        return str(self.value)
