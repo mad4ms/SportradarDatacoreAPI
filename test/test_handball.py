@@ -1,22 +1,22 @@
-"""Handball API Pytest Script
-This script tests various endpoints of the Sportradar DataCore API for handball.
+"""Handball API Pytest Script (for new API)
+Tests various endpoints of the Sportradar DataCore API for handball.
 Author: Michael Adams, 2025
 """
 
-import os
 import json
+import os
 from pathlib import Path
+
 import pytest
 from dotenv import load_dotenv
-from sportradar_datacore_api import HandballAPI
 
-# ---------------------- Configuration ----------------------
+from sportradar_datacore_api.handball import HandballAPI
 
 
 @pytest.fixture(scope="module")
 def api():
     """Fixture to initialize the HandballAPI client."""
-    load_dotenv(".env_prd", override=True)
+    load_dotenv(".env", override=True)
     return HandballAPI(
         base_url=os.getenv("BASE_URL", ""),
         auth_url=os.getenv("AUTH_URL", ""),
@@ -36,124 +36,72 @@ def log_dir():
     return path
 
 
-def save_result(log_dir, title: str, data: dict | list):
+def save_result(log_dir, title: str, data) -> None:
     """Utility to save test results to JSON files."""
     path = log_dir / f"{title.lower().replace(' ', '_')}.json"
-    path.write_text(json.dumps(data, indent=2), encoding="utf-8")
+    path.write_text(json.dumps(data, indent=2, default=str), encoding="utf-8")
+    return None
 
 
-# ---------------------- Test Functions ----------------------
+def test_competition_id(api, log_dir):
+    """Test resolving competition ID by name."""
+    comp_id = api.get_competition_id_by_name("1. Handball-Bundesliga")
+    assert comp_id, "No competition ID found"
+    save_result(log_dir, "competition_id", {"competition_id": comp_id})
 
 
-def test_organizations(api, log_dir):
-    """Test retrieval of all organizations."""
-    orgs = api.get_organizations()
-    assert orgs.get("data"), "No organizations found"
-    save_result(log_dir, "organizations", orgs.get("data", []))
-
-
-def test_competitions(api, log_dir):
-    """Test retrieval of competitions containing 'Bundesliga'."""
-    comps = api.get_competitions(params={"nameLatinContains": "Bundesliga"})
-    assert comps.get("data"), "No competitions found"
-    save_result(log_dir, "competitions", comps.get("data", []))
-
-    competition_id = comps.get("data", [{}])[0].get("competitionId")
-    assert competition_id, f"Expected competition ID, but got {competition_id}"
-    # return competition_id
-
-
-def test_seasons(api, log_dir, competition_id):
-    """Retrieve seasons for a given competition."""
-    seasons = api.get_seasons(
-        competition_id, params={"startDate": "2024-01-01"}
-    )
-    assert seasons.get("data"), "No seasons found"
-    save_result(log_dir, "seasons", seasons.get("data", []))
-
-    season_id = seasons.get("data", [{}])[0].get("seasonId")
+def test_season_id(api, log_dir):
+    """Test resolving season ID by year."""
+    comp_id = api.get_competition_id_by_name("1. Handball-Bundesliga")
+    season_id = api.get_season_id_by_year(comp_id, 2023)
     assert season_id, "No season ID found"
-    return season_id
+    save_result(log_dir, "season_id", {"season_id": season_id})
 
 
-def test_season_entities(api, log_dir, season_id):
-    """Filter teams in a season by name."""
-    params = {
-        "external": "entityId,personId",
-        "fields": "entity,organization,seasonId,status,added",
-        "include": "entities,organizations",
-        "limit": "10",
-        "entityNameFullLocalContains": "TBV",
-    }
-
-    teams = api.get_season_teams(season_id, params)
-    assert teams.get("data"), "No teams found"
-    save_result(log_dir, "season_teams", teams)
-
-    team_data = teams.get("data", [{}])[0].get("entity")
-    team_id = team_data.get("id").split(":")[-1] if team_data else None
-    assert team_id, "No team ID found"
-    return team_id
+def test_list_fixtures(api, log_dir):
+    """Test listing fixtures for a season."""
+    comp_id = api.get_competition_id_by_name("1. Handball-Bundesliga")
+    season_id = api.get_season_id_by_year(comp_id, 2023)
+    fixtures = api.get_list_matches_by_season_id(season_id)
+    assert fixtures, "No fixtures found"
+    # Convert objects to dicts for JSON serialization
+    fixtures_dict = [f.__dict__ if hasattr(f, "__dict__") else f for f in fixtures]
+    save_result(log_dir, "fixtures", fixtures_dict)
 
 
-def test_season_fixtures(api, log_dir, season_id, competition_id, team_id):
-    """Query fixtures by season, competition, and team."""
-    params = {
-        "include": "entities,organizations,persons",
-        "external": "entityId,personId",
-    }
-
-    season_fixtures = api.get_season_fixtures(season_id, params)
-    assert season_fixtures.get("data"), "No season fixtures found"
-    save_result(log_dir, "season_fixtures", season_fixtures)
-
-    competition_fixtures = api.get_competition_fixtures(competition_id, params)
-    assert competition_fixtures.get("data"), "No competition fixtures found"
-    save_result(log_dir, "competition_fixtures", competition_fixtures)
-
-    season_team_fixtures = api.get_season_team_fixtures(
-        season_id, team_id, params={}
-    )
-    assert season_team_fixtures.get("data"), "No season team fixtures found"
-    save_result(log_dir, "season_team_fixtures", season_team_fixtures)
-
-    fixture_id = season_fixtures.get("data", [{}])[0].get("fixtureId")
+def test_fixture_events(api, log_dir):
+    """Test getting events for a fixture."""
+    comp_id = api.get_competition_id_by_name("1. Handball-Bundesliga")
+    season_id = api.get_season_id_by_year(comp_id, 2023)
+    fixtures = api.get_list_matches_by_season_id(season_id)
+    assert fixtures, "No fixtures found"
+    fixture = fixtures[0]
+    fixture_id = getattr(fixture, "fixture_id", None) or fixture.get("fixture_id")
     assert fixture_id, "No fixture ID found"
-
-    fixture = api.get_fixture(fixture_id, params)
-    assert fixture.get("data"), "No fixture data found"
-    save_result(log_dir, "fixture", fixture)
-
-    playbyplay = api.get_playbyplay(fixture_id, params)
-    assert playbyplay.get("data"), "No play-by-play data found"
-    save_result(log_dir, "playbyplay", playbyplay)
+    events = api.get_fixture_events_by_id(fixture_id)
+    assert events is not None, "No events found"
+    save_result(log_dir, "fixture_events", events)
+    # Optionally test CSV export
+    csv_path = log_dir / f"fixture_{fixture_id}_events.csv"
+    api.save_events_to_csv(events, str(csv_path))
 
 
-def test_static_resources(api, log_dir):
-    """Test retrieval of static reference data."""
-    clubs = api.get_clubs()
-    assert clubs.get("data"), "No clubs found"
-    save_result(log_dir, "clubs", clubs.get("data", []))
-
-    conferences = api.get_conferences()
-    assert conferences.get("data"), "No conferences found"
-    save_result(log_dir, "conferences", conferences.get("data", []))
-
-    all_season_teams = api.get_all_season_teams()
-    assert all_season_teams.get("data"), "No season teams found"
-    save_result(log_dir, "all_season_teams", all_season_teams.get("data", []))
-
-
-# ---------------------- Main Test Flow ----------------------
-
-
-@pytest.mark.run(order=1)
 def test_full_flow(api, log_dir):
     """Run the full test flow."""
-    test_organizations(api, log_dir)
-    test_competitions(api, log_dir)
-    competition_id = "4c445e5c-3956-11ef-9d0e-b74f5c057367"
-    season_id = test_seasons(api, log_dir, competition_id)
-    team_id = test_season_entities(api, log_dir, season_id)
-    test_season_fixtures(api, log_dir, season_id, competition_id, team_id)
-    test_static_resources(api, log_dir)
+    comp_id = api.get_competition_id_by_name("1. Handball-Bundesliga")
+    assert comp_id, "No competition ID found"
+    season_id = api.get_season_id_by_year(comp_id, 2023)
+    assert season_id, "No season ID found"
+    fixtures = api.get_list_matches_by_season_id(season_id)
+    assert fixtures, "No fixtures found"
+    fixture = fixtures[0]
+    fixture_id = getattr(fixture, "fixture_id", None) or fixture.get("fixture_id")
+    assert fixture_id, "No fixture ID found"
+    events = api.get_fixture_events_by_id(fixture_id)
+    assert events is not None, "No events found"
+    csv_path = log_dir / f"fixture_{fixture_id}_events.csv"
+    api.save_events_to_csv(events, str(csv_path))
+
+
+if __name__ == "__main__":
+    pytest.main(["-v", __file__])

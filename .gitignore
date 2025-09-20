@@ -172,3 +172,21 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+**/openapi-python-client.json
+
+# Bytecode / venv
+__pycache__/
+*.pyc
+.venv/
+.env
+
+# Coverage / build
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+
+# ignore this notebook
+notebooks/explore_season_events.ipynb

@@ -5,7 +5,26 @@ Provides methods to access handball-related endpoints.
 Author: Michael Adams, 2025
 """
 
-from typing import Any, Dict, Optional
+import csv
+import json
+import logging
+from typing import Any, Dict, List
+
+from datacore_client.api.competitions import competition_list
+from datacore_client.api.match_play_by_play import fixture_pbp_export
+from datacore_client.api.matches import fixture_list
+from datacore_client.api.seasons import season_list
+from datacore_client.models import (
+    CompetitionListCompetitionsResponse,
+    CompetitionListResponseDefault,
+    FixtureListFixturesResponse,
+    FixtureListResponseDefault,
+    FixturePbpExportResponseDefault,
+    FixturePbpExportSuccessResponse,
+    SeasonListResponseDefault,
+    SeasonListSeasonsResponse,
+)
+
 from sportradar_datacore_api.api import DataCoreAPI
 
 
@@ -16,252 +35,148 @@ class HandballAPI(DataCoreAPI):
     entities, persons, fixtures, etc.
     """
 
-    def _get(
-        self, *parts: str, params: Optional[Dict[str, Any]] = None
-    ) -> Dict[str, Any]:
-        """Internal helper to construct and execute
-        GET requests with organization context."""
-        path = "/".join(
-            ["handball", "o", self.org_id] + [p.strip("/") for p in parts if p]
-        )
-        return self._make_request(
-            f"{self.base_url}/{path}", params=params or {}
-        )
+    # --- Public helpers requested -----------------------------------------
 
-    def get_organizations(
-        self, params: Optional[Dict[str, Any]] = None
-    ) -> Dict[str, Any]:
-        """List all handball organizations."""
-        return self._make_request(
-            f"{self.base_url}/handball/organizations", params=params or {}
-        )
-
-    def get_organization(
-        self, params: Optional[Dict[str, Any]] = None
-    ) -> Dict[str, Any]:
-        """Get details of the current organization."""
-        return self._get("organizations", self.org_id, params=params)
-
-    def get_leagues(
-        self, params: Optional[Dict[str, Any]] = None
-    ) -> Dict[str, Any]:
-        """List all leagues under the organization."""
-        return self._get("leagues", params=params)
-
-    def get_competitions(
-        self, params: Optional[Dict[str, Any]] = None
-    ) -> Dict[str, Any]:
-        """List all competitions under the organization."""
-        return self._get("competitions", params=params)
-
-    def get_competition(
-        self, competition_id: str, params: Optional[Dict[str, Any]] = None
-    ) -> Dict[str, Any]:
-        """Get details of a specific competition."""
-        return self._get("competitions", competition_id, params=params)
-
-    def get_conferences(
-        self, params: Optional[Dict[str, Any]] = None
-    ) -> Dict[str, Any]:
-        """List all conferences under the organization."""
-        return self._get("conferences", params=params)
-
-    def get_clubs(
-        self, params: Optional[Dict[str, Any]] = None
-    ) -> Dict[str, Any]:
-        """List all clubs (entity groups)."""
-        return self._get("entityGroups", params=params)
-
-    def get_club(
-        self, entity_group_id: str, params: Optional[Dict[str, Any]] = None
-    ) -> Dict[str, Any]:
-        """Get details of a specific club."""
-        return self._get("entityGroups", entity_group_id, params=params)
-
-    def get_teams(
-        self, params: Optional[Dict[str, Any]] = None
-    ) -> Dict[str, Any]:
-        """List all teams (entities)."""
-        return self._get("entities", params=params)
-
-    def get_team(
-        self, entity_id: str, params: Optional[Dict[str, Any]] = None
-    ) -> Dict[str, Any]:
-        """Get details of a specific team."""
-        return self._get("entities", entity_id, params=params)
-
-    def get_persons(
-        self, params: Optional[Dict[str, Any]] = None
-    ) -> Dict[str, Any]:
-        """List all persons."""
-        return self._get("persons", params=params)
-
-    def get_person(
-        self, person_id: str, params: Optional[Dict[str, Any]] = None
-    ) -> Dict[str, Any]:
-        """Get details of a specific person."""
-        return self._get("persons", person_id, params=params)
-
-    def get_seasons(
-        self, competition_id: str, params: Optional[Dict[str, Any]] = None
-    ) -> Dict[str, Any]:
-        """List seasons of a competition."""
-        return self._get(
-            "competitions", competition_id, "seasons", params=params
-        )
-
-    def get_season(
-        self, season_id: str, params: Optional[Dict[str, Any]] = None
-    ) -> Dict[str, Any]:
-        """Get details of a specific season."""
-        return self._get("seasons", season_id, params=params)
-
-    def get_season_persons(
-        self, season_id: str, params: Optional[Dict[str, Any]] = None
-    ) -> Dict[str, Any]:
-        """List persons participating in a season."""
-        return self._get("seasons", season_id, "persons", params=params)
-
-    def get_person_seasons(
-        self, person_id: str, params: Optional[Dict[str, Any]] = None
-    ) -> Dict[str, Any]:
-        """List seasons associated with a person."""
-        return self._get("seasons", "persons", person_id, params=params)
-
-    def get_season_person(
-        self,
-        season_id: str,
-        person_id: str,
-        params: Optional[Dict[str, Any]] = None,
-    ) -> Dict[str, Any]:
-        """Get season-specific data for a person."""
-        return self._get(
-            "seasons", season_id, "persons", person_id, params=params
-        )
-
-    def get_season_teams(
-        self, season_id: str, params: Optional[Dict[str, Any]] = None
-    ) -> Dict[str, Any]:
-        """List teams participating in a season."""
-        return self._get("seasons", season_id, "entities", params=params)
-
-    def get_team_seasons(
-        self, entity_id: str, params: Optional[Dict[str, Any]] = None
-    ) -> Dict[str, Any]:
-        """List seasons in which a team participated."""
-        return self._get("seasons", "entities", entity_id, params=params)
-
-    def get_season_team(
-        self,
-        season_id: str,
-        entity_id: str,
-        params: Optional[Dict[str, Any]] = None,
-    ) -> Dict[str, Any]:
-        """Get data for a specific team in a specific season."""
-        return self._get(
-            "seasons", season_id, "entities", entity_id, params=params
-        )
-
-    def get_all_season_teams(
-        self, params: Optional[Dict[str, Any]] = None
-    ) -> Dict[str, Any]:
-        """List all season-team mappings."""
-        return self._get("seasons", "entities", params=params)
-
-    def get_season_fixtures(
-        self, season_id: str, params: Optional[Dict[str, Any]] = None
-    ) -> Dict[str, Any]:
+    def get_competition_id_by_name(self, competition_name: str) -> str:
         """
-        List all fixtures of a season.
-        Link: https://developer.connect.sportradar.com/datacore/handball_rest.html#tag/Matches/operation/fixture_list
-        """  # noqa
-        return self._get("seasons", season_id, "fixtures", params=params)
-
-    def get_fixture(
-        self, fixture_id: str, params: Optional[Dict[str, Any]] = None
-    ) -> Dict[str, Any]:
+        Resolve a competition UUID by human-friendly name.
+        Tries exact (case-insensitive) match on common name fields, then 'contains'.
         """
-        Get details of a specific fixture (match).
-        Link: https://developer.connect.sportradar.com/datacore/handball_rest.html#tag/Matches/operation/fixture_detail
-        """  # noqa
-        return self._get("fixtures", fixture_id, params=params)
+        # Efficiently fetch competitions with a higher limit to reduce API calls
 
-    def get_season_team_fixtures(
-        self,
-        season_id: str,
-        entity_id: str,
-        params: Optional[Dict[str, Any]] = None,
-    ) -> Dict[str, Any]:
-        """List all fixtures for a team in a season."""
-        return self._get(
-            "seasons",
-            season_id,
-            "entities",
-            entity_id,
-            "fixtures",
-            params=params,
+        resp = competition_list.sync_detailed(
+            client=self.client,
+            organization_id=self.org_id,
+            name_local_contains=competition_name,  # Filter for Bundesliga competitions
+            limit=50,  # Increase limit for efficiency if expecting many results
         )
 
-    def get_competition_fixtures(
-        self, competition_id: str, params: Optional[Dict[str, Any]] = None
-    ) -> Dict[str, Any]:
-        """List all fixtures of a competition."""
-        return self._get(
-            "competitions", competition_id, "fixtures", params=params
+        if resp.status_code != 200:
+            raise RuntimeError(f"HTTP {resp.status_code}: {resp.content!r}")
+
+        parsed = resp.parsed
+        if isinstance(parsed, CompetitionListCompetitionsResponse):
+            competitions = list(parsed.data or [])  # list[CompetitionModel]
+            for c in competitions:
+                comp_id = c.competition_id
+
+                if c.name_local and c.name_local.lower() == competition_name.lower():
+                    return comp_id
+        else:
+            # Default/error schema from API (typed)
+            err: CompetitionListResponseDefault = parsed
+            raise RuntimeError(f"API error: {err}")
+
+    def get_season_id_by_year(self, competition_id: str, season_year: int) -> str:
+        """
+        Resolve a season UUID by name under a given competition.
+        Tries exact (case-insensitive) match on common name fields, then 'contains'.
+        """
+        response = season_list.sync_detailed(
+            client=self.client,
+            organization_id=self.org_id,
+            competition_id=competition_id,
+            limit=200,
         )
 
-    def get_playbyplay(
-        self, fixture_id: str, params: Optional[Dict[str, Any]] = None
-    ) -> Dict[str, Any]:
-        """Retrieve detailed play-by-play data for a fixture."""
-        return self._get("fixtures", fixture_id, "playbyplay", params=params)
+        if response.status_code == 200:
+            logging.info("Seasons fetched successfully.")
+            logging.debug("Status Code: %s", response.status_code)
+            parsed = response.parsed
+            if isinstance(parsed, SeasonListSeasonsResponse):
+                seasons = list(parsed.data or [])
 
-    def get_match_events_export(
-        self, fixture_id: str, params: Optional[Dict[str, Any]] = None
-    ) -> Dict[str, Any]:
+                for c in seasons:
+                    season_id = c.season_id
+
+                    logging.debug("Checking season: %s (%s)", c.name_local, season_id)
+
+                    if c.year == season_year:
+                        return season_id
+            else:
+                err: SeasonListResponseDefault = parsed
+                raise RuntimeError(f"API error: {err}")
+
+    def get_list_matches_by_season_id(self, season_id: str) -> List[Dict[str, Any]]:
         """
-        Export full list of events for a fixture (play-by-play and setup events).
-
-        Args:
-            fixture_id (str): Unique identifier of the fixture (UUID).
-            params (Optional[Dict[str, Any]]): Optional query parameters such as:
-                - external
-                - fields
-                - hideNull
-                - include
-                - limit
-                - offset
-                - onlySetup
-                - periodId
-                - withScores
-
-        Returns:
-            Dict[str, Any]: Exported match event data.
+        Return all fixtures (matches) for the given season as a list of dicts.
         """
-        return self._get(
-            "fixtures", fixture_id, "events", "export", params=params
+        if not season_id:
+            raise ValueError("season_id must be provided.")
+        resp = fixture_list.sync_detailed(
+            client=self.client,
+            organization_id=self.org_id,
+            season_id=season_id,
+            limit=500,  # Adjust limit as needed
         )
 
-    # TODO: Does not return anything useful, only [], needs investigation
-    def get_fixture_persons(
-        self, fixture_id: str, params: Optional[Dict[str, Any]] = None
-    ) -> Dict[str, Any]:
-        """
-        Return a list of persons for a match.
+        if resp.status_code != 200:
+            raise RuntimeError(f"HTTP {resp.status_code}: {resp.content!r}")
 
-        Args:
-            fixture_id (str): Unique identifier of the fixture (UUID).
-            params (Optional[Dict[str, Any]]): Optional query parameters, e.g.:
-                - added (str): Record added after this UTC datetime.
-                - external (str): Comma-separated list of external fields.
-                - fields (str): Comma-separated list of fields for partial response.
-                - hideNull (bool): Exclude null/empty fields.
-                - include (str): Comma-separated list of resource types to include.
-                - limit (int): Max number of records to return.
-                - offset (int): Offset for pagination.
-                - updated (str): Record updated after this UTC datetime.
+        parsed = resp.parsed
 
-        Returns:
-            Dict[str, Any]: List of persons for the given fixture.
+        if isinstance(parsed, FixtureListFixturesResponse):
+            return parsed.data or []
+        else:
+            err: FixtureListResponseDefault = parsed
+            raise RuntimeError(f"API error: {err}")
+
+    def get_fixture_events_by_id(self, fixture_id: str) -> Dict[str, Any]:
         """
-        return self._get("fixtures", fixture_id, "persons", params=params)
+        Return the full fixture (match) metadata for a given fixture ID.
+        """
+        if not fixture_id:
+            raise ValueError("fixture_id must be provided.")
+        resp = fixture_pbp_export.sync_detailed(
+            client=self.client,
+            organization_id=self.org_id,
+            fixture_id=fixture_id,
+        )
+
+        if resp.status_code != 200:
+            raise RuntimeError(f"HTTP {resp.status_code}: {resp.content!r}")
+        parsed = resp.parsed
+        if isinstance(parsed, FixturePbpExportSuccessResponse):
+            content_dict = json.loads(resp.content)
+            return content_dict.get("data") or {}
+        else:
+            err: FixturePbpExportResponseDefault = parsed
+            raise RuntimeError(f"API error: {err}")
+
+    def save_events_to_csv(self, events: List[dict], file_path: str) -> None:
+        """
+        Save a list of event dicts (from a single fixture) to a CSV file.
+        Each row in the CSV will represent one event's 'data' field.
+        """
+        if not events:
+            raise ValueError("events must be provided.")
+        if not file_path:
+            raise ValueError("file_path must be provided.")
+
+        # Extract the 'data' field from each event if present
+        data_rows = []
+        for event in events:
+            if isinstance(event, dict) and "data" in event:
+                data_rows.append(event["data"])
+            elif isinstance(event, dict):
+                data_rows.append(event)
+
+        if not data_rows:
+            logging.error("No event data found to save.")
+            return
+
+        # Collect all keys for CSV header
+        fieldnames = set()
+        for row in data_rows:
+            if isinstance(row, dict):
+                fieldnames.update(row.keys())
+        fieldnames = sorted(fieldnames)
+
+        with open(file_path, "w", encoding="utf-8", newline="") as csvfile:
+            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+            writer.writeheader()
+            for row in data_rows:
+                if isinstance(row, dict):
+                    writer.writerow(row)
+
+        logging.debug("Events saved to %s", file_path)
