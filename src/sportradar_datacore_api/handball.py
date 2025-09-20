@@ -15,14 +15,10 @@ from datacore_client.api.match_play_by_play import fixture_pbp_export
 from datacore_client.api.matches import fixture_list
 from datacore_client.api.seasons import season_list
 from datacore_client.models import (
-    CompetitionListCompetitionsResponse,
     CompetitionListResponseDefault,
-    FixtureListFixturesResponse,
     FixtureListResponseDefault,
     FixturePbpExportResponseDefault,
-    FixturePbpExportSuccessResponse,
     SeasonListResponseDefault,
-    SeasonListSeasonsResponse,
 )
 
 from sportradar_datacore_api.api import DataCoreAPI
@@ -55,7 +51,7 @@ class HandballAPI(DataCoreAPI):
             raise RuntimeError(f"HTTP {resp.status_code}: {resp.content!r}")
 
         parsed = resp.parsed
-        if isinstance(parsed, CompetitionListCompetitionsResponse):
+        if isinstance(parsed, CompetitionListResponseDefault):
             competitions = list(parsed.data or [])  # list[CompetitionModel]
             for c in competitions:
                 comp_id = c.competition_id
@@ -83,7 +79,7 @@ class HandballAPI(DataCoreAPI):
             logging.info("Seasons fetched successfully.")
             logging.debug("Status Code: %s", response.status_code)
             parsed = response.parsed
-            if isinstance(parsed, SeasonListSeasonsResponse):
+            if isinstance(parsed, SeasonListResponseDefault):
                 seasons = list(parsed.data or [])
 
                 for c in seasons:
@@ -115,7 +111,7 @@ class HandballAPI(DataCoreAPI):
 
         parsed = resp.parsed
 
-        if isinstance(parsed, FixtureListFixturesResponse):
+        if isinstance(parsed, FixtureListResponseDefault):
             return parsed.data or []
         else:
             err: FixtureListResponseDefault = parsed
@@ -136,7 +132,7 @@ class HandballAPI(DataCoreAPI):
         if resp.status_code != 200:
             raise RuntimeError(f"HTTP {resp.status_code}: {resp.content!r}")
         parsed = resp.parsed
-        if isinstance(parsed, FixturePbpExportSuccessResponse):
+        if isinstance(parsed, FixturePbpExportResponseDefault):
             content_dict = json.loads(resp.content)
             return content_dict.get("data") or {}
         else:
