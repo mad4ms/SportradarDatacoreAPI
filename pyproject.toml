@@ -7,15 +7,13 @@ license = { text = "MIT" }
 readme = "README.md"
 requires-python = ">=3.13"
 
-# Runtime deps for your wrapper + generated client
+# Runtime deps for  wrapper + generated client
 dependencies = [
-    "httpx>=0.27.0", # generated client uses httpx
-    "pydantic>=2.6", # generated models target Pydantic v2
-    "typing-extensions>=4.8", # safety on older 3.10
-    "pandas>=2.2.2", # your wrapper/processing
+    "httpx>=0.27.0",
+    "pydantic>=2.6",
+    "typing-extensions>=4.8",
+    "pandas>=2.2.2",
     "python-dotenv>=1.1.0",
-    # Keep 'requests' ONLY if your own wrapper uses it (else remove):
-    # "requests>=2.31.0",
     "requests>=2.32.5",
     "pytest>=8.4.2",
     "pytest-order>=1.3.0",
