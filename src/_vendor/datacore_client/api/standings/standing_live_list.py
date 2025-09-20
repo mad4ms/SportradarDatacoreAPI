@@ -11,6 +11,7 @@ from ...models.standing_live_list_grouping_base import StandingLiveListGroupingB
 from ...models.standing_live_list_grouping_conference_division import StandingLiveListGroupingConferenceDivision
 from ...models.standing_live_list_grouping_stage_pool import StandingLiveListGroupingStagePool
 from ...models.standing_live_list_response_default import StandingLiveListResponseDefault
+from ...models.standing_live_list_standings_response import StandingLiveListStandingsResponse
 from ...types import UNSET, Response, Unset
 
 
@@ -137,7 +138,12 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> StandingLiveListResponseDefault:
+) -> Union[StandingLiveListResponseDefault, StandingLiveListStandingsResponse]:
+    if response.status_code == 200:
+        response_200 = StandingLiveListStandingsResponse.from_dict(response.json())
+
+        return response_200
+
     response_default = StandingLiveListResponseDefault.from_dict(response.json())
 
     return response_default
@@ -145,7 +151,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[StandingLiveListResponseDefault]:
+) -> Response[Union[StandingLiveListResponseDefault, StandingLiveListStandingsResponse]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -182,7 +188,7 @@ def sync_detailed(
     stage_code: Union[Unset, str] = UNSET,
     standing_configuration_id: Union[Unset, UUID] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[StandingLiveListResponseDefault]:
+) -> Response[Union[StandingLiveListResponseDefault, StandingLiveListStandingsResponse]]:
     """Get a list of live standings
 
      Return a list of live standings for a season
@@ -222,7 +228,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[StandingLiveListResponseDefault]
+        Response[Union[StandingLiveListResponseDefault, StandingLiveListStandingsResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -288,7 +294,7 @@ def sync(
     stage_code: Union[Unset, str] = UNSET,
     standing_configuration_id: Union[Unset, UUID] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[StandingLiveListResponseDefault]:
+) -> Optional[Union[StandingLiveListResponseDefault, StandingLiveListStandingsResponse]]:
     """Get a list of live standings
 
      Return a list of live standings for a season
@@ -328,7 +334,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        StandingLiveListResponseDefault
+        Union[StandingLiveListResponseDefault, StandingLiveListStandingsResponse]
     """
 
     return sync_detailed(
@@ -389,7 +395,7 @@ async def asyncio_detailed(
     stage_code: Union[Unset, str] = UNSET,
     standing_configuration_id: Union[Unset, UUID] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[StandingLiveListResponseDefault]:
+) -> Response[Union[StandingLiveListResponseDefault, StandingLiveListStandingsResponse]]:
     """Get a list of live standings
 
      Return a list of live standings for a season
@@ -429,7 +435,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[StandingLiveListResponseDefault]
+        Response[Union[StandingLiveListResponseDefault, StandingLiveListStandingsResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -493,7 +499,7 @@ async def asyncio(
     stage_code: Union[Unset, str] = UNSET,
     standing_configuration_id: Union[Unset, UUID] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[StandingLiveListResponseDefault]:
+) -> Optional[Union[StandingLiveListResponseDefault, StandingLiveListStandingsResponse]]:
     """Get a list of live standings
 
      Return a list of live standings for a season
@@ -533,7 +539,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        StandingLiveListResponseDefault
+        Union[StandingLiveListResponseDefault, StandingLiveListStandingsResponse]
     """
 
     return (

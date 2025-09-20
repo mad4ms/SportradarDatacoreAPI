@@ -6,6 +6,9 @@ import httpx
 
 from ...client import AuthenticatedClient, Client
 from ...models.standing_progressions_detail_response_default import StandingProgressionsDetailResponseDefault
+from ...models.standing_progressions_detail_standing_progressions_response import (
+    StandingProgressionsDetailStandingProgressionsResponse,
+)
 from ...types import UNSET, Response, Unset
 
 
@@ -48,7 +51,12 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> StandingProgressionsDetailResponseDefault:
+) -> Union[StandingProgressionsDetailResponseDefault, StandingProgressionsDetailStandingProgressionsResponse]:
+    if response.status_code == 200:
+        response_200 = StandingProgressionsDetailStandingProgressionsResponse.from_dict(response.json())
+
+        return response_200
+
     response_default = StandingProgressionsDetailResponseDefault.from_dict(response.json())
 
     return response_default
@@ -56,7 +64,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[StandingProgressionsDetailResponseDefault]:
+) -> Response[Union[StandingProgressionsDetailResponseDefault, StandingProgressionsDetailStandingProgressionsResponse]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -77,7 +85,7 @@ def sync_detailed(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Response[StandingProgressionsDetailResponseDefault]:
+) -> Response[Union[StandingProgressionsDetailResponseDefault, StandingProgressionsDetailStandingProgressionsResponse]]:
     """Get a standing progression
 
      Return detailed information about a specific standing progression
@@ -99,7 +107,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[StandingProgressionsDetailResponseDefault]
+        Response[Union[StandingProgressionsDetailResponseDefault, StandingProgressionsDetailStandingProgressionsResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -133,7 +141,7 @@ def sync(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Optional[StandingProgressionsDetailResponseDefault]:
+) -> Optional[Union[StandingProgressionsDetailResponseDefault, StandingProgressionsDetailStandingProgressionsResponse]]:
     """Get a standing progression
 
      Return detailed information about a specific standing progression
@@ -155,7 +163,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        StandingProgressionsDetailResponseDefault
+        Union[StandingProgressionsDetailResponseDefault, StandingProgressionsDetailStandingProgressionsResponse]
     """
 
     return sync_detailed(
@@ -184,7 +192,7 @@ async def asyncio_detailed(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Response[StandingProgressionsDetailResponseDefault]:
+) -> Response[Union[StandingProgressionsDetailResponseDefault, StandingProgressionsDetailStandingProgressionsResponse]]:
     """Get a standing progression
 
      Return detailed information about a specific standing progression
@@ -206,7 +214,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[StandingProgressionsDetailResponseDefault]
+        Response[Union[StandingProgressionsDetailResponseDefault, StandingProgressionsDetailStandingProgressionsResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -238,7 +246,7 @@ async def asyncio(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Optional[StandingProgressionsDetailResponseDefault]:
+) -> Optional[Union[StandingProgressionsDetailResponseDefault, StandingProgressionsDetailStandingProgressionsResponse]]:
     """Get a standing progression
 
      Return detailed information about a specific standing progression
@@ -260,7 +268,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        StandingProgressionsDetailResponseDefault
+        Union[StandingProgressionsDetailResponseDefault, StandingProgressionsDetailStandingProgressionsResponse]
     """
 
     return (

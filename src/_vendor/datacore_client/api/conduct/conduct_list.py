@@ -6,12 +6,12 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
+from ...models.conduct_list_conduct_response import ConductListConductResponse
 from ...models.conduct_list_conduct_status_type_1 import ConductListConductStatusType1
 from ...models.conduct_list_conduct_status_type_2_type_1 import ConductListConductStatusType2Type1
 from ...models.conduct_list_conduct_status_type_3_type_1 import ConductListConductStatusType3Type1
 from ...models.conduct_list_conduct_type import ConductListConductType
 from ...models.conduct_list_response_default import ConductListResponseDefault
-from ...models.conduct_response import ConductResponse
 from ...types import UNSET, Response, Unset
 
 
@@ -190,9 +190,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[ConductListResponseDefault, ConductResponse]:
+) -> Union[ConductListConductResponse, ConductListResponseDefault]:
     if response.status_code == 200:
-        response_200 = ConductResponse.from_dict(response.json())
+        response_200 = ConductListConductResponse.from_dict(response.json())
 
         return response_200
 
@@ -203,7 +203,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[Union[ConductListResponseDefault, ConductResponse]]:
+) -> Response[Union[ConductListConductResponse, ConductListResponseDefault]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -252,7 +252,7 @@ def sync_detailed(
     season_id: Union[Unset, UUID] = UNSET,
     sort_by: Union[Unset, str] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[Union[ConductListResponseDefault, ConductResponse]]:
+) -> Response[Union[ConductListConductResponse, ConductListResponseDefault]]:
     """Get a list of conduct
 
      Return a list of available conduct records
@@ -300,7 +300,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[ConductListResponseDefault, ConductResponse]]
+        Response[Union[ConductListConductResponse, ConductListResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -384,7 +384,7 @@ def sync(
     season_id: Union[Unset, UUID] = UNSET,
     sort_by: Union[Unset, str] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[Union[ConductListResponseDefault, ConductResponse]]:
+) -> Optional[Union[ConductListConductResponse, ConductListResponseDefault]]:
     """Get a list of conduct
 
      Return a list of available conduct records
@@ -432,7 +432,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[ConductListResponseDefault, ConductResponse]
+        Union[ConductListConductResponse, ConductListResponseDefault]
     """
 
     return sync_detailed(
@@ -511,7 +511,7 @@ async def asyncio_detailed(
     season_id: Union[Unset, UUID] = UNSET,
     sort_by: Union[Unset, str] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[Union[ConductListResponseDefault, ConductResponse]]:
+) -> Response[Union[ConductListConductResponse, ConductListResponseDefault]]:
     """Get a list of conduct
 
      Return a list of available conduct records
@@ -559,7 +559,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[ConductListResponseDefault, ConductResponse]]
+        Response[Union[ConductListConductResponse, ConductListResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -641,7 +641,7 @@ async def asyncio(
     season_id: Union[Unset, UUID] = UNSET,
     sort_by: Union[Unset, str] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[Union[ConductListResponseDefault, ConductResponse]]:
+) -> Optional[Union[ConductListConductResponse, ConductListResponseDefault]]:
     """Get a list of conduct
 
      Return a list of available conduct records
@@ -689,7 +689,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[ConductListResponseDefault, ConductResponse]
+        Union[ConductListConductResponse, ConductListResponseDefault]
     """
 
     return (

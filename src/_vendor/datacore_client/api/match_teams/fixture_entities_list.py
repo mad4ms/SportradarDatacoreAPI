@@ -6,8 +6,8 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
+from ...models.fixture_entities_list_fixture_entities_response import FixtureEntitiesListFixtureEntitiesResponse
 from ...models.fixture_entities_list_response_default import FixtureEntitiesListResponseDefault
-from ...models.fixture_entities_response import FixtureEntitiesResponse
 from ...types import UNSET, Response, Unset
 
 
@@ -61,9 +61,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[FixtureEntitiesListResponseDefault, FixtureEntitiesResponse]:
+) -> Union[FixtureEntitiesListFixtureEntitiesResponse, FixtureEntitiesListResponseDefault]:
     if response.status_code == 200:
-        response_200 = FixtureEntitiesResponse.from_dict(response.json())
+        response_200 = FixtureEntitiesListFixtureEntitiesResponse.from_dict(response.json())
 
         return response_200
 
@@ -74,7 +74,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[Union[FixtureEntitiesListResponseDefault, FixtureEntitiesResponse]]:
+) -> Response[Union[FixtureEntitiesListFixtureEntitiesResponse, FixtureEntitiesListResponseDefault]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -96,7 +96,7 @@ def sync_detailed(
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[Union[FixtureEntitiesListResponseDefault, FixtureEntitiesResponse]]:
+) -> Response[Union[FixtureEntitiesListFixtureEntitiesResponse, FixtureEntitiesListResponseDefault]]:
     """Get a list of teams in the match
 
      Return a list of teams for a match
@@ -119,7 +119,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[FixtureEntitiesListResponseDefault, FixtureEntitiesResponse]]
+        Response[Union[FixtureEntitiesListFixtureEntitiesResponse, FixtureEntitiesListResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -155,7 +155,7 @@ def sync(
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[Union[FixtureEntitiesListResponseDefault, FixtureEntitiesResponse]]:
+) -> Optional[Union[FixtureEntitiesListFixtureEntitiesResponse, FixtureEntitiesListResponseDefault]]:
     """Get a list of teams in the match
 
      Return a list of teams for a match
@@ -178,7 +178,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[FixtureEntitiesListResponseDefault, FixtureEntitiesResponse]
+        Union[FixtureEntitiesListFixtureEntitiesResponse, FixtureEntitiesListResponseDefault]
     """
 
     return sync_detailed(
@@ -209,7 +209,7 @@ async def asyncio_detailed(
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[Union[FixtureEntitiesListResponseDefault, FixtureEntitiesResponse]]:
+) -> Response[Union[FixtureEntitiesListFixtureEntitiesResponse, FixtureEntitiesListResponseDefault]]:
     """Get a list of teams in the match
 
      Return a list of teams for a match
@@ -232,7 +232,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[FixtureEntitiesListResponseDefault, FixtureEntitiesResponse]]
+        Response[Union[FixtureEntitiesListFixtureEntitiesResponse, FixtureEntitiesListResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -266,7 +266,7 @@ async def asyncio(
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[Union[FixtureEntitiesListResponseDefault, FixtureEntitiesResponse]]:
+) -> Optional[Union[FixtureEntitiesListFixtureEntitiesResponse, FixtureEntitiesListResponseDefault]]:
     """Get a list of teams in the match
 
      Return a list of teams for a match
@@ -289,7 +289,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[FixtureEntitiesListResponseDefault, FixtureEntitiesResponse]
+        Union[FixtureEntitiesListFixtureEntitiesResponse, FixtureEntitiesListResponseDefault]
     """
 
     return (

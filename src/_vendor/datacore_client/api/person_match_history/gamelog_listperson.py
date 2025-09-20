@@ -6,8 +6,8 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.game_log_person_response import GameLogPersonResponse
 from ...models.gamelog_listperson_fixture_type import GamelogListpersonFixtureType
+from ...models.gamelog_listperson_game_log_person_response import GamelogListpersonGameLogPersonResponse
 from ...models.gamelog_listperson_home_away import GamelogListpersonHomeAway
 from ...models.gamelog_listperson_response_default import GamelogListpersonResponseDefault
 from ...models.gamelog_listperson_win_loss import GamelogListpersonWinLoss
@@ -101,9 +101,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[GameLogPersonResponse, GamelogListpersonResponseDefault]:
+) -> Union[GamelogListpersonGameLogPersonResponse, GamelogListpersonResponseDefault]:
     if response.status_code == 200:
-        response_200 = GameLogPersonResponse.from_dict(response.json())
+        response_200 = GamelogListpersonGameLogPersonResponse.from_dict(response.json())
 
         return response_200
 
@@ -114,7 +114,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[Union[GameLogPersonResponse, GamelogListpersonResponseDefault]]:
+) -> Response[Union[GamelogListpersonGameLogPersonResponse, GamelogListpersonResponseDefault]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -144,7 +144,7 @@ def sync_detailed(
     starter: Union[Unset, bool] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
     win_loss: Union[Unset, GamelogListpersonWinLoss] = UNSET,
-) -> Response[Union[GameLogPersonResponse, GamelogListpersonResponseDefault]]:
+) -> Response[Union[GamelogListpersonGameLogPersonResponse, GamelogListpersonResponseDefault]]:
     """Match History for a person
 
      Return the Match History (based on statistics present) for a specific person in a season.
@@ -175,7 +175,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[GameLogPersonResponse, GamelogListpersonResponseDefault]]
+        Response[Union[GamelogListpersonGameLogPersonResponse, GamelogListpersonResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -227,7 +227,7 @@ def sync(
     starter: Union[Unset, bool] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
     win_loss: Union[Unset, GamelogListpersonWinLoss] = UNSET,
-) -> Optional[Union[GameLogPersonResponse, GamelogListpersonResponseDefault]]:
+) -> Optional[Union[GamelogListpersonGameLogPersonResponse, GamelogListpersonResponseDefault]]:
     """Match History for a person
 
      Return the Match History (based on statistics present) for a specific person in a season.
@@ -258,7 +258,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[GameLogPersonResponse, GamelogListpersonResponseDefault]
+        Union[GamelogListpersonGameLogPersonResponse, GamelogListpersonResponseDefault]
     """
 
     return sync_detailed(
@@ -305,7 +305,7 @@ async def asyncio_detailed(
     starter: Union[Unset, bool] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
     win_loss: Union[Unset, GamelogListpersonWinLoss] = UNSET,
-) -> Response[Union[GameLogPersonResponse, GamelogListpersonResponseDefault]]:
+) -> Response[Union[GamelogListpersonGameLogPersonResponse, GamelogListpersonResponseDefault]]:
     """Match History for a person
 
      Return the Match History (based on statistics present) for a specific person in a season.
@@ -336,7 +336,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[GameLogPersonResponse, GamelogListpersonResponseDefault]]
+        Response[Union[GamelogListpersonGameLogPersonResponse, GamelogListpersonResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -386,7 +386,7 @@ async def asyncio(
     starter: Union[Unset, bool] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
     win_loss: Union[Unset, GamelogListpersonWinLoss] = UNSET,
-) -> Optional[Union[GameLogPersonResponse, GamelogListpersonResponseDefault]]:
+) -> Optional[Union[GamelogListpersonGameLogPersonResponse, GamelogListpersonResponseDefault]]:
     """Match History for a person
 
      Return the Match History (based on statistics present) for a specific person in a season.
@@ -417,7 +417,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[GameLogPersonResponse, GamelogListpersonResponseDefault]
+        Union[GamelogListpersonGameLogPersonResponse, GamelogListpersonResponseDefault]
     """
 
     return (

@@ -6,7 +6,9 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.fixture_person_statistics_periods_response import FixturePersonStatisticsPeriodsResponse
+from ...models.fpsp_listperiod_fixture_person_statistics_periods_response import (
+    FpspListperiodFixturePersonStatisticsPeriodsResponse,
+)
 from ...models.fpsp_listperiod_period_id import FpspListperiodPeriodId
 from ...models.fpsp_listperiod_response_default import FpspListperiodResponseDefault
 from ...types import UNSET, Response, Unset
@@ -84,9 +86,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[FixturePersonStatisticsPeriodsResponse, FpspListperiodResponseDefault]:
+) -> Union[FpspListperiodFixturePersonStatisticsPeriodsResponse, FpspListperiodResponseDefault]:
     if response.status_code == 200:
-        response_200 = FixturePersonStatisticsPeriodsResponse.from_dict(response.json())
+        response_200 = FpspListperiodFixturePersonStatisticsPeriodsResponse.from_dict(response.json())
 
         return response_200
 
@@ -97,7 +99,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[Union[FixturePersonStatisticsPeriodsResponse, FpspListperiodResponseDefault]]:
+) -> Response[Union[FpspListperiodFixturePersonStatisticsPeriodsResponse, FpspListperiodResponseDefault]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -123,7 +125,7 @@ def sync_detailed(
     person_id: Union[Unset, UUID] = UNSET,
     section: Union[Unset, str] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[Union[FixturePersonStatisticsPeriodsResponse, FpspListperiodResponseDefault]]:
+) -> Response[Union[FpspListperiodFixturePersonStatisticsPeriodsResponse, FpspListperiodResponseDefault]]:
     """Person period statistics
 
      Return a list of person period statistics for a match
@@ -152,7 +154,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[FixturePersonStatisticsPeriodsResponse, FpspListperiodResponseDefault]]
+        Response[Union[FpspListperiodFixturePersonStatisticsPeriodsResponse, FpspListperiodResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -196,7 +198,7 @@ def sync(
     person_id: Union[Unset, UUID] = UNSET,
     section: Union[Unset, str] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[Union[FixturePersonStatisticsPeriodsResponse, FpspListperiodResponseDefault]]:
+) -> Optional[Union[FpspListperiodFixturePersonStatisticsPeriodsResponse, FpspListperiodResponseDefault]]:
     """Person period statistics
 
      Return a list of person period statistics for a match
@@ -225,7 +227,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[FixturePersonStatisticsPeriodsResponse, FpspListperiodResponseDefault]
+        Union[FpspListperiodFixturePersonStatisticsPeriodsResponse, FpspListperiodResponseDefault]
     """
 
     return sync_detailed(
@@ -264,7 +266,7 @@ async def asyncio_detailed(
     person_id: Union[Unset, UUID] = UNSET,
     section: Union[Unset, str] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[Union[FixturePersonStatisticsPeriodsResponse, FpspListperiodResponseDefault]]:
+) -> Response[Union[FpspListperiodFixturePersonStatisticsPeriodsResponse, FpspListperiodResponseDefault]]:
     """Person period statistics
 
      Return a list of person period statistics for a match
@@ -293,7 +295,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[FixturePersonStatisticsPeriodsResponse, FpspListperiodResponseDefault]]
+        Response[Union[FpspListperiodFixturePersonStatisticsPeriodsResponse, FpspListperiodResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -335,7 +337,7 @@ async def asyncio(
     person_id: Union[Unset, UUID] = UNSET,
     section: Union[Unset, str] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[Union[FixturePersonStatisticsPeriodsResponse, FpspListperiodResponseDefault]]:
+) -> Optional[Union[FpspListperiodFixturePersonStatisticsPeriodsResponse, FpspListperiodResponseDefault]]:
     """Person period statistics
 
      Return a list of person period statistics for a match
@@ -364,7 +366,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[FixturePersonStatisticsPeriodsResponse, FpspListperiodResponseDefault]
+        Union[FpspListperiodFixturePersonStatisticsPeriodsResponse, FpspListperiodResponseDefault]
     """
 
     return (

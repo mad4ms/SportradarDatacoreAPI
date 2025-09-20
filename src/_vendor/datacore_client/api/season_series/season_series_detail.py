@@ -6,6 +6,7 @@ import httpx
 
 from ...client import AuthenticatedClient, Client
 from ...models.season_series_detail_response_default import SeasonSeriesDetailResponseDefault
+from ...models.season_series_detail_season_series_response import SeasonSeriesDetailSeasonSeriesResponse
 from ...types import UNSET, Response, Unset
 
 
@@ -48,7 +49,12 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> SeasonSeriesDetailResponseDefault:
+) -> Union[SeasonSeriesDetailResponseDefault, SeasonSeriesDetailSeasonSeriesResponse]:
+    if response.status_code == 200:
+        response_200 = SeasonSeriesDetailSeasonSeriesResponse.from_dict(response.json())
+
+        return response_200
+
     response_default = SeasonSeriesDetailResponseDefault.from_dict(response.json())
 
     return response_default
@@ -56,7 +62,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[SeasonSeriesDetailResponseDefault]:
+) -> Response[Union[SeasonSeriesDetailResponseDefault, SeasonSeriesDetailSeasonSeriesResponse]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -77,7 +83,7 @@ def sync_detailed(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Response[SeasonSeriesDetailResponseDefault]:
+) -> Response[Union[SeasonSeriesDetailResponseDefault, SeasonSeriesDetailSeasonSeriesResponse]]:
     """Get a series
 
      Return detailed information about a specific season series
@@ -99,7 +105,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[SeasonSeriesDetailResponseDefault]
+        Response[Union[SeasonSeriesDetailResponseDefault, SeasonSeriesDetailSeasonSeriesResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -133,7 +139,7 @@ def sync(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Optional[SeasonSeriesDetailResponseDefault]:
+) -> Optional[Union[SeasonSeriesDetailResponseDefault, SeasonSeriesDetailSeasonSeriesResponse]]:
     """Get a series
 
      Return detailed information about a specific season series
@@ -155,7 +161,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        SeasonSeriesDetailResponseDefault
+        Union[SeasonSeriesDetailResponseDefault, SeasonSeriesDetailSeasonSeriesResponse]
     """
 
     return sync_detailed(
@@ -184,7 +190,7 @@ async def asyncio_detailed(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Response[SeasonSeriesDetailResponseDefault]:
+) -> Response[Union[SeasonSeriesDetailResponseDefault, SeasonSeriesDetailSeasonSeriesResponse]]:
     """Get a series
 
      Return detailed information about a specific season series
@@ -206,7 +212,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[SeasonSeriesDetailResponseDefault]
+        Response[Union[SeasonSeriesDetailResponseDefault, SeasonSeriesDetailSeasonSeriesResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -238,7 +244,7 @@ async def asyncio(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Optional[SeasonSeriesDetailResponseDefault]:
+) -> Optional[Union[SeasonSeriesDetailResponseDefault, SeasonSeriesDetailSeasonSeriesResponse]]:
     """Get a series
 
      Return detailed information about a specific season series
@@ -260,7 +266,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        SeasonSeriesDetailResponseDefault
+        Union[SeasonSeriesDetailResponseDefault, SeasonSeriesDetailSeasonSeriesResponse]
     """
 
     return (

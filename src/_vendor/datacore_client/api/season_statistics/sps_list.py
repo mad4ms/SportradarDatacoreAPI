@@ -6,10 +6,10 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.season_person_statistics_response import SeasonPersonStatisticsResponse
 from ...models.sps_list_fixture_type import SpsListFixtureType
 from ...models.sps_list_home_away import SpsListHomeAway
 from ...models.sps_list_response_default import SpsListResponseDefault
+from ...models.sps_list_season_person_statistics_response import SpsListSeasonPersonStatisticsResponse
 from ...models.sps_list_win_loss import SpsListWinLoss
 from ...types import UNSET, Response, Unset
 
@@ -118,9 +118,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[SeasonPersonStatisticsResponse, SpsListResponseDefault]:
+) -> Union[SpsListResponseDefault, SpsListSeasonPersonStatisticsResponse]:
     if response.status_code == 200:
-        response_200 = SeasonPersonStatisticsResponse.from_dict(response.json())
+        response_200 = SpsListSeasonPersonStatisticsResponse.from_dict(response.json())
 
         return response_200
 
@@ -131,7 +131,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[Union[SeasonPersonStatisticsResponse, SpsListResponseDefault]]:
+) -> Response[Union[SpsListResponseDefault, SpsListSeasonPersonStatisticsResponse]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -165,7 +165,7 @@ def sync_detailed(
     starter: Union[Unset, bool] = UNSET,
     to_time_utc: Union[Unset, datetime.datetime] = UNSET,
     win_loss: Union[Unset, SpsListWinLoss] = UNSET,
-) -> Response[Union[SeasonPersonStatisticsResponse, SpsListResponseDefault]]:
+) -> Response[Union[SpsListResponseDefault, SpsListSeasonPersonStatisticsResponse]]:
     """Season person statistics
 
      Return a list of person statistic totals for a season
@@ -200,7 +200,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SeasonPersonStatisticsResponse, SpsListResponseDefault]]
+        Response[Union[SpsListResponseDefault, SpsListSeasonPersonStatisticsResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -260,7 +260,7 @@ def sync(
     starter: Union[Unset, bool] = UNSET,
     to_time_utc: Union[Unset, datetime.datetime] = UNSET,
     win_loss: Union[Unset, SpsListWinLoss] = UNSET,
-) -> Optional[Union[SeasonPersonStatisticsResponse, SpsListResponseDefault]]:
+) -> Optional[Union[SpsListResponseDefault, SpsListSeasonPersonStatisticsResponse]]:
     """Season person statistics
 
      Return a list of person statistic totals for a season
@@ -295,7 +295,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SeasonPersonStatisticsResponse, SpsListResponseDefault]
+        Union[SpsListResponseDefault, SpsListSeasonPersonStatisticsResponse]
     """
 
     return sync_detailed(
@@ -350,7 +350,7 @@ async def asyncio_detailed(
     starter: Union[Unset, bool] = UNSET,
     to_time_utc: Union[Unset, datetime.datetime] = UNSET,
     win_loss: Union[Unset, SpsListWinLoss] = UNSET,
-) -> Response[Union[SeasonPersonStatisticsResponse, SpsListResponseDefault]]:
+) -> Response[Union[SpsListResponseDefault, SpsListSeasonPersonStatisticsResponse]]:
     """Season person statistics
 
      Return a list of person statistic totals for a season
@@ -385,7 +385,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SeasonPersonStatisticsResponse, SpsListResponseDefault]]
+        Response[Union[SpsListResponseDefault, SpsListSeasonPersonStatisticsResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -443,7 +443,7 @@ async def asyncio(
     starter: Union[Unset, bool] = UNSET,
     to_time_utc: Union[Unset, datetime.datetime] = UNSET,
     win_loss: Union[Unset, SpsListWinLoss] = UNSET,
-) -> Optional[Union[SeasonPersonStatisticsResponse, SpsListResponseDefault]]:
+) -> Optional[Union[SpsListResponseDefault, SpsListSeasonPersonStatisticsResponse]]:
     """Season person statistics
 
      Return a list of person statistic totals for a season
@@ -478,7 +478,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SeasonPersonStatisticsResponse, SpsListResponseDefault]
+        Union[SpsListResponseDefault, SpsListSeasonPersonStatisticsResponse]
     """
 
     return (

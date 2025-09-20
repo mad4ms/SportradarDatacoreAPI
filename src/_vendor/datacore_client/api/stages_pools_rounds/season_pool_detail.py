@@ -6,6 +6,7 @@ import httpx
 
 from ...client import AuthenticatedClient, Client
 from ...models.season_pool_detail_response_default import SeasonPoolDetailResponseDefault
+from ...models.season_pool_detail_season_pools_response import SeasonPoolDetailSeasonPoolsResponse
 from ...types import UNSET, Response, Unset
 
 
@@ -48,7 +49,12 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> SeasonPoolDetailResponseDefault:
+) -> Union[SeasonPoolDetailResponseDefault, SeasonPoolDetailSeasonPoolsResponse]:
+    if response.status_code == 200:
+        response_200 = SeasonPoolDetailSeasonPoolsResponse.from_dict(response.json())
+
+        return response_200
+
     response_default = SeasonPoolDetailResponseDefault.from_dict(response.json())
 
     return response_default
@@ -56,7 +62,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[SeasonPoolDetailResponseDefault]:
+) -> Response[Union[SeasonPoolDetailResponseDefault, SeasonPoolDetailSeasonPoolsResponse]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -77,7 +83,7 @@ def sync_detailed(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Response[SeasonPoolDetailResponseDefault]:
+) -> Response[Union[SeasonPoolDetailResponseDefault, SeasonPoolDetailSeasonPoolsResponse]]:
     """Get a pool
 
      Return detailed information about a specific pool
@@ -99,7 +105,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[SeasonPoolDetailResponseDefault]
+        Response[Union[SeasonPoolDetailResponseDefault, SeasonPoolDetailSeasonPoolsResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -133,7 +139,7 @@ def sync(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Optional[SeasonPoolDetailResponseDefault]:
+) -> Optional[Union[SeasonPoolDetailResponseDefault, SeasonPoolDetailSeasonPoolsResponse]]:
     """Get a pool
 
      Return detailed information about a specific pool
@@ -155,7 +161,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        SeasonPoolDetailResponseDefault
+        Union[SeasonPoolDetailResponseDefault, SeasonPoolDetailSeasonPoolsResponse]
     """
 
     return sync_detailed(
@@ -184,7 +190,7 @@ async def asyncio_detailed(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Response[SeasonPoolDetailResponseDefault]:
+) -> Response[Union[SeasonPoolDetailResponseDefault, SeasonPoolDetailSeasonPoolsResponse]]:
     """Get a pool
 
      Return detailed information about a specific pool
@@ -206,7 +212,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[SeasonPoolDetailResponseDefault]
+        Response[Union[SeasonPoolDetailResponseDefault, SeasonPoolDetailSeasonPoolsResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -238,7 +244,7 @@ async def asyncio(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Optional[SeasonPoolDetailResponseDefault]:
+) -> Optional[Union[SeasonPoolDetailResponseDefault, SeasonPoolDetailSeasonPoolsResponse]]:
     """Get a pool
 
      Return detailed information about a specific pool
@@ -260,7 +266,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        SeasonPoolDetailResponseDefault
+        Union[SeasonPoolDetailResponseDefault, SeasonPoolDetailSeasonPoolsResponse]
     """
 
     return (

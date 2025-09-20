@@ -7,6 +7,7 @@ import httpx
 
 from ...client import AuthenticatedClient, Client
 from ...models.season_entity_list_response_default import SeasonEntityListResponseDefault
+from ...models.season_entity_list_season_entities_list_response import SeasonEntityListSeasonEntitiesListResponse
 from ...types import UNSET, Response, Unset
 
 
@@ -60,7 +61,12 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> SeasonEntityListResponseDefault:
+) -> Union[SeasonEntityListResponseDefault, SeasonEntityListSeasonEntitiesListResponse]:
+    if response.status_code == 200:
+        response_200 = SeasonEntityListSeasonEntitiesListResponse.from_dict(response.json())
+
+        return response_200
+
     response_default = SeasonEntityListResponseDefault.from_dict(response.json())
 
     return response_default
@@ -68,7 +74,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[SeasonEntityListResponseDefault]:
+) -> Response[Union[SeasonEntityListResponseDefault, SeasonEntityListSeasonEntitiesListResponse]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -90,7 +96,7 @@ def sync_detailed(
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[SeasonEntityListResponseDefault]:
+) -> Response[Union[SeasonEntityListResponseDefault, SeasonEntityListSeasonEntitiesListResponse]]:
     """Get a list of seasons for a team
 
      Return a list of seasons that a team participated in
@@ -113,7 +119,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[SeasonEntityListResponseDefault]
+        Response[Union[SeasonEntityListResponseDefault, SeasonEntityListSeasonEntitiesListResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -149,7 +155,7 @@ def sync(
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[SeasonEntityListResponseDefault]:
+) -> Optional[Union[SeasonEntityListResponseDefault, SeasonEntityListSeasonEntitiesListResponse]]:
     """Get a list of seasons for a team
 
      Return a list of seasons that a team participated in
@@ -172,7 +178,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        SeasonEntityListResponseDefault
+        Union[SeasonEntityListResponseDefault, SeasonEntityListSeasonEntitiesListResponse]
     """
 
     return sync_detailed(
@@ -203,7 +209,7 @@ async def asyncio_detailed(
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[SeasonEntityListResponseDefault]:
+) -> Response[Union[SeasonEntityListResponseDefault, SeasonEntityListSeasonEntitiesListResponse]]:
     """Get a list of seasons for a team
 
      Return a list of seasons that a team participated in
@@ -226,7 +232,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[SeasonEntityListResponseDefault]
+        Response[Union[SeasonEntityListResponseDefault, SeasonEntityListSeasonEntitiesListResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -260,7 +266,7 @@ async def asyncio(
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[SeasonEntityListResponseDefault]:
+) -> Optional[Union[SeasonEntityListResponseDefault, SeasonEntityListSeasonEntitiesListResponse]]:
     """Get a list of seasons for a team
 
      Return a list of seasons that a team participated in
@@ -283,7 +289,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        SeasonEntityListResponseDefault
+        Union[SeasonEntityListResponseDefault, SeasonEntityListSeasonEntitiesListResponse]
     """
 
     return (

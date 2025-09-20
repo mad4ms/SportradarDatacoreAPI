@@ -8,6 +8,7 @@ import httpx
 from ...client import AuthenticatedClient, Client
 from ...models.images_for_fixture_list_base_type import ImagesForFixtureListBaseType
 from ...models.images_for_fixture_list_image_type import ImagesForFixtureListImageType
+from ...models.images_for_fixture_list_images_response import ImagesForFixtureListImagesResponse
 from ...models.images_for_fixture_list_rating import ImagesForFixtureListRating
 from ...models.images_for_fixture_list_response_default import ImagesForFixtureListResponseDefault
 from ...types import UNSET, Response, Unset
@@ -84,7 +85,12 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> ImagesForFixtureListResponseDefault:
+) -> Union[ImagesForFixtureListImagesResponse, ImagesForFixtureListResponseDefault]:
+    if response.status_code == 200:
+        response_200 = ImagesForFixtureListImagesResponse.from_dict(response.json())
+
+        return response_200
+
     response_default = ImagesForFixtureListResponseDefault.from_dict(response.json())
 
     return response_default
@@ -92,7 +98,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[ImagesForFixtureListResponseDefault]:
+) -> Response[Union[ImagesForFixtureListImagesResponse, ImagesForFixtureListResponseDefault]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -117,7 +123,7 @@ def sync_detailed(
     offset: Union[Unset, int] = UNSET,
     rating: Union[Unset, ImagesForFixtureListRating] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[ImagesForFixtureListResponseDefault]:
+) -> Response[Union[ImagesForFixtureListImagesResponse, ImagesForFixtureListResponseDefault]]:
     """Get a list of images for a fixture
 
      Return a list of images for the fixture
@@ -143,7 +149,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[ImagesForFixtureListResponseDefault]
+        Response[Union[ImagesForFixtureListImagesResponse, ImagesForFixtureListResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -185,7 +191,7 @@ def sync(
     offset: Union[Unset, int] = UNSET,
     rating: Union[Unset, ImagesForFixtureListRating] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[ImagesForFixtureListResponseDefault]:
+) -> Optional[Union[ImagesForFixtureListImagesResponse, ImagesForFixtureListResponseDefault]]:
     """Get a list of images for a fixture
 
      Return a list of images for the fixture
@@ -211,7 +217,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        ImagesForFixtureListResponseDefault
+        Union[ImagesForFixtureListImagesResponse, ImagesForFixtureListResponseDefault]
     """
 
     return sync_detailed(
@@ -248,7 +254,7 @@ async def asyncio_detailed(
     offset: Union[Unset, int] = UNSET,
     rating: Union[Unset, ImagesForFixtureListRating] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[ImagesForFixtureListResponseDefault]:
+) -> Response[Union[ImagesForFixtureListImagesResponse, ImagesForFixtureListResponseDefault]]:
     """Get a list of images for a fixture
 
      Return a list of images for the fixture
@@ -274,7 +280,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[ImagesForFixtureListResponseDefault]
+        Response[Union[ImagesForFixtureListImagesResponse, ImagesForFixtureListResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -314,7 +320,7 @@ async def asyncio(
     offset: Union[Unset, int] = UNSET,
     rating: Union[Unset, ImagesForFixtureListRating] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[ImagesForFixtureListResponseDefault]:
+) -> Optional[Union[ImagesForFixtureListImagesResponse, ImagesForFixtureListResponseDefault]]:
     """Get a list of images for a fixture
 
      Return a list of images for the fixture
@@ -340,7 +346,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        ImagesForFixtureListResponseDefault
+        Union[ImagesForFixtureListImagesResponse, ImagesForFixtureListResponseDefault]
     """
 
     return (

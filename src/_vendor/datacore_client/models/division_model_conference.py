@@ -1,0 +1,77 @@
+from collections.abc import Mapping
+from typing import Any, TypeVar, Union
+
+from attrs import define as _attrs_define
+from attrs import field as _attrs_field
+
+from ..models.division_model_conference_resource_type import DivisionModelConferenceResourceType
+from ..types import UNSET, Unset
+
+T = TypeVar("T", bound="DivisionModelConference")
+
+
+@_attrs_define
+class DivisionModelConference:
+    """The conference information
+
+    Attributes:
+        resource_type (Union[Unset, DivisionModelConferenceResourceType]):
+        id (Union[Unset, str]): Unique identifier for this resource Example: 009e9276-5c80-11e8-9c2d-fa7ae01bbebc.
+    """
+
+    resource_type: Union[Unset, DivisionModelConferenceResourceType] = UNSET
+    id: Union[Unset, str] = UNSET
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
+
+    def to_dict(self) -> dict[str, Any]:
+        resource_type: Union[Unset, str] = UNSET
+        if not isinstance(self.resource_type, Unset):
+            resource_type = self.resource_type.value
+
+        id = self.id
+
+        field_dict: dict[str, Any] = {}
+        field_dict.update(self.additional_properties)
+        field_dict.update({})
+        if resource_type is not UNSET:
+            field_dict["resourceType"] = resource_type
+        if id is not UNSET:
+            field_dict["id"] = id
+
+        return field_dict
+
+    @classmethod
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
+        d = dict(src_dict)
+        _resource_type = d.pop("resourceType", UNSET)
+        resource_type: Union[Unset, DivisionModelConferenceResourceType]
+        if isinstance(_resource_type, Unset):
+            resource_type = UNSET
+        else:
+            resource_type = DivisionModelConferenceResourceType(_resource_type)
+
+        id = d.pop("id", UNSET)
+
+        division_model_conference = cls(
+            resource_type=resource_type,
+            id=id,
+        )
+
+        division_model_conference.additional_properties = d
+        return division_model_conference
+
+    @property
+    def additional_keys(self) -> list[str]:
+        return list(self.additional_properties.keys())
+
+    def __getitem__(self, key: str) -> Any:
+        return self.additional_properties[key]
+
+    def __setitem__(self, key: str, value: Any) -> None:
+        self.additional_properties[key] = value
+
+    def __delitem__(self, key: str) -> None:
+        del self.additional_properties[key]
+
+    def __contains__(self, key: str) -> bool:
+        return key in self.additional_properties

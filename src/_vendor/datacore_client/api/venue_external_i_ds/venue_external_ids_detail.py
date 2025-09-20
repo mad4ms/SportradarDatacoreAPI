@@ -6,6 +6,9 @@ import httpx
 
 from ...client import AuthenticatedClient, Client
 from ...models.venue_external_ids_detail_response_default import VenueExternalIdsDetailResponseDefault
+from ...models.venue_external_ids_detail_venue_external_ids_response import (
+    VenueExternalIdsDetailVenueExternalIdsResponse,
+)
 from ...types import UNSET, Response, Unset
 
 
@@ -47,7 +50,12 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> VenueExternalIdsDetailResponseDefault:
+) -> Union[VenueExternalIdsDetailResponseDefault, VenueExternalIdsDetailVenueExternalIdsResponse]:
+    if response.status_code == 200:
+        response_200 = VenueExternalIdsDetailVenueExternalIdsResponse.from_dict(response.json())
+
+        return response_200
+
     response_default = VenueExternalIdsDetailResponseDefault.from_dict(response.json())
 
     return response_default
@@ -55,7 +63,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[VenueExternalIdsDetailResponseDefault]:
+) -> Response[Union[VenueExternalIdsDetailResponseDefault, VenueExternalIdsDetailVenueExternalIdsResponse]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -75,7 +83,7 @@ def sync_detailed(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Response[VenueExternalIdsDetailResponseDefault]:
+) -> Response[Union[VenueExternalIdsDetailResponseDefault, VenueExternalIdsDetailVenueExternalIdsResponse]]:
     """Get a venue external identifier details
 
      Detailed information about a specific venue external identifier
@@ -96,7 +104,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[VenueExternalIdsDetailResponseDefault]
+        Response[Union[VenueExternalIdsDetailResponseDefault, VenueExternalIdsDetailVenueExternalIdsResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -128,7 +136,7 @@ def sync(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Optional[VenueExternalIdsDetailResponseDefault]:
+) -> Optional[Union[VenueExternalIdsDetailResponseDefault, VenueExternalIdsDetailVenueExternalIdsResponse]]:
     """Get a venue external identifier details
 
      Detailed information about a specific venue external identifier
@@ -149,7 +157,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        VenueExternalIdsDetailResponseDefault
+        Union[VenueExternalIdsDetailResponseDefault, VenueExternalIdsDetailVenueExternalIdsResponse]
     """
 
     return sync_detailed(
@@ -176,7 +184,7 @@ async def asyncio_detailed(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Response[VenueExternalIdsDetailResponseDefault]:
+) -> Response[Union[VenueExternalIdsDetailResponseDefault, VenueExternalIdsDetailVenueExternalIdsResponse]]:
     """Get a venue external identifier details
 
      Detailed information about a specific venue external identifier
@@ -197,7 +205,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[VenueExternalIdsDetailResponseDefault]
+        Response[Union[VenueExternalIdsDetailResponseDefault, VenueExternalIdsDetailVenueExternalIdsResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -227,7 +235,7 @@ async def asyncio(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Optional[VenueExternalIdsDetailResponseDefault]:
+) -> Optional[Union[VenueExternalIdsDetailResponseDefault, VenueExternalIdsDetailVenueExternalIdsResponse]]:
     """Get a venue external identifier details
 
      Detailed information about a specific venue external identifier
@@ -248,7 +256,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        VenueExternalIdsDetailResponseDefault
+        Union[VenueExternalIdsDetailResponseDefault, VenueExternalIdsDetailVenueExternalIdsResponse]
     """
 
     return (

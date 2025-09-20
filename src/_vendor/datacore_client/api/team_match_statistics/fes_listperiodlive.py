@@ -6,6 +6,9 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
+from ...models.fes_listperiodlive_fixture_entity_statistics_periods_response import (
+    FesListperiodliveFixtureEntityStatisticsPeriodsResponse,
+)
 from ...models.fes_listperiodlive_period_id import FesListperiodlivePeriodId
 from ...models.fes_listperiodlive_response_default import FesListperiodliveResponseDefault
 from ...types import UNSET, Response, Unset
@@ -77,7 +80,12 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> FesListperiodliveResponseDefault:
+) -> Union[FesListperiodliveFixtureEntityStatisticsPeriodsResponse, FesListperiodliveResponseDefault]:
+    if response.status_code == 200:
+        response_200 = FesListperiodliveFixtureEntityStatisticsPeriodsResponse.from_dict(response.json())
+
+        return response_200
+
     response_default = FesListperiodliveResponseDefault.from_dict(response.json())
 
     return response_default
@@ -85,7 +93,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[FesListperiodliveResponseDefault]:
+) -> Response[Union[FesListperiodliveFixtureEntityStatisticsPeriodsResponse, FesListperiodliveResponseDefault]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -110,7 +118,7 @@ def sync_detailed(
     period_id: Union[Unset, FesListperiodlivePeriodId] = UNSET,
     section: Union[Unset, str] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[FesListperiodliveResponseDefault]:
+) -> Response[Union[FesListperiodliveFixtureEntityStatisticsPeriodsResponse, FesListperiodliveResponseDefault]]:
     """Team period statistics - live
 
 
@@ -145,7 +153,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[FesListperiodliveResponseDefault]
+        Response[Union[FesListperiodliveFixtureEntityStatisticsPeriodsResponse, FesListperiodliveResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -187,7 +195,7 @@ def sync(
     period_id: Union[Unset, FesListperiodlivePeriodId] = UNSET,
     section: Union[Unset, str] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[FesListperiodliveResponseDefault]:
+) -> Optional[Union[FesListperiodliveFixtureEntityStatisticsPeriodsResponse, FesListperiodliveResponseDefault]]:
     """Team period statistics - live
 
 
@@ -222,7 +230,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        FesListperiodliveResponseDefault
+        Union[FesListperiodliveFixtureEntityStatisticsPeriodsResponse, FesListperiodliveResponseDefault]
     """
 
     return sync_detailed(
@@ -259,7 +267,7 @@ async def asyncio_detailed(
     period_id: Union[Unset, FesListperiodlivePeriodId] = UNSET,
     section: Union[Unset, str] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[FesListperiodliveResponseDefault]:
+) -> Response[Union[FesListperiodliveFixtureEntityStatisticsPeriodsResponse, FesListperiodliveResponseDefault]]:
     """Team period statistics - live
 
 
@@ -294,7 +302,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[FesListperiodliveResponseDefault]
+        Response[Union[FesListperiodliveFixtureEntityStatisticsPeriodsResponse, FesListperiodliveResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -334,7 +342,7 @@ async def asyncio(
     period_id: Union[Unset, FesListperiodlivePeriodId] = UNSET,
     section: Union[Unset, str] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[FesListperiodliveResponseDefault]:
+) -> Optional[Union[FesListperiodliveFixtureEntityStatisticsPeriodsResponse, FesListperiodliveResponseDefault]]:
     """Team period statistics - live
 
 
@@ -369,7 +377,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        FesListperiodliveResponseDefault
+        Union[FesListperiodliveFixtureEntityStatisticsPeriodsResponse, FesListperiodliveResponseDefault]
     """
 
     return (

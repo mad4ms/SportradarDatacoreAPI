@@ -7,9 +7,9 @@ from attrs import define as _attrs_define
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.clock_information import ClockInformation
-    from ..models.information_per_entity import InformationPerEntity
-    from ..models.status_information import StatusInformation
+    from ..models.fixture_live_summary_model_clock_information import FixtureLiveSummaryModelClockInformation
+    from ..models.fixture_live_summary_model_information_per_entity import FixtureLiveSummaryModelInformationPerEntity
+    from ..models.fixture_live_summary_model_status_information import FixtureLiveSummaryModelStatusInformation
 
 
 T = TypeVar("T", bound="FixtureLiveSummaryModel")
@@ -22,16 +22,17 @@ class FixtureLiveSummaryModel:
         organization_id (Union[Unset, str]): The unique identifier of the organization Example: b1a23.
         fixture_id (Union[Unset, UUID]): The unique identifier of the match Example:
             009e9276-5c80-11e8-9c2d-fa7ae01bbebc.
-        entities (Union[Unset, InformationPerEntity]): Entity information: scores, person information, etc.
-        clock (Union[Unset, ClockInformation]): Clock information
-        status (Union[Unset, StatusInformation]): Status information
+        entities (Union[Unset, FixtureLiveSummaryModelInformationPerEntity]): Entity information: scores, person
+            information, etc.
+        clock (Union[Unset, FixtureLiveSummaryModelClockInformation]): Clock information
+        status (Union[Unset, FixtureLiveSummaryModelStatusInformation]): Status information
     """
 
     organization_id: Union[Unset, str] = UNSET
     fixture_id: Union[Unset, UUID] = UNSET
-    entities: Union[Unset, "InformationPerEntity"] = UNSET
-    clock: Union[Unset, "ClockInformation"] = UNSET
-    status: Union[Unset, "StatusInformation"] = UNSET
+    entities: Union[Unset, "FixtureLiveSummaryModelInformationPerEntity"] = UNSET
+    clock: Union[Unset, "FixtureLiveSummaryModelClockInformation"] = UNSET
+    status: Union[Unset, "FixtureLiveSummaryModelStatusInformation"] = UNSET
 
     def to_dict(self) -> dict[str, Any]:
         organization_id = self.organization_id
@@ -70,9 +71,11 @@ class FixtureLiveSummaryModel:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.clock_information import ClockInformation
-        from ..models.information_per_entity import InformationPerEntity
-        from ..models.status_information import StatusInformation
+        from ..models.fixture_live_summary_model_clock_information import FixtureLiveSummaryModelClockInformation
+        from ..models.fixture_live_summary_model_information_per_entity import (
+            FixtureLiveSummaryModelInformationPerEntity,
+        )
+        from ..models.fixture_live_summary_model_status_information import FixtureLiveSummaryModelStatusInformation
 
         d = dict(src_dict)
         organization_id = d.pop("organizationId", UNSET)
@@ -85,25 +88,25 @@ class FixtureLiveSummaryModel:
             fixture_id = UUID(_fixture_id)
 
         _entities = d.pop("entities", UNSET)
-        entities: Union[Unset, InformationPerEntity]
+        entities: Union[Unset, FixtureLiveSummaryModelInformationPerEntity]
         if isinstance(_entities, Unset):
             entities = UNSET
         else:
-            entities = InformationPerEntity.from_dict(_entities)
+            entities = FixtureLiveSummaryModelInformationPerEntity.from_dict(_entities)
 
         _clock = d.pop("clock", UNSET)
-        clock: Union[Unset, ClockInformation]
+        clock: Union[Unset, FixtureLiveSummaryModelClockInformation]
         if isinstance(_clock, Unset):
             clock = UNSET
         else:
-            clock = ClockInformation.from_dict(_clock)
+            clock = FixtureLiveSummaryModelClockInformation.from_dict(_clock)
 
         _status = d.pop("status", UNSET)
-        status: Union[Unset, StatusInformation]
+        status: Union[Unset, FixtureLiveSummaryModelStatusInformation]
         if isinstance(_status, Unset):
             status = UNSET
         else:
-            status = StatusInformation.from_dict(_status)
+            status = FixtureLiveSummaryModelStatusInformation.from_dict(_status)
 
         fixture_live_summary_model = cls(
             organization_id=organization_id,

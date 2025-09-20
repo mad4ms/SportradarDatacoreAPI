@@ -6,6 +6,7 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
+from ...models.fixture_pbp_list_live_fixture_pbp_event_response import FixturePbpListLiveFixturePbpEventResponse
 from ...models.fixture_pbp_list_live_period_id import FixturePbpListLivePeriodId
 from ...models.fixture_pbp_list_live_response_default import FixturePbpListLiveResponseDefault
 from ...types import UNSET, Response, Unset
@@ -68,7 +69,12 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> FixturePbpListLiveResponseDefault:
+) -> Union[FixturePbpListLiveFixturePbpEventResponse, FixturePbpListLiveResponseDefault]:
+    if response.status_code == 200:
+        response_200 = FixturePbpListLiveFixturePbpEventResponse.from_dict(response.json())
+
+        return response_200
+
     response_default = FixturePbpListLiveResponseDefault.from_dict(response.json())
 
     return response_default
@@ -76,7 +82,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[FixturePbpListLiveResponseDefault]:
+) -> Response[Union[FixturePbpListLiveFixturePbpEventResponse, FixturePbpListLiveResponseDefault]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -99,7 +105,7 @@ def sync_detailed(
     offset: Union[Unset, int] = UNSET,
     period_id: Union[Unset, FixturePbpListLivePeriodId] = UNSET,
     to_timestamp: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[FixturePbpListLiveResponseDefault]:
+) -> Response[Union[FixturePbpListLiveFixturePbpEventResponse, FixturePbpListLiveResponseDefault]]:
     """Get a list of live play-by-play records for a match
 
 
@@ -131,7 +137,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[FixturePbpListLiveResponseDefault]
+        Response[Union[FixturePbpListLiveFixturePbpEventResponse, FixturePbpListLiveResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -169,7 +175,7 @@ def sync(
     offset: Union[Unset, int] = UNSET,
     period_id: Union[Unset, FixturePbpListLivePeriodId] = UNSET,
     to_timestamp: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[FixturePbpListLiveResponseDefault]:
+) -> Optional[Union[FixturePbpListLiveFixturePbpEventResponse, FixturePbpListLiveResponseDefault]]:
     """Get a list of live play-by-play records for a match
 
 
@@ -201,7 +207,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        FixturePbpListLiveResponseDefault
+        Union[FixturePbpListLiveFixturePbpEventResponse, FixturePbpListLiveResponseDefault]
     """
 
     return sync_detailed(
@@ -234,7 +240,7 @@ async def asyncio_detailed(
     offset: Union[Unset, int] = UNSET,
     period_id: Union[Unset, FixturePbpListLivePeriodId] = UNSET,
     to_timestamp: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[FixturePbpListLiveResponseDefault]:
+) -> Response[Union[FixturePbpListLiveFixturePbpEventResponse, FixturePbpListLiveResponseDefault]]:
     """Get a list of live play-by-play records for a match
 
 
@@ -266,7 +272,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[FixturePbpListLiveResponseDefault]
+        Response[Union[FixturePbpListLiveFixturePbpEventResponse, FixturePbpListLiveResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -302,7 +308,7 @@ async def asyncio(
     offset: Union[Unset, int] = UNSET,
     period_id: Union[Unset, FixturePbpListLivePeriodId] = UNSET,
     to_timestamp: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[FixturePbpListLiveResponseDefault]:
+) -> Optional[Union[FixturePbpListLiveFixturePbpEventResponse, FixturePbpListLiveResponseDefault]]:
     """Get a list of live play-by-play records for a match
 
 
@@ -334,7 +340,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        FixturePbpListLiveResponseDefault
+        Union[FixturePbpListLiveFixturePbpEventResponse, FixturePbpListLiveResponseDefault]
     """
 
     return (

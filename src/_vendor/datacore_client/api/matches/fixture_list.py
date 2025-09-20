@@ -9,6 +9,7 @@ from ...client import AuthenticatedClient, Client
 from ...models.fixture_list_competitor_type import FixtureListCompetitorType
 from ...models.fixture_list_discipline import FixtureListDiscipline
 from ...models.fixture_list_fixture_type import FixtureListFixtureType
+from ...models.fixture_list_fixtures_response import FixtureListFixturesResponse
 from ...models.fixture_list_response_default import FixtureListResponseDefault
 from ...models.fixture_list_status import FixtureListStatus
 from ...models.fixture_list_status_not import FixtureListStatusNot
@@ -166,7 +167,12 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> FixtureListResponseDefault:
+) -> Union[FixtureListFixturesResponse, FixtureListResponseDefault]:
+    if response.status_code == 200:
+        response_200 = FixtureListFixturesResponse.from_dict(response.json())
+
+        return response_200
+
     response_default = FixtureListResponseDefault.from_dict(response.json())
 
     return response_default
@@ -174,7 +180,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[FixtureListResponseDefault]:
+) -> Response[Union[FixtureListFixturesResponse, FixtureListResponseDefault]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -218,7 +224,7 @@ def sync_detailed(
     to_time_utc: Union[Unset, datetime.datetime] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
     venue_id: Union[Unset, UUID] = UNSET,
-) -> Response[FixtureListResponseDefault]:
+) -> Response[Union[FixtureListFixturesResponse, FixtureListResponseDefault]]:
     """Get a list of matches
 
      Return a list of matches for the season
@@ -263,7 +269,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[FixtureListResponseDefault]
+        Response[Union[FixtureListFixturesResponse, FixtureListResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -343,7 +349,7 @@ def sync(
     to_time_utc: Union[Unset, datetime.datetime] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
     venue_id: Union[Unset, UUID] = UNSET,
-) -> Optional[FixtureListResponseDefault]:
+) -> Optional[Union[FixtureListFixturesResponse, FixtureListResponseDefault]]:
     """Get a list of matches
 
      Return a list of matches for the season
@@ -388,7 +394,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        FixtureListResponseDefault
+        Union[FixtureListFixturesResponse, FixtureListResponseDefault]
     """
 
     return sync_detailed(
@@ -463,7 +469,7 @@ async def asyncio_detailed(
     to_time_utc: Union[Unset, datetime.datetime] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
     venue_id: Union[Unset, UUID] = UNSET,
-) -> Response[FixtureListResponseDefault]:
+) -> Response[Union[FixtureListFixturesResponse, FixtureListResponseDefault]]:
     """Get a list of matches
 
      Return a list of matches for the season
@@ -508,7 +514,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[FixtureListResponseDefault]
+        Response[Union[FixtureListFixturesResponse, FixtureListResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -586,7 +592,7 @@ async def asyncio(
     to_time_utc: Union[Unset, datetime.datetime] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
     venue_id: Union[Unset, UUID] = UNSET,
-) -> Optional[FixtureListResponseDefault]:
+) -> Optional[Union[FixtureListFixturesResponse, FixtureListResponseDefault]]:
     """Get a list of matches
 
      Return a list of matches for the season
@@ -631,7 +637,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        FixtureListResponseDefault
+        Union[FixtureListFixturesResponse, FixtureListResponseDefault]
     """
 
     return (

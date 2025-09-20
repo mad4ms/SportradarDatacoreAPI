@@ -6,8 +6,8 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.season_entities_list_response import SeasonEntitiesListResponse
 from ...models.season_entities_list_response_default import SeasonEntitiesListResponseDefault
+from ...models.season_entities_list_season_entities_list_response import SeasonEntitiesListSeasonEntitiesListResponse
 from ...types import UNSET, Response, Unset
 
 
@@ -67,9 +67,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[SeasonEntitiesListResponse, SeasonEntitiesListResponseDefault]:
+) -> Union[SeasonEntitiesListResponseDefault, SeasonEntitiesListSeasonEntitiesListResponse]:
     if response.status_code == 200:
-        response_200 = SeasonEntitiesListResponse.from_dict(response.json())
+        response_200 = SeasonEntitiesListSeasonEntitiesListResponse.from_dict(response.json())
 
         return response_200
 
@@ -80,7 +80,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[Union[SeasonEntitiesListResponse, SeasonEntitiesListResponseDefault]]:
+) -> Response[Union[SeasonEntitiesListResponseDefault, SeasonEntitiesListSeasonEntitiesListResponse]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -104,7 +104,7 @@ def sync_detailed(
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[Union[SeasonEntitiesListResponse, SeasonEntitiesListResponseDefault]]:
+) -> Response[Union[SeasonEntitiesListResponseDefault, SeasonEntitiesListSeasonEntitiesListResponse]]:
     """Get a list of teams in the season
 
      Return a list of teams for a season
@@ -131,7 +131,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SeasonEntitiesListResponse, SeasonEntitiesListResponseDefault]]
+        Response[Union[SeasonEntitiesListResponseDefault, SeasonEntitiesListSeasonEntitiesListResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -171,7 +171,7 @@ def sync(
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[Union[SeasonEntitiesListResponse, SeasonEntitiesListResponseDefault]]:
+) -> Optional[Union[SeasonEntitiesListResponseDefault, SeasonEntitiesListSeasonEntitiesListResponse]]:
     """Get a list of teams in the season
 
      Return a list of teams for a season
@@ -198,7 +198,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SeasonEntitiesListResponse, SeasonEntitiesListResponseDefault]
+        Union[SeasonEntitiesListResponseDefault, SeasonEntitiesListSeasonEntitiesListResponse]
     """
 
     return sync_detailed(
@@ -233,7 +233,7 @@ async def asyncio_detailed(
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[Union[SeasonEntitiesListResponse, SeasonEntitiesListResponseDefault]]:
+) -> Response[Union[SeasonEntitiesListResponseDefault, SeasonEntitiesListSeasonEntitiesListResponse]]:
     """Get a list of teams in the season
 
      Return a list of teams for a season
@@ -260,7 +260,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SeasonEntitiesListResponse, SeasonEntitiesListResponseDefault]]
+        Response[Union[SeasonEntitiesListResponseDefault, SeasonEntitiesListSeasonEntitiesListResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -298,7 +298,7 @@ async def asyncio(
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[Union[SeasonEntitiesListResponse, SeasonEntitiesListResponseDefault]]:
+) -> Optional[Union[SeasonEntitiesListResponseDefault, SeasonEntitiesListSeasonEntitiesListResponse]]:
     """Get a list of teams in the season
 
      Return a list of teams for a season
@@ -325,7 +325,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SeasonEntitiesListResponse, SeasonEntitiesListResponseDefault]
+        Union[SeasonEntitiesListResponseDefault, SeasonEntitiesListSeasonEntitiesListResponse]
     """
 
     return (

@@ -5,9 +5,9 @@ from typing import Any, Optional, Union
 import httpx
 
 from ...client import AuthenticatedClient, Client
+from ...models.organization_list_organizations_response import OrganizationListOrganizationsResponse
 from ...models.organization_list_region_type import OrganizationListRegionType
 from ...models.organization_list_response_default import OrganizationListResponseDefault
-from ...models.organizations_response import OrganizationsResponse
 from ...types import UNSET, Response, Unset
 
 
@@ -69,9 +69,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[OrganizationListResponseDefault, OrganizationsResponse]:
+) -> Union[OrganizationListOrganizationsResponse, OrganizationListResponseDefault]:
     if response.status_code == 200:
-        response_200 = OrganizationsResponse.from_dict(response.json())
+        response_200 = OrganizationListOrganizationsResponse.from_dict(response.json())
 
         return response_200
 
@@ -82,7 +82,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[Union[OrganizationListResponseDefault, OrganizationsResponse]]:
+) -> Response[Union[OrganizationListOrganizationsResponse, OrganizationListResponseDefault]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -104,7 +104,7 @@ def sync_detailed(
     offset: Union[Unset, int] = UNSET,
     region_type: Union[Unset, OrganizationListRegionType] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[Union[OrganizationListResponseDefault, OrganizationsResponse]]:
+) -> Response[Union[OrganizationListOrganizationsResponse, OrganizationListResponseDefault]]:
     """Get a list of organizations
 
      Return a list of available organizations
@@ -127,7 +127,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[OrganizationListResponseDefault, OrganizationsResponse]]
+        Response[Union[OrganizationListOrganizationsResponse, OrganizationListResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -163,7 +163,7 @@ def sync(
     offset: Union[Unset, int] = UNSET,
     region_type: Union[Unset, OrganizationListRegionType] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[Union[OrganizationListResponseDefault, OrganizationsResponse]]:
+) -> Optional[Union[OrganizationListOrganizationsResponse, OrganizationListResponseDefault]]:
     """Get a list of organizations
 
      Return a list of available organizations
@@ -186,7 +186,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[OrganizationListResponseDefault, OrganizationsResponse]
+        Union[OrganizationListOrganizationsResponse, OrganizationListResponseDefault]
     """
 
     return sync_detailed(
@@ -217,7 +217,7 @@ async def asyncio_detailed(
     offset: Union[Unset, int] = UNSET,
     region_type: Union[Unset, OrganizationListRegionType] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[Union[OrganizationListResponseDefault, OrganizationsResponse]]:
+) -> Response[Union[OrganizationListOrganizationsResponse, OrganizationListResponseDefault]]:
     """Get a list of organizations
 
      Return a list of available organizations
@@ -240,7 +240,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[OrganizationListResponseDefault, OrganizationsResponse]]
+        Response[Union[OrganizationListOrganizationsResponse, OrganizationListResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -274,7 +274,7 @@ async def asyncio(
     offset: Union[Unset, int] = UNSET,
     region_type: Union[Unset, OrganizationListRegionType] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[Union[OrganizationListResponseDefault, OrganizationsResponse]]:
+) -> Optional[Union[OrganizationListOrganizationsResponse, OrganizationListResponseDefault]]:
     """Get a list of organizations
 
      Return a list of available organizations
@@ -297,7 +297,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[OrganizationListResponseDefault, OrganizationsResponse]
+        Union[OrganizationListOrganizationsResponse, OrganizationListResponseDefault]
     """
 
     return (

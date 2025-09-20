@@ -6,8 +6,10 @@ import httpx
 
 from ...client import AuthenticatedClient, Client
 from ...models.season_fixture_stages_pools_list_fixture_type import SeasonFixtureStagesPoolsListFixtureType
-from ...models.season_fixture_stages_pools_list_response import SeasonFixtureStagesPoolsListResponse
 from ...models.season_fixture_stages_pools_list_response_default import SeasonFixtureStagesPoolsListResponseDefault
+from ...models.season_fixture_stages_pools_list_season_fixture_stages_pools_list_response import (
+    SeasonFixtureStagesPoolsListSeasonFixtureStagesPoolsListResponse,
+)
 from ...types import UNSET, Response, Unset
 
 
@@ -59,9 +61,11 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[SeasonFixtureStagesPoolsListResponse, SeasonFixtureStagesPoolsListResponseDefault]:
+) -> Union[
+    SeasonFixtureStagesPoolsListResponseDefault, SeasonFixtureStagesPoolsListSeasonFixtureStagesPoolsListResponse
+]:
     if response.status_code == 200:
-        response_200 = SeasonFixtureStagesPoolsListResponse.from_dict(response.json())
+        response_200 = SeasonFixtureStagesPoolsListSeasonFixtureStagesPoolsListResponse.from_dict(response.json())
 
         return response_200
 
@@ -72,7 +76,9 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[Union[SeasonFixtureStagesPoolsListResponse, SeasonFixtureStagesPoolsListResponseDefault]]:
+) -> Response[
+    Union[SeasonFixtureStagesPoolsListResponseDefault, SeasonFixtureStagesPoolsListSeasonFixtureStagesPoolsListResponse]
+]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -94,7 +100,9 @@ def sync_detailed(
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
     stage_code: Union[Unset, str] = UNSET,
-) -> Response[Union[SeasonFixtureStagesPoolsListResponse, SeasonFixtureStagesPoolsListResponseDefault]]:
+) -> Response[
+    Union[SeasonFixtureStagesPoolsListResponseDefault, SeasonFixtureStagesPoolsListSeasonFixtureStagesPoolsListResponse]
+]:
     """Get a list of stages and pools used by matches in the season
 
      Return a list of stages and pools used by matches for a season
@@ -117,7 +125,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SeasonFixtureStagesPoolsListResponse, SeasonFixtureStagesPoolsListResponseDefault]]
+        Response[Union[SeasonFixtureStagesPoolsListResponseDefault, SeasonFixtureStagesPoolsListSeasonFixtureStagesPoolsListResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -153,7 +161,9 @@ def sync(
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
     stage_code: Union[Unset, str] = UNSET,
-) -> Optional[Union[SeasonFixtureStagesPoolsListResponse, SeasonFixtureStagesPoolsListResponseDefault]]:
+) -> Optional[
+    Union[SeasonFixtureStagesPoolsListResponseDefault, SeasonFixtureStagesPoolsListSeasonFixtureStagesPoolsListResponse]
+]:
     """Get a list of stages and pools used by matches in the season
 
      Return a list of stages and pools used by matches for a season
@@ -176,7 +186,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SeasonFixtureStagesPoolsListResponse, SeasonFixtureStagesPoolsListResponseDefault]
+        Union[SeasonFixtureStagesPoolsListResponseDefault, SeasonFixtureStagesPoolsListSeasonFixtureStagesPoolsListResponse]
     """
 
     return sync_detailed(
@@ -207,7 +217,9 @@ async def asyncio_detailed(
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
     stage_code: Union[Unset, str] = UNSET,
-) -> Response[Union[SeasonFixtureStagesPoolsListResponse, SeasonFixtureStagesPoolsListResponseDefault]]:
+) -> Response[
+    Union[SeasonFixtureStagesPoolsListResponseDefault, SeasonFixtureStagesPoolsListSeasonFixtureStagesPoolsListResponse]
+]:
     """Get a list of stages and pools used by matches in the season
 
      Return a list of stages and pools used by matches for a season
@@ -230,7 +242,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SeasonFixtureStagesPoolsListResponse, SeasonFixtureStagesPoolsListResponseDefault]]
+        Response[Union[SeasonFixtureStagesPoolsListResponseDefault, SeasonFixtureStagesPoolsListSeasonFixtureStagesPoolsListResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -264,7 +276,9 @@ async def asyncio(
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
     stage_code: Union[Unset, str] = UNSET,
-) -> Optional[Union[SeasonFixtureStagesPoolsListResponse, SeasonFixtureStagesPoolsListResponseDefault]]:
+) -> Optional[
+    Union[SeasonFixtureStagesPoolsListResponseDefault, SeasonFixtureStagesPoolsListSeasonFixtureStagesPoolsListResponse]
+]:
     """Get a list of stages and pools used by matches in the season
 
      Return a list of stages and pools used by matches for a season
@@ -287,7 +301,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SeasonFixtureStagesPoolsListResponse, SeasonFixtureStagesPoolsListResponseDefault]
+        Union[SeasonFixtureStagesPoolsListResponseDefault, SeasonFixtureStagesPoolsListSeasonFixtureStagesPoolsListResponse]
     """
 
     return (

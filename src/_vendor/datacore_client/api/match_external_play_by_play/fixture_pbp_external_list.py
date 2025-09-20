@@ -6,6 +6,9 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
+from ...models.fixture_pbp_external_list_fixture_pbp_external_response import (
+    FixturePbpExternalListFixturePbpExternalResponse,
+)
 from ...models.fixture_pbp_external_list_period_id import FixturePbpExternalListPeriodId
 from ...models.fixture_pbp_external_list_response_default import FixturePbpExternalListResponseDefault
 from ...types import UNSET, Response, Unset
@@ -68,7 +71,12 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> FixturePbpExternalListResponseDefault:
+) -> Union[FixturePbpExternalListFixturePbpExternalResponse, FixturePbpExternalListResponseDefault]:
+    if response.status_code == 200:
+        response_200 = FixturePbpExternalListFixturePbpExternalResponse.from_dict(response.json())
+
+        return response_200
+
     response_default = FixturePbpExternalListResponseDefault.from_dict(response.json())
 
     return response_default
@@ -76,7 +84,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[FixturePbpExternalListResponseDefault]:
+) -> Response[Union[FixturePbpExternalListFixturePbpExternalResponse, FixturePbpExternalListResponseDefault]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -99,7 +107,7 @@ def sync_detailed(
     offset: Union[Unset, int] = UNSET,
     period_id: Union[Unset, FixturePbpExternalListPeriodId] = UNSET,
     to_timestamp: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[FixturePbpExternalListResponseDefault]:
+) -> Response[Union[FixturePbpExternalListFixturePbpExternalResponse, FixturePbpExternalListResponseDefault]]:
     """Get a list play-by-play external records for a match
 
      Return a list of play-by-play external records for a match
@@ -123,7 +131,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[FixturePbpExternalListResponseDefault]
+        Response[Union[FixturePbpExternalListFixturePbpExternalResponse, FixturePbpExternalListResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -161,7 +169,7 @@ def sync(
     offset: Union[Unset, int] = UNSET,
     period_id: Union[Unset, FixturePbpExternalListPeriodId] = UNSET,
     to_timestamp: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[FixturePbpExternalListResponseDefault]:
+) -> Optional[Union[FixturePbpExternalListFixturePbpExternalResponse, FixturePbpExternalListResponseDefault]]:
     """Get a list play-by-play external records for a match
 
      Return a list of play-by-play external records for a match
@@ -185,7 +193,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        FixturePbpExternalListResponseDefault
+        Union[FixturePbpExternalListFixturePbpExternalResponse, FixturePbpExternalListResponseDefault]
     """
 
     return sync_detailed(
@@ -218,7 +226,7 @@ async def asyncio_detailed(
     offset: Union[Unset, int] = UNSET,
     period_id: Union[Unset, FixturePbpExternalListPeriodId] = UNSET,
     to_timestamp: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[FixturePbpExternalListResponseDefault]:
+) -> Response[Union[FixturePbpExternalListFixturePbpExternalResponse, FixturePbpExternalListResponseDefault]]:
     """Get a list play-by-play external records for a match
 
      Return a list of play-by-play external records for a match
@@ -242,7 +250,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[FixturePbpExternalListResponseDefault]
+        Response[Union[FixturePbpExternalListFixturePbpExternalResponse, FixturePbpExternalListResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -278,7 +286,7 @@ async def asyncio(
     offset: Union[Unset, int] = UNSET,
     period_id: Union[Unset, FixturePbpExternalListPeriodId] = UNSET,
     to_timestamp: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[FixturePbpExternalListResponseDefault]:
+) -> Optional[Union[FixturePbpExternalListFixturePbpExternalResponse, FixturePbpExternalListResponseDefault]]:
     """Get a list play-by-play external records for a match
 
      Return a list of play-by-play external records for a match
@@ -302,7 +310,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        FixturePbpExternalListResponseDefault
+        Union[FixturePbpExternalListFixturePbpExternalResponse, FixturePbpExternalListResponseDefault]
     """
 
     return (

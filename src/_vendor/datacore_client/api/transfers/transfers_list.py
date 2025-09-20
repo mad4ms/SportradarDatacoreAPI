@@ -8,7 +8,7 @@ import httpx
 from ...client import AuthenticatedClient, Client
 from ...models.transfers_list_response_default import TransfersListResponseDefault
 from ...models.transfers_list_transfer_type import TransfersListTransferType
-from ...models.transfers_response import TransfersResponse
+from ...models.transfers_list_transfers_response import TransfersListTransfersResponse
 from ...types import UNSET, Response, Unset
 
 
@@ -80,9 +80,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[TransfersListResponseDefault, TransfersResponse]:
+) -> Union[TransfersListResponseDefault, TransfersListTransfersResponse]:
     if response.status_code == 200:
-        response_200 = TransfersResponse.from_dict(response.json())
+        response_200 = TransfersListTransfersResponse.from_dict(response.json())
 
         return response_200
 
@@ -93,7 +93,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[Union[TransfersListResponseDefault, TransfersResponse]]:
+) -> Response[Union[TransfersListResponseDefault, TransfersListTransfersResponse]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -117,7 +117,7 @@ def sync_detailed(
     season_id: Union[Unset, UUID] = UNSET,
     transfer_type: Union[Unset, TransfersListTransferType] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[Union[TransfersListResponseDefault, TransfersResponse]]:
+) -> Response[Union[TransfersListResponseDefault, TransfersListTransfersResponse]]:
     """Get a list of transfers
 
      Return a list of transfers~
@@ -142,7 +142,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[TransfersListResponseDefault, TransfersResponse]]
+        Response[Union[TransfersListResponseDefault, TransfersListTransfersResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -182,7 +182,7 @@ def sync(
     season_id: Union[Unset, UUID] = UNSET,
     transfer_type: Union[Unset, TransfersListTransferType] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[Union[TransfersListResponseDefault, TransfersResponse]]:
+) -> Optional[Union[TransfersListResponseDefault, TransfersListTransfersResponse]]:
     """Get a list of transfers
 
      Return a list of transfers~
@@ -207,7 +207,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[TransfersListResponseDefault, TransfersResponse]
+        Union[TransfersListResponseDefault, TransfersListTransfersResponse]
     """
 
     return sync_detailed(
@@ -242,7 +242,7 @@ async def asyncio_detailed(
     season_id: Union[Unset, UUID] = UNSET,
     transfer_type: Union[Unset, TransfersListTransferType] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[Union[TransfersListResponseDefault, TransfersResponse]]:
+) -> Response[Union[TransfersListResponseDefault, TransfersListTransfersResponse]]:
     """Get a list of transfers
 
      Return a list of transfers~
@@ -267,7 +267,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[TransfersListResponseDefault, TransfersResponse]]
+        Response[Union[TransfersListResponseDefault, TransfersListTransfersResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -305,7 +305,7 @@ async def asyncio(
     season_id: Union[Unset, UUID] = UNSET,
     transfer_type: Union[Unset, TransfersListTransferType] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[Union[TransfersListResponseDefault, TransfersResponse]]:
+) -> Optional[Union[TransfersListResponseDefault, TransfersListTransfersResponse]]:
     """Get a list of transfers
 
      Return a list of transfers~
@@ -330,7 +330,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[TransfersListResponseDefault, TransfersResponse]
+        Union[TransfersListResponseDefault, TransfersListTransfersResponse]
     """
 
     return (

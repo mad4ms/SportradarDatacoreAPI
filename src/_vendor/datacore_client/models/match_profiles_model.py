@@ -9,7 +9,7 @@ from dateutil.parser import isoparse
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.match_profile_configuration import MatchProfileConfiguration
+    from ..models.match_profiles_model_match_profile_configuration import MatchProfilesModelMatchProfileConfiguration
     from ..models.match_profiles_model_organization import MatchProfilesModelOrganization
 
 
@@ -26,7 +26,7 @@ class MatchProfilesModel:
         organization (Union[Unset, MatchProfilesModelOrganization]): The organization that this match profiles belongs
             to
         name (Union[Unset, str]): Name of the match profile
-        profile (Union[Unset, MatchProfileConfiguration]): Match Profile Configuration
+        profile (Union[Unset, MatchProfilesModelMatchProfileConfiguration]): Match Profile Configuration
         updated (Union[Unset, datetime.datetime]): Date/time last modified. In UTC
         added (Union[Unset, datetime.datetime]): Date/time added. In UTC
         external_id (Union[None, Unset, str]): The Id of the data as set by the provider of the data Example: A123.
@@ -37,7 +37,7 @@ class MatchProfilesModel:
     organization_id: Union[Unset, str] = UNSET
     organization: Union[Unset, "MatchProfilesModelOrganization"] = UNSET
     name: Union[Unset, str] = UNSET
-    profile: Union[Unset, "MatchProfileConfiguration"] = UNSET
+    profile: Union[Unset, "MatchProfilesModelMatchProfileConfiguration"] = UNSET
     updated: Union[Unset, datetime.datetime] = UNSET
     added: Union[Unset, datetime.datetime] = UNSET
     external_id: Union[None, Unset, str] = UNSET
@@ -102,7 +102,9 @@ class MatchProfilesModel:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.match_profile_configuration import MatchProfileConfiguration
+        from ..models.match_profiles_model_match_profile_configuration import (
+            MatchProfilesModelMatchProfileConfiguration,
+        )
         from ..models.match_profiles_model_organization import MatchProfilesModelOrganization
 
         d = dict(src_dict)
@@ -125,11 +127,11 @@ class MatchProfilesModel:
         name = d.pop("name", UNSET)
 
         _profile = d.pop("profile", UNSET)
-        profile: Union[Unset, MatchProfileConfiguration]
+        profile: Union[Unset, MatchProfilesModelMatchProfileConfiguration]
         if isinstance(_profile, Unset):
             profile = UNSET
         else:
-            profile = MatchProfileConfiguration.from_dict(_profile)
+            profile = MatchProfilesModelMatchProfileConfiguration.from_dict(_profile)
 
         _updated = d.pop("updated", UNSET)
         updated: Union[Unset, datetime.datetime]

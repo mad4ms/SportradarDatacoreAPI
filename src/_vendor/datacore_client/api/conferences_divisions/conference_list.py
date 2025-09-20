@@ -5,6 +5,7 @@ from typing import Any, Optional, Union
 import httpx
 
 from ...client import AuthenticatedClient, Client
+from ...models.conference_list_conferences_response import ConferenceListConferencesResponse
 from ...models.conference_list_response_default import ConferenceListResponseDefault
 from ...types import UNSET, Response, Unset
 
@@ -67,7 +68,12 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> ConferenceListResponseDefault:
+) -> Union[ConferenceListConferencesResponse, ConferenceListResponseDefault]:
+    if response.status_code == 200:
+        response_200 = ConferenceListConferencesResponse.from_dict(response.json())
+
+        return response_200
+
     response_default = ConferenceListResponseDefault.from_dict(response.json())
 
     return response_default
@@ -75,7 +81,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[ConferenceListResponseDefault]:
+) -> Response[Union[ConferenceListConferencesResponse, ConferenceListResponseDefault]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -99,7 +105,7 @@ def sync_detailed(
     offset: Union[Unset, int] = UNSET,
     sort_by: Union[Unset, str] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[ConferenceListResponseDefault]:
+) -> Response[Union[ConferenceListConferencesResponse, ConferenceListResponseDefault]]:
     """Get a list of conferences
 
      Return a list of available conferences
@@ -124,7 +130,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[ConferenceListResponseDefault]
+        Response[Union[ConferenceListConferencesResponse, ConferenceListResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -164,7 +170,7 @@ def sync(
     offset: Union[Unset, int] = UNSET,
     sort_by: Union[Unset, str] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[ConferenceListResponseDefault]:
+) -> Optional[Union[ConferenceListConferencesResponse, ConferenceListResponseDefault]]:
     """Get a list of conferences
 
      Return a list of available conferences
@@ -189,7 +195,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        ConferenceListResponseDefault
+        Union[ConferenceListConferencesResponse, ConferenceListResponseDefault]
     """
 
     return sync_detailed(
@@ -224,7 +230,7 @@ async def asyncio_detailed(
     offset: Union[Unset, int] = UNSET,
     sort_by: Union[Unset, str] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[ConferenceListResponseDefault]:
+) -> Response[Union[ConferenceListConferencesResponse, ConferenceListResponseDefault]]:
     """Get a list of conferences
 
      Return a list of available conferences
@@ -249,7 +255,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[ConferenceListResponseDefault]
+        Response[Union[ConferenceListConferencesResponse, ConferenceListResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -287,7 +293,7 @@ async def asyncio(
     offset: Union[Unset, int] = UNSET,
     sort_by: Union[Unset, str] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[ConferenceListResponseDefault]:
+) -> Optional[Union[ConferenceListConferencesResponse, ConferenceListResponseDefault]]:
     """Get a list of conferences
 
      Return a list of available conferences
@@ -312,7 +318,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        ConferenceListResponseDefault
+        Union[ConferenceListConferencesResponse, ConferenceListResponseDefault]
     """
 
     return (

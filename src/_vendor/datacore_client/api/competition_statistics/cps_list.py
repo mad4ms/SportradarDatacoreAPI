@@ -5,7 +5,7 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.competition_person_statistics_response import CompetitionPersonStatisticsResponse
+from ...models.cps_list_competition_person_statistics_response import CpsListCompetitionPersonStatisticsResponse
 from ...models.cps_list_fixture_type import CpsListFixtureType
 from ...models.cps_list_home_away import CpsListHomeAway
 from ...models.cps_list_response_default import CpsListResponseDefault
@@ -93,9 +93,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[CompetitionPersonStatisticsResponse, CpsListResponseDefault]:
+) -> Union[CpsListCompetitionPersonStatisticsResponse, CpsListResponseDefault]:
     if response.status_code == 200:
-        response_200 = CompetitionPersonStatisticsResponse.from_dict(response.json())
+        response_200 = CpsListCompetitionPersonStatisticsResponse.from_dict(response.json())
 
         return response_200
 
@@ -106,7 +106,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[Union[CompetitionPersonStatisticsResponse, CpsListResponseDefault]]:
+) -> Response[Union[CpsListCompetitionPersonStatisticsResponse, CpsListResponseDefault]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -134,7 +134,7 @@ def sync_detailed(
     person_id: Union[Unset, UUID] = UNSET,
     starter: Union[Unset, bool] = UNSET,
     win_loss: Union[Unset, CpsListWinLoss] = UNSET,
-) -> Response[Union[CompetitionPersonStatisticsResponse, CpsListResponseDefault]]:
+) -> Response[Union[CpsListCompetitionPersonStatisticsResponse, CpsListResponseDefault]]:
     """Person statistics for a competition
 
      Return a list of person statistic totals for a competition
@@ -163,7 +163,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[CompetitionPersonStatisticsResponse, CpsListResponseDefault]]
+        Response[Union[CpsListCompetitionPersonStatisticsResponse, CpsListResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -211,7 +211,7 @@ def sync(
     person_id: Union[Unset, UUID] = UNSET,
     starter: Union[Unset, bool] = UNSET,
     win_loss: Union[Unset, CpsListWinLoss] = UNSET,
-) -> Optional[Union[CompetitionPersonStatisticsResponse, CpsListResponseDefault]]:
+) -> Optional[Union[CpsListCompetitionPersonStatisticsResponse, CpsListResponseDefault]]:
     """Person statistics for a competition
 
      Return a list of person statistic totals for a competition
@@ -240,7 +240,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[CompetitionPersonStatisticsResponse, CpsListResponseDefault]
+        Union[CpsListCompetitionPersonStatisticsResponse, CpsListResponseDefault]
     """
 
     return sync_detailed(
@@ -283,7 +283,7 @@ async def asyncio_detailed(
     person_id: Union[Unset, UUID] = UNSET,
     starter: Union[Unset, bool] = UNSET,
     win_loss: Union[Unset, CpsListWinLoss] = UNSET,
-) -> Response[Union[CompetitionPersonStatisticsResponse, CpsListResponseDefault]]:
+) -> Response[Union[CpsListCompetitionPersonStatisticsResponse, CpsListResponseDefault]]:
     """Person statistics for a competition
 
      Return a list of person statistic totals for a competition
@@ -312,7 +312,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[CompetitionPersonStatisticsResponse, CpsListResponseDefault]]
+        Response[Union[CpsListCompetitionPersonStatisticsResponse, CpsListResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -358,7 +358,7 @@ async def asyncio(
     person_id: Union[Unset, UUID] = UNSET,
     starter: Union[Unset, bool] = UNSET,
     win_loss: Union[Unset, CpsListWinLoss] = UNSET,
-) -> Optional[Union[CompetitionPersonStatisticsResponse, CpsListResponseDefault]]:
+) -> Optional[Union[CpsListCompetitionPersonStatisticsResponse, CpsListResponseDefault]]:
     """Person statistics for a competition
 
      Return a list of person statistic totals for a competition
@@ -387,7 +387,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[CompetitionPersonStatisticsResponse, CpsListResponseDefault]
+        Union[CpsListCompetitionPersonStatisticsResponse, CpsListResponseDefault]
     """
 
     return (

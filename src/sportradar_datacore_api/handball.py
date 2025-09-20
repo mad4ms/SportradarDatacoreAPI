@@ -15,10 +15,14 @@ from datacore_client.api.match_play_by_play import fixture_pbp_export
 from datacore_client.api.matches import fixture_list
 from datacore_client.api.seasons import season_list
 from datacore_client.models import (
+    CompetitionListCompetitionsResponse,
     CompetitionListResponseDefault,
+    FixtureListFixturesResponse,
     FixtureListResponseDefault,
     FixturePbpExportResponseDefault,
+    FixturePbpExportSuccessResponse,
     SeasonListResponseDefault,
+    SeasonListSeasonsResponse,
 )
 
 from sportradar_datacore_api.api import DataCoreAPI
@@ -51,17 +55,12 @@ class HandballAPI(DataCoreAPI):
             raise RuntimeError(f"HTTP {resp.status_code}: {resp.content!r}")
 
         parsed = resp.parsed
-        if isinstance(parsed, CompetitionListResponseDefault):
-            competitions = parsed.additional_properties[
-                "data"
-            ]  # list[CompetitionModel]
+        if isinstance(parsed, CompetitionListCompetitionsResponse):
+            competitions = list(parsed.data or [])  # list[CompetitionModel]
             for c in competitions:
-                comp_id = c.get("competitionId")
+                comp_id = c.competition_id
 
-                if (
-                    c.get("nameLocal")
-                    and c.get("nameLocal").lower() == competition_name.lower()
-                ):
+                if c.name_local and c.name_local.lower() == competition_name.lower():
                     return comp_id
         else:
             # Default/error schema from API (typed)
@@ -84,19 +83,15 @@ class HandballAPI(DataCoreAPI):
             logging.info("Seasons fetched successfully.")
             logging.debug("Status Code: %s", response.status_code)
             parsed = response.parsed
-            if isinstance(parsed, SeasonListResponseDefault):
-                seasons = parsed.additional_properties["data"]
+            if isinstance(parsed, SeasonListSeasonsResponse):
+                seasons = list(parsed.data or [])
 
                 for c in seasons:
-                    season_id = c.get("seasonId")
+                    season_id = c.season_id
 
-                    logging.debug(
-                        "Checking season: %s (%s)",
-                        c.get("nameLocal"),
-                        season_id,
-                    )
+                    logging.debug("Checking season: %s (%s)", c.name_local, season_id)
 
-                    if c.get("year") == int(season_year):
+                    if c.year == season_year:
                         return season_id
             else:
                 err: SeasonListResponseDefault = parsed
@@ -120,8 +115,8 @@ class HandballAPI(DataCoreAPI):
 
         parsed = resp.parsed
 
-        if isinstance(parsed, FixtureListResponseDefault):
-            return parsed.additional_properties["data"] or []
+        if isinstance(parsed, FixtureListFixturesResponse):
+            return parsed.data or []
         else:
             err: FixtureListResponseDefault = parsed
             raise RuntimeError(f"API error: {err}")
@@ -141,7 +136,7 @@ class HandballAPI(DataCoreAPI):
         if resp.status_code != 200:
             raise RuntimeError(f"HTTP {resp.status_code}: {resp.content!r}")
         parsed = resp.parsed
-        if isinstance(parsed, FixturePbpExportResponseDefault):
+        if isinstance(parsed, FixturePbpExportSuccessResponse):
             content_dict = json.loads(resp.content)
             return content_dict.get("data") or {}
         else:

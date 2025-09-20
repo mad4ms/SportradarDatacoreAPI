@@ -7,6 +7,7 @@ import httpx
 from ...client import AuthenticatedClient, Client
 from ...models.images_list_organization_base_type import ImagesListOrganizationBaseType
 from ...models.images_list_organization_image_type import ImagesListOrganizationImageType
+from ...models.images_list_organization_images_response import ImagesListOrganizationImagesResponse
 from ...models.images_list_organization_rating import ImagesListOrganizationRating
 from ...models.images_list_organization_response_default import ImagesListOrganizationResponseDefault
 from ...types import UNSET, Response, Unset
@@ -82,7 +83,12 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> ImagesListOrganizationResponseDefault:
+) -> Union[ImagesListOrganizationImagesResponse, ImagesListOrganizationResponseDefault]:
+    if response.status_code == 200:
+        response_200 = ImagesListOrganizationImagesResponse.from_dict(response.json())
+
+        return response_200
+
     response_default = ImagesListOrganizationResponseDefault.from_dict(response.json())
 
     return response_default
@@ -90,7 +96,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[ImagesListOrganizationResponseDefault]:
+) -> Response[Union[ImagesListOrganizationImagesResponse, ImagesListOrganizationResponseDefault]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -114,7 +120,7 @@ def sync_detailed(
     offset: Union[Unset, int] = UNSET,
     rating: Union[Unset, ImagesListOrganizationRating] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[ImagesListOrganizationResponseDefault]:
+) -> Response[Union[ImagesListOrganizationImagesResponse, ImagesListOrganizationResponseDefault]]:
     """Get a list of images for the Organization
 
      Return a list of images for the Organization
@@ -140,7 +146,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[ImagesListOrganizationResponseDefault]
+        Response[Union[ImagesListOrganizationImagesResponse, ImagesListOrganizationResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -180,7 +186,7 @@ def sync(
     offset: Union[Unset, int] = UNSET,
     rating: Union[Unset, ImagesListOrganizationRating] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[ImagesListOrganizationResponseDefault]:
+) -> Optional[Union[ImagesListOrganizationImagesResponse, ImagesListOrganizationResponseDefault]]:
     """Get a list of images for the Organization
 
      Return a list of images for the Organization
@@ -206,7 +212,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        ImagesListOrganizationResponseDefault
+        Union[ImagesListOrganizationImagesResponse, ImagesListOrganizationResponseDefault]
     """
 
     return sync_detailed(
@@ -241,7 +247,7 @@ async def asyncio_detailed(
     offset: Union[Unset, int] = UNSET,
     rating: Union[Unset, ImagesListOrganizationRating] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[ImagesListOrganizationResponseDefault]:
+) -> Response[Union[ImagesListOrganizationImagesResponse, ImagesListOrganizationResponseDefault]]:
     """Get a list of images for the Organization
 
      Return a list of images for the Organization
@@ -267,7 +273,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[ImagesListOrganizationResponseDefault]
+        Response[Union[ImagesListOrganizationImagesResponse, ImagesListOrganizationResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -305,7 +311,7 @@ async def asyncio(
     offset: Union[Unset, int] = UNSET,
     rating: Union[Unset, ImagesListOrganizationRating] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[ImagesListOrganizationResponseDefault]:
+) -> Optional[Union[ImagesListOrganizationImagesResponse, ImagesListOrganizationResponseDefault]]:
     """Get a list of images for the Organization
 
      Return a list of images for the Organization
@@ -331,7 +337,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        ImagesListOrganizationResponseDefault
+        Union[ImagesListOrganizationImagesResponse, ImagesListOrganizationResponseDefault]
     """
 
     return (

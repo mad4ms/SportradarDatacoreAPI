@@ -6,6 +6,9 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
+from ...models.fps_list_by_season_fixture_person_statistics_response import (
+    FpsListBySeasonFixturePersonStatisticsResponse,
+)
 from ...models.fps_list_by_season_response_default import FpsListBySeasonResponseDefault
 from ...types import UNSET, Response, Unset
 
@@ -84,7 +87,12 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> FpsListBySeasonResponseDefault:
+) -> Union[FpsListBySeasonFixturePersonStatisticsResponse, FpsListBySeasonResponseDefault]:
+    if response.status_code == 200:
+        response_200 = FpsListBySeasonFixturePersonStatisticsResponse.from_dict(response.json())
+
+        return response_200
+
     response_default = FpsListBySeasonResponseDefault.from_dict(response.json())
 
     return response_default
@@ -92,7 +100,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[FpsListBySeasonResponseDefault]:
+) -> Response[Union[FpsListBySeasonFixturePersonStatisticsResponse, FpsListBySeasonResponseDefault]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -120,7 +128,7 @@ def sync_detailed(
     person_id: Union[Unset, UUID] = UNSET,
     starter: Union[Unset, bool] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[FpsListBySeasonResponseDefault]:
+) -> Response[Union[FpsListBySeasonFixturePersonStatisticsResponse, FpsListBySeasonResponseDefault]]:
     """Person total statistics for matches in a season
 
      Return a list of person total statistics for matches in a season. Statistics are the totals (all
@@ -152,7 +160,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[FpsListBySeasonResponseDefault]
+        Response[Union[FpsListBySeasonFixturePersonStatisticsResponse, FpsListBySeasonResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -200,7 +208,7 @@ def sync(
     person_id: Union[Unset, UUID] = UNSET,
     starter: Union[Unset, bool] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[FpsListBySeasonResponseDefault]:
+) -> Optional[Union[FpsListBySeasonFixturePersonStatisticsResponse, FpsListBySeasonResponseDefault]]:
     """Person total statistics for matches in a season
 
      Return a list of person total statistics for matches in a season. Statistics are the totals (all
@@ -232,7 +240,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        FpsListBySeasonResponseDefault
+        Union[FpsListBySeasonFixturePersonStatisticsResponse, FpsListBySeasonResponseDefault]
     """
 
     return sync_detailed(
@@ -275,7 +283,7 @@ async def asyncio_detailed(
     person_id: Union[Unset, UUID] = UNSET,
     starter: Union[Unset, bool] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[FpsListBySeasonResponseDefault]:
+) -> Response[Union[FpsListBySeasonFixturePersonStatisticsResponse, FpsListBySeasonResponseDefault]]:
     """Person total statistics for matches in a season
 
      Return a list of person total statistics for matches in a season. Statistics are the totals (all
@@ -307,7 +315,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[FpsListBySeasonResponseDefault]
+        Response[Union[FpsListBySeasonFixturePersonStatisticsResponse, FpsListBySeasonResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -353,7 +361,7 @@ async def asyncio(
     person_id: Union[Unset, UUID] = UNSET,
     starter: Union[Unset, bool] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[FpsListBySeasonResponseDefault]:
+) -> Optional[Union[FpsListBySeasonFixturePersonStatisticsResponse, FpsListBySeasonResponseDefault]]:
     """Person total statistics for matches in a season
 
      Return a list of person total statistics for matches in a season. Statistics are the totals (all
@@ -385,7 +393,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        FpsListBySeasonResponseDefault
+        Union[FpsListBySeasonFixturePersonStatisticsResponse, FpsListBySeasonResponseDefault]
     """
 
     return (

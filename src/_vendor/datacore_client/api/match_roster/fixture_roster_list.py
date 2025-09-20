@@ -6,8 +6,8 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
+from ...models.fixture_roster_list_fixture_roster_response import FixtureRosterListFixtureRosterResponse
 from ...models.fixture_roster_list_response_default import FixtureRosterListResponseDefault
-from ...models.fixture_roster_response import FixtureRosterResponse
 from ...types import UNSET, Response, Unset
 
 
@@ -61,9 +61,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[FixtureRosterListResponseDefault, FixtureRosterResponse]:
+) -> Union[FixtureRosterListFixtureRosterResponse, FixtureRosterListResponseDefault]:
     if response.status_code == 200:
-        response_200 = FixtureRosterResponse.from_dict(response.json())
+        response_200 = FixtureRosterListFixtureRosterResponse.from_dict(response.json())
 
         return response_200
 
@@ -74,7 +74,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[Union[FixtureRosterListResponseDefault, FixtureRosterResponse]]:
+) -> Response[Union[FixtureRosterListFixtureRosterResponse, FixtureRosterListResponseDefault]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -96,7 +96,7 @@ def sync_detailed(
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[Union[FixtureRosterListResponseDefault, FixtureRosterResponse]]:
+) -> Response[Union[FixtureRosterListFixtureRosterResponse, FixtureRosterListResponseDefault]]:
     """Get the roster for a match
 
      Return a list of persons in the roster for a match
@@ -119,7 +119,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[FixtureRosterListResponseDefault, FixtureRosterResponse]]
+        Response[Union[FixtureRosterListFixtureRosterResponse, FixtureRosterListResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -155,7 +155,7 @@ def sync(
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[Union[FixtureRosterListResponseDefault, FixtureRosterResponse]]:
+) -> Optional[Union[FixtureRosterListFixtureRosterResponse, FixtureRosterListResponseDefault]]:
     """Get the roster for a match
 
      Return a list of persons in the roster for a match
@@ -178,7 +178,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[FixtureRosterListResponseDefault, FixtureRosterResponse]
+        Union[FixtureRosterListFixtureRosterResponse, FixtureRosterListResponseDefault]
     """
 
     return sync_detailed(
@@ -209,7 +209,7 @@ async def asyncio_detailed(
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[Union[FixtureRosterListResponseDefault, FixtureRosterResponse]]:
+) -> Response[Union[FixtureRosterListFixtureRosterResponse, FixtureRosterListResponseDefault]]:
     """Get the roster for a match
 
      Return a list of persons in the roster for a match
@@ -232,7 +232,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[FixtureRosterListResponseDefault, FixtureRosterResponse]]
+        Response[Union[FixtureRosterListFixtureRosterResponse, FixtureRosterListResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -266,7 +266,7 @@ async def asyncio(
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[Union[FixtureRosterListResponseDefault, FixtureRosterResponse]]:
+) -> Optional[Union[FixtureRosterListFixtureRosterResponse, FixtureRosterListResponseDefault]]:
     """Get the roster for a match
 
      Return a list of persons in the roster for a match
@@ -289,7 +289,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[FixtureRosterListResponseDefault, FixtureRosterResponse]
+        Union[FixtureRosterListFixtureRosterResponse, FixtureRosterListResponseDefault]
     """
 
     return (

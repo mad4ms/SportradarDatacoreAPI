@@ -13,10 +13,10 @@ from ..models.transfer_model_transfer_type import TransferModelTransferType
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.transfer_component import TransferComponent
     from ..models.transfer_model_competition import TransferModelCompetition
     from ..models.transfer_model_organization import TransferModelOrganization
     from ..models.transfer_model_season import TransferModelSeason
+    from ..models.transfer_model_transfer_component import TransferModelTransferComponent
 
 
 T = TypeVar("T", bound="TransferModel")
@@ -36,7 +36,7 @@ class TransferModel:
         season_id (Union[Unset, UUID]): The unique identifier of the season Example:
             009e9276-5c80-11e8-9c2d-fa7ae01bbebc.
         season (Union[Unset, TransferModelSeason]): The season linked to this record
-        components (Union[None, Unset, list['TransferComponent']]): List of transfer components
+        components (Union[None, Unset, list['TransferModelTransferComponent']]): List of transfer components
         status (Union[None, TransferModelStatusType1, TransferModelStatusType2Type1, TransferModelStatusType3Type1,
             Unset]): Transfer Status
             >- None None
@@ -68,7 +68,7 @@ class TransferModel:
     competition: Union[Unset, "TransferModelCompetition"] = UNSET
     season_id: Union[Unset, UUID] = UNSET
     season: Union[Unset, "TransferModelSeason"] = UNSET
-    components: Union[None, Unset, list["TransferComponent"]] = UNSET
+    components: Union[None, Unset, list["TransferModelTransferComponent"]] = UNSET
     status: Union[
         None, TransferModelStatusType1, TransferModelStatusType2Type1, TransferModelStatusType3Type1, Unset
     ] = UNSET
@@ -227,10 +227,10 @@ class TransferModel:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.transfer_component import TransferComponent
         from ..models.transfer_model_competition import TransferModelCompetition
         from ..models.transfer_model_organization import TransferModelOrganization
         from ..models.transfer_model_season import TransferModelSeason
+        from ..models.transfer_model_transfer_component import TransferModelTransferComponent
 
         d = dict(src_dict)
         _transfer_id = d.pop("transferId", UNSET)
@@ -277,7 +277,7 @@ class TransferModel:
         else:
             season = TransferModelSeason.from_dict(_season)
 
-        def _parse_components(data: object) -> Union[None, Unset, list["TransferComponent"]]:
+        def _parse_components(data: object) -> Union[None, Unset, list["TransferModelTransferComponent"]]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -288,14 +288,14 @@ class TransferModel:
                 components_type_0 = []
                 _components_type_0 = data
                 for components_type_0_item_data in _components_type_0:
-                    components_type_0_item = TransferComponent.from_dict(components_type_0_item_data)
+                    components_type_0_item = TransferModelTransferComponent.from_dict(components_type_0_item_data)
 
                     components_type_0.append(components_type_0_item)
 
                 return components_type_0
             except:  # noqa: E722
                 pass
-            return cast(Union[None, Unset, list["TransferComponent"]], data)
+            return cast(Union[None, Unset, list["TransferModelTransferComponent"]], data)
 
         components = _parse_components(d.pop("components", UNSET))
 

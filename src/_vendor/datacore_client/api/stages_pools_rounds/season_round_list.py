@@ -7,7 +7,7 @@ import httpx
 
 from ...client import AuthenticatedClient, Client
 from ...models.season_round_list_response_default import SeasonRoundListResponseDefault
-from ...models.season_rounds_response import SeasonRoundsResponse
+from ...models.season_round_list_season_rounds_response import SeasonRoundListSeasonRoundsResponse
 from ...types import UNSET, Response, Unset
 
 
@@ -67,9 +67,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[SeasonRoundListResponseDefault, SeasonRoundsResponse]:
+) -> Union[SeasonRoundListResponseDefault, SeasonRoundListSeasonRoundsResponse]:
     if response.status_code == 200:
-        response_200 = SeasonRoundsResponse.from_dict(response.json())
+        response_200 = SeasonRoundListSeasonRoundsResponse.from_dict(response.json())
 
         return response_200
 
@@ -80,7 +80,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[Union[SeasonRoundListResponseDefault, SeasonRoundsResponse]]:
+) -> Response[Union[SeasonRoundListResponseDefault, SeasonRoundListSeasonRoundsResponse]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -104,7 +104,7 @@ def sync_detailed(
     pool_code: Union[Unset, str] = UNSET,
     stage_code: Union[Unset, str] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[Union[SeasonRoundListResponseDefault, SeasonRoundsResponse]]:
+) -> Response[Union[SeasonRoundListResponseDefault, SeasonRoundListSeasonRoundsResponse]]:
     """Get a list of rounds
 
      Return a list of rounds in a season
@@ -129,7 +129,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SeasonRoundListResponseDefault, SeasonRoundsResponse]]
+        Response[Union[SeasonRoundListResponseDefault, SeasonRoundListSeasonRoundsResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -169,7 +169,7 @@ def sync(
     pool_code: Union[Unset, str] = UNSET,
     stage_code: Union[Unset, str] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[Union[SeasonRoundListResponseDefault, SeasonRoundsResponse]]:
+) -> Optional[Union[SeasonRoundListResponseDefault, SeasonRoundListSeasonRoundsResponse]]:
     """Get a list of rounds
 
      Return a list of rounds in a season
@@ -194,7 +194,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SeasonRoundListResponseDefault, SeasonRoundsResponse]
+        Union[SeasonRoundListResponseDefault, SeasonRoundListSeasonRoundsResponse]
     """
 
     return sync_detailed(
@@ -229,7 +229,7 @@ async def asyncio_detailed(
     pool_code: Union[Unset, str] = UNSET,
     stage_code: Union[Unset, str] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[Union[SeasonRoundListResponseDefault, SeasonRoundsResponse]]:
+) -> Response[Union[SeasonRoundListResponseDefault, SeasonRoundListSeasonRoundsResponse]]:
     """Get a list of rounds
 
      Return a list of rounds in a season
@@ -254,7 +254,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SeasonRoundListResponseDefault, SeasonRoundsResponse]]
+        Response[Union[SeasonRoundListResponseDefault, SeasonRoundListSeasonRoundsResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -292,7 +292,7 @@ async def asyncio(
     pool_code: Union[Unset, str] = UNSET,
     stage_code: Union[Unset, str] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[Union[SeasonRoundListResponseDefault, SeasonRoundsResponse]]:
+) -> Optional[Union[SeasonRoundListResponseDefault, SeasonRoundListSeasonRoundsResponse]]:
     """Get a list of rounds
 
      Return a list of rounds in a season
@@ -317,7 +317,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SeasonRoundListResponseDefault, SeasonRoundsResponse]
+        Union[SeasonRoundListResponseDefault, SeasonRoundListSeasonRoundsResponse]
     """
 
     return (

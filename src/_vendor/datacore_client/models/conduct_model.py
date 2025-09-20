@@ -24,6 +24,7 @@ from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
     from ..models.conduct_model_competition import ConductModelCompetition
+    from ..models.conduct_model_conduct_penalty_result import ConductModelConductPenaltyResult
     from ..models.conduct_model_entity import ConductModelEntity
     from ..models.conduct_model_entity_group import ConductModelEntityGroup
     from ..models.conduct_model_fixture import ConductModelFixture
@@ -31,7 +32,6 @@ if TYPE_CHECKING:
     from ..models.conduct_model_person import ConductModelPerson
     from ..models.conduct_model_season import ConductModelSeason
     from ..models.conduct_model_venue import ConductModelVenue
-    from ..models.conduct_penalty_result import ConductPenaltyResult
 
 
 T = TypeVar("T", bound="ConductModel")
@@ -131,7 +131,7 @@ class ConductModel:
             >- `PENDING` Pending
              Example: PENDING.
         life_sentence (Union[Unset, bool]): Was the result of the conduct hearing a life sentence? Example: True.
-        penalty_results (Union[Unset, list[Union['ConductPenaltyResult', None]]]):
+        penalty_results (Union[Unset, list[Union['ConductModelConductPenaltyResult', None]]]):
         fine_amount (Union[Unset, float]): Conduct fine amount
         fine_currency (Union[None, Unset, str]): Fine currency Example: USD.
         fine_status (Union[ConductModelFineStatusType1, ConductModelFineStatusType2Type1,
@@ -197,7 +197,7 @@ class ConductModel:
         Unset,
     ] = UNSET
     life_sentence: Union[Unset, bool] = UNSET
-    penalty_results: Union[Unset, list[Union["ConductPenaltyResult", None]]] = UNSET
+    penalty_results: Union[Unset, list[Union["ConductModelConductPenaltyResult", None]]] = UNSET
     fine_amount: Union[Unset, float] = UNSET
     fine_currency: Union[None, Unset, str] = UNSET
     fine_status: Union[
@@ -214,7 +214,7 @@ class ConductModel:
     added: Union[Unset, datetime.datetime] = UNSET
 
     def to_dict(self) -> dict[str, Any]:
-        from ..models.conduct_penalty_result import ConductPenaltyResult
+        from ..models.conduct_model_conduct_penalty_result import ConductModelConductPenaltyResult
 
         conduct_id: Union[Unset, str] = UNSET
         if not isinstance(self.conduct_id, Unset):
@@ -376,7 +376,7 @@ class ConductModel:
             penalty_results = []
             for penalty_results_item_data in self.penalty_results:
                 penalty_results_item: Union[None, dict[str, Any]]
-                if isinstance(penalty_results_item_data, ConductPenaltyResult):
+                if isinstance(penalty_results_item_data, ConductModelConductPenaltyResult):
                     penalty_results_item = penalty_results_item_data.to_dict()
                 else:
                     penalty_results_item = penalty_results_item_data
@@ -545,6 +545,7 @@ class ConductModel:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.conduct_model_competition import ConductModelCompetition
+        from ..models.conduct_model_conduct_penalty_result import ConductModelConductPenaltyResult
         from ..models.conduct_model_entity import ConductModelEntity
         from ..models.conduct_model_entity_group import ConductModelEntityGroup
         from ..models.conduct_model_fixture import ConductModelFixture
@@ -552,7 +553,6 @@ class ConductModel:
         from ..models.conduct_model_person import ConductModelPerson
         from ..models.conduct_model_season import ConductModelSeason
         from ..models.conduct_model_venue import ConductModelVenue
-        from ..models.conduct_penalty_result import ConductPenaltyResult
 
         d = dict(src_dict)
         _conduct_id = d.pop("conductId", UNSET)
@@ -864,18 +864,18 @@ class ConductModel:
         _penalty_results = d.pop("penaltyResults", UNSET)
         for penalty_results_item_data in _penalty_results or []:
 
-            def _parse_penalty_results_item(data: object) -> Union["ConductPenaltyResult", None]:
+            def _parse_penalty_results_item(data: object) -> Union["ConductModelConductPenaltyResult", None]:
                 if data is None:
                     return data
                 try:
                     if not isinstance(data, dict):
                         raise TypeError()
-                    penalty_results_item_type_0 = ConductPenaltyResult.from_dict(data)
+                    penalty_results_item_type_0 = ConductModelConductPenaltyResult.from_dict(data)
 
                     return penalty_results_item_type_0
                 except:  # noqa: E722
                     pass
-                return cast(Union["ConductPenaltyResult", None], data)
+                return cast(Union["ConductModelConductPenaltyResult", None], data)
 
             penalty_results_item = _parse_penalty_results_item(penalty_results_item_data)
 

@@ -7,10 +7,10 @@ import httpx
 
 from ...client import AuthenticatedClient, Client
 from ...models.person_list_gender import PersonListGender
+from ...models.person_list_persons_response import PersonListPersonsResponse
 from ...models.person_list_representing_country import PersonListRepresentingCountry
 from ...models.person_list_response_default import PersonListResponseDefault
 from ...models.person_list_status import PersonListStatus
-from ...models.persons_response import PersonsResponse
 from ...types import UNSET, Response, Unset
 
 
@@ -117,9 +117,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[PersonListResponseDefault, PersonsResponse]:
+) -> Union[PersonListPersonsResponse, PersonListResponseDefault]:
     if response.status_code == 200:
-        response_200 = PersonsResponse.from_dict(response.json())
+        response_200 = PersonListPersonsResponse.from_dict(response.json())
 
         return response_200
 
@@ -130,7 +130,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[Union[PersonListResponseDefault, PersonsResponse]]:
+) -> Response[Union[PersonListPersonsResponse, PersonListResponseDefault]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -164,7 +164,7 @@ def sync_detailed(
     sort_by: Union[Unset, str] = UNSET,
     status: Union[Unset, PersonListStatus] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[Union[PersonListResponseDefault, PersonsResponse]]:
+) -> Response[Union[PersonListPersonsResponse, PersonListResponseDefault]]:
     """Get a list of persons
 
      Return a list of available persons
@@ -202,7 +202,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[PersonListResponseDefault, PersonsResponse]]
+        Response[Union[PersonListPersonsResponse, PersonListResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -262,7 +262,7 @@ def sync(
     sort_by: Union[Unset, str] = UNSET,
     status: Union[Unset, PersonListStatus] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[Union[PersonListResponseDefault, PersonsResponse]]:
+) -> Optional[Union[PersonListPersonsResponse, PersonListResponseDefault]]:
     """Get a list of persons
 
      Return a list of available persons
@@ -300,7 +300,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[PersonListResponseDefault, PersonsResponse]
+        Union[PersonListPersonsResponse, PersonListResponseDefault]
     """
 
     return sync_detailed(
@@ -355,7 +355,7 @@ async def asyncio_detailed(
     sort_by: Union[Unset, str] = UNSET,
     status: Union[Unset, PersonListStatus] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[Union[PersonListResponseDefault, PersonsResponse]]:
+) -> Response[Union[PersonListPersonsResponse, PersonListResponseDefault]]:
     """Get a list of persons
 
      Return a list of available persons
@@ -393,7 +393,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[PersonListResponseDefault, PersonsResponse]]
+        Response[Union[PersonListPersonsResponse, PersonListResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -451,7 +451,7 @@ async def asyncio(
     sort_by: Union[Unset, str] = UNSET,
     status: Union[Unset, PersonListStatus] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[Union[PersonListResponseDefault, PersonsResponse]]:
+) -> Optional[Union[PersonListPersonsResponse, PersonListResponseDefault]]:
     """Get a list of persons
 
      Return a list of available persons
@@ -489,7 +489,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[PersonListResponseDefault, PersonsResponse]
+        Union[PersonListPersonsResponse, PersonListResponseDefault]
     """
 
     return (

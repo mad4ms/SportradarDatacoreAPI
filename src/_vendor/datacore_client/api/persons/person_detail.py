@@ -5,6 +5,7 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
+from ...models.person_detail_persons_response import PersonDetailPersonsResponse
 from ...models.person_detail_response_default import PersonDetailResponseDefault
 from ...types import UNSET, Response, Unset
 
@@ -47,7 +48,12 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> PersonDetailResponseDefault:
+) -> Union[PersonDetailPersonsResponse, PersonDetailResponseDefault]:
+    if response.status_code == 200:
+        response_200 = PersonDetailPersonsResponse.from_dict(response.json())
+
+        return response_200
+
     response_default = PersonDetailResponseDefault.from_dict(response.json())
 
     return response_default
@@ -55,7 +61,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[PersonDetailResponseDefault]:
+) -> Response[Union[PersonDetailPersonsResponse, PersonDetailResponseDefault]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -75,7 +81,7 @@ def sync_detailed(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Response[PersonDetailResponseDefault]:
+) -> Response[Union[PersonDetailPersonsResponse, PersonDetailResponseDefault]]:
     """Get a person
 
      Return detailed information about a specific person
@@ -96,7 +102,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[PersonDetailResponseDefault]
+        Response[Union[PersonDetailPersonsResponse, PersonDetailResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -128,7 +134,7 @@ def sync(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Optional[PersonDetailResponseDefault]:
+) -> Optional[Union[PersonDetailPersonsResponse, PersonDetailResponseDefault]]:
     """Get a person
 
      Return detailed information about a specific person
@@ -149,7 +155,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        PersonDetailResponseDefault
+        Union[PersonDetailPersonsResponse, PersonDetailResponseDefault]
     """
 
     return sync_detailed(
@@ -176,7 +182,7 @@ async def asyncio_detailed(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Response[PersonDetailResponseDefault]:
+) -> Response[Union[PersonDetailPersonsResponse, PersonDetailResponseDefault]]:
     """Get a person
 
      Return detailed information about a specific person
@@ -197,7 +203,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[PersonDetailResponseDefault]
+        Response[Union[PersonDetailPersonsResponse, PersonDetailResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -227,7 +233,7 @@ async def asyncio(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Optional[PersonDetailResponseDefault]:
+) -> Optional[Union[PersonDetailPersonsResponse, PersonDetailResponseDefault]]:
     """Get a person
 
      Return detailed information about a specific person
@@ -248,7 +254,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        PersonDetailResponseDefault
+        Union[PersonDetailPersonsResponse, PersonDetailResponseDefault]
     """
 
     return (

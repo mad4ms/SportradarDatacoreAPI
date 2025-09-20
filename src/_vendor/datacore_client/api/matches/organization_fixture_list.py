@@ -9,6 +9,7 @@ from ...client import AuthenticatedClient, Client
 from ...models.organization_fixture_list_competitor_type import OrganizationFixtureListCompetitorType
 from ...models.organization_fixture_list_discipline import OrganizationFixtureListDiscipline
 from ...models.organization_fixture_list_fixture_type import OrganizationFixtureListFixtureType
+from ...models.organization_fixture_list_fixtures_response import OrganizationFixtureListFixturesResponse
 from ...models.organization_fixture_list_response_default import OrganizationFixtureListResponseDefault
 from ...models.organization_fixture_list_status import OrganizationFixtureListStatus
 from ...models.organization_fixture_list_status_not import OrganizationFixtureListStatusNot
@@ -183,7 +184,12 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> OrganizationFixtureListResponseDefault:
+) -> Union[OrganizationFixtureListFixturesResponse, OrganizationFixtureListResponseDefault]:
+    if response.status_code == 200:
+        response_200 = OrganizationFixtureListFixturesResponse.from_dict(response.json())
+
+        return response_200
+
     response_default = OrganizationFixtureListResponseDefault.from_dict(response.json())
 
     return response_default
@@ -191,7 +197,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[OrganizationFixtureListResponseDefault]:
+) -> Response[Union[OrganizationFixtureListFixturesResponse, OrganizationFixtureListResponseDefault]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -237,7 +243,7 @@ def sync_detailed(
     to_time_utc: Union[Unset, datetime.datetime] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
     venue_id: Union[Unset, UUID] = UNSET,
-) -> Response[OrganizationFixtureListResponseDefault]:
+) -> Response[Union[OrganizationFixtureListFixturesResponse, OrganizationFixtureListResponseDefault]]:
     """Get a list of matches for the organization
 
      Return a list of matches for the organization
@@ -286,7 +292,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[OrganizationFixtureListResponseDefault]
+        Response[Union[OrganizationFixtureListFixturesResponse, OrganizationFixtureListResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -370,7 +376,7 @@ def sync(
     to_time_utc: Union[Unset, datetime.datetime] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
     venue_id: Union[Unset, UUID] = UNSET,
-) -> Optional[OrganizationFixtureListResponseDefault]:
+) -> Optional[Union[OrganizationFixtureListFixturesResponse, OrganizationFixtureListResponseDefault]]:
     """Get a list of matches for the organization
 
      Return a list of matches for the organization
@@ -419,7 +425,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        OrganizationFixtureListResponseDefault
+        Union[OrganizationFixtureListFixturesResponse, OrganizationFixtureListResponseDefault]
     """
 
     return sync_detailed(
@@ -498,7 +504,7 @@ async def asyncio_detailed(
     to_time_utc: Union[Unset, datetime.datetime] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
     venue_id: Union[Unset, UUID] = UNSET,
-) -> Response[OrganizationFixtureListResponseDefault]:
+) -> Response[Union[OrganizationFixtureListFixturesResponse, OrganizationFixtureListResponseDefault]]:
     """Get a list of matches for the organization
 
      Return a list of matches for the organization
@@ -547,7 +553,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[OrganizationFixtureListResponseDefault]
+        Response[Union[OrganizationFixtureListFixturesResponse, OrganizationFixtureListResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -629,7 +635,7 @@ async def asyncio(
     to_time_utc: Union[Unset, datetime.datetime] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
     venue_id: Union[Unset, UUID] = UNSET,
-) -> Optional[OrganizationFixtureListResponseDefault]:
+) -> Optional[Union[OrganizationFixtureListFixturesResponse, OrganizationFixtureListResponseDefault]]:
     """Get a list of matches for the organization
 
      Return a list of matches for the organization
@@ -678,7 +684,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        OrganizationFixtureListResponseDefault
+        Union[OrganizationFixtureListFixturesResponse, OrganizationFixtureListResponseDefault]
     """
 
     return (

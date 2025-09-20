@@ -7,7 +7,9 @@ import httpx
 
 from ...client import AuthenticatedClient, Client
 from ...models.standing_adjustments_list_response_default import StandingAdjustmentsListResponseDefault
-from ...models.standing_adjustments_response import StandingAdjustmentsResponse
+from ...models.standing_adjustments_list_standing_adjustments_response import (
+    StandingAdjustmentsListStandingAdjustmentsResponse,
+)
 from ...types import UNSET, Response, Unset
 
 
@@ -88,9 +90,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[StandingAdjustmentsListResponseDefault, StandingAdjustmentsResponse]:
+) -> Union[StandingAdjustmentsListResponseDefault, StandingAdjustmentsListStandingAdjustmentsResponse]:
     if response.status_code == 200:
-        response_200 = StandingAdjustmentsResponse.from_dict(response.json())
+        response_200 = StandingAdjustmentsListStandingAdjustmentsResponse.from_dict(response.json())
 
         return response_200
 
@@ -101,7 +103,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[Union[StandingAdjustmentsListResponseDefault, StandingAdjustmentsResponse]]:
+) -> Response[Union[StandingAdjustmentsListResponseDefault, StandingAdjustmentsListStandingAdjustmentsResponse]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -130,7 +132,7 @@ def sync_detailed(
     round_number: Union[Unset, str] = UNSET,
     stage_code: Union[Unset, str] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[Union[StandingAdjustmentsListResponseDefault, StandingAdjustmentsResponse]]:
+) -> Response[Union[StandingAdjustmentsListResponseDefault, StandingAdjustmentsListStandingAdjustmentsResponse]]:
     """Get a list of standing adjustments
 
      Return a list of standing adjustments
@@ -160,7 +162,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[StandingAdjustmentsListResponseDefault, StandingAdjustmentsResponse]]
+        Response[Union[StandingAdjustmentsListResponseDefault, StandingAdjustmentsListStandingAdjustmentsResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -210,7 +212,7 @@ def sync(
     round_number: Union[Unset, str] = UNSET,
     stage_code: Union[Unset, str] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[Union[StandingAdjustmentsListResponseDefault, StandingAdjustmentsResponse]]:
+) -> Optional[Union[StandingAdjustmentsListResponseDefault, StandingAdjustmentsListStandingAdjustmentsResponse]]:
     """Get a list of standing adjustments
 
      Return a list of standing adjustments
@@ -240,7 +242,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[StandingAdjustmentsListResponseDefault, StandingAdjustmentsResponse]
+        Union[StandingAdjustmentsListResponseDefault, StandingAdjustmentsListStandingAdjustmentsResponse]
     """
 
     return sync_detailed(
@@ -285,7 +287,7 @@ async def asyncio_detailed(
     round_number: Union[Unset, str] = UNSET,
     stage_code: Union[Unset, str] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[Union[StandingAdjustmentsListResponseDefault, StandingAdjustmentsResponse]]:
+) -> Response[Union[StandingAdjustmentsListResponseDefault, StandingAdjustmentsListStandingAdjustmentsResponse]]:
     """Get a list of standing adjustments
 
      Return a list of standing adjustments
@@ -315,7 +317,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[StandingAdjustmentsListResponseDefault, StandingAdjustmentsResponse]]
+        Response[Union[StandingAdjustmentsListResponseDefault, StandingAdjustmentsListStandingAdjustmentsResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -363,7 +365,7 @@ async def asyncio(
     round_number: Union[Unset, str] = UNSET,
     stage_code: Union[Unset, str] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[Union[StandingAdjustmentsListResponseDefault, StandingAdjustmentsResponse]]:
+) -> Optional[Union[StandingAdjustmentsListResponseDefault, StandingAdjustmentsListStandingAdjustmentsResponse]]:
     """Get a list of standing adjustments
 
      Return a list of standing adjustments
@@ -393,7 +395,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[StandingAdjustmentsListResponseDefault, StandingAdjustmentsResponse]
+        Union[StandingAdjustmentsListResponseDefault, StandingAdjustmentsListStandingAdjustmentsResponse]
     """
 
     return (

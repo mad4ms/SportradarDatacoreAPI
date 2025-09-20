@@ -5,6 +5,7 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
+from ...models.leader_qualifiers_detail_leader_qualifiers_response import LeaderQualifiersDetailLeaderQualifiersResponse
 from ...models.leader_qualifiers_detail_response_default import LeaderQualifiersDetailResponseDefault
 from ...types import UNSET, Response, Unset
 
@@ -48,7 +49,12 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> LeaderQualifiersDetailResponseDefault:
+) -> Union[LeaderQualifiersDetailLeaderQualifiersResponse, LeaderQualifiersDetailResponseDefault]:
+    if response.status_code == 200:
+        response_200 = LeaderQualifiersDetailLeaderQualifiersResponse.from_dict(response.json())
+
+        return response_200
+
     response_default = LeaderQualifiersDetailResponseDefault.from_dict(response.json())
 
     return response_default
@@ -56,7 +62,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[LeaderQualifiersDetailResponseDefault]:
+) -> Response[Union[LeaderQualifiersDetailLeaderQualifiersResponse, LeaderQualifiersDetailResponseDefault]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -77,7 +83,7 @@ def sync_detailed(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Response[LeaderQualifiersDetailResponseDefault]:
+) -> Response[Union[LeaderQualifiersDetailLeaderQualifiersResponse, LeaderQualifiersDetailResponseDefault]]:
     """Get a specific leader qualifier
 
      Return detailed information about a specific leader qualifier
@@ -99,7 +105,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[LeaderQualifiersDetailResponseDefault]
+        Response[Union[LeaderQualifiersDetailLeaderQualifiersResponse, LeaderQualifiersDetailResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -133,7 +139,7 @@ def sync(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Optional[LeaderQualifiersDetailResponseDefault]:
+) -> Optional[Union[LeaderQualifiersDetailLeaderQualifiersResponse, LeaderQualifiersDetailResponseDefault]]:
     """Get a specific leader qualifier
 
      Return detailed information about a specific leader qualifier
@@ -155,7 +161,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        LeaderQualifiersDetailResponseDefault
+        Union[LeaderQualifiersDetailLeaderQualifiersResponse, LeaderQualifiersDetailResponseDefault]
     """
 
     return sync_detailed(
@@ -184,7 +190,7 @@ async def asyncio_detailed(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Response[LeaderQualifiersDetailResponseDefault]:
+) -> Response[Union[LeaderQualifiersDetailLeaderQualifiersResponse, LeaderQualifiersDetailResponseDefault]]:
     """Get a specific leader qualifier
 
      Return detailed information about a specific leader qualifier
@@ -206,7 +212,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[LeaderQualifiersDetailResponseDefault]
+        Response[Union[LeaderQualifiersDetailLeaderQualifiersResponse, LeaderQualifiersDetailResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -238,7 +244,7 @@ async def asyncio(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Optional[LeaderQualifiersDetailResponseDefault]:
+) -> Optional[Union[LeaderQualifiersDetailLeaderQualifiersResponse, LeaderQualifiersDetailResponseDefault]]:
     """Get a specific leader qualifier
 
      Return detailed information about a specific leader qualifier
@@ -260,7 +266,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        LeaderQualifiersDetailResponseDefault
+        Union[LeaderQualifiersDetailLeaderQualifiersResponse, LeaderQualifiersDetailResponseDefault]
     """
 
     return (

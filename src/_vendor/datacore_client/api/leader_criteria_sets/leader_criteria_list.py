@@ -4,8 +4,8 @@ from typing import Any, Optional, Union
 import httpx
 
 from ...client import AuthenticatedClient, Client
+from ...models.leader_criteria_list_leader_criteria_response import LeaderCriteriaListLeaderCriteriaResponse
 from ...models.leader_criteria_list_response_default import LeaderCriteriaListResponseDefault
-from ...models.leader_criteria_response import LeaderCriteriaResponse
 from ...types import UNSET, Response, Unset
 
 
@@ -52,9 +52,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[LeaderCriteriaListResponseDefault, LeaderCriteriaResponse]:
+) -> Union[LeaderCriteriaListLeaderCriteriaResponse, LeaderCriteriaListResponseDefault]:
     if response.status_code == 200:
-        response_200 = LeaderCriteriaResponse.from_dict(response.json())
+        response_200 = LeaderCriteriaListLeaderCriteriaResponse.from_dict(response.json())
 
         return response_200
 
@@ -65,7 +65,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[Union[LeaderCriteriaListResponseDefault, LeaderCriteriaResponse]]:
+) -> Response[Union[LeaderCriteriaListLeaderCriteriaResponse, LeaderCriteriaListResponseDefault]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -86,7 +86,7 @@ def sync_detailed(
     name: Union[Unset, str] = UNSET,
     name_contains: Union[Unset, str] = UNSET,
     offset: Union[Unset, int] = UNSET,
-) -> Response[Union[LeaderCriteriaListResponseDefault, LeaderCriteriaResponse]]:
+) -> Response[Union[LeaderCriteriaListLeaderCriteriaResponse, LeaderCriteriaListResponseDefault]]:
     """Get a list of leader criteria sets
 
      Return a list of leader criteria sets
@@ -108,7 +108,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[LeaderCriteriaListResponseDefault, LeaderCriteriaResponse]]
+        Response[Union[LeaderCriteriaListLeaderCriteriaResponse, LeaderCriteriaListResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -142,7 +142,7 @@ def sync(
     name: Union[Unset, str] = UNSET,
     name_contains: Union[Unset, str] = UNSET,
     offset: Union[Unset, int] = UNSET,
-) -> Optional[Union[LeaderCriteriaListResponseDefault, LeaderCriteriaResponse]]:
+) -> Optional[Union[LeaderCriteriaListLeaderCriteriaResponse, LeaderCriteriaListResponseDefault]]:
     """Get a list of leader criteria sets
 
      Return a list of leader criteria sets
@@ -164,7 +164,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[LeaderCriteriaListResponseDefault, LeaderCriteriaResponse]
+        Union[LeaderCriteriaListLeaderCriteriaResponse, LeaderCriteriaListResponseDefault]
     """
 
     return sync_detailed(
@@ -193,7 +193,7 @@ async def asyncio_detailed(
     name: Union[Unset, str] = UNSET,
     name_contains: Union[Unset, str] = UNSET,
     offset: Union[Unset, int] = UNSET,
-) -> Response[Union[LeaderCriteriaListResponseDefault, LeaderCriteriaResponse]]:
+) -> Response[Union[LeaderCriteriaListLeaderCriteriaResponse, LeaderCriteriaListResponseDefault]]:
     """Get a list of leader criteria sets
 
      Return a list of leader criteria sets
@@ -215,7 +215,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[LeaderCriteriaListResponseDefault, LeaderCriteriaResponse]]
+        Response[Union[LeaderCriteriaListLeaderCriteriaResponse, LeaderCriteriaListResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -247,7 +247,7 @@ async def asyncio(
     name: Union[Unset, str] = UNSET,
     name_contains: Union[Unset, str] = UNSET,
     offset: Union[Unset, int] = UNSET,
-) -> Optional[Union[LeaderCriteriaListResponseDefault, LeaderCriteriaResponse]]:
+) -> Optional[Union[LeaderCriteriaListLeaderCriteriaResponse, LeaderCriteriaListResponseDefault]]:
     """Get a list of leader criteria sets
 
      Return a list of leader criteria sets
@@ -269,7 +269,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[LeaderCriteriaListResponseDefault, LeaderCriteriaResponse]
+        Union[LeaderCriteriaListLeaderCriteriaResponse, LeaderCriteriaListResponseDefault]
     """
 
     return (

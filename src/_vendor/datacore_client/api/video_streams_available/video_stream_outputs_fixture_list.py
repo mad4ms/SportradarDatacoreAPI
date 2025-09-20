@@ -9,6 +9,9 @@ from ...client import AuthenticatedClient, Client
 from ...models.video_stream_outputs_fixture_list_content import VideoStreamOutputsFixtureListContent
 from ...models.video_stream_outputs_fixture_list_feed_type import VideoStreamOutputsFixtureListFeedType
 from ...models.video_stream_outputs_fixture_list_response_default import VideoStreamOutputsFixtureListResponseDefault
+from ...models.video_stream_outputs_fixture_list_video_stream_outputs_response import (
+    VideoStreamOutputsFixtureListVideoStreamOutputsResponse,
+)
 from ...types import UNSET, Response, Unset
 
 
@@ -85,7 +88,12 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> VideoStreamOutputsFixtureListResponseDefault:
+) -> Union[VideoStreamOutputsFixtureListResponseDefault, VideoStreamOutputsFixtureListVideoStreamOutputsResponse]:
+    if response.status_code == 200:
+        response_200 = VideoStreamOutputsFixtureListVideoStreamOutputsResponse.from_dict(response.json())
+
+        return response_200
+
     response_default = VideoStreamOutputsFixtureListResponseDefault.from_dict(response.json())
 
     return response_default
@@ -93,7 +101,9 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[VideoStreamOutputsFixtureListResponseDefault]:
+) -> Response[
+    Union[VideoStreamOutputsFixtureListResponseDefault, VideoStreamOutputsFixtureListVideoStreamOutputsResponse]
+]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -120,7 +130,9 @@ def sync_detailed(
     provider: Union[Unset, str] = UNSET,
     source_number: Union[Unset, int] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[VideoStreamOutputsFixtureListResponseDefault]:
+) -> Response[
+    Union[VideoStreamOutputsFixtureListResponseDefault, VideoStreamOutputsFixtureListVideoStreamOutputsResponse]
+]:
     """List available video streams for a match
 
      Display the list of video streams for a match
@@ -148,7 +160,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[VideoStreamOutputsFixtureListResponseDefault]
+        Response[Union[VideoStreamOutputsFixtureListResponseDefault, VideoStreamOutputsFixtureListVideoStreamOutputsResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -194,7 +206,9 @@ def sync(
     provider: Union[Unset, str] = UNSET,
     source_number: Union[Unset, int] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[VideoStreamOutputsFixtureListResponseDefault]:
+) -> Optional[
+    Union[VideoStreamOutputsFixtureListResponseDefault, VideoStreamOutputsFixtureListVideoStreamOutputsResponse]
+]:
     """List available video streams for a match
 
      Display the list of video streams for a match
@@ -222,7 +236,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        VideoStreamOutputsFixtureListResponseDefault
+        Union[VideoStreamOutputsFixtureListResponseDefault, VideoStreamOutputsFixtureListVideoStreamOutputsResponse]
     """
 
     return sync_detailed(
@@ -263,7 +277,9 @@ async def asyncio_detailed(
     provider: Union[Unset, str] = UNSET,
     source_number: Union[Unset, int] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[VideoStreamOutputsFixtureListResponseDefault]:
+) -> Response[
+    Union[VideoStreamOutputsFixtureListResponseDefault, VideoStreamOutputsFixtureListVideoStreamOutputsResponse]
+]:
     """List available video streams for a match
 
      Display the list of video streams for a match
@@ -291,7 +307,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[VideoStreamOutputsFixtureListResponseDefault]
+        Response[Union[VideoStreamOutputsFixtureListResponseDefault, VideoStreamOutputsFixtureListVideoStreamOutputsResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -335,7 +351,9 @@ async def asyncio(
     provider: Union[Unset, str] = UNSET,
     source_number: Union[Unset, int] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[VideoStreamOutputsFixtureListResponseDefault]:
+) -> Optional[
+    Union[VideoStreamOutputsFixtureListResponseDefault, VideoStreamOutputsFixtureListVideoStreamOutputsResponse]
+]:
     """List available video streams for a match
 
      Display the list of video streams for a match
@@ -363,7 +381,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        VideoStreamOutputsFixtureListResponseDefault
+        Union[VideoStreamOutputsFixtureListResponseDefault, VideoStreamOutputsFixtureListVideoStreamOutputsResponse]
     """
 
     return (

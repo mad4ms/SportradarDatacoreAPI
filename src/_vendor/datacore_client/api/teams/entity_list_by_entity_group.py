@@ -8,6 +8,7 @@ import httpx
 from ...client import AuthenticatedClient, Client
 from ...models.entity_list_by_entity_group_age_group import EntityListByEntityGroupAgeGroup
 from ...models.entity_list_by_entity_group_discipline import EntityListByEntityGroupDiscipline
+from ...models.entity_list_by_entity_group_entities_response import EntityListByEntityGroupEntitiesResponse
 from ...models.entity_list_by_entity_group_gender import EntityListByEntityGroupGender
 from ...models.entity_list_by_entity_group_response_default import EntityListByEntityGroupResponseDefault
 from ...models.entity_list_by_entity_group_standard import EntityListByEntityGroupStandard
@@ -106,7 +107,12 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> EntityListByEntityGroupResponseDefault:
+) -> Union[EntityListByEntityGroupEntitiesResponse, EntityListByEntityGroupResponseDefault]:
+    if response.status_code == 200:
+        response_200 = EntityListByEntityGroupEntitiesResponse.from_dict(response.json())
+
+        return response_200
+
     response_default = EntityListByEntityGroupResponseDefault.from_dict(response.json())
 
     return response_default
@@ -114,7 +120,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[EntityListByEntityGroupResponseDefault]:
+) -> Response[Union[EntityListByEntityGroupEntitiesResponse, EntityListByEntityGroupResponseDefault]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -143,7 +149,7 @@ def sync_detailed(
     standard: Union[Unset, EntityListByEntityGroupStandard] = UNSET,
     status: Union[Unset, EntityListByEntityGroupStatus] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[EntityListByEntityGroupResponseDefault]:
+) -> Response[Union[EntityListByEntityGroupEntitiesResponse, EntityListByEntityGroupResponseDefault]]:
     """Get a list of teams for a club
 
      Return a list of available teams linked to a specific club
@@ -173,7 +179,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[EntityListByEntityGroupResponseDefault]
+        Response[Union[EntityListByEntityGroupEntitiesResponse, EntityListByEntityGroupResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -223,7 +229,7 @@ def sync(
     standard: Union[Unset, EntityListByEntityGroupStandard] = UNSET,
     status: Union[Unset, EntityListByEntityGroupStatus] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[EntityListByEntityGroupResponseDefault]:
+) -> Optional[Union[EntityListByEntityGroupEntitiesResponse, EntityListByEntityGroupResponseDefault]]:
     """Get a list of teams for a club
 
      Return a list of available teams linked to a specific club
@@ -253,7 +259,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        EntityListByEntityGroupResponseDefault
+        Union[EntityListByEntityGroupEntitiesResponse, EntityListByEntityGroupResponseDefault]
     """
 
     return sync_detailed(
@@ -298,7 +304,7 @@ async def asyncio_detailed(
     standard: Union[Unset, EntityListByEntityGroupStandard] = UNSET,
     status: Union[Unset, EntityListByEntityGroupStatus] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[EntityListByEntityGroupResponseDefault]:
+) -> Response[Union[EntityListByEntityGroupEntitiesResponse, EntityListByEntityGroupResponseDefault]]:
     """Get a list of teams for a club
 
      Return a list of available teams linked to a specific club
@@ -328,7 +334,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[EntityListByEntityGroupResponseDefault]
+        Response[Union[EntityListByEntityGroupEntitiesResponse, EntityListByEntityGroupResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -376,7 +382,7 @@ async def asyncio(
     standard: Union[Unset, EntityListByEntityGroupStandard] = UNSET,
     status: Union[Unset, EntityListByEntityGroupStatus] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[EntityListByEntityGroupResponseDefault]:
+) -> Optional[Union[EntityListByEntityGroupEntitiesResponse, EntityListByEntityGroupResponseDefault]]:
     """Get a list of teams for a club
 
      Return a list of available teams linked to a specific club
@@ -406,7 +412,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        EntityListByEntityGroupResponseDefault
+        Union[EntityListByEntityGroupEntitiesResponse, EntityListByEntityGroupResponseDefault]
     """
 
     return (

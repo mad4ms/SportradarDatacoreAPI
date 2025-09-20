@@ -7,6 +7,7 @@ import httpx
 from ...client import AuthenticatedClient, Client
 from ...models.venue_list_response_default import VenueListResponseDefault
 from ...models.venue_list_status import VenueListStatus
+from ...models.venue_list_venues_response import VenueListVenuesResponse
 from ...types import UNSET, Response, Unset
 
 
@@ -84,7 +85,12 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> VenueListResponseDefault:
+) -> Union[VenueListResponseDefault, VenueListVenuesResponse]:
+    if response.status_code == 200:
+        response_200 = VenueListVenuesResponse.from_dict(response.json())
+
+        return response_200
+
     response_default = VenueListResponseDefault.from_dict(response.json())
 
     return response_default
@@ -92,7 +98,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[VenueListResponseDefault]:
+) -> Response[Union[VenueListResponseDefault, VenueListVenuesResponse]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -120,7 +126,7 @@ def sync_detailed(
     sort_by: Union[Unset, str] = UNSET,
     status: Union[Unset, VenueListStatus] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[VenueListResponseDefault]:
+) -> Response[Union[VenueListResponseDefault, VenueListVenuesResponse]]:
     """Get a list of venues
 
      Return a list of available venues
@@ -149,7 +155,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[VenueListResponseDefault]
+        Response[Union[VenueListResponseDefault, VenueListVenuesResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -197,7 +203,7 @@ def sync(
     sort_by: Union[Unset, str] = UNSET,
     status: Union[Unset, VenueListStatus] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[VenueListResponseDefault]:
+) -> Optional[Union[VenueListResponseDefault, VenueListVenuesResponse]]:
     """Get a list of venues
 
      Return a list of available venues
@@ -226,7 +232,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        VenueListResponseDefault
+        Union[VenueListResponseDefault, VenueListVenuesResponse]
     """
 
     return sync_detailed(
@@ -269,7 +275,7 @@ async def asyncio_detailed(
     sort_by: Union[Unset, str] = UNSET,
     status: Union[Unset, VenueListStatus] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[VenueListResponseDefault]:
+) -> Response[Union[VenueListResponseDefault, VenueListVenuesResponse]]:
     """Get a list of venues
 
      Return a list of available venues
@@ -298,7 +304,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[VenueListResponseDefault]
+        Response[Union[VenueListResponseDefault, VenueListVenuesResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -344,7 +350,7 @@ async def asyncio(
     sort_by: Union[Unset, str] = UNSET,
     status: Union[Unset, VenueListStatus] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[VenueListResponseDefault]:
+) -> Optional[Union[VenueListResponseDefault, VenueListVenuesResponse]]:
     """Get a list of venues
 
      Return a list of available venues
@@ -373,7 +379,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        VenueListResponseDefault
+        Union[VenueListResponseDefault, VenueListVenuesResponse]
     """
 
     return (

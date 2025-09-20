@@ -7,6 +7,7 @@ import httpx
 
 from ...client import AuthenticatedClient, Client
 from ...models.awards_list_seasons_award import AwardsListSeasonsAward
+from ...models.awards_list_seasons_awards_response import AwardsListSeasonsAwardsResponse
 from ...models.awards_list_seasons_response_default import AwardsListSeasonsResponseDefault
 from ...types import UNSET, Response, Unset
 
@@ -109,7 +110,12 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> AwardsListSeasonsResponseDefault:
+) -> Union[AwardsListSeasonsAwardsResponse, AwardsListSeasonsResponseDefault]:
+    if response.status_code == 200:
+        response_200 = AwardsListSeasonsAwardsResponse.from_dict(response.json())
+
+        return response_200
+
     response_default = AwardsListSeasonsResponseDefault.from_dict(response.json())
 
     return response_default
@@ -117,7 +123,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[AwardsListSeasonsResponseDefault]:
+) -> Response[Union[AwardsListSeasonsAwardsResponse, AwardsListSeasonsResponseDefault]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -146,7 +152,7 @@ def sync_detailed(
     person_id: Union[Unset, UUID] = UNSET,
     season_id: Union[Unset, UUID] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[AwardsListSeasonsResponseDefault]:
+) -> Response[Union[AwardsListSeasonsAwardsResponse, AwardsListSeasonsResponseDefault]]:
     """Get a list of season awards
 
      Return a list of awards for the organization (linked to seasons)
@@ -176,7 +182,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[AwardsListSeasonsResponseDefault]
+        Response[Union[AwardsListSeasonsAwardsResponse, AwardsListSeasonsResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -226,7 +232,7 @@ def sync(
     person_id: Union[Unset, UUID] = UNSET,
     season_id: Union[Unset, UUID] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[AwardsListSeasonsResponseDefault]:
+) -> Optional[Union[AwardsListSeasonsAwardsResponse, AwardsListSeasonsResponseDefault]]:
     """Get a list of season awards
 
      Return a list of awards for the organization (linked to seasons)
@@ -256,7 +262,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        AwardsListSeasonsResponseDefault
+        Union[AwardsListSeasonsAwardsResponse, AwardsListSeasonsResponseDefault]
     """
 
     return sync_detailed(
@@ -301,7 +307,7 @@ async def asyncio_detailed(
     person_id: Union[Unset, UUID] = UNSET,
     season_id: Union[Unset, UUID] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[AwardsListSeasonsResponseDefault]:
+) -> Response[Union[AwardsListSeasonsAwardsResponse, AwardsListSeasonsResponseDefault]]:
     """Get a list of season awards
 
      Return a list of awards for the organization (linked to seasons)
@@ -331,7 +337,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[AwardsListSeasonsResponseDefault]
+        Response[Union[AwardsListSeasonsAwardsResponse, AwardsListSeasonsResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -379,7 +385,7 @@ async def asyncio(
     person_id: Union[Unset, UUID] = UNSET,
     season_id: Union[Unset, UUID] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[AwardsListSeasonsResponseDefault]:
+) -> Optional[Union[AwardsListSeasonsAwardsResponse, AwardsListSeasonsResponseDefault]]:
     """Get a list of season awards
 
      Return a list of awards for the organization (linked to seasons)
@@ -409,7 +415,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        AwardsListSeasonsResponseDefault
+        Union[AwardsListSeasonsAwardsResponse, AwardsListSeasonsResponseDefault]
     """
 
     return (

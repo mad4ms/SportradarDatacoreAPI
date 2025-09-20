@@ -9,7 +9,9 @@ from ...client import AuthenticatedClient, Client
 from ...models.video_stream_outputs_org_list_content import VideoStreamOutputsOrgListContent
 from ...models.video_stream_outputs_org_list_feed_type import VideoStreamOutputsOrgListFeedType
 from ...models.video_stream_outputs_org_list_response_default import VideoStreamOutputsOrgListResponseDefault
-from ...models.video_stream_outputs_response import VideoStreamOutputsResponse
+from ...models.video_stream_outputs_org_list_video_stream_outputs_response import (
+    VideoStreamOutputsOrgListVideoStreamOutputsResponse,
+)
 from ...types import UNSET, Response, Unset
 
 
@@ -121,9 +123,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[VideoStreamOutputsOrgListResponseDefault, VideoStreamOutputsResponse]:
+) -> Union[VideoStreamOutputsOrgListResponseDefault, VideoStreamOutputsOrgListVideoStreamOutputsResponse]:
     if response.status_code == 200:
-        response_200 = VideoStreamOutputsResponse.from_dict(response.json())
+        response_200 = VideoStreamOutputsOrgListVideoStreamOutputsResponse.from_dict(response.json())
 
         return response_200
 
@@ -134,7 +136,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[Union[VideoStreamOutputsOrgListResponseDefault, VideoStreamOutputsResponse]]:
+) -> Response[Union[VideoStreamOutputsOrgListResponseDefault, VideoStreamOutputsOrgListVideoStreamOutputsResponse]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -166,7 +168,7 @@ def sync_detailed(
     to_time_utc: Union[Unset, datetime.datetime] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
     venue_id: Union[Unset, UUID] = UNSET,
-) -> Response[Union[VideoStreamOutputsOrgListResponseDefault, VideoStreamOutputsResponse]]:
+) -> Response[Union[VideoStreamOutputsOrgListResponseDefault, VideoStreamOutputsOrgListVideoStreamOutputsResponse]]:
     """List available video streams for an organization
 
      Display the list of video streams for an organization. Streams for completed matches and those older
@@ -200,7 +202,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[VideoStreamOutputsOrgListResponseDefault, VideoStreamOutputsResponse]]
+        Response[Union[VideoStreamOutputsOrgListResponseDefault, VideoStreamOutputsOrgListVideoStreamOutputsResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -256,7 +258,7 @@ def sync(
     to_time_utc: Union[Unset, datetime.datetime] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
     venue_id: Union[Unset, UUID] = UNSET,
-) -> Optional[Union[VideoStreamOutputsOrgListResponseDefault, VideoStreamOutputsResponse]]:
+) -> Optional[Union[VideoStreamOutputsOrgListResponseDefault, VideoStreamOutputsOrgListVideoStreamOutputsResponse]]:
     """List available video streams for an organization
 
      Display the list of video streams for an organization. Streams for completed matches and those older
@@ -290,7 +292,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[VideoStreamOutputsOrgListResponseDefault, VideoStreamOutputsResponse]
+        Union[VideoStreamOutputsOrgListResponseDefault, VideoStreamOutputsOrgListVideoStreamOutputsResponse]
     """
 
     return sync_detailed(
@@ -341,7 +343,7 @@ async def asyncio_detailed(
     to_time_utc: Union[Unset, datetime.datetime] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
     venue_id: Union[Unset, UUID] = UNSET,
-) -> Response[Union[VideoStreamOutputsOrgListResponseDefault, VideoStreamOutputsResponse]]:
+) -> Response[Union[VideoStreamOutputsOrgListResponseDefault, VideoStreamOutputsOrgListVideoStreamOutputsResponse]]:
     """List available video streams for an organization
 
      Display the list of video streams for an organization. Streams for completed matches and those older
@@ -375,7 +377,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[VideoStreamOutputsOrgListResponseDefault, VideoStreamOutputsResponse]]
+        Response[Union[VideoStreamOutputsOrgListResponseDefault, VideoStreamOutputsOrgListVideoStreamOutputsResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -429,7 +431,7 @@ async def asyncio(
     to_time_utc: Union[Unset, datetime.datetime] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
     venue_id: Union[Unset, UUID] = UNSET,
-) -> Optional[Union[VideoStreamOutputsOrgListResponseDefault, VideoStreamOutputsResponse]]:
+) -> Optional[Union[VideoStreamOutputsOrgListResponseDefault, VideoStreamOutputsOrgListVideoStreamOutputsResponse]]:
     """List available video streams for an organization
 
      Display the list of video streams for an organization. Streams for completed matches and those older
@@ -463,7 +465,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[VideoStreamOutputsOrgListResponseDefault, VideoStreamOutputsResponse]
+        Union[VideoStreamOutputsOrgListResponseDefault, VideoStreamOutputsOrgListVideoStreamOutputsResponse]
     """
 
     return (

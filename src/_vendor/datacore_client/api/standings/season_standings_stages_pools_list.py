@@ -6,8 +6,10 @@ import httpx
 
 from ...client import AuthenticatedClient, Client
 from ...models.season_standings_stages_pools_list_fixture_type import SeasonStandingsStagesPoolsListFixtureType
-from ...models.season_standings_stages_pools_list_response import SeasonStandingsStagesPoolsListResponse
 from ...models.season_standings_stages_pools_list_response_default import SeasonStandingsStagesPoolsListResponseDefault
+from ...models.season_standings_stages_pools_list_season_standings_stages_pools_list_response import (
+    SeasonStandingsStagesPoolsListSeasonStandingsStagesPoolsListResponse,
+)
 from ...types import UNSET, Response, Unset
 
 
@@ -59,9 +61,11 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[SeasonStandingsStagesPoolsListResponse, SeasonStandingsStagesPoolsListResponseDefault]:
+) -> Union[
+    SeasonStandingsStagesPoolsListResponseDefault, SeasonStandingsStagesPoolsListSeasonStandingsStagesPoolsListResponse
+]:
     if response.status_code == 200:
-        response_200 = SeasonStandingsStagesPoolsListResponse.from_dict(response.json())
+        response_200 = SeasonStandingsStagesPoolsListSeasonStandingsStagesPoolsListResponse.from_dict(response.json())
 
         return response_200
 
@@ -72,7 +76,12 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[Union[SeasonStandingsStagesPoolsListResponse, SeasonStandingsStagesPoolsListResponseDefault]]:
+) -> Response[
+    Union[
+        SeasonStandingsStagesPoolsListResponseDefault,
+        SeasonStandingsStagesPoolsListSeasonStandingsStagesPoolsListResponse,
+    ]
+]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -94,7 +103,12 @@ def sync_detailed(
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
     stage_code: Union[Unset, str] = UNSET,
-) -> Response[Union[SeasonStandingsStagesPoolsListResponse, SeasonStandingsStagesPoolsListResponseDefault]]:
+) -> Response[
+    Union[
+        SeasonStandingsStagesPoolsListResponseDefault,
+        SeasonStandingsStagesPoolsListSeasonStandingsStagesPoolsListResponse,
+    ]
+]:
     """Get a list of ~stages~ and ~pools~ used by standings in the season
 
      Return a list of ~stages~ and ~pools~ used by standings for a season
@@ -117,7 +131,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SeasonStandingsStagesPoolsListResponse, SeasonStandingsStagesPoolsListResponseDefault]]
+        Response[Union[SeasonStandingsStagesPoolsListResponseDefault, SeasonStandingsStagesPoolsListSeasonStandingsStagesPoolsListResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -153,7 +167,12 @@ def sync(
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
     stage_code: Union[Unset, str] = UNSET,
-) -> Optional[Union[SeasonStandingsStagesPoolsListResponse, SeasonStandingsStagesPoolsListResponseDefault]]:
+) -> Optional[
+    Union[
+        SeasonStandingsStagesPoolsListResponseDefault,
+        SeasonStandingsStagesPoolsListSeasonStandingsStagesPoolsListResponse,
+    ]
+]:
     """Get a list of ~stages~ and ~pools~ used by standings in the season
 
      Return a list of ~stages~ and ~pools~ used by standings for a season
@@ -176,7 +195,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SeasonStandingsStagesPoolsListResponse, SeasonStandingsStagesPoolsListResponseDefault]
+        Union[SeasonStandingsStagesPoolsListResponseDefault, SeasonStandingsStagesPoolsListSeasonStandingsStagesPoolsListResponse]
     """
 
     return sync_detailed(
@@ -207,7 +226,12 @@ async def asyncio_detailed(
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
     stage_code: Union[Unset, str] = UNSET,
-) -> Response[Union[SeasonStandingsStagesPoolsListResponse, SeasonStandingsStagesPoolsListResponseDefault]]:
+) -> Response[
+    Union[
+        SeasonStandingsStagesPoolsListResponseDefault,
+        SeasonStandingsStagesPoolsListSeasonStandingsStagesPoolsListResponse,
+    ]
+]:
     """Get a list of ~stages~ and ~pools~ used by standings in the season
 
      Return a list of ~stages~ and ~pools~ used by standings for a season
@@ -230,7 +254,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SeasonStandingsStagesPoolsListResponse, SeasonStandingsStagesPoolsListResponseDefault]]
+        Response[Union[SeasonStandingsStagesPoolsListResponseDefault, SeasonStandingsStagesPoolsListSeasonStandingsStagesPoolsListResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -264,7 +288,12 @@ async def asyncio(
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
     stage_code: Union[Unset, str] = UNSET,
-) -> Optional[Union[SeasonStandingsStagesPoolsListResponse, SeasonStandingsStagesPoolsListResponseDefault]]:
+) -> Optional[
+    Union[
+        SeasonStandingsStagesPoolsListResponseDefault,
+        SeasonStandingsStagesPoolsListSeasonStandingsStagesPoolsListResponse,
+    ]
+]:
     """Get a list of ~stages~ and ~pools~ used by standings in the season
 
      Return a list of ~stages~ and ~pools~ used by standings for a season
@@ -287,7 +316,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SeasonStandingsStagesPoolsListResponse, SeasonStandingsStagesPoolsListResponseDefault]
+        Union[SeasonStandingsStagesPoolsListResponseDefault, SeasonStandingsStagesPoolsListSeasonStandingsStagesPoolsListResponse]
     """
 
     return (

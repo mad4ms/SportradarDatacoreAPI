@@ -6,6 +6,7 @@ import httpx
 
 from ...client import AuthenticatedClient, Client
 from ...models.competition_list_age_group import CompetitionListAgeGroup
+from ...models.competition_list_competitions_response import CompetitionListCompetitionsResponse
 from ...models.competition_list_response_default import CompetitionListResponseDefault
 from ...types import UNSET, Response, Unset
 
@@ -75,7 +76,12 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> CompetitionListResponseDefault:
+) -> Union[CompetitionListCompetitionsResponse, CompetitionListResponseDefault]:
+    if response.status_code == 200:
+        response_200 = CompetitionListCompetitionsResponse.from_dict(response.json())
+
+        return response_200
+
     response_default = CompetitionListResponseDefault.from_dict(response.json())
 
     return response_default
@@ -83,7 +89,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[CompetitionListResponseDefault]:
+) -> Response[Union[CompetitionListCompetitionsResponse, CompetitionListResponseDefault]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -108,7 +114,7 @@ def sync_detailed(
     offset: Union[Unset, int] = UNSET,
     sort_by: Union[Unset, str] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[CompetitionListResponseDefault]:
+) -> Response[Union[CompetitionListCompetitionsResponse, CompetitionListResponseDefault]]:
     """Get a list of competitions
 
      Return a list of available competitions
@@ -134,7 +140,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[CompetitionListResponseDefault]
+        Response[Union[CompetitionListCompetitionsResponse, CompetitionListResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -176,7 +182,7 @@ def sync(
     offset: Union[Unset, int] = UNSET,
     sort_by: Union[Unset, str] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[CompetitionListResponseDefault]:
+) -> Optional[Union[CompetitionListCompetitionsResponse, CompetitionListResponseDefault]]:
     """Get a list of competitions
 
      Return a list of available competitions
@@ -202,7 +208,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        CompetitionListResponseDefault
+        Union[CompetitionListCompetitionsResponse, CompetitionListResponseDefault]
     """
 
     return sync_detailed(
@@ -239,7 +245,7 @@ async def asyncio_detailed(
     offset: Union[Unset, int] = UNSET,
     sort_by: Union[Unset, str] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[CompetitionListResponseDefault]:
+) -> Response[Union[CompetitionListCompetitionsResponse, CompetitionListResponseDefault]]:
     """Get a list of competitions
 
      Return a list of available competitions
@@ -265,7 +271,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[CompetitionListResponseDefault]
+        Response[Union[CompetitionListCompetitionsResponse, CompetitionListResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -305,7 +311,7 @@ async def asyncio(
     offset: Union[Unset, int] = UNSET,
     sort_by: Union[Unset, str] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[CompetitionListResponseDefault]:
+) -> Optional[Union[CompetitionListCompetitionsResponse, CompetitionListResponseDefault]]:
     """Get a list of competitions
 
      Return a list of available competitions
@@ -331,7 +337,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        CompetitionListResponseDefault
+        Union[CompetitionListCompetitionsResponse, CompetitionListResponseDefault]
     """
 
     return (

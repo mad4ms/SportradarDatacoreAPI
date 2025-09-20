@@ -5,6 +5,9 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
+from ...models.fixture_external_ids_detail_fixture_external_ids_response import (
+    FixtureExternalIdsDetailFixtureExternalIdsResponse,
+)
 from ...models.fixture_external_ids_detail_response_default import FixtureExternalIdsDetailResponseDefault
 from ...types import UNSET, Response, Unset
 
@@ -47,7 +50,12 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> FixtureExternalIdsDetailResponseDefault:
+) -> Union[FixtureExternalIdsDetailFixtureExternalIdsResponse, FixtureExternalIdsDetailResponseDefault]:
+    if response.status_code == 200:
+        response_200 = FixtureExternalIdsDetailFixtureExternalIdsResponse.from_dict(response.json())
+
+        return response_200
+
     response_default = FixtureExternalIdsDetailResponseDefault.from_dict(response.json())
 
     return response_default
@@ -55,7 +63,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[FixtureExternalIdsDetailResponseDefault]:
+) -> Response[Union[FixtureExternalIdsDetailFixtureExternalIdsResponse, FixtureExternalIdsDetailResponseDefault]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -75,7 +83,7 @@ def sync_detailed(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Response[FixtureExternalIdsDetailResponseDefault]:
+) -> Response[Union[FixtureExternalIdsDetailFixtureExternalIdsResponse, FixtureExternalIdsDetailResponseDefault]]:
     """Get a match external identifier details
 
      Detailed information about a specific match external identifier
@@ -96,7 +104,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[FixtureExternalIdsDetailResponseDefault]
+        Response[Union[FixtureExternalIdsDetailFixtureExternalIdsResponse, FixtureExternalIdsDetailResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -128,7 +136,7 @@ def sync(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Optional[FixtureExternalIdsDetailResponseDefault]:
+) -> Optional[Union[FixtureExternalIdsDetailFixtureExternalIdsResponse, FixtureExternalIdsDetailResponseDefault]]:
     """Get a match external identifier details
 
      Detailed information about a specific match external identifier
@@ -149,7 +157,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        FixtureExternalIdsDetailResponseDefault
+        Union[FixtureExternalIdsDetailFixtureExternalIdsResponse, FixtureExternalIdsDetailResponseDefault]
     """
 
     return sync_detailed(
@@ -176,7 +184,7 @@ async def asyncio_detailed(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Response[FixtureExternalIdsDetailResponseDefault]:
+) -> Response[Union[FixtureExternalIdsDetailFixtureExternalIdsResponse, FixtureExternalIdsDetailResponseDefault]]:
     """Get a match external identifier details
 
      Detailed information about a specific match external identifier
@@ -197,7 +205,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[FixtureExternalIdsDetailResponseDefault]
+        Response[Union[FixtureExternalIdsDetailFixtureExternalIdsResponse, FixtureExternalIdsDetailResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -227,7 +235,7 @@ async def asyncio(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Optional[FixtureExternalIdsDetailResponseDefault]:
+) -> Optional[Union[FixtureExternalIdsDetailFixtureExternalIdsResponse, FixtureExternalIdsDetailResponseDefault]]:
     """Get a match external identifier details
 
      Detailed information about a specific match external identifier
@@ -248,7 +256,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        FixtureExternalIdsDetailResponseDefault
+        Union[FixtureExternalIdsDetailFixtureExternalIdsResponse, FixtureExternalIdsDetailResponseDefault]
     """
 
     return (

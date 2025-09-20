@@ -5,6 +5,7 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
+from ...models.caps_listperson_career_person_statistics_response import CapsListpersonCareerPersonStatisticsResponse
 from ...models.caps_listperson_fixture_type import CapsListpersonFixtureType
 from ...models.caps_listperson_home_away import CapsListpersonHomeAway
 from ...models.caps_listperson_response_default import CapsListpersonResponseDefault
@@ -80,7 +81,12 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> CapsListpersonResponseDefault:
+) -> Union[CapsListpersonCareerPersonStatisticsResponse, CapsListpersonResponseDefault]:
+    if response.status_code == 200:
+        response_200 = CapsListpersonCareerPersonStatisticsResponse.from_dict(response.json())
+
+        return response_200
+
     response_default = CapsListpersonResponseDefault.from_dict(response.json())
 
     return response_default
@@ -88,7 +94,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[CapsListpersonResponseDefault]:
+) -> Response[Union[CapsListpersonCareerPersonStatisticsResponse, CapsListpersonResponseDefault]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -114,7 +120,7 @@ def sync_detailed(
     offset: Union[Unset, int] = UNSET,
     starter: Union[Unset, bool] = UNSET,
     win_loss: Union[Unset, CapsListpersonWinLoss] = UNSET,
-) -> Response[CapsListpersonResponseDefault]:
+) -> Response[Union[CapsListpersonCareerPersonStatisticsResponse, CapsListpersonResponseDefault]]:
     """Statistics for a person in their career
 
      Return the statistics for a specific person in their career.
@@ -141,7 +147,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[CapsListpersonResponseDefault]
+        Response[Union[CapsListpersonCareerPersonStatisticsResponse, CapsListpersonResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -185,7 +191,7 @@ def sync(
     offset: Union[Unset, int] = UNSET,
     starter: Union[Unset, bool] = UNSET,
     win_loss: Union[Unset, CapsListpersonWinLoss] = UNSET,
-) -> Optional[CapsListpersonResponseDefault]:
+) -> Optional[Union[CapsListpersonCareerPersonStatisticsResponse, CapsListpersonResponseDefault]]:
     """Statistics for a person in their career
 
      Return the statistics for a specific person in their career.
@@ -212,7 +218,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        CapsListpersonResponseDefault
+        Union[CapsListpersonCareerPersonStatisticsResponse, CapsListpersonResponseDefault]
     """
 
     return sync_detailed(
@@ -251,7 +257,7 @@ async def asyncio_detailed(
     offset: Union[Unset, int] = UNSET,
     starter: Union[Unset, bool] = UNSET,
     win_loss: Union[Unset, CapsListpersonWinLoss] = UNSET,
-) -> Response[CapsListpersonResponseDefault]:
+) -> Response[Union[CapsListpersonCareerPersonStatisticsResponse, CapsListpersonResponseDefault]]:
     """Statistics for a person in their career
 
      Return the statistics for a specific person in their career.
@@ -278,7 +284,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[CapsListpersonResponseDefault]
+        Response[Union[CapsListpersonCareerPersonStatisticsResponse, CapsListpersonResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -320,7 +326,7 @@ async def asyncio(
     offset: Union[Unset, int] = UNSET,
     starter: Union[Unset, bool] = UNSET,
     win_loss: Union[Unset, CapsListpersonWinLoss] = UNSET,
-) -> Optional[CapsListpersonResponseDefault]:
+) -> Optional[Union[CapsListpersonCareerPersonStatisticsResponse, CapsListpersonResponseDefault]]:
     """Statistics for a person in their career
 
      Return the statistics for a specific person in their career.
@@ -347,7 +353,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        CapsListpersonResponseDefault
+        Union[CapsListpersonCareerPersonStatisticsResponse, CapsListpersonResponseDefault]
     """
 
     return (

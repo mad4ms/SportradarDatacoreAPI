@@ -6,6 +6,9 @@ import httpx
 
 from ...client import AuthenticatedClient, Client
 from ...models.video_subscription_detail_response_default import VideoSubscriptionDetailResponseDefault
+from ...models.video_subscription_detail_video_subscriptions_response import (
+    VideoSubscriptionDetailVideoSubscriptionsResponse,
+)
 from ...types import UNSET, Response, Unset
 
 
@@ -47,7 +50,12 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> VideoSubscriptionDetailResponseDefault:
+) -> Union[VideoSubscriptionDetailResponseDefault, VideoSubscriptionDetailVideoSubscriptionsResponse]:
+    if response.status_code == 200:
+        response_200 = VideoSubscriptionDetailVideoSubscriptionsResponse.from_dict(response.json())
+
+        return response_200
+
     response_default = VideoSubscriptionDetailResponseDefault.from_dict(response.json())
 
     return response_default
@@ -55,7 +63,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[VideoSubscriptionDetailResponseDefault]:
+) -> Response[Union[VideoSubscriptionDetailResponseDefault, VideoSubscriptionDetailVideoSubscriptionsResponse]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -75,7 +83,7 @@ def sync_detailed(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Response[VideoSubscriptionDetailResponseDefault]:
+) -> Response[Union[VideoSubscriptionDetailResponseDefault, VideoSubscriptionDetailVideoSubscriptionsResponse]]:
     """Get a video stream subscription
 
      Return detailed information about a specific video stream subscription.
@@ -96,7 +104,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[VideoSubscriptionDetailResponseDefault]
+        Response[Union[VideoSubscriptionDetailResponseDefault, VideoSubscriptionDetailVideoSubscriptionsResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -128,7 +136,7 @@ def sync(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Optional[VideoSubscriptionDetailResponseDefault]:
+) -> Optional[Union[VideoSubscriptionDetailResponseDefault, VideoSubscriptionDetailVideoSubscriptionsResponse]]:
     """Get a video stream subscription
 
      Return detailed information about a specific video stream subscription.
@@ -149,7 +157,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        VideoSubscriptionDetailResponseDefault
+        Union[VideoSubscriptionDetailResponseDefault, VideoSubscriptionDetailVideoSubscriptionsResponse]
     """
 
     return sync_detailed(
@@ -176,7 +184,7 @@ async def asyncio_detailed(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Response[VideoSubscriptionDetailResponseDefault]:
+) -> Response[Union[VideoSubscriptionDetailResponseDefault, VideoSubscriptionDetailVideoSubscriptionsResponse]]:
     """Get a video stream subscription
 
      Return detailed information about a specific video stream subscription.
@@ -197,7 +205,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[VideoSubscriptionDetailResponseDefault]
+        Response[Union[VideoSubscriptionDetailResponseDefault, VideoSubscriptionDetailVideoSubscriptionsResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -227,7 +235,7 @@ async def asyncio(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Optional[VideoSubscriptionDetailResponseDefault]:
+) -> Optional[Union[VideoSubscriptionDetailResponseDefault, VideoSubscriptionDetailVideoSubscriptionsResponse]]:
     """Get a video stream subscription
 
      Return detailed information about a specific video stream subscription.
@@ -248,7 +256,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        VideoSubscriptionDetailResponseDefault
+        Union[VideoSubscriptionDetailResponseDefault, VideoSubscriptionDetailVideoSubscriptionsResponse]
     """
 
     return (

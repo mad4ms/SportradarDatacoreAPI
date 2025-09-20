@@ -7,6 +7,7 @@ import httpx
 
 from ...client import AuthenticatedClient, Client
 from ...models.season_person_list_response_default import SeasonPersonListResponseDefault
+from ...models.season_person_list_season_persons_list_response import SeasonPersonListSeasonPersonsListResponse
 from ...types import UNSET, Response, Unset
 
 
@@ -66,7 +67,12 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> SeasonPersonListResponseDefault:
+) -> Union[SeasonPersonListResponseDefault, SeasonPersonListSeasonPersonsListResponse]:
+    if response.status_code == 200:
+        response_200 = SeasonPersonListSeasonPersonsListResponse.from_dict(response.json())
+
+        return response_200
+
     response_default = SeasonPersonListResponseDefault.from_dict(response.json())
 
     return response_default
@@ -74,7 +80,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[SeasonPersonListResponseDefault]:
+) -> Response[Union[SeasonPersonListResponseDefault, SeasonPersonListSeasonPersonsListResponse]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -97,7 +103,7 @@ def sync_detailed(
     offset: Union[Unset, int] = UNSET,
     season_id: Union[Unset, UUID] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[SeasonPersonListResponseDefault]:
+) -> Response[Union[SeasonPersonListResponseDefault, SeasonPersonListSeasonPersonsListResponse]]:
     """Get a list of seasons for person
 
      Return a list of seasons that person participated in
@@ -122,7 +128,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[SeasonPersonListResponseDefault]
+        Response[Union[SeasonPersonListResponseDefault, SeasonPersonListSeasonPersonsListResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -160,7 +166,7 @@ def sync(
     offset: Union[Unset, int] = UNSET,
     season_id: Union[Unset, UUID] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[SeasonPersonListResponseDefault]:
+) -> Optional[Union[SeasonPersonListResponseDefault, SeasonPersonListSeasonPersonsListResponse]]:
     """Get a list of seasons for person
 
      Return a list of seasons that person participated in
@@ -185,7 +191,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        SeasonPersonListResponseDefault
+        Union[SeasonPersonListResponseDefault, SeasonPersonListSeasonPersonsListResponse]
     """
 
     return sync_detailed(
@@ -218,7 +224,7 @@ async def asyncio_detailed(
     offset: Union[Unset, int] = UNSET,
     season_id: Union[Unset, UUID] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[SeasonPersonListResponseDefault]:
+) -> Response[Union[SeasonPersonListResponseDefault, SeasonPersonListSeasonPersonsListResponse]]:
     """Get a list of seasons for person
 
      Return a list of seasons that person participated in
@@ -243,7 +249,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[SeasonPersonListResponseDefault]
+        Response[Union[SeasonPersonListResponseDefault, SeasonPersonListSeasonPersonsListResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -279,7 +285,7 @@ async def asyncio(
     offset: Union[Unset, int] = UNSET,
     season_id: Union[Unset, UUID] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[SeasonPersonListResponseDefault]:
+) -> Optional[Union[SeasonPersonListResponseDefault, SeasonPersonListSeasonPersonsListResponse]]:
     """Get a list of seasons for person
 
      Return a list of seasons that person participated in
@@ -304,7 +310,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        SeasonPersonListResponseDefault
+        Union[SeasonPersonListResponseDefault, SeasonPersonListSeasonPersonsListResponse]
     """
 
     return (

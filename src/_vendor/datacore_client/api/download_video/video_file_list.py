@@ -13,7 +13,7 @@ from ...models.video_file_list_origin import VideoFileListOrigin
 from ...models.video_file_list_response_default import VideoFileListResponseDefault
 from ...models.video_file_list_status import VideoFileListStatus
 from ...models.video_file_list_storage_provider import VideoFileListStorageProvider
-from ...models.video_files_response import VideoFilesResponse
+from ...models.video_file_list_video_files_response import VideoFileListVideoFilesResponse
 from ...types import UNSET, Response, Unset
 
 
@@ -118,9 +118,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[VideoFileListResponseDefault, VideoFilesResponse]:
+) -> Union[VideoFileListResponseDefault, VideoFileListVideoFilesResponse]:
     if response.status_code == 200:
-        response_200 = VideoFilesResponse.from_dict(response.json())
+        response_200 = VideoFileListVideoFilesResponse.from_dict(response.json())
 
         return response_200
 
@@ -131,7 +131,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[Union[VideoFileListResponseDefault, VideoFilesResponse]]:
+) -> Response[Union[VideoFileListResponseDefault, VideoFileListVideoFilesResponse]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -162,7 +162,7 @@ def sync_detailed(
     status: Union[Unset, VideoFileListStatus] = UNSET,
     storage_provider: Union[Unset, VideoFileListStorageProvider] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[Union[VideoFileListResponseDefault, VideoFilesResponse]]:
+) -> Response[Union[VideoFileListResponseDefault, VideoFileListVideoFilesResponse]]:
     """List available video files for a match
 
      List the video files for a match that are available for downloaded.
@@ -194,7 +194,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[VideoFileListResponseDefault, VideoFilesResponse]]
+        Response[Union[VideoFileListResponseDefault, VideoFileListVideoFilesResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -248,7 +248,7 @@ def sync(
     status: Union[Unset, VideoFileListStatus] = UNSET,
     storage_provider: Union[Unset, VideoFileListStorageProvider] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[Union[VideoFileListResponseDefault, VideoFilesResponse]]:
+) -> Optional[Union[VideoFileListResponseDefault, VideoFileListVideoFilesResponse]]:
     """List available video files for a match
 
      List the video files for a match that are available for downloaded.
@@ -280,7 +280,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[VideoFileListResponseDefault, VideoFilesResponse]
+        Union[VideoFileListResponseDefault, VideoFileListVideoFilesResponse]
     """
 
     return sync_detailed(
@@ -329,7 +329,7 @@ async def asyncio_detailed(
     status: Union[Unset, VideoFileListStatus] = UNSET,
     storage_provider: Union[Unset, VideoFileListStorageProvider] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[Union[VideoFileListResponseDefault, VideoFilesResponse]]:
+) -> Response[Union[VideoFileListResponseDefault, VideoFileListVideoFilesResponse]]:
     """List available video files for a match
 
      List the video files for a match that are available for downloaded.
@@ -361,7 +361,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[VideoFileListResponseDefault, VideoFilesResponse]]
+        Response[Union[VideoFileListResponseDefault, VideoFileListVideoFilesResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -413,7 +413,7 @@ async def asyncio(
     status: Union[Unset, VideoFileListStatus] = UNSET,
     storage_provider: Union[Unset, VideoFileListStorageProvider] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[Union[VideoFileListResponseDefault, VideoFilesResponse]]:
+) -> Optional[Union[VideoFileListResponseDefault, VideoFileListVideoFilesResponse]]:
     """List available video files for a match
 
      List the video files for a match that are available for downloaded.
@@ -445,7 +445,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[VideoFileListResponseDefault, VideoFilesResponse]
+        Union[VideoFileListResponseDefault, VideoFileListVideoFilesResponse]
     """
 
     return (

@@ -5,6 +5,9 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
+from ...models.ces_listperiods_competition_entity_statistics_response import (
+    CesListperiodsCompetitionEntityStatisticsResponse,
+)
 from ...models.ces_listperiods_fixture_type import CesListperiodsFixtureType
 from ...models.ces_listperiods_home_away import CesListperiodsHomeAway
 from ...models.ces_listperiods_period_id import CesListperiodsPeriodId
@@ -82,7 +85,12 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> CesListperiodsResponseDefault:
+) -> Union[CesListperiodsCompetitionEntityStatisticsResponse, CesListperiodsResponseDefault]:
+    if response.status_code == 200:
+        response_200 = CesListperiodsCompetitionEntityStatisticsResponse.from_dict(response.json())
+
+        return response_200
+
     response_default = CesListperiodsResponseDefault.from_dict(response.json())
 
     return response_default
@@ -90,7 +98,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[CesListperiodsResponseDefault]:
+) -> Response[Union[CesListperiodsCompetitionEntityStatisticsResponse, CesListperiodsResponseDefault]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -115,7 +123,7 @@ def sync_detailed(
     period_id: Union[Unset, CesListperiodsPeriodId] = UNSET,
     section: Union[Unset, str] = UNSET,
     win_loss: Union[Unset, CesListperiodsWinLoss] = UNSET,
-) -> Response[CesListperiodsResponseDefault]:
+) -> Response[Union[CesListperiodsCompetitionEntityStatisticsResponse, CesListperiodsResponseDefault]]:
     """Team statistics for a competition by period
 
      Return a list of team statistics for a competition filterable by period. This still displays
@@ -143,7 +151,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[CesListperiodsResponseDefault]
+        Response[Union[CesListperiodsCompetitionEntityStatisticsResponse, CesListperiodsResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -185,7 +193,7 @@ def sync(
     period_id: Union[Unset, CesListperiodsPeriodId] = UNSET,
     section: Union[Unset, str] = UNSET,
     win_loss: Union[Unset, CesListperiodsWinLoss] = UNSET,
-) -> Optional[CesListperiodsResponseDefault]:
+) -> Optional[Union[CesListperiodsCompetitionEntityStatisticsResponse, CesListperiodsResponseDefault]]:
     """Team statistics for a competition by period
 
      Return a list of team statistics for a competition filterable by period. This still displays
@@ -213,7 +221,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        CesListperiodsResponseDefault
+        Union[CesListperiodsCompetitionEntityStatisticsResponse, CesListperiodsResponseDefault]
     """
 
     return sync_detailed(
@@ -250,7 +258,7 @@ async def asyncio_detailed(
     period_id: Union[Unset, CesListperiodsPeriodId] = UNSET,
     section: Union[Unset, str] = UNSET,
     win_loss: Union[Unset, CesListperiodsWinLoss] = UNSET,
-) -> Response[CesListperiodsResponseDefault]:
+) -> Response[Union[CesListperiodsCompetitionEntityStatisticsResponse, CesListperiodsResponseDefault]]:
     """Team statistics for a competition by period
 
      Return a list of team statistics for a competition filterable by period. This still displays
@@ -278,7 +286,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[CesListperiodsResponseDefault]
+        Response[Union[CesListperiodsCompetitionEntityStatisticsResponse, CesListperiodsResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -318,7 +326,7 @@ async def asyncio(
     period_id: Union[Unset, CesListperiodsPeriodId] = UNSET,
     section: Union[Unset, str] = UNSET,
     win_loss: Union[Unset, CesListperiodsWinLoss] = UNSET,
-) -> Optional[CesListperiodsResponseDefault]:
+) -> Optional[Union[CesListperiodsCompetitionEntityStatisticsResponse, CesListperiodsResponseDefault]]:
     """Team statistics for a competition by period
 
      Return a list of team statistics for a competition filterable by period. This still displays
@@ -346,7 +354,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        CesListperiodsResponseDefault
+        Union[CesListperiodsCompetitionEntityStatisticsResponse, CesListperiodsResponseDefault]
     """
 
     return (

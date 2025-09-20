@@ -7,6 +7,7 @@ import httpx
 
 from ...client import AuthenticatedClient, Client
 from ...models.awards_list_fixtures_award import AwardsListFixturesAward
+from ...models.awards_list_fixtures_awards_response import AwardsListFixturesAwardsResponse
 from ...models.awards_list_fixtures_response_default import AwardsListFixturesResponseDefault
 from ...types import UNSET, Response, Unset
 
@@ -115,7 +116,12 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> AwardsListFixturesResponseDefault:
+) -> Union[AwardsListFixturesAwardsResponse, AwardsListFixturesResponseDefault]:
+    if response.status_code == 200:
+        response_200 = AwardsListFixturesAwardsResponse.from_dict(response.json())
+
+        return response_200
+
     response_default = AwardsListFixturesResponseDefault.from_dict(response.json())
 
     return response_default
@@ -123,7 +129,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[AwardsListFixturesResponseDefault]:
+) -> Response[Union[AwardsListFixturesAwardsResponse, AwardsListFixturesResponseDefault]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -153,7 +159,7 @@ def sync_detailed(
     person_id: Union[Unset, UUID] = UNSET,
     season_id: Union[Unset, UUID] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[AwardsListFixturesResponseDefault]:
+) -> Response[Union[AwardsListFixturesAwardsResponse, AwardsListFixturesResponseDefault]]:
     """Get a list of match awards
 
      Return a list of awards for the organization (linked to matches)
@@ -184,7 +190,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[AwardsListFixturesResponseDefault]
+        Response[Union[AwardsListFixturesAwardsResponse, AwardsListFixturesResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -236,7 +242,7 @@ def sync(
     person_id: Union[Unset, UUID] = UNSET,
     season_id: Union[Unset, UUID] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[AwardsListFixturesResponseDefault]:
+) -> Optional[Union[AwardsListFixturesAwardsResponse, AwardsListFixturesResponseDefault]]:
     """Get a list of match awards
 
      Return a list of awards for the organization (linked to matches)
@@ -267,7 +273,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        AwardsListFixturesResponseDefault
+        Union[AwardsListFixturesAwardsResponse, AwardsListFixturesResponseDefault]
     """
 
     return sync_detailed(
@@ -314,7 +320,7 @@ async def asyncio_detailed(
     person_id: Union[Unset, UUID] = UNSET,
     season_id: Union[Unset, UUID] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[AwardsListFixturesResponseDefault]:
+) -> Response[Union[AwardsListFixturesAwardsResponse, AwardsListFixturesResponseDefault]]:
     """Get a list of match awards
 
      Return a list of awards for the organization (linked to matches)
@@ -345,7 +351,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[AwardsListFixturesResponseDefault]
+        Response[Union[AwardsListFixturesAwardsResponse, AwardsListFixturesResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -395,7 +401,7 @@ async def asyncio(
     person_id: Union[Unset, UUID] = UNSET,
     season_id: Union[Unset, UUID] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[AwardsListFixturesResponseDefault]:
+) -> Optional[Union[AwardsListFixturesAwardsResponse, AwardsListFixturesResponseDefault]]:
     """Get a list of match awards
 
      Return a list of awards for the organization (linked to matches)
@@ -426,7 +432,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        AwardsListFixturesResponseDefault
+        Union[AwardsListFixturesAwardsResponse, AwardsListFixturesResponseDefault]
     """
 
     return (

@@ -7,8 +7,8 @@ import httpx
 
 from ...client import AuthenticatedClient, Client
 from ...models.season_series_list_response_default import SeasonSeriesListResponseDefault
+from ...models.season_series_list_season_series_response import SeasonSeriesListSeasonSeriesResponse
 from ...models.season_series_list_series_type import SeasonSeriesListSeriesType
-from ...models.season_series_response import SeasonSeriesResponse
 from ...types import UNSET, Response, Unset
 
 
@@ -87,9 +87,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[SeasonSeriesListResponseDefault, SeasonSeriesResponse]:
+) -> Union[SeasonSeriesListResponseDefault, SeasonSeriesListSeasonSeriesResponse]:
     if response.status_code == 200:
-        response_200 = SeasonSeriesResponse.from_dict(response.json())
+        response_200 = SeasonSeriesListSeasonSeriesResponse.from_dict(response.json())
 
         return response_200
 
@@ -100,7 +100,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[Union[SeasonSeriesListResponseDefault, SeasonSeriesResponse]]:
+) -> Response[Union[SeasonSeriesListResponseDefault, SeasonSeriesListSeasonSeriesResponse]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -129,7 +129,7 @@ def sync_detailed(
     sort_by: Union[Unset, str] = UNSET,
     stage_code: Union[Unset, str] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[Union[SeasonSeriesListResponseDefault, SeasonSeriesResponse]]:
+) -> Response[Union[SeasonSeriesListResponseDefault, SeasonSeriesListSeasonSeriesResponse]]:
     """Get a list of series
 
      Return a list of series for a season
@@ -159,7 +159,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SeasonSeriesListResponseDefault, SeasonSeriesResponse]]
+        Response[Union[SeasonSeriesListResponseDefault, SeasonSeriesListSeasonSeriesResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -209,7 +209,7 @@ def sync(
     sort_by: Union[Unset, str] = UNSET,
     stage_code: Union[Unset, str] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[Union[SeasonSeriesListResponseDefault, SeasonSeriesResponse]]:
+) -> Optional[Union[SeasonSeriesListResponseDefault, SeasonSeriesListSeasonSeriesResponse]]:
     """Get a list of series
 
      Return a list of series for a season
@@ -239,7 +239,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SeasonSeriesListResponseDefault, SeasonSeriesResponse]
+        Union[SeasonSeriesListResponseDefault, SeasonSeriesListSeasonSeriesResponse]
     """
 
     return sync_detailed(
@@ -284,7 +284,7 @@ async def asyncio_detailed(
     sort_by: Union[Unset, str] = UNSET,
     stage_code: Union[Unset, str] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[Union[SeasonSeriesListResponseDefault, SeasonSeriesResponse]]:
+) -> Response[Union[SeasonSeriesListResponseDefault, SeasonSeriesListSeasonSeriesResponse]]:
     """Get a list of series
 
      Return a list of series for a season
@@ -314,7 +314,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SeasonSeriesListResponseDefault, SeasonSeriesResponse]]
+        Response[Union[SeasonSeriesListResponseDefault, SeasonSeriesListSeasonSeriesResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -362,7 +362,7 @@ async def asyncio(
     sort_by: Union[Unset, str] = UNSET,
     stage_code: Union[Unset, str] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[Union[SeasonSeriesListResponseDefault, SeasonSeriesResponse]]:
+) -> Optional[Union[SeasonSeriesListResponseDefault, SeasonSeriesListSeasonSeriesResponse]]:
     """Get a list of series
 
      Return a list of series for a season
@@ -392,7 +392,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SeasonSeriesListResponseDefault, SeasonSeriesResponse]
+        Union[SeasonSeriesListResponseDefault, SeasonSeriesListSeasonSeriesResponse]
     """
 
     return (

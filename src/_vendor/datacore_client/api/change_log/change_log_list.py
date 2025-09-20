@@ -6,9 +6,9 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
+from ...models.change_log_list_change_log_response import ChangeLogListChangeLogResponse
 from ...models.change_log_list_change_type import ChangeLogListChangeType
 from ...models.change_log_list_response_default import ChangeLogListResponseDefault
-from ...models.change_log_response import ChangeLogResponse
 from ...types import UNSET, Response, Unset
 
 
@@ -74,9 +74,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[ChangeLogListResponseDefault, ChangeLogResponse]:
+) -> Union[ChangeLogListChangeLogResponse, ChangeLogListResponseDefault]:
     if response.status_code == 200:
-        response_200 = ChangeLogResponse.from_dict(response.json())
+        response_200 = ChangeLogListChangeLogResponse.from_dict(response.json())
 
         return response_200
 
@@ -87,7 +87,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[Union[ChangeLogListResponseDefault, ChangeLogResponse]]:
+) -> Response[Union[ChangeLogListChangeLogResponse, ChangeLogListResponseDefault]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -111,7 +111,7 @@ def sync_detailed(
     offset: Union[Unset, int] = UNSET,
     primary_id: Union[Unset, UUID] = UNSET,
     primary_type: Union[Unset, str] = UNSET,
-) -> Response[Union[ChangeLogListResponseDefault, ChangeLogResponse]]:
+) -> Response[Union[ChangeLogListChangeLogResponse, ChangeLogListResponseDefault]]:
     """Get a list of changes
 
      Return a list of available changes
@@ -136,7 +136,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[ChangeLogListResponseDefault, ChangeLogResponse]]
+        Response[Union[ChangeLogListChangeLogResponse, ChangeLogListResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -176,7 +176,7 @@ def sync(
     offset: Union[Unset, int] = UNSET,
     primary_id: Union[Unset, UUID] = UNSET,
     primary_type: Union[Unset, str] = UNSET,
-) -> Optional[Union[ChangeLogListResponseDefault, ChangeLogResponse]]:
+) -> Optional[Union[ChangeLogListChangeLogResponse, ChangeLogListResponseDefault]]:
     """Get a list of changes
 
      Return a list of available changes
@@ -201,7 +201,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[ChangeLogListResponseDefault, ChangeLogResponse]
+        Union[ChangeLogListChangeLogResponse, ChangeLogListResponseDefault]
     """
 
     return sync_detailed(
@@ -236,7 +236,7 @@ async def asyncio_detailed(
     offset: Union[Unset, int] = UNSET,
     primary_id: Union[Unset, UUID] = UNSET,
     primary_type: Union[Unset, str] = UNSET,
-) -> Response[Union[ChangeLogListResponseDefault, ChangeLogResponse]]:
+) -> Response[Union[ChangeLogListChangeLogResponse, ChangeLogListResponseDefault]]:
     """Get a list of changes
 
      Return a list of available changes
@@ -261,7 +261,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[ChangeLogListResponseDefault, ChangeLogResponse]]
+        Response[Union[ChangeLogListChangeLogResponse, ChangeLogListResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -299,7 +299,7 @@ async def asyncio(
     offset: Union[Unset, int] = UNSET,
     primary_id: Union[Unset, UUID] = UNSET,
     primary_type: Union[Unset, str] = UNSET,
-) -> Optional[Union[ChangeLogListResponseDefault, ChangeLogResponse]]:
+) -> Optional[Union[ChangeLogListChangeLogResponse, ChangeLogListResponseDefault]]:
     """Get a list of changes
 
      Return a list of available changes
@@ -324,7 +324,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[ChangeLogListResponseDefault, ChangeLogResponse]
+        Union[ChangeLogListChangeLogResponse, ChangeLogListResponseDefault]
     """
 
     return (

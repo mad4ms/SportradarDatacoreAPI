@@ -9,6 +9,7 @@ from ...models.psts_list_age_group import PstsListAgeGroup
 from ...models.psts_list_fixture_type import PstsListFixtureType
 from ...models.psts_list_representation import PstsListRepresentation
 from ...models.psts_list_response_default import PstsListResponseDefault
+from ...models.psts_list_season_person_total_statistics_response import PstsListSeasonPersonTotalStatisticsResponse
 from ...models.psts_list_season_type import PstsListSeasonType
 from ...models.psts_list_standard import PstsListStandard
 from ...types import UNSET, Response, Unset
@@ -97,7 +98,14 @@ def _get_kwargs(
     return _kwargs
 
 
-def _parse_response(*, client: Union[AuthenticatedClient, Client], response: httpx.Response) -> PstsListResponseDefault:
+def _parse_response(
+    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
+) -> Union[PstsListResponseDefault, PstsListSeasonPersonTotalStatisticsResponse]:
+    if response.status_code == 200:
+        response_200 = PstsListSeasonPersonTotalStatisticsResponse.from_dict(response.json())
+
+        return response_200
+
     response_default = PstsListResponseDefault.from_dict(response.json())
 
     return response_default
@@ -105,7 +113,7 @@ def _parse_response(*, client: Union[AuthenticatedClient, Client], response: htt
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[PstsListResponseDefault]:
+) -> Response[Union[PstsListResponseDefault, PstsListSeasonPersonTotalStatisticsResponse]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -132,7 +140,7 @@ def sync_detailed(
     season_id: Union[Unset, UUID] = UNSET,
     season_type: Union[Unset, PstsListSeasonType] = UNSET,
     standard: Union[Unset, PstsListStandard] = UNSET,
-) -> Response[PstsListResponseDefault]:
+) -> Response[Union[PstsListResponseDefault, PstsListSeasonPersonTotalStatisticsResponse]]:
     """Person season statistics - combined teams
 
 
@@ -165,7 +173,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[PstsListResponseDefault]
+        Response[Union[PstsListResponseDefault, PstsListSeasonPersonTotalStatisticsResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -211,7 +219,7 @@ def sync(
     season_id: Union[Unset, UUID] = UNSET,
     season_type: Union[Unset, PstsListSeasonType] = UNSET,
     standard: Union[Unset, PstsListStandard] = UNSET,
-) -> Optional[PstsListResponseDefault]:
+) -> Optional[Union[PstsListResponseDefault, PstsListSeasonPersonTotalStatisticsResponse]]:
     """Person season statistics - combined teams
 
 
@@ -244,7 +252,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        PstsListResponseDefault
+        Union[PstsListResponseDefault, PstsListSeasonPersonTotalStatisticsResponse]
     """
 
     return sync_detailed(
@@ -285,7 +293,7 @@ async def asyncio_detailed(
     season_id: Union[Unset, UUID] = UNSET,
     season_type: Union[Unset, PstsListSeasonType] = UNSET,
     standard: Union[Unset, PstsListStandard] = UNSET,
-) -> Response[PstsListResponseDefault]:
+) -> Response[Union[PstsListResponseDefault, PstsListSeasonPersonTotalStatisticsResponse]]:
     """Person season statistics - combined teams
 
 
@@ -318,7 +326,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[PstsListResponseDefault]
+        Response[Union[PstsListResponseDefault, PstsListSeasonPersonTotalStatisticsResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -362,7 +370,7 @@ async def asyncio(
     season_id: Union[Unset, UUID] = UNSET,
     season_type: Union[Unset, PstsListSeasonType] = UNSET,
     standard: Union[Unset, PstsListStandard] = UNSET,
-) -> Optional[PstsListResponseDefault]:
+) -> Optional[Union[PstsListResponseDefault, PstsListSeasonPersonTotalStatisticsResponse]]:
     """Person season statistics - combined teams
 
 
@@ -395,7 +403,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        PstsListResponseDefault
+        Union[PstsListResponseDefault, PstsListSeasonPersonTotalStatisticsResponse]
     """
 
     return (

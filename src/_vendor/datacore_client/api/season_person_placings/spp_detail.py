@@ -6,6 +6,7 @@ import httpx
 
 from ...client import AuthenticatedClient, Client
 from ...models.spp_detail_response_default import SppDetailResponseDefault
+from ...models.spp_detail_season_person_placings_response import SppDetailSeasonPersonPlacingsResponse
 from ...types import UNSET, Response, Unset
 
 
@@ -47,7 +48,12 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> SppDetailResponseDefault:
+) -> Union[SppDetailResponseDefault, SppDetailSeasonPersonPlacingsResponse]:
+    if response.status_code == 200:
+        response_200 = SppDetailSeasonPersonPlacingsResponse.from_dict(response.json())
+
+        return response_200
+
     response_default = SppDetailResponseDefault.from_dict(response.json())
 
     return response_default
@@ -55,7 +61,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[SppDetailResponseDefault]:
+) -> Response[Union[SppDetailResponseDefault, SppDetailSeasonPersonPlacingsResponse]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -75,7 +81,7 @@ def sync_detailed(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Response[SppDetailResponseDefault]:
+) -> Response[Union[SppDetailResponseDefault, SppDetailSeasonPersonPlacingsResponse]]:
     """Get a season person placing
 
      Return detailed information about a specific season person placing
@@ -96,7 +102,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[SppDetailResponseDefault]
+        Response[Union[SppDetailResponseDefault, SppDetailSeasonPersonPlacingsResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -128,7 +134,7 @@ def sync(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Optional[SppDetailResponseDefault]:
+) -> Optional[Union[SppDetailResponseDefault, SppDetailSeasonPersonPlacingsResponse]]:
     """Get a season person placing
 
      Return detailed information about a specific season person placing
@@ -149,7 +155,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        SppDetailResponseDefault
+        Union[SppDetailResponseDefault, SppDetailSeasonPersonPlacingsResponse]
     """
 
     return sync_detailed(
@@ -176,7 +182,7 @@ async def asyncio_detailed(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Response[SppDetailResponseDefault]:
+) -> Response[Union[SppDetailResponseDefault, SppDetailSeasonPersonPlacingsResponse]]:
     """Get a season person placing
 
      Return detailed information about a specific season person placing
@@ -197,7 +203,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[SppDetailResponseDefault]
+        Response[Union[SppDetailResponseDefault, SppDetailSeasonPersonPlacingsResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -227,7 +233,7 @@ async def asyncio(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Optional[SppDetailResponseDefault]:
+) -> Optional[Union[SppDetailResponseDefault, SppDetailSeasonPersonPlacingsResponse]]:
     """Get a season person placing
 
      Return detailed information about a specific season person placing
@@ -248,7 +254,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        SppDetailResponseDefault
+        Union[SppDetailResponseDefault, SppDetailSeasonPersonPlacingsResponse]
     """
 
     return (
