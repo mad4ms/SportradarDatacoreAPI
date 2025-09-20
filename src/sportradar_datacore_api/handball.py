@@ -52,11 +52,16 @@ class HandballAPI(DataCoreAPI):
 
         parsed = resp.parsed
         if isinstance(parsed, CompetitionListResponseDefault):
-            competitions = list(parsed.data or [])  # list[CompetitionModel]
+            competitions = parsed.additional_properties[
+                "data"
+            ]  # list[CompetitionModel]
             for c in competitions:
-                comp_id = c.competition_id
+                comp_id = c.get("competitionId")
 
-                if c.name_local and c.name_local.lower() == competition_name.lower():
+                if (
+                    c.get("nameLocal")
+                    and c.get("nameLocal").lower() == competition_name.lower()
+                ):
                     return comp_id
         else:
             # Default/error schema from API (typed)
@@ -80,14 +85,18 @@ class HandballAPI(DataCoreAPI):
             logging.debug("Status Code: %s", response.status_code)
             parsed = response.parsed
             if isinstance(parsed, SeasonListResponseDefault):
-                seasons = list(parsed.data or [])
+                seasons = parsed.additional_properties["data"]
 
                 for c in seasons:
-                    season_id = c.season_id
+                    season_id = c.get("seasonId")
 
-                    logging.debug("Checking season: %s (%s)", c.name_local, season_id)
+                    logging.debug(
+                        "Checking season: %s (%s)",
+                        c.get("nameLocal"),
+                        season_id,
+                    )
 
-                    if c.year == season_year:
+                    if c.get("year") == int(season_year):
                         return season_id
             else:
                 err: SeasonListResponseDefault = parsed
@@ -112,7 +121,7 @@ class HandballAPI(DataCoreAPI):
         parsed = resp.parsed
 
         if isinstance(parsed, FixtureListResponseDefault):
-            return parsed.data or []
+            return parsed.additional_properties["data"] or []
         else:
             err: FixtureListResponseDefault = parsed
             raise RuntimeError(f"API error: {err}")
