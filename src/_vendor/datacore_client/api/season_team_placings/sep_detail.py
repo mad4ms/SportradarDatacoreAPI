@@ -6,9 +6,6 @@ import httpx
 
 from ...client import AuthenticatedClient, Client
 from ...models.sep_detail_response_default import SepDetailResponseDefault
-from ...models.sep_detail_season_entity_placings_response import (
-    SepDetailSeasonEntityPlacingsResponse,
-)
 from ...types import UNSET, Response, Unset
 
 
@@ -50,12 +47,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[SepDetailResponseDefault, SepDetailSeasonEntityPlacingsResponse]:
-    if response.status_code == 200:
-        response_200 = SepDetailSeasonEntityPlacingsResponse.from_dict(response.json())
-
-        return response_200
-
+) -> SepDetailResponseDefault:
     response_default = SepDetailResponseDefault.from_dict(response.json())
 
     return response_default
@@ -63,7 +55,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[Union[SepDetailResponseDefault, SepDetailSeasonEntityPlacingsResponse]]:
+) -> Response[SepDetailResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -83,7 +75,7 @@ def sync_detailed(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Response[Union[SepDetailResponseDefault, SepDetailSeasonEntityPlacingsResponse]]:
+) -> Response[SepDetailResponseDefault]:
     """Get a season team placing
 
      Return detailed information about a specific season team placing
@@ -104,7 +96,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SepDetailResponseDefault, SepDetailSeasonEntityPlacingsResponse]]
+        Response[SepDetailResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -136,7 +128,7 @@ def sync(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Optional[Union[SepDetailResponseDefault, SepDetailSeasonEntityPlacingsResponse]]:
+) -> Optional[SepDetailResponseDefault]:
     """Get a season team placing
 
      Return detailed information about a specific season team placing
@@ -157,7 +149,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SepDetailResponseDefault, SepDetailSeasonEntityPlacingsResponse]
+        SepDetailResponseDefault
     """
 
     return sync_detailed(
@@ -184,7 +176,7 @@ async def asyncio_detailed(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Response[Union[SepDetailResponseDefault, SepDetailSeasonEntityPlacingsResponse]]:
+) -> Response[SepDetailResponseDefault]:
     """Get a season team placing
 
      Return detailed information about a specific season team placing
@@ -205,7 +197,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SepDetailResponseDefault, SepDetailSeasonEntityPlacingsResponse]]
+        Response[SepDetailResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -235,7 +227,7 @@ async def asyncio(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Optional[Union[SepDetailResponseDefault, SepDetailSeasonEntityPlacingsResponse]]:
+) -> Optional[SepDetailResponseDefault]:
     """Get a season team placing
 
      Return detailed information about a specific season team placing
@@ -256,7 +248,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SepDetailResponseDefault, SepDetailSeasonEntityPlacingsResponse]
+        SepDetailResponseDefault
     """
 
     return (

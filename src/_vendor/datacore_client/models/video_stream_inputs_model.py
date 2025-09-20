@@ -6,26 +6,16 @@ from uuid import UUID
 from attrs import define as _attrs_define
 from dateutil.parser import isoparse
 
-from ..models.video_stream_inputs_model_audio_ambience_channel import (
-    VideoStreamInputsModelAudioAmbienceChannel,
-)
-from ..models.video_stream_inputs_model_audio_commentary_channel import (
-    VideoStreamInputsModelAudioCommentaryChannel,
-)
+from ..models.video_stream_inputs_model_audio_ambience_channel import VideoStreamInputsModelAudioAmbienceChannel
+from ..models.video_stream_inputs_model_audio_commentary_channel import VideoStreamInputsModelAudioCommentaryChannel
 from ..models.video_stream_inputs_model_feed_type import VideoStreamInputsModelFeedType
-from ..models.video_stream_inputs_model_input_resolution import (
-    VideoStreamInputsModelInputResolution,
-)
+from ..models.video_stream_inputs_model_input_resolution import VideoStreamInputsModelInputResolution
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.video_stream_inputs_model_competition import (
-        VideoStreamInputsModelCompetition,
-    )
+    from ..models.video_stream_inputs_model_competition import VideoStreamInputsModelCompetition
     from ..models.video_stream_inputs_model_fixture import VideoStreamInputsModelFixture
-    from ..models.video_stream_inputs_model_organization import (
-        VideoStreamInputsModelOrganization,
-    )
+    from ..models.video_stream_inputs_model_organization import VideoStreamInputsModelOrganization
     from ..models.video_stream_inputs_model_venue import VideoStreamInputsModelVenue
 
 
@@ -117,12 +107,8 @@ class VideoStreamInputsModel:
     input_resolution: Union[Unset, VideoStreamInputsModelInputResolution] = UNSET
     fps: Union[Unset, int] = 25
     name: Union[Unset, str] = UNSET
-    audio_ambience_channel: Union[Unset, VideoStreamInputsModelAudioAmbienceChannel] = (
-        UNSET
-    )
-    audio_commentary_channel: Union[
-        Unset, VideoStreamInputsModelAudioCommentaryChannel
-    ] = UNSET
+    audio_ambience_channel: Union[Unset, VideoStreamInputsModelAudioAmbienceChannel] = UNSET
+    audio_commentary_channel: Union[Unset, VideoStreamInputsModelAudioCommentaryChannel] = UNSET
     platform_provider_override: Union[None, Unset, str] = UNSET
     input_url: Union[Unset, str] = UNSET
     stream_name: Union[Unset, str] = UNSET
@@ -292,15 +278,9 @@ class VideoStreamInputsModel:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.video_stream_inputs_model_competition import (
-            VideoStreamInputsModelCompetition,
-        )
-        from ..models.video_stream_inputs_model_fixture import (
-            VideoStreamInputsModelFixture,
-        )
-        from ..models.video_stream_inputs_model_organization import (
-            VideoStreamInputsModelOrganization,
-        )
+        from ..models.video_stream_inputs_model_competition import VideoStreamInputsModelCompetition
+        from ..models.video_stream_inputs_model_fixture import VideoStreamInputsModelFixture
+        from ..models.video_stream_inputs_model_organization import VideoStreamInputsModelOrganization
         from ..models.video_stream_inputs_model_venue import VideoStreamInputsModelVenue
 
         d = dict(src_dict)
@@ -426,20 +406,14 @@ class VideoStreamInputsModel:
         if isinstance(_audio_ambience_channel, Unset):
             audio_ambience_channel = UNSET
         else:
-            audio_ambience_channel = VideoStreamInputsModelAudioAmbienceChannel(
-                _audio_ambience_channel
-            )
+            audio_ambience_channel = VideoStreamInputsModelAudioAmbienceChannel(_audio_ambience_channel)
 
         _audio_commentary_channel = d.pop("audioCommentaryChannel", UNSET)
-        audio_commentary_channel: Union[
-            Unset, VideoStreamInputsModelAudioCommentaryChannel
-        ]
+        audio_commentary_channel: Union[Unset, VideoStreamInputsModelAudioCommentaryChannel]
         if isinstance(_audio_commentary_channel, Unset):
             audio_commentary_channel = UNSET
         else:
-            audio_commentary_channel = VideoStreamInputsModelAudioCommentaryChannel(
-                _audio_commentary_channel
-            )
+            audio_commentary_channel = VideoStreamInputsModelAudioCommentaryChannel(_audio_commentary_channel)
 
         def _parse_platform_provider_override(data: object) -> Union[None, Unset, str]:
             if data is None:
@@ -448,9 +422,7 @@ class VideoStreamInputsModel:
                 return data
             return cast(Union[None, Unset, str], data)
 
-        platform_provider_override = _parse_platform_provider_override(
-            d.pop("platformProviderOverride", UNSET)
-        )
+        platform_provider_override = _parse_platform_provider_override(d.pop("platformProviderOverride", UNSET))
 
         input_url = d.pop("inputURL", UNSET)
 

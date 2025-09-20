@@ -5,9 +5,7 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.fls_list_fixture_live_summary_response import (
-    FlsListFixtureLiveSummaryResponse,
-)
+from ...models.fixture_live_summary_response import FixtureLiveSummaryResponse
 from ...models.fls_list_response_default import FlsListResponseDefault
 from ...types import UNSET, Response, Unset
 
@@ -38,9 +36,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[FlsListFixtureLiveSummaryResponse, FlsListResponseDefault]:
+) -> Union[FixtureLiveSummaryResponse, FlsListResponseDefault]:
     if response.status_code == 200:
-        response_200 = FlsListFixtureLiveSummaryResponse.from_dict(response.json())
+        response_200 = FixtureLiveSummaryResponse.from_dict(response.json())
 
         return response_200
 
@@ -51,7 +49,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[Union[FlsListFixtureLiveSummaryResponse, FlsListResponseDefault]]:
+) -> Response[Union[FixtureLiveSummaryResponse, FlsListResponseDefault]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -67,7 +65,7 @@ def sync_detailed(
     client: AuthenticatedClient,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Response[Union[FlsListFixtureLiveSummaryResponse, FlsListResponseDefault]]:
+) -> Response[Union[FixtureLiveSummaryResponse, FlsListResponseDefault]]:
     """Match Live Summary
 
 
@@ -90,7 +88,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[FlsListFixtureLiveSummaryResponse, FlsListResponseDefault]]
+        Response[Union[FixtureLiveSummaryResponse, FlsListResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -114,7 +112,7 @@ def sync(
     client: AuthenticatedClient,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Optional[Union[FlsListFixtureLiveSummaryResponse, FlsListResponseDefault]]:
+) -> Optional[Union[FixtureLiveSummaryResponse, FlsListResponseDefault]]:
     """Match Live Summary
 
 
@@ -137,7 +135,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[FlsListFixtureLiveSummaryResponse, FlsListResponseDefault]
+        Union[FixtureLiveSummaryResponse, FlsListResponseDefault]
     """
 
     return sync_detailed(
@@ -156,7 +154,7 @@ async def asyncio_detailed(
     client: AuthenticatedClient,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Response[Union[FlsListFixtureLiveSummaryResponse, FlsListResponseDefault]]:
+) -> Response[Union[FixtureLiveSummaryResponse, FlsListResponseDefault]]:
     """Match Live Summary
 
 
@@ -179,7 +177,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[FlsListFixtureLiveSummaryResponse, FlsListResponseDefault]]
+        Response[Union[FixtureLiveSummaryResponse, FlsListResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -201,7 +199,7 @@ async def asyncio(
     client: AuthenticatedClient,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Optional[Union[FlsListFixtureLiveSummaryResponse, FlsListResponseDefault]]:
+) -> Optional[Union[FixtureLiveSummaryResponse, FlsListResponseDefault]]:
     """Match Live Summary
 
 
@@ -224,7 +222,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[FlsListFixtureLiveSummaryResponse, FlsListResponseDefault]
+        Union[FixtureLiveSummaryResponse, FlsListResponseDefault]
     """
 
     return (

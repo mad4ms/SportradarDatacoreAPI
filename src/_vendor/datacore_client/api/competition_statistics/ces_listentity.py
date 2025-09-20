@@ -5,9 +5,6 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.ces_listentity_competition_entity_statistics_response import (
-    CesListentityCompetitionEntityStatisticsResponse,
-)
 from ...models.ces_listentity_fixture_type import CesListentityFixtureType
 from ...models.ces_listentity_home_away import CesListentityHomeAway
 from ...models.ces_listentity_response_default import CesListentityResponseDefault
@@ -78,16 +75,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[
-    CesListentityCompetitionEntityStatisticsResponse, CesListentityResponseDefault
-]:
-    if response.status_code == 200:
-        response_200 = CesListentityCompetitionEntityStatisticsResponse.from_dict(
-            response.json()
-        )
-
-        return response_200
-
+) -> CesListentityResponseDefault:
     response_default = CesListentityResponseDefault.from_dict(response.json())
 
     return response_default
@@ -95,11 +83,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[
-        CesListentityCompetitionEntityStatisticsResponse, CesListentityResponseDefault
-    ]
-]:
+) -> Response[CesListentityResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -124,11 +108,7 @@ def sync_detailed(
     offset: Union[Unset, int] = UNSET,
     section: Union[Unset, str] = UNSET,
     win_loss: Union[Unset, CesListentityWinLoss] = UNSET,
-) -> Response[
-    Union[
-        CesListentityCompetitionEntityStatisticsResponse, CesListentityResponseDefault
-    ]
-]:
+) -> Response[CesListentityResponseDefault]:
     """Statistics for a team in a competition
 
      Return the statistic totals for a specific team in a competition.
@@ -154,7 +134,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[CesListentityCompetitionEntityStatisticsResponse, CesListentityResponseDefault]]
+        Response[CesListentityResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -196,11 +176,7 @@ def sync(
     offset: Union[Unset, int] = UNSET,
     section: Union[Unset, str] = UNSET,
     win_loss: Union[Unset, CesListentityWinLoss] = UNSET,
-) -> Optional[
-    Union[
-        CesListentityCompetitionEntityStatisticsResponse, CesListentityResponseDefault
-    ]
-]:
+) -> Optional[CesListentityResponseDefault]:
     """Statistics for a team in a competition
 
      Return the statistic totals for a specific team in a competition.
@@ -226,7 +202,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[CesListentityCompetitionEntityStatisticsResponse, CesListentityResponseDefault]
+        CesListentityResponseDefault
     """
 
     return sync_detailed(
@@ -263,11 +239,7 @@ async def asyncio_detailed(
     offset: Union[Unset, int] = UNSET,
     section: Union[Unset, str] = UNSET,
     win_loss: Union[Unset, CesListentityWinLoss] = UNSET,
-) -> Response[
-    Union[
-        CesListentityCompetitionEntityStatisticsResponse, CesListentityResponseDefault
-    ]
-]:
+) -> Response[CesListentityResponseDefault]:
     """Statistics for a team in a competition
 
      Return the statistic totals for a specific team in a competition.
@@ -293,7 +265,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[CesListentityCompetitionEntityStatisticsResponse, CesListentityResponseDefault]]
+        Response[CesListentityResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -333,11 +305,7 @@ async def asyncio(
     offset: Union[Unset, int] = UNSET,
     section: Union[Unset, str] = UNSET,
     win_loss: Union[Unset, CesListentityWinLoss] = UNSET,
-) -> Optional[
-    Union[
-        CesListentityCompetitionEntityStatisticsResponse, CesListentityResponseDefault
-    ]
-]:
+) -> Optional[CesListentityResponseDefault]:
     """Statistics for a team in a competition
 
      Return the statistic totals for a specific team in a competition.
@@ -363,7 +331,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[CesListentityCompetitionEntityStatisticsResponse, CesListentityResponseDefault]
+        CesListentityResponseDefault
     """
 
     return (

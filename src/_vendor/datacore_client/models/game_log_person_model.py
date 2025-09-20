@@ -7,23 +7,15 @@ from attrs import define as _attrs_define
 from dateutil.parser import isoparse
 
 from ..models.game_log_person_model_period_id import GameLogPersonModelPeriodId
-from ..models.game_log_person_model_position_type_1 import (
-    GameLogPersonModelPositionType1,
-)
-from ..models.game_log_person_model_position_type_2_type_1 import (
-    GameLogPersonModelPositionType2Type1,
-)
-from ..models.game_log_person_model_position_type_3_type_1 import (
-    GameLogPersonModelPositionType3Type1,
-)
+from ..models.game_log_person_model_position_type_1 import GameLogPersonModelPositionType1
+from ..models.game_log_person_model_position_type_2_type_1 import GameLogPersonModelPositionType2Type1
+from ..models.game_log_person_model_position_type_3_type_1 import GameLogPersonModelPositionType3Type1
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
     from ..models.game_log_person_model_entity import GameLogPersonModelEntity
     from ..models.game_log_person_model_fixture import GameLogPersonModelFixture
-    from ..models.game_log_person_model_organization import (
-        GameLogPersonModelOrganization,
-    )
+    from ..models.game_log_person_model_organization import GameLogPersonModelOrganization
     from ..models.game_log_person_model_person import GameLogPersonModelPerson
     from ..models.game_log_person_model_statistics import GameLogPersonModelStatistics
 
@@ -236,13 +228,9 @@ class GameLogPersonModel:
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.game_log_person_model_entity import GameLogPersonModelEntity
         from ..models.game_log_person_model_fixture import GameLogPersonModelFixture
-        from ..models.game_log_person_model_organization import (
-            GameLogPersonModelOrganization,
-        )
+        from ..models.game_log_person_model_organization import GameLogPersonModelOrganization
         from ..models.game_log_person_model_person import GameLogPersonModelPerson
-        from ..models.game_log_person_model_statistics import (
-            GameLogPersonModelStatistics,
-        )
+        from ..models.game_log_person_model_statistics import GameLogPersonModelStatistics
 
         d = dict(src_dict)
         _person_id = d.pop("personId", UNSET)
@@ -378,9 +366,7 @@ class GameLogPersonModel:
                 return data
             return cast(Union[None, Unset, str], data)
 
-        did_not_play_reason = _parse_did_not_play_reason(
-            d.pop("didNotPlayReason", UNSET)
-        )
+        did_not_play_reason = _parse_did_not_play_reason(d.pop("didNotPlayReason", UNSET))
 
         starter = d.pop("starter", UNSET)
 

@@ -5,11 +5,8 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.fixture_reset_fixture_reset_post_body import (
-    FixtureResetFixtureResetPostBody,
-)
+from ...models.fixture_reset_post_body import FixtureResetPostBody
 from ...models.fixture_reset_response_default import FixtureResetResponseDefault
-from ...models.fixture_reset_success_response import FixtureResetSuccessResponse
 from ...types import UNSET, Response, Unset
 
 
@@ -17,7 +14,7 @@ def _get_kwargs(
     organization_id: str,
     fixture_id: UUID,
     *,
-    body: FixtureResetFixtureResetPostBody,
+    body: FixtureResetPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     force_delete: Union[Unset, bool] = UNSET,
@@ -56,12 +53,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[FixtureResetResponseDefault, FixtureResetSuccessResponse]:
-    if response.status_code == 200:
-        response_200 = FixtureResetSuccessResponse.from_dict(response.json())
-
-        return response_200
-
+) -> FixtureResetResponseDefault:
     response_default = FixtureResetResponseDefault.from_dict(response.json())
 
     return response_default
@@ -69,7 +61,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[Union[FixtureResetResponseDefault, FixtureResetSuccessResponse]]:
+) -> Response[FixtureResetResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -83,13 +75,13 @@ def sync_detailed(
     fixture_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: FixtureResetFixtureResetPostBody,
+    body: FixtureResetPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[Union[FixtureResetResponseDefault, FixtureResetSuccessResponse]]:
+) -> Response[FixtureResetResponseDefault]:
     """Reset match
 
      Reset a specific match record. Removes statistics, events and PLAY-BY-PLAY records
@@ -103,14 +95,14 @@ def sync_detailed(
         force_delete (Union[Unset, bool]):  Example: True.
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (FixtureResetFixtureResetPostBody):
+        body (FixtureResetPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[FixtureResetResponseDefault, FixtureResetSuccessResponse]]
+        Response[FixtureResetResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -136,13 +128,13 @@ def sync(
     fixture_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: FixtureResetFixtureResetPostBody,
+    body: FixtureResetPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[Union[FixtureResetResponseDefault, FixtureResetSuccessResponse]]:
+) -> Optional[FixtureResetResponseDefault]:
     """Reset match
 
      Reset a specific match record. Removes statistics, events and PLAY-BY-PLAY records
@@ -156,14 +148,14 @@ def sync(
         force_delete (Union[Unset, bool]):  Example: True.
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (FixtureResetFixtureResetPostBody):
+        body (FixtureResetPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[FixtureResetResponseDefault, FixtureResetSuccessResponse]
+        FixtureResetResponseDefault
     """
 
     return sync_detailed(
@@ -184,13 +176,13 @@ async def asyncio_detailed(
     fixture_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: FixtureResetFixtureResetPostBody,
+    body: FixtureResetPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[Union[FixtureResetResponseDefault, FixtureResetSuccessResponse]]:
+) -> Response[FixtureResetResponseDefault]:
     """Reset match
 
      Reset a specific match record. Removes statistics, events and PLAY-BY-PLAY records
@@ -204,14 +196,14 @@ async def asyncio_detailed(
         force_delete (Union[Unset, bool]):  Example: True.
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (FixtureResetFixtureResetPostBody):
+        body (FixtureResetPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[FixtureResetResponseDefault, FixtureResetSuccessResponse]]
+        Response[FixtureResetResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -235,13 +227,13 @@ async def asyncio(
     fixture_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: FixtureResetFixtureResetPostBody,
+    body: FixtureResetPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[Union[FixtureResetResponseDefault, FixtureResetSuccessResponse]]:
+) -> Optional[FixtureResetResponseDefault]:
     """Reset match
 
      Reset a specific match record. Removes statistics, events and PLAY-BY-PLAY records
@@ -255,14 +247,14 @@ async def asyncio(
         force_delete (Union[Unset, bool]):  Example: True.
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (FixtureResetFixtureResetPostBody):
+        body (FixtureResetPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[FixtureResetResponseDefault, FixtureResetSuccessResponse]
+        FixtureResetResponseDefault
     """
 
     return (

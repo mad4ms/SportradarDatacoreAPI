@@ -4,9 +4,7 @@ from typing import Any, TypeVar, Union
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-from ..models.venue_external_ids_model_venue_resource_type import (
-    VenueExternalIdsModelVenueResourceType,
-)
+from ..models.venue_external_ids_model_venue_resource_type import VenueExternalIdsModelVenueResourceType
 from ..types import UNSET, Unset
 
 T = TypeVar("T", bound="VenueExternalIdsModelVenue")

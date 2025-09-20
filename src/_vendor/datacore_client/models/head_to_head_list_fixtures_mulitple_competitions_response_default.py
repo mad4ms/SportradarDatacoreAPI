@@ -70,9 +70,7 @@ class HeadToHeadListFixturesMulitpleCompetitionsResponseDefault:
             error=error,
         )
 
-        head_to_head_list_fixtures_mulitple_competitions_response_default.additional_properties = (
-            d
-        )
+        head_to_head_list_fixtures_mulitple_competitions_response_default.additional_properties = d
         return head_to_head_list_fixtures_mulitple_competitions_response_default
 
     @property

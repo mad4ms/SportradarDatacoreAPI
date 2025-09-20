@@ -6,7 +6,6 @@ import httpx
 
 from ...client import AuthenticatedClient, Client
 from ...models.standing_build_response_default import StandingBuildResponseDefault
-from ...models.standing_build_success_response import StandingBuildSuccessResponse
 from ...types import UNSET, Response, Unset
 
 
@@ -42,12 +41,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[StandingBuildResponseDefault, StandingBuildSuccessResponse]:
-    if response.status_code == 200:
-        response_200 = StandingBuildSuccessResponse.from_dict(response.json())
-
-        return response_200
-
+) -> StandingBuildResponseDefault:
     response_default = StandingBuildResponseDefault.from_dict(response.json())
 
     return response_default
@@ -55,7 +49,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[Union[StandingBuildResponseDefault, StandingBuildSuccessResponse]]:
+) -> Response[StandingBuildResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -73,7 +67,7 @@ def sync_detailed(
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[Union[StandingBuildResponseDefault, StandingBuildSuccessResponse]]:
+) -> Response[StandingBuildResponseDefault]:
     """Build a standing
 
      Build a standing
@@ -92,7 +86,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[StandingBuildResponseDefault, StandingBuildSuccessResponse]]
+        Response[StandingBuildResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -120,7 +114,7 @@ def sync(
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[Union[StandingBuildResponseDefault, StandingBuildSuccessResponse]]:
+) -> Optional[StandingBuildResponseDefault]:
     """Build a standing
 
      Build a standing
@@ -139,7 +133,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[StandingBuildResponseDefault, StandingBuildSuccessResponse]
+        StandingBuildResponseDefault
     """
 
     return sync_detailed(
@@ -162,7 +156,7 @@ async def asyncio_detailed(
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[Union[StandingBuildResponseDefault, StandingBuildSuccessResponse]]:
+) -> Response[StandingBuildResponseDefault]:
     """Build a standing
 
      Build a standing
@@ -181,7 +175,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[StandingBuildResponseDefault, StandingBuildSuccessResponse]]
+        Response[StandingBuildResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -207,7 +201,7 @@ async def asyncio(
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[Union[StandingBuildResponseDefault, StandingBuildSuccessResponse]]:
+) -> Optional[StandingBuildResponseDefault]:
     """Build a standing
 
      Build a standing
@@ -226,7 +220,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[StandingBuildResponseDefault, StandingBuildSuccessResponse]
+        StandingBuildResponseDefault
     """
 
     return (

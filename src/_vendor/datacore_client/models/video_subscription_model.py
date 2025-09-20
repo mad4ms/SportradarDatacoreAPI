@@ -9,19 +9,13 @@ from dateutil.parser import isoparse
 from ..models.video_subscription_model_audio import VideoSubscriptionModelAudio
 from ..models.video_subscription_model_content import VideoSubscriptionModelContent
 from ..models.video_subscription_model_feed_type import VideoSubscriptionModelFeedType
-from ..models.video_subscription_model_output_format import (
-    VideoSubscriptionModelOutputFormat,
-)
-from ..models.video_subscription_model_output_resolution import (
-    VideoSubscriptionModelOutputResolution,
-)
+from ..models.video_subscription_model_output_format import VideoSubscriptionModelOutputFormat
+from ..models.video_subscription_model_output_resolution import VideoSubscriptionModelOutputResolution
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
     from ..models.video_subscription_model_fixture import VideoSubscriptionModelFixture
-    from ..models.video_subscription_model_organization import (
-        VideoSubscriptionModelOrganization,
-    )
+    from ..models.video_subscription_model_organization import VideoSubscriptionModelOrganization
 
 
 T = TypeVar("T", bound="VideoSubscriptionModel")
@@ -243,12 +237,8 @@ class VideoSubscriptionModel:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.video_subscription_model_fixture import (
-            VideoSubscriptionModelFixture,
-        )
-        from ..models.video_subscription_model_organization import (
-            VideoSubscriptionModelOrganization,
-        )
+        from ..models.video_subscription_model_fixture import VideoSubscriptionModelFixture
+        from ..models.video_subscription_model_organization import VideoSubscriptionModelOrganization
 
         d = dict(src_dict)
         _subscription_id = d.pop("subscriptionId", UNSET)
@@ -308,9 +298,7 @@ class VideoSubscriptionModel:
         if isinstance(_output_resolution, Unset):
             output_resolution = UNSET
         else:
-            output_resolution = VideoSubscriptionModelOutputResolution(
-                _output_resolution
-            )
+            output_resolution = VideoSubscriptionModelOutputResolution(_output_resolution)
 
         _output_format = d.pop("outputFormat", UNSET)
         output_format: Union[Unset, VideoSubscriptionModelOutputFormat]

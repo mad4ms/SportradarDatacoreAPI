@@ -5,12 +5,7 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.season_external_ids_delete_response_default import (
-    SeasonExternalIdsDeleteResponseDefault,
-)
-from ...models.season_external_ids_delete_season_external_ids_response import (
-    SeasonExternalIdsDeleteSeasonExternalIdsResponse,
-)
+from ...models.season_external_ids_delete_response_default import SeasonExternalIdsDeleteResponseDefault
 from ...types import UNSET, Response, Unset
 
 
@@ -49,17 +44,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[
-    SeasonExternalIdsDeleteResponseDefault,
-    SeasonExternalIdsDeleteSeasonExternalIdsResponse,
-]:
-    if response.status_code == 200:
-        response_200 = SeasonExternalIdsDeleteSeasonExternalIdsResponse.from_dict(
-            response.json()
-        )
-
-        return response_200
-
+) -> SeasonExternalIdsDeleteResponseDefault:
     response_default = SeasonExternalIdsDeleteResponseDefault.from_dict(response.json())
 
     return response_default
@@ -67,12 +52,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[
-        SeasonExternalIdsDeleteResponseDefault,
-        SeasonExternalIdsDeleteSeasonExternalIdsResponse,
-    ]
-]:
+) -> Response[SeasonExternalIdsDeleteResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -91,12 +71,7 @@ def sync_detailed(
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        SeasonExternalIdsDeleteResponseDefault,
-        SeasonExternalIdsDeleteSeasonExternalIdsResponse,
-    ]
-]:
+) -> Response[SeasonExternalIdsDeleteResponseDefault]:
     """Delete a season external identifier information
 
      Delete a specific season external identifier information
@@ -116,7 +91,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SeasonExternalIdsDeleteResponseDefault, SeasonExternalIdsDeleteSeasonExternalIdsResponse]]
+        Response[SeasonExternalIdsDeleteResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -146,12 +121,7 @@ def sync(
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        SeasonExternalIdsDeleteResponseDefault,
-        SeasonExternalIdsDeleteSeasonExternalIdsResponse,
-    ]
-]:
+) -> Optional[SeasonExternalIdsDeleteResponseDefault]:
     """Delete a season external identifier information
 
      Delete a specific season external identifier information
@@ -171,7 +141,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SeasonExternalIdsDeleteResponseDefault, SeasonExternalIdsDeleteSeasonExternalIdsResponse]
+        SeasonExternalIdsDeleteResponseDefault
     """
 
     return sync_detailed(
@@ -196,12 +166,7 @@ async def asyncio_detailed(
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        SeasonExternalIdsDeleteResponseDefault,
-        SeasonExternalIdsDeleteSeasonExternalIdsResponse,
-    ]
-]:
+) -> Response[SeasonExternalIdsDeleteResponseDefault]:
     """Delete a season external identifier information
 
      Delete a specific season external identifier information
@@ -221,7 +186,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SeasonExternalIdsDeleteResponseDefault, SeasonExternalIdsDeleteSeasonExternalIdsResponse]]
+        Response[SeasonExternalIdsDeleteResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -249,12 +214,7 @@ async def asyncio(
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        SeasonExternalIdsDeleteResponseDefault,
-        SeasonExternalIdsDeleteSeasonExternalIdsResponse,
-    ]
-]:
+) -> Optional[SeasonExternalIdsDeleteResponseDefault]:
     """Delete a season external identifier information
 
      Delete a specific season external identifier information
@@ -274,7 +234,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SeasonExternalIdsDeleteResponseDefault, SeasonExternalIdsDeleteSeasonExternalIdsResponse]
+        SeasonExternalIdsDeleteResponseDefault
     """
 
     return (

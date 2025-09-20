@@ -7,7 +7,6 @@ import httpx
 from ...client import AuthenticatedClient, Client
 from ...models.images_insert_base_type import ImagesInsertBaseType
 from ...models.images_insert_image_type import ImagesInsertImageType
-from ...models.images_insert_images_response import ImagesInsertImagesResponse
 from ...models.images_insert_response_default import ImagesInsertResponseDefault
 from ...types import UNSET, File, Response, Unset
 
@@ -54,12 +53,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[ImagesInsertImagesResponse, ImagesInsertResponseDefault]:
-    if response.status_code == 200:
-        response_200 = ImagesInsertImagesResponse.from_dict(response.json())
-
-        return response_200
-
+) -> ImagesInsertResponseDefault:
     response_default = ImagesInsertResponseDefault.from_dict(response.json())
 
     return response_default
@@ -67,7 +61,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[Union[ImagesInsertImagesResponse, ImagesInsertResponseDefault]]:
+) -> Response[ImagesInsertResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -88,7 +82,7 @@ def sync_detailed(
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[Union[ImagesInsertImagesResponse, ImagesInsertResponseDefault]]:
+) -> Response[ImagesInsertResponseDefault]:
     """Upload a new image
 
 
@@ -138,7 +132,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[ImagesInsertImagesResponse, ImagesInsertResponseDefault]]
+        Response[ImagesInsertResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -172,7 +166,7 @@ def sync(
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[Union[ImagesInsertImagesResponse, ImagesInsertResponseDefault]]:
+) -> Optional[ImagesInsertResponseDefault]:
     """Upload a new image
 
 
@@ -222,7 +216,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[ImagesInsertImagesResponse, ImagesInsertResponseDefault]
+        ImagesInsertResponseDefault
     """
 
     return sync_detailed(
@@ -251,7 +245,7 @@ async def asyncio_detailed(
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[Union[ImagesInsertImagesResponse, ImagesInsertResponseDefault]]:
+) -> Response[ImagesInsertResponseDefault]:
     """Upload a new image
 
 
@@ -301,7 +295,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[ImagesInsertImagesResponse, ImagesInsertResponseDefault]]
+        Response[ImagesInsertResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -333,7 +327,7 @@ async def asyncio(
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[Union[ImagesInsertImagesResponse, ImagesInsertResponseDefault]]:
+) -> Optional[ImagesInsertResponseDefault]:
     """Upload a new image
 
 
@@ -383,7 +377,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[ImagesInsertImagesResponse, ImagesInsertResponseDefault]
+        ImagesInsertResponseDefault
     """
 
     return (

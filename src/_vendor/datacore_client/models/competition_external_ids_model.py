@@ -9,12 +9,8 @@ from dateutil.parser import isoparse
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.competition_external_ids_model_competition import (
-        CompetitionExternalIdsModelCompetition,
-    )
-    from ..models.competition_external_ids_model_organization import (
-        CompetitionExternalIdsModelOrganization,
-    )
+    from ..models.competition_external_ids_model_competition import CompetitionExternalIdsModelCompetition
+    from ..models.competition_external_ids_model_organization import CompetitionExternalIdsModelOrganization
 
 
 T = TypeVar("T", bound="CompetitionExternalIdsModel")
@@ -111,12 +107,8 @@ class CompetitionExternalIdsModel:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.competition_external_ids_model_competition import (
-            CompetitionExternalIdsModelCompetition,
-        )
-        from ..models.competition_external_ids_model_organization import (
-            CompetitionExternalIdsModelOrganization,
-        )
+        from ..models.competition_external_ids_model_competition import CompetitionExternalIdsModelCompetition
+        from ..models.competition_external_ids_model_organization import CompetitionExternalIdsModelOrganization
 
         d = dict(src_dict)
         _competition_external_id = d.pop("competitionExternalId", UNSET)
@@ -133,9 +125,7 @@ class CompetitionExternalIdsModel:
         if isinstance(_organization, Unset):
             organization = UNSET
         else:
-            organization = CompetitionExternalIdsModelOrganization.from_dict(
-                _organization
-            )
+            organization = CompetitionExternalIdsModelOrganization.from_dict(_organization)
 
         _competition_id = d.pop("competitionId", UNSET)
         competition_id: Union[Unset, UUID]

@@ -10,9 +10,6 @@ from ...models.ses_listperiods_fixture_type import SesListperiodsFixtureType
 from ...models.ses_listperiods_home_away import SesListperiodsHomeAway
 from ...models.ses_listperiods_period_id import SesListperiodsPeriodId
 from ...models.ses_listperiods_response_default import SesListperiodsResponseDefault
-from ...models.ses_listperiods_season_entity_statistics_response import (
-    SesListperiodsSeasonEntityStatisticsResponse,
-)
 from ...models.ses_listperiods_win_loss import SesListperiodsWinLoss
 from ...types import UNSET, Response, Unset
 
@@ -116,14 +113,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[SesListperiodsResponseDefault, SesListperiodsSeasonEntityStatisticsResponse]:
-    if response.status_code == 200:
-        response_200 = SesListperiodsSeasonEntityStatisticsResponse.from_dict(
-            response.json()
-        )
-
-        return response_200
-
+) -> SesListperiodsResponseDefault:
     response_default = SesListperiodsResponseDefault.from_dict(response.json())
 
     return response_default
@@ -131,9 +121,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[SesListperiodsResponseDefault, SesListperiodsSeasonEntityStatisticsResponse]
-]:
+) -> Response[SesListperiodsResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -165,9 +153,7 @@ def sync_detailed(
     stage_code: Union[Unset, str] = UNSET,
     to_time_utc: Union[Unset, datetime.datetime] = UNSET,
     win_loss: Union[Unset, SesListperiodsWinLoss] = UNSET,
-) -> Response[
-    Union[SesListperiodsResponseDefault, SesListperiodsSeasonEntityStatisticsResponse]
-]:
+) -> Response[SesListperiodsResponseDefault]:
     """Team statistics by period
 
      Return a list of team statistics for a season filterable by period.
@@ -200,7 +186,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SesListperiodsResponseDefault, SesListperiodsSeasonEntityStatisticsResponse]]
+        Response[SesListperiodsResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -256,9 +242,7 @@ def sync(
     stage_code: Union[Unset, str] = UNSET,
     to_time_utc: Union[Unset, datetime.datetime] = UNSET,
     win_loss: Union[Unset, SesListperiodsWinLoss] = UNSET,
-) -> Optional[
-    Union[SesListperiodsResponseDefault, SesListperiodsSeasonEntityStatisticsResponse]
-]:
+) -> Optional[SesListperiodsResponseDefault]:
     """Team statistics by period
 
      Return a list of team statistics for a season filterable by period.
@@ -291,7 +275,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SesListperiodsResponseDefault, SesListperiodsSeasonEntityStatisticsResponse]
+        SesListperiodsResponseDefault
     """
 
     return sync_detailed(
@@ -342,9 +326,7 @@ async def asyncio_detailed(
     stage_code: Union[Unset, str] = UNSET,
     to_time_utc: Union[Unset, datetime.datetime] = UNSET,
     win_loss: Union[Unset, SesListperiodsWinLoss] = UNSET,
-) -> Response[
-    Union[SesListperiodsResponseDefault, SesListperiodsSeasonEntityStatisticsResponse]
-]:
+) -> Response[SesListperiodsResponseDefault]:
     """Team statistics by period
 
      Return a list of team statistics for a season filterable by period.
@@ -377,7 +359,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SesListperiodsResponseDefault, SesListperiodsSeasonEntityStatisticsResponse]]
+        Response[SesListperiodsResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -431,9 +413,7 @@ async def asyncio(
     stage_code: Union[Unset, str] = UNSET,
     to_time_utc: Union[Unset, datetime.datetime] = UNSET,
     win_loss: Union[Unset, SesListperiodsWinLoss] = UNSET,
-) -> Optional[
-    Union[SesListperiodsResponseDefault, SesListperiodsSeasonEntityStatisticsResponse]
-]:
+) -> Optional[SesListperiodsResponseDefault]:
     """Team statistics by period
 
      Return a list of team statistics for a season filterable by period.
@@ -466,7 +446,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SesListperiodsResponseDefault, SesListperiodsSeasonEntityStatisticsResponse]
+        SesListperiodsResponseDefault
     """
 
     return (

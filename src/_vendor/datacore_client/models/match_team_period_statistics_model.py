@@ -6,24 +6,14 @@ from uuid import UUID
 from attrs import define as _attrs_define
 from dateutil.parser import isoparse
 
-from ..models.match_team_period_statistics_model_period_id import (
-    MatchTeamPeriodStatisticsModelPeriodId,
-)
+from ..models.match_team_period_statistics_model_period_id import MatchTeamPeriodStatisticsModelPeriodId
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.match_team_period_statistics_model_entity import (
-        MatchTeamPeriodStatisticsModelEntity,
-    )
-    from ..models.match_team_period_statistics_model_fixture import (
-        MatchTeamPeriodStatisticsModelFixture,
-    )
-    from ..models.match_team_period_statistics_model_organization import (
-        MatchTeamPeriodStatisticsModelOrganization,
-    )
-    from ..models.match_team_period_statistics_model_statistics import (
-        MatchTeamPeriodStatisticsModelStatistics,
-    )
+    from ..models.match_team_period_statistics_model_entity import MatchTeamPeriodStatisticsModelEntity
+    from ..models.match_team_period_statistics_model_fixture import MatchTeamPeriodStatisticsModelFixture
+    from ..models.match_team_period_statistics_model_organization import MatchTeamPeriodStatisticsModelOrganization
+    from ..models.match_team_period_statistics_model_statistics import MatchTeamPeriodStatisticsModelStatistics
 
 
 T = TypeVar("T", bound="MatchTeamPeriodStatisticsModel")
@@ -138,18 +128,10 @@ class MatchTeamPeriodStatisticsModel:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.match_team_period_statistics_model_entity import (
-            MatchTeamPeriodStatisticsModelEntity,
-        )
-        from ..models.match_team_period_statistics_model_fixture import (
-            MatchTeamPeriodStatisticsModelFixture,
-        )
-        from ..models.match_team_period_statistics_model_organization import (
-            MatchTeamPeriodStatisticsModelOrganization,
-        )
-        from ..models.match_team_period_statistics_model_statistics import (
-            MatchTeamPeriodStatisticsModelStatistics,
-        )
+        from ..models.match_team_period_statistics_model_entity import MatchTeamPeriodStatisticsModelEntity
+        from ..models.match_team_period_statistics_model_fixture import MatchTeamPeriodStatisticsModelFixture
+        from ..models.match_team_period_statistics_model_organization import MatchTeamPeriodStatisticsModelOrganization
+        from ..models.match_team_period_statistics_model_statistics import MatchTeamPeriodStatisticsModelStatistics
 
         d = dict(src_dict)
         _entity_id = d.pop("entityId", UNSET)
@@ -187,9 +169,7 @@ class MatchTeamPeriodStatisticsModel:
         if isinstance(_organization, Unset):
             organization = UNSET
         else:
-            organization = MatchTeamPeriodStatisticsModelOrganization.from_dict(
-                _organization
-            )
+            organization = MatchTeamPeriodStatisticsModelOrganization.from_dict(_organization)
 
         _statistics = d.pop("statistics", UNSET)
         statistics: Union[Unset, MatchTeamPeriodStatisticsModelStatistics]

@@ -5,12 +5,7 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.season_series_calculate_response_default import (
-    SeasonSeriesCalculateResponseDefault,
-)
-from ...models.season_series_calculate_success_response import (
-    SeasonSeriesCalculateSuccessResponse,
-)
+from ...models.season_series_calculate_response_default import SeasonSeriesCalculateResponseDefault
 from ...types import UNSET, Response, Unset
 
 
@@ -53,12 +48,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[SeasonSeriesCalculateResponseDefault, SeasonSeriesCalculateSuccessResponse]:
-    if response.status_code == 200:
-        response_200 = SeasonSeriesCalculateSuccessResponse.from_dict(response.json())
-
-        return response_200
-
+) -> SeasonSeriesCalculateResponseDefault:
     response_default = SeasonSeriesCalculateResponseDefault.from_dict(response.json())
 
     return response_default
@@ -66,9 +56,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[SeasonSeriesCalculateResponseDefault, SeasonSeriesCalculateSuccessResponse]
-]:
+) -> Response[SeasonSeriesCalculateResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -89,9 +77,7 @@ def sync_detailed(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Response[
-    Union[SeasonSeriesCalculateResponseDefault, SeasonSeriesCalculateSuccessResponse]
-]:
+) -> Response[SeasonSeriesCalculateResponseDefault]:
     """Calculate season series competitors score related fields
 
      Calculate season series competitors score related fields
@@ -113,7 +99,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SeasonSeriesCalculateResponseDefault, SeasonSeriesCalculateSuccessResponse]]
+        Response[SeasonSeriesCalculateResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -147,9 +133,7 @@ def sync(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Optional[
-    Union[SeasonSeriesCalculateResponseDefault, SeasonSeriesCalculateSuccessResponse]
-]:
+) -> Optional[SeasonSeriesCalculateResponseDefault]:
     """Calculate season series competitors score related fields
 
      Calculate season series competitors score related fields
@@ -171,7 +155,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SeasonSeriesCalculateResponseDefault, SeasonSeriesCalculateSuccessResponse]
+        SeasonSeriesCalculateResponseDefault
     """
 
     return sync_detailed(
@@ -200,9 +184,7 @@ async def asyncio_detailed(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Response[
-    Union[SeasonSeriesCalculateResponseDefault, SeasonSeriesCalculateSuccessResponse]
-]:
+) -> Response[SeasonSeriesCalculateResponseDefault]:
     """Calculate season series competitors score related fields
 
      Calculate season series competitors score related fields
@@ -224,7 +206,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SeasonSeriesCalculateResponseDefault, SeasonSeriesCalculateSuccessResponse]]
+        Response[SeasonSeriesCalculateResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -256,9 +238,7 @@ async def asyncio(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Optional[
-    Union[SeasonSeriesCalculateResponseDefault, SeasonSeriesCalculateSuccessResponse]
-]:
+) -> Optional[SeasonSeriesCalculateResponseDefault]:
     """Calculate season series competitors score related fields
 
      Calculate season series competitors score related fields
@@ -280,7 +260,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SeasonSeriesCalculateResponseDefault, SeasonSeriesCalculateSuccessResponse]
+        SeasonSeriesCalculateResponseDefault
     """
 
     return (

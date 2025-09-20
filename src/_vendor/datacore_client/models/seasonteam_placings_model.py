@@ -10,9 +10,7 @@ from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
     from ..models.seasonteam_placings_model_entity import SEASONTEAMPlacingsModelEntity
-    from ..models.seasonteam_placings_model_organization import (
-        SEASONTEAMPlacingsModelOrganization,
-    )
+    from ..models.seasonteam_placings_model_organization import SEASONTEAMPlacingsModelOrganization
     from ..models.seasonteam_placings_model_season import SEASONTEAMPlacingsModelSeason
 
 
@@ -134,15 +132,9 @@ class SEASONTEAMPlacingsModel:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.seasonteam_placings_model_entity import (
-            SEASONTEAMPlacingsModelEntity,
-        )
-        from ..models.seasonteam_placings_model_organization import (
-            SEASONTEAMPlacingsModelOrganization,
-        )
-        from ..models.seasonteam_placings_model_season import (
-            SEASONTEAMPlacingsModelSeason,
-        )
+        from ..models.seasonteam_placings_model_entity import SEASONTEAMPlacingsModelEntity
+        from ..models.seasonteam_placings_model_organization import SEASONTEAMPlacingsModelOrganization
+        from ..models.seasonteam_placings_model_season import SEASONTEAMPlacingsModelSeason
 
         d = dict(src_dict)
         _placing_id = d.pop("placingId", UNSET)

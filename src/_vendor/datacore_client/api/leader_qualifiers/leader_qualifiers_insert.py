@@ -5,15 +5,8 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.leader_qualifiers_insert_leader_qualifier_post_body import (
-    LeaderQualifiersInsertLeaderQualifierPostBody,
-)
-from ...models.leader_qualifiers_insert_leader_qualifiers_response import (
-    LeaderQualifiersInsertLeaderQualifiersResponse,
-)
-from ...models.leader_qualifiers_insert_response_default import (
-    LeaderQualifiersInsertResponseDefault,
-)
+from ...models.leader_qualifier_post_body import LeaderQualifierPostBody
+from ...models.leader_qualifiers_insert_response_default import LeaderQualifiersInsertResponseDefault
 from ...types import UNSET, Response, Unset
 
 
@@ -21,7 +14,7 @@ def _get_kwargs(
     organization_id: str,
     leader_criteria_id: UUID,
     *,
-    body: LeaderQualifiersInsertLeaderQualifierPostBody,
+    body: LeaderQualifierPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
@@ -57,17 +50,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[
-    LeaderQualifiersInsertLeaderQualifiersResponse,
-    LeaderQualifiersInsertResponseDefault,
-]:
-    if response.status_code == 200:
-        response_200 = LeaderQualifiersInsertLeaderQualifiersResponse.from_dict(
-            response.json()
-        )
-
-        return response_200
-
+) -> LeaderQualifiersInsertResponseDefault:
     response_default = LeaderQualifiersInsertResponseDefault.from_dict(response.json())
 
     return response_default
@@ -75,12 +58,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[
-        LeaderQualifiersInsertLeaderQualifiersResponse,
-        LeaderQualifiersInsertResponseDefault,
-    ]
-]:
+) -> Response[LeaderQualifiersInsertResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -94,17 +72,12 @@ def sync_detailed(
     leader_criteria_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: LeaderQualifiersInsertLeaderQualifierPostBody,
+    body: LeaderQualifierPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        LeaderQualifiersInsertLeaderQualifiersResponse,
-        LeaderQualifiersInsertResponseDefault,
-    ]
-]:
+) -> Response[LeaderQualifiersInsertResponseDefault]:
     """Create a new leader qualifier in a criteria set
 
      Insert a new leader qualifier
@@ -117,14 +90,14 @@ def sync_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (LeaderQualifiersInsertLeaderQualifierPostBody):
+        body (LeaderQualifierPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[LeaderQualifiersInsertLeaderQualifiersResponse, LeaderQualifiersInsertResponseDefault]]
+        Response[LeaderQualifiersInsertResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -149,17 +122,12 @@ def sync(
     leader_criteria_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: LeaderQualifiersInsertLeaderQualifierPostBody,
+    body: LeaderQualifierPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        LeaderQualifiersInsertLeaderQualifiersResponse,
-        LeaderQualifiersInsertResponseDefault,
-    ]
-]:
+) -> Optional[LeaderQualifiersInsertResponseDefault]:
     """Create a new leader qualifier in a criteria set
 
      Insert a new leader qualifier
@@ -172,14 +140,14 @@ def sync(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (LeaderQualifiersInsertLeaderQualifierPostBody):
+        body (LeaderQualifierPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[LeaderQualifiersInsertLeaderQualifiersResponse, LeaderQualifiersInsertResponseDefault]
+        LeaderQualifiersInsertResponseDefault
     """
 
     return sync_detailed(
@@ -199,17 +167,12 @@ async def asyncio_detailed(
     leader_criteria_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: LeaderQualifiersInsertLeaderQualifierPostBody,
+    body: LeaderQualifierPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        LeaderQualifiersInsertLeaderQualifiersResponse,
-        LeaderQualifiersInsertResponseDefault,
-    ]
-]:
+) -> Response[LeaderQualifiersInsertResponseDefault]:
     """Create a new leader qualifier in a criteria set
 
      Insert a new leader qualifier
@@ -222,14 +185,14 @@ async def asyncio_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (LeaderQualifiersInsertLeaderQualifierPostBody):
+        body (LeaderQualifierPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[LeaderQualifiersInsertLeaderQualifiersResponse, LeaderQualifiersInsertResponseDefault]]
+        Response[LeaderQualifiersInsertResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -252,17 +215,12 @@ async def asyncio(
     leader_criteria_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: LeaderQualifiersInsertLeaderQualifierPostBody,
+    body: LeaderQualifierPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        LeaderQualifiersInsertLeaderQualifiersResponse,
-        LeaderQualifiersInsertResponseDefault,
-    ]
-]:
+) -> Optional[LeaderQualifiersInsertResponseDefault]:
     """Create a new leader qualifier in a criteria set
 
      Insert a new leader qualifier
@@ -275,14 +233,14 @@ async def asyncio(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (LeaderQualifiersInsertLeaderQualifierPostBody):
+        body (LeaderQualifierPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[LeaderQualifiersInsertLeaderQualifiersResponse, LeaderQualifiersInsertResponseDefault]
+        LeaderQualifiersInsertResponseDefault
     """
 
     return (

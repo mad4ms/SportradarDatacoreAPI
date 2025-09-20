@@ -9,12 +9,8 @@ from dateutil.parser import isoparse
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.division_external_ids_model_division import (
-        DivisionExternalIdsModelDivision,
-    )
-    from ..models.division_external_ids_model_organization import (
-        DivisionExternalIdsModelOrganization,
-    )
+    from ..models.division_external_ids_model_division import DivisionExternalIdsModelDivision
+    from ..models.division_external_ids_model_organization import DivisionExternalIdsModelOrganization
 
 
 T = TypeVar("T", bound="DivisionExternalIdsModel")
@@ -115,12 +111,8 @@ class DivisionExternalIdsModel:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.division_external_ids_model_division import (
-            DivisionExternalIdsModelDivision,
-        )
-        from ..models.division_external_ids_model_organization import (
-            DivisionExternalIdsModelOrganization,
-        )
+        from ..models.division_external_ids_model_division import DivisionExternalIdsModelDivision
+        from ..models.division_external_ids_model_organization import DivisionExternalIdsModelOrganization
 
         d = dict(src_dict)
         _division_external_id = d.pop("divisionExternalId", UNSET)

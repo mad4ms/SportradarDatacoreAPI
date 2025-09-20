@@ -4,9 +4,7 @@ from typing import Any, TypeVar
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-from ..models.included_data_resources_additional_property import (
-    IncludedDataResourcesAdditionalProperty,
-)
+from ..models.included_data_resources_additional_property import IncludedDataResourcesAdditionalProperty
 
 T = TypeVar("T", bound="IncludedDataResources")
 
@@ -15,9 +13,7 @@ T = TypeVar("T", bound="IncludedDataResources")
 class IncludedDataResources:
     """ """
 
-    additional_properties: dict[str, IncludedDataResourcesAdditionalProperty] = (
-        _attrs_field(init=False, factory=dict)
-    )
+    additional_properties: dict[str, IncludedDataResourcesAdditionalProperty] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
         field_dict: dict[str, Any] = {}
@@ -47,9 +43,7 @@ class IncludedDataResources:
     def __getitem__(self, key: str) -> IncludedDataResourcesAdditionalProperty:
         return self.additional_properties[key]
 
-    def __setitem__(
-        self, key: str, value: IncludedDataResourcesAdditionalProperty
-    ) -> None:
+    def __setitem__(self, key: str, value: IncludedDataResourcesAdditionalProperty) -> None:
         self.additional_properties[key] = value
 
     def __delitem__(self, key: str) -> None:

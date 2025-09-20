@@ -4,9 +4,7 @@ from typing import Any, TypeVar, Union
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-from ..models.change_log_model_organization_resource_type import (
-    ChangeLogModelOrganizationResourceType,
-)
+from ..models.change_log_model_organization_resource_type import ChangeLogModelOrganizationResourceType
 from ..types import UNSET, Unset
 
 T = TypeVar("T", bound="ChangeLogModelOrganization")

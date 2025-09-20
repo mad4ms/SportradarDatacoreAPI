@@ -6,18 +6,12 @@ from uuid import UUID
 from attrs import define as _attrs_define
 from dateutil.parser import isoparse
 
-from ..models.leader_qualifier_model_comparison_type import (
-    LeaderQualifierModelComparisonType,
-)
+from ..models.leader_qualifier_model_comparison_type import LeaderQualifierModelComparisonType
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.leader_qualifier_model_leaders_criteria import (
-        LeaderQualifierModelLeadersCriteria,
-    )
-    from ..models.leader_qualifier_model_organization import (
-        LeaderQualifierModelOrganization,
-    )
+    from ..models.leader_qualifier_model_leaders_criteria import LeaderQualifierModelLeadersCriteria
+    from ..models.leader_qualifier_model_organization import LeaderQualifierModelOrganization
 
 
 T = TypeVar("T", bound="LeaderQualifierModel")
@@ -128,12 +122,8 @@ class LeaderQualifierModel:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.leader_qualifier_model_leaders_criteria import (
-            LeaderQualifierModelLeadersCriteria,
-        )
-        from ..models.leader_qualifier_model_organization import (
-            LeaderQualifierModelOrganization,
-        )
+        from ..models.leader_qualifier_model_leaders_criteria import LeaderQualifierModelLeadersCriteria
+        from ..models.leader_qualifier_model_organization import LeaderQualifierModelOrganization
 
         d = dict(src_dict)
         _updated = d.pop("updated", UNSET)
@@ -178,9 +168,7 @@ class LeaderQualifierModel:
         if isinstance(_leaders_criteria, Unset):
             leaders_criteria = UNSET
         else:
-            leaders_criteria = LeaderQualifierModelLeadersCriteria.from_dict(
-                _leaders_criteria
-            )
+            leaders_criteria = LeaderQualifierModelLeadersCriteria.from_dict(_leaders_criteria)
 
         statistic_field = d.pop("statisticField", UNSET)
 

@@ -5,12 +5,7 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.fixture_pbp_external_all_delete_fixture_pbp_external_response import (
-    FixturePbpExternalAllDeleteFixturePbpExternalResponse,
-)
-from ...models.fixture_pbp_external_all_delete_response_default import (
-    FixturePbpExternalAllDeleteResponseDefault,
-)
+from ...models.fixture_pbp_external_all_delete_response_default import FixturePbpExternalAllDeleteResponseDefault
 from ...types import UNSET, Response, Unset
 
 
@@ -49,32 +44,15 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[
-    FixturePbpExternalAllDeleteFixturePbpExternalResponse,
-    FixturePbpExternalAllDeleteResponseDefault,
-]:
-    if response.status_code == 200:
-        response_200 = FixturePbpExternalAllDeleteFixturePbpExternalResponse.from_dict(
-            response.json()
-        )
-
-        return response_200
-
-    response_default = FixturePbpExternalAllDeleteResponseDefault.from_dict(
-        response.json()
-    )
+) -> FixturePbpExternalAllDeleteResponseDefault:
+    response_default = FixturePbpExternalAllDeleteResponseDefault.from_dict(response.json())
 
     return response_default
 
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[
-        FixturePbpExternalAllDeleteFixturePbpExternalResponse,
-        FixturePbpExternalAllDeleteResponseDefault,
-    ]
-]:
+) -> Response[FixturePbpExternalAllDeleteResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -93,12 +71,7 @@ def sync_detailed(
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        FixturePbpExternalAllDeleteFixturePbpExternalResponse,
-        FixturePbpExternalAllDeleteResponseDefault,
-    ]
-]:
+) -> Response[FixturePbpExternalAllDeleteResponseDefault]:
     """Delete all play-by-play external records for a match
 
      Delete all play-by-play external records for a match
@@ -118,7 +91,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[FixturePbpExternalAllDeleteFixturePbpExternalResponse, FixturePbpExternalAllDeleteResponseDefault]]
+        Response[FixturePbpExternalAllDeleteResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -148,12 +121,7 @@ def sync(
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        FixturePbpExternalAllDeleteFixturePbpExternalResponse,
-        FixturePbpExternalAllDeleteResponseDefault,
-    ]
-]:
+) -> Optional[FixturePbpExternalAllDeleteResponseDefault]:
     """Delete all play-by-play external records for a match
 
      Delete all play-by-play external records for a match
@@ -173,7 +141,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[FixturePbpExternalAllDeleteFixturePbpExternalResponse, FixturePbpExternalAllDeleteResponseDefault]
+        FixturePbpExternalAllDeleteResponseDefault
     """
 
     return sync_detailed(
@@ -198,12 +166,7 @@ async def asyncio_detailed(
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        FixturePbpExternalAllDeleteFixturePbpExternalResponse,
-        FixturePbpExternalAllDeleteResponseDefault,
-    ]
-]:
+) -> Response[FixturePbpExternalAllDeleteResponseDefault]:
     """Delete all play-by-play external records for a match
 
      Delete all play-by-play external records for a match
@@ -223,7 +186,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[FixturePbpExternalAllDeleteFixturePbpExternalResponse, FixturePbpExternalAllDeleteResponseDefault]]
+        Response[FixturePbpExternalAllDeleteResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -251,12 +214,7 @@ async def asyncio(
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        FixturePbpExternalAllDeleteFixturePbpExternalResponse,
-        FixturePbpExternalAllDeleteResponseDefault,
-    ]
-]:
+) -> Optional[FixturePbpExternalAllDeleteResponseDefault]:
     """Delete all play-by-play external records for a match
 
      Delete all play-by-play external records for a match
@@ -276,7 +234,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[FixturePbpExternalAllDeleteFixturePbpExternalResponse, FixturePbpExternalAllDeleteResponseDefault]
+        FixturePbpExternalAllDeleteResponseDefault
     """
 
     return (

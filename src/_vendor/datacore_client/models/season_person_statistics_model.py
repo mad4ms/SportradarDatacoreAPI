@@ -7,24 +7,12 @@ from attrs import define as _attrs_define
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.season_person_statistics_model_competition import (
-        SeasonPersonStatisticsModelCompetition,
-    )
-    from ..models.season_person_statistics_model_entity import (
-        SeasonPersonStatisticsModelEntity,
-    )
-    from ..models.season_person_statistics_model_organization import (
-        SeasonPersonStatisticsModelOrganization,
-    )
-    from ..models.season_person_statistics_model_person import (
-        SeasonPersonStatisticsModelPerson,
-    )
-    from ..models.season_person_statistics_model_season import (
-        SeasonPersonStatisticsModelSeason,
-    )
-    from ..models.season_person_statistics_model_statistics import (
-        SeasonPersonStatisticsModelStatistics,
-    )
+    from ..models.season_person_statistics_model_competition import SeasonPersonStatisticsModelCompetition
+    from ..models.season_person_statistics_model_entity import SeasonPersonStatisticsModelEntity
+    from ..models.season_person_statistics_model_organization import SeasonPersonStatisticsModelOrganization
+    from ..models.season_person_statistics_model_person import SeasonPersonStatisticsModelPerson
+    from ..models.season_person_statistics_model_season import SeasonPersonStatisticsModelSeason
+    from ..models.season_person_statistics_model_statistics import SeasonPersonStatisticsModelStatistics
 
 
 T = TypeVar("T", bound="SeasonPersonStatisticsModel")
@@ -136,24 +124,12 @@ class SeasonPersonStatisticsModel:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.season_person_statistics_model_competition import (
-            SeasonPersonStatisticsModelCompetition,
-        )
-        from ..models.season_person_statistics_model_entity import (
-            SeasonPersonStatisticsModelEntity,
-        )
-        from ..models.season_person_statistics_model_organization import (
-            SeasonPersonStatisticsModelOrganization,
-        )
-        from ..models.season_person_statistics_model_person import (
-            SeasonPersonStatisticsModelPerson,
-        )
-        from ..models.season_person_statistics_model_season import (
-            SeasonPersonStatisticsModelSeason,
-        )
-        from ..models.season_person_statistics_model_statistics import (
-            SeasonPersonStatisticsModelStatistics,
-        )
+        from ..models.season_person_statistics_model_competition import SeasonPersonStatisticsModelCompetition
+        from ..models.season_person_statistics_model_entity import SeasonPersonStatisticsModelEntity
+        from ..models.season_person_statistics_model_organization import SeasonPersonStatisticsModelOrganization
+        from ..models.season_person_statistics_model_person import SeasonPersonStatisticsModelPerson
+        from ..models.season_person_statistics_model_season import SeasonPersonStatisticsModelSeason
+        from ..models.season_person_statistics_model_statistics import SeasonPersonStatisticsModelStatistics
 
         d = dict(src_dict)
         _person_id = d.pop("personId", UNSET)
@@ -191,9 +167,7 @@ class SeasonPersonStatisticsModel:
         if isinstance(_organization, Unset):
             organization = UNSET
         else:
-            organization = SeasonPersonStatisticsModelOrganization.from_dict(
-                _organization
-            )
+            organization = SeasonPersonStatisticsModelOrganization.from_dict(_organization)
 
         _season_id = d.pop("seasonId", UNSET)
         season_id: Union[Unset, UUID]

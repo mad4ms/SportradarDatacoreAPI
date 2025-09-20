@@ -9,12 +9,8 @@ from dateutil.parser import isoparse
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.fixture_progression_model_fixture import (
-        FixtureProgressionModelFixture,
-    )
-    from ..models.fixture_progression_model_organization import (
-        FixtureProgressionModelOrganization,
-    )
+    from ..models.fixture_progression_model_fixture import FixtureProgressionModelFixture
+    from ..models.fixture_progression_model_organization import FixtureProgressionModelOrganization
     from ..models.fixture_progression_model_season import FixtureProgressionModelSeason
 
 
@@ -131,15 +127,9 @@ class FixtureProgressionModel:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.fixture_progression_model_fixture import (
-            FixtureProgressionModelFixture,
-        )
-        from ..models.fixture_progression_model_organization import (
-            FixtureProgressionModelOrganization,
-        )
-        from ..models.fixture_progression_model_season import (
-            FixtureProgressionModelSeason,
-        )
+        from ..models.fixture_progression_model_fixture import FixtureProgressionModelFixture
+        from ..models.fixture_progression_model_organization import FixtureProgressionModelOrganization
+        from ..models.fixture_progression_model_season import FixtureProgressionModelSeason
 
         d = dict(src_dict)
         _fixture_id = d.pop("fixtureId", UNSET)

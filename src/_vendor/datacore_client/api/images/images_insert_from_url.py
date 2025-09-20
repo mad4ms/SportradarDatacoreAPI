@@ -7,15 +7,8 @@ import httpx
 from ...client import AuthenticatedClient, Client
 from ...models.images_insert_from_url_base_type import ImagesInsertFromUrlBaseType
 from ...models.images_insert_from_url_image_type import ImagesInsertFromUrlImageType
-from ...models.images_insert_from_url_images_post_body import (
-    ImagesInsertFromUrlImagesPostBody,
-)
-from ...models.images_insert_from_url_images_response import (
-    ImagesInsertFromUrlImagesResponse,
-)
-from ...models.images_insert_from_url_response_default import (
-    ImagesInsertFromUrlResponseDefault,
-)
+from ...models.images_insert_from_url_response_default import ImagesInsertFromUrlResponseDefault
+from ...models.images_post_body import ImagesPostBody
 from ...types import UNSET, Response, Unset
 
 
@@ -25,7 +18,7 @@ def _get_kwargs(
     base_id: UUID,
     image_type: ImagesInsertFromUrlImageType,
     *,
-    body: ImagesInsertFromUrlImagesPostBody,
+    body: ImagesPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
@@ -61,12 +54,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[ImagesInsertFromUrlImagesResponse, ImagesInsertFromUrlResponseDefault]:
-    if response.status_code == 200:
-        response_200 = ImagesInsertFromUrlImagesResponse.from_dict(response.json())
-
-        return response_200
-
+) -> ImagesInsertFromUrlResponseDefault:
     response_default = ImagesInsertFromUrlResponseDefault.from_dict(response.json())
 
     return response_default
@@ -74,9 +62,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[ImagesInsertFromUrlImagesResponse, ImagesInsertFromUrlResponseDefault]
-]:
+) -> Response[ImagesInsertFromUrlResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -92,14 +78,12 @@ def sync_detailed(
     image_type: ImagesInsertFromUrlImageType,
     *,
     client: AuthenticatedClient,
-    body: ImagesInsertFromUrlImagesPostBody,
+    body: ImagesPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[ImagesInsertFromUrlImagesResponse, ImagesInsertFromUrlResponseDefault]
-]:
+) -> Response[ImagesInsertFromUrlResponseDefault]:
     """Upload a new image from a URL
 
      This method allows a new image to uploaded by providing a URL where the image can be downloaded
@@ -118,14 +102,14 @@ def sync_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (ImagesInsertFromUrlImagesPostBody):
+        body (ImagesPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[ImagesInsertFromUrlImagesResponse, ImagesInsertFromUrlResponseDefault]]
+        Response[ImagesInsertFromUrlResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -154,14 +138,12 @@ def sync(
     image_type: ImagesInsertFromUrlImageType,
     *,
     client: AuthenticatedClient,
-    body: ImagesInsertFromUrlImagesPostBody,
+    body: ImagesPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[ImagesInsertFromUrlImagesResponse, ImagesInsertFromUrlResponseDefault]
-]:
+) -> Optional[ImagesInsertFromUrlResponseDefault]:
     """Upload a new image from a URL
 
      This method allows a new image to uploaded by providing a URL where the image can be downloaded
@@ -180,14 +162,14 @@ def sync(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (ImagesInsertFromUrlImagesPostBody):
+        body (ImagesPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[ImagesInsertFromUrlImagesResponse, ImagesInsertFromUrlResponseDefault]
+        ImagesInsertFromUrlResponseDefault
     """
 
     return sync_detailed(
@@ -211,14 +193,12 @@ async def asyncio_detailed(
     image_type: ImagesInsertFromUrlImageType,
     *,
     client: AuthenticatedClient,
-    body: ImagesInsertFromUrlImagesPostBody,
+    body: ImagesPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[ImagesInsertFromUrlImagesResponse, ImagesInsertFromUrlResponseDefault]
-]:
+) -> Response[ImagesInsertFromUrlResponseDefault]:
     """Upload a new image from a URL
 
      This method allows a new image to uploaded by providing a URL where the image can be downloaded
@@ -237,14 +217,14 @@ async def asyncio_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (ImagesInsertFromUrlImagesPostBody):
+        body (ImagesPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[ImagesInsertFromUrlImagesResponse, ImagesInsertFromUrlResponseDefault]]
+        Response[ImagesInsertFromUrlResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -271,14 +251,12 @@ async def asyncio(
     image_type: ImagesInsertFromUrlImageType,
     *,
     client: AuthenticatedClient,
-    body: ImagesInsertFromUrlImagesPostBody,
+    body: ImagesPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[ImagesInsertFromUrlImagesResponse, ImagesInsertFromUrlResponseDefault]
-]:
+) -> Optional[ImagesInsertFromUrlResponseDefault]:
     """Upload a new image from a URL
 
      This method allows a new image to uploaded by providing a URL where the image can be downloaded
@@ -297,14 +275,14 @@ async def asyncio(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (ImagesInsertFromUrlImagesPostBody):
+        body (ImagesPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[ImagesInsertFromUrlImagesResponse, ImagesInsertFromUrlResponseDefault]
+        ImagesInsertFromUrlResponseDefault
     """
 
     return (

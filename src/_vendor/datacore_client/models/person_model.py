@@ -12,17 +12,11 @@ from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
     from ..models.images_model import ImagesModel
-    from ..models.person_model_additional_names_type_0 import (
-        PersonModelAdditionalNamesType0,
-    )
+    from ..models.person_additional_details import PersonAdditionalDetails
+    from ..models.person_historical_name import PersonHistoricalName
+    from ..models.person_model_additional_names_type_0 import PersonModelAdditionalNamesType0
     from ..models.person_model_organization import PersonModelOrganization
-    from ..models.person_model_person_additional_details import (
-        PersonModelPersonAdditionalDetails,
-    )
-    from ..models.person_model_person_historical_name import (
-        PersonModelPersonHistoricalName,
-    )
-    from ..models.person_model_social_media import PersonModelSocialMedia
+    from ..models.social_media import SocialMedia
 
 
 T = TypeVar("T", bound="PersonModel")
@@ -70,9 +64,9 @@ class PersonModel:
         deceased (Union[None, Unset, datetime.date]): Date deceased Example: 2016-09-08.
         additional_names (Union['PersonModelAdditionalNamesType0', None, Unset]): Additional names for the person. They
             are broken down by language, so you can have a different set of names per language
-        additional_details (Union['PersonModelPersonAdditionalDetails', None, Unset]): Additional person detail fields
-        social (Union['PersonModelSocialMedia', None, Unset]): Social Media contacts
-        historical_names (Union[None, Unset, list['PersonModelPersonHistoricalName']]): Array of person historical names
+        additional_details (Union['PersonAdditionalDetails', None, Unset]): Additional person detail fields
+        social (Union['SocialMedia', None, Unset]): Social Media contacts
+        historical_names (Union[None, Unset, list['PersonHistoricalName']]): Array of person historical names
         representing (Union[None, Unset, str]): Who the person or team was representing Example: AUSTRALIA.
         external_id (Union[None, Unset, str]): The Id of the data as set by the provider of the data Example: A123.
         updated (Union[Unset, datetime.datetime]): Date/time last modified. In UTC
@@ -97,11 +91,9 @@ class PersonModel:
     nationality: Union[None, Unset, str] = UNSET
     deceased: Union[None, Unset, datetime.date] = UNSET
     additional_names: Union["PersonModelAdditionalNamesType0", None, Unset] = UNSET
-    additional_details: Union["PersonModelPersonAdditionalDetails", None, Unset] = UNSET
-    social: Union["PersonModelSocialMedia", None, Unset] = UNSET
-    historical_names: Union[None, Unset, list["PersonModelPersonHistoricalName"]] = (
-        UNSET
-    )
+    additional_details: Union["PersonAdditionalDetails", None, Unset] = UNSET
+    social: Union["SocialMedia", None, Unset] = UNSET
+    historical_names: Union[None, Unset, list["PersonHistoricalName"]] = UNSET
     representing: Union[None, Unset, str] = UNSET
     external_id: Union[None, Unset, str] = UNSET
     updated: Union[Unset, datetime.datetime] = UNSET
@@ -109,13 +101,9 @@ class PersonModel:
     images: Union[Unset, list["ImagesModel"]] = UNSET
 
     def to_dict(self) -> dict[str, Any]:
-        from ..models.person_model_additional_names_type_0 import (
-            PersonModelAdditionalNamesType0,
-        )
-        from ..models.person_model_person_additional_details import (
-            PersonModelPersonAdditionalDetails,
-        )
-        from ..models.person_model_social_media import PersonModelSocialMedia
+        from ..models.person_additional_details import PersonAdditionalDetails
+        from ..models.person_model_additional_names_type_0 import PersonModelAdditionalNamesType0
+        from ..models.social_media import SocialMedia
 
         person_id: Union[Unset, str] = UNSET
         if not isinstance(self.person_id, Unset):
@@ -212,7 +200,7 @@ class PersonModel:
         additional_details: Union[None, Unset, dict[str, Any]]
         if isinstance(self.additional_details, Unset):
             additional_details = UNSET
-        elif isinstance(self.additional_details, PersonModelPersonAdditionalDetails):
+        elif isinstance(self.additional_details, PersonAdditionalDetails):
             additional_details = self.additional_details.to_dict()
         else:
             additional_details = self.additional_details
@@ -220,7 +208,7 @@ class PersonModel:
         social: Union[None, Unset, dict[str, Any]]
         if isinstance(self.social, Unset):
             social = UNSET
-        elif isinstance(self.social, PersonModelSocialMedia):
+        elif isinstance(self.social, SocialMedia):
             social = self.social.to_dict()
         else:
             social = self.social
@@ -231,9 +219,7 @@ class PersonModel:
         elif isinstance(self.historical_names, list):
             historical_names = []
             for historical_names_type_0_item_data in self.historical_names:
-                historical_names_type_0_item = (
-                    historical_names_type_0_item_data.to_dict()
-                )
+                historical_names_type_0_item = historical_names_type_0_item_data.to_dict()
                 historical_names.append(historical_names_type_0_item)
 
         else:
@@ -325,17 +311,11 @@ class PersonModel:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.images_model import ImagesModel
-        from ..models.person_model_additional_names_type_0 import (
-            PersonModelAdditionalNamesType0,
-        )
+        from ..models.person_additional_details import PersonAdditionalDetails
+        from ..models.person_historical_name import PersonHistoricalName
+        from ..models.person_model_additional_names_type_0 import PersonModelAdditionalNamesType0
         from ..models.person_model_organization import PersonModelOrganization
-        from ..models.person_model_person_additional_details import (
-            PersonModelPersonAdditionalDetails,
-        )
-        from ..models.person_model_person_historical_name import (
-            PersonModelPersonHistoricalName,
-        )
-        from ..models.person_model_social_media import PersonModelSocialMedia
+        from ..models.social_media import SocialMedia
 
         d = dict(src_dict)
         _person_id = d.pop("personId", UNSET)
@@ -476,9 +456,7 @@ class PersonModel:
 
         deceased = _parse_deceased(d.pop("deceased", UNSET))
 
-        def _parse_additional_names(
-            data: object,
-        ) -> Union["PersonModelAdditionalNamesType0", None, Unset]:
+        def _parse_additional_names(data: object) -> Union["PersonModelAdditionalNamesType0", None, Unset]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -486,9 +464,7 @@ class PersonModel:
             try:
                 if not isinstance(data, dict):
                     raise TypeError()
-                additional_names_type_0 = PersonModelAdditionalNamesType0.from_dict(
-                    data
-                )
+                additional_names_type_0 = PersonModelAdditionalNamesType0.from_dict(data)
 
                 return additional_names_type_0
             except:  # noqa: E722
@@ -497,9 +473,7 @@ class PersonModel:
 
         additional_names = _parse_additional_names(d.pop("additionalNames", UNSET))
 
-        def _parse_additional_details(
-            data: object,
-        ) -> Union["PersonModelPersonAdditionalDetails", None, Unset]:
+        def _parse_additional_details(data: object) -> Union["PersonAdditionalDetails", None, Unset]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -507,20 +481,16 @@ class PersonModel:
             try:
                 if not isinstance(data, dict):
                     raise TypeError()
-                additional_details_type_0 = (
-                    PersonModelPersonAdditionalDetails.from_dict(data)
-                )
+                additional_details_type_0 = PersonAdditionalDetails.from_dict(data)
 
                 return additional_details_type_0
             except:  # noqa: E722
                 pass
-            return cast(Union["PersonModelPersonAdditionalDetails", None, Unset], data)
+            return cast(Union["PersonAdditionalDetails", None, Unset], data)
 
-        additional_details = _parse_additional_details(
-            d.pop("additionalDetails", UNSET)
-        )
+        additional_details = _parse_additional_details(d.pop("additionalDetails", UNSET))
 
-        def _parse_social(data: object) -> Union["PersonModelSocialMedia", None, Unset]:
+        def _parse_social(data: object) -> Union["SocialMedia", None, Unset]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -528,18 +498,16 @@ class PersonModel:
             try:
                 if not isinstance(data, dict):
                     raise TypeError()
-                social_type_0 = PersonModelSocialMedia.from_dict(data)
+                social_type_0 = SocialMedia.from_dict(data)
 
                 return social_type_0
             except:  # noqa: E722
                 pass
-            return cast(Union["PersonModelSocialMedia", None, Unset], data)
+            return cast(Union["SocialMedia", None, Unset], data)
 
         social = _parse_social(d.pop("social", UNSET))
 
-        def _parse_historical_names(
-            data: object,
-        ) -> Union[None, Unset, list["PersonModelPersonHistoricalName"]]:
+        def _parse_historical_names(data: object) -> Union[None, Unset, list["PersonHistoricalName"]]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -550,20 +518,14 @@ class PersonModel:
                 historical_names_type_0 = []
                 _historical_names_type_0 = data
                 for historical_names_type_0_item_data in _historical_names_type_0:
-                    historical_names_type_0_item = (
-                        PersonModelPersonHistoricalName.from_dict(
-                            historical_names_type_0_item_data
-                        )
-                    )
+                    historical_names_type_0_item = PersonHistoricalName.from_dict(historical_names_type_0_item_data)
 
                     historical_names_type_0.append(historical_names_type_0_item)
 
                 return historical_names_type_0
             except:  # noqa: E722
                 pass
-            return cast(
-                Union[None, Unset, list["PersonModelPersonHistoricalName"]], data
-            )
+            return cast(Union[None, Unset, list["PersonHistoricalName"]], data)
 
         historical_names = _parse_historical_names(d.pop("historicalNames", UNSET))
 

@@ -4,22 +4,15 @@ from typing import Any, Optional, Union
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.conference_external_ids_insert_conference_external_ids_post_body import (
-    ConferenceExternalIdsInsertConferenceExternalIdsPostBody,
-)
-from ...models.conference_external_ids_insert_conference_external_ids_response import (
-    ConferenceExternalIdsInsertConferenceExternalIdsResponse,
-)
-from ...models.conference_external_ids_insert_response_default import (
-    ConferenceExternalIdsInsertResponseDefault,
-)
+from ...models.conference_external_ids_insert_response_default import ConferenceExternalIdsInsertResponseDefault
+from ...models.conference_external_ids_post_body import ConferenceExternalIdsPostBody
 from ...types import UNSET, Response, Unset
 
 
 def _get_kwargs(
     organization_id: str,
     *,
-    body: ConferenceExternalIdsInsertConferenceExternalIdsPostBody,
+    body: ConferenceExternalIdsPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
@@ -55,34 +48,15 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[
-    ConferenceExternalIdsInsertConferenceExternalIdsResponse,
-    ConferenceExternalIdsInsertResponseDefault,
-]:
-    if response.status_code == 200:
-        response_200 = (
-            ConferenceExternalIdsInsertConferenceExternalIdsResponse.from_dict(
-                response.json()
-            )
-        )
-
-        return response_200
-
-    response_default = ConferenceExternalIdsInsertResponseDefault.from_dict(
-        response.json()
-    )
+) -> ConferenceExternalIdsInsertResponseDefault:
+    response_default = ConferenceExternalIdsInsertResponseDefault.from_dict(response.json())
 
     return response_default
 
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[
-        ConferenceExternalIdsInsertConferenceExternalIdsResponse,
-        ConferenceExternalIdsInsertResponseDefault,
-    ]
-]:
+) -> Response[ConferenceExternalIdsInsertResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -95,17 +69,12 @@ def sync_detailed(
     organization_id: str,
     *,
     client: AuthenticatedClient,
-    body: ConferenceExternalIdsInsertConferenceExternalIdsPostBody,
+    body: ConferenceExternalIdsPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        ConferenceExternalIdsInsertConferenceExternalIdsResponse,
-        ConferenceExternalIdsInsertResponseDefault,
-    ]
-]:
+) -> Response[ConferenceExternalIdsInsertResponseDefault]:
     """Create a new external identifier information record for a conference
 
      Add a new external identifier information record for a conference
@@ -117,14 +86,14 @@ def sync_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (ConferenceExternalIdsInsertConferenceExternalIdsPostBody):
+        body (ConferenceExternalIdsPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[ConferenceExternalIdsInsertConferenceExternalIdsResponse, ConferenceExternalIdsInsertResponseDefault]]
+        Response[ConferenceExternalIdsInsertResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -147,17 +116,12 @@ def sync(
     organization_id: str,
     *,
     client: AuthenticatedClient,
-    body: ConferenceExternalIdsInsertConferenceExternalIdsPostBody,
+    body: ConferenceExternalIdsPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        ConferenceExternalIdsInsertConferenceExternalIdsResponse,
-        ConferenceExternalIdsInsertResponseDefault,
-    ]
-]:
+) -> Optional[ConferenceExternalIdsInsertResponseDefault]:
     """Create a new external identifier information record for a conference
 
      Add a new external identifier information record for a conference
@@ -169,14 +133,14 @@ def sync(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (ConferenceExternalIdsInsertConferenceExternalIdsPostBody):
+        body (ConferenceExternalIdsPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[ConferenceExternalIdsInsertConferenceExternalIdsResponse, ConferenceExternalIdsInsertResponseDefault]
+        ConferenceExternalIdsInsertResponseDefault
     """
 
     return sync_detailed(
@@ -194,17 +158,12 @@ async def asyncio_detailed(
     organization_id: str,
     *,
     client: AuthenticatedClient,
-    body: ConferenceExternalIdsInsertConferenceExternalIdsPostBody,
+    body: ConferenceExternalIdsPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        ConferenceExternalIdsInsertConferenceExternalIdsResponse,
-        ConferenceExternalIdsInsertResponseDefault,
-    ]
-]:
+) -> Response[ConferenceExternalIdsInsertResponseDefault]:
     """Create a new external identifier information record for a conference
 
      Add a new external identifier information record for a conference
@@ -216,14 +175,14 @@ async def asyncio_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (ConferenceExternalIdsInsertConferenceExternalIdsPostBody):
+        body (ConferenceExternalIdsPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[ConferenceExternalIdsInsertConferenceExternalIdsResponse, ConferenceExternalIdsInsertResponseDefault]]
+        Response[ConferenceExternalIdsInsertResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -244,17 +203,12 @@ async def asyncio(
     organization_id: str,
     *,
     client: AuthenticatedClient,
-    body: ConferenceExternalIdsInsertConferenceExternalIdsPostBody,
+    body: ConferenceExternalIdsPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        ConferenceExternalIdsInsertConferenceExternalIdsResponse,
-        ConferenceExternalIdsInsertResponseDefault,
-    ]
-]:
+) -> Optional[ConferenceExternalIdsInsertResponseDefault]:
     """Create a new external identifier information record for a conference
 
      Add a new external identifier information record for a conference
@@ -266,14 +220,14 @@ async def asyncio(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (ConferenceExternalIdsInsertConferenceExternalIdsPostBody):
+        body (ConferenceExternalIdsPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[ConferenceExternalIdsInsertConferenceExternalIdsResponse, ConferenceExternalIdsInsertResponseDefault]
+        ConferenceExternalIdsInsertResponseDefault
     """
 
     return (

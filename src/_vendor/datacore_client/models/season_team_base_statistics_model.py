@@ -6,27 +6,15 @@ from uuid import UUID
 from attrs import define as _attrs_define
 from dateutil.parser import isoparse
 
-from ..models.season_team_base_statistics_model_competitor_type import (
-    SeasonTeamBaseStatisticsModelCompetitorType,
-)
-from ..models.season_team_base_statistics_model_fixture_type import (
-    SeasonTeamBaseStatisticsModelFixtureType,
-)
+from ..models.season_team_base_statistics_model_competitor_type import SeasonTeamBaseStatisticsModelCompetitorType
+from ..models.season_team_base_statistics_model_fixture_type import SeasonTeamBaseStatisticsModelFixtureType
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.season_team_base_statistics_model_entity import (
-        SeasonTeamBaseStatisticsModelEntity,
-    )
-    from ..models.season_team_base_statistics_model_organization import (
-        SeasonTeamBaseStatisticsModelOrganization,
-    )
-    from ..models.season_team_base_statistics_model_season import (
-        SeasonTeamBaseStatisticsModelSeason,
-    )
-    from ..models.season_team_base_statistics_model_statistics import (
-        SeasonTeamBaseStatisticsModelStatistics,
-    )
+    from ..models.season_team_base_statistics_model_entity import SeasonTeamBaseStatisticsModelEntity
+    from ..models.season_team_base_statistics_model_organization import SeasonTeamBaseStatisticsModelOrganization
+    from ..models.season_team_base_statistics_model_season import SeasonTeamBaseStatisticsModelSeason
+    from ..models.season_team_base_statistics_model_statistics import SeasonTeamBaseStatisticsModelStatistics
 
 
 T = TypeVar("T", bound="SeasonTeamBaseStatisticsModel")
@@ -154,18 +142,10 @@ class SeasonTeamBaseStatisticsModel:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.season_team_base_statistics_model_entity import (
-            SeasonTeamBaseStatisticsModelEntity,
-        )
-        from ..models.season_team_base_statistics_model_organization import (
-            SeasonTeamBaseStatisticsModelOrganization,
-        )
-        from ..models.season_team_base_statistics_model_season import (
-            SeasonTeamBaseStatisticsModelSeason,
-        )
-        from ..models.season_team_base_statistics_model_statistics import (
-            SeasonTeamBaseStatisticsModelStatistics,
-        )
+        from ..models.season_team_base_statistics_model_entity import SeasonTeamBaseStatisticsModelEntity
+        from ..models.season_team_base_statistics_model_organization import SeasonTeamBaseStatisticsModelOrganization
+        from ..models.season_team_base_statistics_model_season import SeasonTeamBaseStatisticsModelSeason
+        from ..models.season_team_base_statistics_model_statistics import SeasonTeamBaseStatisticsModelStatistics
 
         d = dict(src_dict)
         _season_id = d.pop("seasonId", UNSET)
@@ -203,9 +183,7 @@ class SeasonTeamBaseStatisticsModel:
         if isinstance(_organization, Unset):
             organization = UNSET
         else:
-            organization = SeasonTeamBaseStatisticsModelOrganization.from_dict(
-                _organization
-            )
+            organization = SeasonTeamBaseStatisticsModelOrganization.from_dict(_organization)
 
         _fixture_type = d.pop("fixtureType", UNSET)
         fixture_type: Union[Unset, SeasonTeamBaseStatisticsModelFixtureType]
@@ -219,9 +197,7 @@ class SeasonTeamBaseStatisticsModel:
         if isinstance(_competitor_type, Unset):
             competitor_type = UNSET
         else:
-            competitor_type = SeasonTeamBaseStatisticsModelCompetitorType(
-                _competitor_type
-            )
+            competitor_type = SeasonTeamBaseStatisticsModelCompetitorType(_competitor_type)
 
         representing = d.pop("representing", UNSET)
 

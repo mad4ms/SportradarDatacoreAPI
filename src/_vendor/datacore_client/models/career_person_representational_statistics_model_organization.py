@@ -21,9 +21,7 @@ class CareerPersonRepresentationalStatisticsModelOrganization:
         id (Union[Unset, str]): Unique identifier for this resource Example: 9.
     """
 
-    resource_type: Union[
-        Unset, CareerPersonRepresentationalStatisticsModelOrganizationResourceType
-    ] = UNSET
+    resource_type: Union[Unset, CareerPersonRepresentationalStatisticsModelOrganizationResourceType] = UNSET
     id: Union[Unset, str] = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
@@ -48,17 +46,11 @@ class CareerPersonRepresentationalStatisticsModelOrganization:
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         d = dict(src_dict)
         _resource_type = d.pop("resourceType", UNSET)
-        resource_type: Union[
-            Unset, CareerPersonRepresentationalStatisticsModelOrganizationResourceType
-        ]
+        resource_type: Union[Unset, CareerPersonRepresentationalStatisticsModelOrganizationResourceType]
         if isinstance(_resource_type, Unset):
             resource_type = UNSET
         else:
-            resource_type = (
-                CareerPersonRepresentationalStatisticsModelOrganizationResourceType(
-                    _resource_type
-                )
-            )
+            resource_type = CareerPersonRepresentationalStatisticsModelOrganizationResourceType(_resource_type)
 
         id = d.pop("id", UNSET)
 
@@ -67,9 +59,7 @@ class CareerPersonRepresentationalStatisticsModelOrganization:
             id=id,
         )
 
-        career_person_representational_statistics_model_organization.additional_properties = (
-            d
-        )
+        career_person_representational_statistics_model_organization.additional_properties = d
         return career_person_representational_statistics_model_organization
 
     @property

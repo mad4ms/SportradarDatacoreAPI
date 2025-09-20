@@ -70,9 +70,7 @@ class SeasonEntityListByMultipleSeasonsResponseDefault:
             error=error,
         )
 
-        season_entity_list_by_multiple_seasons_response_default.additional_properties = (
-            d
-        )
+        season_entity_list_by_multiple_seasons_response_default.additional_properties = d
         return season_entity_list_by_multiple_seasons_response_default
 
     @property

@@ -6,9 +6,6 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.fps_listlive_fixture_person_statistics_response import (
-    FpsListliveFixturePersonStatisticsResponse,
-)
 from ...models.fps_listlive_response_default import FpsListliveResponseDefault
 from ...types import UNSET, Response, Unset
 
@@ -87,14 +84,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[FpsListliveFixturePersonStatisticsResponse, FpsListliveResponseDefault]:
-    if response.status_code == 200:
-        response_200 = FpsListliveFixturePersonStatisticsResponse.from_dict(
-            response.json()
-        )
-
-        return response_200
-
+) -> FpsListliveResponseDefault:
     response_default = FpsListliveResponseDefault.from_dict(response.json())
 
     return response_default
@@ -102,9 +92,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[FpsListliveFixturePersonStatisticsResponse, FpsListliveResponseDefault]
-]:
+) -> Response[FpsListliveResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -132,9 +120,7 @@ def sync_detailed(
     person_id: Union[Unset, UUID] = UNSET,
     starter: Union[Unset, bool] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[
-    Union[FpsListliveFixturePersonStatisticsResponse, FpsListliveResponseDefault]
-]:
+) -> Response[FpsListliveResponseDefault]:
     """Person total statistics - live
 
 
@@ -173,7 +159,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[FpsListliveFixturePersonStatisticsResponse, FpsListliveResponseDefault]]
+        Response[FpsListliveResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -221,9 +207,7 @@ def sync(
     person_id: Union[Unset, UUID] = UNSET,
     starter: Union[Unset, bool] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[
-    Union[FpsListliveFixturePersonStatisticsResponse, FpsListliveResponseDefault]
-]:
+) -> Optional[FpsListliveResponseDefault]:
     """Person total statistics - live
 
 
@@ -262,7 +246,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[FpsListliveFixturePersonStatisticsResponse, FpsListliveResponseDefault]
+        FpsListliveResponseDefault
     """
 
     return sync_detailed(
@@ -305,9 +289,7 @@ async def asyncio_detailed(
     person_id: Union[Unset, UUID] = UNSET,
     starter: Union[Unset, bool] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[
-    Union[FpsListliveFixturePersonStatisticsResponse, FpsListliveResponseDefault]
-]:
+) -> Response[FpsListliveResponseDefault]:
     """Person total statistics - live
 
 
@@ -346,7 +328,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[FpsListliveFixturePersonStatisticsResponse, FpsListliveResponseDefault]]
+        Response[FpsListliveResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -392,9 +374,7 @@ async def asyncio(
     person_id: Union[Unset, UUID] = UNSET,
     starter: Union[Unset, bool] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[
-    Union[FpsListliveFixturePersonStatisticsResponse, FpsListliveResponseDefault]
-]:
+) -> Optional[FpsListliveResponseDefault]:
     """Person total statistics - live
 
 
@@ -433,7 +413,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[FpsListliveFixturePersonStatisticsResponse, FpsListliveResponseDefault]
+        FpsListliveResponseDefault
     """
 
     return (

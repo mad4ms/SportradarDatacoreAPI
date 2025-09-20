@@ -8,19 +8,11 @@ from dateutil.parser import isoparse
 
 from ..models.conduct_model_conduct_type_item import ConductModelConductTypeItem
 from ..models.conduct_model_fine_status_type_1 import ConductModelFineStatusType1
-from ..models.conduct_model_fine_status_type_2_type_1 import (
-    ConductModelFineStatusType2Type1,
-)
-from ..models.conduct_model_fine_status_type_3_type_1 import (
-    ConductModelFineStatusType3Type1,
-)
+from ..models.conduct_model_fine_status_type_2_type_1 import ConductModelFineStatusType2Type1
+from ..models.conduct_model_fine_status_type_3_type_1 import ConductModelFineStatusType3Type1
 from ..models.conduct_model_hearing_status_type_1 import ConductModelHearingStatusType1
-from ..models.conduct_model_hearing_status_type_2_type_1 import (
-    ConductModelHearingStatusType2Type1,
-)
-from ..models.conduct_model_hearing_status_type_3_type_1 import (
-    ConductModelHearingStatusType3Type1,
-)
+from ..models.conduct_model_hearing_status_type_2_type_1 import ConductModelHearingStatusType2Type1
+from ..models.conduct_model_hearing_status_type_3_type_1 import ConductModelHearingStatusType3Type1
 from ..models.conduct_model_period_id import ConductModelPeriodId
 from ..models.conduct_model_role_type_1 import ConductModelRoleType1
 from ..models.conduct_model_role_type_2_type_1 import ConductModelRoleType2Type1
@@ -32,9 +24,6 @@ from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
     from ..models.conduct_model_competition import ConductModelCompetition
-    from ..models.conduct_model_conduct_penalty_result import (
-        ConductModelConductPenaltyResult,
-    )
     from ..models.conduct_model_entity import ConductModelEntity
     from ..models.conduct_model_entity_group import ConductModelEntityGroup
     from ..models.conduct_model_fixture import ConductModelFixture
@@ -42,6 +31,7 @@ if TYPE_CHECKING:
     from ..models.conduct_model_person import ConductModelPerson
     from ..models.conduct_model_season import ConductModelSeason
     from ..models.conduct_model_venue import ConductModelVenue
+    from ..models.conduct_penalty_result import ConductPenaltyResult
 
 
 T = TypeVar("T", bound="ConductModel")
@@ -141,7 +131,7 @@ class ConductModel:
             >- `PENDING` Pending
              Example: PENDING.
         life_sentence (Union[Unset, bool]): Was the result of the conduct hearing a life sentence? Example: True.
-        penalty_results (Union[Unset, list[Union['ConductModelConductPenaltyResult', None]]]):
+        penalty_results (Union[Unset, list[Union['ConductPenaltyResult', None]]]):
         fine_amount (Union[Unset, float]): Conduct fine amount
         fine_currency (Union[None, Unset, str]): Fine currency Example: USD.
         fine_status (Union[ConductModelFineStatusType1, ConductModelFineStatusType2Type1,
@@ -193,13 +183,7 @@ class ConductModel:
     period_id: Union[Unset, ConductModelPeriodId] = UNSET
     section: Union[Unset, str] = UNSET
     fixture_clock: Union[None, Unset, str] = UNSET
-    role: Union[
-        ConductModelRoleType1,
-        ConductModelRoleType2Type1,
-        ConductModelRoleType3Type1,
-        None,
-        Unset,
-    ] = UNSET
+    role: Union[ConductModelRoleType1, ConductModelRoleType2Type1, ConductModelRoleType3Type1, None, Unset] = UNSET
     date_offence_local: Union[None, Unset, datetime.datetime] = UNSET
     conduct_type: Union[Unset, list[ConductModelConductTypeItem]] = UNSET
     conduct_notes: Union[None, Unset, str] = UNSET
@@ -213,36 +197,24 @@ class ConductModel:
         Unset,
     ] = UNSET
     life_sentence: Union[Unset, bool] = UNSET
-    penalty_results: Union[
-        Unset, list[Union["ConductModelConductPenaltyResult", None]]
-    ] = UNSET
+    penalty_results: Union[Unset, list[Union["ConductPenaltyResult", None]]] = UNSET
     fine_amount: Union[Unset, float] = UNSET
     fine_currency: Union[None, Unset, str] = UNSET
     fine_status: Union[
-        ConductModelFineStatusType1,
-        ConductModelFineStatusType2Type1,
-        ConductModelFineStatusType3Type1,
-        None,
-        Unset,
+        ConductModelFineStatusType1, ConductModelFineStatusType2Type1, ConductModelFineStatusType3Type1, None, Unset
     ] = UNSET
     date_suspended_to: Union[None, Unset, datetime.date] = UNSET
     date_suspended_from: Union[None, Unset, datetime.date] = UNSET
     date_fine_paid_local: Union[None, Unset, datetime.date] = UNSET
-    status: Union[
-        ConductModelStatusType1,
-        ConductModelStatusType2Type1,
-        ConductModelStatusType3Type1,
-        None,
-        Unset,
-    ] = UNSET
+    status: Union[ConductModelStatusType1, ConductModelStatusType2Type1, ConductModelStatusType3Type1, None, Unset] = (
+        UNSET
+    )
     external_id: Union[None, Unset, str] = UNSET
     updated: Union[Unset, datetime.datetime] = UNSET
     added: Union[Unset, datetime.datetime] = UNSET
 
     def to_dict(self) -> dict[str, Any]:
-        from ..models.conduct_model_conduct_penalty_result import (
-            ConductModelConductPenaltyResult,
-        )
+        from ..models.conduct_penalty_result import ConductPenaltyResult
 
         conduct_id: Union[Unset, str] = UNSET
         if not isinstance(self.conduct_id, Unset):
@@ -404,9 +376,7 @@ class ConductModel:
             penalty_results = []
             for penalty_results_item_data in self.penalty_results:
                 penalty_results_item: Union[None, dict[str, Any]]
-                if isinstance(
-                    penalty_results_item_data, ConductModelConductPenaltyResult
-                ):
+                if isinstance(penalty_results_item_data, ConductPenaltyResult):
                     penalty_results_item = penalty_results_item_data.to_dict()
                 else:
                     penalty_results_item = penalty_results_item_data
@@ -575,9 +545,6 @@ class ConductModel:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.conduct_model_competition import ConductModelCompetition
-        from ..models.conduct_model_conduct_penalty_result import (
-            ConductModelConductPenaltyResult,
-        )
         from ..models.conduct_model_entity import ConductModelEntity
         from ..models.conduct_model_entity_group import ConductModelEntityGroup
         from ..models.conduct_model_fixture import ConductModelFixture
@@ -585,6 +552,7 @@ class ConductModel:
         from ..models.conduct_model_person import ConductModelPerson
         from ..models.conduct_model_season import ConductModelSeason
         from ..models.conduct_model_venue import ConductModelVenue
+        from ..models.conduct_penalty_result import ConductPenaltyResult
 
         d = dict(src_dict)
         _conduct_id = d.pop("conductId", UNSET)
@@ -746,13 +714,7 @@ class ConductModel:
 
         def _parse_role(
             data: object,
-        ) -> Union[
-            ConductModelRoleType1,
-            ConductModelRoleType2Type1,
-            ConductModelRoleType3Type1,
-            None,
-            Unset,
-        ]:
+        ) -> Union[ConductModelRoleType1, ConductModelRoleType2Type1, ConductModelRoleType3Type1, None, Unset]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -782,21 +744,12 @@ class ConductModel:
             except:  # noqa: E722
                 pass
             return cast(
-                Union[
-                    ConductModelRoleType1,
-                    ConductModelRoleType2Type1,
-                    ConductModelRoleType3Type1,
-                    None,
-                    Unset,
-                ],
-                data,
+                Union[ConductModelRoleType1, ConductModelRoleType2Type1, ConductModelRoleType3Type1, None, Unset], data
             )
 
         role = _parse_role(d.pop("role", UNSET))
 
-        def _parse_date_offence_local(
-            data: object,
-        ) -> Union[None, Unset, datetime.datetime]:
+        def _parse_date_offence_local(data: object) -> Union[None, Unset, datetime.datetime]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -829,9 +782,7 @@ class ConductModel:
 
         conduct_notes = _parse_conduct_notes(d.pop("conductNotes", UNSET))
 
-        def _parse_date_hearing_local(
-            data: object,
-        ) -> Union[None, Unset, datetime.date]:
+        def _parse_date_hearing_local(data: object) -> Union[None, Unset, datetime.date]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -913,26 +864,20 @@ class ConductModel:
         _penalty_results = d.pop("penaltyResults", UNSET)
         for penalty_results_item_data in _penalty_results or []:
 
-            def _parse_penalty_results_item(
-                data: object,
-            ) -> Union["ConductModelConductPenaltyResult", None]:
+            def _parse_penalty_results_item(data: object) -> Union["ConductPenaltyResult", None]:
                 if data is None:
                     return data
                 try:
                     if not isinstance(data, dict):
                         raise TypeError()
-                    penalty_results_item_type_0 = (
-                        ConductModelConductPenaltyResult.from_dict(data)
-                    )
+                    penalty_results_item_type_0 = ConductPenaltyResult.from_dict(data)
 
                     return penalty_results_item_type_0
                 except:  # noqa: E722
                     pass
-                return cast(Union["ConductModelConductPenaltyResult", None], data)
+                return cast(Union["ConductPenaltyResult", None], data)
 
-            penalty_results_item = _parse_penalty_results_item(
-                penalty_results_item_data
-            )
+            penalty_results_item = _parse_penalty_results_item(penalty_results_item_data)
 
             penalty_results.append(penalty_results_item)
 
@@ -950,11 +895,7 @@ class ConductModel:
         def _parse_fine_status(
             data: object,
         ) -> Union[
-            ConductModelFineStatusType1,
-            ConductModelFineStatusType2Type1,
-            ConductModelFineStatusType3Type1,
-            None,
-            Unset,
+            ConductModelFineStatusType1, ConductModelFineStatusType2Type1, ConductModelFineStatusType3Type1, None, Unset
         ]:
             if data is None:
                 return data
@@ -1014,9 +955,7 @@ class ConductModel:
 
         date_suspended_to = _parse_date_suspended_to(d.pop("dateSuspendedTo", UNSET))
 
-        def _parse_date_suspended_from(
-            data: object,
-        ) -> Union[None, Unset, datetime.date]:
+        def _parse_date_suspended_from(data: object) -> Union[None, Unset, datetime.date]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -1031,13 +970,9 @@ class ConductModel:
                 pass
             return cast(Union[None, Unset, datetime.date], data)
 
-        date_suspended_from = _parse_date_suspended_from(
-            d.pop("dateSuspendedFrom", UNSET)
-        )
+        date_suspended_from = _parse_date_suspended_from(d.pop("dateSuspendedFrom", UNSET))
 
-        def _parse_date_fine_paid_local(
-            data: object,
-        ) -> Union[None, Unset, datetime.date]:
+        def _parse_date_fine_paid_local(data: object) -> Union[None, Unset, datetime.date]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -1052,19 +987,11 @@ class ConductModel:
                 pass
             return cast(Union[None, Unset, datetime.date], data)
 
-        date_fine_paid_local = _parse_date_fine_paid_local(
-            d.pop("dateFinePaidLocal", UNSET)
-        )
+        date_fine_paid_local = _parse_date_fine_paid_local(d.pop("dateFinePaidLocal", UNSET))
 
         def _parse_status(
             data: object,
-        ) -> Union[
-            ConductModelStatusType1,
-            ConductModelStatusType2Type1,
-            ConductModelStatusType3Type1,
-            None,
-            Unset,
-        ]:
+        ) -> Union[ConductModelStatusType1, ConductModelStatusType2Type1, ConductModelStatusType3Type1, None, Unset]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -1094,13 +1021,7 @@ class ConductModel:
             except:  # noqa: E722
                 pass
             return cast(
-                Union[
-                    ConductModelStatusType1,
-                    ConductModelStatusType2Type1,
-                    ConductModelStatusType3Type1,
-                    None,
-                    Unset,
-                ],
+                Union[ConductModelStatusType1, ConductModelStatusType2Type1, ConductModelStatusType3Type1, None, Unset],
                 data,
             )
 

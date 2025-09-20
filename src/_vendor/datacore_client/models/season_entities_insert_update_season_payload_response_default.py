@@ -70,9 +70,7 @@ class SeasonEntitiesInsertUpdateSeasonPayloadResponseDefault:
             error=error,
         )
 
-        season_entities_insert_update_season_payload_response_default.additional_properties = (
-            d
-        )
+        season_entities_insert_update_season_payload_response_default.additional_properties = d
         return season_entities_insert_update_season_payload_response_default
 
     @property

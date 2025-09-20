@@ -6,12 +6,7 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.season_roster_list_by_entity_response_default import (
-    SeasonRosterListByEntityResponseDefault,
-)
-from ...models.season_roster_list_by_entity_season_roster_response import (
-    SeasonRosterListByEntitySeasonRosterResponse,
-)
+from ...models.season_roster_list_by_entity_response_default import SeasonRosterListByEntityResponseDefault
 from ...models.season_roster_list_by_entity_status import SeasonRosterListByEntityStatus
 from ...types import UNSET, Response, Unset
 
@@ -74,32 +69,15 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[
-    SeasonRosterListByEntityResponseDefault,
-    SeasonRosterListByEntitySeasonRosterResponse,
-]:
-    if response.status_code == 200:
-        response_200 = SeasonRosterListByEntitySeasonRosterResponse.from_dict(
-            response.json()
-        )
-
-        return response_200
-
-    response_default = SeasonRosterListByEntityResponseDefault.from_dict(
-        response.json()
-    )
+) -> SeasonRosterListByEntityResponseDefault:
+    response_default = SeasonRosterListByEntityResponseDefault.from_dict(response.json())
 
     return response_default
 
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[
-        SeasonRosterListByEntityResponseDefault,
-        SeasonRosterListByEntitySeasonRosterResponse,
-    ]
-]:
+) -> Response[SeasonRosterListByEntityResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -123,12 +101,7 @@ def sync_detailed(
     offset: Union[Unset, int] = UNSET,
     status: Union[Unset, SeasonRosterListByEntityStatus] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[
-    Union[
-        SeasonRosterListByEntityResponseDefault,
-        SeasonRosterListByEntitySeasonRosterResponse,
-    ]
-]:
+) -> Response[SeasonRosterListByEntityResponseDefault]:
     """Get the roster for a team for the season
 
      Return the roster for a team for the season
@@ -153,7 +126,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SeasonRosterListByEntityResponseDefault, SeasonRosterListByEntitySeasonRosterResponse]]
+        Response[SeasonRosterListByEntityResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -193,12 +166,7 @@ def sync(
     offset: Union[Unset, int] = UNSET,
     status: Union[Unset, SeasonRosterListByEntityStatus] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[
-    Union[
-        SeasonRosterListByEntityResponseDefault,
-        SeasonRosterListByEntitySeasonRosterResponse,
-    ]
-]:
+) -> Optional[SeasonRosterListByEntityResponseDefault]:
     """Get the roster for a team for the season
 
      Return the roster for a team for the season
@@ -223,7 +191,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SeasonRosterListByEntityResponseDefault, SeasonRosterListByEntitySeasonRosterResponse]
+        SeasonRosterListByEntityResponseDefault
     """
 
     return sync_detailed(
@@ -258,12 +226,7 @@ async def asyncio_detailed(
     offset: Union[Unset, int] = UNSET,
     status: Union[Unset, SeasonRosterListByEntityStatus] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[
-    Union[
-        SeasonRosterListByEntityResponseDefault,
-        SeasonRosterListByEntitySeasonRosterResponse,
-    ]
-]:
+) -> Response[SeasonRosterListByEntityResponseDefault]:
     """Get the roster for a team for the season
 
      Return the roster for a team for the season
@@ -288,7 +251,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SeasonRosterListByEntityResponseDefault, SeasonRosterListByEntitySeasonRosterResponse]]
+        Response[SeasonRosterListByEntityResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -326,12 +289,7 @@ async def asyncio(
     offset: Union[Unset, int] = UNSET,
     status: Union[Unset, SeasonRosterListByEntityStatus] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[
-    Union[
-        SeasonRosterListByEntityResponseDefault,
-        SeasonRosterListByEntitySeasonRosterResponse,
-    ]
-]:
+) -> Optional[SeasonRosterListByEntityResponseDefault]:
     """Get the roster for a team for the season
 
      Return the roster for a team for the season
@@ -356,7 +314,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SeasonRosterListByEntityResponseDefault, SeasonRosterListByEntitySeasonRosterResponse]
+        SeasonRosterListByEntityResponseDefault
     """
 
     return (

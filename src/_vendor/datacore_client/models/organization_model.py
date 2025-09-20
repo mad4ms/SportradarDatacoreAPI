@@ -147,9 +147,7 @@ class OrganizationModel:
                 return data
             return cast(Union[None, Unset, str], data)
 
-        abbreviation_local = _parse_abbreviation_local(
-            d.pop("abbreviationLocal", UNSET)
-        )
+        abbreviation_local = _parse_abbreviation_local(d.pop("abbreviationLocal", UNSET))
 
         name_local = d.pop("nameLocal", UNSET)
 
@@ -160,9 +158,7 @@ class OrganizationModel:
                 return data
             return cast(Union[None, Unset, str], data)
 
-        abbreviation_latin = _parse_abbreviation_latin(
-            d.pop("abbreviationLatin", UNSET)
-        )
+        abbreviation_latin = _parse_abbreviation_latin(d.pop("abbreviationLatin", UNSET))
 
         def _parse_name_latin(data: object) -> Union[None, Unset, str]:
             if data is None:

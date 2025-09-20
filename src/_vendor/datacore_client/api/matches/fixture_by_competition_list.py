@@ -6,18 +6,10 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.fixture_by_competition_list_competitor_type import (
-    FixtureByCompetitionListCompetitorType,
-)
-from ...models.fixture_by_competition_list_discipline import (
-    FixtureByCompetitionListDiscipline,
-)
-from ...models.fixture_by_competition_list_fixture_type import (
-    FixtureByCompetitionListFixtureType,
-)
-from ...models.fixture_by_competition_list_response_default import (
-    FixtureByCompetitionListResponseDefault,
-)
+from ...models.fixture_by_competition_list_competitor_type import FixtureByCompetitionListCompetitorType
+from ...models.fixture_by_competition_list_discipline import FixtureByCompetitionListDiscipline
+from ...models.fixture_by_competition_list_fixture_type import FixtureByCompetitionListFixtureType
+from ...models.fixture_by_competition_list_response_default import FixtureByCompetitionListResponseDefault
 from ...models.fixture_by_competition_list_status import FixtureByCompetitionListStatus
 from ...types import UNSET, Response, Unset
 
@@ -170,9 +162,7 @@ def _get_kwargs(
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
 ) -> FixtureByCompetitionListResponseDefault:
-    response_default = FixtureByCompetitionListResponseDefault.from_dict(
-        response.json()
-    )
+    response_default = FixtureByCompetitionListResponseDefault.from_dict(response.json())
 
     return response_default
 

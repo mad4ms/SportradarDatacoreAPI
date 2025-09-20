@@ -6,9 +6,6 @@ import httpx
 
 from ...client import AuthenticatedClient, Client
 from ...models.sep_delete_response_default import SepDeleteResponseDefault
-from ...models.sep_delete_season_entity_placings_response import (
-    SepDeleteSeasonEntityPlacingsResponse,
-)
 from ...types import UNSET, Response, Unset
 
 
@@ -47,12 +44,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[SepDeleteResponseDefault, SepDeleteSeasonEntityPlacingsResponse]:
-    if response.status_code == 200:
-        response_200 = SepDeleteSeasonEntityPlacingsResponse.from_dict(response.json())
-
-        return response_200
-
+) -> SepDeleteResponseDefault:
     response_default = SepDeleteResponseDefault.from_dict(response.json())
 
     return response_default
@@ -60,7 +52,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[Union[SepDeleteResponseDefault, SepDeleteSeasonEntityPlacingsResponse]]:
+) -> Response[SepDeleteResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -79,7 +71,7 @@ def sync_detailed(
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[Union[SepDeleteResponseDefault, SepDeleteSeasonEntityPlacingsResponse]]:
+) -> Response[SepDeleteResponseDefault]:
     """Delete a season team placing
 
      Delete a specific season team placing
@@ -99,7 +91,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SepDeleteResponseDefault, SepDeleteSeasonEntityPlacingsResponse]]
+        Response[SepDeleteResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -129,7 +121,7 @@ def sync(
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[Union[SepDeleteResponseDefault, SepDeleteSeasonEntityPlacingsResponse]]:
+) -> Optional[SepDeleteResponseDefault]:
     """Delete a season team placing
 
      Delete a specific season team placing
@@ -149,7 +141,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SepDeleteResponseDefault, SepDeleteSeasonEntityPlacingsResponse]
+        SepDeleteResponseDefault
     """
 
     return sync_detailed(
@@ -174,7 +166,7 @@ async def asyncio_detailed(
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[Union[SepDeleteResponseDefault, SepDeleteSeasonEntityPlacingsResponse]]:
+) -> Response[SepDeleteResponseDefault]:
     """Delete a season team placing
 
      Delete a specific season team placing
@@ -194,7 +186,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SepDeleteResponseDefault, SepDeleteSeasonEntityPlacingsResponse]]
+        Response[SepDeleteResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -222,7 +214,7 @@ async def asyncio(
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[Union[SepDeleteResponseDefault, SepDeleteSeasonEntityPlacingsResponse]]:
+) -> Optional[SepDeleteResponseDefault]:
     """Delete a season team placing
 
      Delete a specific season team placing
@@ -242,7 +234,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SepDeleteResponseDefault, SepDeleteSeasonEntityPlacingsResponse]
+        SepDeleteResponseDefault
     """
 
     return (

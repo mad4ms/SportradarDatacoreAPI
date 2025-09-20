@@ -5,12 +5,8 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.season_persons_insert_update_response_default import (
-    SeasonPersonsInsertUpdateResponseDefault,
-)
-from ...models.season_persons_insert_update_season_persons_post_body import (
-    SeasonPersonsInsertUpdateSeasonPersonsPostBody,
-)
+from ...models.season_persons_insert_update_response_default import SeasonPersonsInsertUpdateResponseDefault
+from ...models.season_persons_post_body import SeasonPersonsPostBody
 from ...types import UNSET, Response, Unset
 
 
@@ -18,7 +14,7 @@ def _get_kwargs(
     organization_id: str,
     season_id: UUID,
     *,
-    body: SeasonPersonsInsertUpdateSeasonPersonsPostBody,
+    body: SeasonPersonsPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
@@ -55,9 +51,7 @@ def _get_kwargs(
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
 ) -> SeasonPersonsInsertUpdateResponseDefault:
-    response_default = SeasonPersonsInsertUpdateResponseDefault.from_dict(
-        response.json()
-    )
+    response_default = SeasonPersonsInsertUpdateResponseDefault.from_dict(response.json())
 
     return response_default
 
@@ -78,7 +72,7 @@ def sync_detailed(
     season_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: SeasonPersonsInsertUpdateSeasonPersonsPostBody,
+    body: SeasonPersonsPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
@@ -96,7 +90,7 @@ def sync_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (SeasonPersonsInsertUpdateSeasonPersonsPostBody):
+        body (SeasonPersonsPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -128,7 +122,7 @@ def sync(
     season_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: SeasonPersonsInsertUpdateSeasonPersonsPostBody,
+    body: SeasonPersonsPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
@@ -146,7 +140,7 @@ def sync(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (SeasonPersonsInsertUpdateSeasonPersonsPostBody):
+        body (SeasonPersonsPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -173,7 +167,7 @@ async def asyncio_detailed(
     season_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: SeasonPersonsInsertUpdateSeasonPersonsPostBody,
+    body: SeasonPersonsPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
@@ -191,7 +185,7 @@ async def asyncio_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (SeasonPersonsInsertUpdateSeasonPersonsPostBody):
+        body (SeasonPersonsPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -221,7 +215,7 @@ async def asyncio(
     season_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: SeasonPersonsInsertUpdateSeasonPersonsPostBody,
+    body: SeasonPersonsPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
@@ -239,7 +233,7 @@ async def asyncio(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (SeasonPersonsInsertUpdateSeasonPersonsPostBody):
+        body (SeasonPersonsPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

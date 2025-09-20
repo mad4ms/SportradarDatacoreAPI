@@ -6,12 +6,7 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.fes_listperiod_by_season_fixture_entity_statistics_periods_response import (
-    FesListperiodBySeasonFixtureEntityStatisticsPeriodsResponse,
-)
-from ...models.fes_listperiod_by_season_response_default import (
-    FesListperiodBySeasonResponseDefault,
-)
+from ...models.fes_listperiod_by_season_response_default import FesListperiodBySeasonResponseDefault
 from ...types import UNSET, Response, Unset
 
 
@@ -71,19 +66,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[
-    FesListperiodBySeasonFixtureEntityStatisticsPeriodsResponse,
-    FesListperiodBySeasonResponseDefault,
-]:
-    if response.status_code == 200:
-        response_200 = (
-            FesListperiodBySeasonFixtureEntityStatisticsPeriodsResponse.from_dict(
-                response.json()
-            )
-        )
-
-        return response_200
-
+) -> FesListperiodBySeasonResponseDefault:
     response_default = FesListperiodBySeasonResponseDefault.from_dict(response.json())
 
     return response_default
@@ -91,12 +74,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[
-        FesListperiodBySeasonFixtureEntityStatisticsPeriodsResponse,
-        FesListperiodBySeasonResponseDefault,
-    ]
-]:
+) -> Response[FesListperiodBySeasonResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -119,12 +97,7 @@ def sync_detailed(
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[
-    Union[
-        FesListperiodBySeasonFixtureEntityStatisticsPeriodsResponse,
-        FesListperiodBySeasonResponseDefault,
-    ]
-]:
+) -> Response[FesListperiodBySeasonResponseDefault]:
     """Team period statistics for matches in a season
 
      Return a list of team period statistics for matches in a season.
@@ -149,7 +122,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[FesListperiodBySeasonFixtureEntityStatisticsPeriodsResponse, FesListperiodBySeasonResponseDefault]]
+        Response[FesListperiodBySeasonResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -187,12 +160,7 @@ def sync(
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[
-    Union[
-        FesListperiodBySeasonFixtureEntityStatisticsPeriodsResponse,
-        FesListperiodBySeasonResponseDefault,
-    ]
-]:
+) -> Optional[FesListperiodBySeasonResponseDefault]:
     """Team period statistics for matches in a season
 
      Return a list of team period statistics for matches in a season.
@@ -217,7 +185,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[FesListperiodBySeasonFixtureEntityStatisticsPeriodsResponse, FesListperiodBySeasonResponseDefault]
+        FesListperiodBySeasonResponseDefault
     """
 
     return sync_detailed(
@@ -250,12 +218,7 @@ async def asyncio_detailed(
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[
-    Union[
-        FesListperiodBySeasonFixtureEntityStatisticsPeriodsResponse,
-        FesListperiodBySeasonResponseDefault,
-    ]
-]:
+) -> Response[FesListperiodBySeasonResponseDefault]:
     """Team period statistics for matches in a season
 
      Return a list of team period statistics for matches in a season.
@@ -280,7 +243,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[FesListperiodBySeasonFixtureEntityStatisticsPeriodsResponse, FesListperiodBySeasonResponseDefault]]
+        Response[FesListperiodBySeasonResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -316,12 +279,7 @@ async def asyncio(
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[
-    Union[
-        FesListperiodBySeasonFixtureEntityStatisticsPeriodsResponse,
-        FesListperiodBySeasonResponseDefault,
-    ]
-]:
+) -> Optional[FesListperiodBySeasonResponseDefault]:
     """Team period statistics for matches in a season
 
      Return a list of team period statistics for matches in a season.
@@ -346,7 +304,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[FesListperiodBySeasonFixtureEntityStatisticsPeriodsResponse, FesListperiodBySeasonResponseDefault]
+        FesListperiodBySeasonResponseDefault
     """
 
     return (

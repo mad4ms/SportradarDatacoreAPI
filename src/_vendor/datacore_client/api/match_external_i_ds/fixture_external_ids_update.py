@@ -5,15 +5,8 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.fixture_external_ids_update_fixture_external_ids_response import (
-    FixtureExternalIdsUpdateFixtureExternalIdsResponse,
-)
-from ...models.fixture_external_ids_update_match_external_ids_put_body import (
-    FixtureExternalIdsUpdateMatchExternalIdsPutBody,
-)
-from ...models.fixture_external_ids_update_response_default import (
-    FixtureExternalIdsUpdateResponseDefault,
-)
+from ...models.fixture_external_ids_update_response_default import FixtureExternalIdsUpdateResponseDefault
+from ...models.match_external_ids_put_body import MatchExternalIdsPutBody
 from ...types import UNSET, Response, Unset
 
 
@@ -21,7 +14,7 @@ def _get_kwargs(
     organization_id: str,
     fixture_external_id: UUID,
     *,
-    body: FixtureExternalIdsUpdateMatchExternalIdsPutBody,
+    body: MatchExternalIdsPutBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
@@ -57,32 +50,15 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[
-    FixtureExternalIdsUpdateFixtureExternalIdsResponse,
-    FixtureExternalIdsUpdateResponseDefault,
-]:
-    if response.status_code == 200:
-        response_200 = FixtureExternalIdsUpdateFixtureExternalIdsResponse.from_dict(
-            response.json()
-        )
-
-        return response_200
-
-    response_default = FixtureExternalIdsUpdateResponseDefault.from_dict(
-        response.json()
-    )
+) -> FixtureExternalIdsUpdateResponseDefault:
+    response_default = FixtureExternalIdsUpdateResponseDefault.from_dict(response.json())
 
     return response_default
 
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[
-        FixtureExternalIdsUpdateFixtureExternalIdsResponse,
-        FixtureExternalIdsUpdateResponseDefault,
-    ]
-]:
+) -> Response[FixtureExternalIdsUpdateResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -96,17 +72,12 @@ def sync_detailed(
     fixture_external_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: FixtureExternalIdsUpdateMatchExternalIdsPutBody,
+    body: MatchExternalIdsPutBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        FixtureExternalIdsUpdateFixtureExternalIdsResponse,
-        FixtureExternalIdsUpdateResponseDefault,
-    ]
-]:
+) -> Response[FixtureExternalIdsUpdateResponseDefault]:
     """Update a match external identifier information
 
      Change the external identifier information of a specific match
@@ -119,14 +90,14 @@ def sync_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (FixtureExternalIdsUpdateMatchExternalIdsPutBody):
+        body (MatchExternalIdsPutBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[FixtureExternalIdsUpdateFixtureExternalIdsResponse, FixtureExternalIdsUpdateResponseDefault]]
+        Response[FixtureExternalIdsUpdateResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -151,17 +122,12 @@ def sync(
     fixture_external_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: FixtureExternalIdsUpdateMatchExternalIdsPutBody,
+    body: MatchExternalIdsPutBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        FixtureExternalIdsUpdateFixtureExternalIdsResponse,
-        FixtureExternalIdsUpdateResponseDefault,
-    ]
-]:
+) -> Optional[FixtureExternalIdsUpdateResponseDefault]:
     """Update a match external identifier information
 
      Change the external identifier information of a specific match
@@ -174,14 +140,14 @@ def sync(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (FixtureExternalIdsUpdateMatchExternalIdsPutBody):
+        body (MatchExternalIdsPutBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[FixtureExternalIdsUpdateFixtureExternalIdsResponse, FixtureExternalIdsUpdateResponseDefault]
+        FixtureExternalIdsUpdateResponseDefault
     """
 
     return sync_detailed(
@@ -201,17 +167,12 @@ async def asyncio_detailed(
     fixture_external_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: FixtureExternalIdsUpdateMatchExternalIdsPutBody,
+    body: MatchExternalIdsPutBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        FixtureExternalIdsUpdateFixtureExternalIdsResponse,
-        FixtureExternalIdsUpdateResponseDefault,
-    ]
-]:
+) -> Response[FixtureExternalIdsUpdateResponseDefault]:
     """Update a match external identifier information
 
      Change the external identifier information of a specific match
@@ -224,14 +185,14 @@ async def asyncio_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (FixtureExternalIdsUpdateMatchExternalIdsPutBody):
+        body (MatchExternalIdsPutBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[FixtureExternalIdsUpdateFixtureExternalIdsResponse, FixtureExternalIdsUpdateResponseDefault]]
+        Response[FixtureExternalIdsUpdateResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -254,17 +215,12 @@ async def asyncio(
     fixture_external_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: FixtureExternalIdsUpdateMatchExternalIdsPutBody,
+    body: MatchExternalIdsPutBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        FixtureExternalIdsUpdateFixtureExternalIdsResponse,
-        FixtureExternalIdsUpdateResponseDefault,
-    ]
-]:
+) -> Optional[FixtureExternalIdsUpdateResponseDefault]:
     """Update a match external identifier information
 
      Change the external identifier information of a specific match
@@ -277,14 +233,14 @@ async def asyncio(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (FixtureExternalIdsUpdateMatchExternalIdsPutBody):
+        body (MatchExternalIdsPutBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[FixtureExternalIdsUpdateFixtureExternalIdsResponse, FixtureExternalIdsUpdateResponseDefault]
+        FixtureExternalIdsUpdateResponseDefault
     """
 
     return (

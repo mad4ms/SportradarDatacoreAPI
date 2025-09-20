@@ -5,12 +5,7 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.league_external_ids_detail_league_external_ids_response import (
-    LeagueExternalIdsDetailLeagueExternalIdsResponse,
-)
-from ...models.league_external_ids_detail_response_default import (
-    LeagueExternalIdsDetailResponseDefault,
-)
+from ...models.league_external_ids_detail_response_default import LeagueExternalIdsDetailResponseDefault
 from ...types import UNSET, Response, Unset
 
 
@@ -52,17 +47,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[
-    LeagueExternalIdsDetailLeagueExternalIdsResponse,
-    LeagueExternalIdsDetailResponseDefault,
-]:
-    if response.status_code == 200:
-        response_200 = LeagueExternalIdsDetailLeagueExternalIdsResponse.from_dict(
-            response.json()
-        )
-
-        return response_200
-
+) -> LeagueExternalIdsDetailResponseDefault:
     response_default = LeagueExternalIdsDetailResponseDefault.from_dict(response.json())
 
     return response_default
@@ -70,12 +55,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[
-        LeagueExternalIdsDetailLeagueExternalIdsResponse,
-        LeagueExternalIdsDetailResponseDefault,
-    ]
-]:
+) -> Response[LeagueExternalIdsDetailResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -95,12 +75,7 @@ def sync_detailed(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Response[
-    Union[
-        LeagueExternalIdsDetailLeagueExternalIdsResponse,
-        LeagueExternalIdsDetailResponseDefault,
-    ]
-]:
+) -> Response[LeagueExternalIdsDetailResponseDefault]:
     """Get a league external identifier details
 
      Detailed information about a specific league external identifier
@@ -121,7 +96,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[LeagueExternalIdsDetailLeagueExternalIdsResponse, LeagueExternalIdsDetailResponseDefault]]
+        Response[LeagueExternalIdsDetailResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -153,12 +128,7 @@ def sync(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Optional[
-    Union[
-        LeagueExternalIdsDetailLeagueExternalIdsResponse,
-        LeagueExternalIdsDetailResponseDefault,
-    ]
-]:
+) -> Optional[LeagueExternalIdsDetailResponseDefault]:
     """Get a league external identifier details
 
      Detailed information about a specific league external identifier
@@ -179,7 +149,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[LeagueExternalIdsDetailLeagueExternalIdsResponse, LeagueExternalIdsDetailResponseDefault]
+        LeagueExternalIdsDetailResponseDefault
     """
 
     return sync_detailed(
@@ -206,12 +176,7 @@ async def asyncio_detailed(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Response[
-    Union[
-        LeagueExternalIdsDetailLeagueExternalIdsResponse,
-        LeagueExternalIdsDetailResponseDefault,
-    ]
-]:
+) -> Response[LeagueExternalIdsDetailResponseDefault]:
     """Get a league external identifier details
 
      Detailed information about a specific league external identifier
@@ -232,7 +197,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[LeagueExternalIdsDetailLeagueExternalIdsResponse, LeagueExternalIdsDetailResponseDefault]]
+        Response[LeagueExternalIdsDetailResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -262,12 +227,7 @@ async def asyncio(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Optional[
-    Union[
-        LeagueExternalIdsDetailLeagueExternalIdsResponse,
-        LeagueExternalIdsDetailResponseDefault,
-    ]
-]:
+) -> Optional[LeagueExternalIdsDetailResponseDefault]:
     """Get a league external identifier details
 
      Detailed information about a specific league external identifier
@@ -288,7 +248,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[LeagueExternalIdsDetailLeagueExternalIdsResponse, LeagueExternalIdsDetailResponseDefault]
+        LeagueExternalIdsDetailResponseDefault
     """
 
     return (

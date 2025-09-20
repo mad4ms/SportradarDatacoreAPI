@@ -6,7 +6,6 @@ import httpx
 
 from ...client import AuthenticatedClient, Client
 from ...models.site_delete_response_default import SiteDeleteResponseDefault
-from ...models.site_delete_sites_response import SiteDeleteSitesResponse
 from ...types import UNSET, Response, Unset
 
 
@@ -45,12 +44,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[SiteDeleteResponseDefault, SiteDeleteSitesResponse]:
-    if response.status_code == 200:
-        response_200 = SiteDeleteSitesResponse.from_dict(response.json())
-
-        return response_200
-
+) -> SiteDeleteResponseDefault:
     response_default = SiteDeleteResponseDefault.from_dict(response.json())
 
     return response_default
@@ -58,7 +52,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[Union[SiteDeleteResponseDefault, SiteDeleteSitesResponse]]:
+) -> Response[SiteDeleteResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -77,7 +71,7 @@ def sync_detailed(
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[Union[SiteDeleteResponseDefault, SiteDeleteSitesResponse]]:
+) -> Response[SiteDeleteResponseDefault]:
     """Delete a site
 
      Delete a specific site
@@ -97,7 +91,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SiteDeleteResponseDefault, SiteDeleteSitesResponse]]
+        Response[SiteDeleteResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -127,7 +121,7 @@ def sync(
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[Union[SiteDeleteResponseDefault, SiteDeleteSitesResponse]]:
+) -> Optional[SiteDeleteResponseDefault]:
     """Delete a site
 
      Delete a specific site
@@ -147,7 +141,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SiteDeleteResponseDefault, SiteDeleteSitesResponse]
+        SiteDeleteResponseDefault
     """
 
     return sync_detailed(
@@ -172,7 +166,7 @@ async def asyncio_detailed(
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[Union[SiteDeleteResponseDefault, SiteDeleteSitesResponse]]:
+) -> Response[SiteDeleteResponseDefault]:
     """Delete a site
 
      Delete a specific site
@@ -192,7 +186,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SiteDeleteResponseDefault, SiteDeleteSitesResponse]]
+        Response[SiteDeleteResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -220,7 +214,7 @@ async def asyncio(
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[Union[SiteDeleteResponseDefault, SiteDeleteSitesResponse]]:
+) -> Optional[SiteDeleteResponseDefault]:
     """Delete a site
 
      Delete a specific site
@@ -240,7 +234,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SiteDeleteResponseDefault, SiteDeleteSitesResponse]
+        SiteDeleteResponseDefault
     """
 
     return (

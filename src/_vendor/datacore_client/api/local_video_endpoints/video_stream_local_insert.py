@@ -5,15 +5,8 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.video_stream_local_insert_response_default import (
-    VideoStreamLocalInsertResponseDefault,
-)
-from ...models.video_stream_local_insert_video_stream_local_post_body import (
-    VideoStreamLocalInsertVideoStreamLocalPostBody,
-)
-from ...models.video_stream_local_insert_video_stream_local_response import (
-    VideoStreamLocalInsertVideoStreamLocalResponse,
-)
+from ...models.video_stream_local_insert_response_default import VideoStreamLocalInsertResponseDefault
+from ...models.video_stream_local_post_body import VideoStreamLocalPostBody
 from ...types import UNSET, Response, Unset
 
 
@@ -21,7 +14,7 @@ def _get_kwargs(
     organization_id: str,
     fixture_id: UUID,
     *,
-    body: VideoStreamLocalInsertVideoStreamLocalPostBody,
+    body: VideoStreamLocalPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
@@ -57,17 +50,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[
-    VideoStreamLocalInsertResponseDefault,
-    VideoStreamLocalInsertVideoStreamLocalResponse,
-]:
-    if response.status_code == 200:
-        response_200 = VideoStreamLocalInsertVideoStreamLocalResponse.from_dict(
-            response.json()
-        )
-
-        return response_200
-
+) -> VideoStreamLocalInsertResponseDefault:
     response_default = VideoStreamLocalInsertResponseDefault.from_dict(response.json())
 
     return response_default
@@ -75,12 +58,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[
-        VideoStreamLocalInsertResponseDefault,
-        VideoStreamLocalInsertVideoStreamLocalResponse,
-    ]
-]:
+) -> Response[VideoStreamLocalInsertResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -94,17 +72,12 @@ def sync_detailed(
     fixture_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: VideoStreamLocalInsertVideoStreamLocalPostBody,
+    body: VideoStreamLocalPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        VideoStreamLocalInsertResponseDefault,
-        VideoStreamLocalInsertVideoStreamLocalResponse,
-    ]
-]:
+) -> Response[VideoStreamLocalInsertResponseDefault]:
     """Create a new local streaming endpoint record
 
      Insert a new streamed endpoint video record
@@ -117,14 +90,14 @@ def sync_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (VideoStreamLocalInsertVideoStreamLocalPostBody):
+        body (VideoStreamLocalPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[VideoStreamLocalInsertResponseDefault, VideoStreamLocalInsertVideoStreamLocalResponse]]
+        Response[VideoStreamLocalInsertResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -149,17 +122,12 @@ def sync(
     fixture_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: VideoStreamLocalInsertVideoStreamLocalPostBody,
+    body: VideoStreamLocalPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        VideoStreamLocalInsertResponseDefault,
-        VideoStreamLocalInsertVideoStreamLocalResponse,
-    ]
-]:
+) -> Optional[VideoStreamLocalInsertResponseDefault]:
     """Create a new local streaming endpoint record
 
      Insert a new streamed endpoint video record
@@ -172,14 +140,14 @@ def sync(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (VideoStreamLocalInsertVideoStreamLocalPostBody):
+        body (VideoStreamLocalPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[VideoStreamLocalInsertResponseDefault, VideoStreamLocalInsertVideoStreamLocalResponse]
+        VideoStreamLocalInsertResponseDefault
     """
 
     return sync_detailed(
@@ -199,17 +167,12 @@ async def asyncio_detailed(
     fixture_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: VideoStreamLocalInsertVideoStreamLocalPostBody,
+    body: VideoStreamLocalPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        VideoStreamLocalInsertResponseDefault,
-        VideoStreamLocalInsertVideoStreamLocalResponse,
-    ]
-]:
+) -> Response[VideoStreamLocalInsertResponseDefault]:
     """Create a new local streaming endpoint record
 
      Insert a new streamed endpoint video record
@@ -222,14 +185,14 @@ async def asyncio_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (VideoStreamLocalInsertVideoStreamLocalPostBody):
+        body (VideoStreamLocalPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[VideoStreamLocalInsertResponseDefault, VideoStreamLocalInsertVideoStreamLocalResponse]]
+        Response[VideoStreamLocalInsertResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -252,17 +215,12 @@ async def asyncio(
     fixture_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: VideoStreamLocalInsertVideoStreamLocalPostBody,
+    body: VideoStreamLocalPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        VideoStreamLocalInsertResponseDefault,
-        VideoStreamLocalInsertVideoStreamLocalResponse,
-    ]
-]:
+) -> Optional[VideoStreamLocalInsertResponseDefault]:
     """Create a new local streaming endpoint record
 
      Insert a new streamed endpoint video record
@@ -275,14 +233,14 @@ async def asyncio(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (VideoStreamLocalInsertVideoStreamLocalPostBody):
+        body (VideoStreamLocalPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[VideoStreamLocalInsertResponseDefault, VideoStreamLocalInsertVideoStreamLocalResponse]
+        VideoStreamLocalInsertResponseDefault
     """
 
     return (

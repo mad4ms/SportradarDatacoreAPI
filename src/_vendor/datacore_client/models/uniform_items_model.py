@@ -147,9 +147,7 @@ class UniformItemsModel:
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.images_model import ImagesModel
         from ..models.uniform_items_model_colors import UniformItemsModelColors
-        from ..models.uniform_items_model_organization import (
-            UniformItemsModelOrganization,
-        )
+        from ..models.uniform_items_model_organization import UniformItemsModelOrganization
         from ..models.uniform_items_model_uniform import UniformItemsModelUniform
 
         d = dict(src_dict)

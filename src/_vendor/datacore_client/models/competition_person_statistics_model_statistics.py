@@ -891,53 +891,31 @@ class CompetitionPersonStatisticsModelStatistics:
     goal_keeper_goals_against: Union[None, Unset, int] = UNSET
     goal_keeper_goals_against_per_match: Union[None, Unset, float] = UNSET
     goal_keeper_nine_metre_centre_goals_against: Union[None, Unset, int] = UNSET
-    goal_keeper_nine_metre_centre_goals_against_per_match: Union[None, Unset, float] = (
-        UNSET
-    )
+    goal_keeper_nine_metre_centre_goals_against_per_match: Union[None, Unset, float] = UNSET
     goal_keeper_nine_metre_centre_save_accuracy: Union[Unset, float] = UNSET
-    goal_keeper_nine_metre_centre_save_accuracy_per_match: Union[None, Unset, float] = (
-        UNSET
-    )
+    goal_keeper_nine_metre_centre_save_accuracy_per_match: Union[None, Unset, float] = UNSET
     goal_keeper_nine_metre_centre_shots_against: Union[None, Unset, int] = UNSET
-    goal_keeper_nine_metre_centre_shots_against_per_match: Union[None, Unset, float] = (
-        UNSET
-    )
+    goal_keeper_nine_metre_centre_shots_against_per_match: Union[None, Unset, float] = UNSET
     goal_keeper_nine_metre_centre_shots_saved: Union[None, Unset, int] = UNSET
-    goal_keeper_nine_metre_centre_shots_saved_per_match: Union[None, Unset, float] = (
-        UNSET
-    )
+    goal_keeper_nine_metre_centre_shots_saved_per_match: Union[None, Unset, float] = UNSET
     goal_keeper_nine_metre_goals_against: Union[None, Unset, int] = UNSET
     goal_keeper_nine_metre_goals_against_per_match: Union[None, Unset, float] = UNSET
     goal_keeper_nine_metre_left_goals_against: Union[None, Unset, int] = UNSET
-    goal_keeper_nine_metre_left_goals_against_per_match: Union[None, Unset, float] = (
-        UNSET
-    )
+    goal_keeper_nine_metre_left_goals_against_per_match: Union[None, Unset, float] = UNSET
     goal_keeper_nine_metre_left_save_accuracy: Union[Unset, float] = UNSET
-    goal_keeper_nine_metre_left_save_accuracy_per_match: Union[None, Unset, float] = (
-        UNSET
-    )
+    goal_keeper_nine_metre_left_save_accuracy_per_match: Union[None, Unset, float] = UNSET
     goal_keeper_nine_metre_left_shots_against: Union[None, Unset, int] = UNSET
-    goal_keeper_nine_metre_left_shots_against_per_match: Union[None, Unset, float] = (
-        UNSET
-    )
+    goal_keeper_nine_metre_left_shots_against_per_match: Union[None, Unset, float] = UNSET
     goal_keeper_nine_metre_left_shots_saved: Union[None, Unset, int] = UNSET
     goal_keeper_nine_metre_left_shots_saved_per_match: Union[None, Unset, float] = UNSET
     goal_keeper_nine_metre_right_goals_against: Union[None, Unset, int] = UNSET
-    goal_keeper_nine_metre_right_goals_against_per_match: Union[None, Unset, float] = (
-        UNSET
-    )
+    goal_keeper_nine_metre_right_goals_against_per_match: Union[None, Unset, float] = UNSET
     goal_keeper_nine_metre_right_save_accuracy: Union[Unset, float] = UNSET
-    goal_keeper_nine_metre_right_save_accuracy_per_match: Union[None, Unset, float] = (
-        UNSET
-    )
+    goal_keeper_nine_metre_right_save_accuracy_per_match: Union[None, Unset, float] = UNSET
     goal_keeper_nine_metre_right_shots_against: Union[None, Unset, int] = UNSET
-    goal_keeper_nine_metre_right_shots_against_per_match: Union[None, Unset, float] = (
-        UNSET
-    )
+    goal_keeper_nine_metre_right_shots_against_per_match: Union[None, Unset, float] = UNSET
     goal_keeper_nine_metre_right_shots_saved: Union[None, Unset, int] = UNSET
-    goal_keeper_nine_metre_right_shots_saved_per_match: Union[None, Unset, float] = (
-        UNSET
-    )
+    goal_keeper_nine_metre_right_shots_saved_per_match: Union[None, Unset, float] = UNSET
     goal_keeper_nine_metre_save_accuracy: Union[Unset, float] = UNSET
     goal_keeper_nine_metre_save_accuracy_per_match: Union[None, Unset, float] = UNSET
     goal_keeper_nine_metre_shots_against: Union[None, Unset, int] = UNSET
@@ -970,49 +948,29 @@ class CompetitionPersonStatisticsModelStatistics:
     goal_keeper_shots_saved: Union[None, Unset, int] = UNSET
     goal_keeper_shots_saved_per_match: Union[None, Unset, float] = UNSET
     goal_keeper_six_metre_centre_goals_against: Union[None, Unset, int] = UNSET
-    goal_keeper_six_metre_centre_goals_against_per_match: Union[None, Unset, float] = (
-        UNSET
-    )
+    goal_keeper_six_metre_centre_goals_against_per_match: Union[None, Unset, float] = UNSET
     goal_keeper_six_metre_centre_save_accuracy: Union[Unset, float] = UNSET
-    goal_keeper_six_metre_centre_save_accuracy_per_match: Union[None, Unset, float] = (
-        UNSET
-    )
+    goal_keeper_six_metre_centre_save_accuracy_per_match: Union[None, Unset, float] = UNSET
     goal_keeper_six_metre_centre_shots_against: Union[None, Unset, int] = UNSET
-    goal_keeper_six_metre_centre_shots_against_per_match: Union[None, Unset, float] = (
-        UNSET
-    )
+    goal_keeper_six_metre_centre_shots_against_per_match: Union[None, Unset, float] = UNSET
     goal_keeper_six_metre_centre_shots_saved: Union[None, Unset, int] = UNSET
-    goal_keeper_six_metre_centre_shots_saved_per_match: Union[None, Unset, float] = (
-        UNSET
-    )
+    goal_keeper_six_metre_centre_shots_saved_per_match: Union[None, Unset, float] = UNSET
     goal_keeper_six_metre_goals_against: Union[None, Unset, int] = UNSET
     goal_keeper_six_metre_goals_against_per_match: Union[None, Unset, float] = UNSET
     goal_keeper_six_metre_left_goals_against: Union[None, Unset, int] = UNSET
-    goal_keeper_six_metre_left_goals_against_per_match: Union[None, Unset, float] = (
-        UNSET
-    )
+    goal_keeper_six_metre_left_goals_against_per_match: Union[None, Unset, float] = UNSET
     goal_keeper_six_metre_left_save_accuracy: Union[Unset, float] = UNSET
-    goal_keeper_six_metre_left_save_accuracy_per_match: Union[None, Unset, float] = (
-        UNSET
-    )
+    goal_keeper_six_metre_left_save_accuracy_per_match: Union[None, Unset, float] = UNSET
     goal_keeper_six_metre_left_shots_against: Union[None, Unset, int] = UNSET
-    goal_keeper_six_metre_left_shots_against_per_match: Union[None, Unset, float] = (
-        UNSET
-    )
+    goal_keeper_six_metre_left_shots_against_per_match: Union[None, Unset, float] = UNSET
     goal_keeper_six_metre_left_shots_saved: Union[None, Unset, int] = UNSET
     goal_keeper_six_metre_left_shots_saved_per_match: Union[None, Unset, float] = UNSET
     goal_keeper_six_metre_right_goals_against: Union[None, Unset, int] = UNSET
-    goal_keeper_six_metre_right_goals_against_per_match: Union[None, Unset, float] = (
-        UNSET
-    )
+    goal_keeper_six_metre_right_goals_against_per_match: Union[None, Unset, float] = UNSET
     goal_keeper_six_metre_right_save_accuracy: Union[Unset, float] = UNSET
-    goal_keeper_six_metre_right_save_accuracy_per_match: Union[None, Unset, float] = (
-        UNSET
-    )
+    goal_keeper_six_metre_right_save_accuracy_per_match: Union[None, Unset, float] = UNSET
     goal_keeper_six_metre_right_shots_against: Union[None, Unset, int] = UNSET
-    goal_keeper_six_metre_right_shots_against_per_match: Union[None, Unset, float] = (
-        UNSET
-    )
+    goal_keeper_six_metre_right_shots_against_per_match: Union[None, Unset, float] = UNSET
     goal_keeper_six_metre_right_shots_saved: Union[None, Unset, int] = UNSET
     goal_keeper_six_metre_right_shots_saved_per_match: Union[None, Unset, float] = UNSET
     goal_keeper_six_metre_save_accuracy: Union[Unset, float] = UNSET
@@ -1352,9 +1310,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.back_court_shooting_accuracy_per_match, Unset):
             back_court_shooting_accuracy_per_match = UNSET
         else:
-            back_court_shooting_accuracy_per_match = (
-                self.back_court_shooting_accuracy_per_match
-            )
+            back_court_shooting_accuracy_per_match = self.back_court_shooting_accuracy_per_match
 
         back_court_shots: Union[None, Unset, int]
         if isinstance(self.back_court_shots, Unset):
@@ -1426,9 +1382,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.break_through_goals_scored_per_match, Unset):
             break_through_goals_scored_per_match = UNSET
         else:
-            break_through_goals_scored_per_match = (
-                self.break_through_goals_scored_per_match
-            )
+            break_through_goals_scored_per_match = self.break_through_goals_scored_per_match
 
         break_through_missed_shots: Union[None, Unset, int]
         if isinstance(self.break_through_missed_shots, Unset):
@@ -1440,9 +1394,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.break_through_missed_shots_per_match, Unset):
             break_through_missed_shots_per_match = UNSET
         else:
-            break_through_missed_shots_per_match = (
-                self.break_through_missed_shots_per_match
-            )
+            break_through_missed_shots_per_match = self.break_through_missed_shots_per_match
 
         break_through_post_hits: Union[None, Unset, int]
         if isinstance(self.break_through_post_hits, Unset):
@@ -1462,9 +1414,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.break_through_shooting_accuracy_per_match, Unset):
             break_through_shooting_accuracy_per_match = UNSET
         else:
-            break_through_shooting_accuracy_per_match = (
-                self.break_through_shooting_accuracy_per_match
-            )
+            break_through_shooting_accuracy_per_match = self.break_through_shooting_accuracy_per_match
 
         break_through_shots: Union[None, Unset, int]
         if isinstance(self.break_through_shots, Unset):
@@ -1488,9 +1438,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.break_through_shots_blocked_per_match, Unset):
             break_through_shots_blocked_per_match = UNSET
         else:
-            break_through_shots_blocked_per_match = (
-                self.break_through_shots_blocked_per_match
-            )
+            break_through_shots_blocked_per_match = self.break_through_shots_blocked_per_match
 
         break_through_shots_on_goal: Union[None, Unset, int]
         if isinstance(self.break_through_shots_on_goal, Unset):
@@ -1502,9 +1450,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.break_through_shots_on_goal_per_match, Unset):
             break_through_shots_on_goal_per_match = UNSET
         else:
-            break_through_shots_on_goal_per_match = (
-                self.break_through_shots_on_goal_per_match
-            )
+            break_through_shots_on_goal_per_match = self.break_through_shots_on_goal_per_match
 
         cards: Union[None, Unset, int]
         if isinstance(self.cards, Unset):
@@ -1608,9 +1554,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.fast_break_shooting_accuracy_per_match, Unset):
             fast_break_shooting_accuracy_per_match = UNSET
         else:
-            fast_break_shooting_accuracy_per_match = (
-                self.fast_break_shooting_accuracy_per_match
-            )
+            fast_break_shooting_accuracy_per_match = self.fast_break_shooting_accuracy_per_match
 
         fast_break_shots: Union[None, Unset, int]
         if isinstance(self.fast_break_shots, Unset):
@@ -1780,17 +1724,13 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.goal_keeper_back_court_goals_against, Unset):
             goal_keeper_back_court_goals_against = UNSET
         else:
-            goal_keeper_back_court_goals_against = (
-                self.goal_keeper_back_court_goals_against
-            )
+            goal_keeper_back_court_goals_against = self.goal_keeper_back_court_goals_against
 
         goal_keeper_back_court_goals_against_per_match: Union[None, Unset, float]
         if isinstance(self.goal_keeper_back_court_goals_against_per_match, Unset):
             goal_keeper_back_court_goals_against_per_match = UNSET
         else:
-            goal_keeper_back_court_goals_against_per_match = (
-                self.goal_keeper_back_court_goals_against_per_match
-            )
+            goal_keeper_back_court_goals_against_per_match = self.goal_keeper_back_court_goals_against_per_match
 
         goal_keeper_back_court_save_accuracy = self.goal_keeper_back_court_save_accuracy
 
@@ -1798,25 +1738,19 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.goal_keeper_back_court_save_accuracy_per_match, Unset):
             goal_keeper_back_court_save_accuracy_per_match = UNSET
         else:
-            goal_keeper_back_court_save_accuracy_per_match = (
-                self.goal_keeper_back_court_save_accuracy_per_match
-            )
+            goal_keeper_back_court_save_accuracy_per_match = self.goal_keeper_back_court_save_accuracy_per_match
 
         goal_keeper_back_court_shots_against: Union[None, Unset, int]
         if isinstance(self.goal_keeper_back_court_shots_against, Unset):
             goal_keeper_back_court_shots_against = UNSET
         else:
-            goal_keeper_back_court_shots_against = (
-                self.goal_keeper_back_court_shots_against
-            )
+            goal_keeper_back_court_shots_against = self.goal_keeper_back_court_shots_against
 
         goal_keeper_back_court_shots_against_per_match: Union[None, Unset, float]
         if isinstance(self.goal_keeper_back_court_shots_against_per_match, Unset):
             goal_keeper_back_court_shots_against_per_match = UNSET
         else:
-            goal_keeper_back_court_shots_against_per_match = (
-                self.goal_keeper_back_court_shots_against_per_match
-            )
+            goal_keeper_back_court_shots_against_per_match = self.goal_keeper_back_court_shots_against_per_match
 
         goal_keeper_back_court_shots_saved: Union[None, Unset, int]
         if isinstance(self.goal_keeper_back_court_shots_saved, Unset):
@@ -1828,85 +1762,63 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.goal_keeper_back_court_shots_saved_per_match, Unset):
             goal_keeper_back_court_shots_saved_per_match = UNSET
         else:
-            goal_keeper_back_court_shots_saved_per_match = (
-                self.goal_keeper_back_court_shots_saved_per_match
-            )
+            goal_keeper_back_court_shots_saved_per_match = self.goal_keeper_back_court_shots_saved_per_match
 
         goal_keeper_break_through_goals_against: Union[None, Unset, int]
         if isinstance(self.goal_keeper_break_through_goals_against, Unset):
             goal_keeper_break_through_goals_against = UNSET
         else:
-            goal_keeper_break_through_goals_against = (
-                self.goal_keeper_break_through_goals_against
-            )
+            goal_keeper_break_through_goals_against = self.goal_keeper_break_through_goals_against
 
         goal_keeper_break_through_goals_against_per_match: Union[None, Unset, float]
         if isinstance(self.goal_keeper_break_through_goals_against_per_match, Unset):
             goal_keeper_break_through_goals_against_per_match = UNSET
         else:
-            goal_keeper_break_through_goals_against_per_match = (
-                self.goal_keeper_break_through_goals_against_per_match
-            )
+            goal_keeper_break_through_goals_against_per_match = self.goal_keeper_break_through_goals_against_per_match
 
-        goal_keeper_break_through_save_accuracy = (
-            self.goal_keeper_break_through_save_accuracy
-        )
+        goal_keeper_break_through_save_accuracy = self.goal_keeper_break_through_save_accuracy
 
         goal_keeper_break_through_save_accuracy_per_match: Union[None, Unset, float]
         if isinstance(self.goal_keeper_break_through_save_accuracy_per_match, Unset):
             goal_keeper_break_through_save_accuracy_per_match = UNSET
         else:
-            goal_keeper_break_through_save_accuracy_per_match = (
-                self.goal_keeper_break_through_save_accuracy_per_match
-            )
+            goal_keeper_break_through_save_accuracy_per_match = self.goal_keeper_break_through_save_accuracy_per_match
 
         goal_keeper_break_through_shots_against: Union[None, Unset, int]
         if isinstance(self.goal_keeper_break_through_shots_against, Unset):
             goal_keeper_break_through_shots_against = UNSET
         else:
-            goal_keeper_break_through_shots_against = (
-                self.goal_keeper_break_through_shots_against
-            )
+            goal_keeper_break_through_shots_against = self.goal_keeper_break_through_shots_against
 
         goal_keeper_break_through_shots_against_per_match: Union[None, Unset, float]
         if isinstance(self.goal_keeper_break_through_shots_against_per_match, Unset):
             goal_keeper_break_through_shots_against_per_match = UNSET
         else:
-            goal_keeper_break_through_shots_against_per_match = (
-                self.goal_keeper_break_through_shots_against_per_match
-            )
+            goal_keeper_break_through_shots_against_per_match = self.goal_keeper_break_through_shots_against_per_match
 
         goal_keeper_break_through_shots_saved: Union[None, Unset, int]
         if isinstance(self.goal_keeper_break_through_shots_saved, Unset):
             goal_keeper_break_through_shots_saved = UNSET
         else:
-            goal_keeper_break_through_shots_saved = (
-                self.goal_keeper_break_through_shots_saved
-            )
+            goal_keeper_break_through_shots_saved = self.goal_keeper_break_through_shots_saved
 
         goal_keeper_break_through_shots_saved_per_match: Union[None, Unset, float]
         if isinstance(self.goal_keeper_break_through_shots_saved_per_match, Unset):
             goal_keeper_break_through_shots_saved_per_match = UNSET
         else:
-            goal_keeper_break_through_shots_saved_per_match = (
-                self.goal_keeper_break_through_shots_saved_per_match
-            )
+            goal_keeper_break_through_shots_saved_per_match = self.goal_keeper_break_through_shots_saved_per_match
 
         goal_keeper_fast_break_goals_against: Union[None, Unset, int]
         if isinstance(self.goal_keeper_fast_break_goals_against, Unset):
             goal_keeper_fast_break_goals_against = UNSET
         else:
-            goal_keeper_fast_break_goals_against = (
-                self.goal_keeper_fast_break_goals_against
-            )
+            goal_keeper_fast_break_goals_against = self.goal_keeper_fast_break_goals_against
 
         goal_keeper_fast_break_goals_against_per_match: Union[None, Unset, float]
         if isinstance(self.goal_keeper_fast_break_goals_against_per_match, Unset):
             goal_keeper_fast_break_goals_against_per_match = UNSET
         else:
-            goal_keeper_fast_break_goals_against_per_match = (
-                self.goal_keeper_fast_break_goals_against_per_match
-            )
+            goal_keeper_fast_break_goals_against_per_match = self.goal_keeper_fast_break_goals_against_per_match
 
         goal_keeper_fast_break_save_accuracy = self.goal_keeper_fast_break_save_accuracy
 
@@ -1914,25 +1826,19 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.goal_keeper_fast_break_save_accuracy_per_match, Unset):
             goal_keeper_fast_break_save_accuracy_per_match = UNSET
         else:
-            goal_keeper_fast_break_save_accuracy_per_match = (
-                self.goal_keeper_fast_break_save_accuracy_per_match
-            )
+            goal_keeper_fast_break_save_accuracy_per_match = self.goal_keeper_fast_break_save_accuracy_per_match
 
         goal_keeper_fast_break_shots_against: Union[None, Unset, int]
         if isinstance(self.goal_keeper_fast_break_shots_against, Unset):
             goal_keeper_fast_break_shots_against = UNSET
         else:
-            goal_keeper_fast_break_shots_against = (
-                self.goal_keeper_fast_break_shots_against
-            )
+            goal_keeper_fast_break_shots_against = self.goal_keeper_fast_break_shots_against
 
         goal_keeper_fast_break_shots_against_per_match: Union[None, Unset, float]
         if isinstance(self.goal_keeper_fast_break_shots_against_per_match, Unset):
             goal_keeper_fast_break_shots_against_per_match = UNSET
         else:
-            goal_keeper_fast_break_shots_against_per_match = (
-                self.goal_keeper_fast_break_shots_against_per_match
-            )
+            goal_keeper_fast_break_shots_against_per_match = self.goal_keeper_fast_break_shots_against_per_match
 
         goal_keeper_fast_break_shots_saved: Union[None, Unset, int]
         if isinstance(self.goal_keeper_fast_break_shots_saved, Unset):
@@ -1944,9 +1850,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.goal_keeper_fast_break_shots_saved_per_match, Unset):
             goal_keeper_fast_break_shots_saved_per_match = UNSET
         else:
-            goal_keeper_fast_break_shots_saved_per_match = (
-                self.goal_keeper_fast_break_shots_saved_per_match
-            )
+            goal_keeper_fast_break_shots_saved_per_match = self.goal_keeper_fast_break_shots_saved_per_match
 
         goal_keeper_field_goals_against: Union[None, Unset, int]
         if isinstance(self.goal_keeper_field_goals_against, Unset):
@@ -1958,9 +1862,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.goal_keeper_field_goals_against_per_match, Unset):
             goal_keeper_field_goals_against_per_match = UNSET
         else:
-            goal_keeper_field_goals_against_per_match = (
-                self.goal_keeper_field_goals_against_per_match
-            )
+            goal_keeper_field_goals_against_per_match = self.goal_keeper_field_goals_against_per_match
 
         goal_keeper_field_save_accuracy = self.goal_keeper_field_save_accuracy
 
@@ -1968,9 +1870,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.goal_keeper_field_save_accuracy_per_match, Unset):
             goal_keeper_field_save_accuracy_per_match = UNSET
         else:
-            goal_keeper_field_save_accuracy_per_match = (
-                self.goal_keeper_field_save_accuracy_per_match
-            )
+            goal_keeper_field_save_accuracy_per_match = self.goal_keeper_field_save_accuracy_per_match
 
         goal_keeper_field_shots_against: Union[None, Unset, int]
         if isinstance(self.goal_keeper_field_shots_against, Unset):
@@ -1982,9 +1882,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.goal_keeper_field_shots_against_per_match, Unset):
             goal_keeper_field_shots_against_per_match = UNSET
         else:
-            goal_keeper_field_shots_against_per_match = (
-                self.goal_keeper_field_shots_against_per_match
-            )
+            goal_keeper_field_shots_against_per_match = self.goal_keeper_field_shots_against_per_match
 
         goal_keeper_field_shots_saved: Union[None, Unset, int]
         if isinstance(self.goal_keeper_field_shots_saved, Unset):
@@ -1996,9 +1894,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.goal_keeper_field_shots_saved_per_match, Unset):
             goal_keeper_field_shots_saved_per_match = UNSET
         else:
-            goal_keeper_field_shots_saved_per_match = (
-                self.goal_keeper_field_shots_saved_per_match
-            )
+            goal_keeper_field_shots_saved_per_match = self.goal_keeper_field_shots_saved_per_match
 
         goal_keeper_goals_against: Union[None, Unset, int]
         if isinstance(self.goal_keeper_goals_against, Unset):
@@ -2010,36 +1906,26 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.goal_keeper_goals_against_per_match, Unset):
             goal_keeper_goals_against_per_match = UNSET
         else:
-            goal_keeper_goals_against_per_match = (
-                self.goal_keeper_goals_against_per_match
-            )
+            goal_keeper_goals_against_per_match = self.goal_keeper_goals_against_per_match
 
         goal_keeper_nine_metre_centre_goals_against: Union[None, Unset, int]
         if isinstance(self.goal_keeper_nine_metre_centre_goals_against, Unset):
             goal_keeper_nine_metre_centre_goals_against = UNSET
         else:
-            goal_keeper_nine_metre_centre_goals_against = (
-                self.goal_keeper_nine_metre_centre_goals_against
-            )
+            goal_keeper_nine_metre_centre_goals_against = self.goal_keeper_nine_metre_centre_goals_against
 
         goal_keeper_nine_metre_centre_goals_against_per_match: Union[None, Unset, float]
-        if isinstance(
-            self.goal_keeper_nine_metre_centre_goals_against_per_match, Unset
-        ):
+        if isinstance(self.goal_keeper_nine_metre_centre_goals_against_per_match, Unset):
             goal_keeper_nine_metre_centre_goals_against_per_match = UNSET
         else:
             goal_keeper_nine_metre_centre_goals_against_per_match = (
                 self.goal_keeper_nine_metre_centre_goals_against_per_match
             )
 
-        goal_keeper_nine_metre_centre_save_accuracy = (
-            self.goal_keeper_nine_metre_centre_save_accuracy
-        )
+        goal_keeper_nine_metre_centre_save_accuracy = self.goal_keeper_nine_metre_centre_save_accuracy
 
         goal_keeper_nine_metre_centre_save_accuracy_per_match: Union[None, Unset, float]
-        if isinstance(
-            self.goal_keeper_nine_metre_centre_save_accuracy_per_match, Unset
-        ):
+        if isinstance(self.goal_keeper_nine_metre_centre_save_accuracy_per_match, Unset):
             goal_keeper_nine_metre_centre_save_accuracy_per_match = UNSET
         else:
             goal_keeper_nine_metre_centre_save_accuracy_per_match = (
@@ -2050,14 +1936,10 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.goal_keeper_nine_metre_centre_shots_against, Unset):
             goal_keeper_nine_metre_centre_shots_against = UNSET
         else:
-            goal_keeper_nine_metre_centre_shots_against = (
-                self.goal_keeper_nine_metre_centre_shots_against
-            )
+            goal_keeper_nine_metre_centre_shots_against = self.goal_keeper_nine_metre_centre_shots_against
 
         goal_keeper_nine_metre_centre_shots_against_per_match: Union[None, Unset, float]
-        if isinstance(
-            self.goal_keeper_nine_metre_centre_shots_against_per_match, Unset
-        ):
+        if isinstance(self.goal_keeper_nine_metre_centre_shots_against_per_match, Unset):
             goal_keeper_nine_metre_centre_shots_against_per_match = UNSET
         else:
             goal_keeper_nine_metre_centre_shots_against_per_match = (
@@ -2068,9 +1950,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.goal_keeper_nine_metre_centre_shots_saved, Unset):
             goal_keeper_nine_metre_centre_shots_saved = UNSET
         else:
-            goal_keeper_nine_metre_centre_shots_saved = (
-                self.goal_keeper_nine_metre_centre_shots_saved
-            )
+            goal_keeper_nine_metre_centre_shots_saved = self.goal_keeper_nine_metre_centre_shots_saved
 
         goal_keeper_nine_metre_centre_shots_saved_per_match: Union[None, Unset, float]
         if isinstance(self.goal_keeper_nine_metre_centre_shots_saved_per_match, Unset):
@@ -2084,25 +1964,19 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.goal_keeper_nine_metre_goals_against, Unset):
             goal_keeper_nine_metre_goals_against = UNSET
         else:
-            goal_keeper_nine_metre_goals_against = (
-                self.goal_keeper_nine_metre_goals_against
-            )
+            goal_keeper_nine_metre_goals_against = self.goal_keeper_nine_metre_goals_against
 
         goal_keeper_nine_metre_goals_against_per_match: Union[None, Unset, float]
         if isinstance(self.goal_keeper_nine_metre_goals_against_per_match, Unset):
             goal_keeper_nine_metre_goals_against_per_match = UNSET
         else:
-            goal_keeper_nine_metre_goals_against_per_match = (
-                self.goal_keeper_nine_metre_goals_against_per_match
-            )
+            goal_keeper_nine_metre_goals_against_per_match = self.goal_keeper_nine_metre_goals_against_per_match
 
         goal_keeper_nine_metre_left_goals_against: Union[None, Unset, int]
         if isinstance(self.goal_keeper_nine_metre_left_goals_against, Unset):
             goal_keeper_nine_metre_left_goals_against = UNSET
         else:
-            goal_keeper_nine_metre_left_goals_against = (
-                self.goal_keeper_nine_metre_left_goals_against
-            )
+            goal_keeper_nine_metre_left_goals_against = self.goal_keeper_nine_metre_left_goals_against
 
         goal_keeper_nine_metre_left_goals_against_per_match: Union[None, Unset, float]
         if isinstance(self.goal_keeper_nine_metre_left_goals_against_per_match, Unset):
@@ -2112,9 +1986,7 @@ class CompetitionPersonStatisticsModelStatistics:
                 self.goal_keeper_nine_metre_left_goals_against_per_match
             )
 
-        goal_keeper_nine_metre_left_save_accuracy = (
-            self.goal_keeper_nine_metre_left_save_accuracy
-        )
+        goal_keeper_nine_metre_left_save_accuracy = self.goal_keeper_nine_metre_left_save_accuracy
 
         goal_keeper_nine_metre_left_save_accuracy_per_match: Union[None, Unset, float]
         if isinstance(self.goal_keeper_nine_metre_left_save_accuracy_per_match, Unset):
@@ -2128,9 +2000,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.goal_keeper_nine_metre_left_shots_against, Unset):
             goal_keeper_nine_metre_left_shots_against = UNSET
         else:
-            goal_keeper_nine_metre_left_shots_against = (
-                self.goal_keeper_nine_metre_left_shots_against
-            )
+            goal_keeper_nine_metre_left_shots_against = self.goal_keeper_nine_metre_left_shots_against
 
         goal_keeper_nine_metre_left_shots_against_per_match: Union[None, Unset, float]
         if isinstance(self.goal_keeper_nine_metre_left_shots_against_per_match, Unset):
@@ -2144,25 +2014,19 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.goal_keeper_nine_metre_left_shots_saved, Unset):
             goal_keeper_nine_metre_left_shots_saved = UNSET
         else:
-            goal_keeper_nine_metre_left_shots_saved = (
-                self.goal_keeper_nine_metre_left_shots_saved
-            )
+            goal_keeper_nine_metre_left_shots_saved = self.goal_keeper_nine_metre_left_shots_saved
 
         goal_keeper_nine_metre_left_shots_saved_per_match: Union[None, Unset, float]
         if isinstance(self.goal_keeper_nine_metre_left_shots_saved_per_match, Unset):
             goal_keeper_nine_metre_left_shots_saved_per_match = UNSET
         else:
-            goal_keeper_nine_metre_left_shots_saved_per_match = (
-                self.goal_keeper_nine_metre_left_shots_saved_per_match
-            )
+            goal_keeper_nine_metre_left_shots_saved_per_match = self.goal_keeper_nine_metre_left_shots_saved_per_match
 
         goal_keeper_nine_metre_right_goals_against: Union[None, Unset, int]
         if isinstance(self.goal_keeper_nine_metre_right_goals_against, Unset):
             goal_keeper_nine_metre_right_goals_against = UNSET
         else:
-            goal_keeper_nine_metre_right_goals_against = (
-                self.goal_keeper_nine_metre_right_goals_against
-            )
+            goal_keeper_nine_metre_right_goals_against = self.goal_keeper_nine_metre_right_goals_against
 
         goal_keeper_nine_metre_right_goals_against_per_match: Union[None, Unset, float]
         if isinstance(self.goal_keeper_nine_metre_right_goals_against_per_match, Unset):
@@ -2172,9 +2036,7 @@ class CompetitionPersonStatisticsModelStatistics:
                 self.goal_keeper_nine_metre_right_goals_against_per_match
             )
 
-        goal_keeper_nine_metre_right_save_accuracy = (
-            self.goal_keeper_nine_metre_right_save_accuracy
-        )
+        goal_keeper_nine_metre_right_save_accuracy = self.goal_keeper_nine_metre_right_save_accuracy
 
         goal_keeper_nine_metre_right_save_accuracy_per_match: Union[None, Unset, float]
         if isinstance(self.goal_keeper_nine_metre_right_save_accuracy_per_match, Unset):
@@ -2188,9 +2050,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.goal_keeper_nine_metre_right_shots_against, Unset):
             goal_keeper_nine_metre_right_shots_against = UNSET
         else:
-            goal_keeper_nine_metre_right_shots_against = (
-                self.goal_keeper_nine_metre_right_shots_against
-            )
+            goal_keeper_nine_metre_right_shots_against = self.goal_keeper_nine_metre_right_shots_against
 
         goal_keeper_nine_metre_right_shots_against_per_match: Union[None, Unset, float]
         if isinstance(self.goal_keeper_nine_metre_right_shots_against_per_match, Unset):
@@ -2204,17 +2064,13 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.goal_keeper_nine_metre_right_shots_saved, Unset):
             goal_keeper_nine_metre_right_shots_saved = UNSET
         else:
-            goal_keeper_nine_metre_right_shots_saved = (
-                self.goal_keeper_nine_metre_right_shots_saved
-            )
+            goal_keeper_nine_metre_right_shots_saved = self.goal_keeper_nine_metre_right_shots_saved
 
         goal_keeper_nine_metre_right_shots_saved_per_match: Union[None, Unset, float]
         if isinstance(self.goal_keeper_nine_metre_right_shots_saved_per_match, Unset):
             goal_keeper_nine_metre_right_shots_saved_per_match = UNSET
         else:
-            goal_keeper_nine_metre_right_shots_saved_per_match = (
-                self.goal_keeper_nine_metre_right_shots_saved_per_match
-            )
+            goal_keeper_nine_metre_right_shots_saved_per_match = self.goal_keeper_nine_metre_right_shots_saved_per_match
 
         goal_keeper_nine_metre_save_accuracy = self.goal_keeper_nine_metre_save_accuracy
 
@@ -2222,25 +2078,19 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.goal_keeper_nine_metre_save_accuracy_per_match, Unset):
             goal_keeper_nine_metre_save_accuracy_per_match = UNSET
         else:
-            goal_keeper_nine_metre_save_accuracy_per_match = (
-                self.goal_keeper_nine_metre_save_accuracy_per_match
-            )
+            goal_keeper_nine_metre_save_accuracy_per_match = self.goal_keeper_nine_metre_save_accuracy_per_match
 
         goal_keeper_nine_metre_shots_against: Union[None, Unset, int]
         if isinstance(self.goal_keeper_nine_metre_shots_against, Unset):
             goal_keeper_nine_metre_shots_against = UNSET
         else:
-            goal_keeper_nine_metre_shots_against = (
-                self.goal_keeper_nine_metre_shots_against
-            )
+            goal_keeper_nine_metre_shots_against = self.goal_keeper_nine_metre_shots_against
 
         goal_keeper_nine_metre_shots_against_per_match: Union[None, Unset, float]
         if isinstance(self.goal_keeper_nine_metre_shots_against_per_match, Unset):
             goal_keeper_nine_metre_shots_against_per_match = UNSET
         else:
-            goal_keeper_nine_metre_shots_against_per_match = (
-                self.goal_keeper_nine_metre_shots_against_per_match
-            )
+            goal_keeper_nine_metre_shots_against_per_match = self.goal_keeper_nine_metre_shots_against_per_match
 
         goal_keeper_nine_metre_shots_saved: Union[None, Unset, int]
         if isinstance(self.goal_keeper_nine_metre_shots_saved, Unset):
@@ -2252,9 +2102,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.goal_keeper_nine_metre_shots_saved_per_match, Unset):
             goal_keeper_nine_metre_shots_saved_per_match = UNSET
         else:
-            goal_keeper_nine_metre_shots_saved_per_match = (
-                self.goal_keeper_nine_metre_shots_saved_per_match
-            )
+            goal_keeper_nine_metre_shots_saved_per_match = self.goal_keeper_nine_metre_shots_saved_per_match
 
         goal_keeper_pivot_goals_against: Union[None, Unset, int]
         if isinstance(self.goal_keeper_pivot_goals_against, Unset):
@@ -2266,9 +2114,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.goal_keeper_pivot_goals_against_per_match, Unset):
             goal_keeper_pivot_goals_against_per_match = UNSET
         else:
-            goal_keeper_pivot_goals_against_per_match = (
-                self.goal_keeper_pivot_goals_against_per_match
-            )
+            goal_keeper_pivot_goals_against_per_match = self.goal_keeper_pivot_goals_against_per_match
 
         goal_keeper_pivot_save_accuracy = self.goal_keeper_pivot_save_accuracy
 
@@ -2276,9 +2122,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.goal_keeper_pivot_save_accuracy_per_match, Unset):
             goal_keeper_pivot_save_accuracy_per_match = UNSET
         else:
-            goal_keeper_pivot_save_accuracy_per_match = (
-                self.goal_keeper_pivot_save_accuracy_per_match
-            )
+            goal_keeper_pivot_save_accuracy_per_match = self.goal_keeper_pivot_save_accuracy_per_match
 
         goal_keeper_pivot_shots_against: Union[None, Unset, int]
         if isinstance(self.goal_keeper_pivot_shots_against, Unset):
@@ -2290,9 +2134,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.goal_keeper_pivot_shots_against_per_match, Unset):
             goal_keeper_pivot_shots_against_per_match = UNSET
         else:
-            goal_keeper_pivot_shots_against_per_match = (
-                self.goal_keeper_pivot_shots_against_per_match
-            )
+            goal_keeper_pivot_shots_against_per_match = self.goal_keeper_pivot_shots_against_per_match
 
         goal_keeper_pivot_shots_saved: Union[None, Unset, int]
         if isinstance(self.goal_keeper_pivot_shots_saved, Unset):
@@ -2304,9 +2146,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.goal_keeper_pivot_shots_saved_per_match, Unset):
             goal_keeper_pivot_shots_saved_per_match = UNSET
         else:
-            goal_keeper_pivot_shots_saved_per_match = (
-                self.goal_keeper_pivot_shots_saved_per_match
-            )
+            goal_keeper_pivot_shots_saved_per_match = self.goal_keeper_pivot_shots_saved_per_match
 
         goal_keeper_save_accuracy = self.goal_keeper_save_accuracy
 
@@ -2314,9 +2154,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.goal_keeper_save_accuracy_per_match, Unset):
             goal_keeper_save_accuracy_per_match = UNSET
         else:
-            goal_keeper_save_accuracy_per_match = (
-                self.goal_keeper_save_accuracy_per_match
-            )
+            goal_keeper_save_accuracy_per_match = self.goal_keeper_save_accuracy_per_match
 
         goal_keeper_seconds_played: Union[None, Unset, int]
         if isinstance(self.goal_keeper_seconds_played, Unset):
@@ -2328,69 +2166,51 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.goal_keeper_seconds_played_per_match, Unset):
             goal_keeper_seconds_played_per_match = UNSET
         else:
-            goal_keeper_seconds_played_per_match = (
-                self.goal_keeper_seconds_played_per_match
-            )
+            goal_keeper_seconds_played_per_match = self.goal_keeper_seconds_played_per_match
 
         goal_keeper_seven_metre_goals_against: Union[None, Unset, int]
         if isinstance(self.goal_keeper_seven_metre_goals_against, Unset):
             goal_keeper_seven_metre_goals_against = UNSET
         else:
-            goal_keeper_seven_metre_goals_against = (
-                self.goal_keeper_seven_metre_goals_against
-            )
+            goal_keeper_seven_metre_goals_against = self.goal_keeper_seven_metre_goals_against
 
         goal_keeper_seven_metre_goals_against_per_match: Union[None, Unset, float]
         if isinstance(self.goal_keeper_seven_metre_goals_against_per_match, Unset):
             goal_keeper_seven_metre_goals_against_per_match = UNSET
         else:
-            goal_keeper_seven_metre_goals_against_per_match = (
-                self.goal_keeper_seven_metre_goals_against_per_match
-            )
+            goal_keeper_seven_metre_goals_against_per_match = self.goal_keeper_seven_metre_goals_against_per_match
 
-        goal_keeper_seven_metre_save_accuracy = (
-            self.goal_keeper_seven_metre_save_accuracy
-        )
+        goal_keeper_seven_metre_save_accuracy = self.goal_keeper_seven_metre_save_accuracy
 
         goal_keeper_seven_metre_save_accuracy_per_match: Union[None, Unset, float]
         if isinstance(self.goal_keeper_seven_metre_save_accuracy_per_match, Unset):
             goal_keeper_seven_metre_save_accuracy_per_match = UNSET
         else:
-            goal_keeper_seven_metre_save_accuracy_per_match = (
-                self.goal_keeper_seven_metre_save_accuracy_per_match
-            )
+            goal_keeper_seven_metre_save_accuracy_per_match = self.goal_keeper_seven_metre_save_accuracy_per_match
 
         goal_keeper_seven_metre_shots_against: Union[None, Unset, int]
         if isinstance(self.goal_keeper_seven_metre_shots_against, Unset):
             goal_keeper_seven_metre_shots_against = UNSET
         else:
-            goal_keeper_seven_metre_shots_against = (
-                self.goal_keeper_seven_metre_shots_against
-            )
+            goal_keeper_seven_metre_shots_against = self.goal_keeper_seven_metre_shots_against
 
         goal_keeper_seven_metre_shots_against_per_match: Union[None, Unset, float]
         if isinstance(self.goal_keeper_seven_metre_shots_against_per_match, Unset):
             goal_keeper_seven_metre_shots_against_per_match = UNSET
         else:
-            goal_keeper_seven_metre_shots_against_per_match = (
-                self.goal_keeper_seven_metre_shots_against_per_match
-            )
+            goal_keeper_seven_metre_shots_against_per_match = self.goal_keeper_seven_metre_shots_against_per_match
 
         goal_keeper_seven_metre_shots_saved: Union[None, Unset, int]
         if isinstance(self.goal_keeper_seven_metre_shots_saved, Unset):
             goal_keeper_seven_metre_shots_saved = UNSET
         else:
-            goal_keeper_seven_metre_shots_saved = (
-                self.goal_keeper_seven_metre_shots_saved
-            )
+            goal_keeper_seven_metre_shots_saved = self.goal_keeper_seven_metre_shots_saved
 
         goal_keeper_seven_metre_shots_saved_per_match: Union[None, Unset, float]
         if isinstance(self.goal_keeper_seven_metre_shots_saved_per_match, Unset):
             goal_keeper_seven_metre_shots_saved_per_match = UNSET
         else:
-            goal_keeper_seven_metre_shots_saved_per_match = (
-                self.goal_keeper_seven_metre_shots_saved_per_match
-            )
+            goal_keeper_seven_metre_shots_saved_per_match = self.goal_keeper_seven_metre_shots_saved_per_match
 
         goal_keeper_shots_against: Union[None, Unset, int]
         if isinstance(self.goal_keeper_shots_against, Unset):
@@ -2402,17 +2222,13 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.goal_keeper_shots_against_per_match, Unset):
             goal_keeper_shots_against_per_match = UNSET
         else:
-            goal_keeper_shots_against_per_match = (
-                self.goal_keeper_shots_against_per_match
-            )
+            goal_keeper_shots_against_per_match = self.goal_keeper_shots_against_per_match
 
         goal_keeper_shots_per_goals_against: Union[None, Unset, float]
         if isinstance(self.goal_keeper_shots_per_goals_against, Unset):
             goal_keeper_shots_per_goals_against = UNSET
         else:
-            goal_keeper_shots_per_goals_against = (
-                self.goal_keeper_shots_per_goals_against
-            )
+            goal_keeper_shots_per_goals_against = self.goal_keeper_shots_per_goals_against
 
         goal_keeper_shots_saved: Union[None, Unset, int]
         if isinstance(self.goal_keeper_shots_saved, Unset):
@@ -2430,9 +2246,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.goal_keeper_six_metre_centre_goals_against, Unset):
             goal_keeper_six_metre_centre_goals_against = UNSET
         else:
-            goal_keeper_six_metre_centre_goals_against = (
-                self.goal_keeper_six_metre_centre_goals_against
-            )
+            goal_keeper_six_metre_centre_goals_against = self.goal_keeper_six_metre_centre_goals_against
 
         goal_keeper_six_metre_centre_goals_against_per_match: Union[None, Unset, float]
         if isinstance(self.goal_keeper_six_metre_centre_goals_against_per_match, Unset):
@@ -2442,9 +2256,7 @@ class CompetitionPersonStatisticsModelStatistics:
                 self.goal_keeper_six_metre_centre_goals_against_per_match
             )
 
-        goal_keeper_six_metre_centre_save_accuracy = (
-            self.goal_keeper_six_metre_centre_save_accuracy
-        )
+        goal_keeper_six_metre_centre_save_accuracy = self.goal_keeper_six_metre_centre_save_accuracy
 
         goal_keeper_six_metre_centre_save_accuracy_per_match: Union[None, Unset, float]
         if isinstance(self.goal_keeper_six_metre_centre_save_accuracy_per_match, Unset):
@@ -2458,9 +2270,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.goal_keeper_six_metre_centre_shots_against, Unset):
             goal_keeper_six_metre_centre_shots_against = UNSET
         else:
-            goal_keeper_six_metre_centre_shots_against = (
-                self.goal_keeper_six_metre_centre_shots_against
-            )
+            goal_keeper_six_metre_centre_shots_against = self.goal_keeper_six_metre_centre_shots_against
 
         goal_keeper_six_metre_centre_shots_against_per_match: Union[None, Unset, float]
         if isinstance(self.goal_keeper_six_metre_centre_shots_against_per_match, Unset):
@@ -2474,101 +2284,75 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.goal_keeper_six_metre_centre_shots_saved, Unset):
             goal_keeper_six_metre_centre_shots_saved = UNSET
         else:
-            goal_keeper_six_metre_centre_shots_saved = (
-                self.goal_keeper_six_metre_centre_shots_saved
-            )
+            goal_keeper_six_metre_centre_shots_saved = self.goal_keeper_six_metre_centre_shots_saved
 
         goal_keeper_six_metre_centre_shots_saved_per_match: Union[None, Unset, float]
         if isinstance(self.goal_keeper_six_metre_centre_shots_saved_per_match, Unset):
             goal_keeper_six_metre_centre_shots_saved_per_match = UNSET
         else:
-            goal_keeper_six_metre_centre_shots_saved_per_match = (
-                self.goal_keeper_six_metre_centre_shots_saved_per_match
-            )
+            goal_keeper_six_metre_centre_shots_saved_per_match = self.goal_keeper_six_metre_centre_shots_saved_per_match
 
         goal_keeper_six_metre_goals_against: Union[None, Unset, int]
         if isinstance(self.goal_keeper_six_metre_goals_against, Unset):
             goal_keeper_six_metre_goals_against = UNSET
         else:
-            goal_keeper_six_metre_goals_against = (
-                self.goal_keeper_six_metre_goals_against
-            )
+            goal_keeper_six_metre_goals_against = self.goal_keeper_six_metre_goals_against
 
         goal_keeper_six_metre_goals_against_per_match: Union[None, Unset, float]
         if isinstance(self.goal_keeper_six_metre_goals_against_per_match, Unset):
             goal_keeper_six_metre_goals_against_per_match = UNSET
         else:
-            goal_keeper_six_metre_goals_against_per_match = (
-                self.goal_keeper_six_metre_goals_against_per_match
-            )
+            goal_keeper_six_metre_goals_against_per_match = self.goal_keeper_six_metre_goals_against_per_match
 
         goal_keeper_six_metre_left_goals_against: Union[None, Unset, int]
         if isinstance(self.goal_keeper_six_metre_left_goals_against, Unset):
             goal_keeper_six_metre_left_goals_against = UNSET
         else:
-            goal_keeper_six_metre_left_goals_against = (
-                self.goal_keeper_six_metre_left_goals_against
-            )
+            goal_keeper_six_metre_left_goals_against = self.goal_keeper_six_metre_left_goals_against
 
         goal_keeper_six_metre_left_goals_against_per_match: Union[None, Unset, float]
         if isinstance(self.goal_keeper_six_metre_left_goals_against_per_match, Unset):
             goal_keeper_six_metre_left_goals_against_per_match = UNSET
         else:
-            goal_keeper_six_metre_left_goals_against_per_match = (
-                self.goal_keeper_six_metre_left_goals_against_per_match
-            )
+            goal_keeper_six_metre_left_goals_against_per_match = self.goal_keeper_six_metre_left_goals_against_per_match
 
-        goal_keeper_six_metre_left_save_accuracy = (
-            self.goal_keeper_six_metre_left_save_accuracy
-        )
+        goal_keeper_six_metre_left_save_accuracy = self.goal_keeper_six_metre_left_save_accuracy
 
         goal_keeper_six_metre_left_save_accuracy_per_match: Union[None, Unset, float]
         if isinstance(self.goal_keeper_six_metre_left_save_accuracy_per_match, Unset):
             goal_keeper_six_metre_left_save_accuracy_per_match = UNSET
         else:
-            goal_keeper_six_metre_left_save_accuracy_per_match = (
-                self.goal_keeper_six_metre_left_save_accuracy_per_match
-            )
+            goal_keeper_six_metre_left_save_accuracy_per_match = self.goal_keeper_six_metre_left_save_accuracy_per_match
 
         goal_keeper_six_metre_left_shots_against: Union[None, Unset, int]
         if isinstance(self.goal_keeper_six_metre_left_shots_against, Unset):
             goal_keeper_six_metre_left_shots_against = UNSET
         else:
-            goal_keeper_six_metre_left_shots_against = (
-                self.goal_keeper_six_metre_left_shots_against
-            )
+            goal_keeper_six_metre_left_shots_against = self.goal_keeper_six_metre_left_shots_against
 
         goal_keeper_six_metre_left_shots_against_per_match: Union[None, Unset, float]
         if isinstance(self.goal_keeper_six_metre_left_shots_against_per_match, Unset):
             goal_keeper_six_metre_left_shots_against_per_match = UNSET
         else:
-            goal_keeper_six_metre_left_shots_against_per_match = (
-                self.goal_keeper_six_metre_left_shots_against_per_match
-            )
+            goal_keeper_six_metre_left_shots_against_per_match = self.goal_keeper_six_metre_left_shots_against_per_match
 
         goal_keeper_six_metre_left_shots_saved: Union[None, Unset, int]
         if isinstance(self.goal_keeper_six_metre_left_shots_saved, Unset):
             goal_keeper_six_metre_left_shots_saved = UNSET
         else:
-            goal_keeper_six_metre_left_shots_saved = (
-                self.goal_keeper_six_metre_left_shots_saved
-            )
+            goal_keeper_six_metre_left_shots_saved = self.goal_keeper_six_metre_left_shots_saved
 
         goal_keeper_six_metre_left_shots_saved_per_match: Union[None, Unset, float]
         if isinstance(self.goal_keeper_six_metre_left_shots_saved_per_match, Unset):
             goal_keeper_six_metre_left_shots_saved_per_match = UNSET
         else:
-            goal_keeper_six_metre_left_shots_saved_per_match = (
-                self.goal_keeper_six_metre_left_shots_saved_per_match
-            )
+            goal_keeper_six_metre_left_shots_saved_per_match = self.goal_keeper_six_metre_left_shots_saved_per_match
 
         goal_keeper_six_metre_right_goals_against: Union[None, Unset, int]
         if isinstance(self.goal_keeper_six_metre_right_goals_against, Unset):
             goal_keeper_six_metre_right_goals_against = UNSET
         else:
-            goal_keeper_six_metre_right_goals_against = (
-                self.goal_keeper_six_metre_right_goals_against
-            )
+            goal_keeper_six_metre_right_goals_against = self.goal_keeper_six_metre_right_goals_against
 
         goal_keeper_six_metre_right_goals_against_per_match: Union[None, Unset, float]
         if isinstance(self.goal_keeper_six_metre_right_goals_against_per_match, Unset):
@@ -2578,9 +2362,7 @@ class CompetitionPersonStatisticsModelStatistics:
                 self.goal_keeper_six_metre_right_goals_against_per_match
             )
 
-        goal_keeper_six_metre_right_save_accuracy = (
-            self.goal_keeper_six_metre_right_save_accuracy
-        )
+        goal_keeper_six_metre_right_save_accuracy = self.goal_keeper_six_metre_right_save_accuracy
 
         goal_keeper_six_metre_right_save_accuracy_per_match: Union[None, Unset, float]
         if isinstance(self.goal_keeper_six_metre_right_save_accuracy_per_match, Unset):
@@ -2594,9 +2376,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.goal_keeper_six_metre_right_shots_against, Unset):
             goal_keeper_six_metre_right_shots_against = UNSET
         else:
-            goal_keeper_six_metre_right_shots_against = (
-                self.goal_keeper_six_metre_right_shots_against
-            )
+            goal_keeper_six_metre_right_shots_against = self.goal_keeper_six_metre_right_shots_against
 
         goal_keeper_six_metre_right_shots_against_per_match: Union[None, Unset, float]
         if isinstance(self.goal_keeper_six_metre_right_shots_against_per_match, Unset):
@@ -2610,17 +2390,13 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.goal_keeper_six_metre_right_shots_saved, Unset):
             goal_keeper_six_metre_right_shots_saved = UNSET
         else:
-            goal_keeper_six_metre_right_shots_saved = (
-                self.goal_keeper_six_metre_right_shots_saved
-            )
+            goal_keeper_six_metre_right_shots_saved = self.goal_keeper_six_metre_right_shots_saved
 
         goal_keeper_six_metre_right_shots_saved_per_match: Union[None, Unset, float]
         if isinstance(self.goal_keeper_six_metre_right_shots_saved_per_match, Unset):
             goal_keeper_six_metre_right_shots_saved_per_match = UNSET
         else:
-            goal_keeper_six_metre_right_shots_saved_per_match = (
-                self.goal_keeper_six_metre_right_shots_saved_per_match
-            )
+            goal_keeper_six_metre_right_shots_saved_per_match = self.goal_keeper_six_metre_right_shots_saved_per_match
 
         goal_keeper_six_metre_save_accuracy = self.goal_keeper_six_metre_save_accuracy
 
@@ -2628,25 +2404,19 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.goal_keeper_six_metre_save_accuracy_per_match, Unset):
             goal_keeper_six_metre_save_accuracy_per_match = UNSET
         else:
-            goal_keeper_six_metre_save_accuracy_per_match = (
-                self.goal_keeper_six_metre_save_accuracy_per_match
-            )
+            goal_keeper_six_metre_save_accuracy_per_match = self.goal_keeper_six_metre_save_accuracy_per_match
 
         goal_keeper_six_metre_shots_against: Union[None, Unset, int]
         if isinstance(self.goal_keeper_six_metre_shots_against, Unset):
             goal_keeper_six_metre_shots_against = UNSET
         else:
-            goal_keeper_six_metre_shots_against = (
-                self.goal_keeper_six_metre_shots_against
-            )
+            goal_keeper_six_metre_shots_against = self.goal_keeper_six_metre_shots_against
 
         goal_keeper_six_metre_shots_against_per_match: Union[None, Unset, float]
         if isinstance(self.goal_keeper_six_metre_shots_against_per_match, Unset):
             goal_keeper_six_metre_shots_against_per_match = UNSET
         else:
-            goal_keeper_six_metre_shots_against_per_match = (
-                self.goal_keeper_six_metre_shots_against_per_match
-            )
+            goal_keeper_six_metre_shots_against_per_match = self.goal_keeper_six_metre_shots_against_per_match
 
         goal_keeper_six_metre_shots_saved: Union[None, Unset, int]
         if isinstance(self.goal_keeper_six_metre_shots_saved, Unset):
@@ -2658,9 +2428,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.goal_keeper_six_metre_shots_saved_per_match, Unset):
             goal_keeper_six_metre_shots_saved_per_match = UNSET
         else:
-            goal_keeper_six_metre_shots_saved_per_match = (
-                self.goal_keeper_six_metre_shots_saved_per_match
-            )
+            goal_keeper_six_metre_shots_saved_per_match = self.goal_keeper_six_metre_shots_saved_per_match
 
         goal_keeper_wing_goals_against: Union[None, Unset, int]
         if isinstance(self.goal_keeper_wing_goals_against, Unset):
@@ -2672,25 +2440,19 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.goal_keeper_wing_goals_against_per_match, Unset):
             goal_keeper_wing_goals_against_per_match = UNSET
         else:
-            goal_keeper_wing_goals_against_per_match = (
-                self.goal_keeper_wing_goals_against_per_match
-            )
+            goal_keeper_wing_goals_against_per_match = self.goal_keeper_wing_goals_against_per_match
 
         goal_keeper_wing_left_goals_against: Union[None, Unset, int]
         if isinstance(self.goal_keeper_wing_left_goals_against, Unset):
             goal_keeper_wing_left_goals_against = UNSET
         else:
-            goal_keeper_wing_left_goals_against = (
-                self.goal_keeper_wing_left_goals_against
-            )
+            goal_keeper_wing_left_goals_against = self.goal_keeper_wing_left_goals_against
 
         goal_keeper_wing_left_goals_against_per_match: Union[None, Unset, float]
         if isinstance(self.goal_keeper_wing_left_goals_against_per_match, Unset):
             goal_keeper_wing_left_goals_against_per_match = UNSET
         else:
-            goal_keeper_wing_left_goals_against_per_match = (
-                self.goal_keeper_wing_left_goals_against_per_match
-            )
+            goal_keeper_wing_left_goals_against_per_match = self.goal_keeper_wing_left_goals_against_per_match
 
         goal_keeper_wing_left_save_accuracy = self.goal_keeper_wing_left_save_accuracy
 
@@ -2698,25 +2460,19 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.goal_keeper_wing_left_save_accuracy_per_match, Unset):
             goal_keeper_wing_left_save_accuracy_per_match = UNSET
         else:
-            goal_keeper_wing_left_save_accuracy_per_match = (
-                self.goal_keeper_wing_left_save_accuracy_per_match
-            )
+            goal_keeper_wing_left_save_accuracy_per_match = self.goal_keeper_wing_left_save_accuracy_per_match
 
         goal_keeper_wing_left_shots_against: Union[None, Unset, int]
         if isinstance(self.goal_keeper_wing_left_shots_against, Unset):
             goal_keeper_wing_left_shots_against = UNSET
         else:
-            goal_keeper_wing_left_shots_against = (
-                self.goal_keeper_wing_left_shots_against
-            )
+            goal_keeper_wing_left_shots_against = self.goal_keeper_wing_left_shots_against
 
         goal_keeper_wing_left_shots_against_per_match: Union[None, Unset, float]
         if isinstance(self.goal_keeper_wing_left_shots_against_per_match, Unset):
             goal_keeper_wing_left_shots_against_per_match = UNSET
         else:
-            goal_keeper_wing_left_shots_against_per_match = (
-                self.goal_keeper_wing_left_shots_against_per_match
-            )
+            goal_keeper_wing_left_shots_against_per_match = self.goal_keeper_wing_left_shots_against_per_match
 
         goal_keeper_wing_left_shots_saved: Union[None, Unset, int]
         if isinstance(self.goal_keeper_wing_left_shots_saved, Unset):
@@ -2728,25 +2484,19 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.goal_keeper_wing_left_shots_saved_per_match, Unset):
             goal_keeper_wing_left_shots_saved_per_match = UNSET
         else:
-            goal_keeper_wing_left_shots_saved_per_match = (
-                self.goal_keeper_wing_left_shots_saved_per_match
-            )
+            goal_keeper_wing_left_shots_saved_per_match = self.goal_keeper_wing_left_shots_saved_per_match
 
         goal_keeper_wing_right_goals_against: Union[None, Unset, int]
         if isinstance(self.goal_keeper_wing_right_goals_against, Unset):
             goal_keeper_wing_right_goals_against = UNSET
         else:
-            goal_keeper_wing_right_goals_against = (
-                self.goal_keeper_wing_right_goals_against
-            )
+            goal_keeper_wing_right_goals_against = self.goal_keeper_wing_right_goals_against
 
         goal_keeper_wing_right_goals_against_per_match: Union[None, Unset, float]
         if isinstance(self.goal_keeper_wing_right_goals_against_per_match, Unset):
             goal_keeper_wing_right_goals_against_per_match = UNSET
         else:
-            goal_keeper_wing_right_goals_against_per_match = (
-                self.goal_keeper_wing_right_goals_against_per_match
-            )
+            goal_keeper_wing_right_goals_against_per_match = self.goal_keeper_wing_right_goals_against_per_match
 
         goal_keeper_wing_right_save_accuracy = self.goal_keeper_wing_right_save_accuracy
 
@@ -2754,25 +2504,19 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.goal_keeper_wing_right_save_accuracy_per_match, Unset):
             goal_keeper_wing_right_save_accuracy_per_match = UNSET
         else:
-            goal_keeper_wing_right_save_accuracy_per_match = (
-                self.goal_keeper_wing_right_save_accuracy_per_match
-            )
+            goal_keeper_wing_right_save_accuracy_per_match = self.goal_keeper_wing_right_save_accuracy_per_match
 
         goal_keeper_wing_right_shots_against: Union[None, Unset, int]
         if isinstance(self.goal_keeper_wing_right_shots_against, Unset):
             goal_keeper_wing_right_shots_against = UNSET
         else:
-            goal_keeper_wing_right_shots_against = (
-                self.goal_keeper_wing_right_shots_against
-            )
+            goal_keeper_wing_right_shots_against = self.goal_keeper_wing_right_shots_against
 
         goal_keeper_wing_right_shots_against_per_match: Union[None, Unset, float]
         if isinstance(self.goal_keeper_wing_right_shots_against_per_match, Unset):
             goal_keeper_wing_right_shots_against_per_match = UNSET
         else:
-            goal_keeper_wing_right_shots_against_per_match = (
-                self.goal_keeper_wing_right_shots_against_per_match
-            )
+            goal_keeper_wing_right_shots_against_per_match = self.goal_keeper_wing_right_shots_against_per_match
 
         goal_keeper_wing_right_shots_saved: Union[None, Unset, int]
         if isinstance(self.goal_keeper_wing_right_shots_saved, Unset):
@@ -2784,9 +2528,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.goal_keeper_wing_right_shots_saved_per_match, Unset):
             goal_keeper_wing_right_shots_saved_per_match = UNSET
         else:
-            goal_keeper_wing_right_shots_saved_per_match = (
-                self.goal_keeper_wing_right_shots_saved_per_match
-            )
+            goal_keeper_wing_right_shots_saved_per_match = self.goal_keeper_wing_right_shots_saved_per_match
 
         goal_keeper_wing_save_accuracy = self.goal_keeper_wing_save_accuracy
 
@@ -2794,9 +2536,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.goal_keeper_wing_save_accuracy_per_match, Unset):
             goal_keeper_wing_save_accuracy_per_match = UNSET
         else:
-            goal_keeper_wing_save_accuracy_per_match = (
-                self.goal_keeper_wing_save_accuracy_per_match
-            )
+            goal_keeper_wing_save_accuracy_per_match = self.goal_keeper_wing_save_accuracy_per_match
 
         goal_keeper_wing_shots_against: Union[None, Unset, int]
         if isinstance(self.goal_keeper_wing_shots_against, Unset):
@@ -2808,9 +2548,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.goal_keeper_wing_shots_against_per_match, Unset):
             goal_keeper_wing_shots_against_per_match = UNSET
         else:
-            goal_keeper_wing_shots_against_per_match = (
-                self.goal_keeper_wing_shots_against_per_match
-            )
+            goal_keeper_wing_shots_against_per_match = self.goal_keeper_wing_shots_against_per_match
 
         goal_keeper_wing_shots_saved: Union[None, Unset, int]
         if isinstance(self.goal_keeper_wing_shots_saved, Unset):
@@ -2822,9 +2560,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.goal_keeper_wing_shots_saved_per_match, Unset):
             goal_keeper_wing_shots_saved_per_match = UNSET
         else:
-            goal_keeper_wing_shots_saved_per_match = (
-                self.goal_keeper_wing_shots_saved_per_match
-            )
+            goal_keeper_wing_shots_saved_per_match = self.goal_keeper_wing_shots_saved_per_match
 
         goals_scored: Union[None, Unset, int]
         if isinstance(self.goals_scored, Unset):
@@ -2890,9 +2626,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.nine_metre_centre_goals_scored_per_match, Unset):
             nine_metre_centre_goals_scored_per_match = UNSET
         else:
-            nine_metre_centre_goals_scored_per_match = (
-                self.nine_metre_centre_goals_scored_per_match
-            )
+            nine_metre_centre_goals_scored_per_match = self.nine_metre_centre_goals_scored_per_match
 
         nine_metre_centre_missed_shots: Union[None, Unset, int]
         if isinstance(self.nine_metre_centre_missed_shots, Unset):
@@ -2904,9 +2638,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.nine_metre_centre_missed_shots_per_match, Unset):
             nine_metre_centre_missed_shots_per_match = UNSET
         else:
-            nine_metre_centre_missed_shots_per_match = (
-                self.nine_metre_centre_missed_shots_per_match
-            )
+            nine_metre_centre_missed_shots_per_match = self.nine_metre_centre_missed_shots_per_match
 
         nine_metre_centre_post_hits: Union[None, Unset, int]
         if isinstance(self.nine_metre_centre_post_hits, Unset):
@@ -2918,9 +2650,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.nine_metre_centre_post_hits_per_match, Unset):
             nine_metre_centre_post_hits_per_match = UNSET
         else:
-            nine_metre_centre_post_hits_per_match = (
-                self.nine_metre_centre_post_hits_per_match
-            )
+            nine_metre_centre_post_hits_per_match = self.nine_metre_centre_post_hits_per_match
 
         nine_metre_centre_shooting_accuracy = self.nine_metre_centre_shooting_accuracy
 
@@ -2928,9 +2658,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.nine_metre_centre_shooting_accuracy_per_match, Unset):
             nine_metre_centre_shooting_accuracy_per_match = UNSET
         else:
-            nine_metre_centre_shooting_accuracy_per_match = (
-                self.nine_metre_centre_shooting_accuracy_per_match
-            )
+            nine_metre_centre_shooting_accuracy_per_match = self.nine_metre_centre_shooting_accuracy_per_match
 
         nine_metre_centre_shots: Union[None, Unset, int]
         if isinstance(self.nine_metre_centre_shots, Unset):
@@ -2954,9 +2682,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.nine_metre_centre_shots_blocked_per_match, Unset):
             nine_metre_centre_shots_blocked_per_match = UNSET
         else:
-            nine_metre_centre_shots_blocked_per_match = (
-                self.nine_metre_centre_shots_blocked_per_match
-            )
+            nine_metre_centre_shots_blocked_per_match = self.nine_metre_centre_shots_blocked_per_match
 
         nine_metre_centre_shots_on_goal: Union[None, Unset, int]
         if isinstance(self.nine_metre_centre_shots_on_goal, Unset):
@@ -2968,9 +2694,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.nine_metre_centre_shots_on_goal_per_match, Unset):
             nine_metre_centre_shots_on_goal_per_match = UNSET
         else:
-            nine_metre_centre_shots_on_goal_per_match = (
-                self.nine_metre_centre_shots_on_goal_per_match
-            )
+            nine_metre_centre_shots_on_goal_per_match = self.nine_metre_centre_shots_on_goal_per_match
 
         nine_metre_goals_scored: Union[None, Unset, int]
         if isinstance(self.nine_metre_goals_scored, Unset):
@@ -2994,9 +2718,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.nine_metre_left_goals_scored_per_match, Unset):
             nine_metre_left_goals_scored_per_match = UNSET
         else:
-            nine_metre_left_goals_scored_per_match = (
-                self.nine_metre_left_goals_scored_per_match
-            )
+            nine_metre_left_goals_scored_per_match = self.nine_metre_left_goals_scored_per_match
 
         nine_metre_left_missed_shots: Union[None, Unset, int]
         if isinstance(self.nine_metre_left_missed_shots, Unset):
@@ -3008,9 +2730,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.nine_metre_left_missed_shots_per_match, Unset):
             nine_metre_left_missed_shots_per_match = UNSET
         else:
-            nine_metre_left_missed_shots_per_match = (
-                self.nine_metre_left_missed_shots_per_match
-            )
+            nine_metre_left_missed_shots_per_match = self.nine_metre_left_missed_shots_per_match
 
         nine_metre_left_post_hits: Union[None, Unset, int]
         if isinstance(self.nine_metre_left_post_hits, Unset):
@@ -3022,9 +2742,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.nine_metre_left_post_hits_per_match, Unset):
             nine_metre_left_post_hits_per_match = UNSET
         else:
-            nine_metre_left_post_hits_per_match = (
-                self.nine_metre_left_post_hits_per_match
-            )
+            nine_metre_left_post_hits_per_match = self.nine_metre_left_post_hits_per_match
 
         nine_metre_left_shooting_accuracy = self.nine_metre_left_shooting_accuracy
 
@@ -3032,9 +2750,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.nine_metre_left_shooting_accuracy_per_match, Unset):
             nine_metre_left_shooting_accuracy_per_match = UNSET
         else:
-            nine_metre_left_shooting_accuracy_per_match = (
-                self.nine_metre_left_shooting_accuracy_per_match
-            )
+            nine_metre_left_shooting_accuracy_per_match = self.nine_metre_left_shooting_accuracy_per_match
 
         nine_metre_left_shots: Union[None, Unset, int]
         if isinstance(self.nine_metre_left_shots, Unset):
@@ -3058,9 +2774,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.nine_metre_left_shots_blocked_per_match, Unset):
             nine_metre_left_shots_blocked_per_match = UNSET
         else:
-            nine_metre_left_shots_blocked_per_match = (
-                self.nine_metre_left_shots_blocked_per_match
-            )
+            nine_metre_left_shots_blocked_per_match = self.nine_metre_left_shots_blocked_per_match
 
         nine_metre_left_shots_on_goal: Union[None, Unset, int]
         if isinstance(self.nine_metre_left_shots_on_goal, Unset):
@@ -3072,9 +2786,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.nine_metre_left_shots_on_goal_per_match, Unset):
             nine_metre_left_shots_on_goal_per_match = UNSET
         else:
-            nine_metre_left_shots_on_goal_per_match = (
-                self.nine_metre_left_shots_on_goal_per_match
-            )
+            nine_metre_left_shots_on_goal_per_match = self.nine_metre_left_shots_on_goal_per_match
 
         nine_metre_missed_shots: Union[None, Unset, int]
         if isinstance(self.nine_metre_missed_shots, Unset):
@@ -3110,9 +2822,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.nine_metre_right_goals_scored_per_match, Unset):
             nine_metre_right_goals_scored_per_match = UNSET
         else:
-            nine_metre_right_goals_scored_per_match = (
-                self.nine_metre_right_goals_scored_per_match
-            )
+            nine_metre_right_goals_scored_per_match = self.nine_metre_right_goals_scored_per_match
 
         nine_metre_right_missed_shots: Union[None, Unset, int]
         if isinstance(self.nine_metre_right_missed_shots, Unset):
@@ -3124,9 +2834,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.nine_metre_right_missed_shots_per_match, Unset):
             nine_metre_right_missed_shots_per_match = UNSET
         else:
-            nine_metre_right_missed_shots_per_match = (
-                self.nine_metre_right_missed_shots_per_match
-            )
+            nine_metre_right_missed_shots_per_match = self.nine_metre_right_missed_shots_per_match
 
         nine_metre_right_post_hits: Union[None, Unset, int]
         if isinstance(self.nine_metre_right_post_hits, Unset):
@@ -3138,9 +2846,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.nine_metre_right_post_hits_per_match, Unset):
             nine_metre_right_post_hits_per_match = UNSET
         else:
-            nine_metre_right_post_hits_per_match = (
-                self.nine_metre_right_post_hits_per_match
-            )
+            nine_metre_right_post_hits_per_match = self.nine_metre_right_post_hits_per_match
 
         nine_metre_right_shooting_accuracy = self.nine_metre_right_shooting_accuracy
 
@@ -3148,9 +2854,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.nine_metre_right_shooting_accuracy_per_match, Unset):
             nine_metre_right_shooting_accuracy_per_match = UNSET
         else:
-            nine_metre_right_shooting_accuracy_per_match = (
-                self.nine_metre_right_shooting_accuracy_per_match
-            )
+            nine_metre_right_shooting_accuracy_per_match = self.nine_metre_right_shooting_accuracy_per_match
 
         nine_metre_right_shots: Union[None, Unset, int]
         if isinstance(self.nine_metre_right_shots, Unset):
@@ -3174,9 +2878,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.nine_metre_right_shots_blocked_per_match, Unset):
             nine_metre_right_shots_blocked_per_match = UNSET
         else:
-            nine_metre_right_shots_blocked_per_match = (
-                self.nine_metre_right_shots_blocked_per_match
-            )
+            nine_metre_right_shots_blocked_per_match = self.nine_metre_right_shots_blocked_per_match
 
         nine_metre_right_shots_on_goal: Union[None, Unset, int]
         if isinstance(self.nine_metre_right_shots_on_goal, Unset):
@@ -3188,9 +2890,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.nine_metre_right_shots_on_goal_per_match, Unset):
             nine_metre_right_shots_on_goal_per_match = UNSET
         else:
-            nine_metre_right_shots_on_goal_per_match = (
-                self.nine_metre_right_shots_on_goal_per_match
-            )
+            nine_metre_right_shots_on_goal_per_match = self.nine_metre_right_shots_on_goal_per_match
 
         nine_metre_shooting_accuracy = self.nine_metre_shooting_accuracy
 
@@ -3198,9 +2898,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.nine_metre_shooting_accuracy_per_match, Unset):
             nine_metre_shooting_accuracy_per_match = UNSET
         else:
-            nine_metre_shooting_accuracy_per_match = (
-                self.nine_metre_shooting_accuracy_per_match
-            )
+            nine_metre_shooting_accuracy_per_match = self.nine_metre_shooting_accuracy_per_match
 
         nine_metre_shots: Union[None, Unset, int]
         if isinstance(self.nine_metre_shots, Unset):
@@ -3382,9 +3080,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.seven_metre_penalties_awarded_per_match, Unset):
             seven_metre_penalties_awarded_per_match = UNSET
         else:
-            seven_metre_penalties_awarded_per_match = (
-                self.seven_metre_penalties_awarded_per_match
-            )
+            seven_metre_penalties_awarded_per_match = self.seven_metre_penalties_awarded_per_match
 
         seven_metre_penalties_caused: Union[None, Unset, int]
         if isinstance(self.seven_metre_penalties_caused, Unset):
@@ -3396,9 +3092,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.seven_metre_penalties_caused_per_match, Unset):
             seven_metre_penalties_caused_per_match = UNSET
         else:
-            seven_metre_penalties_caused_per_match = (
-                self.seven_metre_penalties_caused_per_match
-            )
+            seven_metre_penalties_caused_per_match = self.seven_metre_penalties_caused_per_match
 
         seven_metre_penalty_fouls: Union[None, Unset, int]
         if isinstance(self.seven_metre_penalty_fouls, Unset):
@@ -3410,9 +3104,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.seven_metre_penalty_fouls_per_match, Unset):
             seven_metre_penalty_fouls_per_match = UNSET
         else:
-            seven_metre_penalty_fouls_per_match = (
-                self.seven_metre_penalty_fouls_per_match
-            )
+            seven_metre_penalty_fouls_per_match = self.seven_metre_penalty_fouls_per_match
 
         seven_metre_post_hits: Union[None, Unset, int]
         if isinstance(self.seven_metre_post_hits, Unset):
@@ -3432,9 +3124,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.seven_metre_shooting_accuracy_per_match, Unset):
             seven_metre_shooting_accuracy_per_match = UNSET
         else:
-            seven_metre_shooting_accuracy_per_match = (
-                self.seven_metre_shooting_accuracy_per_match
-            )
+            seven_metre_shooting_accuracy_per_match = self.seven_metre_shooting_accuracy_per_match
 
         seven_metre_shots: Union[None, Unset, int]
         if isinstance(self.seven_metre_shots, Unset):
@@ -3458,9 +3148,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.seven_metre_shots_blocked_per_match, Unset):
             seven_metre_shots_blocked_per_match = UNSET
         else:
-            seven_metre_shots_blocked_per_match = (
-                self.seven_metre_shots_blocked_per_match
-            )
+            seven_metre_shots_blocked_per_match = self.seven_metre_shots_blocked_per_match
 
         seven_metre_shots_on_goal: Union[None, Unset, int]
         if isinstance(self.seven_metre_shots_on_goal, Unset):
@@ -3472,9 +3160,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.seven_metre_shots_on_goal_per_match, Unset):
             seven_metre_shots_on_goal_per_match = UNSET
         else:
-            seven_metre_shots_on_goal_per_match = (
-                self.seven_metre_shots_on_goal_per_match
-            )
+            seven_metre_shots_on_goal_per_match = self.seven_metre_shots_on_goal_per_match
 
         shooting_accuracy = self.shooting_accuracy
 
@@ -3578,9 +3264,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.shots_saved_by_goal_keeper_per_match, Unset):
             shots_saved_by_goal_keeper_per_match = UNSET
         else:
-            shots_saved_by_goal_keeper_per_match = (
-                self.shots_saved_by_goal_keeper_per_match
-            )
+            shots_saved_by_goal_keeper_per_match = self.shots_saved_by_goal_keeper_per_match
 
         six_metre_centre_goals_scored: Union[None, Unset, int]
         if isinstance(self.six_metre_centre_goals_scored, Unset):
@@ -3592,9 +3276,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.six_metre_centre_goals_scored_per_match, Unset):
             six_metre_centre_goals_scored_per_match = UNSET
         else:
-            six_metre_centre_goals_scored_per_match = (
-                self.six_metre_centre_goals_scored_per_match
-            )
+            six_metre_centre_goals_scored_per_match = self.six_metre_centre_goals_scored_per_match
 
         six_metre_centre_missed_shots: Union[None, Unset, int]
         if isinstance(self.six_metre_centre_missed_shots, Unset):
@@ -3606,9 +3288,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.six_metre_centre_missed_shots_per_match, Unset):
             six_metre_centre_missed_shots_per_match = UNSET
         else:
-            six_metre_centre_missed_shots_per_match = (
-                self.six_metre_centre_missed_shots_per_match
-            )
+            six_metre_centre_missed_shots_per_match = self.six_metre_centre_missed_shots_per_match
 
         six_metre_centre_post_hits: Union[None, Unset, int]
         if isinstance(self.six_metre_centre_post_hits, Unset):
@@ -3620,9 +3300,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.six_metre_centre_post_hits_per_match, Unset):
             six_metre_centre_post_hits_per_match = UNSET
         else:
-            six_metre_centre_post_hits_per_match = (
-                self.six_metre_centre_post_hits_per_match
-            )
+            six_metre_centre_post_hits_per_match = self.six_metre_centre_post_hits_per_match
 
         six_metre_centre_shooting_accuracy = self.six_metre_centre_shooting_accuracy
 
@@ -3630,9 +3308,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.six_metre_centre_shooting_accuracy_per_match, Unset):
             six_metre_centre_shooting_accuracy_per_match = UNSET
         else:
-            six_metre_centre_shooting_accuracy_per_match = (
-                self.six_metre_centre_shooting_accuracy_per_match
-            )
+            six_metre_centre_shooting_accuracy_per_match = self.six_metre_centre_shooting_accuracy_per_match
 
         six_metre_centre_shots: Union[None, Unset, int]
         if isinstance(self.six_metre_centre_shots, Unset):
@@ -3656,9 +3332,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.six_metre_centre_shots_blocked_per_match, Unset):
             six_metre_centre_shots_blocked_per_match = UNSET
         else:
-            six_metre_centre_shots_blocked_per_match = (
-                self.six_metre_centre_shots_blocked_per_match
-            )
+            six_metre_centre_shots_blocked_per_match = self.six_metre_centre_shots_blocked_per_match
 
         six_metre_centre_shots_on_goal: Union[None, Unset, int]
         if isinstance(self.six_metre_centre_shots_on_goal, Unset):
@@ -3670,9 +3344,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.six_metre_centre_shots_on_goal_per_match, Unset):
             six_metre_centre_shots_on_goal_per_match = UNSET
         else:
-            six_metre_centre_shots_on_goal_per_match = (
-                self.six_metre_centre_shots_on_goal_per_match
-            )
+            six_metre_centre_shots_on_goal_per_match = self.six_metre_centre_shots_on_goal_per_match
 
         six_metre_goals_scored: Union[None, Unset, int]
         if isinstance(self.six_metre_goals_scored, Unset):
@@ -3696,9 +3368,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.six_metre_left_goals_scored_per_match, Unset):
             six_metre_left_goals_scored_per_match = UNSET
         else:
-            six_metre_left_goals_scored_per_match = (
-                self.six_metre_left_goals_scored_per_match
-            )
+            six_metre_left_goals_scored_per_match = self.six_metre_left_goals_scored_per_match
 
         six_metre_left_missed_shots: Union[None, Unset, int]
         if isinstance(self.six_metre_left_missed_shots, Unset):
@@ -3710,9 +3380,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.six_metre_left_missed_shots_per_match, Unset):
             six_metre_left_missed_shots_per_match = UNSET
         else:
-            six_metre_left_missed_shots_per_match = (
-                self.six_metre_left_missed_shots_per_match
-            )
+            six_metre_left_missed_shots_per_match = self.six_metre_left_missed_shots_per_match
 
         six_metre_left_post_hits: Union[None, Unset, int]
         if isinstance(self.six_metre_left_post_hits, Unset):
@@ -3732,9 +3400,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.six_metre_left_shooting_accuracy_per_match, Unset):
             six_metre_left_shooting_accuracy_per_match = UNSET
         else:
-            six_metre_left_shooting_accuracy_per_match = (
-                self.six_metre_left_shooting_accuracy_per_match
-            )
+            six_metre_left_shooting_accuracy_per_match = self.six_metre_left_shooting_accuracy_per_match
 
         six_metre_left_shots: Union[None, Unset, int]
         if isinstance(self.six_metre_left_shots, Unset):
@@ -3758,9 +3424,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.six_metre_left_shots_blocked_per_match, Unset):
             six_metre_left_shots_blocked_per_match = UNSET
         else:
-            six_metre_left_shots_blocked_per_match = (
-                self.six_metre_left_shots_blocked_per_match
-            )
+            six_metre_left_shots_blocked_per_match = self.six_metre_left_shots_blocked_per_match
 
         six_metre_left_shots_on_goal: Union[None, Unset, int]
         if isinstance(self.six_metre_left_shots_on_goal, Unset):
@@ -3772,9 +3436,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.six_metre_left_shots_on_goal_per_match, Unset):
             six_metre_left_shots_on_goal_per_match = UNSET
         else:
-            six_metre_left_shots_on_goal_per_match = (
-                self.six_metre_left_shots_on_goal_per_match
-            )
+            six_metre_left_shots_on_goal_per_match = self.six_metre_left_shots_on_goal_per_match
 
         six_metre_missed_shots: Union[None, Unset, int]
         if isinstance(self.six_metre_missed_shots, Unset):
@@ -3810,9 +3472,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.six_metre_right_goals_scored_per_match, Unset):
             six_metre_right_goals_scored_per_match = UNSET
         else:
-            six_metre_right_goals_scored_per_match = (
-                self.six_metre_right_goals_scored_per_match
-            )
+            six_metre_right_goals_scored_per_match = self.six_metre_right_goals_scored_per_match
 
         six_metre_right_missed_shots: Union[None, Unset, int]
         if isinstance(self.six_metre_right_missed_shots, Unset):
@@ -3824,9 +3484,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.six_metre_right_missed_shots_per_match, Unset):
             six_metre_right_missed_shots_per_match = UNSET
         else:
-            six_metre_right_missed_shots_per_match = (
-                self.six_metre_right_missed_shots_per_match
-            )
+            six_metre_right_missed_shots_per_match = self.six_metre_right_missed_shots_per_match
 
         six_metre_right_post_hits: Union[None, Unset, int]
         if isinstance(self.six_metre_right_post_hits, Unset):
@@ -3838,9 +3496,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.six_metre_right_post_hits_per_match, Unset):
             six_metre_right_post_hits_per_match = UNSET
         else:
-            six_metre_right_post_hits_per_match = (
-                self.six_metre_right_post_hits_per_match
-            )
+            six_metre_right_post_hits_per_match = self.six_metre_right_post_hits_per_match
 
         six_metre_right_shooting_accuracy = self.six_metre_right_shooting_accuracy
 
@@ -3848,9 +3504,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.six_metre_right_shooting_accuracy_per_match, Unset):
             six_metre_right_shooting_accuracy_per_match = UNSET
         else:
-            six_metre_right_shooting_accuracy_per_match = (
-                self.six_metre_right_shooting_accuracy_per_match
-            )
+            six_metre_right_shooting_accuracy_per_match = self.six_metre_right_shooting_accuracy_per_match
 
         six_metre_right_shots: Union[None, Unset, int]
         if isinstance(self.six_metre_right_shots, Unset):
@@ -3874,9 +3528,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.six_metre_right_shots_blocked_per_match, Unset):
             six_metre_right_shots_blocked_per_match = UNSET
         else:
-            six_metre_right_shots_blocked_per_match = (
-                self.six_metre_right_shots_blocked_per_match
-            )
+            six_metre_right_shots_blocked_per_match = self.six_metre_right_shots_blocked_per_match
 
         six_metre_right_shots_on_goal: Union[None, Unset, int]
         if isinstance(self.six_metre_right_shots_on_goal, Unset):
@@ -3888,9 +3540,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.six_metre_right_shots_on_goal_per_match, Unset):
             six_metre_right_shots_on_goal_per_match = UNSET
         else:
-            six_metre_right_shots_on_goal_per_match = (
-                self.six_metre_right_shots_on_goal_per_match
-            )
+            six_metre_right_shots_on_goal_per_match = self.six_metre_right_shots_on_goal_per_match
 
         six_metre_shooting_accuracy = self.six_metre_shooting_accuracy
 
@@ -3898,9 +3548,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.six_metre_shooting_accuracy_per_match, Unset):
             six_metre_shooting_accuracy_per_match = UNSET
         else:
-            six_metre_shooting_accuracy_per_match = (
-                self.six_metre_shooting_accuracy_per_match
-            )
+            six_metre_shooting_accuracy_per_match = self.six_metre_shooting_accuracy_per_match
 
         six_metre_shots: Union[None, Unset, int]
         if isinstance(self.six_metre_shots, Unset):
@@ -4124,9 +3772,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.wing_left_shooting_accuracy_per_match, Unset):
             wing_left_shooting_accuracy_per_match = UNSET
         else:
-            wing_left_shooting_accuracy_per_match = (
-                self.wing_left_shooting_accuracy_per_match
-            )
+            wing_left_shooting_accuracy_per_match = self.wing_left_shooting_accuracy_per_match
 
         wing_left_shots: Union[None, Unset, int]
         if isinstance(self.wing_left_shots, Unset):
@@ -4230,9 +3876,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if isinstance(self.wing_right_shooting_accuracy_per_match, Unset):
             wing_right_shooting_accuracy_per_match = UNSET
         else:
-            wing_right_shooting_accuracy_per_match = (
-                self.wing_right_shooting_accuracy_per_match
-            )
+            wing_right_shooting_accuracy_per_match = self.wing_right_shooting_accuracy_per_match
 
         wing_right_shots: Union[None, Unset, int]
         if isinstance(self.wing_right_shots, Unset):
@@ -4344,15 +3988,11 @@ class CompetitionPersonStatisticsModelStatistics:
         if back_court_goals_scored is not UNSET:
             field_dict["backCourtGoalsScored"] = back_court_goals_scored
         if back_court_goals_scored_per_match is not UNSET:
-            field_dict["backCourtGoalsScoredPerMatch"] = (
-                back_court_goals_scored_per_match
-            )
+            field_dict["backCourtGoalsScoredPerMatch"] = back_court_goals_scored_per_match
         if back_court_missed_shots is not UNSET:
             field_dict["backCourtMissedShots"] = back_court_missed_shots
         if back_court_missed_shots_per_match is not UNSET:
-            field_dict["backCourtMissedShotsPerMatch"] = (
-                back_court_missed_shots_per_match
-            )
+            field_dict["backCourtMissedShotsPerMatch"] = back_court_missed_shots_per_match
         if back_court_post_hits is not UNSET:
             field_dict["backCourtPostHits"] = back_court_post_hits
         if back_court_post_hits_per_match is not UNSET:
@@ -4360,9 +4000,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if back_court_shooting_accuracy is not UNSET:
             field_dict["backCourtShootingAccuracy"] = back_court_shooting_accuracy
         if back_court_shooting_accuracy_per_match is not UNSET:
-            field_dict["backCourtShootingAccuracyPerMatch"] = (
-                back_court_shooting_accuracy_per_match
-            )
+            field_dict["backCourtShootingAccuracyPerMatch"] = back_court_shooting_accuracy_per_match
         if back_court_shots is not UNSET:
             field_dict["backCourtShots"] = back_court_shots
         if back_court_shots_per_match is not UNSET:
@@ -4370,15 +4008,11 @@ class CompetitionPersonStatisticsModelStatistics:
         if back_court_shots_blocked is not UNSET:
             field_dict["backCourtShotsBlocked"] = back_court_shots_blocked
         if back_court_shots_blocked_per_match is not UNSET:
-            field_dict["backCourtShotsBlockedPerMatch"] = (
-                back_court_shots_blocked_per_match
-            )
+            field_dict["backCourtShotsBlockedPerMatch"] = back_court_shots_blocked_per_match
         if back_court_shots_on_goal is not UNSET:
             field_dict["backCourtShotsOnGoal"] = back_court_shots_on_goal
         if back_court_shots_on_goal_per_match is not UNSET:
-            field_dict["backCourtShotsOnGoalPerMatch"] = (
-                back_court_shots_on_goal_per_match
-            )
+            field_dict["backCourtShotsOnGoalPerMatch"] = back_court_shots_on_goal_per_match
         if blocks is not UNSET:
             field_dict["blocks"] = blocks
         if blocks_per_match is not UNSET:
@@ -4390,27 +4024,19 @@ class CompetitionPersonStatisticsModelStatistics:
         if break_through_goals_scored is not UNSET:
             field_dict["breakThroughGoalsScored"] = break_through_goals_scored
         if break_through_goals_scored_per_match is not UNSET:
-            field_dict["breakThroughGoalsScoredPerMatch"] = (
-                break_through_goals_scored_per_match
-            )
+            field_dict["breakThroughGoalsScoredPerMatch"] = break_through_goals_scored_per_match
         if break_through_missed_shots is not UNSET:
             field_dict["breakThroughMissedShots"] = break_through_missed_shots
         if break_through_missed_shots_per_match is not UNSET:
-            field_dict["breakThroughMissedShotsPerMatch"] = (
-                break_through_missed_shots_per_match
-            )
+            field_dict["breakThroughMissedShotsPerMatch"] = break_through_missed_shots_per_match
         if break_through_post_hits is not UNSET:
             field_dict["breakThroughPostHits"] = break_through_post_hits
         if break_through_post_hits_per_match is not UNSET:
-            field_dict["breakThroughPostHitsPerMatch"] = (
-                break_through_post_hits_per_match
-            )
+            field_dict["breakThroughPostHitsPerMatch"] = break_through_post_hits_per_match
         if break_through_shooting_accuracy is not UNSET:
             field_dict["breakThroughShootingAccuracy"] = break_through_shooting_accuracy
         if break_through_shooting_accuracy_per_match is not UNSET:
-            field_dict["breakThroughShootingAccuracyPerMatch"] = (
-                break_through_shooting_accuracy_per_match
-            )
+            field_dict["breakThroughShootingAccuracyPerMatch"] = break_through_shooting_accuracy_per_match
         if break_through_shots is not UNSET:
             field_dict["breakThroughShots"] = break_through_shots
         if break_through_shots_per_match is not UNSET:
@@ -4418,15 +4044,11 @@ class CompetitionPersonStatisticsModelStatistics:
         if break_through_shots_blocked is not UNSET:
             field_dict["breakThroughShotsBlocked"] = break_through_shots_blocked
         if break_through_shots_blocked_per_match is not UNSET:
-            field_dict["breakThroughShotsBlockedPerMatch"] = (
-                break_through_shots_blocked_per_match
-            )
+            field_dict["breakThroughShotsBlockedPerMatch"] = break_through_shots_blocked_per_match
         if break_through_shots_on_goal is not UNSET:
             field_dict["breakThroughShotsOnGoal"] = break_through_shots_on_goal
         if break_through_shots_on_goal_per_match is not UNSET:
-            field_dict["breakThroughShotsOnGoalPerMatch"] = (
-                break_through_shots_on_goal_per_match
-            )
+            field_dict["breakThroughShotsOnGoalPerMatch"] = break_through_shots_on_goal_per_match
         if cards is not UNSET:
             field_dict["cards"] = cards
         if cards_per_match is not UNSET:
@@ -4450,15 +4072,11 @@ class CompetitionPersonStatisticsModelStatistics:
         if fast_break_goals_scored is not UNSET:
             field_dict["fastBreakGoalsScored"] = fast_break_goals_scored
         if fast_break_goals_scored_per_match is not UNSET:
-            field_dict["fastBreakGoalsScoredPerMatch"] = (
-                fast_break_goals_scored_per_match
-            )
+            field_dict["fastBreakGoalsScoredPerMatch"] = fast_break_goals_scored_per_match
         if fast_break_missed_shots is not UNSET:
             field_dict["fastBreakMissedShots"] = fast_break_missed_shots
         if fast_break_missed_shots_per_match is not UNSET:
-            field_dict["fastBreakMissedShotsPerMatch"] = (
-                fast_break_missed_shots_per_match
-            )
+            field_dict["fastBreakMissedShotsPerMatch"] = fast_break_missed_shots_per_match
         if fast_break_post_hits is not UNSET:
             field_dict["fastBreakPostHits"] = fast_break_post_hits
         if fast_break_post_hits_per_match is not UNSET:
@@ -4466,9 +4084,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if fast_break_shooting_accuracy is not UNSET:
             field_dict["fastBreakShootingAccuracy"] = fast_break_shooting_accuracy
         if fast_break_shooting_accuracy_per_match is not UNSET:
-            field_dict["fastBreakShootingAccuracyPerMatch"] = (
-                fast_break_shooting_accuracy_per_match
-            )
+            field_dict["fastBreakShootingAccuracyPerMatch"] = fast_break_shooting_accuracy_per_match
         if fast_break_shots is not UNSET:
             field_dict["fastBreakShots"] = fast_break_shots
         if fast_break_shots_per_match is not UNSET:
@@ -4476,15 +4092,11 @@ class CompetitionPersonStatisticsModelStatistics:
         if fast_break_shots_blocked is not UNSET:
             field_dict["fastBreakShotsBlocked"] = fast_break_shots_blocked
         if fast_break_shots_blocked_per_match is not UNSET:
-            field_dict["fastBreakShotsBlockedPerMatch"] = (
-                fast_break_shots_blocked_per_match
-            )
+            field_dict["fastBreakShotsBlockedPerMatch"] = fast_break_shots_blocked_per_match
         if fast_break_shots_on_goal is not UNSET:
             field_dict["fastBreakShotsOnGoal"] = fast_break_shots_on_goal
         if fast_break_shots_on_goal_per_match is not UNSET:
-            field_dict["fastBreakShotsOnGoalPerMatch"] = (
-                fast_break_shots_on_goal_per_match
-            )
+            field_dict["fastBreakShotsOnGoalPerMatch"] = fast_break_shots_on_goal_per_match
         if field_goals_scored is not UNSET:
             field_dict["fieldGoalsScored"] = field_goals_scored
         if field_goals_scored_per_match is not UNSET:
@@ -4500,9 +4112,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if field_shooting_accuracy is not UNSET:
             field_dict["fieldShootingAccuracy"] = field_shooting_accuracy
         if field_shooting_accuracy_per_match is not UNSET:
-            field_dict["fieldShootingAccuracyPerMatch"] = (
-                field_shooting_accuracy_per_match
-            )
+            field_dict["fieldShootingAccuracyPerMatch"] = field_shooting_accuracy_per_match
         if field_shots is not UNSET:
             field_dict["fieldShots"] = field_shots
         if field_shots_per_match is not UNSET:
@@ -4526,567 +4136,347 @@ class CompetitionPersonStatisticsModelStatistics:
         if four_minute_suspensions is not UNSET:
             field_dict["fourMinuteSuspensions"] = four_minute_suspensions
         if four_minute_suspensions_per_match is not UNSET:
-            field_dict["fourMinuteSuspensionsPerMatch"] = (
-                four_minute_suspensions_per_match
-            )
+            field_dict["fourMinuteSuspensionsPerMatch"] = four_minute_suspensions_per_match
         if games is not UNSET:
             field_dict["games"] = games
         if games_started is not UNSET:
             field_dict["gamesStarted"] = games_started
         if goal_keeper_back_court_goals_against is not UNSET:
-            field_dict["goalKeeperBackCourtGoalsAgainst"] = (
-                goal_keeper_back_court_goals_against
-            )
+            field_dict["goalKeeperBackCourtGoalsAgainst"] = goal_keeper_back_court_goals_against
         if goal_keeper_back_court_goals_against_per_match is not UNSET:
-            field_dict["goalKeeperBackCourtGoalsAgainstPerMatch"] = (
-                goal_keeper_back_court_goals_against_per_match
-            )
+            field_dict["goalKeeperBackCourtGoalsAgainstPerMatch"] = goal_keeper_back_court_goals_against_per_match
         if goal_keeper_back_court_save_accuracy is not UNSET:
-            field_dict["goalKeeperBackCourtSaveAccuracy"] = (
-                goal_keeper_back_court_save_accuracy
-            )
+            field_dict["goalKeeperBackCourtSaveAccuracy"] = goal_keeper_back_court_save_accuracy
         if goal_keeper_back_court_save_accuracy_per_match is not UNSET:
-            field_dict["goalKeeperBackCourtSaveAccuracyPerMatch"] = (
-                goal_keeper_back_court_save_accuracy_per_match
-            )
+            field_dict["goalKeeperBackCourtSaveAccuracyPerMatch"] = goal_keeper_back_court_save_accuracy_per_match
         if goal_keeper_back_court_shots_against is not UNSET:
-            field_dict["goalKeeperBackCourtShotsAgainst"] = (
-                goal_keeper_back_court_shots_against
-            )
+            field_dict["goalKeeperBackCourtShotsAgainst"] = goal_keeper_back_court_shots_against
         if goal_keeper_back_court_shots_against_per_match is not UNSET:
-            field_dict["goalKeeperBackCourtShotsAgainstPerMatch"] = (
-                goal_keeper_back_court_shots_against_per_match
-            )
+            field_dict["goalKeeperBackCourtShotsAgainstPerMatch"] = goal_keeper_back_court_shots_against_per_match
         if goal_keeper_back_court_shots_saved is not UNSET:
-            field_dict["goalKeeperBackCourtShotsSaved"] = (
-                goal_keeper_back_court_shots_saved
-            )
+            field_dict["goalKeeperBackCourtShotsSaved"] = goal_keeper_back_court_shots_saved
         if goal_keeper_back_court_shots_saved_per_match is not UNSET:
-            field_dict["goalKeeperBackCourtShotsSavedPerMatch"] = (
-                goal_keeper_back_court_shots_saved_per_match
-            )
+            field_dict["goalKeeperBackCourtShotsSavedPerMatch"] = goal_keeper_back_court_shots_saved_per_match
         if goal_keeper_break_through_goals_against is not UNSET:
-            field_dict["goalKeeperBreakThroughGoalsAgainst"] = (
-                goal_keeper_break_through_goals_against
-            )
+            field_dict["goalKeeperBreakThroughGoalsAgainst"] = goal_keeper_break_through_goals_against
         if goal_keeper_break_through_goals_against_per_match is not UNSET:
-            field_dict["goalKeeperBreakThroughGoalsAgainstPerMatch"] = (
-                goal_keeper_break_through_goals_against_per_match
-            )
+            field_dict["goalKeeperBreakThroughGoalsAgainstPerMatch"] = goal_keeper_break_through_goals_against_per_match
         if goal_keeper_break_through_save_accuracy is not UNSET:
-            field_dict["goalKeeperBreakThroughSaveAccuracy"] = (
-                goal_keeper_break_through_save_accuracy
-            )
+            field_dict["goalKeeperBreakThroughSaveAccuracy"] = goal_keeper_break_through_save_accuracy
         if goal_keeper_break_through_save_accuracy_per_match is not UNSET:
-            field_dict["goalKeeperBreakThroughSaveAccuracyPerMatch"] = (
-                goal_keeper_break_through_save_accuracy_per_match
-            )
+            field_dict["goalKeeperBreakThroughSaveAccuracyPerMatch"] = goal_keeper_break_through_save_accuracy_per_match
         if goal_keeper_break_through_shots_against is not UNSET:
-            field_dict["goalKeeperBreakThroughShotsAgainst"] = (
-                goal_keeper_break_through_shots_against
-            )
+            field_dict["goalKeeperBreakThroughShotsAgainst"] = goal_keeper_break_through_shots_against
         if goal_keeper_break_through_shots_against_per_match is not UNSET:
-            field_dict["goalKeeperBreakThroughShotsAgainstPerMatch"] = (
-                goal_keeper_break_through_shots_against_per_match
-            )
+            field_dict["goalKeeperBreakThroughShotsAgainstPerMatch"] = goal_keeper_break_through_shots_against_per_match
         if goal_keeper_break_through_shots_saved is not UNSET:
-            field_dict["goalKeeperBreakThroughShotsSaved"] = (
-                goal_keeper_break_through_shots_saved
-            )
+            field_dict["goalKeeperBreakThroughShotsSaved"] = goal_keeper_break_through_shots_saved
         if goal_keeper_break_through_shots_saved_per_match is not UNSET:
-            field_dict["goalKeeperBreakThroughShotsSavedPerMatch"] = (
-                goal_keeper_break_through_shots_saved_per_match
-            )
+            field_dict["goalKeeperBreakThroughShotsSavedPerMatch"] = goal_keeper_break_through_shots_saved_per_match
         if goal_keeper_fast_break_goals_against is not UNSET:
-            field_dict["goalKeeperFastBreakGoalsAgainst"] = (
-                goal_keeper_fast_break_goals_against
-            )
+            field_dict["goalKeeperFastBreakGoalsAgainst"] = goal_keeper_fast_break_goals_against
         if goal_keeper_fast_break_goals_against_per_match is not UNSET:
-            field_dict["goalKeeperFastBreakGoalsAgainstPerMatch"] = (
-                goal_keeper_fast_break_goals_against_per_match
-            )
+            field_dict["goalKeeperFastBreakGoalsAgainstPerMatch"] = goal_keeper_fast_break_goals_against_per_match
         if goal_keeper_fast_break_save_accuracy is not UNSET:
-            field_dict["goalKeeperFastBreakSaveAccuracy"] = (
-                goal_keeper_fast_break_save_accuracy
-            )
+            field_dict["goalKeeperFastBreakSaveAccuracy"] = goal_keeper_fast_break_save_accuracy
         if goal_keeper_fast_break_save_accuracy_per_match is not UNSET:
-            field_dict["goalKeeperFastBreakSaveAccuracyPerMatch"] = (
-                goal_keeper_fast_break_save_accuracy_per_match
-            )
+            field_dict["goalKeeperFastBreakSaveAccuracyPerMatch"] = goal_keeper_fast_break_save_accuracy_per_match
         if goal_keeper_fast_break_shots_against is not UNSET:
-            field_dict["goalKeeperFastBreakShotsAgainst"] = (
-                goal_keeper_fast_break_shots_against
-            )
+            field_dict["goalKeeperFastBreakShotsAgainst"] = goal_keeper_fast_break_shots_against
         if goal_keeper_fast_break_shots_against_per_match is not UNSET:
-            field_dict["goalKeeperFastBreakShotsAgainstPerMatch"] = (
-                goal_keeper_fast_break_shots_against_per_match
-            )
+            field_dict["goalKeeperFastBreakShotsAgainstPerMatch"] = goal_keeper_fast_break_shots_against_per_match
         if goal_keeper_fast_break_shots_saved is not UNSET:
-            field_dict["goalKeeperFastBreakShotsSaved"] = (
-                goal_keeper_fast_break_shots_saved
-            )
+            field_dict["goalKeeperFastBreakShotsSaved"] = goal_keeper_fast_break_shots_saved
         if goal_keeper_fast_break_shots_saved_per_match is not UNSET:
-            field_dict["goalKeeperFastBreakShotsSavedPerMatch"] = (
-                goal_keeper_fast_break_shots_saved_per_match
-            )
+            field_dict["goalKeeperFastBreakShotsSavedPerMatch"] = goal_keeper_fast_break_shots_saved_per_match
         if goal_keeper_field_goals_against is not UNSET:
             field_dict["goalKeeperFieldGoalsAgainst"] = goal_keeper_field_goals_against
         if goal_keeper_field_goals_against_per_match is not UNSET:
-            field_dict["goalKeeperFieldGoalsAgainstPerMatch"] = (
-                goal_keeper_field_goals_against_per_match
-            )
+            field_dict["goalKeeperFieldGoalsAgainstPerMatch"] = goal_keeper_field_goals_against_per_match
         if goal_keeper_field_save_accuracy is not UNSET:
             field_dict["goalKeeperFieldSaveAccuracy"] = goal_keeper_field_save_accuracy
         if goal_keeper_field_save_accuracy_per_match is not UNSET:
-            field_dict["goalKeeperFieldSaveAccuracyPerMatch"] = (
-                goal_keeper_field_save_accuracy_per_match
-            )
+            field_dict["goalKeeperFieldSaveAccuracyPerMatch"] = goal_keeper_field_save_accuracy_per_match
         if goal_keeper_field_shots_against is not UNSET:
             field_dict["goalKeeperFieldShotsAgainst"] = goal_keeper_field_shots_against
         if goal_keeper_field_shots_against_per_match is not UNSET:
-            field_dict["goalKeeperFieldShotsAgainstPerMatch"] = (
-                goal_keeper_field_shots_against_per_match
-            )
+            field_dict["goalKeeperFieldShotsAgainstPerMatch"] = goal_keeper_field_shots_against_per_match
         if goal_keeper_field_shots_saved is not UNSET:
             field_dict["goalKeeperFieldShotsSaved"] = goal_keeper_field_shots_saved
         if goal_keeper_field_shots_saved_per_match is not UNSET:
-            field_dict["goalKeeperFieldShotsSavedPerMatch"] = (
-                goal_keeper_field_shots_saved_per_match
-            )
+            field_dict["goalKeeperFieldShotsSavedPerMatch"] = goal_keeper_field_shots_saved_per_match
         if goal_keeper_goals_against is not UNSET:
             field_dict["goalKeeperGoalsAgainst"] = goal_keeper_goals_against
         if goal_keeper_goals_against_per_match is not UNSET:
-            field_dict["goalKeeperGoalsAgainstPerMatch"] = (
-                goal_keeper_goals_against_per_match
-            )
+            field_dict["goalKeeperGoalsAgainstPerMatch"] = goal_keeper_goals_against_per_match
         if goal_keeper_nine_metre_centre_goals_against is not UNSET:
-            field_dict["goalKeeperNineMetreCentreGoalsAgainst"] = (
-                goal_keeper_nine_metre_centre_goals_against
-            )
+            field_dict["goalKeeperNineMetreCentreGoalsAgainst"] = goal_keeper_nine_metre_centre_goals_against
         if goal_keeper_nine_metre_centre_goals_against_per_match is not UNSET:
             field_dict["goalKeeperNineMetreCentreGoalsAgainstPerMatch"] = (
                 goal_keeper_nine_metre_centre_goals_against_per_match
             )
         if goal_keeper_nine_metre_centre_save_accuracy is not UNSET:
-            field_dict["goalKeeperNineMetreCentreSaveAccuracy"] = (
-                goal_keeper_nine_metre_centre_save_accuracy
-            )
+            field_dict["goalKeeperNineMetreCentreSaveAccuracy"] = goal_keeper_nine_metre_centre_save_accuracy
         if goal_keeper_nine_metre_centre_save_accuracy_per_match is not UNSET:
             field_dict["goalKeeperNineMetreCentreSaveAccuracyPerMatch"] = (
                 goal_keeper_nine_metre_centre_save_accuracy_per_match
             )
         if goal_keeper_nine_metre_centre_shots_against is not UNSET:
-            field_dict["goalKeeperNineMetreCentreShotsAgainst"] = (
-                goal_keeper_nine_metre_centre_shots_against
-            )
+            field_dict["goalKeeperNineMetreCentreShotsAgainst"] = goal_keeper_nine_metre_centre_shots_against
         if goal_keeper_nine_metre_centre_shots_against_per_match is not UNSET:
             field_dict["goalKeeperNineMetreCentreShotsAgainstPerMatch"] = (
                 goal_keeper_nine_metre_centre_shots_against_per_match
             )
         if goal_keeper_nine_metre_centre_shots_saved is not UNSET:
-            field_dict["goalKeeperNineMetreCentreShotsSaved"] = (
-                goal_keeper_nine_metre_centre_shots_saved
-            )
+            field_dict["goalKeeperNineMetreCentreShotsSaved"] = goal_keeper_nine_metre_centre_shots_saved
         if goal_keeper_nine_metre_centre_shots_saved_per_match is not UNSET:
             field_dict["goalKeeperNineMetreCentreShotsSavedPerMatch"] = (
                 goal_keeper_nine_metre_centre_shots_saved_per_match
             )
         if goal_keeper_nine_metre_goals_against is not UNSET:
-            field_dict["goalKeeperNineMetreGoalsAgainst"] = (
-                goal_keeper_nine_metre_goals_against
-            )
+            field_dict["goalKeeperNineMetreGoalsAgainst"] = goal_keeper_nine_metre_goals_against
         if goal_keeper_nine_metre_goals_against_per_match is not UNSET:
-            field_dict["goalKeeperNineMetreGoalsAgainstPerMatch"] = (
-                goal_keeper_nine_metre_goals_against_per_match
-            )
+            field_dict["goalKeeperNineMetreGoalsAgainstPerMatch"] = goal_keeper_nine_metre_goals_against_per_match
         if goal_keeper_nine_metre_left_goals_against is not UNSET:
-            field_dict["goalKeeperNineMetreLeftGoalsAgainst"] = (
-                goal_keeper_nine_metre_left_goals_against
-            )
+            field_dict["goalKeeperNineMetreLeftGoalsAgainst"] = goal_keeper_nine_metre_left_goals_against
         if goal_keeper_nine_metre_left_goals_against_per_match is not UNSET:
             field_dict["goalKeeperNineMetreLeftGoalsAgainstPerMatch"] = (
                 goal_keeper_nine_metre_left_goals_against_per_match
             )
         if goal_keeper_nine_metre_left_save_accuracy is not UNSET:
-            field_dict["goalKeeperNineMetreLeftSaveAccuracy"] = (
-                goal_keeper_nine_metre_left_save_accuracy
-            )
+            field_dict["goalKeeperNineMetreLeftSaveAccuracy"] = goal_keeper_nine_metre_left_save_accuracy
         if goal_keeper_nine_metre_left_save_accuracy_per_match is not UNSET:
             field_dict["goalKeeperNineMetreLeftSaveAccuracyPerMatch"] = (
                 goal_keeper_nine_metre_left_save_accuracy_per_match
             )
         if goal_keeper_nine_metre_left_shots_against is not UNSET:
-            field_dict["goalKeeperNineMetreLeftShotsAgainst"] = (
-                goal_keeper_nine_metre_left_shots_against
-            )
+            field_dict["goalKeeperNineMetreLeftShotsAgainst"] = goal_keeper_nine_metre_left_shots_against
         if goal_keeper_nine_metre_left_shots_against_per_match is not UNSET:
             field_dict["goalKeeperNineMetreLeftShotsAgainstPerMatch"] = (
                 goal_keeper_nine_metre_left_shots_against_per_match
             )
         if goal_keeper_nine_metre_left_shots_saved is not UNSET:
-            field_dict["goalKeeperNineMetreLeftShotsSaved"] = (
-                goal_keeper_nine_metre_left_shots_saved
-            )
+            field_dict["goalKeeperNineMetreLeftShotsSaved"] = goal_keeper_nine_metre_left_shots_saved
         if goal_keeper_nine_metre_left_shots_saved_per_match is not UNSET:
-            field_dict["goalKeeperNineMetreLeftShotsSavedPerMatch"] = (
-                goal_keeper_nine_metre_left_shots_saved_per_match
-            )
+            field_dict["goalKeeperNineMetreLeftShotsSavedPerMatch"] = goal_keeper_nine_metre_left_shots_saved_per_match
         if goal_keeper_nine_metre_right_goals_against is not UNSET:
-            field_dict["goalKeeperNineMetreRightGoalsAgainst"] = (
-                goal_keeper_nine_metre_right_goals_against
-            )
+            field_dict["goalKeeperNineMetreRightGoalsAgainst"] = goal_keeper_nine_metre_right_goals_against
         if goal_keeper_nine_metre_right_goals_against_per_match is not UNSET:
             field_dict["goalKeeperNineMetreRightGoalsAgainstPerMatch"] = (
                 goal_keeper_nine_metre_right_goals_against_per_match
             )
         if goal_keeper_nine_metre_right_save_accuracy is not UNSET:
-            field_dict["goalKeeperNineMetreRightSaveAccuracy"] = (
-                goal_keeper_nine_metre_right_save_accuracy
-            )
+            field_dict["goalKeeperNineMetreRightSaveAccuracy"] = goal_keeper_nine_metre_right_save_accuracy
         if goal_keeper_nine_metre_right_save_accuracy_per_match is not UNSET:
             field_dict["goalKeeperNineMetreRightSaveAccuracyPerMatch"] = (
                 goal_keeper_nine_metre_right_save_accuracy_per_match
             )
         if goal_keeper_nine_metre_right_shots_against is not UNSET:
-            field_dict["goalKeeperNineMetreRightShotsAgainst"] = (
-                goal_keeper_nine_metre_right_shots_against
-            )
+            field_dict["goalKeeperNineMetreRightShotsAgainst"] = goal_keeper_nine_metre_right_shots_against
         if goal_keeper_nine_metre_right_shots_against_per_match is not UNSET:
             field_dict["goalKeeperNineMetreRightShotsAgainstPerMatch"] = (
                 goal_keeper_nine_metre_right_shots_against_per_match
             )
         if goal_keeper_nine_metre_right_shots_saved is not UNSET:
-            field_dict["goalKeeperNineMetreRightShotsSaved"] = (
-                goal_keeper_nine_metre_right_shots_saved
-            )
+            field_dict["goalKeeperNineMetreRightShotsSaved"] = goal_keeper_nine_metre_right_shots_saved
         if goal_keeper_nine_metre_right_shots_saved_per_match is not UNSET:
             field_dict["goalKeeperNineMetreRightShotsSavedPerMatch"] = (
                 goal_keeper_nine_metre_right_shots_saved_per_match
             )
         if goal_keeper_nine_metre_save_accuracy is not UNSET:
-            field_dict["goalKeeperNineMetreSaveAccuracy"] = (
-                goal_keeper_nine_metre_save_accuracy
-            )
+            field_dict["goalKeeperNineMetreSaveAccuracy"] = goal_keeper_nine_metre_save_accuracy
         if goal_keeper_nine_metre_save_accuracy_per_match is not UNSET:
-            field_dict["goalKeeperNineMetreSaveAccuracyPerMatch"] = (
-                goal_keeper_nine_metre_save_accuracy_per_match
-            )
+            field_dict["goalKeeperNineMetreSaveAccuracyPerMatch"] = goal_keeper_nine_metre_save_accuracy_per_match
         if goal_keeper_nine_metre_shots_against is not UNSET:
-            field_dict["goalKeeperNineMetreShotsAgainst"] = (
-                goal_keeper_nine_metre_shots_against
-            )
+            field_dict["goalKeeperNineMetreShotsAgainst"] = goal_keeper_nine_metre_shots_against
         if goal_keeper_nine_metre_shots_against_per_match is not UNSET:
-            field_dict["goalKeeperNineMetreShotsAgainstPerMatch"] = (
-                goal_keeper_nine_metre_shots_against_per_match
-            )
+            field_dict["goalKeeperNineMetreShotsAgainstPerMatch"] = goal_keeper_nine_metre_shots_against_per_match
         if goal_keeper_nine_metre_shots_saved is not UNSET:
-            field_dict["goalKeeperNineMetreShotsSaved"] = (
-                goal_keeper_nine_metre_shots_saved
-            )
+            field_dict["goalKeeperNineMetreShotsSaved"] = goal_keeper_nine_metre_shots_saved
         if goal_keeper_nine_metre_shots_saved_per_match is not UNSET:
-            field_dict["goalKeeperNineMetreShotsSavedPerMatch"] = (
-                goal_keeper_nine_metre_shots_saved_per_match
-            )
+            field_dict["goalKeeperNineMetreShotsSavedPerMatch"] = goal_keeper_nine_metre_shots_saved_per_match
         if goal_keeper_pivot_goals_against is not UNSET:
             field_dict["goalKeeperPivotGoalsAgainst"] = goal_keeper_pivot_goals_against
         if goal_keeper_pivot_goals_against_per_match is not UNSET:
-            field_dict["goalKeeperPivotGoalsAgainstPerMatch"] = (
-                goal_keeper_pivot_goals_against_per_match
-            )
+            field_dict["goalKeeperPivotGoalsAgainstPerMatch"] = goal_keeper_pivot_goals_against_per_match
         if goal_keeper_pivot_save_accuracy is not UNSET:
             field_dict["goalKeeperPivotSaveAccuracy"] = goal_keeper_pivot_save_accuracy
         if goal_keeper_pivot_save_accuracy_per_match is not UNSET:
-            field_dict["goalKeeperPivotSaveAccuracyPerMatch"] = (
-                goal_keeper_pivot_save_accuracy_per_match
-            )
+            field_dict["goalKeeperPivotSaveAccuracyPerMatch"] = goal_keeper_pivot_save_accuracy_per_match
         if goal_keeper_pivot_shots_against is not UNSET:
             field_dict["goalKeeperPivotShotsAgainst"] = goal_keeper_pivot_shots_against
         if goal_keeper_pivot_shots_against_per_match is not UNSET:
-            field_dict["goalKeeperPivotShotsAgainstPerMatch"] = (
-                goal_keeper_pivot_shots_against_per_match
-            )
+            field_dict["goalKeeperPivotShotsAgainstPerMatch"] = goal_keeper_pivot_shots_against_per_match
         if goal_keeper_pivot_shots_saved is not UNSET:
             field_dict["goalKeeperPivotShotsSaved"] = goal_keeper_pivot_shots_saved
         if goal_keeper_pivot_shots_saved_per_match is not UNSET:
-            field_dict["goalKeeperPivotShotsSavedPerMatch"] = (
-                goal_keeper_pivot_shots_saved_per_match
-            )
+            field_dict["goalKeeperPivotShotsSavedPerMatch"] = goal_keeper_pivot_shots_saved_per_match
         if goal_keeper_save_accuracy is not UNSET:
             field_dict["goalKeeperSaveAccuracy"] = goal_keeper_save_accuracy
         if goal_keeper_save_accuracy_per_match is not UNSET:
-            field_dict["goalKeeperSaveAccuracyPerMatch"] = (
-                goal_keeper_save_accuracy_per_match
-            )
+            field_dict["goalKeeperSaveAccuracyPerMatch"] = goal_keeper_save_accuracy_per_match
         if goal_keeper_seconds_played is not UNSET:
             field_dict["goalKeeperSecondsPlayed"] = goal_keeper_seconds_played
         if goal_keeper_seconds_played_per_match is not UNSET:
-            field_dict["goalKeeperSecondsPlayedPerMatch"] = (
-                goal_keeper_seconds_played_per_match
-            )
+            field_dict["goalKeeperSecondsPlayedPerMatch"] = goal_keeper_seconds_played_per_match
         if goal_keeper_seven_metre_goals_against is not UNSET:
-            field_dict["goalKeeperSevenMetreGoalsAgainst"] = (
-                goal_keeper_seven_metre_goals_against
-            )
+            field_dict["goalKeeperSevenMetreGoalsAgainst"] = goal_keeper_seven_metre_goals_against
         if goal_keeper_seven_metre_goals_against_per_match is not UNSET:
-            field_dict["goalKeeperSevenMetreGoalsAgainstPerMatch"] = (
-                goal_keeper_seven_metre_goals_against_per_match
-            )
+            field_dict["goalKeeperSevenMetreGoalsAgainstPerMatch"] = goal_keeper_seven_metre_goals_against_per_match
         if goal_keeper_seven_metre_save_accuracy is not UNSET:
-            field_dict["goalKeeperSevenMetreSaveAccuracy"] = (
-                goal_keeper_seven_metre_save_accuracy
-            )
+            field_dict["goalKeeperSevenMetreSaveAccuracy"] = goal_keeper_seven_metre_save_accuracy
         if goal_keeper_seven_metre_save_accuracy_per_match is not UNSET:
-            field_dict["goalKeeperSevenMetreSaveAccuracyPerMatch"] = (
-                goal_keeper_seven_metre_save_accuracy_per_match
-            )
+            field_dict["goalKeeperSevenMetreSaveAccuracyPerMatch"] = goal_keeper_seven_metre_save_accuracy_per_match
         if goal_keeper_seven_metre_shots_against is not UNSET:
-            field_dict["goalKeeperSevenMetreShotsAgainst"] = (
-                goal_keeper_seven_metre_shots_against
-            )
+            field_dict["goalKeeperSevenMetreShotsAgainst"] = goal_keeper_seven_metre_shots_against
         if goal_keeper_seven_metre_shots_against_per_match is not UNSET:
-            field_dict["goalKeeperSevenMetreShotsAgainstPerMatch"] = (
-                goal_keeper_seven_metre_shots_against_per_match
-            )
+            field_dict["goalKeeperSevenMetreShotsAgainstPerMatch"] = goal_keeper_seven_metre_shots_against_per_match
         if goal_keeper_seven_metre_shots_saved is not UNSET:
-            field_dict["goalKeeperSevenMetreShotsSaved"] = (
-                goal_keeper_seven_metre_shots_saved
-            )
+            field_dict["goalKeeperSevenMetreShotsSaved"] = goal_keeper_seven_metre_shots_saved
         if goal_keeper_seven_metre_shots_saved_per_match is not UNSET:
-            field_dict["goalKeeperSevenMetreShotsSavedPerMatch"] = (
-                goal_keeper_seven_metre_shots_saved_per_match
-            )
+            field_dict["goalKeeperSevenMetreShotsSavedPerMatch"] = goal_keeper_seven_metre_shots_saved_per_match
         if goal_keeper_shots_against is not UNSET:
             field_dict["goalKeeperShotsAgainst"] = goal_keeper_shots_against
         if goal_keeper_shots_against_per_match is not UNSET:
-            field_dict["goalKeeperShotsAgainstPerMatch"] = (
-                goal_keeper_shots_against_per_match
-            )
+            field_dict["goalKeeperShotsAgainstPerMatch"] = goal_keeper_shots_against_per_match
         if goal_keeper_shots_per_goals_against is not UNSET:
-            field_dict["goalKeeperShotsPerGoalsAgainst"] = (
-                goal_keeper_shots_per_goals_against
-            )
+            field_dict["goalKeeperShotsPerGoalsAgainst"] = goal_keeper_shots_per_goals_against
         if goal_keeper_shots_saved is not UNSET:
             field_dict["goalKeeperShotsSaved"] = goal_keeper_shots_saved
         if goal_keeper_shots_saved_per_match is not UNSET:
-            field_dict["goalKeeperShotsSavedPerMatch"] = (
-                goal_keeper_shots_saved_per_match
-            )
+            field_dict["goalKeeperShotsSavedPerMatch"] = goal_keeper_shots_saved_per_match
         if goal_keeper_six_metre_centre_goals_against is not UNSET:
-            field_dict["goalKeeperSixMetreCentreGoalsAgainst"] = (
-                goal_keeper_six_metre_centre_goals_against
-            )
+            field_dict["goalKeeperSixMetreCentreGoalsAgainst"] = goal_keeper_six_metre_centre_goals_against
         if goal_keeper_six_metre_centre_goals_against_per_match is not UNSET:
             field_dict["goalKeeperSixMetreCentreGoalsAgainstPerMatch"] = (
                 goal_keeper_six_metre_centre_goals_against_per_match
             )
         if goal_keeper_six_metre_centre_save_accuracy is not UNSET:
-            field_dict["goalKeeperSixMetreCentreSaveAccuracy"] = (
-                goal_keeper_six_metre_centre_save_accuracy
-            )
+            field_dict["goalKeeperSixMetreCentreSaveAccuracy"] = goal_keeper_six_metre_centre_save_accuracy
         if goal_keeper_six_metre_centre_save_accuracy_per_match is not UNSET:
             field_dict["goalKeeperSixMetreCentreSaveAccuracyPerMatch"] = (
                 goal_keeper_six_metre_centre_save_accuracy_per_match
             )
         if goal_keeper_six_metre_centre_shots_against is not UNSET:
-            field_dict["goalKeeperSixMetreCentreShotsAgainst"] = (
-                goal_keeper_six_metre_centre_shots_against
-            )
+            field_dict["goalKeeperSixMetreCentreShotsAgainst"] = goal_keeper_six_metre_centre_shots_against
         if goal_keeper_six_metre_centre_shots_against_per_match is not UNSET:
             field_dict["goalKeeperSixMetreCentreShotsAgainstPerMatch"] = (
                 goal_keeper_six_metre_centre_shots_against_per_match
             )
         if goal_keeper_six_metre_centre_shots_saved is not UNSET:
-            field_dict["goalKeeperSixMetreCentreShotsSaved"] = (
-                goal_keeper_six_metre_centre_shots_saved
-            )
+            field_dict["goalKeeperSixMetreCentreShotsSaved"] = goal_keeper_six_metre_centre_shots_saved
         if goal_keeper_six_metre_centre_shots_saved_per_match is not UNSET:
             field_dict["goalKeeperSixMetreCentreShotsSavedPerMatch"] = (
                 goal_keeper_six_metre_centre_shots_saved_per_match
             )
         if goal_keeper_six_metre_goals_against is not UNSET:
-            field_dict["goalKeeperSixMetreGoalsAgainst"] = (
-                goal_keeper_six_metre_goals_against
-            )
+            field_dict["goalKeeperSixMetreGoalsAgainst"] = goal_keeper_six_metre_goals_against
         if goal_keeper_six_metre_goals_against_per_match is not UNSET:
-            field_dict["goalKeeperSixMetreGoalsAgainstPerMatch"] = (
-                goal_keeper_six_metre_goals_against_per_match
-            )
+            field_dict["goalKeeperSixMetreGoalsAgainstPerMatch"] = goal_keeper_six_metre_goals_against_per_match
         if goal_keeper_six_metre_left_goals_against is not UNSET:
-            field_dict["goalKeeperSixMetreLeftGoalsAgainst"] = (
-                goal_keeper_six_metre_left_goals_against
-            )
+            field_dict["goalKeeperSixMetreLeftGoalsAgainst"] = goal_keeper_six_metre_left_goals_against
         if goal_keeper_six_metre_left_goals_against_per_match is not UNSET:
             field_dict["goalKeeperSixMetreLeftGoalsAgainstPerMatch"] = (
                 goal_keeper_six_metre_left_goals_against_per_match
             )
         if goal_keeper_six_metre_left_save_accuracy is not UNSET:
-            field_dict["goalKeeperSixMetreLeftSaveAccuracy"] = (
-                goal_keeper_six_metre_left_save_accuracy
-            )
+            field_dict["goalKeeperSixMetreLeftSaveAccuracy"] = goal_keeper_six_metre_left_save_accuracy
         if goal_keeper_six_metre_left_save_accuracy_per_match is not UNSET:
             field_dict["goalKeeperSixMetreLeftSaveAccuracyPerMatch"] = (
                 goal_keeper_six_metre_left_save_accuracy_per_match
             )
         if goal_keeper_six_metre_left_shots_against is not UNSET:
-            field_dict["goalKeeperSixMetreLeftShotsAgainst"] = (
-                goal_keeper_six_metre_left_shots_against
-            )
+            field_dict["goalKeeperSixMetreLeftShotsAgainst"] = goal_keeper_six_metre_left_shots_against
         if goal_keeper_six_metre_left_shots_against_per_match is not UNSET:
             field_dict["goalKeeperSixMetreLeftShotsAgainstPerMatch"] = (
                 goal_keeper_six_metre_left_shots_against_per_match
             )
         if goal_keeper_six_metre_left_shots_saved is not UNSET:
-            field_dict["goalKeeperSixMetreLeftShotsSaved"] = (
-                goal_keeper_six_metre_left_shots_saved
-            )
+            field_dict["goalKeeperSixMetreLeftShotsSaved"] = goal_keeper_six_metre_left_shots_saved
         if goal_keeper_six_metre_left_shots_saved_per_match is not UNSET:
-            field_dict["goalKeeperSixMetreLeftShotsSavedPerMatch"] = (
-                goal_keeper_six_metre_left_shots_saved_per_match
-            )
+            field_dict["goalKeeperSixMetreLeftShotsSavedPerMatch"] = goal_keeper_six_metre_left_shots_saved_per_match
         if goal_keeper_six_metre_right_goals_against is not UNSET:
-            field_dict["goalKeeperSixMetreRightGoalsAgainst"] = (
-                goal_keeper_six_metre_right_goals_against
-            )
+            field_dict["goalKeeperSixMetreRightGoalsAgainst"] = goal_keeper_six_metre_right_goals_against
         if goal_keeper_six_metre_right_goals_against_per_match is not UNSET:
             field_dict["goalKeeperSixMetreRightGoalsAgainstPerMatch"] = (
                 goal_keeper_six_metre_right_goals_against_per_match
             )
         if goal_keeper_six_metre_right_save_accuracy is not UNSET:
-            field_dict["goalKeeperSixMetreRightSaveAccuracy"] = (
-                goal_keeper_six_metre_right_save_accuracy
-            )
+            field_dict["goalKeeperSixMetreRightSaveAccuracy"] = goal_keeper_six_metre_right_save_accuracy
         if goal_keeper_six_metre_right_save_accuracy_per_match is not UNSET:
             field_dict["goalKeeperSixMetreRightSaveAccuracyPerMatch"] = (
                 goal_keeper_six_metre_right_save_accuracy_per_match
             )
         if goal_keeper_six_metre_right_shots_against is not UNSET:
-            field_dict["goalKeeperSixMetreRightShotsAgainst"] = (
-                goal_keeper_six_metre_right_shots_against
-            )
+            field_dict["goalKeeperSixMetreRightShotsAgainst"] = goal_keeper_six_metre_right_shots_against
         if goal_keeper_six_metre_right_shots_against_per_match is not UNSET:
             field_dict["goalKeeperSixMetreRightShotsAgainstPerMatch"] = (
                 goal_keeper_six_metre_right_shots_against_per_match
             )
         if goal_keeper_six_metre_right_shots_saved is not UNSET:
-            field_dict["goalKeeperSixMetreRightShotsSaved"] = (
-                goal_keeper_six_metre_right_shots_saved
-            )
+            field_dict["goalKeeperSixMetreRightShotsSaved"] = goal_keeper_six_metre_right_shots_saved
         if goal_keeper_six_metre_right_shots_saved_per_match is not UNSET:
-            field_dict["goalKeeperSixMetreRightShotsSavedPerMatch"] = (
-                goal_keeper_six_metre_right_shots_saved_per_match
-            )
+            field_dict["goalKeeperSixMetreRightShotsSavedPerMatch"] = goal_keeper_six_metre_right_shots_saved_per_match
         if goal_keeper_six_metre_save_accuracy is not UNSET:
-            field_dict["goalKeeperSixMetreSaveAccuracy"] = (
-                goal_keeper_six_metre_save_accuracy
-            )
+            field_dict["goalKeeperSixMetreSaveAccuracy"] = goal_keeper_six_metre_save_accuracy
         if goal_keeper_six_metre_save_accuracy_per_match is not UNSET:
-            field_dict["goalKeeperSixMetreSaveAccuracyPerMatch"] = (
-                goal_keeper_six_metre_save_accuracy_per_match
-            )
+            field_dict["goalKeeperSixMetreSaveAccuracyPerMatch"] = goal_keeper_six_metre_save_accuracy_per_match
         if goal_keeper_six_metre_shots_against is not UNSET:
-            field_dict["goalKeeperSixMetreShotsAgainst"] = (
-                goal_keeper_six_metre_shots_against
-            )
+            field_dict["goalKeeperSixMetreShotsAgainst"] = goal_keeper_six_metre_shots_against
         if goal_keeper_six_metre_shots_against_per_match is not UNSET:
-            field_dict["goalKeeperSixMetreShotsAgainstPerMatch"] = (
-                goal_keeper_six_metre_shots_against_per_match
-            )
+            field_dict["goalKeeperSixMetreShotsAgainstPerMatch"] = goal_keeper_six_metre_shots_against_per_match
         if goal_keeper_six_metre_shots_saved is not UNSET:
-            field_dict["goalKeeperSixMetreShotsSaved"] = (
-                goal_keeper_six_metre_shots_saved
-            )
+            field_dict["goalKeeperSixMetreShotsSaved"] = goal_keeper_six_metre_shots_saved
         if goal_keeper_six_metre_shots_saved_per_match is not UNSET:
-            field_dict["goalKeeperSixMetreShotsSavedPerMatch"] = (
-                goal_keeper_six_metre_shots_saved_per_match
-            )
+            field_dict["goalKeeperSixMetreShotsSavedPerMatch"] = goal_keeper_six_metre_shots_saved_per_match
         if goal_keeper_wing_goals_against is not UNSET:
             field_dict["goalKeeperWingGoalsAgainst"] = goal_keeper_wing_goals_against
         if goal_keeper_wing_goals_against_per_match is not UNSET:
-            field_dict["goalKeeperWingGoalsAgainstPerMatch"] = (
-                goal_keeper_wing_goals_against_per_match
-            )
+            field_dict["goalKeeperWingGoalsAgainstPerMatch"] = goal_keeper_wing_goals_against_per_match
         if goal_keeper_wing_left_goals_against is not UNSET:
-            field_dict["goalKeeperWingLeftGoalsAgainst"] = (
-                goal_keeper_wing_left_goals_against
-            )
+            field_dict["goalKeeperWingLeftGoalsAgainst"] = goal_keeper_wing_left_goals_against
         if goal_keeper_wing_left_goals_against_per_match is not UNSET:
-            field_dict["goalKeeperWingLeftGoalsAgainstPerMatch"] = (
-                goal_keeper_wing_left_goals_against_per_match
-            )
+            field_dict["goalKeeperWingLeftGoalsAgainstPerMatch"] = goal_keeper_wing_left_goals_against_per_match
         if goal_keeper_wing_left_save_accuracy is not UNSET:
-            field_dict["goalKeeperWingLeftSaveAccuracy"] = (
-                goal_keeper_wing_left_save_accuracy
-            )
+            field_dict["goalKeeperWingLeftSaveAccuracy"] = goal_keeper_wing_left_save_accuracy
         if goal_keeper_wing_left_save_accuracy_per_match is not UNSET:
-            field_dict["goalKeeperWingLeftSaveAccuracyPerMatch"] = (
-                goal_keeper_wing_left_save_accuracy_per_match
-            )
+            field_dict["goalKeeperWingLeftSaveAccuracyPerMatch"] = goal_keeper_wing_left_save_accuracy_per_match
         if goal_keeper_wing_left_shots_against is not UNSET:
-            field_dict["goalKeeperWingLeftShotsAgainst"] = (
-                goal_keeper_wing_left_shots_against
-            )
+            field_dict["goalKeeperWingLeftShotsAgainst"] = goal_keeper_wing_left_shots_against
         if goal_keeper_wing_left_shots_against_per_match is not UNSET:
-            field_dict["goalKeeperWingLeftShotsAgainstPerMatch"] = (
-                goal_keeper_wing_left_shots_against_per_match
-            )
+            field_dict["goalKeeperWingLeftShotsAgainstPerMatch"] = goal_keeper_wing_left_shots_against_per_match
         if goal_keeper_wing_left_shots_saved is not UNSET:
-            field_dict["goalKeeperWingLeftShotsSaved"] = (
-                goal_keeper_wing_left_shots_saved
-            )
+            field_dict["goalKeeperWingLeftShotsSaved"] = goal_keeper_wing_left_shots_saved
         if goal_keeper_wing_left_shots_saved_per_match is not UNSET:
-            field_dict["goalKeeperWingLeftShotsSavedPerMatch"] = (
-                goal_keeper_wing_left_shots_saved_per_match
-            )
+            field_dict["goalKeeperWingLeftShotsSavedPerMatch"] = goal_keeper_wing_left_shots_saved_per_match
         if goal_keeper_wing_right_goals_against is not UNSET:
-            field_dict["goalKeeperWingRightGoalsAgainst"] = (
-                goal_keeper_wing_right_goals_against
-            )
+            field_dict["goalKeeperWingRightGoalsAgainst"] = goal_keeper_wing_right_goals_against
         if goal_keeper_wing_right_goals_against_per_match is not UNSET:
-            field_dict["goalKeeperWingRightGoalsAgainstPerMatch"] = (
-                goal_keeper_wing_right_goals_against_per_match
-            )
+            field_dict["goalKeeperWingRightGoalsAgainstPerMatch"] = goal_keeper_wing_right_goals_against_per_match
         if goal_keeper_wing_right_save_accuracy is not UNSET:
-            field_dict["goalKeeperWingRightSaveAccuracy"] = (
-                goal_keeper_wing_right_save_accuracy
-            )
+            field_dict["goalKeeperWingRightSaveAccuracy"] = goal_keeper_wing_right_save_accuracy
         if goal_keeper_wing_right_save_accuracy_per_match is not UNSET:
-            field_dict["goalKeeperWingRightSaveAccuracyPerMatch"] = (
-                goal_keeper_wing_right_save_accuracy_per_match
-            )
+            field_dict["goalKeeperWingRightSaveAccuracyPerMatch"] = goal_keeper_wing_right_save_accuracy_per_match
         if goal_keeper_wing_right_shots_against is not UNSET:
-            field_dict["goalKeeperWingRightShotsAgainst"] = (
-                goal_keeper_wing_right_shots_against
-            )
+            field_dict["goalKeeperWingRightShotsAgainst"] = goal_keeper_wing_right_shots_against
         if goal_keeper_wing_right_shots_against_per_match is not UNSET:
-            field_dict["goalKeeperWingRightShotsAgainstPerMatch"] = (
-                goal_keeper_wing_right_shots_against_per_match
-            )
+            field_dict["goalKeeperWingRightShotsAgainstPerMatch"] = goal_keeper_wing_right_shots_against_per_match
         if goal_keeper_wing_right_shots_saved is not UNSET:
-            field_dict["goalKeeperWingRightShotsSaved"] = (
-                goal_keeper_wing_right_shots_saved
-            )
+            field_dict["goalKeeperWingRightShotsSaved"] = goal_keeper_wing_right_shots_saved
         if goal_keeper_wing_right_shots_saved_per_match is not UNSET:
-            field_dict["goalKeeperWingRightShotsSavedPerMatch"] = (
-                goal_keeper_wing_right_shots_saved_per_match
-            )
+            field_dict["goalKeeperWingRightShotsSavedPerMatch"] = goal_keeper_wing_right_shots_saved_per_match
         if goal_keeper_wing_save_accuracy is not UNSET:
             field_dict["goalKeeperWingSaveAccuracy"] = goal_keeper_wing_save_accuracy
         if goal_keeper_wing_save_accuracy_per_match is not UNSET:
-            field_dict["goalKeeperWingSaveAccuracyPerMatch"] = (
-                goal_keeper_wing_save_accuracy_per_match
-            )
+            field_dict["goalKeeperWingSaveAccuracyPerMatch"] = goal_keeper_wing_save_accuracy_per_match
         if goal_keeper_wing_shots_against is not UNSET:
             field_dict["goalKeeperWingShotsAgainst"] = goal_keeper_wing_shots_against
         if goal_keeper_wing_shots_against_per_match is not UNSET:
-            field_dict["goalKeeperWingShotsAgainstPerMatch"] = (
-                goal_keeper_wing_shots_against_per_match
-            )
+            field_dict["goalKeeperWingShotsAgainstPerMatch"] = goal_keeper_wing_shots_against_per_match
         if goal_keeper_wing_shots_saved is not UNSET:
             field_dict["goalKeeperWingShotsSaved"] = goal_keeper_wing_shots_saved
         if goal_keeper_wing_shots_saved_per_match is not UNSET:
-            field_dict["goalKeeperWingShotsSavedPerMatch"] = (
-                goal_keeper_wing_shots_saved_per_match
-            )
+            field_dict["goalKeeperWingShotsSavedPerMatch"] = goal_keeper_wing_shots_saved_per_match
         if goals_scored is not UNSET:
             field_dict["goalsScored"] = goals_scored
         if goals_scored_per_match is not UNSET:
@@ -5108,79 +4498,51 @@ class CompetitionPersonStatisticsModelStatistics:
         if nine_metre_centre_goals_scored is not UNSET:
             field_dict["nineMetreCentreGoalsScored"] = nine_metre_centre_goals_scored
         if nine_metre_centre_goals_scored_per_match is not UNSET:
-            field_dict["nineMetreCentreGoalsScoredPerMatch"] = (
-                nine_metre_centre_goals_scored_per_match
-            )
+            field_dict["nineMetreCentreGoalsScoredPerMatch"] = nine_metre_centre_goals_scored_per_match
         if nine_metre_centre_missed_shots is not UNSET:
             field_dict["nineMetreCentreMissedShots"] = nine_metre_centre_missed_shots
         if nine_metre_centre_missed_shots_per_match is not UNSET:
-            field_dict["nineMetreCentreMissedShotsPerMatch"] = (
-                nine_metre_centre_missed_shots_per_match
-            )
+            field_dict["nineMetreCentreMissedShotsPerMatch"] = nine_metre_centre_missed_shots_per_match
         if nine_metre_centre_post_hits is not UNSET:
             field_dict["nineMetreCentrePostHits"] = nine_metre_centre_post_hits
         if nine_metre_centre_post_hits_per_match is not UNSET:
-            field_dict["nineMetreCentrePostHitsPerMatch"] = (
-                nine_metre_centre_post_hits_per_match
-            )
+            field_dict["nineMetreCentrePostHitsPerMatch"] = nine_metre_centre_post_hits_per_match
         if nine_metre_centre_shooting_accuracy is not UNSET:
-            field_dict["nineMetreCentreShootingAccuracy"] = (
-                nine_metre_centre_shooting_accuracy
-            )
+            field_dict["nineMetreCentreShootingAccuracy"] = nine_metre_centre_shooting_accuracy
         if nine_metre_centre_shooting_accuracy_per_match is not UNSET:
-            field_dict["nineMetreCentreShootingAccuracyPerMatch"] = (
-                nine_metre_centre_shooting_accuracy_per_match
-            )
+            field_dict["nineMetreCentreShootingAccuracyPerMatch"] = nine_metre_centre_shooting_accuracy_per_match
         if nine_metre_centre_shots is not UNSET:
             field_dict["nineMetreCentreShots"] = nine_metre_centre_shots
         if nine_metre_centre_shots_per_match is not UNSET:
-            field_dict["nineMetreCentreShotsPerMatch"] = (
-                nine_metre_centre_shots_per_match
-            )
+            field_dict["nineMetreCentreShotsPerMatch"] = nine_metre_centre_shots_per_match
         if nine_metre_centre_shots_blocked is not UNSET:
             field_dict["nineMetreCentreShotsBlocked"] = nine_metre_centre_shots_blocked
         if nine_metre_centre_shots_blocked_per_match is not UNSET:
-            field_dict["nineMetreCentreShotsBlockedPerMatch"] = (
-                nine_metre_centre_shots_blocked_per_match
-            )
+            field_dict["nineMetreCentreShotsBlockedPerMatch"] = nine_metre_centre_shots_blocked_per_match
         if nine_metre_centre_shots_on_goal is not UNSET:
             field_dict["nineMetreCentreShotsOnGoal"] = nine_metre_centre_shots_on_goal
         if nine_metre_centre_shots_on_goal_per_match is not UNSET:
-            field_dict["nineMetreCentreShotsOnGoalPerMatch"] = (
-                nine_metre_centre_shots_on_goal_per_match
-            )
+            field_dict["nineMetreCentreShotsOnGoalPerMatch"] = nine_metre_centre_shots_on_goal_per_match
         if nine_metre_goals_scored is not UNSET:
             field_dict["nineMetreGoalsScored"] = nine_metre_goals_scored
         if nine_metre_goals_scored_per_match is not UNSET:
-            field_dict["nineMetreGoalsScoredPerMatch"] = (
-                nine_metre_goals_scored_per_match
-            )
+            field_dict["nineMetreGoalsScoredPerMatch"] = nine_metre_goals_scored_per_match
         if nine_metre_left_goals_scored is not UNSET:
             field_dict["nineMetreLeftGoalsScored"] = nine_metre_left_goals_scored
         if nine_metre_left_goals_scored_per_match is not UNSET:
-            field_dict["nineMetreLeftGoalsScoredPerMatch"] = (
-                nine_metre_left_goals_scored_per_match
-            )
+            field_dict["nineMetreLeftGoalsScoredPerMatch"] = nine_metre_left_goals_scored_per_match
         if nine_metre_left_missed_shots is not UNSET:
             field_dict["nineMetreLeftMissedShots"] = nine_metre_left_missed_shots
         if nine_metre_left_missed_shots_per_match is not UNSET:
-            field_dict["nineMetreLeftMissedShotsPerMatch"] = (
-                nine_metre_left_missed_shots_per_match
-            )
+            field_dict["nineMetreLeftMissedShotsPerMatch"] = nine_metre_left_missed_shots_per_match
         if nine_metre_left_post_hits is not UNSET:
             field_dict["nineMetreLeftPostHits"] = nine_metre_left_post_hits
         if nine_metre_left_post_hits_per_match is not UNSET:
-            field_dict["nineMetreLeftPostHitsPerMatch"] = (
-                nine_metre_left_post_hits_per_match
-            )
+            field_dict["nineMetreLeftPostHitsPerMatch"] = nine_metre_left_post_hits_per_match
         if nine_metre_left_shooting_accuracy is not UNSET:
-            field_dict["nineMetreLeftShootingAccuracy"] = (
-                nine_metre_left_shooting_accuracy
-            )
+            field_dict["nineMetreLeftShootingAccuracy"] = nine_metre_left_shooting_accuracy
         if nine_metre_left_shooting_accuracy_per_match is not UNSET:
-            field_dict["nineMetreLeftShootingAccuracyPerMatch"] = (
-                nine_metre_left_shooting_accuracy_per_match
-            )
+            field_dict["nineMetreLeftShootingAccuracyPerMatch"] = nine_metre_left_shooting_accuracy_per_match
         if nine_metre_left_shots is not UNSET:
             field_dict["nineMetreLeftShots"] = nine_metre_left_shots
         if nine_metre_left_shots_per_match is not UNSET:
@@ -5188,21 +4550,15 @@ class CompetitionPersonStatisticsModelStatistics:
         if nine_metre_left_shots_blocked is not UNSET:
             field_dict["nineMetreLeftShotsBlocked"] = nine_metre_left_shots_blocked
         if nine_metre_left_shots_blocked_per_match is not UNSET:
-            field_dict["nineMetreLeftShotsBlockedPerMatch"] = (
-                nine_metre_left_shots_blocked_per_match
-            )
+            field_dict["nineMetreLeftShotsBlockedPerMatch"] = nine_metre_left_shots_blocked_per_match
         if nine_metre_left_shots_on_goal is not UNSET:
             field_dict["nineMetreLeftShotsOnGoal"] = nine_metre_left_shots_on_goal
         if nine_metre_left_shots_on_goal_per_match is not UNSET:
-            field_dict["nineMetreLeftShotsOnGoalPerMatch"] = (
-                nine_metre_left_shots_on_goal_per_match
-            )
+            field_dict["nineMetreLeftShotsOnGoalPerMatch"] = nine_metre_left_shots_on_goal_per_match
         if nine_metre_missed_shots is not UNSET:
             field_dict["nineMetreMissedShots"] = nine_metre_missed_shots
         if nine_metre_missed_shots_per_match is not UNSET:
-            field_dict["nineMetreMissedShotsPerMatch"] = (
-                nine_metre_missed_shots_per_match
-            )
+            field_dict["nineMetreMissedShotsPerMatch"] = nine_metre_missed_shots_per_match
         if nine_metre_post_hits is not UNSET:
             field_dict["nineMetrePostHits"] = nine_metre_post_hits
         if nine_metre_post_hits_per_match is not UNSET:
@@ -5210,29 +4566,19 @@ class CompetitionPersonStatisticsModelStatistics:
         if nine_metre_right_goals_scored is not UNSET:
             field_dict["nineMetreRightGoalsScored"] = nine_metre_right_goals_scored
         if nine_metre_right_goals_scored_per_match is not UNSET:
-            field_dict["nineMetreRightGoalsScoredPerMatch"] = (
-                nine_metre_right_goals_scored_per_match
-            )
+            field_dict["nineMetreRightGoalsScoredPerMatch"] = nine_metre_right_goals_scored_per_match
         if nine_metre_right_missed_shots is not UNSET:
             field_dict["nineMetreRightMissedShots"] = nine_metre_right_missed_shots
         if nine_metre_right_missed_shots_per_match is not UNSET:
-            field_dict["nineMetreRightMissedShotsPerMatch"] = (
-                nine_metre_right_missed_shots_per_match
-            )
+            field_dict["nineMetreRightMissedShotsPerMatch"] = nine_metre_right_missed_shots_per_match
         if nine_metre_right_post_hits is not UNSET:
             field_dict["nineMetreRightPostHits"] = nine_metre_right_post_hits
         if nine_metre_right_post_hits_per_match is not UNSET:
-            field_dict["nineMetreRightPostHitsPerMatch"] = (
-                nine_metre_right_post_hits_per_match
-            )
+            field_dict["nineMetreRightPostHitsPerMatch"] = nine_metre_right_post_hits_per_match
         if nine_metre_right_shooting_accuracy is not UNSET:
-            field_dict["nineMetreRightShootingAccuracy"] = (
-                nine_metre_right_shooting_accuracy
-            )
+            field_dict["nineMetreRightShootingAccuracy"] = nine_metre_right_shooting_accuracy
         if nine_metre_right_shooting_accuracy_per_match is not UNSET:
-            field_dict["nineMetreRightShootingAccuracyPerMatch"] = (
-                nine_metre_right_shooting_accuracy_per_match
-            )
+            field_dict["nineMetreRightShootingAccuracyPerMatch"] = nine_metre_right_shooting_accuracy_per_match
         if nine_metre_right_shots is not UNSET:
             field_dict["nineMetreRightShots"] = nine_metre_right_shots
         if nine_metre_right_shots_per_match is not UNSET:
@@ -5240,21 +4586,15 @@ class CompetitionPersonStatisticsModelStatistics:
         if nine_metre_right_shots_blocked is not UNSET:
             field_dict["nineMetreRightShotsBlocked"] = nine_metre_right_shots_blocked
         if nine_metre_right_shots_blocked_per_match is not UNSET:
-            field_dict["nineMetreRightShotsBlockedPerMatch"] = (
-                nine_metre_right_shots_blocked_per_match
-            )
+            field_dict["nineMetreRightShotsBlockedPerMatch"] = nine_metre_right_shots_blocked_per_match
         if nine_metre_right_shots_on_goal is not UNSET:
             field_dict["nineMetreRightShotsOnGoal"] = nine_metre_right_shots_on_goal
         if nine_metre_right_shots_on_goal_per_match is not UNSET:
-            field_dict["nineMetreRightShotsOnGoalPerMatch"] = (
-                nine_metre_right_shots_on_goal_per_match
-            )
+            field_dict["nineMetreRightShotsOnGoalPerMatch"] = nine_metre_right_shots_on_goal_per_match
         if nine_metre_shooting_accuracy is not UNSET:
             field_dict["nineMetreShootingAccuracy"] = nine_metre_shooting_accuracy
         if nine_metre_shooting_accuracy_per_match is not UNSET:
-            field_dict["nineMetreShootingAccuracyPerMatch"] = (
-                nine_metre_shooting_accuracy_per_match
-            )
+            field_dict["nineMetreShootingAccuracyPerMatch"] = nine_metre_shooting_accuracy_per_match
         if nine_metre_shots is not UNSET:
             field_dict["nineMetreShots"] = nine_metre_shots
         if nine_metre_shots_per_match is not UNSET:
@@ -5262,15 +4602,11 @@ class CompetitionPersonStatisticsModelStatistics:
         if nine_metre_shots_blocked is not UNSET:
             field_dict["nineMetreShotsBlocked"] = nine_metre_shots_blocked
         if nine_metre_shots_blocked_per_match is not UNSET:
-            field_dict["nineMetreShotsBlockedPerMatch"] = (
-                nine_metre_shots_blocked_per_match
-            )
+            field_dict["nineMetreShotsBlockedPerMatch"] = nine_metre_shots_blocked_per_match
         if nine_metre_shots_on_goal is not UNSET:
             field_dict["nineMetreShotsOnGoal"] = nine_metre_shots_on_goal
         if nine_metre_shots_on_goal_per_match is not UNSET:
-            field_dict["nineMetreShotsOnGoalPerMatch"] = (
-                nine_metre_shots_on_goal_per_match
-            )
+            field_dict["nineMetreShotsOnGoalPerMatch"] = nine_metre_shots_on_goal_per_match
         if passive_play is not UNSET:
             field_dict["passivePlay"] = passive_play
         if pivot_goals_scored is not UNSET:
@@ -5288,9 +4624,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if pivot_shooting_accuracy is not UNSET:
             field_dict["pivotShootingAccuracy"] = pivot_shooting_accuracy
         if pivot_shooting_accuracy_per_match is not UNSET:
-            field_dict["pivotShootingAccuracyPerMatch"] = (
-                pivot_shooting_accuracy_per_match
-            )
+            field_dict["pivotShootingAccuracyPerMatch"] = pivot_shooting_accuracy_per_match
         if pivot_shots is not UNSET:
             field_dict["pivotShots"] = pivot_shots
         if pivot_shots_per_match is not UNSET:
@@ -5314,33 +4648,23 @@ class CompetitionPersonStatisticsModelStatistics:
         if seven_metre_goals_scored is not UNSET:
             field_dict["sevenMetreGoalsScored"] = seven_metre_goals_scored
         if seven_metre_goals_scored_per_match is not UNSET:
-            field_dict["sevenMetreGoalsScoredPerMatch"] = (
-                seven_metre_goals_scored_per_match
-            )
+            field_dict["sevenMetreGoalsScoredPerMatch"] = seven_metre_goals_scored_per_match
         if seven_metre_missed_shots is not UNSET:
             field_dict["sevenMetreMissedShots"] = seven_metre_missed_shots
         if seven_metre_missed_shots_per_match is not UNSET:
-            field_dict["sevenMetreMissedShotsPerMatch"] = (
-                seven_metre_missed_shots_per_match
-            )
+            field_dict["sevenMetreMissedShotsPerMatch"] = seven_metre_missed_shots_per_match
         if seven_metre_penalties_awarded is not UNSET:
             field_dict["sevenMetrePenaltiesAwarded"] = seven_metre_penalties_awarded
         if seven_metre_penalties_awarded_per_match is not UNSET:
-            field_dict["sevenMetrePenaltiesAwardedPerMatch"] = (
-                seven_metre_penalties_awarded_per_match
-            )
+            field_dict["sevenMetrePenaltiesAwardedPerMatch"] = seven_metre_penalties_awarded_per_match
         if seven_metre_penalties_caused is not UNSET:
             field_dict["sevenMetrePenaltiesCaused"] = seven_metre_penalties_caused
         if seven_metre_penalties_caused_per_match is not UNSET:
-            field_dict["sevenMetrePenaltiesCausedPerMatch"] = (
-                seven_metre_penalties_caused_per_match
-            )
+            field_dict["sevenMetrePenaltiesCausedPerMatch"] = seven_metre_penalties_caused_per_match
         if seven_metre_penalty_fouls is not UNSET:
             field_dict["sevenMetrePenaltyFouls"] = seven_metre_penalty_fouls
         if seven_metre_penalty_fouls_per_match is not UNSET:
-            field_dict["sevenMetrePenaltyFoulsPerMatch"] = (
-                seven_metre_penalty_fouls_per_match
-            )
+            field_dict["sevenMetrePenaltyFoulsPerMatch"] = seven_metre_penalty_fouls_per_match
         if seven_metre_post_hits is not UNSET:
             field_dict["sevenMetrePostHits"] = seven_metre_post_hits
         if seven_metre_post_hits_per_match is not UNSET:
@@ -5348,9 +4672,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if seven_metre_shooting_accuracy is not UNSET:
             field_dict["sevenMetreShootingAccuracy"] = seven_metre_shooting_accuracy
         if seven_metre_shooting_accuracy_per_match is not UNSET:
-            field_dict["sevenMetreShootingAccuracyPerMatch"] = (
-                seven_metre_shooting_accuracy_per_match
-            )
+            field_dict["sevenMetreShootingAccuracyPerMatch"] = seven_metre_shooting_accuracy_per_match
         if seven_metre_shots is not UNSET:
             field_dict["sevenMetreShots"] = seven_metre_shots
         if seven_metre_shots_per_match is not UNSET:
@@ -5358,15 +4680,11 @@ class CompetitionPersonStatisticsModelStatistics:
         if seven_metre_shots_blocked is not UNSET:
             field_dict["sevenMetreShotsBlocked"] = seven_metre_shots_blocked
         if seven_metre_shots_blocked_per_match is not UNSET:
-            field_dict["sevenMetreShotsBlockedPerMatch"] = (
-                seven_metre_shots_blocked_per_match
-            )
+            field_dict["sevenMetreShotsBlockedPerMatch"] = seven_metre_shots_blocked_per_match
         if seven_metre_shots_on_goal is not UNSET:
             field_dict["sevenMetreShotsOnGoal"] = seven_metre_shots_on_goal
         if seven_metre_shots_on_goal_per_match is not UNSET:
-            field_dict["sevenMetreShotsOnGoalPerMatch"] = (
-                seven_metre_shots_on_goal_per_match
-            )
+            field_dict["sevenMetreShotsOnGoalPerMatch"] = seven_metre_shots_on_goal_per_match
         if shooting_accuracy is not UNSET:
             field_dict["shootingAccuracy"] = shooting_accuracy
         if shooting_accuracy_per_match is not UNSET:
@@ -5402,35 +4720,23 @@ class CompetitionPersonStatisticsModelStatistics:
         if shots_saved_by_goal_keeper is not UNSET:
             field_dict["shotsSavedByGoalKeeper"] = shots_saved_by_goal_keeper
         if shots_saved_by_goal_keeper_per_match is not UNSET:
-            field_dict["shotsSavedByGoalKeeperPerMatch"] = (
-                shots_saved_by_goal_keeper_per_match
-            )
+            field_dict["shotsSavedByGoalKeeperPerMatch"] = shots_saved_by_goal_keeper_per_match
         if six_metre_centre_goals_scored is not UNSET:
             field_dict["sixMetreCentreGoalsScored"] = six_metre_centre_goals_scored
         if six_metre_centre_goals_scored_per_match is not UNSET:
-            field_dict["sixMetreCentreGoalsScoredPerMatch"] = (
-                six_metre_centre_goals_scored_per_match
-            )
+            field_dict["sixMetreCentreGoalsScoredPerMatch"] = six_metre_centre_goals_scored_per_match
         if six_metre_centre_missed_shots is not UNSET:
             field_dict["sixMetreCentreMissedShots"] = six_metre_centre_missed_shots
         if six_metre_centre_missed_shots_per_match is not UNSET:
-            field_dict["sixMetreCentreMissedShotsPerMatch"] = (
-                six_metre_centre_missed_shots_per_match
-            )
+            field_dict["sixMetreCentreMissedShotsPerMatch"] = six_metre_centre_missed_shots_per_match
         if six_metre_centre_post_hits is not UNSET:
             field_dict["sixMetreCentrePostHits"] = six_metre_centre_post_hits
         if six_metre_centre_post_hits_per_match is not UNSET:
-            field_dict["sixMetreCentrePostHitsPerMatch"] = (
-                six_metre_centre_post_hits_per_match
-            )
+            field_dict["sixMetreCentrePostHitsPerMatch"] = six_metre_centre_post_hits_per_match
         if six_metre_centre_shooting_accuracy is not UNSET:
-            field_dict["sixMetreCentreShootingAccuracy"] = (
-                six_metre_centre_shooting_accuracy
-            )
+            field_dict["sixMetreCentreShootingAccuracy"] = six_metre_centre_shooting_accuracy
         if six_metre_centre_shooting_accuracy_per_match is not UNSET:
-            field_dict["sixMetreCentreShootingAccuracyPerMatch"] = (
-                six_metre_centre_shooting_accuracy_per_match
-            )
+            field_dict["sixMetreCentreShootingAccuracyPerMatch"] = six_metre_centre_shooting_accuracy_per_match
         if six_metre_centre_shots is not UNSET:
             field_dict["sixMetreCentreShots"] = six_metre_centre_shots
         if six_metre_centre_shots_per_match is not UNSET:
@@ -5438,15 +4744,11 @@ class CompetitionPersonStatisticsModelStatistics:
         if six_metre_centre_shots_blocked is not UNSET:
             field_dict["sixMetreCentreShotsBlocked"] = six_metre_centre_shots_blocked
         if six_metre_centre_shots_blocked_per_match is not UNSET:
-            field_dict["sixMetreCentreShotsBlockedPerMatch"] = (
-                six_metre_centre_shots_blocked_per_match
-            )
+            field_dict["sixMetreCentreShotsBlockedPerMatch"] = six_metre_centre_shots_blocked_per_match
         if six_metre_centre_shots_on_goal is not UNSET:
             field_dict["sixMetreCentreShotsOnGoal"] = six_metre_centre_shots_on_goal
         if six_metre_centre_shots_on_goal_per_match is not UNSET:
-            field_dict["sixMetreCentreShotsOnGoalPerMatch"] = (
-                six_metre_centre_shots_on_goal_per_match
-            )
+            field_dict["sixMetreCentreShotsOnGoalPerMatch"] = six_metre_centre_shots_on_goal_per_match
         if six_metre_goals_scored is not UNSET:
             field_dict["sixMetreGoalsScored"] = six_metre_goals_scored
         if six_metre_goals_scored_per_match is not UNSET:
@@ -5454,29 +4756,19 @@ class CompetitionPersonStatisticsModelStatistics:
         if six_metre_left_goals_scored is not UNSET:
             field_dict["sixMetreLeftGoalsScored"] = six_metre_left_goals_scored
         if six_metre_left_goals_scored_per_match is not UNSET:
-            field_dict["sixMetreLeftGoalsScoredPerMatch"] = (
-                six_metre_left_goals_scored_per_match
-            )
+            field_dict["sixMetreLeftGoalsScoredPerMatch"] = six_metre_left_goals_scored_per_match
         if six_metre_left_missed_shots is not UNSET:
             field_dict["sixMetreLeftMissedShots"] = six_metre_left_missed_shots
         if six_metre_left_missed_shots_per_match is not UNSET:
-            field_dict["sixMetreLeftMissedShotsPerMatch"] = (
-                six_metre_left_missed_shots_per_match
-            )
+            field_dict["sixMetreLeftMissedShotsPerMatch"] = six_metre_left_missed_shots_per_match
         if six_metre_left_post_hits is not UNSET:
             field_dict["sixMetreLeftPostHits"] = six_metre_left_post_hits
         if six_metre_left_post_hits_per_match is not UNSET:
-            field_dict["sixMetreLeftPostHitsPerMatch"] = (
-                six_metre_left_post_hits_per_match
-            )
+            field_dict["sixMetreLeftPostHitsPerMatch"] = six_metre_left_post_hits_per_match
         if six_metre_left_shooting_accuracy is not UNSET:
-            field_dict["sixMetreLeftShootingAccuracy"] = (
-                six_metre_left_shooting_accuracy
-            )
+            field_dict["sixMetreLeftShootingAccuracy"] = six_metre_left_shooting_accuracy
         if six_metre_left_shooting_accuracy_per_match is not UNSET:
-            field_dict["sixMetreLeftShootingAccuracyPerMatch"] = (
-                six_metre_left_shooting_accuracy_per_match
-            )
+            field_dict["sixMetreLeftShootingAccuracyPerMatch"] = six_metre_left_shooting_accuracy_per_match
         if six_metre_left_shots is not UNSET:
             field_dict["sixMetreLeftShots"] = six_metre_left_shots
         if six_metre_left_shots_per_match is not UNSET:
@@ -5484,15 +4776,11 @@ class CompetitionPersonStatisticsModelStatistics:
         if six_metre_left_shots_blocked is not UNSET:
             field_dict["sixMetreLeftShotsBlocked"] = six_metre_left_shots_blocked
         if six_metre_left_shots_blocked_per_match is not UNSET:
-            field_dict["sixMetreLeftShotsBlockedPerMatch"] = (
-                six_metre_left_shots_blocked_per_match
-            )
+            field_dict["sixMetreLeftShotsBlockedPerMatch"] = six_metre_left_shots_blocked_per_match
         if six_metre_left_shots_on_goal is not UNSET:
             field_dict["sixMetreLeftShotsOnGoal"] = six_metre_left_shots_on_goal
         if six_metre_left_shots_on_goal_per_match is not UNSET:
-            field_dict["sixMetreLeftShotsOnGoalPerMatch"] = (
-                six_metre_left_shots_on_goal_per_match
-            )
+            field_dict["sixMetreLeftShotsOnGoalPerMatch"] = six_metre_left_shots_on_goal_per_match
         if six_metre_missed_shots is not UNSET:
             field_dict["sixMetreMissedShots"] = six_metre_missed_shots
         if six_metre_missed_shots_per_match is not UNSET:
@@ -5504,29 +4792,19 @@ class CompetitionPersonStatisticsModelStatistics:
         if six_metre_right_goals_scored is not UNSET:
             field_dict["sixMetreRightGoalsScored"] = six_metre_right_goals_scored
         if six_metre_right_goals_scored_per_match is not UNSET:
-            field_dict["sixMetreRightGoalsScoredPerMatch"] = (
-                six_metre_right_goals_scored_per_match
-            )
+            field_dict["sixMetreRightGoalsScoredPerMatch"] = six_metre_right_goals_scored_per_match
         if six_metre_right_missed_shots is not UNSET:
             field_dict["sixMetreRightMissedShots"] = six_metre_right_missed_shots
         if six_metre_right_missed_shots_per_match is not UNSET:
-            field_dict["sixMetreRightMissedShotsPerMatch"] = (
-                six_metre_right_missed_shots_per_match
-            )
+            field_dict["sixMetreRightMissedShotsPerMatch"] = six_metre_right_missed_shots_per_match
         if six_metre_right_post_hits is not UNSET:
             field_dict["sixMetreRightPostHits"] = six_metre_right_post_hits
         if six_metre_right_post_hits_per_match is not UNSET:
-            field_dict["sixMetreRightPostHitsPerMatch"] = (
-                six_metre_right_post_hits_per_match
-            )
+            field_dict["sixMetreRightPostHitsPerMatch"] = six_metre_right_post_hits_per_match
         if six_metre_right_shooting_accuracy is not UNSET:
-            field_dict["sixMetreRightShootingAccuracy"] = (
-                six_metre_right_shooting_accuracy
-            )
+            field_dict["sixMetreRightShootingAccuracy"] = six_metre_right_shooting_accuracy
         if six_metre_right_shooting_accuracy_per_match is not UNSET:
-            field_dict["sixMetreRightShootingAccuracyPerMatch"] = (
-                six_metre_right_shooting_accuracy_per_match
-            )
+            field_dict["sixMetreRightShootingAccuracyPerMatch"] = six_metre_right_shooting_accuracy_per_match
         if six_metre_right_shots is not UNSET:
             field_dict["sixMetreRightShots"] = six_metre_right_shots
         if six_metre_right_shots_per_match is not UNSET:
@@ -5534,21 +4812,15 @@ class CompetitionPersonStatisticsModelStatistics:
         if six_metre_right_shots_blocked is not UNSET:
             field_dict["sixMetreRightShotsBlocked"] = six_metre_right_shots_blocked
         if six_metre_right_shots_blocked_per_match is not UNSET:
-            field_dict["sixMetreRightShotsBlockedPerMatch"] = (
-                six_metre_right_shots_blocked_per_match
-            )
+            field_dict["sixMetreRightShotsBlockedPerMatch"] = six_metre_right_shots_blocked_per_match
         if six_metre_right_shots_on_goal is not UNSET:
             field_dict["sixMetreRightShotsOnGoal"] = six_metre_right_shots_on_goal
         if six_metre_right_shots_on_goal_per_match is not UNSET:
-            field_dict["sixMetreRightShotsOnGoalPerMatch"] = (
-                six_metre_right_shots_on_goal_per_match
-            )
+            field_dict["sixMetreRightShotsOnGoalPerMatch"] = six_metre_right_shots_on_goal_per_match
         if six_metre_shooting_accuracy is not UNSET:
             field_dict["sixMetreShootingAccuracy"] = six_metre_shooting_accuracy
         if six_metre_shooting_accuracy_per_match is not UNSET:
-            field_dict["sixMetreShootingAccuracyPerMatch"] = (
-                six_metre_shooting_accuracy_per_match
-            )
+            field_dict["sixMetreShootingAccuracyPerMatch"] = six_metre_shooting_accuracy_per_match
         if six_metre_shots is not UNSET:
             field_dict["sixMetreShots"] = six_metre_shots
         if six_metre_shots_per_match is not UNSET:
@@ -5556,15 +4828,11 @@ class CompetitionPersonStatisticsModelStatistics:
         if six_metre_shots_blocked is not UNSET:
             field_dict["sixMetreShotsBlocked"] = six_metre_shots_blocked
         if six_metre_shots_blocked_per_match is not UNSET:
-            field_dict["sixMetreShotsBlockedPerMatch"] = (
-                six_metre_shots_blocked_per_match
-            )
+            field_dict["sixMetreShotsBlockedPerMatch"] = six_metre_shots_blocked_per_match
         if six_metre_shots_on_goal is not UNSET:
             field_dict["sixMetreShotsOnGoal"] = six_metre_shots_on_goal
         if six_metre_shots_on_goal_per_match is not UNSET:
-            field_dict["sixMetreShotsOnGoalPerMatch"] = (
-                six_metre_shots_on_goal_per_match
-            )
+            field_dict["sixMetreShotsOnGoalPerMatch"] = six_metre_shots_on_goal_per_match
         if speed_distance_per_time is not UNSET:
             field_dict["speedDistancePerTime"] = speed_distance_per_time
         if speed_max is not UNSET:
@@ -5608,9 +4876,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if two_minute_suspensions is not UNSET:
             field_dict["twoMinuteSuspensions"] = two_minute_suspensions
         if two_minute_suspensions_per_match is not UNSET:
-            field_dict["twoMinuteSuspensionsPerMatch"] = (
-                two_minute_suspensions_per_match
-            )
+            field_dict["twoMinuteSuspensionsPerMatch"] = two_minute_suspensions_per_match
         if wing_goals_scored is not UNSET:
             field_dict["wingGoalsScored"] = wing_goals_scored
         if wing_goals_scored_per_match is not UNSET:
@@ -5630,9 +4896,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if wing_left_shooting_accuracy is not UNSET:
             field_dict["wingLeftShootingAccuracy"] = wing_left_shooting_accuracy
         if wing_left_shooting_accuracy_per_match is not UNSET:
-            field_dict["wingLeftShootingAccuracyPerMatch"] = (
-                wing_left_shooting_accuracy_per_match
-            )
+            field_dict["wingLeftShootingAccuracyPerMatch"] = wing_left_shooting_accuracy_per_match
         if wing_left_shots is not UNSET:
             field_dict["wingLeftShots"] = wing_left_shots
         if wing_left_shots_per_match is not UNSET:
@@ -5640,15 +4904,11 @@ class CompetitionPersonStatisticsModelStatistics:
         if wing_left_shots_blocked is not UNSET:
             field_dict["wingLeftShotsBlocked"] = wing_left_shots_blocked
         if wing_left_shots_blocked_per_match is not UNSET:
-            field_dict["wingLeftShotsBlockedPerMatch"] = (
-                wing_left_shots_blocked_per_match
-            )
+            field_dict["wingLeftShotsBlockedPerMatch"] = wing_left_shots_blocked_per_match
         if wing_left_shots_on_goal is not UNSET:
             field_dict["wingLeftShotsOnGoal"] = wing_left_shots_on_goal
         if wing_left_shots_on_goal_per_match is not UNSET:
-            field_dict["wingLeftShotsOnGoalPerMatch"] = (
-                wing_left_shots_on_goal_per_match
-            )
+            field_dict["wingLeftShotsOnGoalPerMatch"] = wing_left_shots_on_goal_per_match
         if wing_missed_shots is not UNSET:
             field_dict["wingMissedShots"] = wing_missed_shots
         if wing_missed_shots_per_match is not UNSET:
@@ -5660,15 +4920,11 @@ class CompetitionPersonStatisticsModelStatistics:
         if wing_right_goals_scored is not UNSET:
             field_dict["wingRightGoalsScored"] = wing_right_goals_scored
         if wing_right_goals_scored_per_match is not UNSET:
-            field_dict["wingRightGoalsScoredPerMatch"] = (
-                wing_right_goals_scored_per_match
-            )
+            field_dict["wingRightGoalsScoredPerMatch"] = wing_right_goals_scored_per_match
         if wing_right_missed_shots is not UNSET:
             field_dict["wingRightMissedShots"] = wing_right_missed_shots
         if wing_right_missed_shots_per_match is not UNSET:
-            field_dict["wingRightMissedShotsPerMatch"] = (
-                wing_right_missed_shots_per_match
-            )
+            field_dict["wingRightMissedShotsPerMatch"] = wing_right_missed_shots_per_match
         if wing_right_post_hits is not UNSET:
             field_dict["wingRightPostHits"] = wing_right_post_hits
         if wing_right_post_hits_per_match is not UNSET:
@@ -5676,9 +4932,7 @@ class CompetitionPersonStatisticsModelStatistics:
         if wing_right_shooting_accuracy is not UNSET:
             field_dict["wingRightShootingAccuracy"] = wing_right_shooting_accuracy
         if wing_right_shooting_accuracy_per_match is not UNSET:
-            field_dict["wingRightShootingAccuracyPerMatch"] = (
-                wing_right_shooting_accuracy_per_match
-            )
+            field_dict["wingRightShootingAccuracyPerMatch"] = wing_right_shooting_accuracy_per_match
         if wing_right_shots is not UNSET:
             field_dict["wingRightShots"] = wing_right_shots
         if wing_right_shots_per_match is not UNSET:
@@ -5686,21 +4940,15 @@ class CompetitionPersonStatisticsModelStatistics:
         if wing_right_shots_blocked is not UNSET:
             field_dict["wingRightShotsBlocked"] = wing_right_shots_blocked
         if wing_right_shots_blocked_per_match is not UNSET:
-            field_dict["wingRightShotsBlockedPerMatch"] = (
-                wing_right_shots_blocked_per_match
-            )
+            field_dict["wingRightShotsBlockedPerMatch"] = wing_right_shots_blocked_per_match
         if wing_right_shots_on_goal is not UNSET:
             field_dict["wingRightShotsOnGoal"] = wing_right_shots_on_goal
         if wing_right_shots_on_goal_per_match is not UNSET:
-            field_dict["wingRightShotsOnGoalPerMatch"] = (
-                wing_right_shots_on_goal_per_match
-            )
+            field_dict["wingRightShotsOnGoalPerMatch"] = wing_right_shots_on_goal_per_match
         if wing_shooting_accuracy is not UNSET:
             field_dict["wingShootingAccuracy"] = wing_shooting_accuracy
         if wing_shooting_accuracy_per_match is not UNSET:
-            field_dict["wingShootingAccuracyPerMatch"] = (
-                wing_shooting_accuracy_per_match
-            )
+            field_dict["wingShootingAccuracyPerMatch"] = wing_shooting_accuracy_per_match
         if wing_shots is not UNSET:
             field_dict["wingShots"] = wing_shots
         if wing_shots_per_match is not UNSET:
@@ -5760,13 +5008,9 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        back_court_goals_scored = _parse_back_court_goals_scored(
-            d.pop("backCourtGoalsScored", UNSET)
-        )
+        back_court_goals_scored = _parse_back_court_goals_scored(d.pop("backCourtGoalsScored", UNSET))
 
-        def _parse_back_court_goals_scored_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_back_court_goals_scored_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -5784,13 +5028,9 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        back_court_missed_shots = _parse_back_court_missed_shots(
-            d.pop("backCourtMissedShots", UNSET)
-        )
+        back_court_missed_shots = _parse_back_court_missed_shots(d.pop("backCourtMissedShots", UNSET))
 
-        def _parse_back_court_missed_shots_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_back_court_missed_shots_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -5808,13 +5048,9 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        back_court_post_hits = _parse_back_court_post_hits(
-            d.pop("backCourtPostHits", UNSET)
-        )
+        back_court_post_hits = _parse_back_court_post_hits(d.pop("backCourtPostHits", UNSET))
 
-        def _parse_back_court_post_hits_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_back_court_post_hits_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -5827,19 +5063,15 @@ class CompetitionPersonStatisticsModelStatistics:
 
         back_court_shooting_accuracy = d.pop("backCourtShootingAccuracy", UNSET)
 
-        def _parse_back_court_shooting_accuracy_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_back_court_shooting_accuracy_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        back_court_shooting_accuracy_per_match = (
-            _parse_back_court_shooting_accuracy_per_match(
-                d.pop("backCourtShootingAccuracyPerMatch", UNSET)
-            )
+        back_court_shooting_accuracy_per_match = _parse_back_court_shooting_accuracy_per_match(
+            d.pop("backCourtShootingAccuracyPerMatch", UNSET)
         )
 
         def _parse_back_court_shots(data: object) -> Union[None, Unset, int]:
@@ -5851,18 +5083,14 @@ class CompetitionPersonStatisticsModelStatistics:
 
         back_court_shots = _parse_back_court_shots(d.pop("backCourtShots", UNSET))
 
-        def _parse_back_court_shots_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_back_court_shots_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        back_court_shots_per_match = _parse_back_court_shots_per_match(
-            d.pop("backCourtShotsPerMatch", UNSET)
-        )
+        back_court_shots_per_match = _parse_back_court_shots_per_match(d.pop("backCourtShotsPerMatch", UNSET))
 
         def _parse_back_court_shots_blocked(data: object) -> Union[None, Unset, int]:
             if data is None:
@@ -5871,13 +5099,9 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        back_court_shots_blocked = _parse_back_court_shots_blocked(
-            d.pop("backCourtShotsBlocked", UNSET)
-        )
+        back_court_shots_blocked = _parse_back_court_shots_blocked(d.pop("backCourtShotsBlocked", UNSET))
 
-        def _parse_back_court_shots_blocked_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_back_court_shots_blocked_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -5895,13 +5119,9 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        back_court_shots_on_goal = _parse_back_court_shots_on_goal(
-            d.pop("backCourtShotsOnGoal", UNSET)
-        )
+        back_court_shots_on_goal = _parse_back_court_shots_on_goal(d.pop("backCourtShotsOnGoal", UNSET))
 
-        def _parse_back_court_shots_on_goal_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_back_court_shots_on_goal_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -5946,9 +5166,7 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, float], data)
 
-        blue_cards_per_match = _parse_blue_cards_per_match(
-            d.pop("blueCardsPerMatch", UNSET)
-        )
+        blue_cards_per_match = _parse_blue_cards_per_match(d.pop("blueCardsPerMatch", UNSET))
 
         def _parse_break_through_goals_scored(data: object) -> Union[None, Unset, int]:
             if data is None:
@@ -5957,23 +5175,17 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        break_through_goals_scored = _parse_break_through_goals_scored(
-            d.pop("breakThroughGoalsScored", UNSET)
-        )
+        break_through_goals_scored = _parse_break_through_goals_scored(d.pop("breakThroughGoalsScored", UNSET))
 
-        def _parse_break_through_goals_scored_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_break_through_goals_scored_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        break_through_goals_scored_per_match = (
-            _parse_break_through_goals_scored_per_match(
-                d.pop("breakThroughGoalsScoredPerMatch", UNSET)
-            )
+        break_through_goals_scored_per_match = _parse_break_through_goals_scored_per_match(
+            d.pop("breakThroughGoalsScoredPerMatch", UNSET)
         )
 
         def _parse_break_through_missed_shots(data: object) -> Union[None, Unset, int]:
@@ -5983,23 +5195,17 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        break_through_missed_shots = _parse_break_through_missed_shots(
-            d.pop("breakThroughMissedShots", UNSET)
-        )
+        break_through_missed_shots = _parse_break_through_missed_shots(d.pop("breakThroughMissedShots", UNSET))
 
-        def _parse_break_through_missed_shots_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_break_through_missed_shots_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        break_through_missed_shots_per_match = (
-            _parse_break_through_missed_shots_per_match(
-                d.pop("breakThroughMissedShotsPerMatch", UNSET)
-            )
+        break_through_missed_shots_per_match = _parse_break_through_missed_shots_per_match(
+            d.pop("breakThroughMissedShotsPerMatch", UNSET)
         )
 
         def _parse_break_through_post_hits(data: object) -> Union[None, Unset, int]:
@@ -6009,13 +5215,9 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        break_through_post_hits = _parse_break_through_post_hits(
-            d.pop("breakThroughPostHits", UNSET)
-        )
+        break_through_post_hits = _parse_break_through_post_hits(d.pop("breakThroughPostHits", UNSET))
 
-        def _parse_break_through_post_hits_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_break_through_post_hits_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -6028,19 +5230,15 @@ class CompetitionPersonStatisticsModelStatistics:
 
         break_through_shooting_accuracy = d.pop("breakThroughShootingAccuracy", UNSET)
 
-        def _parse_break_through_shooting_accuracy_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_break_through_shooting_accuracy_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        break_through_shooting_accuracy_per_match = (
-            _parse_break_through_shooting_accuracy_per_match(
-                d.pop("breakThroughShootingAccuracyPerMatch", UNSET)
-            )
+        break_through_shooting_accuracy_per_match = _parse_break_through_shooting_accuracy_per_match(
+            d.pop("breakThroughShootingAccuracyPerMatch", UNSET)
         )
 
         def _parse_break_through_shots(data: object) -> Union[None, Unset, int]:
@@ -6050,22 +5248,16 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        break_through_shots = _parse_break_through_shots(
-            d.pop("breakThroughShots", UNSET)
-        )
+        break_through_shots = _parse_break_through_shots(d.pop("breakThroughShots", UNSET))
 
-        def _parse_break_through_shots_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_break_through_shots_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        break_through_shots_per_match = _parse_break_through_shots_per_match(
-            d.pop("breakThroughShotsPerMatch", UNSET)
-        )
+        break_through_shots_per_match = _parse_break_through_shots_per_match(d.pop("breakThroughShotsPerMatch", UNSET))
 
         def _parse_break_through_shots_blocked(data: object) -> Union[None, Unset, int]:
             if data is None:
@@ -6074,23 +5266,17 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        break_through_shots_blocked = _parse_break_through_shots_blocked(
-            d.pop("breakThroughShotsBlocked", UNSET)
-        )
+        break_through_shots_blocked = _parse_break_through_shots_blocked(d.pop("breakThroughShotsBlocked", UNSET))
 
-        def _parse_break_through_shots_blocked_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_break_through_shots_blocked_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        break_through_shots_blocked_per_match = (
-            _parse_break_through_shots_blocked_per_match(
-                d.pop("breakThroughShotsBlockedPerMatch", UNSET)
-            )
+        break_through_shots_blocked_per_match = _parse_break_through_shots_blocked_per_match(
+            d.pop("breakThroughShotsBlockedPerMatch", UNSET)
         )
 
         def _parse_break_through_shots_on_goal(data: object) -> Union[None, Unset, int]:
@@ -6100,23 +5286,17 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        break_through_shots_on_goal = _parse_break_through_shots_on_goal(
-            d.pop("breakThroughShotsOnGoal", UNSET)
-        )
+        break_through_shots_on_goal = _parse_break_through_shots_on_goal(d.pop("breakThroughShotsOnGoal", UNSET))
 
-        def _parse_break_through_shots_on_goal_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_break_through_shots_on_goal_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        break_through_shots_on_goal_per_match = (
-            _parse_break_through_shots_on_goal_per_match(
-                d.pop("breakThroughShotsOnGoalPerMatch", UNSET)
-            )
+        break_through_shots_on_goal_per_match = _parse_break_through_shots_on_goal_per_match(
+            d.pop("breakThroughShotsOnGoalPerMatch", UNSET)
         )
 
         def _parse_cards(data: object) -> Union[None, Unset, int]:
@@ -6144,9 +5324,7 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        distance_speed_category_1 = _parse_distance_speed_category_1(
-            d.pop("distanceSpeedCategory1", UNSET)
-        )
+        distance_speed_category_1 = _parse_distance_speed_category_1(d.pop("distanceSpeedCategory1", UNSET))
 
         def _parse_distance_speed_category_2(data: object) -> Union[None, Unset, int]:
             if data is None:
@@ -6155,9 +5333,7 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        distance_speed_category_2 = _parse_distance_speed_category_2(
-            d.pop("distanceSpeedCategory2", UNSET)
-        )
+        distance_speed_category_2 = _parse_distance_speed_category_2(d.pop("distanceSpeedCategory2", UNSET))
 
         def _parse_distance_speed_category_3(data: object) -> Union[None, Unset, int]:
             if data is None:
@@ -6166,9 +5342,7 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        distance_speed_category_3 = _parse_distance_speed_category_3(
-            d.pop("distanceSpeedCategory3", UNSET)
-        )
+        distance_speed_category_3 = _parse_distance_speed_category_3(d.pop("distanceSpeedCategory3", UNSET))
 
         def _parse_distance_speed_category_4(data: object) -> Union[None, Unset, int]:
             if data is None:
@@ -6177,9 +5351,7 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        distance_speed_category_4 = _parse_distance_speed_category_4(
-            d.pop("distanceSpeedCategory4", UNSET)
-        )
+        distance_speed_category_4 = _parse_distance_speed_category_4(d.pop("distanceSpeedCategory4", UNSET))
 
         def _parse_distance_speed_category_5(data: object) -> Union[None, Unset, int]:
             if data is None:
@@ -6188,9 +5360,7 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        distance_speed_category_5 = _parse_distance_speed_category_5(
-            d.pop("distanceSpeedCategory5", UNSET)
-        )
+        distance_speed_category_5 = _parse_distance_speed_category_5(d.pop("distanceSpeedCategory5", UNSET))
 
         def _parse_distance_total(data: object) -> Union[None, Unset, float]:
             if data is None:
@@ -6217,9 +5387,7 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        empty_net_goals_scored = _parse_empty_net_goals_scored(
-            d.pop("emptyNetGoalsScored", UNSET)
-        )
+        empty_net_goals_scored = _parse_empty_net_goals_scored(d.pop("emptyNetGoalsScored", UNSET))
 
         def _parse_fast_break_goals_scored(data: object) -> Union[None, Unset, int]:
             if data is None:
@@ -6228,13 +5396,9 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        fast_break_goals_scored = _parse_fast_break_goals_scored(
-            d.pop("fastBreakGoalsScored", UNSET)
-        )
+        fast_break_goals_scored = _parse_fast_break_goals_scored(d.pop("fastBreakGoalsScored", UNSET))
 
-        def _parse_fast_break_goals_scored_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_fast_break_goals_scored_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -6252,13 +5416,9 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        fast_break_missed_shots = _parse_fast_break_missed_shots(
-            d.pop("fastBreakMissedShots", UNSET)
-        )
+        fast_break_missed_shots = _parse_fast_break_missed_shots(d.pop("fastBreakMissedShots", UNSET))
 
-        def _parse_fast_break_missed_shots_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_fast_break_missed_shots_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -6276,13 +5436,9 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        fast_break_post_hits = _parse_fast_break_post_hits(
-            d.pop("fastBreakPostHits", UNSET)
-        )
+        fast_break_post_hits = _parse_fast_break_post_hits(d.pop("fastBreakPostHits", UNSET))
 
-        def _parse_fast_break_post_hits_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_fast_break_post_hits_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -6295,19 +5451,15 @@ class CompetitionPersonStatisticsModelStatistics:
 
         fast_break_shooting_accuracy = d.pop("fastBreakShootingAccuracy", UNSET)
 
-        def _parse_fast_break_shooting_accuracy_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_fast_break_shooting_accuracy_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        fast_break_shooting_accuracy_per_match = (
-            _parse_fast_break_shooting_accuracy_per_match(
-                d.pop("fastBreakShootingAccuracyPerMatch", UNSET)
-            )
+        fast_break_shooting_accuracy_per_match = _parse_fast_break_shooting_accuracy_per_match(
+            d.pop("fastBreakShootingAccuracyPerMatch", UNSET)
         )
 
         def _parse_fast_break_shots(data: object) -> Union[None, Unset, int]:
@@ -6319,18 +5471,14 @@ class CompetitionPersonStatisticsModelStatistics:
 
         fast_break_shots = _parse_fast_break_shots(d.pop("fastBreakShots", UNSET))
 
-        def _parse_fast_break_shots_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_fast_break_shots_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        fast_break_shots_per_match = _parse_fast_break_shots_per_match(
-            d.pop("fastBreakShotsPerMatch", UNSET)
-        )
+        fast_break_shots_per_match = _parse_fast_break_shots_per_match(d.pop("fastBreakShotsPerMatch", UNSET))
 
         def _parse_fast_break_shots_blocked(data: object) -> Union[None, Unset, int]:
             if data is None:
@@ -6339,13 +5487,9 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        fast_break_shots_blocked = _parse_fast_break_shots_blocked(
-            d.pop("fastBreakShotsBlocked", UNSET)
-        )
+        fast_break_shots_blocked = _parse_fast_break_shots_blocked(d.pop("fastBreakShotsBlocked", UNSET))
 
-        def _parse_fast_break_shots_blocked_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_fast_break_shots_blocked_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -6363,13 +5507,9 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        fast_break_shots_on_goal = _parse_fast_break_shots_on_goal(
-            d.pop("fastBreakShotsOnGoal", UNSET)
-        )
+        fast_break_shots_on_goal = _parse_fast_break_shots_on_goal(d.pop("fastBreakShotsOnGoal", UNSET))
 
-        def _parse_fast_break_shots_on_goal_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_fast_break_shots_on_goal_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -6389,18 +5529,14 @@ class CompetitionPersonStatisticsModelStatistics:
 
         field_goals_scored = _parse_field_goals_scored(d.pop("fieldGoalsScored", UNSET))
 
-        def _parse_field_goals_scored_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_field_goals_scored_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        field_goals_scored_per_match = _parse_field_goals_scored_per_match(
-            d.pop("fieldGoalsScoredPerMatch", UNSET)
-        )
+        field_goals_scored_per_match = _parse_field_goals_scored_per_match(d.pop("fieldGoalsScoredPerMatch", UNSET))
 
         def _parse_field_missed_shots(data: object) -> Union[None, Unset, int]:
             if data is None:
@@ -6411,18 +5547,14 @@ class CompetitionPersonStatisticsModelStatistics:
 
         field_missed_shots = _parse_field_missed_shots(d.pop("fieldMissedShots", UNSET))
 
-        def _parse_field_missed_shots_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_field_missed_shots_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        field_missed_shots_per_match = _parse_field_missed_shots_per_match(
-            d.pop("fieldMissedShotsPerMatch", UNSET)
-        )
+        field_missed_shots_per_match = _parse_field_missed_shots_per_match(d.pop("fieldMissedShotsPerMatch", UNSET))
 
         def _parse_field_post_hits(data: object) -> Union[None, Unset, int]:
             if data is None:
@@ -6440,15 +5572,11 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, float], data)
 
-        field_post_hits_per_match = _parse_field_post_hits_per_match(
-            d.pop("fieldPostHitsPerMatch", UNSET)
-        )
+        field_post_hits_per_match = _parse_field_post_hits_per_match(d.pop("fieldPostHitsPerMatch", UNSET))
 
         field_shooting_accuracy = d.pop("fieldShootingAccuracy", UNSET)
 
-        def _parse_field_shooting_accuracy_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_field_shooting_accuracy_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -6475,9 +5603,7 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, float], data)
 
-        field_shots_per_match = _parse_field_shots_per_match(
-            d.pop("fieldShotsPerMatch", UNSET)
-        )
+        field_shots_per_match = _parse_field_shots_per_match(d.pop("fieldShotsPerMatch", UNSET))
 
         def _parse_field_shots_blocked(data: object) -> Union[None, Unset, int]:
             if data is None:
@@ -6486,22 +5612,16 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        field_shots_blocked = _parse_field_shots_blocked(
-            d.pop("fieldShotsBlocked", UNSET)
-        )
+        field_shots_blocked = _parse_field_shots_blocked(d.pop("fieldShotsBlocked", UNSET))
 
-        def _parse_field_shots_blocked_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_field_shots_blocked_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        field_shots_blocked_per_match = _parse_field_shots_blocked_per_match(
-            d.pop("fieldShotsBlockedPerMatch", UNSET)
-        )
+        field_shots_blocked_per_match = _parse_field_shots_blocked_per_match(d.pop("fieldShotsBlockedPerMatch", UNSET))
 
         def _parse_field_shots_on_goal(data: object) -> Union[None, Unset, int]:
             if data is None:
@@ -6510,22 +5630,16 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        field_shots_on_goal = _parse_field_shots_on_goal(
-            d.pop("fieldShotsOnGoal", UNSET)
-        )
+        field_shots_on_goal = _parse_field_shots_on_goal(d.pop("fieldShotsOnGoal", UNSET))
 
-        def _parse_field_shots_on_goal_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_field_shots_on_goal_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        field_shots_on_goal_per_match = _parse_field_shots_on_goal_per_match(
-            d.pop("fieldShotsOnGoalPerMatch", UNSET)
-        )
+        field_shots_on_goal_per_match = _parse_field_shots_on_goal_per_match(d.pop("fieldShotsOnGoalPerMatch", UNSET))
 
         def _parse_fouls(data: object) -> Union[None, Unset, int]:
             if data is None:
@@ -6561,9 +5675,7 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, float], data)
 
-        fouls_drawn_per_match = _parse_fouls_drawn_per_match(
-            d.pop("foulsDrawnPerMatch", UNSET)
-        )
+        fouls_drawn_per_match = _parse_fouls_drawn_per_match(d.pop("foulsDrawnPerMatch", UNSET))
 
         def _parse_four_minute_suspensions(data: object) -> Union[None, Unset, int]:
             if data is None:
@@ -6572,13 +5684,9 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        four_minute_suspensions = _parse_four_minute_suspensions(
-            d.pop("fourMinuteSuspensions", UNSET)
-        )
+        four_minute_suspensions = _parse_four_minute_suspensions(d.pop("fourMinuteSuspensions", UNSET))
 
-        def _parse_four_minute_suspensions_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_four_minute_suspensions_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -6607,88 +5715,64 @@ class CompetitionPersonStatisticsModelStatistics:
 
         games_started = _parse_games_started(d.pop("gamesStarted", UNSET))
 
-        def _parse_goal_keeper_back_court_goals_against(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_goal_keeper_back_court_goals_against(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        goal_keeper_back_court_goals_against = (
-            _parse_goal_keeper_back_court_goals_against(
-                d.pop("goalKeeperBackCourtGoalsAgainst", UNSET)
-            )
+        goal_keeper_back_court_goals_against = _parse_goal_keeper_back_court_goals_against(
+            d.pop("goalKeeperBackCourtGoalsAgainst", UNSET)
         )
 
-        def _parse_goal_keeper_back_court_goals_against_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_back_court_goals_against_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_back_court_goals_against_per_match = (
-            _parse_goal_keeper_back_court_goals_against_per_match(
-                d.pop("goalKeeperBackCourtGoalsAgainstPerMatch", UNSET)
-            )
+        goal_keeper_back_court_goals_against_per_match = _parse_goal_keeper_back_court_goals_against_per_match(
+            d.pop("goalKeeperBackCourtGoalsAgainstPerMatch", UNSET)
         )
 
-        goal_keeper_back_court_save_accuracy = d.pop(
-            "goalKeeperBackCourtSaveAccuracy", UNSET
-        )
+        goal_keeper_back_court_save_accuracy = d.pop("goalKeeperBackCourtSaveAccuracy", UNSET)
 
-        def _parse_goal_keeper_back_court_save_accuracy_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_back_court_save_accuracy_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_back_court_save_accuracy_per_match = (
-            _parse_goal_keeper_back_court_save_accuracy_per_match(
-                d.pop("goalKeeperBackCourtSaveAccuracyPerMatch", UNSET)
-            )
+        goal_keeper_back_court_save_accuracy_per_match = _parse_goal_keeper_back_court_save_accuracy_per_match(
+            d.pop("goalKeeperBackCourtSaveAccuracyPerMatch", UNSET)
         )
 
-        def _parse_goal_keeper_back_court_shots_against(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_goal_keeper_back_court_shots_against(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        goal_keeper_back_court_shots_against = (
-            _parse_goal_keeper_back_court_shots_against(
-                d.pop("goalKeeperBackCourtShotsAgainst", UNSET)
-            )
+        goal_keeper_back_court_shots_against = _parse_goal_keeper_back_court_shots_against(
+            d.pop("goalKeeperBackCourtShotsAgainst", UNSET)
         )
 
-        def _parse_goal_keeper_back_court_shots_against_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_back_court_shots_against_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_back_court_shots_against_per_match = (
-            _parse_goal_keeper_back_court_shots_against_per_match(
-                d.pop("goalKeeperBackCourtShotsAgainstPerMatch", UNSET)
-            )
+        goal_keeper_back_court_shots_against_per_match = _parse_goal_keeper_back_court_shots_against_per_match(
+            d.pop("goalKeeperBackCourtShotsAgainstPerMatch", UNSET)
         )
 
-        def _parse_goal_keeper_back_court_shots_saved(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_goal_keeper_back_court_shots_saved(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -6699,212 +5783,154 @@ class CompetitionPersonStatisticsModelStatistics:
             d.pop("goalKeeperBackCourtShotsSaved", UNSET)
         )
 
-        def _parse_goal_keeper_back_court_shots_saved_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_back_court_shots_saved_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_back_court_shots_saved_per_match = (
-            _parse_goal_keeper_back_court_shots_saved_per_match(
-                d.pop("goalKeeperBackCourtShotsSavedPerMatch", UNSET)
-            )
+        goal_keeper_back_court_shots_saved_per_match = _parse_goal_keeper_back_court_shots_saved_per_match(
+            d.pop("goalKeeperBackCourtShotsSavedPerMatch", UNSET)
         )
 
-        def _parse_goal_keeper_break_through_goals_against(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_goal_keeper_break_through_goals_against(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        goal_keeper_break_through_goals_against = (
-            _parse_goal_keeper_break_through_goals_against(
-                d.pop("goalKeeperBreakThroughGoalsAgainst", UNSET)
-            )
+        goal_keeper_break_through_goals_against = _parse_goal_keeper_break_through_goals_against(
+            d.pop("goalKeeperBreakThroughGoalsAgainst", UNSET)
         )
 
-        def _parse_goal_keeper_break_through_goals_against_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_break_through_goals_against_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_break_through_goals_against_per_match = (
-            _parse_goal_keeper_break_through_goals_against_per_match(
-                d.pop("goalKeeperBreakThroughGoalsAgainstPerMatch", UNSET)
-            )
+        goal_keeper_break_through_goals_against_per_match = _parse_goal_keeper_break_through_goals_against_per_match(
+            d.pop("goalKeeperBreakThroughGoalsAgainstPerMatch", UNSET)
         )
 
-        goal_keeper_break_through_save_accuracy = d.pop(
-            "goalKeeperBreakThroughSaveAccuracy", UNSET
-        )
+        goal_keeper_break_through_save_accuracy = d.pop("goalKeeperBreakThroughSaveAccuracy", UNSET)
 
-        def _parse_goal_keeper_break_through_save_accuracy_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_break_through_save_accuracy_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_break_through_save_accuracy_per_match = (
-            _parse_goal_keeper_break_through_save_accuracy_per_match(
-                d.pop("goalKeeperBreakThroughSaveAccuracyPerMatch", UNSET)
-            )
+        goal_keeper_break_through_save_accuracy_per_match = _parse_goal_keeper_break_through_save_accuracy_per_match(
+            d.pop("goalKeeperBreakThroughSaveAccuracyPerMatch", UNSET)
         )
 
-        def _parse_goal_keeper_break_through_shots_against(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_goal_keeper_break_through_shots_against(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        goal_keeper_break_through_shots_against = (
-            _parse_goal_keeper_break_through_shots_against(
-                d.pop("goalKeeperBreakThroughShotsAgainst", UNSET)
-            )
+        goal_keeper_break_through_shots_against = _parse_goal_keeper_break_through_shots_against(
+            d.pop("goalKeeperBreakThroughShotsAgainst", UNSET)
         )
 
-        def _parse_goal_keeper_break_through_shots_against_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_break_through_shots_against_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_break_through_shots_against_per_match = (
-            _parse_goal_keeper_break_through_shots_against_per_match(
-                d.pop("goalKeeperBreakThroughShotsAgainstPerMatch", UNSET)
-            )
+        goal_keeper_break_through_shots_against_per_match = _parse_goal_keeper_break_through_shots_against_per_match(
+            d.pop("goalKeeperBreakThroughShotsAgainstPerMatch", UNSET)
         )
 
-        def _parse_goal_keeper_break_through_shots_saved(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_goal_keeper_break_through_shots_saved(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        goal_keeper_break_through_shots_saved = (
-            _parse_goal_keeper_break_through_shots_saved(
-                d.pop("goalKeeperBreakThroughShotsSaved", UNSET)
-            )
+        goal_keeper_break_through_shots_saved = _parse_goal_keeper_break_through_shots_saved(
+            d.pop("goalKeeperBreakThroughShotsSaved", UNSET)
         )
 
-        def _parse_goal_keeper_break_through_shots_saved_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_break_through_shots_saved_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_break_through_shots_saved_per_match = (
-            _parse_goal_keeper_break_through_shots_saved_per_match(
-                d.pop("goalKeeperBreakThroughShotsSavedPerMatch", UNSET)
-            )
+        goal_keeper_break_through_shots_saved_per_match = _parse_goal_keeper_break_through_shots_saved_per_match(
+            d.pop("goalKeeperBreakThroughShotsSavedPerMatch", UNSET)
         )
 
-        def _parse_goal_keeper_fast_break_goals_against(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_goal_keeper_fast_break_goals_against(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        goal_keeper_fast_break_goals_against = (
-            _parse_goal_keeper_fast_break_goals_against(
-                d.pop("goalKeeperFastBreakGoalsAgainst", UNSET)
-            )
+        goal_keeper_fast_break_goals_against = _parse_goal_keeper_fast_break_goals_against(
+            d.pop("goalKeeperFastBreakGoalsAgainst", UNSET)
         )
 
-        def _parse_goal_keeper_fast_break_goals_against_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_fast_break_goals_against_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_fast_break_goals_against_per_match = (
-            _parse_goal_keeper_fast_break_goals_against_per_match(
-                d.pop("goalKeeperFastBreakGoalsAgainstPerMatch", UNSET)
-            )
+        goal_keeper_fast_break_goals_against_per_match = _parse_goal_keeper_fast_break_goals_against_per_match(
+            d.pop("goalKeeperFastBreakGoalsAgainstPerMatch", UNSET)
         )
 
-        goal_keeper_fast_break_save_accuracy = d.pop(
-            "goalKeeperFastBreakSaveAccuracy", UNSET
-        )
+        goal_keeper_fast_break_save_accuracy = d.pop("goalKeeperFastBreakSaveAccuracy", UNSET)
 
-        def _parse_goal_keeper_fast_break_save_accuracy_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_fast_break_save_accuracy_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_fast_break_save_accuracy_per_match = (
-            _parse_goal_keeper_fast_break_save_accuracy_per_match(
-                d.pop("goalKeeperFastBreakSaveAccuracyPerMatch", UNSET)
-            )
+        goal_keeper_fast_break_save_accuracy_per_match = _parse_goal_keeper_fast_break_save_accuracy_per_match(
+            d.pop("goalKeeperFastBreakSaveAccuracyPerMatch", UNSET)
         )
 
-        def _parse_goal_keeper_fast_break_shots_against(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_goal_keeper_fast_break_shots_against(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        goal_keeper_fast_break_shots_against = (
-            _parse_goal_keeper_fast_break_shots_against(
-                d.pop("goalKeeperFastBreakShotsAgainst", UNSET)
-            )
+        goal_keeper_fast_break_shots_against = _parse_goal_keeper_fast_break_shots_against(
+            d.pop("goalKeeperFastBreakShotsAgainst", UNSET)
         )
 
-        def _parse_goal_keeper_fast_break_shots_against_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_fast_break_shots_against_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_fast_break_shots_against_per_match = (
-            _parse_goal_keeper_fast_break_shots_against_per_match(
-                d.pop("goalKeeperFastBreakShotsAgainstPerMatch", UNSET)
-            )
+        goal_keeper_fast_break_shots_against_per_match = _parse_goal_keeper_fast_break_shots_against_per_match(
+            d.pop("goalKeeperFastBreakShotsAgainstPerMatch", UNSET)
         )
 
-        def _parse_goal_keeper_fast_break_shots_saved(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_goal_keeper_fast_break_shots_saved(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -6915,24 +5941,18 @@ class CompetitionPersonStatisticsModelStatistics:
             d.pop("goalKeeperFastBreakShotsSaved", UNSET)
         )
 
-        def _parse_goal_keeper_fast_break_shots_saved_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_fast_break_shots_saved_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_fast_break_shots_saved_per_match = (
-            _parse_goal_keeper_fast_break_shots_saved_per_match(
-                d.pop("goalKeeperFastBreakShotsSavedPerMatch", UNSET)
-            )
+        goal_keeper_fast_break_shots_saved_per_match = _parse_goal_keeper_fast_break_shots_saved_per_match(
+            d.pop("goalKeeperFastBreakShotsSavedPerMatch", UNSET)
         )
 
-        def _parse_goal_keeper_field_goals_against(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_goal_keeper_field_goals_against(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -6943,41 +5963,31 @@ class CompetitionPersonStatisticsModelStatistics:
             d.pop("goalKeeperFieldGoalsAgainst", UNSET)
         )
 
-        def _parse_goal_keeper_field_goals_against_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_field_goals_against_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_field_goals_against_per_match = (
-            _parse_goal_keeper_field_goals_against_per_match(
-                d.pop("goalKeeperFieldGoalsAgainstPerMatch", UNSET)
-            )
+        goal_keeper_field_goals_against_per_match = _parse_goal_keeper_field_goals_against_per_match(
+            d.pop("goalKeeperFieldGoalsAgainstPerMatch", UNSET)
         )
 
         goal_keeper_field_save_accuracy = d.pop("goalKeeperFieldSaveAccuracy", UNSET)
 
-        def _parse_goal_keeper_field_save_accuracy_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_field_save_accuracy_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_field_save_accuracy_per_match = (
-            _parse_goal_keeper_field_save_accuracy_per_match(
-                d.pop("goalKeeperFieldSaveAccuracyPerMatch", UNSET)
-            )
+        goal_keeper_field_save_accuracy_per_match = _parse_goal_keeper_field_save_accuracy_per_match(
+            d.pop("goalKeeperFieldSaveAccuracyPerMatch", UNSET)
         )
 
-        def _parse_goal_keeper_field_shots_against(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_goal_keeper_field_shots_against(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -6988,47 +5998,35 @@ class CompetitionPersonStatisticsModelStatistics:
             d.pop("goalKeeperFieldShotsAgainst", UNSET)
         )
 
-        def _parse_goal_keeper_field_shots_against_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_field_shots_against_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_field_shots_against_per_match = (
-            _parse_goal_keeper_field_shots_against_per_match(
-                d.pop("goalKeeperFieldShotsAgainstPerMatch", UNSET)
-            )
+        goal_keeper_field_shots_against_per_match = _parse_goal_keeper_field_shots_against_per_match(
+            d.pop("goalKeeperFieldShotsAgainstPerMatch", UNSET)
         )
 
-        def _parse_goal_keeper_field_shots_saved(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_goal_keeper_field_shots_saved(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        goal_keeper_field_shots_saved = _parse_goal_keeper_field_shots_saved(
-            d.pop("goalKeeperFieldShotsSaved", UNSET)
-        )
+        goal_keeper_field_shots_saved = _parse_goal_keeper_field_shots_saved(d.pop("goalKeeperFieldShotsSaved", UNSET))
 
-        def _parse_goal_keeper_field_shots_saved_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_field_shots_saved_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_field_shots_saved_per_match = (
-            _parse_goal_keeper_field_shots_saved_per_match(
-                d.pop("goalKeeperFieldShotsSavedPerMatch", UNSET)
-            )
+        goal_keeper_field_shots_saved_per_match = _parse_goal_keeper_field_shots_saved_per_match(
+            d.pop("goalKeeperFieldShotsSavedPerMatch", UNSET)
         )
 
         def _parse_goal_keeper_goals_against(data: object) -> Union[None, Unset, int]:
@@ -7038,43 +6036,31 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        goal_keeper_goals_against = _parse_goal_keeper_goals_against(
-            d.pop("goalKeeperGoalsAgainst", UNSET)
-        )
+        goal_keeper_goals_against = _parse_goal_keeper_goals_against(d.pop("goalKeeperGoalsAgainst", UNSET))
 
-        def _parse_goal_keeper_goals_against_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_goals_against_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_goals_against_per_match = (
-            _parse_goal_keeper_goals_against_per_match(
-                d.pop("goalKeeperGoalsAgainstPerMatch", UNSET)
-            )
+        goal_keeper_goals_against_per_match = _parse_goal_keeper_goals_against_per_match(
+            d.pop("goalKeeperGoalsAgainstPerMatch", UNSET)
         )
 
-        def _parse_goal_keeper_nine_metre_centre_goals_against(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_goal_keeper_nine_metre_centre_goals_against(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        goal_keeper_nine_metre_centre_goals_against = (
-            _parse_goal_keeper_nine_metre_centre_goals_against(
-                d.pop("goalKeeperNineMetreCentreGoalsAgainst", UNSET)
-            )
+        goal_keeper_nine_metre_centre_goals_against = _parse_goal_keeper_nine_metre_centre_goals_against(
+            d.pop("goalKeeperNineMetreCentreGoalsAgainst", UNSET)
         )
 
-        def _parse_goal_keeper_nine_metre_centre_goals_against_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_nine_metre_centre_goals_against_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -7087,13 +6073,9 @@ class CompetitionPersonStatisticsModelStatistics:
             )
         )
 
-        goal_keeper_nine_metre_centre_save_accuracy = d.pop(
-            "goalKeeperNineMetreCentreSaveAccuracy", UNSET
-        )
+        goal_keeper_nine_metre_centre_save_accuracy = d.pop("goalKeeperNineMetreCentreSaveAccuracy", UNSET)
 
-        def _parse_goal_keeper_nine_metre_centre_save_accuracy_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_nine_metre_centre_save_accuracy_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -7106,24 +6088,18 @@ class CompetitionPersonStatisticsModelStatistics:
             )
         )
 
-        def _parse_goal_keeper_nine_metre_centre_shots_against(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_goal_keeper_nine_metre_centre_shots_against(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        goal_keeper_nine_metre_centre_shots_against = (
-            _parse_goal_keeper_nine_metre_centre_shots_against(
-                d.pop("goalKeeperNineMetreCentreShotsAgainst", UNSET)
-            )
+        goal_keeper_nine_metre_centre_shots_against = _parse_goal_keeper_nine_metre_centre_shots_against(
+            d.pop("goalKeeperNineMetreCentreShotsAgainst", UNSET)
         )
 
-        def _parse_goal_keeper_nine_metre_centre_shots_against_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_nine_metre_centre_shots_against_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -7136,24 +6112,18 @@ class CompetitionPersonStatisticsModelStatistics:
             )
         )
 
-        def _parse_goal_keeper_nine_metre_centre_shots_saved(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_goal_keeper_nine_metre_centre_shots_saved(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        goal_keeper_nine_metre_centre_shots_saved = (
-            _parse_goal_keeper_nine_metre_centre_shots_saved(
-                d.pop("goalKeeperNineMetreCentreShotsSaved", UNSET)
-            )
+        goal_keeper_nine_metre_centre_shots_saved = _parse_goal_keeper_nine_metre_centre_shots_saved(
+            d.pop("goalKeeperNineMetreCentreShotsSaved", UNSET)
         )
 
-        def _parse_goal_keeper_nine_metre_centre_shots_saved_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_nine_metre_centre_shots_saved_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -7166,54 +6136,40 @@ class CompetitionPersonStatisticsModelStatistics:
             )
         )
 
-        def _parse_goal_keeper_nine_metre_goals_against(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_goal_keeper_nine_metre_goals_against(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        goal_keeper_nine_metre_goals_against = (
-            _parse_goal_keeper_nine_metre_goals_against(
-                d.pop("goalKeeperNineMetreGoalsAgainst", UNSET)
-            )
+        goal_keeper_nine_metre_goals_against = _parse_goal_keeper_nine_metre_goals_against(
+            d.pop("goalKeeperNineMetreGoalsAgainst", UNSET)
         )
 
-        def _parse_goal_keeper_nine_metre_goals_against_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_nine_metre_goals_against_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_nine_metre_goals_against_per_match = (
-            _parse_goal_keeper_nine_metre_goals_against_per_match(
-                d.pop("goalKeeperNineMetreGoalsAgainstPerMatch", UNSET)
-            )
+        goal_keeper_nine_metre_goals_against_per_match = _parse_goal_keeper_nine_metre_goals_against_per_match(
+            d.pop("goalKeeperNineMetreGoalsAgainstPerMatch", UNSET)
         )
 
-        def _parse_goal_keeper_nine_metre_left_goals_against(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_goal_keeper_nine_metre_left_goals_against(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        goal_keeper_nine_metre_left_goals_against = (
-            _parse_goal_keeper_nine_metre_left_goals_against(
-                d.pop("goalKeeperNineMetreLeftGoalsAgainst", UNSET)
-            )
+        goal_keeper_nine_metre_left_goals_against = _parse_goal_keeper_nine_metre_left_goals_against(
+            d.pop("goalKeeperNineMetreLeftGoalsAgainst", UNSET)
         )
 
-        def _parse_goal_keeper_nine_metre_left_goals_against_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_nine_metre_left_goals_against_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -7226,13 +6182,9 @@ class CompetitionPersonStatisticsModelStatistics:
             )
         )
 
-        goal_keeper_nine_metre_left_save_accuracy = d.pop(
-            "goalKeeperNineMetreLeftSaveAccuracy", UNSET
-        )
+        goal_keeper_nine_metre_left_save_accuracy = d.pop("goalKeeperNineMetreLeftSaveAccuracy", UNSET)
 
-        def _parse_goal_keeper_nine_metre_left_save_accuracy_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_nine_metre_left_save_accuracy_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -7245,24 +6197,18 @@ class CompetitionPersonStatisticsModelStatistics:
             )
         )
 
-        def _parse_goal_keeper_nine_metre_left_shots_against(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_goal_keeper_nine_metre_left_shots_against(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        goal_keeper_nine_metre_left_shots_against = (
-            _parse_goal_keeper_nine_metre_left_shots_against(
-                d.pop("goalKeeperNineMetreLeftShotsAgainst", UNSET)
-            )
+        goal_keeper_nine_metre_left_shots_against = _parse_goal_keeper_nine_metre_left_shots_against(
+            d.pop("goalKeeperNineMetreLeftShotsAgainst", UNSET)
         )
 
-        def _parse_goal_keeper_nine_metre_left_shots_against_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_nine_metre_left_shots_against_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -7275,54 +6221,40 @@ class CompetitionPersonStatisticsModelStatistics:
             )
         )
 
-        def _parse_goal_keeper_nine_metre_left_shots_saved(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_goal_keeper_nine_metre_left_shots_saved(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        goal_keeper_nine_metre_left_shots_saved = (
-            _parse_goal_keeper_nine_metre_left_shots_saved(
-                d.pop("goalKeeperNineMetreLeftShotsSaved", UNSET)
-            )
+        goal_keeper_nine_metre_left_shots_saved = _parse_goal_keeper_nine_metre_left_shots_saved(
+            d.pop("goalKeeperNineMetreLeftShotsSaved", UNSET)
         )
 
-        def _parse_goal_keeper_nine_metre_left_shots_saved_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_nine_metre_left_shots_saved_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_nine_metre_left_shots_saved_per_match = (
-            _parse_goal_keeper_nine_metre_left_shots_saved_per_match(
-                d.pop("goalKeeperNineMetreLeftShotsSavedPerMatch", UNSET)
-            )
+        goal_keeper_nine_metre_left_shots_saved_per_match = _parse_goal_keeper_nine_metre_left_shots_saved_per_match(
+            d.pop("goalKeeperNineMetreLeftShotsSavedPerMatch", UNSET)
         )
 
-        def _parse_goal_keeper_nine_metre_right_goals_against(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_goal_keeper_nine_metre_right_goals_against(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        goal_keeper_nine_metre_right_goals_against = (
-            _parse_goal_keeper_nine_metre_right_goals_against(
-                d.pop("goalKeeperNineMetreRightGoalsAgainst", UNSET)
-            )
+        goal_keeper_nine_metre_right_goals_against = _parse_goal_keeper_nine_metre_right_goals_against(
+            d.pop("goalKeeperNineMetreRightGoalsAgainst", UNSET)
         )
 
-        def _parse_goal_keeper_nine_metre_right_goals_against_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_nine_metre_right_goals_against_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -7335,13 +6267,9 @@ class CompetitionPersonStatisticsModelStatistics:
             )
         )
 
-        goal_keeper_nine_metre_right_save_accuracy = d.pop(
-            "goalKeeperNineMetreRightSaveAccuracy", UNSET
-        )
+        goal_keeper_nine_metre_right_save_accuracy = d.pop("goalKeeperNineMetreRightSaveAccuracy", UNSET)
 
-        def _parse_goal_keeper_nine_metre_right_save_accuracy_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_nine_metre_right_save_accuracy_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -7354,24 +6282,18 @@ class CompetitionPersonStatisticsModelStatistics:
             )
         )
 
-        def _parse_goal_keeper_nine_metre_right_shots_against(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_goal_keeper_nine_metre_right_shots_against(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        goal_keeper_nine_metre_right_shots_against = (
-            _parse_goal_keeper_nine_metre_right_shots_against(
-                d.pop("goalKeeperNineMetreRightShotsAgainst", UNSET)
-            )
+        goal_keeper_nine_metre_right_shots_against = _parse_goal_keeper_nine_metre_right_shots_against(
+            d.pop("goalKeeperNineMetreRightShotsAgainst", UNSET)
         )
 
-        def _parse_goal_keeper_nine_metre_right_shots_against_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_nine_metre_right_shots_against_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -7384,88 +6306,64 @@ class CompetitionPersonStatisticsModelStatistics:
             )
         )
 
-        def _parse_goal_keeper_nine_metre_right_shots_saved(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_goal_keeper_nine_metre_right_shots_saved(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        goal_keeper_nine_metre_right_shots_saved = (
-            _parse_goal_keeper_nine_metre_right_shots_saved(
-                d.pop("goalKeeperNineMetreRightShotsSaved", UNSET)
-            )
+        goal_keeper_nine_metre_right_shots_saved = _parse_goal_keeper_nine_metre_right_shots_saved(
+            d.pop("goalKeeperNineMetreRightShotsSaved", UNSET)
         )
 
-        def _parse_goal_keeper_nine_metre_right_shots_saved_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_nine_metre_right_shots_saved_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_nine_metre_right_shots_saved_per_match = (
-            _parse_goal_keeper_nine_metre_right_shots_saved_per_match(
-                d.pop("goalKeeperNineMetreRightShotsSavedPerMatch", UNSET)
-            )
+        goal_keeper_nine_metre_right_shots_saved_per_match = _parse_goal_keeper_nine_metre_right_shots_saved_per_match(
+            d.pop("goalKeeperNineMetreRightShotsSavedPerMatch", UNSET)
         )
 
-        goal_keeper_nine_metre_save_accuracy = d.pop(
-            "goalKeeperNineMetreSaveAccuracy", UNSET
-        )
+        goal_keeper_nine_metre_save_accuracy = d.pop("goalKeeperNineMetreSaveAccuracy", UNSET)
 
-        def _parse_goal_keeper_nine_metre_save_accuracy_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_nine_metre_save_accuracy_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_nine_metre_save_accuracy_per_match = (
-            _parse_goal_keeper_nine_metre_save_accuracy_per_match(
-                d.pop("goalKeeperNineMetreSaveAccuracyPerMatch", UNSET)
-            )
+        goal_keeper_nine_metre_save_accuracy_per_match = _parse_goal_keeper_nine_metre_save_accuracy_per_match(
+            d.pop("goalKeeperNineMetreSaveAccuracyPerMatch", UNSET)
         )
 
-        def _parse_goal_keeper_nine_metre_shots_against(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_goal_keeper_nine_metre_shots_against(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        goal_keeper_nine_metre_shots_against = (
-            _parse_goal_keeper_nine_metre_shots_against(
-                d.pop("goalKeeperNineMetreShotsAgainst", UNSET)
-            )
+        goal_keeper_nine_metre_shots_against = _parse_goal_keeper_nine_metre_shots_against(
+            d.pop("goalKeeperNineMetreShotsAgainst", UNSET)
         )
 
-        def _parse_goal_keeper_nine_metre_shots_against_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_nine_metre_shots_against_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_nine_metre_shots_against_per_match = (
-            _parse_goal_keeper_nine_metre_shots_against_per_match(
-                d.pop("goalKeeperNineMetreShotsAgainstPerMatch", UNSET)
-            )
+        goal_keeper_nine_metre_shots_against_per_match = _parse_goal_keeper_nine_metre_shots_against_per_match(
+            d.pop("goalKeeperNineMetreShotsAgainstPerMatch", UNSET)
         )
 
-        def _parse_goal_keeper_nine_metre_shots_saved(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_goal_keeper_nine_metre_shots_saved(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -7476,24 +6374,18 @@ class CompetitionPersonStatisticsModelStatistics:
             d.pop("goalKeeperNineMetreShotsSaved", UNSET)
         )
 
-        def _parse_goal_keeper_nine_metre_shots_saved_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_nine_metre_shots_saved_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_nine_metre_shots_saved_per_match = (
-            _parse_goal_keeper_nine_metre_shots_saved_per_match(
-                d.pop("goalKeeperNineMetreShotsSavedPerMatch", UNSET)
-            )
+        goal_keeper_nine_metre_shots_saved_per_match = _parse_goal_keeper_nine_metre_shots_saved_per_match(
+            d.pop("goalKeeperNineMetreShotsSavedPerMatch", UNSET)
         )
 
-        def _parse_goal_keeper_pivot_goals_against(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_goal_keeper_pivot_goals_against(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -7504,41 +6396,31 @@ class CompetitionPersonStatisticsModelStatistics:
             d.pop("goalKeeperPivotGoalsAgainst", UNSET)
         )
 
-        def _parse_goal_keeper_pivot_goals_against_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_pivot_goals_against_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_pivot_goals_against_per_match = (
-            _parse_goal_keeper_pivot_goals_against_per_match(
-                d.pop("goalKeeperPivotGoalsAgainstPerMatch", UNSET)
-            )
+        goal_keeper_pivot_goals_against_per_match = _parse_goal_keeper_pivot_goals_against_per_match(
+            d.pop("goalKeeperPivotGoalsAgainstPerMatch", UNSET)
         )
 
         goal_keeper_pivot_save_accuracy = d.pop("goalKeeperPivotSaveAccuracy", UNSET)
 
-        def _parse_goal_keeper_pivot_save_accuracy_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_pivot_save_accuracy_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_pivot_save_accuracy_per_match = (
-            _parse_goal_keeper_pivot_save_accuracy_per_match(
-                d.pop("goalKeeperPivotSaveAccuracyPerMatch", UNSET)
-            )
+        goal_keeper_pivot_save_accuracy_per_match = _parse_goal_keeper_pivot_save_accuracy_per_match(
+            d.pop("goalKeeperPivotSaveAccuracyPerMatch", UNSET)
         )
 
-        def _parse_goal_keeper_pivot_shots_against(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_goal_keeper_pivot_shots_against(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -7549,64 +6431,48 @@ class CompetitionPersonStatisticsModelStatistics:
             d.pop("goalKeeperPivotShotsAgainst", UNSET)
         )
 
-        def _parse_goal_keeper_pivot_shots_against_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_pivot_shots_against_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_pivot_shots_against_per_match = (
-            _parse_goal_keeper_pivot_shots_against_per_match(
-                d.pop("goalKeeperPivotShotsAgainstPerMatch", UNSET)
-            )
+        goal_keeper_pivot_shots_against_per_match = _parse_goal_keeper_pivot_shots_against_per_match(
+            d.pop("goalKeeperPivotShotsAgainstPerMatch", UNSET)
         )
 
-        def _parse_goal_keeper_pivot_shots_saved(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_goal_keeper_pivot_shots_saved(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        goal_keeper_pivot_shots_saved = _parse_goal_keeper_pivot_shots_saved(
-            d.pop("goalKeeperPivotShotsSaved", UNSET)
-        )
+        goal_keeper_pivot_shots_saved = _parse_goal_keeper_pivot_shots_saved(d.pop("goalKeeperPivotShotsSaved", UNSET))
 
-        def _parse_goal_keeper_pivot_shots_saved_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_pivot_shots_saved_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_pivot_shots_saved_per_match = (
-            _parse_goal_keeper_pivot_shots_saved_per_match(
-                d.pop("goalKeeperPivotShotsSavedPerMatch", UNSET)
-            )
+        goal_keeper_pivot_shots_saved_per_match = _parse_goal_keeper_pivot_shots_saved_per_match(
+            d.pop("goalKeeperPivotShotsSavedPerMatch", UNSET)
         )
 
         goal_keeper_save_accuracy = d.pop("goalKeeperSaveAccuracy", UNSET)
 
-        def _parse_goal_keeper_save_accuracy_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_save_accuracy_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_save_accuracy_per_match = (
-            _parse_goal_keeper_save_accuracy_per_match(
-                d.pop("goalKeeperSaveAccuracyPerMatch", UNSET)
-            )
+        goal_keeper_save_accuracy_per_match = _parse_goal_keeper_save_accuracy_per_match(
+            d.pop("goalKeeperSaveAccuracyPerMatch", UNSET)
         )
 
         def _parse_goal_keeper_seconds_played(data: object) -> Union[None, Unset, int]:
@@ -7616,132 +6482,96 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        goal_keeper_seconds_played = _parse_goal_keeper_seconds_played(
-            d.pop("goalKeeperSecondsPlayed", UNSET)
-        )
+        goal_keeper_seconds_played = _parse_goal_keeper_seconds_played(d.pop("goalKeeperSecondsPlayed", UNSET))
 
-        def _parse_goal_keeper_seconds_played_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_seconds_played_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_seconds_played_per_match = (
-            _parse_goal_keeper_seconds_played_per_match(
-                d.pop("goalKeeperSecondsPlayedPerMatch", UNSET)
-            )
+        goal_keeper_seconds_played_per_match = _parse_goal_keeper_seconds_played_per_match(
+            d.pop("goalKeeperSecondsPlayedPerMatch", UNSET)
         )
 
-        def _parse_goal_keeper_seven_metre_goals_against(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_goal_keeper_seven_metre_goals_against(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        goal_keeper_seven_metre_goals_against = (
-            _parse_goal_keeper_seven_metre_goals_against(
-                d.pop("goalKeeperSevenMetreGoalsAgainst", UNSET)
-            )
+        goal_keeper_seven_metre_goals_against = _parse_goal_keeper_seven_metre_goals_against(
+            d.pop("goalKeeperSevenMetreGoalsAgainst", UNSET)
         )
 
-        def _parse_goal_keeper_seven_metre_goals_against_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_seven_metre_goals_against_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_seven_metre_goals_against_per_match = (
-            _parse_goal_keeper_seven_metre_goals_against_per_match(
-                d.pop("goalKeeperSevenMetreGoalsAgainstPerMatch", UNSET)
-            )
+        goal_keeper_seven_metre_goals_against_per_match = _parse_goal_keeper_seven_metre_goals_against_per_match(
+            d.pop("goalKeeperSevenMetreGoalsAgainstPerMatch", UNSET)
         )
 
-        goal_keeper_seven_metre_save_accuracy = d.pop(
-            "goalKeeperSevenMetreSaveAccuracy", UNSET
-        )
+        goal_keeper_seven_metre_save_accuracy = d.pop("goalKeeperSevenMetreSaveAccuracy", UNSET)
 
-        def _parse_goal_keeper_seven_metre_save_accuracy_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_seven_metre_save_accuracy_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_seven_metre_save_accuracy_per_match = (
-            _parse_goal_keeper_seven_metre_save_accuracy_per_match(
-                d.pop("goalKeeperSevenMetreSaveAccuracyPerMatch", UNSET)
-            )
+        goal_keeper_seven_metre_save_accuracy_per_match = _parse_goal_keeper_seven_metre_save_accuracy_per_match(
+            d.pop("goalKeeperSevenMetreSaveAccuracyPerMatch", UNSET)
         )
 
-        def _parse_goal_keeper_seven_metre_shots_against(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_goal_keeper_seven_metre_shots_against(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        goal_keeper_seven_metre_shots_against = (
-            _parse_goal_keeper_seven_metre_shots_against(
-                d.pop("goalKeeperSevenMetreShotsAgainst", UNSET)
-            )
+        goal_keeper_seven_metre_shots_against = _parse_goal_keeper_seven_metre_shots_against(
+            d.pop("goalKeeperSevenMetreShotsAgainst", UNSET)
         )
 
-        def _parse_goal_keeper_seven_metre_shots_against_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_seven_metre_shots_against_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_seven_metre_shots_against_per_match = (
-            _parse_goal_keeper_seven_metre_shots_against_per_match(
-                d.pop("goalKeeperSevenMetreShotsAgainstPerMatch", UNSET)
-            )
+        goal_keeper_seven_metre_shots_against_per_match = _parse_goal_keeper_seven_metre_shots_against_per_match(
+            d.pop("goalKeeperSevenMetreShotsAgainstPerMatch", UNSET)
         )
 
-        def _parse_goal_keeper_seven_metre_shots_saved(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_goal_keeper_seven_metre_shots_saved(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        goal_keeper_seven_metre_shots_saved = (
-            _parse_goal_keeper_seven_metre_shots_saved(
-                d.pop("goalKeeperSevenMetreShotsSaved", UNSET)
-            )
+        goal_keeper_seven_metre_shots_saved = _parse_goal_keeper_seven_metre_shots_saved(
+            d.pop("goalKeeperSevenMetreShotsSaved", UNSET)
         )
 
-        def _parse_goal_keeper_seven_metre_shots_saved_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_seven_metre_shots_saved_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_seven_metre_shots_saved_per_match = (
-            _parse_goal_keeper_seven_metre_shots_saved_per_match(
-                d.pop("goalKeeperSevenMetreShotsSavedPerMatch", UNSET)
-            )
+        goal_keeper_seven_metre_shots_saved_per_match = _parse_goal_keeper_seven_metre_shots_saved_per_match(
+            d.pop("goalKeeperSevenMetreShotsSavedPerMatch", UNSET)
         )
 
         def _parse_goal_keeper_shots_against(data: object) -> Union[None, Unset, int]:
@@ -7751,38 +6581,28 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        goal_keeper_shots_against = _parse_goal_keeper_shots_against(
-            d.pop("goalKeeperShotsAgainst", UNSET)
-        )
+        goal_keeper_shots_against = _parse_goal_keeper_shots_against(d.pop("goalKeeperShotsAgainst", UNSET))
 
-        def _parse_goal_keeper_shots_against_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_shots_against_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_shots_against_per_match = (
-            _parse_goal_keeper_shots_against_per_match(
-                d.pop("goalKeeperShotsAgainstPerMatch", UNSET)
-            )
+        goal_keeper_shots_against_per_match = _parse_goal_keeper_shots_against_per_match(
+            d.pop("goalKeeperShotsAgainstPerMatch", UNSET)
         )
 
-        def _parse_goal_keeper_shots_per_goals_against(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_shots_per_goals_against(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_shots_per_goals_against = (
-            _parse_goal_keeper_shots_per_goals_against(
-                d.pop("goalKeeperShotsPerGoalsAgainst", UNSET)
-            )
+        goal_keeper_shots_per_goals_against = _parse_goal_keeper_shots_per_goals_against(
+            d.pop("goalKeeperShotsPerGoalsAgainst", UNSET)
         )
 
         def _parse_goal_keeper_shots_saved(data: object) -> Union[None, Unset, int]:
@@ -7792,13 +6612,9 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        goal_keeper_shots_saved = _parse_goal_keeper_shots_saved(
-            d.pop("goalKeeperShotsSaved", UNSET)
-        )
+        goal_keeper_shots_saved = _parse_goal_keeper_shots_saved(d.pop("goalKeeperShotsSaved", UNSET))
 
-        def _parse_goal_keeper_shots_saved_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_shots_saved_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -7809,24 +6625,18 @@ class CompetitionPersonStatisticsModelStatistics:
             d.pop("goalKeeperShotsSavedPerMatch", UNSET)
         )
 
-        def _parse_goal_keeper_six_metre_centre_goals_against(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_goal_keeper_six_metre_centre_goals_against(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        goal_keeper_six_metre_centre_goals_against = (
-            _parse_goal_keeper_six_metre_centre_goals_against(
-                d.pop("goalKeeperSixMetreCentreGoalsAgainst", UNSET)
-            )
+        goal_keeper_six_metre_centre_goals_against = _parse_goal_keeper_six_metre_centre_goals_against(
+            d.pop("goalKeeperSixMetreCentreGoalsAgainst", UNSET)
         )
 
-        def _parse_goal_keeper_six_metre_centre_goals_against_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_six_metre_centre_goals_against_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -7839,13 +6649,9 @@ class CompetitionPersonStatisticsModelStatistics:
             )
         )
 
-        goal_keeper_six_metre_centre_save_accuracy = d.pop(
-            "goalKeeperSixMetreCentreSaveAccuracy", UNSET
-        )
+        goal_keeper_six_metre_centre_save_accuracy = d.pop("goalKeeperSixMetreCentreSaveAccuracy", UNSET)
 
-        def _parse_goal_keeper_six_metre_centre_save_accuracy_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_six_metre_centre_save_accuracy_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -7858,24 +6664,18 @@ class CompetitionPersonStatisticsModelStatistics:
             )
         )
 
-        def _parse_goal_keeper_six_metre_centre_shots_against(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_goal_keeper_six_metre_centre_shots_against(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        goal_keeper_six_metre_centre_shots_against = (
-            _parse_goal_keeper_six_metre_centre_shots_against(
-                d.pop("goalKeeperSixMetreCentreShotsAgainst", UNSET)
-            )
+        goal_keeper_six_metre_centre_shots_against = _parse_goal_keeper_six_metre_centre_shots_against(
+            d.pop("goalKeeperSixMetreCentreShotsAgainst", UNSET)
         )
 
-        def _parse_goal_keeper_six_metre_centre_shots_against_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_six_metre_centre_shots_against_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -7888,193 +6688,141 @@ class CompetitionPersonStatisticsModelStatistics:
             )
         )
 
-        def _parse_goal_keeper_six_metre_centre_shots_saved(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_goal_keeper_six_metre_centre_shots_saved(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        goal_keeper_six_metre_centre_shots_saved = (
-            _parse_goal_keeper_six_metre_centre_shots_saved(
-                d.pop("goalKeeperSixMetreCentreShotsSaved", UNSET)
-            )
+        goal_keeper_six_metre_centre_shots_saved = _parse_goal_keeper_six_metre_centre_shots_saved(
+            d.pop("goalKeeperSixMetreCentreShotsSaved", UNSET)
         )
 
-        def _parse_goal_keeper_six_metre_centre_shots_saved_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_six_metre_centre_shots_saved_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_six_metre_centre_shots_saved_per_match = (
-            _parse_goal_keeper_six_metre_centre_shots_saved_per_match(
-                d.pop("goalKeeperSixMetreCentreShotsSavedPerMatch", UNSET)
-            )
+        goal_keeper_six_metre_centre_shots_saved_per_match = _parse_goal_keeper_six_metre_centre_shots_saved_per_match(
+            d.pop("goalKeeperSixMetreCentreShotsSavedPerMatch", UNSET)
         )
 
-        def _parse_goal_keeper_six_metre_goals_against(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_goal_keeper_six_metre_goals_against(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        goal_keeper_six_metre_goals_against = (
-            _parse_goal_keeper_six_metre_goals_against(
-                d.pop("goalKeeperSixMetreGoalsAgainst", UNSET)
-            )
+        goal_keeper_six_metre_goals_against = _parse_goal_keeper_six_metre_goals_against(
+            d.pop("goalKeeperSixMetreGoalsAgainst", UNSET)
         )
 
-        def _parse_goal_keeper_six_metre_goals_against_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_six_metre_goals_against_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_six_metre_goals_against_per_match = (
-            _parse_goal_keeper_six_metre_goals_against_per_match(
-                d.pop("goalKeeperSixMetreGoalsAgainstPerMatch", UNSET)
-            )
+        goal_keeper_six_metre_goals_against_per_match = _parse_goal_keeper_six_metre_goals_against_per_match(
+            d.pop("goalKeeperSixMetreGoalsAgainstPerMatch", UNSET)
         )
 
-        def _parse_goal_keeper_six_metre_left_goals_against(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_goal_keeper_six_metre_left_goals_against(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        goal_keeper_six_metre_left_goals_against = (
-            _parse_goal_keeper_six_metre_left_goals_against(
-                d.pop("goalKeeperSixMetreLeftGoalsAgainst", UNSET)
-            )
+        goal_keeper_six_metre_left_goals_against = _parse_goal_keeper_six_metre_left_goals_against(
+            d.pop("goalKeeperSixMetreLeftGoalsAgainst", UNSET)
         )
 
-        def _parse_goal_keeper_six_metre_left_goals_against_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_six_metre_left_goals_against_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_six_metre_left_goals_against_per_match = (
-            _parse_goal_keeper_six_metre_left_goals_against_per_match(
-                d.pop("goalKeeperSixMetreLeftGoalsAgainstPerMatch", UNSET)
-            )
+        goal_keeper_six_metre_left_goals_against_per_match = _parse_goal_keeper_six_metre_left_goals_against_per_match(
+            d.pop("goalKeeperSixMetreLeftGoalsAgainstPerMatch", UNSET)
         )
 
-        goal_keeper_six_metre_left_save_accuracy = d.pop(
-            "goalKeeperSixMetreLeftSaveAccuracy", UNSET
-        )
+        goal_keeper_six_metre_left_save_accuracy = d.pop("goalKeeperSixMetreLeftSaveAccuracy", UNSET)
 
-        def _parse_goal_keeper_six_metre_left_save_accuracy_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_six_metre_left_save_accuracy_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_six_metre_left_save_accuracy_per_match = (
-            _parse_goal_keeper_six_metre_left_save_accuracy_per_match(
-                d.pop("goalKeeperSixMetreLeftSaveAccuracyPerMatch", UNSET)
-            )
+        goal_keeper_six_metre_left_save_accuracy_per_match = _parse_goal_keeper_six_metre_left_save_accuracy_per_match(
+            d.pop("goalKeeperSixMetreLeftSaveAccuracyPerMatch", UNSET)
         )
 
-        def _parse_goal_keeper_six_metre_left_shots_against(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_goal_keeper_six_metre_left_shots_against(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        goal_keeper_six_metre_left_shots_against = (
-            _parse_goal_keeper_six_metre_left_shots_against(
-                d.pop("goalKeeperSixMetreLeftShotsAgainst", UNSET)
-            )
+        goal_keeper_six_metre_left_shots_against = _parse_goal_keeper_six_metre_left_shots_against(
+            d.pop("goalKeeperSixMetreLeftShotsAgainst", UNSET)
         )
 
-        def _parse_goal_keeper_six_metre_left_shots_against_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_six_metre_left_shots_against_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_six_metre_left_shots_against_per_match = (
-            _parse_goal_keeper_six_metre_left_shots_against_per_match(
-                d.pop("goalKeeperSixMetreLeftShotsAgainstPerMatch", UNSET)
-            )
+        goal_keeper_six_metre_left_shots_against_per_match = _parse_goal_keeper_six_metre_left_shots_against_per_match(
+            d.pop("goalKeeperSixMetreLeftShotsAgainstPerMatch", UNSET)
         )
 
-        def _parse_goal_keeper_six_metre_left_shots_saved(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_goal_keeper_six_metre_left_shots_saved(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        goal_keeper_six_metre_left_shots_saved = (
-            _parse_goal_keeper_six_metre_left_shots_saved(
-                d.pop("goalKeeperSixMetreLeftShotsSaved", UNSET)
-            )
+        goal_keeper_six_metre_left_shots_saved = _parse_goal_keeper_six_metre_left_shots_saved(
+            d.pop("goalKeeperSixMetreLeftShotsSaved", UNSET)
         )
 
-        def _parse_goal_keeper_six_metre_left_shots_saved_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_six_metre_left_shots_saved_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_six_metre_left_shots_saved_per_match = (
-            _parse_goal_keeper_six_metre_left_shots_saved_per_match(
-                d.pop("goalKeeperSixMetreLeftShotsSavedPerMatch", UNSET)
-            )
+        goal_keeper_six_metre_left_shots_saved_per_match = _parse_goal_keeper_six_metre_left_shots_saved_per_match(
+            d.pop("goalKeeperSixMetreLeftShotsSavedPerMatch", UNSET)
         )
 
-        def _parse_goal_keeper_six_metre_right_goals_against(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_goal_keeper_six_metre_right_goals_against(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        goal_keeper_six_metre_right_goals_against = (
-            _parse_goal_keeper_six_metre_right_goals_against(
-                d.pop("goalKeeperSixMetreRightGoalsAgainst", UNSET)
-            )
+        goal_keeper_six_metre_right_goals_against = _parse_goal_keeper_six_metre_right_goals_against(
+            d.pop("goalKeeperSixMetreRightGoalsAgainst", UNSET)
         )
 
-        def _parse_goal_keeper_six_metre_right_goals_against_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_six_metre_right_goals_against_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -8087,13 +6835,9 @@ class CompetitionPersonStatisticsModelStatistics:
             )
         )
 
-        goal_keeper_six_metre_right_save_accuracy = d.pop(
-            "goalKeeperSixMetreRightSaveAccuracy", UNSET
-        )
+        goal_keeper_six_metre_right_save_accuracy = d.pop("goalKeeperSixMetreRightSaveAccuracy", UNSET)
 
-        def _parse_goal_keeper_six_metre_right_save_accuracy_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_six_metre_right_save_accuracy_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -8106,24 +6850,18 @@ class CompetitionPersonStatisticsModelStatistics:
             )
         )
 
-        def _parse_goal_keeper_six_metre_right_shots_against(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_goal_keeper_six_metre_right_shots_against(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        goal_keeper_six_metre_right_shots_against = (
-            _parse_goal_keeper_six_metre_right_shots_against(
-                d.pop("goalKeeperSixMetreRightShotsAgainst", UNSET)
-            )
+        goal_keeper_six_metre_right_shots_against = _parse_goal_keeper_six_metre_right_shots_against(
+            d.pop("goalKeeperSixMetreRightShotsAgainst", UNSET)
         )
 
-        def _parse_goal_keeper_six_metre_right_shots_against_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_six_metre_right_shots_against_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -8136,88 +6874,64 @@ class CompetitionPersonStatisticsModelStatistics:
             )
         )
 
-        def _parse_goal_keeper_six_metre_right_shots_saved(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_goal_keeper_six_metre_right_shots_saved(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        goal_keeper_six_metre_right_shots_saved = (
-            _parse_goal_keeper_six_metre_right_shots_saved(
-                d.pop("goalKeeperSixMetreRightShotsSaved", UNSET)
-            )
+        goal_keeper_six_metre_right_shots_saved = _parse_goal_keeper_six_metre_right_shots_saved(
+            d.pop("goalKeeperSixMetreRightShotsSaved", UNSET)
         )
 
-        def _parse_goal_keeper_six_metre_right_shots_saved_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_six_metre_right_shots_saved_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_six_metre_right_shots_saved_per_match = (
-            _parse_goal_keeper_six_metre_right_shots_saved_per_match(
-                d.pop("goalKeeperSixMetreRightShotsSavedPerMatch", UNSET)
-            )
+        goal_keeper_six_metre_right_shots_saved_per_match = _parse_goal_keeper_six_metre_right_shots_saved_per_match(
+            d.pop("goalKeeperSixMetreRightShotsSavedPerMatch", UNSET)
         )
 
-        goal_keeper_six_metre_save_accuracy = d.pop(
-            "goalKeeperSixMetreSaveAccuracy", UNSET
-        )
+        goal_keeper_six_metre_save_accuracy = d.pop("goalKeeperSixMetreSaveAccuracy", UNSET)
 
-        def _parse_goal_keeper_six_metre_save_accuracy_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_six_metre_save_accuracy_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_six_metre_save_accuracy_per_match = (
-            _parse_goal_keeper_six_metre_save_accuracy_per_match(
-                d.pop("goalKeeperSixMetreSaveAccuracyPerMatch", UNSET)
-            )
+        goal_keeper_six_metre_save_accuracy_per_match = _parse_goal_keeper_six_metre_save_accuracy_per_match(
+            d.pop("goalKeeperSixMetreSaveAccuracyPerMatch", UNSET)
         )
 
-        def _parse_goal_keeper_six_metre_shots_against(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_goal_keeper_six_metre_shots_against(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        goal_keeper_six_metre_shots_against = (
-            _parse_goal_keeper_six_metre_shots_against(
-                d.pop("goalKeeperSixMetreShotsAgainst", UNSET)
-            )
+        goal_keeper_six_metre_shots_against = _parse_goal_keeper_six_metre_shots_against(
+            d.pop("goalKeeperSixMetreShotsAgainst", UNSET)
         )
 
-        def _parse_goal_keeper_six_metre_shots_against_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_six_metre_shots_against_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_six_metre_shots_against_per_match = (
-            _parse_goal_keeper_six_metre_shots_against_per_match(
-                d.pop("goalKeeperSixMetreShotsAgainstPerMatch", UNSET)
-            )
+        goal_keeper_six_metre_shots_against_per_match = _parse_goal_keeper_six_metre_shots_against_per_match(
+            d.pop("goalKeeperSixMetreShotsAgainstPerMatch", UNSET)
         )
 
-        def _parse_goal_keeper_six_metre_shots_saved(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_goal_keeper_six_metre_shots_saved(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -8228,24 +6942,18 @@ class CompetitionPersonStatisticsModelStatistics:
             d.pop("goalKeeperSixMetreShotsSaved", UNSET)
         )
 
-        def _parse_goal_keeper_six_metre_shots_saved_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_six_metre_shots_saved_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_six_metre_shots_saved_per_match = (
-            _parse_goal_keeper_six_metre_shots_saved_per_match(
-                d.pop("goalKeeperSixMetreShotsSavedPerMatch", UNSET)
-            )
+        goal_keeper_six_metre_shots_saved_per_match = _parse_goal_keeper_six_metre_shots_saved_per_match(
+            d.pop("goalKeeperSixMetreShotsSavedPerMatch", UNSET)
         )
 
-        def _parse_goal_keeper_wing_goals_against(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_goal_keeper_wing_goals_against(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -8256,103 +6964,75 @@ class CompetitionPersonStatisticsModelStatistics:
             d.pop("goalKeeperWingGoalsAgainst", UNSET)
         )
 
-        def _parse_goal_keeper_wing_goals_against_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_wing_goals_against_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_wing_goals_against_per_match = (
-            _parse_goal_keeper_wing_goals_against_per_match(
-                d.pop("goalKeeperWingGoalsAgainstPerMatch", UNSET)
-            )
+        goal_keeper_wing_goals_against_per_match = _parse_goal_keeper_wing_goals_against_per_match(
+            d.pop("goalKeeperWingGoalsAgainstPerMatch", UNSET)
         )
 
-        def _parse_goal_keeper_wing_left_goals_against(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_goal_keeper_wing_left_goals_against(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        goal_keeper_wing_left_goals_against = (
-            _parse_goal_keeper_wing_left_goals_against(
-                d.pop("goalKeeperWingLeftGoalsAgainst", UNSET)
-            )
+        goal_keeper_wing_left_goals_against = _parse_goal_keeper_wing_left_goals_against(
+            d.pop("goalKeeperWingLeftGoalsAgainst", UNSET)
         )
 
-        def _parse_goal_keeper_wing_left_goals_against_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_wing_left_goals_against_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_wing_left_goals_against_per_match = (
-            _parse_goal_keeper_wing_left_goals_against_per_match(
-                d.pop("goalKeeperWingLeftGoalsAgainstPerMatch", UNSET)
-            )
+        goal_keeper_wing_left_goals_against_per_match = _parse_goal_keeper_wing_left_goals_against_per_match(
+            d.pop("goalKeeperWingLeftGoalsAgainstPerMatch", UNSET)
         )
 
-        goal_keeper_wing_left_save_accuracy = d.pop(
-            "goalKeeperWingLeftSaveAccuracy", UNSET
-        )
+        goal_keeper_wing_left_save_accuracy = d.pop("goalKeeperWingLeftSaveAccuracy", UNSET)
 
-        def _parse_goal_keeper_wing_left_save_accuracy_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_wing_left_save_accuracy_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_wing_left_save_accuracy_per_match = (
-            _parse_goal_keeper_wing_left_save_accuracy_per_match(
-                d.pop("goalKeeperWingLeftSaveAccuracyPerMatch", UNSET)
-            )
+        goal_keeper_wing_left_save_accuracy_per_match = _parse_goal_keeper_wing_left_save_accuracy_per_match(
+            d.pop("goalKeeperWingLeftSaveAccuracyPerMatch", UNSET)
         )
 
-        def _parse_goal_keeper_wing_left_shots_against(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_goal_keeper_wing_left_shots_against(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        goal_keeper_wing_left_shots_against = (
-            _parse_goal_keeper_wing_left_shots_against(
-                d.pop("goalKeeperWingLeftShotsAgainst", UNSET)
-            )
+        goal_keeper_wing_left_shots_against = _parse_goal_keeper_wing_left_shots_against(
+            d.pop("goalKeeperWingLeftShotsAgainst", UNSET)
         )
 
-        def _parse_goal_keeper_wing_left_shots_against_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_wing_left_shots_against_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_wing_left_shots_against_per_match = (
-            _parse_goal_keeper_wing_left_shots_against_per_match(
-                d.pop("goalKeeperWingLeftShotsAgainstPerMatch", UNSET)
-            )
+        goal_keeper_wing_left_shots_against_per_match = _parse_goal_keeper_wing_left_shots_against_per_match(
+            d.pop("goalKeeperWingLeftShotsAgainstPerMatch", UNSET)
         )
 
-        def _parse_goal_keeper_wing_left_shots_saved(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_goal_keeper_wing_left_shots_saved(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -8363,103 +7043,75 @@ class CompetitionPersonStatisticsModelStatistics:
             d.pop("goalKeeperWingLeftShotsSaved", UNSET)
         )
 
-        def _parse_goal_keeper_wing_left_shots_saved_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_wing_left_shots_saved_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_wing_left_shots_saved_per_match = (
-            _parse_goal_keeper_wing_left_shots_saved_per_match(
-                d.pop("goalKeeperWingLeftShotsSavedPerMatch", UNSET)
-            )
+        goal_keeper_wing_left_shots_saved_per_match = _parse_goal_keeper_wing_left_shots_saved_per_match(
+            d.pop("goalKeeperWingLeftShotsSavedPerMatch", UNSET)
         )
 
-        def _parse_goal_keeper_wing_right_goals_against(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_goal_keeper_wing_right_goals_against(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        goal_keeper_wing_right_goals_against = (
-            _parse_goal_keeper_wing_right_goals_against(
-                d.pop("goalKeeperWingRightGoalsAgainst", UNSET)
-            )
+        goal_keeper_wing_right_goals_against = _parse_goal_keeper_wing_right_goals_against(
+            d.pop("goalKeeperWingRightGoalsAgainst", UNSET)
         )
 
-        def _parse_goal_keeper_wing_right_goals_against_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_wing_right_goals_against_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_wing_right_goals_against_per_match = (
-            _parse_goal_keeper_wing_right_goals_against_per_match(
-                d.pop("goalKeeperWingRightGoalsAgainstPerMatch", UNSET)
-            )
+        goal_keeper_wing_right_goals_against_per_match = _parse_goal_keeper_wing_right_goals_against_per_match(
+            d.pop("goalKeeperWingRightGoalsAgainstPerMatch", UNSET)
         )
 
-        goal_keeper_wing_right_save_accuracy = d.pop(
-            "goalKeeperWingRightSaveAccuracy", UNSET
-        )
+        goal_keeper_wing_right_save_accuracy = d.pop("goalKeeperWingRightSaveAccuracy", UNSET)
 
-        def _parse_goal_keeper_wing_right_save_accuracy_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_wing_right_save_accuracy_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_wing_right_save_accuracy_per_match = (
-            _parse_goal_keeper_wing_right_save_accuracy_per_match(
-                d.pop("goalKeeperWingRightSaveAccuracyPerMatch", UNSET)
-            )
+        goal_keeper_wing_right_save_accuracy_per_match = _parse_goal_keeper_wing_right_save_accuracy_per_match(
+            d.pop("goalKeeperWingRightSaveAccuracyPerMatch", UNSET)
         )
 
-        def _parse_goal_keeper_wing_right_shots_against(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_goal_keeper_wing_right_shots_against(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        goal_keeper_wing_right_shots_against = (
-            _parse_goal_keeper_wing_right_shots_against(
-                d.pop("goalKeeperWingRightShotsAgainst", UNSET)
-            )
+        goal_keeper_wing_right_shots_against = _parse_goal_keeper_wing_right_shots_against(
+            d.pop("goalKeeperWingRightShotsAgainst", UNSET)
         )
 
-        def _parse_goal_keeper_wing_right_shots_against_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_wing_right_shots_against_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_wing_right_shots_against_per_match = (
-            _parse_goal_keeper_wing_right_shots_against_per_match(
-                d.pop("goalKeeperWingRightShotsAgainstPerMatch", UNSET)
-            )
+        goal_keeper_wing_right_shots_against_per_match = _parse_goal_keeper_wing_right_shots_against_per_match(
+            d.pop("goalKeeperWingRightShotsAgainstPerMatch", UNSET)
         )
 
-        def _parse_goal_keeper_wing_right_shots_saved(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_goal_keeper_wing_right_shots_saved(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -8470,41 +7122,31 @@ class CompetitionPersonStatisticsModelStatistics:
             d.pop("goalKeeperWingRightShotsSaved", UNSET)
         )
 
-        def _parse_goal_keeper_wing_right_shots_saved_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_wing_right_shots_saved_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_wing_right_shots_saved_per_match = (
-            _parse_goal_keeper_wing_right_shots_saved_per_match(
-                d.pop("goalKeeperWingRightShotsSavedPerMatch", UNSET)
-            )
+        goal_keeper_wing_right_shots_saved_per_match = _parse_goal_keeper_wing_right_shots_saved_per_match(
+            d.pop("goalKeeperWingRightShotsSavedPerMatch", UNSET)
         )
 
         goal_keeper_wing_save_accuracy = d.pop("goalKeeperWingSaveAccuracy", UNSET)
 
-        def _parse_goal_keeper_wing_save_accuracy_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_wing_save_accuracy_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_wing_save_accuracy_per_match = (
-            _parse_goal_keeper_wing_save_accuracy_per_match(
-                d.pop("goalKeeperWingSaveAccuracyPerMatch", UNSET)
-            )
+        goal_keeper_wing_save_accuracy_per_match = _parse_goal_keeper_wing_save_accuracy_per_match(
+            d.pop("goalKeeperWingSaveAccuracyPerMatch", UNSET)
         )
 
-        def _parse_goal_keeper_wing_shots_against(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_goal_keeper_wing_shots_against(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -8515,47 +7157,35 @@ class CompetitionPersonStatisticsModelStatistics:
             d.pop("goalKeeperWingShotsAgainst", UNSET)
         )
 
-        def _parse_goal_keeper_wing_shots_against_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_wing_shots_against_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_wing_shots_against_per_match = (
-            _parse_goal_keeper_wing_shots_against_per_match(
-                d.pop("goalKeeperWingShotsAgainstPerMatch", UNSET)
-            )
+        goal_keeper_wing_shots_against_per_match = _parse_goal_keeper_wing_shots_against_per_match(
+            d.pop("goalKeeperWingShotsAgainstPerMatch", UNSET)
         )
 
-        def _parse_goal_keeper_wing_shots_saved(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_goal_keeper_wing_shots_saved(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        goal_keeper_wing_shots_saved = _parse_goal_keeper_wing_shots_saved(
-            d.pop("goalKeeperWingShotsSaved", UNSET)
-        )
+        goal_keeper_wing_shots_saved = _parse_goal_keeper_wing_shots_saved(d.pop("goalKeeperWingShotsSaved", UNSET))
 
-        def _parse_goal_keeper_wing_shots_saved_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_goal_keeper_wing_shots_saved_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goal_keeper_wing_shots_saved_per_match = (
-            _parse_goal_keeper_wing_shots_saved_per_match(
-                d.pop("goalKeeperWingShotsSavedPerMatch", UNSET)
-            )
+        goal_keeper_wing_shots_saved_per_match = _parse_goal_keeper_wing_shots_saved_per_match(
+            d.pop("goalKeeperWingShotsSavedPerMatch", UNSET)
         )
 
         def _parse_goals_scored(data: object) -> Union[None, Unset, int]:
@@ -8574,22 +7204,16 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, float], data)
 
-        goals_scored_per_match = _parse_goals_scored_per_match(
-            d.pop("goalsScoredPerMatch", UNSET)
-        )
+        goals_scored_per_match = _parse_goals_scored_per_match(d.pop("goalsScoredPerMatch", UNSET))
 
-        def _parse_handball_performance_index(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_handball_performance_index(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        handball_performance_index = _parse_handball_performance_index(
-            d.pop("handballPerformanceIndex", UNSET)
-        )
+        handball_performance_index = _parse_handball_performance_index(d.pop("handballPerformanceIndex", UNSET))
 
         def _parse_losses(data: object) -> Union[None, Unset, int]:
             if data is None:
@@ -8643,13 +7267,9 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, float], data)
 
-        missed_shots_per_match = _parse_missed_shots_per_match(
-            d.pop("missedShotsPerMatch", UNSET)
-        )
+        missed_shots_per_match = _parse_missed_shots_per_match(d.pop("missedShotsPerMatch", UNSET))
 
-        def _parse_nine_metre_centre_goals_scored(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_nine_metre_centre_goals_scored(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -8660,24 +7280,18 @@ class CompetitionPersonStatisticsModelStatistics:
             d.pop("nineMetreCentreGoalsScored", UNSET)
         )
 
-        def _parse_nine_metre_centre_goals_scored_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_nine_metre_centre_goals_scored_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        nine_metre_centre_goals_scored_per_match = (
-            _parse_nine_metre_centre_goals_scored_per_match(
-                d.pop("nineMetreCentreGoalsScoredPerMatch", UNSET)
-            )
+        nine_metre_centre_goals_scored_per_match = _parse_nine_metre_centre_goals_scored_per_match(
+            d.pop("nineMetreCentreGoalsScoredPerMatch", UNSET)
         )
 
-        def _parse_nine_metre_centre_missed_shots(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_nine_metre_centre_missed_shots(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -8688,19 +7302,15 @@ class CompetitionPersonStatisticsModelStatistics:
             d.pop("nineMetreCentreMissedShots", UNSET)
         )
 
-        def _parse_nine_metre_centre_missed_shots_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_nine_metre_centre_missed_shots_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        nine_metre_centre_missed_shots_per_match = (
-            _parse_nine_metre_centre_missed_shots_per_match(
-                d.pop("nineMetreCentreMissedShotsPerMatch", UNSET)
-            )
+        nine_metre_centre_missed_shots_per_match = _parse_nine_metre_centre_missed_shots_per_match(
+            d.pop("nineMetreCentreMissedShotsPerMatch", UNSET)
         )
 
         def _parse_nine_metre_centre_post_hits(data: object) -> Union[None, Unset, int]:
@@ -8710,42 +7320,30 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        nine_metre_centre_post_hits = _parse_nine_metre_centre_post_hits(
-            d.pop("nineMetreCentrePostHits", UNSET)
-        )
+        nine_metre_centre_post_hits = _parse_nine_metre_centre_post_hits(d.pop("nineMetreCentrePostHits", UNSET))
 
-        def _parse_nine_metre_centre_post_hits_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_nine_metre_centre_post_hits_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        nine_metre_centre_post_hits_per_match = (
-            _parse_nine_metre_centre_post_hits_per_match(
-                d.pop("nineMetreCentrePostHitsPerMatch", UNSET)
-            )
+        nine_metre_centre_post_hits_per_match = _parse_nine_metre_centre_post_hits_per_match(
+            d.pop("nineMetreCentrePostHitsPerMatch", UNSET)
         )
 
-        nine_metre_centre_shooting_accuracy = d.pop(
-            "nineMetreCentreShootingAccuracy", UNSET
-        )
+        nine_metre_centre_shooting_accuracy = d.pop("nineMetreCentreShootingAccuracy", UNSET)
 
-        def _parse_nine_metre_centre_shooting_accuracy_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_nine_metre_centre_shooting_accuracy_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        nine_metre_centre_shooting_accuracy_per_match = (
-            _parse_nine_metre_centre_shooting_accuracy_per_match(
-                d.pop("nineMetreCentreShootingAccuracyPerMatch", UNSET)
-            )
+        nine_metre_centre_shooting_accuracy_per_match = _parse_nine_metre_centre_shooting_accuracy_per_match(
+            d.pop("nineMetreCentreShootingAccuracyPerMatch", UNSET)
         )
 
         def _parse_nine_metre_centre_shots(data: object) -> Union[None, Unset, int]:
@@ -8755,13 +7353,9 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        nine_metre_centre_shots = _parse_nine_metre_centre_shots(
-            d.pop("nineMetreCentreShots", UNSET)
-        )
+        nine_metre_centre_shots = _parse_nine_metre_centre_shots(d.pop("nineMetreCentreShots", UNSET))
 
-        def _parse_nine_metre_centre_shots_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_nine_metre_centre_shots_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -8772,9 +7366,7 @@ class CompetitionPersonStatisticsModelStatistics:
             d.pop("nineMetreCentreShotsPerMatch", UNSET)
         )
 
-        def _parse_nine_metre_centre_shots_blocked(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_nine_metre_centre_shots_blocked(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -8785,24 +7377,18 @@ class CompetitionPersonStatisticsModelStatistics:
             d.pop("nineMetreCentreShotsBlocked", UNSET)
         )
 
-        def _parse_nine_metre_centre_shots_blocked_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_nine_metre_centre_shots_blocked_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        nine_metre_centre_shots_blocked_per_match = (
-            _parse_nine_metre_centre_shots_blocked_per_match(
-                d.pop("nineMetreCentreShotsBlockedPerMatch", UNSET)
-            )
+        nine_metre_centre_shots_blocked_per_match = _parse_nine_metre_centre_shots_blocked_per_match(
+            d.pop("nineMetreCentreShotsBlockedPerMatch", UNSET)
         )
 
-        def _parse_nine_metre_centre_shots_on_goal(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_nine_metre_centre_shots_on_goal(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -8813,19 +7399,15 @@ class CompetitionPersonStatisticsModelStatistics:
             d.pop("nineMetreCentreShotsOnGoal", UNSET)
         )
 
-        def _parse_nine_metre_centre_shots_on_goal_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_nine_metre_centre_shots_on_goal_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        nine_metre_centre_shots_on_goal_per_match = (
-            _parse_nine_metre_centre_shots_on_goal_per_match(
-                d.pop("nineMetreCentreShotsOnGoalPerMatch", UNSET)
-            )
+        nine_metre_centre_shots_on_goal_per_match = _parse_nine_metre_centre_shots_on_goal_per_match(
+            d.pop("nineMetreCentreShotsOnGoalPerMatch", UNSET)
         )
 
         def _parse_nine_metre_goals_scored(data: object) -> Union[None, Unset, int]:
@@ -8835,13 +7417,9 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        nine_metre_goals_scored = _parse_nine_metre_goals_scored(
-            d.pop("nineMetreGoalsScored", UNSET)
-        )
+        nine_metre_goals_scored = _parse_nine_metre_goals_scored(d.pop("nineMetreGoalsScored", UNSET))
 
-        def _parse_nine_metre_goals_scored_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_nine_metre_goals_scored_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -8852,60 +7430,44 @@ class CompetitionPersonStatisticsModelStatistics:
             d.pop("nineMetreGoalsScoredPerMatch", UNSET)
         )
 
-        def _parse_nine_metre_left_goals_scored(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_nine_metre_left_goals_scored(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        nine_metre_left_goals_scored = _parse_nine_metre_left_goals_scored(
-            d.pop("nineMetreLeftGoalsScored", UNSET)
-        )
+        nine_metre_left_goals_scored = _parse_nine_metre_left_goals_scored(d.pop("nineMetreLeftGoalsScored", UNSET))
 
-        def _parse_nine_metre_left_goals_scored_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_nine_metre_left_goals_scored_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        nine_metre_left_goals_scored_per_match = (
-            _parse_nine_metre_left_goals_scored_per_match(
-                d.pop("nineMetreLeftGoalsScoredPerMatch", UNSET)
-            )
+        nine_metre_left_goals_scored_per_match = _parse_nine_metre_left_goals_scored_per_match(
+            d.pop("nineMetreLeftGoalsScoredPerMatch", UNSET)
         )
 
-        def _parse_nine_metre_left_missed_shots(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_nine_metre_left_missed_shots(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        nine_metre_left_missed_shots = _parse_nine_metre_left_missed_shots(
-            d.pop("nineMetreLeftMissedShots", UNSET)
-        )
+        nine_metre_left_missed_shots = _parse_nine_metre_left_missed_shots(d.pop("nineMetreLeftMissedShots", UNSET))
 
-        def _parse_nine_metre_left_missed_shots_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_nine_metre_left_missed_shots_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        nine_metre_left_missed_shots_per_match = (
-            _parse_nine_metre_left_missed_shots_per_match(
-                d.pop("nineMetreLeftMissedShotsPerMatch", UNSET)
-            )
+        nine_metre_left_missed_shots_per_match = _parse_nine_metre_left_missed_shots_per_match(
+            d.pop("nineMetreLeftMissedShotsPerMatch", UNSET)
         )
 
         def _parse_nine_metre_left_post_hits(data: object) -> Union[None, Unset, int]:
@@ -8915,42 +7477,30 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        nine_metre_left_post_hits = _parse_nine_metre_left_post_hits(
-            d.pop("nineMetreLeftPostHits", UNSET)
-        )
+        nine_metre_left_post_hits = _parse_nine_metre_left_post_hits(d.pop("nineMetreLeftPostHits", UNSET))
 
-        def _parse_nine_metre_left_post_hits_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_nine_metre_left_post_hits_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        nine_metre_left_post_hits_per_match = (
-            _parse_nine_metre_left_post_hits_per_match(
-                d.pop("nineMetreLeftPostHitsPerMatch", UNSET)
-            )
+        nine_metre_left_post_hits_per_match = _parse_nine_metre_left_post_hits_per_match(
+            d.pop("nineMetreLeftPostHitsPerMatch", UNSET)
         )
 
-        nine_metre_left_shooting_accuracy = d.pop(
-            "nineMetreLeftShootingAccuracy", UNSET
-        )
+        nine_metre_left_shooting_accuracy = d.pop("nineMetreLeftShootingAccuracy", UNSET)
 
-        def _parse_nine_metre_left_shooting_accuracy_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_nine_metre_left_shooting_accuracy_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        nine_metre_left_shooting_accuracy_per_match = (
-            _parse_nine_metre_left_shooting_accuracy_per_match(
-                d.pop("nineMetreLeftShootingAccuracyPerMatch", UNSET)
-            )
+        nine_metre_left_shooting_accuracy_per_match = _parse_nine_metre_left_shooting_accuracy_per_match(
+            d.pop("nineMetreLeftShootingAccuracyPerMatch", UNSET)
         )
 
         def _parse_nine_metre_left_shots(data: object) -> Union[None, Unset, int]:
@@ -8960,13 +7510,9 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        nine_metre_left_shots = _parse_nine_metre_left_shots(
-            d.pop("nineMetreLeftShots", UNSET)
-        )
+        nine_metre_left_shots = _parse_nine_metre_left_shots(d.pop("nineMetreLeftShots", UNSET))
 
-        def _parse_nine_metre_left_shots_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_nine_metre_left_shots_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -8977,60 +7523,44 @@ class CompetitionPersonStatisticsModelStatistics:
             d.pop("nineMetreLeftShotsPerMatch", UNSET)
         )
 
-        def _parse_nine_metre_left_shots_blocked(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_nine_metre_left_shots_blocked(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        nine_metre_left_shots_blocked = _parse_nine_metre_left_shots_blocked(
-            d.pop("nineMetreLeftShotsBlocked", UNSET)
-        )
+        nine_metre_left_shots_blocked = _parse_nine_metre_left_shots_blocked(d.pop("nineMetreLeftShotsBlocked", UNSET))
 
-        def _parse_nine_metre_left_shots_blocked_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_nine_metre_left_shots_blocked_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        nine_metre_left_shots_blocked_per_match = (
-            _parse_nine_metre_left_shots_blocked_per_match(
-                d.pop("nineMetreLeftShotsBlockedPerMatch", UNSET)
-            )
+        nine_metre_left_shots_blocked_per_match = _parse_nine_metre_left_shots_blocked_per_match(
+            d.pop("nineMetreLeftShotsBlockedPerMatch", UNSET)
         )
 
-        def _parse_nine_metre_left_shots_on_goal(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_nine_metre_left_shots_on_goal(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        nine_metre_left_shots_on_goal = _parse_nine_metre_left_shots_on_goal(
-            d.pop("nineMetreLeftShotsOnGoal", UNSET)
-        )
+        nine_metre_left_shots_on_goal = _parse_nine_metre_left_shots_on_goal(d.pop("nineMetreLeftShotsOnGoal", UNSET))
 
-        def _parse_nine_metre_left_shots_on_goal_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_nine_metre_left_shots_on_goal_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        nine_metre_left_shots_on_goal_per_match = (
-            _parse_nine_metre_left_shots_on_goal_per_match(
-                d.pop("nineMetreLeftShotsOnGoalPerMatch", UNSET)
-            )
+        nine_metre_left_shots_on_goal_per_match = _parse_nine_metre_left_shots_on_goal_per_match(
+            d.pop("nineMetreLeftShotsOnGoalPerMatch", UNSET)
         )
 
         def _parse_nine_metre_missed_shots(data: object) -> Union[None, Unset, int]:
@@ -9040,13 +7570,9 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        nine_metre_missed_shots = _parse_nine_metre_missed_shots(
-            d.pop("nineMetreMissedShots", UNSET)
-        )
+        nine_metre_missed_shots = _parse_nine_metre_missed_shots(d.pop("nineMetreMissedShots", UNSET))
 
-        def _parse_nine_metre_missed_shots_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_nine_metre_missed_shots_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -9064,13 +7590,9 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        nine_metre_post_hits = _parse_nine_metre_post_hits(
-            d.pop("nineMetrePostHits", UNSET)
-        )
+        nine_metre_post_hits = _parse_nine_metre_post_hits(d.pop("nineMetrePostHits", UNSET))
 
-        def _parse_nine_metre_post_hits_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_nine_metre_post_hits_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -9081,60 +7603,44 @@ class CompetitionPersonStatisticsModelStatistics:
             d.pop("nineMetrePostHitsPerMatch", UNSET)
         )
 
-        def _parse_nine_metre_right_goals_scored(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_nine_metre_right_goals_scored(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        nine_metre_right_goals_scored = _parse_nine_metre_right_goals_scored(
-            d.pop("nineMetreRightGoalsScored", UNSET)
-        )
+        nine_metre_right_goals_scored = _parse_nine_metre_right_goals_scored(d.pop("nineMetreRightGoalsScored", UNSET))
 
-        def _parse_nine_metre_right_goals_scored_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_nine_metre_right_goals_scored_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        nine_metre_right_goals_scored_per_match = (
-            _parse_nine_metre_right_goals_scored_per_match(
-                d.pop("nineMetreRightGoalsScoredPerMatch", UNSET)
-            )
+        nine_metre_right_goals_scored_per_match = _parse_nine_metre_right_goals_scored_per_match(
+            d.pop("nineMetreRightGoalsScoredPerMatch", UNSET)
         )
 
-        def _parse_nine_metre_right_missed_shots(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_nine_metre_right_missed_shots(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        nine_metre_right_missed_shots = _parse_nine_metre_right_missed_shots(
-            d.pop("nineMetreRightMissedShots", UNSET)
-        )
+        nine_metre_right_missed_shots = _parse_nine_metre_right_missed_shots(d.pop("nineMetreRightMissedShots", UNSET))
 
-        def _parse_nine_metre_right_missed_shots_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_nine_metre_right_missed_shots_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        nine_metre_right_missed_shots_per_match = (
-            _parse_nine_metre_right_missed_shots_per_match(
-                d.pop("nineMetreRightMissedShotsPerMatch", UNSET)
-            )
+        nine_metre_right_missed_shots_per_match = _parse_nine_metre_right_missed_shots_per_match(
+            d.pop("nineMetreRightMissedShotsPerMatch", UNSET)
         )
 
         def _parse_nine_metre_right_post_hits(data: object) -> Union[None, Unset, int]:
@@ -9144,42 +7650,30 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        nine_metre_right_post_hits = _parse_nine_metre_right_post_hits(
-            d.pop("nineMetreRightPostHits", UNSET)
-        )
+        nine_metre_right_post_hits = _parse_nine_metre_right_post_hits(d.pop("nineMetreRightPostHits", UNSET))
 
-        def _parse_nine_metre_right_post_hits_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_nine_metre_right_post_hits_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        nine_metre_right_post_hits_per_match = (
-            _parse_nine_metre_right_post_hits_per_match(
-                d.pop("nineMetreRightPostHitsPerMatch", UNSET)
-            )
+        nine_metre_right_post_hits_per_match = _parse_nine_metre_right_post_hits_per_match(
+            d.pop("nineMetreRightPostHitsPerMatch", UNSET)
         )
 
-        nine_metre_right_shooting_accuracy = d.pop(
-            "nineMetreRightShootingAccuracy", UNSET
-        )
+        nine_metre_right_shooting_accuracy = d.pop("nineMetreRightShootingAccuracy", UNSET)
 
-        def _parse_nine_metre_right_shooting_accuracy_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_nine_metre_right_shooting_accuracy_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        nine_metre_right_shooting_accuracy_per_match = (
-            _parse_nine_metre_right_shooting_accuracy_per_match(
-                d.pop("nineMetreRightShootingAccuracyPerMatch", UNSET)
-            )
+        nine_metre_right_shooting_accuracy_per_match = _parse_nine_metre_right_shooting_accuracy_per_match(
+            d.pop("nineMetreRightShootingAccuracyPerMatch", UNSET)
         )
 
         def _parse_nine_metre_right_shots(data: object) -> Union[None, Unset, int]:
@@ -9189,13 +7683,9 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        nine_metre_right_shots = _parse_nine_metre_right_shots(
-            d.pop("nineMetreRightShots", UNSET)
-        )
+        nine_metre_right_shots = _parse_nine_metre_right_shots(d.pop("nineMetreRightShots", UNSET))
 
-        def _parse_nine_metre_right_shots_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_nine_metre_right_shots_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -9206,9 +7696,7 @@ class CompetitionPersonStatisticsModelStatistics:
             d.pop("nineMetreRightShotsPerMatch", UNSET)
         )
 
-        def _parse_nine_metre_right_shots_blocked(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_nine_metre_right_shots_blocked(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -9219,24 +7707,18 @@ class CompetitionPersonStatisticsModelStatistics:
             d.pop("nineMetreRightShotsBlocked", UNSET)
         )
 
-        def _parse_nine_metre_right_shots_blocked_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_nine_metre_right_shots_blocked_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        nine_metre_right_shots_blocked_per_match = (
-            _parse_nine_metre_right_shots_blocked_per_match(
-                d.pop("nineMetreRightShotsBlockedPerMatch", UNSET)
-            )
+        nine_metre_right_shots_blocked_per_match = _parse_nine_metre_right_shots_blocked_per_match(
+            d.pop("nineMetreRightShotsBlockedPerMatch", UNSET)
         )
 
-        def _parse_nine_metre_right_shots_on_goal(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_nine_metre_right_shots_on_goal(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -9247,36 +7729,28 @@ class CompetitionPersonStatisticsModelStatistics:
             d.pop("nineMetreRightShotsOnGoal", UNSET)
         )
 
-        def _parse_nine_metre_right_shots_on_goal_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_nine_metre_right_shots_on_goal_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        nine_metre_right_shots_on_goal_per_match = (
-            _parse_nine_metre_right_shots_on_goal_per_match(
-                d.pop("nineMetreRightShotsOnGoalPerMatch", UNSET)
-            )
+        nine_metre_right_shots_on_goal_per_match = _parse_nine_metre_right_shots_on_goal_per_match(
+            d.pop("nineMetreRightShotsOnGoalPerMatch", UNSET)
         )
 
         nine_metre_shooting_accuracy = d.pop("nineMetreShootingAccuracy", UNSET)
 
-        def _parse_nine_metre_shooting_accuracy_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_nine_metre_shooting_accuracy_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        nine_metre_shooting_accuracy_per_match = (
-            _parse_nine_metre_shooting_accuracy_per_match(
-                d.pop("nineMetreShootingAccuracyPerMatch", UNSET)
-            )
+        nine_metre_shooting_accuracy_per_match = _parse_nine_metre_shooting_accuracy_per_match(
+            d.pop("nineMetreShootingAccuracyPerMatch", UNSET)
         )
 
         def _parse_nine_metre_shots(data: object) -> Union[None, Unset, int]:
@@ -9288,18 +7762,14 @@ class CompetitionPersonStatisticsModelStatistics:
 
         nine_metre_shots = _parse_nine_metre_shots(d.pop("nineMetreShots", UNSET))
 
-        def _parse_nine_metre_shots_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_nine_metre_shots_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        nine_metre_shots_per_match = _parse_nine_metre_shots_per_match(
-            d.pop("nineMetreShotsPerMatch", UNSET)
-        )
+        nine_metre_shots_per_match = _parse_nine_metre_shots_per_match(d.pop("nineMetreShotsPerMatch", UNSET))
 
         def _parse_nine_metre_shots_blocked(data: object) -> Union[None, Unset, int]:
             if data is None:
@@ -9308,13 +7778,9 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        nine_metre_shots_blocked = _parse_nine_metre_shots_blocked(
-            d.pop("nineMetreShotsBlocked", UNSET)
-        )
+        nine_metre_shots_blocked = _parse_nine_metre_shots_blocked(d.pop("nineMetreShotsBlocked", UNSET))
 
-        def _parse_nine_metre_shots_blocked_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_nine_metre_shots_blocked_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -9332,13 +7798,9 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        nine_metre_shots_on_goal = _parse_nine_metre_shots_on_goal(
-            d.pop("nineMetreShotsOnGoal", UNSET)
-        )
+        nine_metre_shots_on_goal = _parse_nine_metre_shots_on_goal(d.pop("nineMetreShotsOnGoal", UNSET))
 
-        def _parse_nine_metre_shots_on_goal_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_nine_metre_shots_on_goal_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -9367,18 +7829,14 @@ class CompetitionPersonStatisticsModelStatistics:
 
         pivot_goals_scored = _parse_pivot_goals_scored(d.pop("pivotGoalsScored", UNSET))
 
-        def _parse_pivot_goals_scored_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_pivot_goals_scored_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        pivot_goals_scored_per_match = _parse_pivot_goals_scored_per_match(
-            d.pop("pivotGoalsScoredPerMatch", UNSET)
-        )
+        pivot_goals_scored_per_match = _parse_pivot_goals_scored_per_match(d.pop("pivotGoalsScoredPerMatch", UNSET))
 
         def _parse_pivot_missed_shots(data: object) -> Union[None, Unset, int]:
             if data is None:
@@ -9389,18 +7847,14 @@ class CompetitionPersonStatisticsModelStatistics:
 
         pivot_missed_shots = _parse_pivot_missed_shots(d.pop("pivotMissedShots", UNSET))
 
-        def _parse_pivot_missed_shots_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_pivot_missed_shots_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        pivot_missed_shots_per_match = _parse_pivot_missed_shots_per_match(
-            d.pop("pivotMissedShotsPerMatch", UNSET)
-        )
+        pivot_missed_shots_per_match = _parse_pivot_missed_shots_per_match(d.pop("pivotMissedShotsPerMatch", UNSET))
 
         def _parse_pivot_post_hits(data: object) -> Union[None, Unset, int]:
             if data is None:
@@ -9418,15 +7872,11 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, float], data)
 
-        pivot_post_hits_per_match = _parse_pivot_post_hits_per_match(
-            d.pop("pivotPostHitsPerMatch", UNSET)
-        )
+        pivot_post_hits_per_match = _parse_pivot_post_hits_per_match(d.pop("pivotPostHitsPerMatch", UNSET))
 
         pivot_shooting_accuracy = d.pop("pivotShootingAccuracy", UNSET)
 
-        def _parse_pivot_shooting_accuracy_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_pivot_shooting_accuracy_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -9453,9 +7903,7 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, float], data)
 
-        pivot_shots_per_match = _parse_pivot_shots_per_match(
-            d.pop("pivotShotsPerMatch", UNSET)
-        )
+        pivot_shots_per_match = _parse_pivot_shots_per_match(d.pop("pivotShotsPerMatch", UNSET))
 
         def _parse_pivot_shots_blocked(data: object) -> Union[None, Unset, int]:
             if data is None:
@@ -9464,22 +7912,16 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        pivot_shots_blocked = _parse_pivot_shots_blocked(
-            d.pop("pivotShotsBlocked", UNSET)
-        )
+        pivot_shots_blocked = _parse_pivot_shots_blocked(d.pop("pivotShotsBlocked", UNSET))
 
-        def _parse_pivot_shots_blocked_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_pivot_shots_blocked_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        pivot_shots_blocked_per_match = _parse_pivot_shots_blocked_per_match(
-            d.pop("pivotShotsBlockedPerMatch", UNSET)
-        )
+        pivot_shots_blocked_per_match = _parse_pivot_shots_blocked_per_match(d.pop("pivotShotsBlockedPerMatch", UNSET))
 
         def _parse_pivot_shots_on_goal(data: object) -> Union[None, Unset, int]:
             if data is None:
@@ -9488,22 +7930,16 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        pivot_shots_on_goal = _parse_pivot_shots_on_goal(
-            d.pop("pivotShotsOnGoal", UNSET)
-        )
+        pivot_shots_on_goal = _parse_pivot_shots_on_goal(d.pop("pivotShotsOnGoal", UNSET))
 
-        def _parse_pivot_shots_on_goal_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_pivot_shots_on_goal_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        pivot_shots_on_goal_per_match = _parse_pivot_shots_on_goal_per_match(
-            d.pop("pivotShotsOnGoalPerMatch", UNSET)
-        )
+        pivot_shots_on_goal_per_match = _parse_pivot_shots_on_goal_per_match(d.pop("pivotShotsOnGoalPerMatch", UNSET))
 
         def _parse_post_hits(data: object) -> Union[None, Unset, int]:
             if data is None:
@@ -9521,9 +7957,7 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, float], data)
 
-        post_hits_per_match = _parse_post_hits_per_match(
-            d.pop("postHitsPerMatch", UNSET)
-        )
+        post_hits_per_match = _parse_post_hits_per_match(d.pop("postHitsPerMatch", UNSET))
 
         def _parse_red_cards(data: object) -> Union[None, Unset, int]:
             if data is None:
@@ -9541,9 +7975,7 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, float], data)
 
-        red_cards_per_match = _parse_red_cards_per_match(
-            d.pop("redCardsPerMatch", UNSET)
-        )
+        red_cards_per_match = _parse_red_cards_per_match(d.pop("redCardsPerMatch", UNSET))
 
         def _parse_seven_metre_goals_scored(data: object) -> Union[None, Unset, int]:
             if data is None:
@@ -9552,13 +7984,9 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        seven_metre_goals_scored = _parse_seven_metre_goals_scored(
-            d.pop("sevenMetreGoalsScored", UNSET)
-        )
+        seven_metre_goals_scored = _parse_seven_metre_goals_scored(d.pop("sevenMetreGoalsScored", UNSET))
 
-        def _parse_seven_metre_goals_scored_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_seven_metre_goals_scored_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -9576,13 +8004,9 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        seven_metre_missed_shots = _parse_seven_metre_missed_shots(
-            d.pop("sevenMetreMissedShots", UNSET)
-        )
+        seven_metre_missed_shots = _parse_seven_metre_missed_shots(d.pop("sevenMetreMissedShots", UNSET))
 
-        def _parse_seven_metre_missed_shots_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_seven_metre_missed_shots_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -9593,60 +8017,44 @@ class CompetitionPersonStatisticsModelStatistics:
             d.pop("sevenMetreMissedShotsPerMatch", UNSET)
         )
 
-        def _parse_seven_metre_penalties_awarded(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_seven_metre_penalties_awarded(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        seven_metre_penalties_awarded = _parse_seven_metre_penalties_awarded(
-            d.pop("sevenMetrePenaltiesAwarded", UNSET)
-        )
+        seven_metre_penalties_awarded = _parse_seven_metre_penalties_awarded(d.pop("sevenMetrePenaltiesAwarded", UNSET))
 
-        def _parse_seven_metre_penalties_awarded_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_seven_metre_penalties_awarded_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        seven_metre_penalties_awarded_per_match = (
-            _parse_seven_metre_penalties_awarded_per_match(
-                d.pop("sevenMetrePenaltiesAwardedPerMatch", UNSET)
-            )
+        seven_metre_penalties_awarded_per_match = _parse_seven_metre_penalties_awarded_per_match(
+            d.pop("sevenMetrePenaltiesAwardedPerMatch", UNSET)
         )
 
-        def _parse_seven_metre_penalties_caused(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_seven_metre_penalties_caused(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        seven_metre_penalties_caused = _parse_seven_metre_penalties_caused(
-            d.pop("sevenMetrePenaltiesCaused", UNSET)
-        )
+        seven_metre_penalties_caused = _parse_seven_metre_penalties_caused(d.pop("sevenMetrePenaltiesCaused", UNSET))
 
-        def _parse_seven_metre_penalties_caused_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_seven_metre_penalties_caused_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        seven_metre_penalties_caused_per_match = (
-            _parse_seven_metre_penalties_caused_per_match(
-                d.pop("sevenMetrePenaltiesCausedPerMatch", UNSET)
-            )
+        seven_metre_penalties_caused_per_match = _parse_seven_metre_penalties_caused_per_match(
+            d.pop("sevenMetrePenaltiesCausedPerMatch", UNSET)
         )
 
         def _parse_seven_metre_penalty_fouls(data: object) -> Union[None, Unset, int]:
@@ -9656,23 +8064,17 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        seven_metre_penalty_fouls = _parse_seven_metre_penalty_fouls(
-            d.pop("sevenMetrePenaltyFouls", UNSET)
-        )
+        seven_metre_penalty_fouls = _parse_seven_metre_penalty_fouls(d.pop("sevenMetrePenaltyFouls", UNSET))
 
-        def _parse_seven_metre_penalty_fouls_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_seven_metre_penalty_fouls_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        seven_metre_penalty_fouls_per_match = (
-            _parse_seven_metre_penalty_fouls_per_match(
-                d.pop("sevenMetrePenaltyFoulsPerMatch", UNSET)
-            )
+        seven_metre_penalty_fouls_per_match = _parse_seven_metre_penalty_fouls_per_match(
+            d.pop("sevenMetrePenaltyFoulsPerMatch", UNSET)
         )
 
         def _parse_seven_metre_post_hits(data: object) -> Union[None, Unset, int]:
@@ -9682,13 +8084,9 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        seven_metre_post_hits = _parse_seven_metre_post_hits(
-            d.pop("sevenMetrePostHits", UNSET)
-        )
+        seven_metre_post_hits = _parse_seven_metre_post_hits(d.pop("sevenMetrePostHits", UNSET))
 
-        def _parse_seven_metre_post_hits_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_seven_metre_post_hits_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -9701,19 +8099,15 @@ class CompetitionPersonStatisticsModelStatistics:
 
         seven_metre_shooting_accuracy = d.pop("sevenMetreShootingAccuracy", UNSET)
 
-        def _parse_seven_metre_shooting_accuracy_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_seven_metre_shooting_accuracy_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        seven_metre_shooting_accuracy_per_match = (
-            _parse_seven_metre_shooting_accuracy_per_match(
-                d.pop("sevenMetreShootingAccuracyPerMatch", UNSET)
-            )
+        seven_metre_shooting_accuracy_per_match = _parse_seven_metre_shooting_accuracy_per_match(
+            d.pop("sevenMetreShootingAccuracyPerMatch", UNSET)
         )
 
         def _parse_seven_metre_shots(data: object) -> Union[None, Unset, int]:
@@ -9725,18 +8119,14 @@ class CompetitionPersonStatisticsModelStatistics:
 
         seven_metre_shots = _parse_seven_metre_shots(d.pop("sevenMetreShots", UNSET))
 
-        def _parse_seven_metre_shots_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_seven_metre_shots_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        seven_metre_shots_per_match = _parse_seven_metre_shots_per_match(
-            d.pop("sevenMetreShotsPerMatch", UNSET)
-        )
+        seven_metre_shots_per_match = _parse_seven_metre_shots_per_match(d.pop("sevenMetreShotsPerMatch", UNSET))
 
         def _parse_seven_metre_shots_blocked(data: object) -> Union[None, Unset, int]:
             if data is None:
@@ -9745,23 +8135,17 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        seven_metre_shots_blocked = _parse_seven_metre_shots_blocked(
-            d.pop("sevenMetreShotsBlocked", UNSET)
-        )
+        seven_metre_shots_blocked = _parse_seven_metre_shots_blocked(d.pop("sevenMetreShotsBlocked", UNSET))
 
-        def _parse_seven_metre_shots_blocked_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_seven_metre_shots_blocked_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        seven_metre_shots_blocked_per_match = (
-            _parse_seven_metre_shots_blocked_per_match(
-                d.pop("sevenMetreShotsBlockedPerMatch", UNSET)
-            )
+        seven_metre_shots_blocked_per_match = _parse_seven_metre_shots_blocked_per_match(
+            d.pop("sevenMetreShotsBlockedPerMatch", UNSET)
         )
 
         def _parse_seven_metre_shots_on_goal(data: object) -> Union[None, Unset, int]:
@@ -9771,39 +8155,29 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        seven_metre_shots_on_goal = _parse_seven_metre_shots_on_goal(
-            d.pop("sevenMetreShotsOnGoal", UNSET)
-        )
+        seven_metre_shots_on_goal = _parse_seven_metre_shots_on_goal(d.pop("sevenMetreShotsOnGoal", UNSET))
 
-        def _parse_seven_metre_shots_on_goal_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_seven_metre_shots_on_goal_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        seven_metre_shots_on_goal_per_match = (
-            _parse_seven_metre_shots_on_goal_per_match(
-                d.pop("sevenMetreShotsOnGoalPerMatch", UNSET)
-            )
+        seven_metre_shots_on_goal_per_match = _parse_seven_metre_shots_on_goal_per_match(
+            d.pop("sevenMetreShotsOnGoalPerMatch", UNSET)
         )
 
         shooting_accuracy = d.pop("shootingAccuracy", UNSET)
 
-        def _parse_shooting_accuracy_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_shooting_accuracy_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        shooting_accuracy_per_match = _parse_shooting_accuracy_per_match(
-            d.pop("shootingAccuracyPerMatch", UNSET)
-        )
+        shooting_accuracy_per_match = _parse_shooting_accuracy_per_match(d.pop("shootingAccuracyPerMatch", UNSET))
 
         def _parse_shoot_outs(data: object) -> Union[None, Unset, int]:
             if data is None:
@@ -9821,9 +8195,7 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, float], data)
 
-        shoot_outs_per_match = _parse_shoot_outs_per_match(
-            d.pop("shootOutsPerMatch", UNSET)
-        )
+        shoot_outs_per_match = _parse_shoot_outs_per_match(d.pop("shootOutsPerMatch", UNSET))
 
         def _parse_shoot_outs_made(data: object) -> Union[None, Unset, int]:
             if data is None:
@@ -9841,9 +8213,7 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, float], data)
 
-        shoot_outs_made_per_match = _parse_shoot_outs_made_per_match(
-            d.pop("shootOutsMadePerMatch", UNSET)
-        )
+        shoot_outs_made_per_match = _parse_shoot_outs_made_per_match(d.pop("shootOutsMadePerMatch", UNSET))
 
         def _parse_shoot_outs_missed(data: object) -> Union[None, Unset, int]:
             if data is None:
@@ -9854,18 +8224,14 @@ class CompetitionPersonStatisticsModelStatistics:
 
         shoot_outs_missed = _parse_shoot_outs_missed(d.pop("shootOutsMissed", UNSET))
 
-        def _parse_shoot_outs_missed_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_shoot_outs_missed_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        shoot_outs_missed_per_match = _parse_shoot_outs_missed_per_match(
-            d.pop("shootOutsMissedPerMatch", UNSET)
-        )
+        shoot_outs_missed_per_match = _parse_shoot_outs_missed_per_match(d.pop("shootOutsMissedPerMatch", UNSET))
 
         def _parse_shoot_outs_saved(data: object) -> Union[None, Unset, int]:
             if data is None:
@@ -9876,18 +8242,14 @@ class CompetitionPersonStatisticsModelStatistics:
 
         shoot_outs_saved = _parse_shoot_outs_saved(d.pop("shootOutsSaved", UNSET))
 
-        def _parse_shoot_outs_saved_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_shoot_outs_saved_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        shoot_outs_saved_per_match = _parse_shoot_outs_saved_per_match(
-            d.pop("shootOutsSavedPerMatch", UNSET)
-        )
+        shoot_outs_saved_per_match = _parse_shoot_outs_saved_per_match(d.pop("shootOutsSavedPerMatch", UNSET))
 
         def _parse_shots(data: object) -> Union[None, Unset, int]:
             if data is None:
@@ -9923,9 +8285,7 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, float], data)
 
-        shots_blocked_per_match = _parse_shots_blocked_per_match(
-            d.pop("shotsBlockedPerMatch", UNSET)
-        )
+        shots_blocked_per_match = _parse_shots_blocked_per_match(d.pop("shotsBlockedPerMatch", UNSET))
 
         def _parse_shots_on_goal(data: object) -> Union[None, Unset, int]:
             if data is None:
@@ -9943,9 +8303,7 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, float], data)
 
-        shots_on_goal_per_match = _parse_shots_on_goal_per_match(
-            d.pop("shotsOnGoalPerMatch", UNSET)
-        )
+        shots_on_goal_per_match = _parse_shots_on_goal_per_match(d.pop("shotsOnGoalPerMatch", UNSET))
 
         def _parse_shots_saved_by_goal_keeper(data: object) -> Union[None, Unset, int]:
             if data is None:
@@ -9954,79 +8312,57 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        shots_saved_by_goal_keeper = _parse_shots_saved_by_goal_keeper(
-            d.pop("shotsSavedByGoalKeeper", UNSET)
-        )
+        shots_saved_by_goal_keeper = _parse_shots_saved_by_goal_keeper(d.pop("shotsSavedByGoalKeeper", UNSET))
 
-        def _parse_shots_saved_by_goal_keeper_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_shots_saved_by_goal_keeper_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        shots_saved_by_goal_keeper_per_match = (
-            _parse_shots_saved_by_goal_keeper_per_match(
-                d.pop("shotsSavedByGoalKeeperPerMatch", UNSET)
-            )
+        shots_saved_by_goal_keeper_per_match = _parse_shots_saved_by_goal_keeper_per_match(
+            d.pop("shotsSavedByGoalKeeperPerMatch", UNSET)
         )
 
-        def _parse_six_metre_centre_goals_scored(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_six_metre_centre_goals_scored(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        six_metre_centre_goals_scored = _parse_six_metre_centre_goals_scored(
-            d.pop("sixMetreCentreGoalsScored", UNSET)
-        )
+        six_metre_centre_goals_scored = _parse_six_metre_centre_goals_scored(d.pop("sixMetreCentreGoalsScored", UNSET))
 
-        def _parse_six_metre_centre_goals_scored_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_six_metre_centre_goals_scored_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        six_metre_centre_goals_scored_per_match = (
-            _parse_six_metre_centre_goals_scored_per_match(
-                d.pop("sixMetreCentreGoalsScoredPerMatch", UNSET)
-            )
+        six_metre_centre_goals_scored_per_match = _parse_six_metre_centre_goals_scored_per_match(
+            d.pop("sixMetreCentreGoalsScoredPerMatch", UNSET)
         )
 
-        def _parse_six_metre_centre_missed_shots(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_six_metre_centre_missed_shots(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        six_metre_centre_missed_shots = _parse_six_metre_centre_missed_shots(
-            d.pop("sixMetreCentreMissedShots", UNSET)
-        )
+        six_metre_centre_missed_shots = _parse_six_metre_centre_missed_shots(d.pop("sixMetreCentreMissedShots", UNSET))
 
-        def _parse_six_metre_centre_missed_shots_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_six_metre_centre_missed_shots_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        six_metre_centre_missed_shots_per_match = (
-            _parse_six_metre_centre_missed_shots_per_match(
-                d.pop("sixMetreCentreMissedShotsPerMatch", UNSET)
-            )
+        six_metre_centre_missed_shots_per_match = _parse_six_metre_centre_missed_shots_per_match(
+            d.pop("sixMetreCentreMissedShotsPerMatch", UNSET)
         )
 
         def _parse_six_metre_centre_post_hits(data: object) -> Union[None, Unset, int]:
@@ -10036,42 +8372,30 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        six_metre_centre_post_hits = _parse_six_metre_centre_post_hits(
-            d.pop("sixMetreCentrePostHits", UNSET)
-        )
+        six_metre_centre_post_hits = _parse_six_metre_centre_post_hits(d.pop("sixMetreCentrePostHits", UNSET))
 
-        def _parse_six_metre_centre_post_hits_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_six_metre_centre_post_hits_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        six_metre_centre_post_hits_per_match = (
-            _parse_six_metre_centre_post_hits_per_match(
-                d.pop("sixMetreCentrePostHitsPerMatch", UNSET)
-            )
+        six_metre_centre_post_hits_per_match = _parse_six_metre_centre_post_hits_per_match(
+            d.pop("sixMetreCentrePostHitsPerMatch", UNSET)
         )
 
-        six_metre_centre_shooting_accuracy = d.pop(
-            "sixMetreCentreShootingAccuracy", UNSET
-        )
+        six_metre_centre_shooting_accuracy = d.pop("sixMetreCentreShootingAccuracy", UNSET)
 
-        def _parse_six_metre_centre_shooting_accuracy_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_six_metre_centre_shooting_accuracy_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        six_metre_centre_shooting_accuracy_per_match = (
-            _parse_six_metre_centre_shooting_accuracy_per_match(
-                d.pop("sixMetreCentreShootingAccuracyPerMatch", UNSET)
-            )
+        six_metre_centre_shooting_accuracy_per_match = _parse_six_metre_centre_shooting_accuracy_per_match(
+            d.pop("sixMetreCentreShootingAccuracyPerMatch", UNSET)
         )
 
         def _parse_six_metre_centre_shots(data: object) -> Union[None, Unset, int]:
@@ -10081,13 +8405,9 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        six_metre_centre_shots = _parse_six_metre_centre_shots(
-            d.pop("sixMetreCentreShots", UNSET)
-        )
+        six_metre_centre_shots = _parse_six_metre_centre_shots(d.pop("sixMetreCentreShots", UNSET))
 
-        def _parse_six_metre_centre_shots_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_six_metre_centre_shots_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -10098,9 +8418,7 @@ class CompetitionPersonStatisticsModelStatistics:
             d.pop("sixMetreCentreShotsPerMatch", UNSET)
         )
 
-        def _parse_six_metre_centre_shots_blocked(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_six_metre_centre_shots_blocked(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -10111,24 +8429,18 @@ class CompetitionPersonStatisticsModelStatistics:
             d.pop("sixMetreCentreShotsBlocked", UNSET)
         )
 
-        def _parse_six_metre_centre_shots_blocked_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_six_metre_centre_shots_blocked_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        six_metre_centre_shots_blocked_per_match = (
-            _parse_six_metre_centre_shots_blocked_per_match(
-                d.pop("sixMetreCentreShotsBlockedPerMatch", UNSET)
-            )
+        six_metre_centre_shots_blocked_per_match = _parse_six_metre_centre_shots_blocked_per_match(
+            d.pop("sixMetreCentreShotsBlockedPerMatch", UNSET)
         )
 
-        def _parse_six_metre_centre_shots_on_goal(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_six_metre_centre_shots_on_goal(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -10139,19 +8451,15 @@ class CompetitionPersonStatisticsModelStatistics:
             d.pop("sixMetreCentreShotsOnGoal", UNSET)
         )
 
-        def _parse_six_metre_centre_shots_on_goal_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_six_metre_centre_shots_on_goal_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        six_metre_centre_shots_on_goal_per_match = (
-            _parse_six_metre_centre_shots_on_goal_per_match(
-                d.pop("sixMetreCentreShotsOnGoalPerMatch", UNSET)
-            )
+        six_metre_centre_shots_on_goal_per_match = _parse_six_metre_centre_shots_on_goal_per_match(
+            d.pop("sixMetreCentreShotsOnGoalPerMatch", UNSET)
         )
 
         def _parse_six_metre_goals_scored(data: object) -> Union[None, Unset, int]:
@@ -10161,13 +8469,9 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        six_metre_goals_scored = _parse_six_metre_goals_scored(
-            d.pop("sixMetreGoalsScored", UNSET)
-        )
+        six_metre_goals_scored = _parse_six_metre_goals_scored(d.pop("sixMetreGoalsScored", UNSET))
 
-        def _parse_six_metre_goals_scored_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_six_metre_goals_scored_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -10185,23 +8489,17 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        six_metre_left_goals_scored = _parse_six_metre_left_goals_scored(
-            d.pop("sixMetreLeftGoalsScored", UNSET)
-        )
+        six_metre_left_goals_scored = _parse_six_metre_left_goals_scored(d.pop("sixMetreLeftGoalsScored", UNSET))
 
-        def _parse_six_metre_left_goals_scored_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_six_metre_left_goals_scored_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        six_metre_left_goals_scored_per_match = (
-            _parse_six_metre_left_goals_scored_per_match(
-                d.pop("sixMetreLeftGoalsScoredPerMatch", UNSET)
-            )
+        six_metre_left_goals_scored_per_match = _parse_six_metre_left_goals_scored_per_match(
+            d.pop("sixMetreLeftGoalsScoredPerMatch", UNSET)
         )
 
         def _parse_six_metre_left_missed_shots(data: object) -> Union[None, Unset, int]:
@@ -10211,23 +8509,17 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        six_metre_left_missed_shots = _parse_six_metre_left_missed_shots(
-            d.pop("sixMetreLeftMissedShots", UNSET)
-        )
+        six_metre_left_missed_shots = _parse_six_metre_left_missed_shots(d.pop("sixMetreLeftMissedShots", UNSET))
 
-        def _parse_six_metre_left_missed_shots_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_six_metre_left_missed_shots_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        six_metre_left_missed_shots_per_match = (
-            _parse_six_metre_left_missed_shots_per_match(
-                d.pop("sixMetreLeftMissedShotsPerMatch", UNSET)
-            )
+        six_metre_left_missed_shots_per_match = _parse_six_metre_left_missed_shots_per_match(
+            d.pop("sixMetreLeftMissedShotsPerMatch", UNSET)
         )
 
         def _parse_six_metre_left_post_hits(data: object) -> Union[None, Unset, int]:
@@ -10237,13 +8529,9 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        six_metre_left_post_hits = _parse_six_metre_left_post_hits(
-            d.pop("sixMetreLeftPostHits", UNSET)
-        )
+        six_metre_left_post_hits = _parse_six_metre_left_post_hits(d.pop("sixMetreLeftPostHits", UNSET))
 
-        def _parse_six_metre_left_post_hits_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_six_metre_left_post_hits_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -10256,19 +8544,15 @@ class CompetitionPersonStatisticsModelStatistics:
 
         six_metre_left_shooting_accuracy = d.pop("sixMetreLeftShootingAccuracy", UNSET)
 
-        def _parse_six_metre_left_shooting_accuracy_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_six_metre_left_shooting_accuracy_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        six_metre_left_shooting_accuracy_per_match = (
-            _parse_six_metre_left_shooting_accuracy_per_match(
-                d.pop("sixMetreLeftShootingAccuracyPerMatch", UNSET)
-            )
+        six_metre_left_shooting_accuracy_per_match = _parse_six_metre_left_shooting_accuracy_per_match(
+            d.pop("sixMetreLeftShootingAccuracyPerMatch", UNSET)
         )
 
         def _parse_six_metre_left_shots(data: object) -> Union[None, Unset, int]:
@@ -10278,13 +8562,9 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        six_metre_left_shots = _parse_six_metre_left_shots(
-            d.pop("sixMetreLeftShots", UNSET)
-        )
+        six_metre_left_shots = _parse_six_metre_left_shots(d.pop("sixMetreLeftShots", UNSET))
 
-        def _parse_six_metre_left_shots_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_six_metre_left_shots_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -10295,60 +8575,44 @@ class CompetitionPersonStatisticsModelStatistics:
             d.pop("sixMetreLeftShotsPerMatch", UNSET)
         )
 
-        def _parse_six_metre_left_shots_blocked(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_six_metre_left_shots_blocked(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        six_metre_left_shots_blocked = _parse_six_metre_left_shots_blocked(
-            d.pop("sixMetreLeftShotsBlocked", UNSET)
-        )
+        six_metre_left_shots_blocked = _parse_six_metre_left_shots_blocked(d.pop("sixMetreLeftShotsBlocked", UNSET))
 
-        def _parse_six_metre_left_shots_blocked_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_six_metre_left_shots_blocked_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        six_metre_left_shots_blocked_per_match = (
-            _parse_six_metre_left_shots_blocked_per_match(
-                d.pop("sixMetreLeftShotsBlockedPerMatch", UNSET)
-            )
+        six_metre_left_shots_blocked_per_match = _parse_six_metre_left_shots_blocked_per_match(
+            d.pop("sixMetreLeftShotsBlockedPerMatch", UNSET)
         )
 
-        def _parse_six_metre_left_shots_on_goal(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_six_metre_left_shots_on_goal(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        six_metre_left_shots_on_goal = _parse_six_metre_left_shots_on_goal(
-            d.pop("sixMetreLeftShotsOnGoal", UNSET)
-        )
+        six_metre_left_shots_on_goal = _parse_six_metre_left_shots_on_goal(d.pop("sixMetreLeftShotsOnGoal", UNSET))
 
-        def _parse_six_metre_left_shots_on_goal_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_six_metre_left_shots_on_goal_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        six_metre_left_shots_on_goal_per_match = (
-            _parse_six_metre_left_shots_on_goal_per_match(
-                d.pop("sixMetreLeftShotsOnGoalPerMatch", UNSET)
-            )
+        six_metre_left_shots_on_goal_per_match = _parse_six_metre_left_shots_on_goal_per_match(
+            d.pop("sixMetreLeftShotsOnGoalPerMatch", UNSET)
         )
 
         def _parse_six_metre_missed_shots(data: object) -> Union[None, Unset, int]:
@@ -10358,13 +8622,9 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        six_metre_missed_shots = _parse_six_metre_missed_shots(
-            d.pop("sixMetreMissedShots", UNSET)
-        )
+        six_metre_missed_shots = _parse_six_metre_missed_shots(d.pop("sixMetreMissedShots", UNSET))
 
-        def _parse_six_metre_missed_shots_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_six_metre_missed_shots_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -10382,77 +8642,55 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        six_metre_post_hits = _parse_six_metre_post_hits(
-            d.pop("sixMetrePostHits", UNSET)
-        )
+        six_metre_post_hits = _parse_six_metre_post_hits(d.pop("sixMetrePostHits", UNSET))
 
-        def _parse_six_metre_post_hits_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_six_metre_post_hits_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        six_metre_post_hits_per_match = _parse_six_metre_post_hits_per_match(
-            d.pop("sixMetrePostHitsPerMatch", UNSET)
-        )
+        six_metre_post_hits_per_match = _parse_six_metre_post_hits_per_match(d.pop("sixMetrePostHitsPerMatch", UNSET))
 
-        def _parse_six_metre_right_goals_scored(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_six_metre_right_goals_scored(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        six_metre_right_goals_scored = _parse_six_metre_right_goals_scored(
-            d.pop("sixMetreRightGoalsScored", UNSET)
-        )
+        six_metre_right_goals_scored = _parse_six_metre_right_goals_scored(d.pop("sixMetreRightGoalsScored", UNSET))
 
-        def _parse_six_metre_right_goals_scored_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_six_metre_right_goals_scored_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        six_metre_right_goals_scored_per_match = (
-            _parse_six_metre_right_goals_scored_per_match(
-                d.pop("sixMetreRightGoalsScoredPerMatch", UNSET)
-            )
+        six_metre_right_goals_scored_per_match = _parse_six_metre_right_goals_scored_per_match(
+            d.pop("sixMetreRightGoalsScoredPerMatch", UNSET)
         )
 
-        def _parse_six_metre_right_missed_shots(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_six_metre_right_missed_shots(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        six_metre_right_missed_shots = _parse_six_metre_right_missed_shots(
-            d.pop("sixMetreRightMissedShots", UNSET)
-        )
+        six_metre_right_missed_shots = _parse_six_metre_right_missed_shots(d.pop("sixMetreRightMissedShots", UNSET))
 
-        def _parse_six_metre_right_missed_shots_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_six_metre_right_missed_shots_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        six_metre_right_missed_shots_per_match = (
-            _parse_six_metre_right_missed_shots_per_match(
-                d.pop("sixMetreRightMissedShotsPerMatch", UNSET)
-            )
+        six_metre_right_missed_shots_per_match = _parse_six_metre_right_missed_shots_per_match(
+            d.pop("sixMetreRightMissedShotsPerMatch", UNSET)
         )
 
         def _parse_six_metre_right_post_hits(data: object) -> Union[None, Unset, int]:
@@ -10462,42 +8700,30 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        six_metre_right_post_hits = _parse_six_metre_right_post_hits(
-            d.pop("sixMetreRightPostHits", UNSET)
-        )
+        six_metre_right_post_hits = _parse_six_metre_right_post_hits(d.pop("sixMetreRightPostHits", UNSET))
 
-        def _parse_six_metre_right_post_hits_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_six_metre_right_post_hits_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        six_metre_right_post_hits_per_match = (
-            _parse_six_metre_right_post_hits_per_match(
-                d.pop("sixMetreRightPostHitsPerMatch", UNSET)
-            )
+        six_metre_right_post_hits_per_match = _parse_six_metre_right_post_hits_per_match(
+            d.pop("sixMetreRightPostHitsPerMatch", UNSET)
         )
 
-        six_metre_right_shooting_accuracy = d.pop(
-            "sixMetreRightShootingAccuracy", UNSET
-        )
+        six_metre_right_shooting_accuracy = d.pop("sixMetreRightShootingAccuracy", UNSET)
 
-        def _parse_six_metre_right_shooting_accuracy_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_six_metre_right_shooting_accuracy_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        six_metre_right_shooting_accuracy_per_match = (
-            _parse_six_metre_right_shooting_accuracy_per_match(
-                d.pop("sixMetreRightShootingAccuracyPerMatch", UNSET)
-            )
+        six_metre_right_shooting_accuracy_per_match = _parse_six_metre_right_shooting_accuracy_per_match(
+            d.pop("sixMetreRightShootingAccuracyPerMatch", UNSET)
         )
 
         def _parse_six_metre_right_shots(data: object) -> Union[None, Unset, int]:
@@ -10507,13 +8733,9 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        six_metre_right_shots = _parse_six_metre_right_shots(
-            d.pop("sixMetreRightShots", UNSET)
-        )
+        six_metre_right_shots = _parse_six_metre_right_shots(d.pop("sixMetreRightShots", UNSET))
 
-        def _parse_six_metre_right_shots_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_six_metre_right_shots_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -10524,77 +8746,57 @@ class CompetitionPersonStatisticsModelStatistics:
             d.pop("sixMetreRightShotsPerMatch", UNSET)
         )
 
-        def _parse_six_metre_right_shots_blocked(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_six_metre_right_shots_blocked(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        six_metre_right_shots_blocked = _parse_six_metre_right_shots_blocked(
-            d.pop("sixMetreRightShotsBlocked", UNSET)
-        )
+        six_metre_right_shots_blocked = _parse_six_metre_right_shots_blocked(d.pop("sixMetreRightShotsBlocked", UNSET))
 
-        def _parse_six_metre_right_shots_blocked_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_six_metre_right_shots_blocked_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        six_metre_right_shots_blocked_per_match = (
-            _parse_six_metre_right_shots_blocked_per_match(
-                d.pop("sixMetreRightShotsBlockedPerMatch", UNSET)
-            )
+        six_metre_right_shots_blocked_per_match = _parse_six_metre_right_shots_blocked_per_match(
+            d.pop("sixMetreRightShotsBlockedPerMatch", UNSET)
         )
 
-        def _parse_six_metre_right_shots_on_goal(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_six_metre_right_shots_on_goal(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        six_metre_right_shots_on_goal = _parse_six_metre_right_shots_on_goal(
-            d.pop("sixMetreRightShotsOnGoal", UNSET)
-        )
+        six_metre_right_shots_on_goal = _parse_six_metre_right_shots_on_goal(d.pop("sixMetreRightShotsOnGoal", UNSET))
 
-        def _parse_six_metre_right_shots_on_goal_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_six_metre_right_shots_on_goal_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        six_metre_right_shots_on_goal_per_match = (
-            _parse_six_metre_right_shots_on_goal_per_match(
-                d.pop("sixMetreRightShotsOnGoalPerMatch", UNSET)
-            )
+        six_metre_right_shots_on_goal_per_match = _parse_six_metre_right_shots_on_goal_per_match(
+            d.pop("sixMetreRightShotsOnGoalPerMatch", UNSET)
         )
 
         six_metre_shooting_accuracy = d.pop("sixMetreShootingAccuracy", UNSET)
 
-        def _parse_six_metre_shooting_accuracy_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_six_metre_shooting_accuracy_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        six_metre_shooting_accuracy_per_match = (
-            _parse_six_metre_shooting_accuracy_per_match(
-                d.pop("sixMetreShootingAccuracyPerMatch", UNSET)
-            )
+        six_metre_shooting_accuracy_per_match = _parse_six_metre_shooting_accuracy_per_match(
+            d.pop("sixMetreShootingAccuracyPerMatch", UNSET)
         )
 
         def _parse_six_metre_shots(data: object) -> Union[None, Unset, int]:
@@ -10613,9 +8815,7 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, float], data)
 
-        six_metre_shots_per_match = _parse_six_metre_shots_per_match(
-            d.pop("sixMetreShotsPerMatch", UNSET)
-        )
+        six_metre_shots_per_match = _parse_six_metre_shots_per_match(d.pop("sixMetreShotsPerMatch", UNSET))
 
         def _parse_six_metre_shots_blocked(data: object) -> Union[None, Unset, int]:
             if data is None:
@@ -10624,13 +8824,9 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        six_metre_shots_blocked = _parse_six_metre_shots_blocked(
-            d.pop("sixMetreShotsBlocked", UNSET)
-        )
+        six_metre_shots_blocked = _parse_six_metre_shots_blocked(d.pop("sixMetreShotsBlocked", UNSET))
 
-        def _parse_six_metre_shots_blocked_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_six_metre_shots_blocked_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -10648,13 +8844,9 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        six_metre_shots_on_goal = _parse_six_metre_shots_on_goal(
-            d.pop("sixMetreShotsOnGoal", UNSET)
-        )
+        six_metre_shots_on_goal = _parse_six_metre_shots_on_goal(d.pop("sixMetreShotsOnGoal", UNSET))
 
-        def _parse_six_metre_shots_on_goal_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_six_metre_shots_on_goal_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -10672,9 +8864,7 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, float], data)
 
-        speed_distance_per_time = _parse_speed_distance_per_time(
-            d.pop("speedDistancePerTime", UNSET)
-        )
+        speed_distance_per_time = _parse_speed_distance_per_time(d.pop("speedDistancePerTime", UNSET))
 
         def _parse_speed_max(data: object) -> Union[None, Unset, float]:
             if data is None:
@@ -10719,9 +8909,7 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, float], data)
 
-        substitutions_per_match = _parse_substitutions_per_match(
-            d.pop("substitutionsPerMatch", UNSET)
-        )
+        substitutions_per_match = _parse_substitutions_per_match(d.pop("substitutionsPerMatch", UNSET))
 
         def _parse_suspensions(data: object) -> Union[None, Unset, int]:
             if data is None:
@@ -10739,9 +8927,7 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, float], data)
 
-        suspensions_per_match = _parse_suspensions_per_match(
-            d.pop("suspensionsPerMatch", UNSET)
-        )
+        suspensions_per_match = _parse_suspensions_per_match(d.pop("suspensionsPerMatch", UNSET))
 
         def _parse_technical_ball_faults(data: object) -> Union[None, Unset, int]:
             if data is None:
@@ -10750,13 +8936,9 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        technical_ball_faults = _parse_technical_ball_faults(
-            d.pop("technicalBallFaults", UNSET)
-        )
+        technical_ball_faults = _parse_technical_ball_faults(d.pop("technicalBallFaults", UNSET))
 
-        def _parse_technical_ball_faults_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_technical_ball_faults_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -10776,18 +8958,14 @@ class CompetitionPersonStatisticsModelStatistics:
 
         technical_faults = _parse_technical_faults(d.pop("technicalFaults", UNSET))
 
-        def _parse_technical_faults_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_technical_faults_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        technical_faults_per_match = _parse_technical_faults_per_match(
-            d.pop("technicalFaultsPerMatch", UNSET)
-        )
+        technical_faults_per_match = _parse_technical_faults_per_match(d.pop("technicalFaultsPerMatch", UNSET))
 
         def _parse_technical_rule_faults(data: object) -> Union[None, Unset, int]:
             if data is None:
@@ -10796,13 +8974,9 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        technical_rule_faults = _parse_technical_rule_faults(
-            d.pop("technicalRuleFaults", UNSET)
-        )
+        technical_rule_faults = _parse_technical_rule_faults(d.pop("technicalRuleFaults", UNSET))
 
-        def _parse_technical_rule_faults_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_technical_rule_faults_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -10813,18 +8987,14 @@ class CompetitionPersonStatisticsModelStatistics:
             d.pop("technicalRuleFaultsPerMatch", UNSET)
         )
 
-        def _parse_time_on_playing_field(
-            data: object,
-        ) -> Union[None, Unset, float, str]:
+        def _parse_time_on_playing_field(data: object) -> Union[None, Unset, float, str]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float, str], data)
 
-        time_on_playing_field = _parse_time_on_playing_field(
-            d.pop("timeOnPlayingField", UNSET)
-        )
+        time_on_playing_field = _parse_time_on_playing_field(d.pop("timeOnPlayingField", UNSET))
 
         def _parse_time_ball_possession(data: object) -> Union[None, Unset, float, str]:
             if data is None:
@@ -10833,9 +9003,7 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, float, str], data)
 
-        time_ball_possession = _parse_time_ball_possession(
-            d.pop("timeBallPossession", UNSET)
-        )
+        time_ball_possession = _parse_time_ball_possession(d.pop("timeBallPossession", UNSET))
 
         def _parse_time_played(data: object) -> Union[None, Unset, int]:
             if data is None:
@@ -10853,9 +9021,7 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, float], data)
 
-        time_played_per_match = _parse_time_played_per_match(
-            d.pop("timePlayedPerMatch", UNSET)
-        )
+        time_played_per_match = _parse_time_played_per_match(d.pop("timePlayedPerMatch", UNSET))
 
         def _parse_turnovers(data: object) -> Union[None, Unset, int]:
             if data is None:
@@ -10873,9 +9039,7 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, float], data)
 
-        turnovers_per_match = _parse_turnovers_per_match(
-            d.pop("turnoversPerMatch", UNSET)
-        )
+        turnovers_per_match = _parse_turnovers_per_match(d.pop("turnoversPerMatch", UNSET))
 
         def _parse_two_minute_suspensions(data: object) -> Union[None, Unset, int]:
             if data is None:
@@ -10884,13 +9048,9 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        two_minute_suspensions = _parse_two_minute_suspensions(
-            d.pop("twoMinuteSuspensions", UNSET)
-        )
+        two_minute_suspensions = _parse_two_minute_suspensions(d.pop("twoMinuteSuspensions", UNSET))
 
-        def _parse_two_minute_suspensions_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_two_minute_suspensions_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -10910,18 +9070,14 @@ class CompetitionPersonStatisticsModelStatistics:
 
         wing_goals_scored = _parse_wing_goals_scored(d.pop("wingGoalsScored", UNSET))
 
-        def _parse_wing_goals_scored_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_wing_goals_scored_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        wing_goals_scored_per_match = _parse_wing_goals_scored_per_match(
-            d.pop("wingGoalsScoredPerMatch", UNSET)
-        )
+        wing_goals_scored_per_match = _parse_wing_goals_scored_per_match(d.pop("wingGoalsScoredPerMatch", UNSET))
 
         def _parse_wing_left_goals_scored(data: object) -> Union[None, Unset, int]:
             if data is None:
@@ -10930,13 +9086,9 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        wing_left_goals_scored = _parse_wing_left_goals_scored(
-            d.pop("wingLeftGoalsScored", UNSET)
-        )
+        wing_left_goals_scored = _parse_wing_left_goals_scored(d.pop("wingLeftGoalsScored", UNSET))
 
-        def _parse_wing_left_goals_scored_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_wing_left_goals_scored_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -10954,13 +9106,9 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        wing_left_missed_shots = _parse_wing_left_missed_shots(
-            d.pop("wingLeftMissedShots", UNSET)
-        )
+        wing_left_missed_shots = _parse_wing_left_missed_shots(d.pop("wingLeftMissedShots", UNSET))
 
-        def _parse_wing_left_missed_shots_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_wing_left_missed_shots_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -10978,38 +9126,28 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        wing_left_post_hits = _parse_wing_left_post_hits(
-            d.pop("wingLeftPostHits", UNSET)
-        )
+        wing_left_post_hits = _parse_wing_left_post_hits(d.pop("wingLeftPostHits", UNSET))
 
-        def _parse_wing_left_post_hits_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_wing_left_post_hits_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        wing_left_post_hits_per_match = _parse_wing_left_post_hits_per_match(
-            d.pop("wingLeftPostHitsPerMatch", UNSET)
-        )
+        wing_left_post_hits_per_match = _parse_wing_left_post_hits_per_match(d.pop("wingLeftPostHitsPerMatch", UNSET))
 
         wing_left_shooting_accuracy = d.pop("wingLeftShootingAccuracy", UNSET)
 
-        def _parse_wing_left_shooting_accuracy_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_wing_left_shooting_accuracy_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        wing_left_shooting_accuracy_per_match = (
-            _parse_wing_left_shooting_accuracy_per_match(
-                d.pop("wingLeftShootingAccuracyPerMatch", UNSET)
-            )
+        wing_left_shooting_accuracy_per_match = _parse_wing_left_shooting_accuracy_per_match(
+            d.pop("wingLeftShootingAccuracyPerMatch", UNSET)
         )
 
         def _parse_wing_left_shots(data: object) -> Union[None, Unset, int]:
@@ -11028,9 +9166,7 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, float], data)
 
-        wing_left_shots_per_match = _parse_wing_left_shots_per_match(
-            d.pop("wingLeftShotsPerMatch", UNSET)
-        )
+        wing_left_shots_per_match = _parse_wing_left_shots_per_match(d.pop("wingLeftShotsPerMatch", UNSET))
 
         def _parse_wing_left_shots_blocked(data: object) -> Union[None, Unset, int]:
             if data is None:
@@ -11039,13 +9175,9 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        wing_left_shots_blocked = _parse_wing_left_shots_blocked(
-            d.pop("wingLeftShotsBlocked", UNSET)
-        )
+        wing_left_shots_blocked = _parse_wing_left_shots_blocked(d.pop("wingLeftShotsBlocked", UNSET))
 
-        def _parse_wing_left_shots_blocked_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_wing_left_shots_blocked_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -11063,13 +9195,9 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        wing_left_shots_on_goal = _parse_wing_left_shots_on_goal(
-            d.pop("wingLeftShotsOnGoal", UNSET)
-        )
+        wing_left_shots_on_goal = _parse_wing_left_shots_on_goal(d.pop("wingLeftShotsOnGoal", UNSET))
 
-        def _parse_wing_left_shots_on_goal_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_wing_left_shots_on_goal_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -11089,18 +9217,14 @@ class CompetitionPersonStatisticsModelStatistics:
 
         wing_missed_shots = _parse_wing_missed_shots(d.pop("wingMissedShots", UNSET))
 
-        def _parse_wing_missed_shots_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_wing_missed_shots_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        wing_missed_shots_per_match = _parse_wing_missed_shots_per_match(
-            d.pop("wingMissedShotsPerMatch", UNSET)
-        )
+        wing_missed_shots_per_match = _parse_wing_missed_shots_per_match(d.pop("wingMissedShotsPerMatch", UNSET))
 
         def _parse_wing_post_hits(data: object) -> Union[None, Unset, int]:
             if data is None:
@@ -11118,9 +9242,7 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, float], data)
 
-        wing_post_hits_per_match = _parse_wing_post_hits_per_match(
-            d.pop("wingPostHitsPerMatch", UNSET)
-        )
+        wing_post_hits_per_match = _parse_wing_post_hits_per_match(d.pop("wingPostHitsPerMatch", UNSET))
 
         def _parse_wing_right_goals_scored(data: object) -> Union[None, Unset, int]:
             if data is None:
@@ -11129,13 +9251,9 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        wing_right_goals_scored = _parse_wing_right_goals_scored(
-            d.pop("wingRightGoalsScored", UNSET)
-        )
+        wing_right_goals_scored = _parse_wing_right_goals_scored(d.pop("wingRightGoalsScored", UNSET))
 
-        def _parse_wing_right_goals_scored_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_wing_right_goals_scored_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -11153,13 +9271,9 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        wing_right_missed_shots = _parse_wing_right_missed_shots(
-            d.pop("wingRightMissedShots", UNSET)
-        )
+        wing_right_missed_shots = _parse_wing_right_missed_shots(d.pop("wingRightMissedShots", UNSET))
 
-        def _parse_wing_right_missed_shots_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_wing_right_missed_shots_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -11177,13 +9291,9 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        wing_right_post_hits = _parse_wing_right_post_hits(
-            d.pop("wingRightPostHits", UNSET)
-        )
+        wing_right_post_hits = _parse_wing_right_post_hits(d.pop("wingRightPostHits", UNSET))
 
-        def _parse_wing_right_post_hits_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_wing_right_post_hits_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -11196,19 +9306,15 @@ class CompetitionPersonStatisticsModelStatistics:
 
         wing_right_shooting_accuracy = d.pop("wingRightShootingAccuracy", UNSET)
 
-        def _parse_wing_right_shooting_accuracy_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_wing_right_shooting_accuracy_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        wing_right_shooting_accuracy_per_match = (
-            _parse_wing_right_shooting_accuracy_per_match(
-                d.pop("wingRightShootingAccuracyPerMatch", UNSET)
-            )
+        wing_right_shooting_accuracy_per_match = _parse_wing_right_shooting_accuracy_per_match(
+            d.pop("wingRightShootingAccuracyPerMatch", UNSET)
         )
 
         def _parse_wing_right_shots(data: object) -> Union[None, Unset, int]:
@@ -11220,18 +9326,14 @@ class CompetitionPersonStatisticsModelStatistics:
 
         wing_right_shots = _parse_wing_right_shots(d.pop("wingRightShots", UNSET))
 
-        def _parse_wing_right_shots_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_wing_right_shots_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        wing_right_shots_per_match = _parse_wing_right_shots_per_match(
-            d.pop("wingRightShotsPerMatch", UNSET)
-        )
+        wing_right_shots_per_match = _parse_wing_right_shots_per_match(d.pop("wingRightShotsPerMatch", UNSET))
 
         def _parse_wing_right_shots_blocked(data: object) -> Union[None, Unset, int]:
             if data is None:
@@ -11240,13 +9342,9 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        wing_right_shots_blocked = _parse_wing_right_shots_blocked(
-            d.pop("wingRightShotsBlocked", UNSET)
-        )
+        wing_right_shots_blocked = _parse_wing_right_shots_blocked(d.pop("wingRightShotsBlocked", UNSET))
 
-        def _parse_wing_right_shots_blocked_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_wing_right_shots_blocked_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -11264,13 +9362,9 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        wing_right_shots_on_goal = _parse_wing_right_shots_on_goal(
-            d.pop("wingRightShotsOnGoal", UNSET)
-        )
+        wing_right_shots_on_goal = _parse_wing_right_shots_on_goal(d.pop("wingRightShotsOnGoal", UNSET))
 
-        def _parse_wing_right_shots_on_goal_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_wing_right_shots_on_goal_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -11283,9 +9377,7 @@ class CompetitionPersonStatisticsModelStatistics:
 
         wing_shooting_accuracy = d.pop("wingShootingAccuracy", UNSET)
 
-        def _parse_wing_shooting_accuracy_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_wing_shooting_accuracy_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -11312,9 +9404,7 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, float], data)
 
-        wing_shots_per_match = _parse_wing_shots_per_match(
-            d.pop("wingShotsPerMatch", UNSET)
-        )
+        wing_shots_per_match = _parse_wing_shots_per_match(d.pop("wingShotsPerMatch", UNSET))
 
         def _parse_wing_shots_blocked(data: object) -> Union[None, Unset, int]:
             if data is None:
@@ -11325,18 +9415,14 @@ class CompetitionPersonStatisticsModelStatistics:
 
         wing_shots_blocked = _parse_wing_shots_blocked(d.pop("wingShotsBlocked", UNSET))
 
-        def _parse_wing_shots_blocked_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_wing_shots_blocked_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        wing_shots_blocked_per_match = _parse_wing_shots_blocked_per_match(
-            d.pop("wingShotsBlockedPerMatch", UNSET)
-        )
+        wing_shots_blocked_per_match = _parse_wing_shots_blocked_per_match(d.pop("wingShotsBlockedPerMatch", UNSET))
 
         def _parse_wing_shots_on_goal(data: object) -> Union[None, Unset, int]:
             if data is None:
@@ -11347,18 +9433,14 @@ class CompetitionPersonStatisticsModelStatistics:
 
         wing_shots_on_goal = _parse_wing_shots_on_goal(d.pop("wingShotsOnGoal", UNSET))
 
-        def _parse_wing_shots_on_goal_per_match(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_wing_shots_on_goal_per_match(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        wing_shots_on_goal_per_match = _parse_wing_shots_on_goal_per_match(
-            d.pop("wingShotsOnGoalPerMatch", UNSET)
-        )
+        wing_shots_on_goal_per_match = _parse_wing_shots_on_goal_per_match(d.pop("wingShotsOnGoalPerMatch", UNSET))
 
         def _parse_wins(data: object) -> Union[None, Unset, int]:
             if data is None:
@@ -11385,9 +9467,7 @@ class CompetitionPersonStatisticsModelStatistics:
                 return data
             return cast(Union[None, Unset, float], data)
 
-        yellow_cards_per_match = _parse_yellow_cards_per_match(
-            d.pop("yellowCardsPerMatch", UNSET)
-        )
+        yellow_cards_per_match = _parse_yellow_cards_per_match(d.pop("yellowCardsPerMatch", UNSET))
 
         competition_person_statistics_model_statistics = cls(
             airtime_max=airtime_max,

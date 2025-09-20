@@ -5,9 +5,6 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.fesp_delete_all_fixture_entity_statistics_periods_response import (
-    FespDeleteAllFixtureEntityStatisticsPeriodsResponse,
-)
 from ...models.fesp_delete_all_period_id import FespDeleteAllPeriodId
 from ...models.fesp_delete_all_response_default import FespDeleteAllResponseDefault
 from ...types import UNSET, Response, Unset
@@ -64,16 +61,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[
-    FespDeleteAllFixtureEntityStatisticsPeriodsResponse, FespDeleteAllResponseDefault
-]:
-    if response.status_code == 200:
-        response_200 = FespDeleteAllFixtureEntityStatisticsPeriodsResponse.from_dict(
-            response.json()
-        )
-
-        return response_200
-
+) -> FespDeleteAllResponseDefault:
     response_default = FespDeleteAllResponseDefault.from_dict(response.json())
 
     return response_default
@@ -81,12 +69,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[
-        FespDeleteAllFixtureEntityStatisticsPeriodsResponse,
-        FespDeleteAllResponseDefault,
-    ]
-]:
+) -> Response[FespDeleteAllResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -108,12 +91,7 @@ def sync_detailed(
     include: Union[Unset, str] = UNSET,
     period_id: Union[Unset, FespDeleteAllPeriodId] = UNSET,
     section: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        FespDeleteAllFixtureEntityStatisticsPeriodsResponse,
-        FespDeleteAllResponseDefault,
-    ]
-]:
+) -> Response[FespDeleteAllResponseDefault]:
     """Delete team period statistics
 
      Delete statistics for a match for a given team by period.
@@ -136,7 +114,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[FespDeleteAllFixtureEntityStatisticsPeriodsResponse, FespDeleteAllResponseDefault]]
+        Response[FespDeleteAllResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -172,12 +150,7 @@ def sync(
     include: Union[Unset, str] = UNSET,
     period_id: Union[Unset, FespDeleteAllPeriodId] = UNSET,
     section: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        FespDeleteAllFixtureEntityStatisticsPeriodsResponse,
-        FespDeleteAllResponseDefault,
-    ]
-]:
+) -> Optional[FespDeleteAllResponseDefault]:
     """Delete team period statistics
 
      Delete statistics for a match for a given team by period.
@@ -200,7 +173,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[FespDeleteAllFixtureEntityStatisticsPeriodsResponse, FespDeleteAllResponseDefault]
+        FespDeleteAllResponseDefault
     """
 
     return sync_detailed(
@@ -231,12 +204,7 @@ async def asyncio_detailed(
     include: Union[Unset, str] = UNSET,
     period_id: Union[Unset, FespDeleteAllPeriodId] = UNSET,
     section: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        FespDeleteAllFixtureEntityStatisticsPeriodsResponse,
-        FespDeleteAllResponseDefault,
-    ]
-]:
+) -> Response[FespDeleteAllResponseDefault]:
     """Delete team period statistics
 
      Delete statistics for a match for a given team by period.
@@ -259,7 +227,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[FespDeleteAllFixtureEntityStatisticsPeriodsResponse, FespDeleteAllResponseDefault]]
+        Response[FespDeleteAllResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -293,12 +261,7 @@ async def asyncio(
     include: Union[Unset, str] = UNSET,
     period_id: Union[Unset, FespDeleteAllPeriodId] = UNSET,
     section: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        FespDeleteAllFixtureEntityStatisticsPeriodsResponse,
-        FespDeleteAllResponseDefault,
-    ]
-]:
+) -> Optional[FespDeleteAllResponseDefault]:
     """Delete team period statistics
 
      Delete statistics for a match for a given team by period.
@@ -321,7 +284,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[FespDeleteAllFixtureEntityStatisticsPeriodsResponse, FespDeleteAllResponseDefault]
+        FespDeleteAllResponseDefault
     """
 
     return (

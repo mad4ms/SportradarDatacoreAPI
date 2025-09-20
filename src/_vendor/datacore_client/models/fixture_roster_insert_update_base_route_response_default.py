@@ -70,9 +70,7 @@ class FixtureRosterInsertUpdateBaseRouteResponseDefault:
             error=error,
         )
 
-        fixture_roster_insert_update_base_route_response_default.additional_properties = (
-            d
-        )
+        fixture_roster_insert_update_base_route_response_default.additional_properties = d
         return fixture_roster_insert_update_base_route_response_default
 
     @property

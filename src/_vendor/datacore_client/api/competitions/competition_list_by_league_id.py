@@ -6,15 +6,8 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.competition_list_by_league_id_age_group import (
-    CompetitionListByLeagueIdAgeGroup,
-)
-from ...models.competition_list_by_league_id_competitions_response import (
-    CompetitionListByLeagueIdCompetitionsResponse,
-)
-from ...models.competition_list_by_league_id_response_default import (
-    CompetitionListByLeagueIdResponseDefault,
-)
+from ...models.competition_list_by_league_id_age_group import CompetitionListByLeagueIdAgeGroup
+from ...models.competition_list_by_league_id_response_default import CompetitionListByLeagueIdResponseDefault
 from ...types import UNSET, Response, Unset
 
 
@@ -75,32 +68,15 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[
-    CompetitionListByLeagueIdCompetitionsResponse,
-    CompetitionListByLeagueIdResponseDefault,
-]:
-    if response.status_code == 200:
-        response_200 = CompetitionListByLeagueIdCompetitionsResponse.from_dict(
-            response.json()
-        )
-
-        return response_200
-
-    response_default = CompetitionListByLeagueIdResponseDefault.from_dict(
-        response.json()
-    )
+) -> CompetitionListByLeagueIdResponseDefault:
+    response_default = CompetitionListByLeagueIdResponseDefault.from_dict(response.json())
 
     return response_default
 
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[
-        CompetitionListByLeagueIdCompetitionsResponse,
-        CompetitionListByLeagueIdResponseDefault,
-    ]
-]:
+) -> Response[CompetitionListByLeagueIdResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -123,12 +99,7 @@ def sync_detailed(
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[
-    Union[
-        CompetitionListByLeagueIdCompetitionsResponse,
-        CompetitionListByLeagueIdResponseDefault,
-    ]
-]:
+) -> Response[CompetitionListByLeagueIdResponseDefault]:
     """Get a list of competitions by for a league
 
      Return a list of available competitions for a specific league
@@ -152,7 +123,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[CompetitionListByLeagueIdCompetitionsResponse, CompetitionListByLeagueIdResponseDefault]]
+        Response[CompetitionListByLeagueIdResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -190,12 +161,7 @@ def sync(
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[
-    Union[
-        CompetitionListByLeagueIdCompetitionsResponse,
-        CompetitionListByLeagueIdResponseDefault,
-    ]
-]:
+) -> Optional[CompetitionListByLeagueIdResponseDefault]:
     """Get a list of competitions by for a league
 
      Return a list of available competitions for a specific league
@@ -219,7 +185,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[CompetitionListByLeagueIdCompetitionsResponse, CompetitionListByLeagueIdResponseDefault]
+        CompetitionListByLeagueIdResponseDefault
     """
 
     return sync_detailed(
@@ -252,12 +218,7 @@ async def asyncio_detailed(
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[
-    Union[
-        CompetitionListByLeagueIdCompetitionsResponse,
-        CompetitionListByLeagueIdResponseDefault,
-    ]
-]:
+) -> Response[CompetitionListByLeagueIdResponseDefault]:
     """Get a list of competitions by for a league
 
      Return a list of available competitions for a specific league
@@ -281,7 +242,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[CompetitionListByLeagueIdCompetitionsResponse, CompetitionListByLeagueIdResponseDefault]]
+        Response[CompetitionListByLeagueIdResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -317,12 +278,7 @@ async def asyncio(
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[
-    Union[
-        CompetitionListByLeagueIdCompetitionsResponse,
-        CompetitionListByLeagueIdResponseDefault,
-    ]
-]:
+) -> Optional[CompetitionListByLeagueIdResponseDefault]:
     """Get a list of competitions by for a league
 
      Return a list of available competitions for a specific league
@@ -346,7 +302,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[CompetitionListByLeagueIdCompetitionsResponse, CompetitionListByLeagueIdResponseDefault]
+        CompetitionListByLeagueIdResponseDefault
     """
 
     return (

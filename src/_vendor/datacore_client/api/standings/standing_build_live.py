@@ -5,12 +5,7 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.standing_build_live_response_default import (
-    StandingBuildLiveResponseDefault,
-)
-from ...models.standing_build_live_success_response import (
-    StandingBuildLiveSuccessResponse,
-)
+from ...models.standing_build_live_response_default import StandingBuildLiveResponseDefault
 from ...types import UNSET, Response, Unset
 
 
@@ -46,12 +41,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[StandingBuildLiveResponseDefault, StandingBuildLiveSuccessResponse]:
-    if response.status_code == 200:
-        response_200 = StandingBuildLiveSuccessResponse.from_dict(response.json())
-
-        return response_200
-
+) -> StandingBuildLiveResponseDefault:
     response_default = StandingBuildLiveResponseDefault.from_dict(response.json())
 
     return response_default
@@ -59,9 +49,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[StandingBuildLiveResponseDefault, StandingBuildLiveSuccessResponse]
-]:
+) -> Response[StandingBuildLiveResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -79,9 +67,7 @@ def sync_detailed(
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[StandingBuildLiveResponseDefault, StandingBuildLiveSuccessResponse]
-]:
+) -> Response[StandingBuildLiveResponseDefault]:
     """Build a standing using live data
 
      Build a standing using live data.
@@ -100,7 +86,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[StandingBuildLiveResponseDefault, StandingBuildLiveSuccessResponse]]
+        Response[StandingBuildLiveResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -128,9 +114,7 @@ def sync(
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[StandingBuildLiveResponseDefault, StandingBuildLiveSuccessResponse]
-]:
+) -> Optional[StandingBuildLiveResponseDefault]:
     """Build a standing using live data
 
      Build a standing using live data.
@@ -149,7 +133,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[StandingBuildLiveResponseDefault, StandingBuildLiveSuccessResponse]
+        StandingBuildLiveResponseDefault
     """
 
     return sync_detailed(
@@ -172,9 +156,7 @@ async def asyncio_detailed(
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[StandingBuildLiveResponseDefault, StandingBuildLiveSuccessResponse]
-]:
+) -> Response[StandingBuildLiveResponseDefault]:
     """Build a standing using live data
 
      Build a standing using live data.
@@ -193,7 +175,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[StandingBuildLiveResponseDefault, StandingBuildLiveSuccessResponse]]
+        Response[StandingBuildLiveResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -219,9 +201,7 @@ async def asyncio(
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[StandingBuildLiveResponseDefault, StandingBuildLiveSuccessResponse]
-]:
+) -> Optional[StandingBuildLiveResponseDefault]:
     """Build a standing using live data
 
      Build a standing using live data.
@@ -240,7 +220,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[StandingBuildLiveResponseDefault, StandingBuildLiveSuccessResponse]
+        StandingBuildLiveResponseDefault
     """
 
     return (

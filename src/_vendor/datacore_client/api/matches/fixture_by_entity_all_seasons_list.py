@@ -6,18 +6,10 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.fixture_by_entity_all_seasons_list_competitor_type import (
-    FixtureByEntityAllSeasonsListCompetitorType,
-)
-from ...models.fixture_by_entity_all_seasons_list_fixture_type import (
-    FixtureByEntityAllSeasonsListFixtureType,
-)
-from ...models.fixture_by_entity_all_seasons_list_response_default import (
-    FixtureByEntityAllSeasonsListResponseDefault,
-)
-from ...models.fixture_by_entity_all_seasons_list_status import (
-    FixtureByEntityAllSeasonsListStatus,
-)
+from ...models.fixture_by_entity_all_seasons_list_competitor_type import FixtureByEntityAllSeasonsListCompetitorType
+from ...models.fixture_by_entity_all_seasons_list_fixture_type import FixtureByEntityAllSeasonsListFixtureType
+from ...models.fixture_by_entity_all_seasons_list_response_default import FixtureByEntityAllSeasonsListResponseDefault
+from ...models.fixture_by_entity_all_seasons_list_status import FixtureByEntityAllSeasonsListStatus
 from ...types import UNSET, Response, Unset
 
 
@@ -159,9 +151,7 @@ def _get_kwargs(
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
 ) -> FixtureByEntityAllSeasonsListResponseDefault:
-    response_default = FixtureByEntityAllSeasonsListResponseDefault.from_dict(
-        response.json()
-    )
+    response_default = FixtureByEntityAllSeasonsListResponseDefault.from_dict(response.json())
 
     return response_default
 

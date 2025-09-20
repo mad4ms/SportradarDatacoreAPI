@@ -5,12 +5,7 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.season_roster_delete_response_default import (
-    SeasonRosterDeleteResponseDefault,
-)
-from ...models.season_roster_delete_season_roster_response import (
-    SeasonRosterDeleteSeasonRosterResponse,
-)
+from ...models.season_roster_delete_response_default import SeasonRosterDeleteResponseDefault
 from ...types import UNSET, Response, Unset
 
 
@@ -50,12 +45,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[SeasonRosterDeleteResponseDefault, SeasonRosterDeleteSeasonRosterResponse]:
-    if response.status_code == 200:
-        response_200 = SeasonRosterDeleteSeasonRosterResponse.from_dict(response.json())
-
-        return response_200
-
+) -> SeasonRosterDeleteResponseDefault:
     response_default = SeasonRosterDeleteResponseDefault.from_dict(response.json())
 
     return response_default
@@ -63,9 +53,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[SeasonRosterDeleteResponseDefault, SeasonRosterDeleteSeasonRosterResponse]
-]:
+) -> Response[SeasonRosterDeleteResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -85,9 +73,7 @@ def sync_detailed(
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[SeasonRosterDeleteResponseDefault, SeasonRosterDeleteSeasonRosterResponse]
-]:
+) -> Response[SeasonRosterDeleteResponseDefault]:
     """Delete a season roster
 
      Delete a person from the roster in a season
@@ -108,7 +94,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SeasonRosterDeleteResponseDefault, SeasonRosterDeleteSeasonRosterResponse]]
+        Response[SeasonRosterDeleteResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -140,9 +126,7 @@ def sync(
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[SeasonRosterDeleteResponseDefault, SeasonRosterDeleteSeasonRosterResponse]
-]:
+) -> Optional[SeasonRosterDeleteResponseDefault]:
     """Delete a season roster
 
      Delete a person from the roster in a season
@@ -163,7 +147,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SeasonRosterDeleteResponseDefault, SeasonRosterDeleteSeasonRosterResponse]
+        SeasonRosterDeleteResponseDefault
     """
 
     return sync_detailed(
@@ -190,9 +174,7 @@ async def asyncio_detailed(
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[SeasonRosterDeleteResponseDefault, SeasonRosterDeleteSeasonRosterResponse]
-]:
+) -> Response[SeasonRosterDeleteResponseDefault]:
     """Delete a season roster
 
      Delete a person from the roster in a season
@@ -213,7 +195,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SeasonRosterDeleteResponseDefault, SeasonRosterDeleteSeasonRosterResponse]]
+        Response[SeasonRosterDeleteResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -243,9 +225,7 @@ async def asyncio(
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[SeasonRosterDeleteResponseDefault, SeasonRosterDeleteSeasonRosterResponse]
-]:
+) -> Optional[SeasonRosterDeleteResponseDefault]:
     """Delete a season roster
 
      Delete a person from the roster in a season
@@ -266,7 +246,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SeasonRosterDeleteResponseDefault, SeasonRosterDeleteSeasonRosterResponse]
+        SeasonRosterDeleteResponseDefault
     """
 
     return (

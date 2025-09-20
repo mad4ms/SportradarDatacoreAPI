@@ -5,12 +5,7 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.entity_group_external_ids_delete_entity_group_external_ids_response import (
-    EntityGroupExternalIdsDeleteEntityGroupExternalIdsResponse,
-)
-from ...models.entity_group_external_ids_delete_response_default import (
-    EntityGroupExternalIdsDeleteResponseDefault,
-)
+from ...models.entity_group_external_ids_delete_response_default import EntityGroupExternalIdsDeleteResponseDefault
 from ...types import UNSET, Response, Unset
 
 
@@ -49,34 +44,15 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[
-    EntityGroupExternalIdsDeleteEntityGroupExternalIdsResponse,
-    EntityGroupExternalIdsDeleteResponseDefault,
-]:
-    if response.status_code == 200:
-        response_200 = (
-            EntityGroupExternalIdsDeleteEntityGroupExternalIdsResponse.from_dict(
-                response.json()
-            )
-        )
-
-        return response_200
-
-    response_default = EntityGroupExternalIdsDeleteResponseDefault.from_dict(
-        response.json()
-    )
+) -> EntityGroupExternalIdsDeleteResponseDefault:
+    response_default = EntityGroupExternalIdsDeleteResponseDefault.from_dict(response.json())
 
     return response_default
 
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[
-        EntityGroupExternalIdsDeleteEntityGroupExternalIdsResponse,
-        EntityGroupExternalIdsDeleteResponseDefault,
-    ]
-]:
+) -> Response[EntityGroupExternalIdsDeleteResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -95,12 +71,7 @@ def sync_detailed(
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        EntityGroupExternalIdsDeleteEntityGroupExternalIdsResponse,
-        EntityGroupExternalIdsDeleteResponseDefault,
-    ]
-]:
+) -> Response[EntityGroupExternalIdsDeleteResponseDefault]:
     """Delete a club external identifier information
 
      Delete a specific club external identifier information
@@ -120,7 +91,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[EntityGroupExternalIdsDeleteEntityGroupExternalIdsResponse, EntityGroupExternalIdsDeleteResponseDefault]]
+        Response[EntityGroupExternalIdsDeleteResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -150,12 +121,7 @@ def sync(
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        EntityGroupExternalIdsDeleteEntityGroupExternalIdsResponse,
-        EntityGroupExternalIdsDeleteResponseDefault,
-    ]
-]:
+) -> Optional[EntityGroupExternalIdsDeleteResponseDefault]:
     """Delete a club external identifier information
 
      Delete a specific club external identifier information
@@ -175,7 +141,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[EntityGroupExternalIdsDeleteEntityGroupExternalIdsResponse, EntityGroupExternalIdsDeleteResponseDefault]
+        EntityGroupExternalIdsDeleteResponseDefault
     """
 
     return sync_detailed(
@@ -200,12 +166,7 @@ async def asyncio_detailed(
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        EntityGroupExternalIdsDeleteEntityGroupExternalIdsResponse,
-        EntityGroupExternalIdsDeleteResponseDefault,
-    ]
-]:
+) -> Response[EntityGroupExternalIdsDeleteResponseDefault]:
     """Delete a club external identifier information
 
      Delete a specific club external identifier information
@@ -225,7 +186,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[EntityGroupExternalIdsDeleteEntityGroupExternalIdsResponse, EntityGroupExternalIdsDeleteResponseDefault]]
+        Response[EntityGroupExternalIdsDeleteResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -253,12 +214,7 @@ async def asyncio(
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        EntityGroupExternalIdsDeleteEntityGroupExternalIdsResponse,
-        EntityGroupExternalIdsDeleteResponseDefault,
-    ]
-]:
+) -> Optional[EntityGroupExternalIdsDeleteResponseDefault]:
     """Delete a club external identifier information
 
      Delete a specific club external identifier information
@@ -278,7 +234,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[EntityGroupExternalIdsDeleteEntityGroupExternalIdsResponse, EntityGroupExternalIdsDeleteResponseDefault]
+        EntityGroupExternalIdsDeleteResponseDefault
     """
 
     return (

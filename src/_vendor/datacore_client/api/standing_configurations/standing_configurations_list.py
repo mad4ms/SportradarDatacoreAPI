@@ -5,12 +5,8 @@ from typing import Any, Optional, Union
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.standing_configurations_list_response_default import (
-    StandingConfigurationsListResponseDefault,
-)
-from ...models.standing_configurations_list_standing_configurations_response import (
-    StandingConfigurationsListStandingConfigurationsResponse,
-)
+from ...models.standing_configurations_list_response_default import StandingConfigurationsListResponseDefault
+from ...models.standing_configurations_response import StandingConfigurationsResponse
 from ...types import UNSET, Response, Unset
 
 
@@ -69,34 +65,20 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[
-    StandingConfigurationsListResponseDefault,
-    StandingConfigurationsListStandingConfigurationsResponse,
-]:
+) -> Union[StandingConfigurationsListResponseDefault, StandingConfigurationsResponse]:
     if response.status_code == 200:
-        response_200 = (
-            StandingConfigurationsListStandingConfigurationsResponse.from_dict(
-                response.json()
-            )
-        )
+        response_200 = StandingConfigurationsResponse.from_dict(response.json())
 
         return response_200
 
-    response_default = StandingConfigurationsListResponseDefault.from_dict(
-        response.json()
-    )
+    response_default = StandingConfigurationsListResponseDefault.from_dict(response.json())
 
     return response_default
 
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[
-        StandingConfigurationsListResponseDefault,
-        StandingConfigurationsListStandingConfigurationsResponse,
-    ]
-]:
+) -> Response[Union[StandingConfigurationsListResponseDefault, StandingConfigurationsResponse]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -119,12 +101,7 @@ def sync_detailed(
     name_local_contains: Union[Unset, str] = UNSET,
     offset: Union[Unset, int] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[
-    Union[
-        StandingConfigurationsListResponseDefault,
-        StandingConfigurationsListStandingConfigurationsResponse,
-    ]
-]:
+) -> Response[Union[StandingConfigurationsListResponseDefault, StandingConfigurationsResponse]]:
     """Get a list of standing configurations
 
      Return a list of standing configurations
@@ -148,7 +125,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[StandingConfigurationsListResponseDefault, StandingConfigurationsListStandingConfigurationsResponse]]
+        Response[Union[StandingConfigurationsListResponseDefault, StandingConfigurationsResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -186,12 +163,7 @@ def sync(
     name_local_contains: Union[Unset, str] = UNSET,
     offset: Union[Unset, int] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[
-    Union[
-        StandingConfigurationsListResponseDefault,
-        StandingConfigurationsListStandingConfigurationsResponse,
-    ]
-]:
+) -> Optional[Union[StandingConfigurationsListResponseDefault, StandingConfigurationsResponse]]:
     """Get a list of standing configurations
 
      Return a list of standing configurations
@@ -215,7 +187,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[StandingConfigurationsListResponseDefault, StandingConfigurationsListStandingConfigurationsResponse]
+        Union[StandingConfigurationsListResponseDefault, StandingConfigurationsResponse]
     """
 
     return sync_detailed(
@@ -248,12 +220,7 @@ async def asyncio_detailed(
     name_local_contains: Union[Unset, str] = UNSET,
     offset: Union[Unset, int] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[
-    Union[
-        StandingConfigurationsListResponseDefault,
-        StandingConfigurationsListStandingConfigurationsResponse,
-    ]
-]:
+) -> Response[Union[StandingConfigurationsListResponseDefault, StandingConfigurationsResponse]]:
     """Get a list of standing configurations
 
      Return a list of standing configurations
@@ -277,7 +244,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[StandingConfigurationsListResponseDefault, StandingConfigurationsListStandingConfigurationsResponse]]
+        Response[Union[StandingConfigurationsListResponseDefault, StandingConfigurationsResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -313,12 +280,7 @@ async def asyncio(
     name_local_contains: Union[Unset, str] = UNSET,
     offset: Union[Unset, int] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[
-    Union[
-        StandingConfigurationsListResponseDefault,
-        StandingConfigurationsListStandingConfigurationsResponse,
-    ]
-]:
+) -> Optional[Union[StandingConfigurationsListResponseDefault, StandingConfigurationsResponse]]:
     """Get a list of standing configurations
 
      Return a list of standing configurations
@@ -342,7 +304,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[StandingConfigurationsListResponseDefault, StandingConfigurationsListStandingConfigurationsResponse]
+        Union[StandingConfigurationsListResponseDefault, StandingConfigurationsResponse]
     """
 
     return (

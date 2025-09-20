@@ -6,13 +6,8 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.roles_list_by_fixture_response_default import (
-    RolesListByFixtureResponseDefault,
-)
+from ...models.roles_list_by_fixture_response_default import RolesListByFixtureResponseDefault
 from ...models.roles_list_by_fixture_role import RolesListByFixtureRole
-from ...models.roles_list_by_fixture_roles_response import (
-    RolesListByFixtureRolesResponse,
-)
 from ...models.roles_list_by_fixture_status import RolesListByFixtureStatus
 from ...types import UNSET, Response, Unset
 
@@ -114,12 +109,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[RolesListByFixtureResponseDefault, RolesListByFixtureRolesResponse]:
-    if response.status_code == 200:
-        response_200 = RolesListByFixtureRolesResponse.from_dict(response.json())
-
-        return response_200
-
+) -> RolesListByFixtureResponseDefault:
     response_default = RolesListByFixtureResponseDefault.from_dict(response.json())
 
     return response_default
@@ -127,9 +117,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[RolesListByFixtureResponseDefault, RolesListByFixtureRolesResponse]
-]:
+) -> Response[RolesListByFixtureResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -162,9 +150,7 @@ def sync_detailed(
     sort_by: Union[Unset, str] = UNSET,
     status: Union[Unset, RolesListByFixtureStatus] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[
-    Union[RolesListByFixtureResponseDefault, RolesListByFixtureRolesResponse]
-]:
+) -> Response[RolesListByFixtureResponseDefault]:
     """Get a list of roles in a match
 
      Return a list of roles for a match
@@ -200,7 +186,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[RolesListByFixtureResponseDefault, RolesListByFixtureRolesResponse]]
+        Response[RolesListByFixtureResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -258,9 +244,7 @@ def sync(
     sort_by: Union[Unset, str] = UNSET,
     status: Union[Unset, RolesListByFixtureStatus] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[
-    Union[RolesListByFixtureResponseDefault, RolesListByFixtureRolesResponse]
-]:
+) -> Optional[RolesListByFixtureResponseDefault]:
     """Get a list of roles in a match
 
      Return a list of roles for a match
@@ -296,7 +280,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[RolesListByFixtureResponseDefault, RolesListByFixtureRolesResponse]
+        RolesListByFixtureResponseDefault
     """
 
     return sync_detailed(
@@ -349,9 +333,7 @@ async def asyncio_detailed(
     sort_by: Union[Unset, str] = UNSET,
     status: Union[Unset, RolesListByFixtureStatus] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[
-    Union[RolesListByFixtureResponseDefault, RolesListByFixtureRolesResponse]
-]:
+) -> Response[RolesListByFixtureResponseDefault]:
     """Get a list of roles in a match
 
      Return a list of roles for a match
@@ -387,7 +369,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[RolesListByFixtureResponseDefault, RolesListByFixtureRolesResponse]]
+        Response[RolesListByFixtureResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -443,9 +425,7 @@ async def asyncio(
     sort_by: Union[Unset, str] = UNSET,
     status: Union[Unset, RolesListByFixtureStatus] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[
-    Union[RolesListByFixtureResponseDefault, RolesListByFixtureRolesResponse]
-]:
+) -> Optional[RolesListByFixtureResponseDefault]:
     """Get a list of roles in a match
 
      Return a list of roles for a match
@@ -481,7 +461,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[RolesListByFixtureResponseDefault, RolesListByFixtureRolesResponse]
+        RolesListByFixtureResponseDefault
     """
 
     return (

@@ -5,9 +5,6 @@ from typing import Any, Optional, Union
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.entity_group_list_entity_groups_response import (
-    EntityGroupListEntityGroupsResponse,
-)
 from ...models.entity_group_list_response_default import EntityGroupListResponseDefault
 from ...models.entity_group_list_status import EntityGroupListStatus
 from ...types import UNSET, Response, Unset
@@ -78,12 +75,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[EntityGroupListEntityGroupsResponse, EntityGroupListResponseDefault]:
-    if response.status_code == 200:
-        response_200 = EntityGroupListEntityGroupsResponse.from_dict(response.json())
-
-        return response_200
-
+) -> EntityGroupListResponseDefault:
     response_default = EntityGroupListResponseDefault.from_dict(response.json())
 
     return response_default
@@ -91,9 +83,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[EntityGroupListEntityGroupsResponse, EntityGroupListResponseDefault]
-]:
+) -> Response[EntityGroupListResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -118,9 +108,7 @@ def sync_detailed(
     sort_by: Union[Unset, str] = UNSET,
     status: Union[Unset, EntityGroupListStatus] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[
-    Union[EntityGroupListEntityGroupsResponse, EntityGroupListResponseDefault]
-]:
+) -> Response[EntityGroupListResponseDefault]:
     """Get a list of clubs
 
      Return a list of available clubs
@@ -148,7 +136,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[EntityGroupListEntityGroupsResponse, EntityGroupListResponseDefault]]
+        Response[EntityGroupListResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -190,9 +178,7 @@ def sync(
     sort_by: Union[Unset, str] = UNSET,
     status: Union[Unset, EntityGroupListStatus] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[
-    Union[EntityGroupListEntityGroupsResponse, EntityGroupListResponseDefault]
-]:
+) -> Optional[EntityGroupListResponseDefault]:
     """Get a list of clubs
 
      Return a list of available clubs
@@ -220,7 +206,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[EntityGroupListEntityGroupsResponse, EntityGroupListResponseDefault]
+        EntityGroupListResponseDefault
     """
 
     return sync_detailed(
@@ -257,9 +243,7 @@ async def asyncio_detailed(
     sort_by: Union[Unset, str] = UNSET,
     status: Union[Unset, EntityGroupListStatus] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[
-    Union[EntityGroupListEntityGroupsResponse, EntityGroupListResponseDefault]
-]:
+) -> Response[EntityGroupListResponseDefault]:
     """Get a list of clubs
 
      Return a list of available clubs
@@ -287,7 +271,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[EntityGroupListEntityGroupsResponse, EntityGroupListResponseDefault]]
+        Response[EntityGroupListResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -327,9 +311,7 @@ async def asyncio(
     sort_by: Union[Unset, str] = UNSET,
     status: Union[Unset, EntityGroupListStatus] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[
-    Union[EntityGroupListEntityGroupsResponse, EntityGroupListResponseDefault]
-]:
+) -> Optional[EntityGroupListResponseDefault]:
     """Get a list of clubs
 
      Return a list of available clubs
@@ -357,7 +339,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[EntityGroupListEntityGroupsResponse, EntityGroupListResponseDefault]
+        EntityGroupListResponseDefault
     """
 
     return (

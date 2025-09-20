@@ -9,9 +9,7 @@ from dateutil.parser import isoparse
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.person_external_ids_model_organization import (
-        PersonExternalIdsModelOrganization,
-    )
+    from ..models.person_external_ids_model_organization import PersonExternalIdsModelOrganization
     from ..models.person_external_ids_model_person import PersonExternalIdsModelPerson
 
 
@@ -109,12 +107,8 @@ class PersonExternalIdsModel:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.person_external_ids_model_organization import (
-            PersonExternalIdsModelOrganization,
-        )
-        from ..models.person_external_ids_model_person import (
-            PersonExternalIdsModelPerson,
-        )
+        from ..models.person_external_ids_model_organization import PersonExternalIdsModelOrganization
+        from ..models.person_external_ids_model_person import PersonExternalIdsModelPerson
 
         d = dict(src_dict)
         _person_external_id = d.pop("personExternalId", UNSET)

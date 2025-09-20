@@ -6,9 +6,6 @@ import httpx
 
 from ...client import AuthenticatedClient, Client
 from ...models.caprs_list_age_group import CaprsListAgeGroup
-from ...models.caprs_list_career_person_representational_statistics_response import (
-    CaprsListCareerPersonRepresentationalStatisticsResponse,
-)
 from ...models.caprs_list_discipline import CaprsListDiscipline
 from ...models.caprs_list_fixture_type import CaprsListFixtureType
 from ...models.caprs_list_home_away import CaprsListHomeAway
@@ -16,6 +13,7 @@ from ...models.caprs_list_representation import CaprsListRepresentation
 from ...models.caprs_list_representing_country import CaprsListRepresentingCountry
 from ...models.caprs_list_response_default import CaprsListResponseDefault
 from ...models.caprs_list_win_loss import CaprsListWinLoss
+from ...models.career_person_representational_statistics_response import CareerPersonRepresentationalStatisticsResponse
 from ...types import UNSET, Response, Unset
 
 
@@ -141,15 +139,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[
-    CaprsListCareerPersonRepresentationalStatisticsResponse, CaprsListResponseDefault
-]:
+) -> Union[CaprsListResponseDefault, CareerPersonRepresentationalStatisticsResponse]:
     if response.status_code == 200:
-        response_200 = (
-            CaprsListCareerPersonRepresentationalStatisticsResponse.from_dict(
-                response.json()
-            )
-        )
+        response_200 = CareerPersonRepresentationalStatisticsResponse.from_dict(response.json())
 
         return response_200
 
@@ -160,12 +152,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[
-        CaprsListCareerPersonRepresentationalStatisticsResponse,
-        CaprsListResponseDefault,
-    ]
-]:
+) -> Response[Union[CaprsListResponseDefault, CareerPersonRepresentationalStatisticsResponse]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -199,12 +186,7 @@ def sync_detailed(
     season_id: Union[Unset, UUID] = UNSET,
     starter: Union[Unset, bool] = UNSET,
     win_loss: Union[Unset, CaprsListWinLoss] = UNSET,
-) -> Response[
-    Union[
-        CaprsListCareerPersonRepresentationalStatisticsResponse,
-        CaprsListResponseDefault,
-    ]
-]:
+) -> Response[Union[CaprsListResponseDefault, CareerPersonRepresentationalStatisticsResponse]]:
     """Person career representational statistics
 
      Return a list of person statistic totals for their career covering all competitions, groupped by
@@ -242,7 +224,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[CaprsListCareerPersonRepresentationalStatisticsResponse, CaprsListResponseDefault]]
+        Response[Union[CaprsListResponseDefault, CareerPersonRepresentationalStatisticsResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -302,12 +284,7 @@ def sync(
     season_id: Union[Unset, UUID] = UNSET,
     starter: Union[Unset, bool] = UNSET,
     win_loss: Union[Unset, CaprsListWinLoss] = UNSET,
-) -> Optional[
-    Union[
-        CaprsListCareerPersonRepresentationalStatisticsResponse,
-        CaprsListResponseDefault,
-    ]
-]:
+) -> Optional[Union[CaprsListResponseDefault, CareerPersonRepresentationalStatisticsResponse]]:
     """Person career representational statistics
 
      Return a list of person statistic totals for their career covering all competitions, groupped by
@@ -345,7 +322,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[CaprsListCareerPersonRepresentationalStatisticsResponse, CaprsListResponseDefault]
+        Union[CaprsListResponseDefault, CareerPersonRepresentationalStatisticsResponse]
     """
 
     return sync_detailed(
@@ -400,12 +377,7 @@ async def asyncio_detailed(
     season_id: Union[Unset, UUID] = UNSET,
     starter: Union[Unset, bool] = UNSET,
     win_loss: Union[Unset, CaprsListWinLoss] = UNSET,
-) -> Response[
-    Union[
-        CaprsListCareerPersonRepresentationalStatisticsResponse,
-        CaprsListResponseDefault,
-    ]
-]:
+) -> Response[Union[CaprsListResponseDefault, CareerPersonRepresentationalStatisticsResponse]]:
     """Person career representational statistics
 
      Return a list of person statistic totals for their career covering all competitions, groupped by
@@ -443,7 +415,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[CaprsListCareerPersonRepresentationalStatisticsResponse, CaprsListResponseDefault]]
+        Response[Union[CaprsListResponseDefault, CareerPersonRepresentationalStatisticsResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -501,12 +473,7 @@ async def asyncio(
     season_id: Union[Unset, UUID] = UNSET,
     starter: Union[Unset, bool] = UNSET,
     win_loss: Union[Unset, CaprsListWinLoss] = UNSET,
-) -> Optional[
-    Union[
-        CaprsListCareerPersonRepresentationalStatisticsResponse,
-        CaprsListResponseDefault,
-    ]
-]:
+) -> Optional[Union[CaprsListResponseDefault, CareerPersonRepresentationalStatisticsResponse]]:
     """Person career representational statistics
 
      Return a list of person statistic totals for their career covering all competitions, groupped by
@@ -544,7 +511,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[CaprsListCareerPersonRepresentationalStatisticsResponse, CaprsListResponseDefault]
+        Union[CaprsListResponseDefault, CareerPersonRepresentationalStatisticsResponse]
     """
 
     return (

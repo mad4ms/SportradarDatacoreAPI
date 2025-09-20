@@ -21,9 +21,7 @@ class SEASONPERSONPlacingsModelOrganization:
         id (Union[Unset, str]): Unique identifier for this resource Example: 9.
     """
 
-    resource_type: Union[Unset, SEASONPERSONPlacingsModelOrganizationResourceType] = (
-        UNSET
-    )
+    resource_type: Union[Unset, SEASONPERSONPlacingsModelOrganizationResourceType] = UNSET
     id: Union[Unset, str] = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
@@ -52,9 +50,7 @@ class SEASONPERSONPlacingsModelOrganization:
         if isinstance(_resource_type, Unset):
             resource_type = UNSET
         else:
-            resource_type = SEASONPERSONPlacingsModelOrganizationResourceType(
-                _resource_type
-            )
+            resource_type = SEASONPERSONPlacingsModelOrganizationResourceType(_resource_type)
 
         id = d.pop("id", UNSET)
 

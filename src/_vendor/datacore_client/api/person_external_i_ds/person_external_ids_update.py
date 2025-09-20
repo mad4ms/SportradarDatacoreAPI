@@ -5,15 +5,8 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.person_external_ids_update_person_external_ids_put_body import (
-    PersonExternalIdsUpdatePersonExternalIdsPutBody,
-)
-from ...models.person_external_ids_update_person_external_ids_response import (
-    PersonExternalIdsUpdatePersonExternalIdsResponse,
-)
-from ...models.person_external_ids_update_response_default import (
-    PersonExternalIdsUpdateResponseDefault,
-)
+from ...models.person_external_ids_put_body import PersonExternalIdsPutBody
+from ...models.person_external_ids_update_response_default import PersonExternalIdsUpdateResponseDefault
 from ...types import UNSET, Response, Unset
 
 
@@ -21,7 +14,7 @@ def _get_kwargs(
     organization_id: str,
     person_external_id: UUID,
     *,
-    body: PersonExternalIdsUpdatePersonExternalIdsPutBody,
+    body: PersonExternalIdsPutBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
@@ -57,17 +50,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[
-    PersonExternalIdsUpdatePersonExternalIdsResponse,
-    PersonExternalIdsUpdateResponseDefault,
-]:
-    if response.status_code == 200:
-        response_200 = PersonExternalIdsUpdatePersonExternalIdsResponse.from_dict(
-            response.json()
-        )
-
-        return response_200
-
+) -> PersonExternalIdsUpdateResponseDefault:
     response_default = PersonExternalIdsUpdateResponseDefault.from_dict(response.json())
 
     return response_default
@@ -75,12 +58,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[
-        PersonExternalIdsUpdatePersonExternalIdsResponse,
-        PersonExternalIdsUpdateResponseDefault,
-    ]
-]:
+) -> Response[PersonExternalIdsUpdateResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -94,17 +72,12 @@ def sync_detailed(
     person_external_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: PersonExternalIdsUpdatePersonExternalIdsPutBody,
+    body: PersonExternalIdsPutBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        PersonExternalIdsUpdatePersonExternalIdsResponse,
-        PersonExternalIdsUpdateResponseDefault,
-    ]
-]:
+) -> Response[PersonExternalIdsUpdateResponseDefault]:
     """Update a person external identifier information
 
      Change the external identifier information of a specific person
@@ -117,14 +90,14 @@ def sync_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (PersonExternalIdsUpdatePersonExternalIdsPutBody):
+        body (PersonExternalIdsPutBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[PersonExternalIdsUpdatePersonExternalIdsResponse, PersonExternalIdsUpdateResponseDefault]]
+        Response[PersonExternalIdsUpdateResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -149,17 +122,12 @@ def sync(
     person_external_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: PersonExternalIdsUpdatePersonExternalIdsPutBody,
+    body: PersonExternalIdsPutBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        PersonExternalIdsUpdatePersonExternalIdsResponse,
-        PersonExternalIdsUpdateResponseDefault,
-    ]
-]:
+) -> Optional[PersonExternalIdsUpdateResponseDefault]:
     """Update a person external identifier information
 
      Change the external identifier information of a specific person
@@ -172,14 +140,14 @@ def sync(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (PersonExternalIdsUpdatePersonExternalIdsPutBody):
+        body (PersonExternalIdsPutBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[PersonExternalIdsUpdatePersonExternalIdsResponse, PersonExternalIdsUpdateResponseDefault]
+        PersonExternalIdsUpdateResponseDefault
     """
 
     return sync_detailed(
@@ -199,17 +167,12 @@ async def asyncio_detailed(
     person_external_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: PersonExternalIdsUpdatePersonExternalIdsPutBody,
+    body: PersonExternalIdsPutBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        PersonExternalIdsUpdatePersonExternalIdsResponse,
-        PersonExternalIdsUpdateResponseDefault,
-    ]
-]:
+) -> Response[PersonExternalIdsUpdateResponseDefault]:
     """Update a person external identifier information
 
      Change the external identifier information of a specific person
@@ -222,14 +185,14 @@ async def asyncio_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (PersonExternalIdsUpdatePersonExternalIdsPutBody):
+        body (PersonExternalIdsPutBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[PersonExternalIdsUpdatePersonExternalIdsResponse, PersonExternalIdsUpdateResponseDefault]]
+        Response[PersonExternalIdsUpdateResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -252,17 +215,12 @@ async def asyncio(
     person_external_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: PersonExternalIdsUpdatePersonExternalIdsPutBody,
+    body: PersonExternalIdsPutBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        PersonExternalIdsUpdatePersonExternalIdsResponse,
-        PersonExternalIdsUpdateResponseDefault,
-    ]
-]:
+) -> Optional[PersonExternalIdsUpdateResponseDefault]:
     """Update a person external identifier information
 
      Change the external identifier information of a specific person
@@ -275,14 +233,14 @@ async def asyncio(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (PersonExternalIdsUpdatePersonExternalIdsPutBody):
+        body (PersonExternalIdsPutBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[PersonExternalIdsUpdatePersonExternalIdsResponse, PersonExternalIdsUpdateResponseDefault]
+        PersonExternalIdsUpdateResponseDefault
     """
 
     return (

@@ -7,15 +7,9 @@ from attrs import define as _attrs_define
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.career_person_statistics_model_organization import (
-        CareerPersonStatisticsModelOrganization,
-    )
-    from ..models.career_person_statistics_model_person import (
-        CareerPersonStatisticsModelPerson,
-    )
-    from ..models.career_person_statistics_model_statistics import (
-        CareerPersonStatisticsModelStatistics,
-    )
+    from ..models.career_person_statistics_model_organization import CareerPersonStatisticsModelOrganization
+    from ..models.career_person_statistics_model_person import CareerPersonStatisticsModelPerson
+    from ..models.career_person_statistics_model_statistics import CareerPersonStatisticsModelStatistics
 
 
 T = TypeVar("T", bound="CareerPersonStatisticsModel")
@@ -77,15 +71,9 @@ class CareerPersonStatisticsModel:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.career_person_statistics_model_organization import (
-            CareerPersonStatisticsModelOrganization,
-        )
-        from ..models.career_person_statistics_model_person import (
-            CareerPersonStatisticsModelPerson,
-        )
-        from ..models.career_person_statistics_model_statistics import (
-            CareerPersonStatisticsModelStatistics,
-        )
+        from ..models.career_person_statistics_model_organization import CareerPersonStatisticsModelOrganization
+        from ..models.career_person_statistics_model_person import CareerPersonStatisticsModelPerson
+        from ..models.career_person_statistics_model_statistics import CareerPersonStatisticsModelStatistics
 
         d = dict(src_dict)
         _person_id = d.pop("personId", UNSET)
@@ -109,9 +97,7 @@ class CareerPersonStatisticsModel:
         if isinstance(_organization, Unset):
             organization = UNSET
         else:
-            organization = CareerPersonStatisticsModelOrganization.from_dict(
-                _organization
-            )
+            organization = CareerPersonStatisticsModelOrganization.from_dict(_organization)
 
         _statistics = d.pop("statistics", UNSET)
         statistics: Union[Unset, CareerPersonStatisticsModelStatistics]

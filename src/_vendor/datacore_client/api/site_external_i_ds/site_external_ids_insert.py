@@ -4,22 +4,15 @@ from typing import Any, Optional, Union
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.site_external_ids_insert_response_default import (
-    SiteExternalIdsInsertResponseDefault,
-)
-from ...models.site_external_ids_insert_site_external_ids_post_body import (
-    SiteExternalIdsInsertSiteExternalIdsPostBody,
-)
-from ...models.site_external_ids_insert_site_external_ids_response import (
-    SiteExternalIdsInsertSiteExternalIdsResponse,
-)
+from ...models.site_external_ids_insert_response_default import SiteExternalIdsInsertResponseDefault
+from ...models.site_external_ids_post_body import SiteExternalIdsPostBody
 from ...types import UNSET, Response, Unset
 
 
 def _get_kwargs(
     organization_id: str,
     *,
-    body: SiteExternalIdsInsertSiteExternalIdsPostBody,
+    body: SiteExternalIdsPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
@@ -55,16 +48,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[
-    SiteExternalIdsInsertResponseDefault, SiteExternalIdsInsertSiteExternalIdsResponse
-]:
-    if response.status_code == 200:
-        response_200 = SiteExternalIdsInsertSiteExternalIdsResponse.from_dict(
-            response.json()
-        )
-
-        return response_200
-
+) -> SiteExternalIdsInsertResponseDefault:
     response_default = SiteExternalIdsInsertResponseDefault.from_dict(response.json())
 
     return response_default
@@ -72,12 +56,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[
-        SiteExternalIdsInsertResponseDefault,
-        SiteExternalIdsInsertSiteExternalIdsResponse,
-    ]
-]:
+) -> Response[SiteExternalIdsInsertResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -90,17 +69,12 @@ def sync_detailed(
     organization_id: str,
     *,
     client: AuthenticatedClient,
-    body: SiteExternalIdsInsertSiteExternalIdsPostBody,
+    body: SiteExternalIdsPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        SiteExternalIdsInsertResponseDefault,
-        SiteExternalIdsInsertSiteExternalIdsResponse,
-    ]
-]:
+) -> Response[SiteExternalIdsInsertResponseDefault]:
     """Create a new external identifier information record for a site
 
      Add a new external identifier information record for a site
@@ -112,14 +86,14 @@ def sync_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (SiteExternalIdsInsertSiteExternalIdsPostBody):
+        body (SiteExternalIdsPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SiteExternalIdsInsertResponseDefault, SiteExternalIdsInsertSiteExternalIdsResponse]]
+        Response[SiteExternalIdsInsertResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -142,17 +116,12 @@ def sync(
     organization_id: str,
     *,
     client: AuthenticatedClient,
-    body: SiteExternalIdsInsertSiteExternalIdsPostBody,
+    body: SiteExternalIdsPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        SiteExternalIdsInsertResponseDefault,
-        SiteExternalIdsInsertSiteExternalIdsResponse,
-    ]
-]:
+) -> Optional[SiteExternalIdsInsertResponseDefault]:
     """Create a new external identifier information record for a site
 
      Add a new external identifier information record for a site
@@ -164,14 +133,14 @@ def sync(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (SiteExternalIdsInsertSiteExternalIdsPostBody):
+        body (SiteExternalIdsPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SiteExternalIdsInsertResponseDefault, SiteExternalIdsInsertSiteExternalIdsResponse]
+        SiteExternalIdsInsertResponseDefault
     """
 
     return sync_detailed(
@@ -189,17 +158,12 @@ async def asyncio_detailed(
     organization_id: str,
     *,
     client: AuthenticatedClient,
-    body: SiteExternalIdsInsertSiteExternalIdsPostBody,
+    body: SiteExternalIdsPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        SiteExternalIdsInsertResponseDefault,
-        SiteExternalIdsInsertSiteExternalIdsResponse,
-    ]
-]:
+) -> Response[SiteExternalIdsInsertResponseDefault]:
     """Create a new external identifier information record for a site
 
      Add a new external identifier information record for a site
@@ -211,14 +175,14 @@ async def asyncio_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (SiteExternalIdsInsertSiteExternalIdsPostBody):
+        body (SiteExternalIdsPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SiteExternalIdsInsertResponseDefault, SiteExternalIdsInsertSiteExternalIdsResponse]]
+        Response[SiteExternalIdsInsertResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -239,17 +203,12 @@ async def asyncio(
     organization_id: str,
     *,
     client: AuthenticatedClient,
-    body: SiteExternalIdsInsertSiteExternalIdsPostBody,
+    body: SiteExternalIdsPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        SiteExternalIdsInsertResponseDefault,
-        SiteExternalIdsInsertSiteExternalIdsResponse,
-    ]
-]:
+) -> Optional[SiteExternalIdsInsertResponseDefault]:
     """Create a new external identifier information record for a site
 
      Add a new external identifier information record for a site
@@ -261,14 +220,14 @@ async def asyncio(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (SiteExternalIdsInsertSiteExternalIdsPostBody):
+        body (SiteExternalIdsPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SiteExternalIdsInsertResponseDefault, SiteExternalIdsInsertSiteExternalIdsResponse]
+        SiteExternalIdsInsertResponseDefault
     """
 
     return (

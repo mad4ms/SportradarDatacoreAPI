@@ -7,21 +7,11 @@ from attrs import define as _attrs_define
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.season_person_total_statistics_model_competition import (
-        SeasonPersonTotalStatisticsModelCompetition,
-    )
-    from ..models.season_person_total_statistics_model_organization import (
-        SeasonPersonTotalStatisticsModelOrganization,
-    )
-    from ..models.season_person_total_statistics_model_person import (
-        SeasonPersonTotalStatisticsModelPerson,
-    )
-    from ..models.season_person_total_statistics_model_season import (
-        SeasonPersonTotalStatisticsModelSeason,
-    )
-    from ..models.season_person_total_statistics_model_statistics import (
-        SeasonPersonTotalStatisticsModelStatistics,
-    )
+    from ..models.season_person_total_statistics_model_competition import SeasonPersonTotalStatisticsModelCompetition
+    from ..models.season_person_total_statistics_model_organization import SeasonPersonTotalStatisticsModelOrganization
+    from ..models.season_person_total_statistics_model_person import SeasonPersonTotalStatisticsModelPerson
+    from ..models.season_person_total_statistics_model_season import SeasonPersonTotalStatisticsModelSeason
+    from ..models.season_person_total_statistics_model_statistics import SeasonPersonTotalStatisticsModelStatistics
 
 
 T = TypeVar("T", bound="SeasonPersonTotalStatisticsModel")
@@ -124,15 +114,9 @@ class SeasonPersonTotalStatisticsModel:
         from ..models.season_person_total_statistics_model_organization import (
             SeasonPersonTotalStatisticsModelOrganization,
         )
-        from ..models.season_person_total_statistics_model_person import (
-            SeasonPersonTotalStatisticsModelPerson,
-        )
-        from ..models.season_person_total_statistics_model_season import (
-            SeasonPersonTotalStatisticsModelSeason,
-        )
-        from ..models.season_person_total_statistics_model_statistics import (
-            SeasonPersonTotalStatisticsModelStatistics,
-        )
+        from ..models.season_person_total_statistics_model_person import SeasonPersonTotalStatisticsModelPerson
+        from ..models.season_person_total_statistics_model_season import SeasonPersonTotalStatisticsModelSeason
+        from ..models.season_person_total_statistics_model_statistics import SeasonPersonTotalStatisticsModelStatistics
 
         d = dict(src_dict)
         _person_id = d.pop("personId", UNSET)
@@ -156,9 +140,7 @@ class SeasonPersonTotalStatisticsModel:
         if isinstance(_organization, Unset):
             organization = UNSET
         else:
-            organization = SeasonPersonTotalStatisticsModelOrganization.from_dict(
-                _organization
-            )
+            organization = SeasonPersonTotalStatisticsModelOrganization.from_dict(_organization)
 
         _season_id = d.pop("seasonId", UNSET)
         season_id: Union[Unset, UUID]
@@ -186,18 +168,14 @@ class SeasonPersonTotalStatisticsModel:
         if isinstance(_competition, Unset):
             competition = UNSET
         else:
-            competition = SeasonPersonTotalStatisticsModelCompetition.from_dict(
-                _competition
-            )
+            competition = SeasonPersonTotalStatisticsModelCompetition.from_dict(_competition)
 
         _statistics = d.pop("statistics", UNSET)
         statistics: Union[Unset, SeasonPersonTotalStatisticsModelStatistics]
         if isinstance(_statistics, Unset):
             statistics = UNSET
         else:
-            statistics = SeasonPersonTotalStatisticsModelStatistics.from_dict(
-                _statistics
-            )
+            statistics = SeasonPersonTotalStatisticsModelStatistics.from_dict(_statistics)
 
         season_person_total_statistics_model = cls(
             person_id=person_id,

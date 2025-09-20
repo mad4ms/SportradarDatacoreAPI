@@ -6,30 +6,16 @@ from uuid import UUID
 from attrs import define as _attrs_define
 from dateutil.parser import isoparse
 
-from ..models.season_person_base_statistics_model_competitor_type import (
-    SeasonPersonBaseStatisticsModelCompetitorType,
-)
-from ..models.season_person_base_statistics_model_fixture_type import (
-    SeasonPersonBaseStatisticsModelFixtureType,
-)
+from ..models.season_person_base_statistics_model_competitor_type import SeasonPersonBaseStatisticsModelCompetitorType
+from ..models.season_person_base_statistics_model_fixture_type import SeasonPersonBaseStatisticsModelFixtureType
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.season_person_base_statistics_model_entity import (
-        SeasonPersonBaseStatisticsModelEntity,
-    )
-    from ..models.season_person_base_statistics_model_organization import (
-        SeasonPersonBaseStatisticsModelOrganization,
-    )
-    from ..models.season_person_base_statistics_model_person import (
-        SeasonPersonBaseStatisticsModelPerson,
-    )
-    from ..models.season_person_base_statistics_model_season import (
-        SeasonPersonBaseStatisticsModelSeason,
-    )
-    from ..models.season_person_base_statistics_model_statistics import (
-        SeasonPersonBaseStatisticsModelStatistics,
-    )
+    from ..models.season_person_base_statistics_model_entity import SeasonPersonBaseStatisticsModelEntity
+    from ..models.season_person_base_statistics_model_organization import SeasonPersonBaseStatisticsModelOrganization
+    from ..models.season_person_base_statistics_model_person import SeasonPersonBaseStatisticsModelPerson
+    from ..models.season_person_base_statistics_model_season import SeasonPersonBaseStatisticsModelSeason
+    from ..models.season_person_base_statistics_model_statistics import SeasonPersonBaseStatisticsModelStatistics
 
 
 T = TypeVar("T", bound="SeasonPersonBaseStatisticsModel")
@@ -174,21 +160,13 @@ class SeasonPersonBaseStatisticsModel:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.season_person_base_statistics_model_entity import (
-            SeasonPersonBaseStatisticsModelEntity,
-        )
+        from ..models.season_person_base_statistics_model_entity import SeasonPersonBaseStatisticsModelEntity
         from ..models.season_person_base_statistics_model_organization import (
             SeasonPersonBaseStatisticsModelOrganization,
         )
-        from ..models.season_person_base_statistics_model_person import (
-            SeasonPersonBaseStatisticsModelPerson,
-        )
-        from ..models.season_person_base_statistics_model_season import (
-            SeasonPersonBaseStatisticsModelSeason,
-        )
-        from ..models.season_person_base_statistics_model_statistics import (
-            SeasonPersonBaseStatisticsModelStatistics,
-        )
+        from ..models.season_person_base_statistics_model_person import SeasonPersonBaseStatisticsModelPerson
+        from ..models.season_person_base_statistics_model_season import SeasonPersonBaseStatisticsModelSeason
+        from ..models.season_person_base_statistics_model_statistics import SeasonPersonBaseStatisticsModelStatistics
 
         d = dict(src_dict)
         _season_id = d.pop("seasonId", UNSET)
@@ -240,9 +218,7 @@ class SeasonPersonBaseStatisticsModel:
         if isinstance(_organization, Unset):
             organization = UNSET
         else:
-            organization = SeasonPersonBaseStatisticsModelOrganization.from_dict(
-                _organization
-            )
+            organization = SeasonPersonBaseStatisticsModelOrganization.from_dict(_organization)
 
         _fixture_type = d.pop("fixtureType", UNSET)
         fixture_type: Union[Unset, SeasonPersonBaseStatisticsModelFixtureType]
@@ -256,9 +232,7 @@ class SeasonPersonBaseStatisticsModel:
         if isinstance(_competitor_type, Unset):
             competitor_type = UNSET
         else:
-            competitor_type = SeasonPersonBaseStatisticsModelCompetitorType(
-                _competitor_type
-            )
+            competitor_type = SeasonPersonBaseStatisticsModelCompetitorType(_competitor_type)
 
         representing = d.pop("representing", UNSET)
 
@@ -267,9 +241,7 @@ class SeasonPersonBaseStatisticsModel:
         if isinstance(_statistics, Unset):
             statistics = UNSET
         else:
-            statistics = SeasonPersonBaseStatisticsModelStatistics.from_dict(
-                _statistics
-            )
+            statistics = SeasonPersonBaseStatisticsModelStatistics.from_dict(_statistics)
 
         _updated = d.pop("updated", UNSET)
         updated: Union[Unset, datetime.datetime]

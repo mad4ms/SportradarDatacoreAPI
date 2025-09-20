@@ -246,13 +246,9 @@ class MatchPersonsModel:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.match_persons_model_entity_group import (
-            MatchPersonsModelEntityGroup,
-        )
+        from ..models.match_persons_model_entity_group import MatchPersonsModelEntityGroup
         from ..models.match_persons_model_fixture import MatchPersonsModelFixture
-        from ..models.match_persons_model_organization import (
-            MatchPersonsModelOrganization,
-        )
+        from ..models.match_persons_model_organization import MatchPersonsModelOrganization
         from ..models.match_persons_model_person import MatchPersonsModelPerson
         from ..models.match_persons_model_uniform import MatchPersonsModelUniform
 
@@ -338,18 +334,14 @@ class MatchPersonsModel:
 
         result_place = _parse_result_place(d.pop("resultPlace", UNSET))
 
-        def _parse_result_secondary_score_place(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_result_secondary_score_place(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        result_secondary_score_place = _parse_result_secondary_score_place(
-            d.pop("resultSecondaryScorePlace", UNSET)
-        )
+        result_secondary_score_place = _parse_result_secondary_score_place(d.pop("resultSecondaryScorePlace", UNSET))
 
         def _parse_starting_number(data: object) -> Union[None, Unset, int]:
             if data is None:

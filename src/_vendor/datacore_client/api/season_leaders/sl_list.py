@@ -8,9 +8,6 @@ from ...client import AuthenticatedClient, Client
 from ...models.sl_list_fixture_type import SlListFixtureType
 from ...models.sl_list_home_away import SlListHomeAway
 from ...models.sl_list_response_default import SlListResponseDefault
-from ...models.sl_list_season_person_statistics_response import (
-    SlListSeasonPersonStatisticsResponse,
-)
 from ...models.sl_list_win_loss import SlListWinLoss
 from ...types import UNSET, Response, Unset
 
@@ -94,14 +91,7 @@ def _get_kwargs(
     return _kwargs
 
 
-def _parse_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[SlListResponseDefault, SlListSeasonPersonStatisticsResponse]:
-    if response.status_code == 200:
-        response_200 = SlListSeasonPersonStatisticsResponse.from_dict(response.json())
-
-        return response_200
-
+def _parse_response(*, client: Union[AuthenticatedClient, Client], response: httpx.Response) -> SlListResponseDefault:
     response_default = SlListResponseDefault.from_dict(response.json())
 
     return response_default
@@ -109,7 +99,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[Union[SlListResponseDefault, SlListSeasonPersonStatisticsResponse]]:
+) -> Response[SlListResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -138,7 +128,7 @@ def sync_detailed(
     person_id: Union[Unset, UUID] = UNSET,
     starter: Union[Unset, bool] = UNSET,
     win_loss: Union[Unset, SlListWinLoss] = UNSET,
-) -> Response[Union[SlListResponseDefault, SlListSeasonPersonStatisticsResponse]]:
+) -> Response[SlListResponseDefault]:
     """Season statistical leaders
 
      Return a list of the leading persons for a statistic in a season.
@@ -171,7 +161,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SlListResponseDefault, SlListSeasonPersonStatisticsResponse]]
+        Response[SlListResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -221,7 +211,7 @@ def sync(
     person_id: Union[Unset, UUID] = UNSET,
     starter: Union[Unset, bool] = UNSET,
     win_loss: Union[Unset, SlListWinLoss] = UNSET,
-) -> Optional[Union[SlListResponseDefault, SlListSeasonPersonStatisticsResponse]]:
+) -> Optional[SlListResponseDefault]:
     """Season statistical leaders
 
      Return a list of the leading persons for a statistic in a season.
@@ -254,7 +244,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SlListResponseDefault, SlListSeasonPersonStatisticsResponse]
+        SlListResponseDefault
     """
 
     return sync_detailed(
@@ -299,7 +289,7 @@ async def asyncio_detailed(
     person_id: Union[Unset, UUID] = UNSET,
     starter: Union[Unset, bool] = UNSET,
     win_loss: Union[Unset, SlListWinLoss] = UNSET,
-) -> Response[Union[SlListResponseDefault, SlListSeasonPersonStatisticsResponse]]:
+) -> Response[SlListResponseDefault]:
     """Season statistical leaders
 
      Return a list of the leading persons for a statistic in a season.
@@ -332,7 +322,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SlListResponseDefault, SlListSeasonPersonStatisticsResponse]]
+        Response[SlListResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -380,7 +370,7 @@ async def asyncio(
     person_id: Union[Unset, UUID] = UNSET,
     starter: Union[Unset, bool] = UNSET,
     win_loss: Union[Unset, SlListWinLoss] = UNSET,
-) -> Optional[Union[SlListResponseDefault, SlListSeasonPersonStatisticsResponse]]:
+) -> Optional[SlListResponseDefault]:
     """Season statistical leaders
 
      Return a list of the leading persons for a statistic in a season.
@@ -413,7 +403,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SlListResponseDefault, SlListSeasonPersonStatisticsResponse]
+        SlListResponseDefault
     """
 
     return (

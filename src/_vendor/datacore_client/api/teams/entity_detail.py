@@ -5,7 +5,6 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.entity_detail_entities_response import EntityDetailEntitiesResponse
 from ...models.entity_detail_response_default import EntityDetailResponseDefault
 from ...types import UNSET, Response, Unset
 
@@ -48,12 +47,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[EntityDetailEntitiesResponse, EntityDetailResponseDefault]:
-    if response.status_code == 200:
-        response_200 = EntityDetailEntitiesResponse.from_dict(response.json())
-
-        return response_200
-
+) -> EntityDetailResponseDefault:
     response_default = EntityDetailResponseDefault.from_dict(response.json())
 
     return response_default
@@ -61,7 +55,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[Union[EntityDetailEntitiesResponse, EntityDetailResponseDefault]]:
+) -> Response[EntityDetailResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -81,7 +75,7 @@ def sync_detailed(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Response[Union[EntityDetailEntitiesResponse, EntityDetailResponseDefault]]:
+) -> Response[EntityDetailResponseDefault]:
     """Get a team
 
      Return detailed information about a specific team
@@ -102,7 +96,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[EntityDetailEntitiesResponse, EntityDetailResponseDefault]]
+        Response[EntityDetailResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -134,7 +128,7 @@ def sync(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Optional[Union[EntityDetailEntitiesResponse, EntityDetailResponseDefault]]:
+) -> Optional[EntityDetailResponseDefault]:
     """Get a team
 
      Return detailed information about a specific team
@@ -155,7 +149,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[EntityDetailEntitiesResponse, EntityDetailResponseDefault]
+        EntityDetailResponseDefault
     """
 
     return sync_detailed(
@@ -182,7 +176,7 @@ async def asyncio_detailed(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Response[Union[EntityDetailEntitiesResponse, EntityDetailResponseDefault]]:
+) -> Response[EntityDetailResponseDefault]:
     """Get a team
 
      Return detailed information about a specific team
@@ -203,7 +197,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[EntityDetailEntitiesResponse, EntityDetailResponseDefault]]
+        Response[EntityDetailResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -233,7 +227,7 @@ async def asyncio(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Optional[Union[EntityDetailEntitiesResponse, EntityDetailResponseDefault]]:
+) -> Optional[EntityDetailResponseDefault]:
     """Get a team
 
      Return detailed information about a specific team
@@ -254,7 +248,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[EntityDetailEntitiesResponse, EntityDetailResponseDefault]
+        EntityDetailResponseDefault
     """
 
     return (

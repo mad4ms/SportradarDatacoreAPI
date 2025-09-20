@@ -50,9 +50,7 @@ class VideoStreamOutputsModelOrganization:
         if isinstance(_resource_type, Unset):
             resource_type = UNSET
         else:
-            resource_type = VideoStreamOutputsModelOrganizationResourceType(
-                _resource_type
-            )
+            resource_type = VideoStreamOutputsModelOrganizationResourceType(_resource_type)
 
         id = d.pop("id", UNSET)
 

@@ -9,12 +9,8 @@ from dateutil.parser import isoparse
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.club_external_ids_model_entity_group import (
-        ClubExternalIdsModelEntityGroup,
-    )
-    from ..models.club_external_ids_model_organization import (
-        ClubExternalIdsModelOrganization,
-    )
+    from ..models.club_external_ids_model_entity_group import ClubExternalIdsModelEntityGroup
+    from ..models.club_external_ids_model_organization import ClubExternalIdsModelOrganization
 
 
 T = TypeVar("T", bound="ClubExternalIdsModel")
@@ -111,12 +107,8 @@ class ClubExternalIdsModel:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.club_external_ids_model_entity_group import (
-            ClubExternalIdsModelEntityGroup,
-        )
-        from ..models.club_external_ids_model_organization import (
-            ClubExternalIdsModelOrganization,
-        )
+        from ..models.club_external_ids_model_entity_group import ClubExternalIdsModelEntityGroup
+        from ..models.club_external_ids_model_organization import ClubExternalIdsModelOrganization
 
         d = dict(src_dict)
         _entity_group_external_id = d.pop("entityGroupExternalId", UNSET)

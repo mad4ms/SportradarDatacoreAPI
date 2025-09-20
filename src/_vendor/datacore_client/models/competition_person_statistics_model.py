@@ -7,18 +7,10 @@ from attrs import define as _attrs_define
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.competition_person_statistics_model_competition import (
-        CompetitionPersonStatisticsModelCompetition,
-    )
-    from ..models.competition_person_statistics_model_organization import (
-        CompetitionPersonStatisticsModelOrganization,
-    )
-    from ..models.competition_person_statistics_model_person import (
-        CompetitionPersonStatisticsModelPerson,
-    )
-    from ..models.competition_person_statistics_model_statistics import (
-        CompetitionPersonStatisticsModelStatistics,
-    )
+    from ..models.competition_person_statistics_model_competition import CompetitionPersonStatisticsModelCompetition
+    from ..models.competition_person_statistics_model_organization import CompetitionPersonStatisticsModelOrganization
+    from ..models.competition_person_statistics_model_person import CompetitionPersonStatisticsModelPerson
+    from ..models.competition_person_statistics_model_statistics import CompetitionPersonStatisticsModelStatistics
 
 
 T = TypeVar("T", bound="CompetitionPersonStatisticsModel")
@@ -98,18 +90,12 @@ class CompetitionPersonStatisticsModel:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.competition_person_statistics_model_competition import (
-            CompetitionPersonStatisticsModelCompetition,
-        )
+        from ..models.competition_person_statistics_model_competition import CompetitionPersonStatisticsModelCompetition
         from ..models.competition_person_statistics_model_organization import (
             CompetitionPersonStatisticsModelOrganization,
         )
-        from ..models.competition_person_statistics_model_person import (
-            CompetitionPersonStatisticsModelPerson,
-        )
-        from ..models.competition_person_statistics_model_statistics import (
-            CompetitionPersonStatisticsModelStatistics,
-        )
+        from ..models.competition_person_statistics_model_person import CompetitionPersonStatisticsModelPerson
+        from ..models.competition_person_statistics_model_statistics import CompetitionPersonStatisticsModelStatistics
 
         d = dict(src_dict)
         _person_id = d.pop("personId", UNSET)
@@ -133,9 +119,7 @@ class CompetitionPersonStatisticsModel:
         if isinstance(_organization, Unset):
             organization = UNSET
         else:
-            organization = CompetitionPersonStatisticsModelOrganization.from_dict(
-                _organization
-            )
+            organization = CompetitionPersonStatisticsModelOrganization.from_dict(_organization)
 
         _competition_id = d.pop("competitionId", UNSET)
         competition_id: Union[Unset, UUID]
@@ -149,18 +133,14 @@ class CompetitionPersonStatisticsModel:
         if isinstance(_competition, Unset):
             competition = UNSET
         else:
-            competition = CompetitionPersonStatisticsModelCompetition.from_dict(
-                _competition
-            )
+            competition = CompetitionPersonStatisticsModelCompetition.from_dict(_competition)
 
         _statistics = d.pop("statistics", UNSET)
         statistics: Union[Unset, CompetitionPersonStatisticsModelStatistics]
         if isinstance(_statistics, Unset):
             statistics = UNSET
         else:
-            statistics = CompetitionPersonStatisticsModelStatistics.from_dict(
-                _statistics
-            )
+            statistics = CompetitionPersonStatisticsModelStatistics.from_dict(_statistics)
 
         competition_person_statistics_model = cls(
             person_id=person_id,

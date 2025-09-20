@@ -9,9 +9,7 @@ from dateutil.parser import isoparse
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.venue_external_ids_model_organization import (
-        VenueExternalIdsModelOrganization,
-    )
+    from ..models.venue_external_ids_model_organization import VenueExternalIdsModelOrganization
     from ..models.venue_external_ids_model_venue import VenueExternalIdsModelVenue
 
 
@@ -108,9 +106,7 @@ class VenueExternalIdsModel:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.venue_external_ids_model_organization import (
-            VenueExternalIdsModelOrganization,
-        )
+        from ..models.venue_external_ids_model_organization import VenueExternalIdsModelOrganization
         from ..models.venue_external_ids_model_venue import VenueExternalIdsModelVenue
 
         d = dict(src_dict)

@@ -1,6 +1,5 @@
 """Contains all the data models used in inputs/outputs"""
 
-from .award_delete_awards_response import AwardDeleteAwardsResponse
 from .award_delete_response_default import AwardDeleteResponseDefault
 from .award_model import AwardModel
 from .award_model_award import AwardModelAward
@@ -18,34 +17,27 @@ from .award_model_person import AwardModelPerson
 from .award_model_person_resource_type import AwardModelPersonResourceType
 from .award_model_season import AwardModelSeason
 from .award_model_season_resource_type import AwardModelSeasonResourceType
-from .awards_detail_awards_response import AwardsDetailAwardsResponse
+from .award_post_body import AwardPostBody
+from .award_post_body_award import AwardPostBodyAward
+from .award_put_body import AwardPutBody
+from .award_put_body_award import AwardPutBodyAward
 from .awards_detail_response_default import AwardsDetailResponseDefault
-from .awards_insert_award_post_body import AwardsInsertAwardPostBody
-from .awards_insert_award_post_body_award import AwardsInsertAwardPostBodyAward
-from .awards_insert_awards_response import AwardsInsertAwardsResponse
 from .awards_insert_response_default import AwardsInsertResponseDefault
 from .awards_list_fixtures_award import AwardsListFixturesAward
-from .awards_list_fixtures_awards_response import AwardsListFixturesAwardsResponse
 from .awards_list_fixtures_response_default import AwardsListFixturesResponseDefault
 from .awards_list_non_fixtures_award import AwardsListNonFixturesAward
-from .awards_list_non_fixtures_awards_response import (
-    AwardsListNonFixturesAwardsResponse,
-)
-from .awards_list_non_fixtures_response_default import (
-    AwardsListNonFixturesResponseDefault,
-)
+from .awards_list_non_fixtures_response_default import AwardsListNonFixturesResponseDefault
 from .awards_list_seasons_award import AwardsListSeasonsAward
-from .awards_list_seasons_awards_response import AwardsListSeasonsAwardsResponse
 from .awards_list_seasons_response_default import AwardsListSeasonsResponseDefault
-from .awards_update_award_put_body import AwardsUpdateAwardPutBody
-from .awards_update_award_put_body_award import AwardsUpdateAwardPutBodyAward
-from .awards_update_awards_response import AwardsUpdateAwardsResponse
+from .awards_response import AwardsResponse
 from .awards_update_response_default import AwardsUpdateResponseDefault
+from .blank_model_delete_body import BlankModelDeleteBody
+from .blank_model_get_body import BlankModelGetBody
 from .blank_model_model import BlankModelModel
+from .blank_model_post_body import BlankModelPostBody
+from .blank_model_put_body import BlankModelPutBody
+from .blank_model_response import BlankModelResponse
 from .caprs_list_age_group import CaprsListAgeGroup
-from .caprs_list_career_person_representational_statistics_response import (
-    CaprsListCareerPersonRepresentationalStatisticsResponse,
-)
 from .caprs_list_discipline import CaprsListDiscipline
 from .caprs_list_fixture_type import CaprsListFixtureType
 from .caprs_list_home_away import CaprsListHomeAway
@@ -53,32 +45,19 @@ from .caprs_list_representation import CaprsListRepresentation
 from .caprs_list_representing_country import CaprsListRepresentingCountry
 from .caprs_list_response_default import CaprsListResponseDefault
 from .caprs_list_win_loss import CaprsListWinLoss
-from .caps_list_career_person_statistics_response import (
-    CapsListCareerPersonStatisticsResponse,
-)
 from .caps_list_fixture_type import CapsListFixtureType
 from .caps_list_home_away import CapsListHomeAway
-from .caps_list_person_season_career_person_season_statistics_response import (
-    CapsListPersonSeasonCareerPersonSeasonStatisticsResponse,
-)
 from .caps_list_person_season_fixture_type import CapsListPersonSeasonFixtureType
 from .caps_list_person_season_home_away import CapsListPersonSeasonHomeAway
-from .caps_list_person_season_response_default import (
-    CapsListPersonSeasonResponseDefault,
-)
+from .caps_list_person_season_response_default import CapsListPersonSeasonResponseDefault
 from .caps_list_person_season_win_loss import CapsListPersonSeasonWinLoss
 from .caps_list_response_default import CapsListResponseDefault
 from .caps_list_win_loss import CapsListWinLoss
-from .caps_listperson_career_person_statistics_response import (
-    CapsListpersonCareerPersonStatisticsResponse,
-)
 from .caps_listperson_fixture_type import CapsListpersonFixtureType
 from .caps_listperson_home_away import CapsListpersonHomeAway
 from .caps_listperson_response_default import CapsListpersonResponseDefault
 from .caps_listperson_win_loss import CapsListpersonWinLoss
-from .career_person_representational_statistics_model import (
-    CareerPersonRepresentationalStatisticsModel,
-)
+from .career_person_representational_statistics_model import CareerPersonRepresentationalStatisticsModel
 from .career_person_representational_statistics_model_age_group import (
     CareerPersonRepresentationalStatisticsModelAgeGroup,
 )
@@ -97,72 +76,48 @@ from .career_person_representational_statistics_model_organization import (
 from .career_person_representational_statistics_model_organization_resource_type import (
     CareerPersonRepresentationalStatisticsModelOrganizationResourceType,
 )
-from .career_person_representational_statistics_model_person import (
-    CareerPersonRepresentationalStatisticsModelPerson,
-)
+from .career_person_representational_statistics_model_person import CareerPersonRepresentationalStatisticsModelPerson
 from .career_person_representational_statistics_model_person_resource_type import (
     CareerPersonRepresentationalStatisticsModelPersonResourceType,
 )
 from .career_person_representational_statistics_model_statistics import (
     CareerPersonRepresentationalStatisticsModelStatistics,
 )
+from .career_person_representational_statistics_response import CareerPersonRepresentationalStatisticsResponse
 from .career_person_season_statistics_model import CareerPersonSeasonStatisticsModel
-from .career_person_season_statistics_model_entity import (
-    CareerPersonSeasonStatisticsModelEntity,
-)
+from .career_person_season_statistics_model_entity import CareerPersonSeasonStatisticsModelEntity
 from .career_person_season_statistics_model_entity_resource_type import (
     CareerPersonSeasonStatisticsModelEntityResourceType,
 )
-from .career_person_season_statistics_model_organization import (
-    CareerPersonSeasonStatisticsModelOrganization,
-)
+from .career_person_season_statistics_model_organization import CareerPersonSeasonStatisticsModelOrganization
 from .career_person_season_statistics_model_organization_resource_type import (
     CareerPersonSeasonStatisticsModelOrganizationResourceType,
 )
-from .career_person_season_statistics_model_person import (
-    CareerPersonSeasonStatisticsModelPerson,
-)
+from .career_person_season_statistics_model_person import CareerPersonSeasonStatisticsModelPerson
 from .career_person_season_statistics_model_person_resource_type import (
     CareerPersonSeasonStatisticsModelPersonResourceType,
 )
-from .career_person_season_statistics_model_season import (
-    CareerPersonSeasonStatisticsModelSeason,
-)
+from .career_person_season_statistics_model_season import CareerPersonSeasonStatisticsModelSeason
 from .career_person_season_statistics_model_season_resource_type import (
     CareerPersonSeasonStatisticsModelSeasonResourceType,
 )
-from .career_person_season_statistics_model_statistics import (
-    CareerPersonSeasonStatisticsModelStatistics,
-)
+from .career_person_season_statistics_model_statistics import CareerPersonSeasonStatisticsModelStatistics
+from .career_person_season_statistics_response import CareerPersonSeasonStatisticsResponse
 from .career_person_statistics_model import CareerPersonStatisticsModel
-from .career_person_statistics_model_organization import (
-    CareerPersonStatisticsModelOrganization,
-)
+from .career_person_statistics_model_organization import CareerPersonStatisticsModelOrganization
 from .career_person_statistics_model_organization_resource_type import (
     CareerPersonStatisticsModelOrganizationResourceType,
 )
 from .career_person_statistics_model_person import CareerPersonStatisticsModelPerson
-from .career_person_statistics_model_person_resource_type import (
-    CareerPersonStatisticsModelPersonResourceType,
-)
-from .career_person_statistics_model_statistics import (
-    CareerPersonStatisticsModelStatistics,
-)
-from .ces_list_competition_entity_statistics_response import (
-    CesListCompetitionEntityStatisticsResponse,
-)
+from .career_person_statistics_model_person_resource_type import CareerPersonStatisticsModelPersonResourceType
+from .career_person_statistics_model_statistics import CareerPersonStatisticsModelStatistics
+from .career_person_statistics_response import CareerPersonStatisticsResponse
 from .ces_list_fixture_type import CesListFixtureType
 from .ces_list_home_away import CesListHomeAway
 from .ces_list_response_default import CesListResponseDefault
 from .ces_list_win_loss import CesListWinLoss
-from .ces_listentity_competition_entity_statistics_response import (
-    CesListentityCompetitionEntityStatisticsResponse,
-)
 from .ces_listentity_fixture_type import CesListentityFixtureType
 from .ces_listentity_home_away import CesListentityHomeAway
-from .ces_listentity_periods_competition_entity_statistics_response import (
-    CesListentityPeriodsCompetitionEntityStatisticsResponse,
-)
 from .ces_listentity_periods_fixture_type import CesListentityPeriodsFixtureType
 from .ces_listentity_periods_home_away import CesListentityPeriodsHomeAway
 from .ces_listentity_periods_period_id import CesListentityPeriodsPeriodId
@@ -170,352 +125,95 @@ from .ces_listentity_periods_response_default import CesListentityPeriodsRespons
 from .ces_listentity_periods_win_loss import CesListentityPeriodsWinLoss
 from .ces_listentity_response_default import CesListentityResponseDefault
 from .ces_listentity_win_loss import CesListentityWinLoss
-from .ces_listperiods_competition_entity_statistics_response import (
-    CesListperiodsCompetitionEntityStatisticsResponse,
-)
 from .ces_listperiods_fixture_type import CesListperiodsFixtureType
 from .ces_listperiods_home_away import CesListperiodsHomeAway
 from .ces_listperiods_period_id import CesListperiodsPeriodId
 from .ces_listperiods_response_default import CesListperiodsResponseDefault
 from .ces_listperiods_win_loss import CesListperiodsWinLoss
-from .change_log_list_change_log_response import ChangeLogListChangeLogResponse
 from .change_log_list_change_type import ChangeLogListChangeType
 from .change_log_list_response_default import ChangeLogListResponseDefault
 from .change_log_model import ChangeLogModel
 from .change_log_model_change_type import ChangeLogModelChangeType
 from .change_log_model_organization import ChangeLogModelOrganization
-from .change_log_model_organization_resource_type import (
-    ChangeLogModelOrganizationResourceType,
-)
+from .change_log_model_organization_resource_type import ChangeLogModelOrganizationResourceType
+from .change_log_response import ChangeLogResponse
+from .clock_information import ClockInformation
 from .club_external_ids_model import ClubExternalIdsModel
 from .club_external_ids_model_entity_group import ClubExternalIdsModelEntityGroup
-from .club_external_ids_model_entity_group_resource_type import (
-    ClubExternalIdsModelEntityGroupResourceType,
-)
+from .club_external_ids_model_entity_group_resource_type import ClubExternalIdsModelEntityGroupResourceType
 from .club_external_ids_model_organization import ClubExternalIdsModelOrganization
-from .club_external_ids_model_organization_resource_type import (
-    ClubExternalIdsModelOrganizationResourceType,
-)
-from .club_model import ClubModel
-from .club_model_additional_names import ClubModelAdditionalNames
-from .club_model_club_address import ClubModelClubAddress
-from .club_model_club_historical_name import ClubModelClubHistoricalName
-from .club_model_colors import ClubModelColors
-from .club_model_contact_details import ClubModelContactDetails
-from .club_model_entity_additional_details import ClubModelEntityAdditionalDetails
-from .club_model_organization import ClubModelOrganization
-from .club_model_organization_resource_type import ClubModelOrganizationResourceType
-from .club_model_social_media import ClubModelSocialMedia
-from .club_model_status import ClubModelStatus
-from .competition_delete_competitions_response import (
-    CompetitionDeleteCompetitionsResponse,
-)
+from .club_external_ids_model_organization_resource_type import ClubExternalIdsModelOrganizationResourceType
+from .club_external_ids_post_body import ClubExternalIdsPostBody
+from .club_external_ids_put_body import ClubExternalIdsPutBody
 from .competition_delete_response_default import CompetitionDeleteResponseDefault
-from .competition_detail_competitions_response import (
-    CompetitionDetailCompetitionsResponse,
-)
 from .competition_detail_response_default import CompetitionDetailResponseDefault
 from .competition_entity_statistics_model import CompetitionEntityStatisticsModel
-from .competition_entity_statistics_model_competition import (
-    CompetitionEntityStatisticsModelCompetition,
-)
+from .competition_entity_statistics_model_competition import CompetitionEntityStatisticsModelCompetition
 from .competition_entity_statistics_model_competition_resource_type import (
     CompetitionEntityStatisticsModelCompetitionResourceType,
 )
-from .competition_entity_statistics_model_entity import (
-    CompetitionEntityStatisticsModelEntity,
-)
-from .competition_entity_statistics_model_entity_resource_type import (
-    CompetitionEntityStatisticsModelEntityResourceType,
-)
-from .competition_entity_statistics_model_organization import (
-    CompetitionEntityStatisticsModelOrganization,
-)
+from .competition_entity_statistics_model_entity import CompetitionEntityStatisticsModelEntity
+from .competition_entity_statistics_model_entity_resource_type import CompetitionEntityStatisticsModelEntityResourceType
+from .competition_entity_statistics_model_organization import CompetitionEntityStatisticsModelOrganization
 from .competition_entity_statistics_model_organization_resource_type import (
     CompetitionEntityStatisticsModelOrganizationResourceType,
 )
-from .competition_entity_statistics_model_statistics import (
-    CompetitionEntityStatisticsModelStatistics,
-)
-from .competition_external_ids_delete_competition_external_ids_response import (
-    CompetitionExternalIdsDeleteCompetitionExternalIdsResponse,
-)
-from .competition_external_ids_delete_response_default import (
-    CompetitionExternalIdsDeleteResponseDefault,
-)
-from .competition_external_ids_detail_competition_external_ids_response import (
-    CompetitionExternalIdsDetailCompetitionExternalIdsResponse,
-)
-from .competition_external_ids_detail_response_default import (
-    CompetitionExternalIdsDetailResponseDefault,
-)
-from .competition_external_ids_insert_competition_external_ids_post_body import (
-    CompetitionExternalIdsInsertCompetitionExternalIdsPostBody,
-)
-from .competition_external_ids_insert_competition_external_ids_response import (
-    CompetitionExternalIdsInsertCompetitionExternalIdsResponse,
-)
-from .competition_external_ids_insert_response_default import (
-    CompetitionExternalIdsInsertResponseDefault,
-)
-from .competition_external_ids_insert_update_competition_external_ids_post_body import (
-    CompetitionExternalIdsInsertUpdateCompetitionExternalIdsPostBody,
-)
-from .competition_external_ids_insert_update_competition_external_ids_response import (
-    CompetitionExternalIdsInsertUpdateCompetitionExternalIdsResponse,
-)
-from .competition_external_ids_insert_update_response_default import (
-    CompetitionExternalIdsInsertUpdateResponseDefault,
-)
-from .competition_external_ids_list_competition_external_ids_response import (
-    CompetitionExternalIdsListCompetitionExternalIdsResponse,
-)
-from .competition_external_ids_list_response_default import (
-    CompetitionExternalIdsListResponseDefault,
-)
+from .competition_entity_statistics_model_statistics import CompetitionEntityStatisticsModelStatistics
+from .competition_entity_statistics_response import CompetitionEntityStatisticsResponse
+from .competition_external_ids_delete_response_default import CompetitionExternalIdsDeleteResponseDefault
+from .competition_external_ids_detail_response_default import CompetitionExternalIdsDetailResponseDefault
+from .competition_external_ids_insert_response_default import CompetitionExternalIdsInsertResponseDefault
+from .competition_external_ids_insert_update_response_default import CompetitionExternalIdsInsertUpdateResponseDefault
+from .competition_external_ids_list_response_default import CompetitionExternalIdsListResponseDefault
 from .competition_external_ids_model import CompetitionExternalIdsModel
-from .competition_external_ids_model_competition import (
-    CompetitionExternalIdsModelCompetition,
-)
-from .competition_external_ids_model_competition_resource_type import (
-    CompetitionExternalIdsModelCompetitionResourceType,
-)
-from .competition_external_ids_model_organization import (
-    CompetitionExternalIdsModelOrganization,
-)
+from .competition_external_ids_model_competition import CompetitionExternalIdsModelCompetition
+from .competition_external_ids_model_competition_resource_type import CompetitionExternalIdsModelCompetitionResourceType
+from .competition_external_ids_model_organization import CompetitionExternalIdsModelOrganization
 from .competition_external_ids_model_organization_resource_type import (
     CompetitionExternalIdsModelOrganizationResourceType,
 )
-from .competition_external_ids_update_competition_external_ids_put_body import (
-    CompetitionExternalIdsUpdateCompetitionExternalIdsPutBody,
-)
-from .competition_external_ids_update_competition_external_ids_response import (
-    CompetitionExternalIdsUpdateCompetitionExternalIdsResponse,
-)
-from .competition_external_ids_update_response_default import (
-    CompetitionExternalIdsUpdateResponseDefault,
-)
-from .competition_insert_competition_post_body import (
-    CompetitionInsertCompetitionPostBody,
-)
-from .competition_insert_competition_post_body_age_group_type_1 import (
-    CompetitionInsertCompetitionPostBodyAgeGroupType1,
-)
-from .competition_insert_competition_post_body_age_group_type_2_type_1 import (
-    CompetitionInsertCompetitionPostBodyAgeGroupType2Type1,
-)
-from .competition_insert_competition_post_body_age_group_type_3_type_1 import (
-    CompetitionInsertCompetitionPostBodyAgeGroupType3Type1,
-)
-from .competition_insert_competition_post_body_competition_historical_name import (
-    CompetitionInsertCompetitionPostBodyCompetitionHistoricalName,
-)
-from .competition_insert_competition_post_body_event_type import (
-    CompetitionInsertCompetitionPostBodyEventType,
-)
-from .competition_insert_competition_post_body_social_media import (
-    CompetitionInsertCompetitionPostBodySocialMedia,
-)
-from .competition_insert_competitions_response import (
-    CompetitionInsertCompetitionsResponse,
-)
+from .competition_external_ids_post_body import CompetitionExternalIdsPostBody
+from .competition_external_ids_put_body import CompetitionExternalIdsPutBody
+from .competition_external_ids_response import CompetitionExternalIdsResponse
+from .competition_external_ids_update_response_default import CompetitionExternalIdsUpdateResponseDefault
 from .competition_insert_response_default import CompetitionInsertResponseDefault
 from .competition_list_age_group import CompetitionListAgeGroup
 from .competition_list_by_league_id_age_group import CompetitionListByLeagueIdAgeGroup
-from .competition_list_by_league_id_competitions_response import (
-    CompetitionListByLeagueIdCompetitionsResponse,
-)
-from .competition_list_by_league_id_response_default import (
-    CompetitionListByLeagueIdResponseDefault,
-)
-from .competition_list_competitions_response import CompetitionListCompetitionsResponse
+from .competition_list_by_league_id_response_default import CompetitionListByLeagueIdResponseDefault
 from .competition_list_response_default import CompetitionListResponseDefault
-from .competition_list_season_status_age_group import (
-    CompetitionListSeasonStatusAgeGroup,
-)
-from .competition_list_season_status_competitions_season_status_response import (
-    CompetitionListSeasonStatusCompetitionsSeasonStatusResponse,
-)
-from .competition_list_season_status_response_default import (
-    CompetitionListSeasonStatusResponseDefault,
-)
-from .competition_list_season_status_season_status import (
-    CompetitionListSeasonStatusSeasonStatus,
-)
-from .competition_list_season_status_season_video_production import (
-    CompetitionListSeasonStatusSeasonVideoProduction,
-)
-from .competition_model import CompetitionModel
-from .competition_model_age_group_type_1 import CompetitionModelAgeGroupType1
-from .competition_model_age_group_type_2_type_1 import (
-    CompetitionModelAgeGroupType2Type1,
-)
-from .competition_model_age_group_type_3_type_1 import (
-    CompetitionModelAgeGroupType3Type1,
-)
-from .competition_model_competition_historical_name import (
-    CompetitionModelCompetitionHistoricalName,
-)
-from .competition_model_event_type import CompetitionModelEventType
-from .competition_model_league import CompetitionModelLeague
-from .competition_model_league_resource_type import CompetitionModelLeagueResourceType
-from .competition_model_organization import CompetitionModelOrganization
-from .competition_model_organization_resource_type import (
-    CompetitionModelOrganizationResourceType,
-)
-from .competition_model_social_media import CompetitionModelSocialMedia
+from .competition_list_season_status_age_group import CompetitionListSeasonStatusAgeGroup
+from .competition_list_season_status_response_default import CompetitionListSeasonStatusResponseDefault
+from .competition_list_season_status_season_status import CompetitionListSeasonStatusSeasonStatus
+from .competition_list_season_status_season_video_production import CompetitionListSeasonStatusSeasonVideoProduction
 from .competition_person_statistics_model import CompetitionPersonStatisticsModel
-from .competition_person_statistics_model_competition import (
-    CompetitionPersonStatisticsModelCompetition,
-)
+from .competition_person_statistics_model_competition import CompetitionPersonStatisticsModelCompetition
 from .competition_person_statistics_model_competition_resource_type import (
     CompetitionPersonStatisticsModelCompetitionResourceType,
 )
-from .competition_person_statistics_model_organization import (
-    CompetitionPersonStatisticsModelOrganization,
-)
+from .competition_person_statistics_model_organization import CompetitionPersonStatisticsModelOrganization
 from .competition_person_statistics_model_organization_resource_type import (
     CompetitionPersonStatisticsModelOrganizationResourceType,
 )
-from .competition_person_statistics_model_person import (
-    CompetitionPersonStatisticsModelPerson,
-)
-from .competition_person_statistics_model_person_resource_type import (
-    CompetitionPersonStatisticsModelPersonResourceType,
-)
-from .competition_person_statistics_model_statistics import (
-    CompetitionPersonStatisticsModelStatistics,
-)
-from .competition_season_status_model import CompetitionSeasonStatusModel
-from .competition_season_status_model_age_group_type_1 import (
-    CompetitionSeasonStatusModelAgeGroupType1,
-)
-from .competition_season_status_model_age_group_type_2_type_1 import (
-    CompetitionSeasonStatusModelAgeGroupType2Type1,
-)
-from .competition_season_status_model_age_group_type_3_type_1 import (
-    CompetitionSeasonStatusModelAgeGroupType3Type1,
-)
-from .competition_season_status_model_competition_historical_name import (
-    CompetitionSeasonStatusModelCompetitionHistoricalName,
-)
-from .competition_season_status_model_event_type import (
-    CompetitionSeasonStatusModelEventType,
-)
-from .competition_season_status_model_league import CompetitionSeasonStatusModelLeague
-from .competition_season_status_model_league_resource_type import (
-    CompetitionSeasonStatusModelLeagueResourceType,
-)
-from .competition_season_status_model_organization import (
-    CompetitionSeasonStatusModelOrganization,
-)
-from .competition_season_status_model_organization_resource_type import (
-    CompetitionSeasonStatusModelOrganizationResourceType,
-)
-from .competition_season_status_model_social_media import (
-    CompetitionSeasonStatusModelSocialMedia,
-)
-from .competition_update_competition_put_body import CompetitionUpdateCompetitionPutBody
-from .competition_update_competition_put_body_age_group_type_1 import (
-    CompetitionUpdateCompetitionPutBodyAgeGroupType1,
-)
-from .competition_update_competition_put_body_age_group_type_2_type_1 import (
-    CompetitionUpdateCompetitionPutBodyAgeGroupType2Type1,
-)
-from .competition_update_competition_put_body_age_group_type_3_type_1 import (
-    CompetitionUpdateCompetitionPutBodyAgeGroupType3Type1,
-)
-from .competition_update_competition_put_body_competition_historical_name import (
-    CompetitionUpdateCompetitionPutBodyCompetitionHistoricalName,
-)
-from .competition_update_competition_put_body_event_type import (
-    CompetitionUpdateCompetitionPutBodyEventType,
-)
-from .competition_update_competition_put_body_social_media import (
-    CompetitionUpdateCompetitionPutBodySocialMedia,
-)
-from .competition_update_competitions_response import (
-    CompetitionUpdateCompetitionsResponse,
-)
+from .competition_person_statistics_model_person import CompetitionPersonStatisticsModelPerson
+from .competition_person_statistics_model_person_resource_type import CompetitionPersonStatisticsModelPersonResourceType
+from .competition_person_statistics_model_statistics import CompetitionPersonStatisticsModelStatistics
+from .competition_person_statistics_response import CompetitionPersonStatisticsResponse
 from .competition_update_response_default import CompetitionUpdateResponseDefault
-from .conduct_delete_conduct_response import ConductDeleteConductResponse
 from .conduct_delete_response_default import ConductDeleteResponseDefault
-from .conduct_detail_conduct_response import ConductDetailConductResponse
 from .conduct_detail_response_default import ConductDetailResponseDefault
-from .conduct_insert_conduct_post_body import ConductInsertConductPostBody
-from .conduct_insert_conduct_post_body_conduct_penalty_result import (
-    ConductInsertConductPostBodyConductPenaltyResult,
-)
-from .conduct_insert_conduct_post_body_conduct_penalty_result_penalty_type import (
-    ConductInsertConductPostBodyConductPenaltyResultPenaltyType,
-)
-from .conduct_insert_conduct_post_body_conduct_type_item import (
-    ConductInsertConductPostBodyConductTypeItem,
-)
-from .conduct_insert_conduct_post_body_fine_status_type_1 import (
-    ConductInsertConductPostBodyFineStatusType1,
-)
-from .conduct_insert_conduct_post_body_fine_status_type_2_type_1 import (
-    ConductInsertConductPostBodyFineStatusType2Type1,
-)
-from .conduct_insert_conduct_post_body_fine_status_type_3_type_1 import (
-    ConductInsertConductPostBodyFineStatusType3Type1,
-)
-from .conduct_insert_conduct_post_body_hearing_status_type_1 import (
-    ConductInsertConductPostBodyHearingStatusType1,
-)
-from .conduct_insert_conduct_post_body_hearing_status_type_2_type_1 import (
-    ConductInsertConductPostBodyHearingStatusType2Type1,
-)
-from .conduct_insert_conduct_post_body_hearing_status_type_3_type_1 import (
-    ConductInsertConductPostBodyHearingStatusType3Type1,
-)
-from .conduct_insert_conduct_post_body_period_id import (
-    ConductInsertConductPostBodyPeriodId,
-)
-from .conduct_insert_conduct_post_body_role_type_1 import (
-    ConductInsertConductPostBodyRoleType1,
-)
-from .conduct_insert_conduct_post_body_role_type_2_type_1 import (
-    ConductInsertConductPostBodyRoleType2Type1,
-)
-from .conduct_insert_conduct_post_body_role_type_3_type_1 import (
-    ConductInsertConductPostBodyRoleType3Type1,
-)
-from .conduct_insert_conduct_post_body_status_type_1 import (
-    ConductInsertConductPostBodyStatusType1,
-)
-from .conduct_insert_conduct_post_body_status_type_2_type_1 import (
-    ConductInsertConductPostBodyStatusType2Type1,
-)
-from .conduct_insert_conduct_post_body_status_type_3_type_1 import (
-    ConductInsertConductPostBodyStatusType3Type1,
-)
-from .conduct_insert_conduct_response import ConductInsertConductResponse
 from .conduct_insert_response_default import ConductInsertResponseDefault
-from .conduct_list_conduct_response import ConductListConductResponse
 from .conduct_list_conduct_status_type_1 import ConductListConductStatusType1
-from .conduct_list_conduct_status_type_2_type_1 import (
-    ConductListConductStatusType2Type1,
-)
-from .conduct_list_conduct_status_type_3_type_1 import (
-    ConductListConductStatusType3Type1,
-)
+from .conduct_list_conduct_status_type_2_type_1 import ConductListConductStatusType2Type1
+from .conduct_list_conduct_status_type_3_type_1 import ConductListConductStatusType3Type1
 from .conduct_list_conduct_type import ConductListConductType
 from .conduct_list_response_default import ConductListResponseDefault
 from .conduct_model import ConductModel
 from .conduct_model_competition import ConductModelCompetition
 from .conduct_model_competition_resource_type import ConductModelCompetitionResourceType
-from .conduct_model_conduct_penalty_result import ConductModelConductPenaltyResult
-from .conduct_model_conduct_penalty_result_penalty_type import (
-    ConductModelConductPenaltyResultPenaltyType,
-)
 from .conduct_model_conduct_type_item import ConductModelConductTypeItem
 from .conduct_model_entity import ConductModelEntity
 from .conduct_model_entity_group import ConductModelEntityGroup
-from .conduct_model_entity_group_resource_type import (
-    ConductModelEntityGroupResourceType,
-)
+from .conduct_model_entity_group_resource_type import ConductModelEntityGroupResourceType
 from .conduct_model_entity_resource_type import ConductModelEntityResourceType
 from .conduct_model_fine_status_type_1 import ConductModelFineStatusType1
 from .conduct_model_fine_status_type_2_type_1 import ConductModelFineStatusType2Type1
@@ -523,16 +221,10 @@ from .conduct_model_fine_status_type_3_type_1 import ConductModelFineStatusType3
 from .conduct_model_fixture import ConductModelFixture
 from .conduct_model_fixture_resource_type import ConductModelFixtureResourceType
 from .conduct_model_hearing_status_type_1 import ConductModelHearingStatusType1
-from .conduct_model_hearing_status_type_2_type_1 import (
-    ConductModelHearingStatusType2Type1,
-)
-from .conduct_model_hearing_status_type_3_type_1 import (
-    ConductModelHearingStatusType3Type1,
-)
+from .conduct_model_hearing_status_type_2_type_1 import ConductModelHearingStatusType2Type1
+from .conduct_model_hearing_status_type_3_type_1 import ConductModelHearingStatusType3Type1
 from .conduct_model_organization import ConductModelOrganization
-from .conduct_model_organization_resource_type import (
-    ConductModelOrganizationResourceType,
-)
+from .conduct_model_organization_resource_type import ConductModelOrganizationResourceType
 from .conduct_model_period_id import ConductModelPeriodId
 from .conduct_model_person import ConductModelPerson
 from .conduct_model_person_resource_type import ConductModelPersonResourceType
@@ -546,1579 +238,369 @@ from .conduct_model_status_type_2_type_1 import ConductModelStatusType2Type1
 from .conduct_model_status_type_3_type_1 import ConductModelStatusType3Type1
 from .conduct_model_venue import ConductModelVenue
 from .conduct_model_venue_resource_type import ConductModelVenueResourceType
-from .conduct_update_conduct_put_body import ConductUpdateConductPutBody
-from .conduct_update_conduct_put_body_conduct_penalty_result import (
-    ConductUpdateConductPutBodyConductPenaltyResult,
-)
-from .conduct_update_conduct_put_body_conduct_penalty_result_penalty_type import (
-    ConductUpdateConductPutBodyConductPenaltyResultPenaltyType,
-)
-from .conduct_update_conduct_put_body_conduct_type_item import (
-    ConductUpdateConductPutBodyConductTypeItem,
-)
-from .conduct_update_conduct_put_body_fine_status_type_1 import (
-    ConductUpdateConductPutBodyFineStatusType1,
-)
-from .conduct_update_conduct_put_body_fine_status_type_2_type_1 import (
-    ConductUpdateConductPutBodyFineStatusType2Type1,
-)
-from .conduct_update_conduct_put_body_fine_status_type_3_type_1 import (
-    ConductUpdateConductPutBodyFineStatusType3Type1,
-)
-from .conduct_update_conduct_put_body_hearing_status_type_1 import (
-    ConductUpdateConductPutBodyHearingStatusType1,
-)
-from .conduct_update_conduct_put_body_hearing_status_type_2_type_1 import (
-    ConductUpdateConductPutBodyHearingStatusType2Type1,
-)
-from .conduct_update_conduct_put_body_hearing_status_type_3_type_1 import (
-    ConductUpdateConductPutBodyHearingStatusType3Type1,
-)
-from .conduct_update_conduct_put_body_period_id import (
-    ConductUpdateConductPutBodyPeriodId,
-)
-from .conduct_update_conduct_put_body_role_type_1 import (
-    ConductUpdateConductPutBodyRoleType1,
-)
-from .conduct_update_conduct_put_body_role_type_2_type_1 import (
-    ConductUpdateConductPutBodyRoleType2Type1,
-)
-from .conduct_update_conduct_put_body_role_type_3_type_1 import (
-    ConductUpdateConductPutBodyRoleType3Type1,
-)
-from .conduct_update_conduct_put_body_status_type_1 import (
-    ConductUpdateConductPutBodyStatusType1,
-)
-from .conduct_update_conduct_put_body_status_type_2_type_1 import (
-    ConductUpdateConductPutBodyStatusType2Type1,
-)
-from .conduct_update_conduct_put_body_status_type_3_type_1 import (
-    ConductUpdateConductPutBodyStatusType3Type1,
-)
-from .conduct_update_conduct_response import ConductUpdateConductResponse
+from .conduct_penalty_result import ConductPenaltyResult
+from .conduct_penalty_result_penalty_type import ConductPenaltyResultPenaltyType
+from .conduct_response import ConductResponse
 from .conduct_update_response_default import ConductUpdateResponseDefault
-from .conference_delete_conferences_response import ConferenceDeleteConferencesResponse
 from .conference_delete_response_default import ConferenceDeleteResponseDefault
-from .conference_detail_conferences_response import ConferenceDetailConferencesResponse
 from .conference_detail_response_default import ConferenceDetailResponseDefault
-from .conference_external_ids_delete_conference_external_ids_response import (
-    ConferenceExternalIdsDeleteConferenceExternalIdsResponse,
-)
-from .conference_external_ids_delete_response_default import (
-    ConferenceExternalIdsDeleteResponseDefault,
-)
-from .conference_external_ids_detail_conference_external_ids_response import (
-    ConferenceExternalIdsDetailConferenceExternalIdsResponse,
-)
-from .conference_external_ids_detail_response_default import (
-    ConferenceExternalIdsDetailResponseDefault,
-)
-from .conference_external_ids_insert_conference_external_ids_post_body import (
-    ConferenceExternalIdsInsertConferenceExternalIdsPostBody,
-)
-from .conference_external_ids_insert_conference_external_ids_response import (
-    ConferenceExternalIdsInsertConferenceExternalIdsResponse,
-)
-from .conference_external_ids_insert_response_default import (
-    ConferenceExternalIdsInsertResponseDefault,
-)
-from .conference_external_ids_insert_update_conference_external_ids_post_body import (
-    ConferenceExternalIdsInsertUpdateConferenceExternalIdsPostBody,
-)
-from .conference_external_ids_insert_update_conference_external_ids_response import (
-    ConferenceExternalIdsInsertUpdateConferenceExternalIdsResponse,
-)
-from .conference_external_ids_insert_update_response_default import (
-    ConferenceExternalIdsInsertUpdateResponseDefault,
-)
-from .conference_external_ids_list_conference_external_ids_response import (
-    ConferenceExternalIdsListConferenceExternalIdsResponse,
-)
-from .conference_external_ids_list_response_default import (
-    ConferenceExternalIdsListResponseDefault,
-)
+from .conference_external_ids_delete_response_default import ConferenceExternalIdsDeleteResponseDefault
+from .conference_external_ids_detail_response_default import ConferenceExternalIdsDetailResponseDefault
+from .conference_external_ids_insert_response_default import ConferenceExternalIdsInsertResponseDefault
+from .conference_external_ids_insert_update_response_default import ConferenceExternalIdsInsertUpdateResponseDefault
+from .conference_external_ids_list_response_default import ConferenceExternalIdsListResponseDefault
 from .conference_external_ids_model import ConferenceExternalIdsModel
-from .conference_external_ids_model_conference import (
-    ConferenceExternalIdsModelConference,
-)
-from .conference_external_ids_model_conference_resource_type import (
-    ConferenceExternalIdsModelConferenceResourceType,
-)
-from .conference_external_ids_model_organization import (
-    ConferenceExternalIdsModelOrganization,
-)
-from .conference_external_ids_model_organization_resource_type import (
-    ConferenceExternalIdsModelOrganizationResourceType,
-)
-from .conference_external_ids_update_conference_external_ids_put_body import (
-    ConferenceExternalIdsUpdateConferenceExternalIdsPutBody,
-)
-from .conference_external_ids_update_conference_external_ids_response import (
-    ConferenceExternalIdsUpdateConferenceExternalIdsResponse,
-)
-from .conference_external_ids_update_response_default import (
-    ConferenceExternalIdsUpdateResponseDefault,
-)
-from .conference_insert_conference_post_body import ConferenceInsertConferencePostBody
-from .conference_insert_conference_post_body_social_media import (
-    ConferenceInsertConferencePostBodySocialMedia,
-)
-from .conference_insert_conferences_response import ConferenceInsertConferencesResponse
+from .conference_external_ids_model_conference import ConferenceExternalIdsModelConference
+from .conference_external_ids_model_conference_resource_type import ConferenceExternalIdsModelConferenceResourceType
+from .conference_external_ids_model_organization import ConferenceExternalIdsModelOrganization
+from .conference_external_ids_model_organization_resource_type import ConferenceExternalIdsModelOrganizationResourceType
+from .conference_external_ids_post_body import ConferenceExternalIdsPostBody
+from .conference_external_ids_put_body import ConferenceExternalIdsPutBody
+from .conference_external_ids_response import ConferenceExternalIdsResponse
+from .conference_external_ids_update_response_default import ConferenceExternalIdsUpdateResponseDefault
 from .conference_insert_response_default import ConferenceInsertResponseDefault
-from .conference_list_conferences_response import ConferenceListConferencesResponse
 from .conference_list_response_default import ConferenceListResponseDefault
-from .conference_model import ConferenceModel
-from .conference_model_organization import ConferenceModelOrganization
-from .conference_model_organization_resource_type import (
-    ConferenceModelOrganizationResourceType,
-)
-from .conference_model_social_media import ConferenceModelSocialMedia
-from .conference_update_conference_put_body import ConferenceUpdateConferencePutBody
-from .conference_update_conference_put_body_social_media import (
-    ConferenceUpdateConferencePutBodySocialMedia,
-)
-from .conference_update_conferences_response import ConferenceUpdateConferencesResponse
 from .conference_update_response_default import ConferenceUpdateResponseDefault
-from .cps_list_competition_person_statistics_response import (
-    CpsListCompetitionPersonStatisticsResponse,
-)
 from .cps_list_fixture_type import CpsListFixtureType
 from .cps_list_home_away import CpsListHomeAway
 from .cps_list_response_default import CpsListResponseDefault
 from .cps_list_win_loss import CpsListWinLoss
-from .division_delete_divisions_response import DivisionDeleteDivisionsResponse
+from .current_scores import CurrentScores
 from .division_delete_response_default import DivisionDeleteResponseDefault
-from .division_detail_divisions_response import DivisionDetailDivisionsResponse
 from .division_detail_response_default import DivisionDetailResponseDefault
-from .division_external_ids_delete_division_external_ids_response import (
-    DivisionExternalIdsDeleteDivisionExternalIdsResponse,
-)
-from .division_external_ids_delete_response_default import (
-    DivisionExternalIdsDeleteResponseDefault,
-)
-from .division_external_ids_detail_division_external_ids_response import (
-    DivisionExternalIdsDetailDivisionExternalIdsResponse,
-)
-from .division_external_ids_detail_response_default import (
-    DivisionExternalIdsDetailResponseDefault,
-)
-from .division_external_ids_insert_division_external_ids_post_body import (
-    DivisionExternalIdsInsertDivisionExternalIdsPostBody,
-)
-from .division_external_ids_insert_division_external_ids_response import (
-    DivisionExternalIdsInsertDivisionExternalIdsResponse,
-)
-from .division_external_ids_insert_response_default import (
-    DivisionExternalIdsInsertResponseDefault,
-)
-from .division_external_ids_insert_update_division_external_ids_post_body import (
-    DivisionExternalIdsInsertUpdateDivisionExternalIdsPostBody,
-)
-from .division_external_ids_insert_update_division_external_ids_response import (
-    DivisionExternalIdsInsertUpdateDivisionExternalIdsResponse,
-)
-from .division_external_ids_insert_update_response_default import (
-    DivisionExternalIdsInsertUpdateResponseDefault,
-)
-from .division_external_ids_list_division_external_ids_response import (
-    DivisionExternalIdsListDivisionExternalIdsResponse,
-)
-from .division_external_ids_list_response_default import (
-    DivisionExternalIdsListResponseDefault,
-)
+from .division_external_ids_delete_response_default import DivisionExternalIdsDeleteResponseDefault
+from .division_external_ids_detail_response_default import DivisionExternalIdsDetailResponseDefault
+from .division_external_ids_insert_response_default import DivisionExternalIdsInsertResponseDefault
+from .division_external_ids_insert_update_response_default import DivisionExternalIdsInsertUpdateResponseDefault
+from .division_external_ids_list_response_default import DivisionExternalIdsListResponseDefault
 from .division_external_ids_model import DivisionExternalIdsModel
 from .division_external_ids_model_division import DivisionExternalIdsModelDivision
-from .division_external_ids_model_division_resource_type import (
-    DivisionExternalIdsModelDivisionResourceType,
-)
-from .division_external_ids_model_organization import (
-    DivisionExternalIdsModelOrganization,
-)
-from .division_external_ids_model_organization_resource_type import (
-    DivisionExternalIdsModelOrganizationResourceType,
-)
-from .division_external_ids_update_division_external_ids_put_body import (
-    DivisionExternalIdsUpdateDivisionExternalIdsPutBody,
-)
-from .division_external_ids_update_division_external_ids_response import (
-    DivisionExternalIdsUpdateDivisionExternalIdsResponse,
-)
-from .division_external_ids_update_response_default import (
-    DivisionExternalIdsUpdateResponseDefault,
-)
-from .division_insert_division_post_body import DivisionInsertDivisionPostBody
-from .division_insert_division_post_body_social_media import (
-    DivisionInsertDivisionPostBodySocialMedia,
-)
-from .division_insert_divisions_response import DivisionInsertDivisionsResponse
+from .division_external_ids_model_division_resource_type import DivisionExternalIdsModelDivisionResourceType
+from .division_external_ids_model_organization import DivisionExternalIdsModelOrganization
+from .division_external_ids_model_organization_resource_type import DivisionExternalIdsModelOrganizationResourceType
+from .division_external_ids_post_body import DivisionExternalIdsPostBody
+from .division_external_ids_put_body import DivisionExternalIdsPutBody
+from .division_external_ids_response import DivisionExternalIdsResponse
+from .division_external_ids_update_response_default import DivisionExternalIdsUpdateResponseDefault
 from .division_insert_response_default import DivisionInsertResponseDefault
-from .division_list_divisions_response import DivisionListDivisionsResponse
 from .division_list_response_default import DivisionListResponseDefault
-from .division_model import DivisionModel
-from .division_model_conference import DivisionModelConference
-from .division_model_conference_resource_type import DivisionModelConferenceResourceType
-from .division_model_organization import DivisionModelOrganization
-from .division_model_organization_resource_type import (
-    DivisionModelOrganizationResourceType,
-)
-from .division_model_social_media import DivisionModelSocialMedia
-from .division_update_division_put_body import DivisionUpdateDivisionPutBody
-from .division_update_division_put_body_social_media import (
-    DivisionUpdateDivisionPutBodySocialMedia,
-)
-from .division_update_divisions_response import DivisionUpdateDivisionsResponse
 from .division_update_response_default import DivisionUpdateResponseDefault
-from .entity_delete_entities_response import EntityDeleteEntitiesResponse
 from .entity_delete_response_default import EntityDeleteResponseDefault
-from .entity_detail_entities_response import EntityDetailEntitiesResponse
 from .entity_detail_response_default import EntityDetailResponseDefault
-from .entity_external_ids_delete_entity_external_ids_response import (
-    EntityExternalIdsDeleteEntityExternalIdsResponse,
-)
-from .entity_external_ids_delete_response_default import (
-    EntityExternalIdsDeleteResponseDefault,
-)
-from .entity_external_ids_detail_entity_external_ids_response import (
-    EntityExternalIdsDetailEntityExternalIdsResponse,
-)
-from .entity_external_ids_detail_response_default import (
-    EntityExternalIdsDetailResponseDefault,
-)
-from .entity_external_ids_insert_entity_external_ids_response import (
-    EntityExternalIdsInsertEntityExternalIdsResponse,
-)
-from .entity_external_ids_insert_response_default import (
-    EntityExternalIdsInsertResponseDefault,
-)
-from .entity_external_ids_insert_team_external_ids_post_body import (
-    EntityExternalIdsInsertTeamExternalIdsPostBody,
-)
-from .entity_external_ids_insert_update_entity_external_ids_response import (
-    EntityExternalIdsInsertUpdateEntityExternalIdsResponse,
-)
-from .entity_external_ids_insert_update_response_default import (
-    EntityExternalIdsInsertUpdateResponseDefault,
-)
-from .entity_external_ids_insert_update_team_external_ids_post_body import (
-    EntityExternalIdsInsertUpdateTeamExternalIdsPostBody,
-)
-from .entity_external_ids_list_entity_external_ids_response import (
-    EntityExternalIdsListEntityExternalIdsResponse,
-)
-from .entity_external_ids_list_response_default import (
-    EntityExternalIdsListResponseDefault,
-)
-from .entity_external_ids_update_entity_external_ids_response import (
-    EntityExternalIdsUpdateEntityExternalIdsResponse,
-)
-from .entity_external_ids_update_response_default import (
-    EntityExternalIdsUpdateResponseDefault,
-)
-from .entity_external_ids_update_team_external_ids_put_body import (
-    EntityExternalIdsUpdateTeamExternalIdsPutBody,
-)
-from .entity_group_delete_entity_groups_response import (
-    EntityGroupDeleteEntityGroupsResponse,
-)
+from .entity_external_ids_delete_response_default import EntityExternalIdsDeleteResponseDefault
+from .entity_external_ids_detail_response_default import EntityExternalIdsDetailResponseDefault
+from .entity_external_ids_insert_response_default import EntityExternalIdsInsertResponseDefault
+from .entity_external_ids_insert_update_response_default import EntityExternalIdsInsertUpdateResponseDefault
+from .entity_external_ids_list_response_default import EntityExternalIdsListResponseDefault
+from .entity_external_ids_response import EntityExternalIdsResponse
+from .entity_external_ids_update_response_default import EntityExternalIdsUpdateResponseDefault
 from .entity_group_delete_response_default import EntityGroupDeleteResponseDefault
-from .entity_group_detail_entity_groups_response import (
-    EntityGroupDetailEntityGroupsResponse,
-)
 from .entity_group_detail_response_default import EntityGroupDetailResponseDefault
-from .entity_group_external_ids_delete_entity_group_external_ids_response import (
-    EntityGroupExternalIdsDeleteEntityGroupExternalIdsResponse,
-)
-from .entity_group_external_ids_delete_response_default import (
-    EntityGroupExternalIdsDeleteResponseDefault,
-)
-from .entity_group_external_ids_detail_entity_group_external_ids_response import (
-    EntityGroupExternalIdsDetailEntityGroupExternalIdsResponse,
-)
-from .entity_group_external_ids_detail_response_default import (
-    EntityGroupExternalIdsDetailResponseDefault,
-)
-from .entity_group_external_ids_insert_club_external_ids_post_body import (
-    EntityGroupExternalIdsInsertClubExternalIdsPostBody,
-)
-from .entity_group_external_ids_insert_entity_group_external_ids_response import (
-    EntityGroupExternalIdsInsertEntityGroupExternalIdsResponse,
-)
-from .entity_group_external_ids_insert_response_default import (
-    EntityGroupExternalIdsInsertResponseDefault,
-)
-from .entity_group_external_ids_insert_update_club_external_ids_post_body import (
-    EntityGroupExternalIdsInsertUpdateClubExternalIdsPostBody,
-)
-from .entity_group_external_ids_insert_update_entity_group_external_ids_response import (
-    EntityGroupExternalIdsInsertUpdateEntityGroupExternalIdsResponse,
-)
-from .entity_group_external_ids_insert_update_response_default import (
-    EntityGroupExternalIdsInsertUpdateResponseDefault,
-)
-from .entity_group_external_ids_list_entity_group_external_ids_response import (
-    EntityGroupExternalIdsListEntityGroupExternalIdsResponse,
-)
-from .entity_group_external_ids_list_response_default import (
-    EntityGroupExternalIdsListResponseDefault,
-)
-from .entity_group_external_ids_update_club_external_ids_put_body import (
-    EntityGroupExternalIdsUpdateClubExternalIdsPutBody,
-)
-from .entity_group_external_ids_update_entity_group_external_ids_response import (
-    EntityGroupExternalIdsUpdateEntityGroupExternalIdsResponse,
-)
-from .entity_group_external_ids_update_response_default import (
-    EntityGroupExternalIdsUpdateResponseDefault,
-)
-from .entity_group_insert_club_post_body import EntityGroupInsertClubPostBody
-from .entity_group_insert_club_post_body_additional_names import (
-    EntityGroupInsertClubPostBodyAdditionalNames,
-)
-from .entity_group_insert_club_post_body_club_address import (
-    EntityGroupInsertClubPostBodyClubAddress,
-)
-from .entity_group_insert_club_post_body_club_historical_name import (
-    EntityGroupInsertClubPostBodyClubHistoricalName,
-)
-from .entity_group_insert_club_post_body_colors import (
-    EntityGroupInsertClubPostBodyColors,
-)
-from .entity_group_insert_club_post_body_contact_details import (
-    EntityGroupInsertClubPostBodyContactDetails,
-)
-from .entity_group_insert_club_post_body_entity_additional_details import (
-    EntityGroupInsertClubPostBodyEntityAdditionalDetails,
-)
-from .entity_group_insert_club_post_body_social_media import (
-    EntityGroupInsertClubPostBodySocialMedia,
-)
-from .entity_group_insert_club_post_body_status import (
-    EntityGroupInsertClubPostBodyStatus,
-)
-from .entity_group_insert_entity_groups_response import (
-    EntityGroupInsertEntityGroupsResponse,
-)
+from .entity_group_external_ids_delete_response_default import EntityGroupExternalIdsDeleteResponseDefault
+from .entity_group_external_ids_detail_response_default import EntityGroupExternalIdsDetailResponseDefault
+from .entity_group_external_ids_insert_response_default import EntityGroupExternalIdsInsertResponseDefault
+from .entity_group_external_ids_insert_update_response_default import EntityGroupExternalIdsInsertUpdateResponseDefault
+from .entity_group_external_ids_list_response_default import EntityGroupExternalIdsListResponseDefault
+from .entity_group_external_ids_response import EntityGroupExternalIdsResponse
+from .entity_group_external_ids_update_response_default import EntityGroupExternalIdsUpdateResponseDefault
 from .entity_group_insert_response_default import EntityGroupInsertResponseDefault
-from .entity_group_list_entity_groups_response import (
-    EntityGroupListEntityGroupsResponse,
-)
 from .entity_group_list_response_default import EntityGroupListResponseDefault
 from .entity_group_list_status import EntityGroupListStatus
-from .entity_group_update_club_put_body import EntityGroupUpdateClubPutBody
-from .entity_group_update_club_put_body_additional_names import (
-    EntityGroupUpdateClubPutBodyAdditionalNames,
-)
-from .entity_group_update_club_put_body_club_address import (
-    EntityGroupUpdateClubPutBodyClubAddress,
-)
-from .entity_group_update_club_put_body_club_historical_name import (
-    EntityGroupUpdateClubPutBodyClubHistoricalName,
-)
-from .entity_group_update_club_put_body_colors import EntityGroupUpdateClubPutBodyColors
-from .entity_group_update_club_put_body_contact_details import (
-    EntityGroupUpdateClubPutBodyContactDetails,
-)
-from .entity_group_update_club_put_body_entity_additional_details import (
-    EntityGroupUpdateClubPutBodyEntityAdditionalDetails,
-)
-from .entity_group_update_club_put_body_social_media import (
-    EntityGroupUpdateClubPutBodySocialMedia,
-)
-from .entity_group_update_club_put_body_status import EntityGroupUpdateClubPutBodyStatus
-from .entity_group_update_entity_groups_response import (
-    EntityGroupUpdateEntityGroupsResponse,
-)
 from .entity_group_update_response_default import EntityGroupUpdateResponseDefault
-from .entity_insert_entities_response import EntityInsertEntitiesResponse
 from .entity_insert_response_default import EntityInsertResponseDefault
-from .entity_insert_team_post_body import EntityInsertTeamPostBody
-from .entity_insert_team_post_body_additional_names import (
-    EntityInsertTeamPostBodyAdditionalNames,
-)
-from .entity_insert_team_post_body_age_group_type_1 import (
-    EntityInsertTeamPostBodyAgeGroupType1,
-)
-from .entity_insert_team_post_body_age_group_type_2_type_1 import (
-    EntityInsertTeamPostBodyAgeGroupType2Type1,
-)
-from .entity_insert_team_post_body_age_group_type_3_type_1 import (
-    EntityInsertTeamPostBodyAgeGroupType3Type1,
-)
-from .entity_insert_team_post_body_colors import EntityInsertTeamPostBodyColors
-from .entity_insert_team_post_body_contact_details import (
-    EntityInsertTeamPostBodyContactDetails,
-)
-from .entity_insert_team_post_body_discipline_type_1 import (
-    EntityInsertTeamPostBodyDisciplineType1,
-)
-from .entity_insert_team_post_body_discipline_type_2_type_1 import (
-    EntityInsertTeamPostBodyDisciplineType2Type1,
-)
-from .entity_insert_team_post_body_discipline_type_3_type_1 import (
-    EntityInsertTeamPostBodyDisciplineType3Type1,
-)
-from .entity_insert_team_post_body_entity_additional_details import (
-    EntityInsertTeamPostBodyEntityAdditionalDetails,
-)
-from .entity_insert_team_post_body_gender_type_1 import (
-    EntityInsertTeamPostBodyGenderType1,
-)
-from .entity_insert_team_post_body_gender_type_2_type_1 import (
-    EntityInsertTeamPostBodyGenderType2Type1,
-)
-from .entity_insert_team_post_body_gender_type_3_type_1 import (
-    EntityInsertTeamPostBodyGenderType3Type1,
-)
-from .entity_insert_team_post_body_social_media import (
-    EntityInsertTeamPostBodySocialMedia,
-)
-from .entity_insert_team_post_body_standard_type_1 import (
-    EntityInsertTeamPostBodyStandardType1,
-)
-from .entity_insert_team_post_body_standard_type_2_type_1 import (
-    EntityInsertTeamPostBodyStandardType2Type1,
-)
-from .entity_insert_team_post_body_standard_type_3_type_1 import (
-    EntityInsertTeamPostBodyStandardType3Type1,
-)
-from .entity_insert_team_post_body_status import EntityInsertTeamPostBodyStatus
-from .entity_insert_team_post_body_team_address import (
-    EntityInsertTeamPostBodyTeamAddress,
-)
-from .entity_insert_team_post_body_team_historical_name import (
-    EntityInsertTeamPostBodyTeamHistoricalName,
-)
 from .entity_list_age_group import EntityListAgeGroup
 from .entity_list_by_entity_group_age_group import EntityListByEntityGroupAgeGroup
 from .entity_list_by_entity_group_discipline import EntityListByEntityGroupDiscipline
-from .entity_list_by_entity_group_entities_response import (
-    EntityListByEntityGroupEntitiesResponse,
-)
 from .entity_list_by_entity_group_gender import EntityListByEntityGroupGender
-from .entity_list_by_entity_group_response_default import (
-    EntityListByEntityGroupResponseDefault,
-)
+from .entity_list_by_entity_group_response_default import EntityListByEntityGroupResponseDefault
 from .entity_list_by_entity_group_standard import EntityListByEntityGroupStandard
 from .entity_list_by_entity_group_status import EntityListByEntityGroupStatus
 from .entity_list_discipline import EntityListDiscipline
-from .entity_list_entities_response import EntityListEntitiesResponse
 from .entity_list_gender import EntityListGender
 from .entity_list_representing_country import EntityListRepresentingCountry
 from .entity_list_response_default import EntityListResponseDefault
 from .entity_list_standard import EntityListStandard
 from .entity_list_status import EntityListStatus
-from .entity_merge_merge_post_body import EntityMergeMergePostBody
 from .entity_merge_response_default import EntityMergeResponseDefault
-from .entity_merge_success_response import EntityMergeSuccessResponse
-from .entity_swap_merge_post_body import EntitySwapMergePostBody
 from .entity_swap_response_default import EntitySwapResponseDefault
-from .entity_swap_success_response import EntitySwapSuccessResponse
-from .entity_update_entities_response import EntityUpdateEntitiesResponse
 from .entity_update_response_default import EntityUpdateResponseDefault
-from .entity_update_team_put_body import EntityUpdateTeamPutBody
-from .entity_update_team_put_body_additional_names import (
-    EntityUpdateTeamPutBodyAdditionalNames,
-)
-from .entity_update_team_put_body_age_group_type_1 import (
-    EntityUpdateTeamPutBodyAgeGroupType1,
-)
-from .entity_update_team_put_body_age_group_type_2_type_1 import (
-    EntityUpdateTeamPutBodyAgeGroupType2Type1,
-)
-from .entity_update_team_put_body_age_group_type_3_type_1 import (
-    EntityUpdateTeamPutBodyAgeGroupType3Type1,
-)
-from .entity_update_team_put_body_colors import EntityUpdateTeamPutBodyColors
-from .entity_update_team_put_body_contact_details import (
-    EntityUpdateTeamPutBodyContactDetails,
-)
-from .entity_update_team_put_body_discipline_type_1 import (
-    EntityUpdateTeamPutBodyDisciplineType1,
-)
-from .entity_update_team_put_body_discipline_type_2_type_1 import (
-    EntityUpdateTeamPutBodyDisciplineType2Type1,
-)
-from .entity_update_team_put_body_discipline_type_3_type_1 import (
-    EntityUpdateTeamPutBodyDisciplineType3Type1,
-)
-from .entity_update_team_put_body_entity_additional_details import (
-    EntityUpdateTeamPutBodyEntityAdditionalDetails,
-)
-from .entity_update_team_put_body_gender_type_1 import (
-    EntityUpdateTeamPutBodyGenderType1,
-)
-from .entity_update_team_put_body_gender_type_2_type_1 import (
-    EntityUpdateTeamPutBodyGenderType2Type1,
-)
-from .entity_update_team_put_body_gender_type_3_type_1 import (
-    EntityUpdateTeamPutBodyGenderType3Type1,
-)
-from .entity_update_team_put_body_social_media import EntityUpdateTeamPutBodySocialMedia
-from .entity_update_team_put_body_standard_type_1 import (
-    EntityUpdateTeamPutBodyStandardType1,
-)
-from .entity_update_team_put_body_standard_type_2_type_1 import (
-    EntityUpdateTeamPutBodyStandardType2Type1,
-)
-from .entity_update_team_put_body_standard_type_3_type_1 import (
-    EntityUpdateTeamPutBodyStandardType3Type1,
-)
-from .entity_update_team_put_body_status import EntityUpdateTeamPutBodyStatus
-from .entity_update_team_put_body_team_address import EntityUpdateTeamPutBodyTeamAddress
-from .entity_update_team_put_body_team_historical_name import (
-    EntityUpdateTeamPutBodyTeamHistoricalName,
-)
 from .error_list_model import ErrorListModel
 from .error_list_model_reason import ErrorListModelReason
 from .error_model import ErrorModel
-from .fes_delete_all_fixture_entity_statistics_response import (
-    FesDeleteAllFixtureEntityStatisticsResponse,
-)
+from .event_details import EventDetails
 from .fes_delete_all_response_default import FesDeleteAllResponseDefault
-from .fes_insert_update_fixture_entity_statistics_response import (
-    FesInsertUpdateFixtureEntityStatisticsResponse,
-)
-from .fes_insert_update_match_team_statistics_post_body import (
-    FesInsertUpdateMatchTeamStatisticsPostBody,
-)
-from .fes_insert_update_match_team_statistics_post_body_statistics import (
-    FesInsertUpdateMatchTeamStatisticsPostBodyStatistics,
-)
 from .fes_insert_update_response_default import FesInsertUpdateResponseDefault
-from .fes_list_by_season_fixture_entity_statistics_response import (
-    FesListBySeasonFixtureEntityStatisticsResponse,
-)
 from .fes_list_by_season_response_default import FesListBySeasonResponseDefault
-from .fes_list_fixture_entity_statistics_response import (
-    FesListFixtureEntityStatisticsResponse,
-)
 from .fes_list_response_default import FesListResponseDefault
-from .fes_listlive_fixture_entity_statistics_response import (
-    FesListliveFixtureEntityStatisticsResponse,
-)
 from .fes_listlive_response_default import FesListliveResponseDefault
-from .fes_listperiod_by_season_fixture_entity_statistics_periods_response import (
-    FesListperiodBySeasonFixtureEntityStatisticsPeriodsResponse,
-)
-from .fes_listperiod_by_season_response_default import (
-    FesListperiodBySeasonResponseDefault,
-)
-from .fes_listperiod_fixture_entity_statistics_periods_response import (
-    FesListperiodFixtureEntityStatisticsPeriodsResponse,
-)
+from .fes_listperiod_by_season_response_default import FesListperiodBySeasonResponseDefault
 from .fes_listperiod_period_id import FesListperiodPeriodId
 from .fes_listperiod_response_default import FesListperiodResponseDefault
-from .fes_listperiodlive_fixture_entity_statistics_periods_response import (
-    FesListperiodliveFixtureEntityStatisticsPeriodsResponse,
-)
 from .fes_listperiodlive_period_id import FesListperiodlivePeriodId
 from .fes_listperiodlive_response_default import FesListperiodliveResponseDefault
-from .fesp_delete_all_fixture_entity_statistics_periods_response import (
-    FespDeleteAllFixtureEntityStatisticsPeriodsResponse,
-)
 from .fesp_delete_all_period_id import FespDeleteAllPeriodId
 from .fesp_delete_all_response_default import FespDeleteAllResponseDefault
-from .fesp_insert_update_fixture_entity_statistics_periods_response import (
-    FespInsertUpdateFixtureEntityStatisticsPeriodsResponse,
-)
-from .fesp_insert_update_match_team_period_statistics_post_body import (
-    FespInsertUpdateMatchTeamPeriodStatisticsPostBody,
-)
-from .fesp_insert_update_match_team_period_statistics_post_body_period_id import (
-    FespInsertUpdateMatchTeamPeriodStatisticsPostBodyPeriodId,
-)
-from .fesp_insert_update_match_team_period_statistics_post_body_statistics import (
-    FespInsertUpdateMatchTeamPeriodStatisticsPostBodyStatistics,
-)
 from .fesp_insert_update_response_default import FespInsertUpdateResponseDefault
-from .fixture_by_competition_list_competitor_type import (
-    FixtureByCompetitionListCompetitorType,
-)
+from .fixture_by_competition_list_competitor_type import FixtureByCompetitionListCompetitorType
 from .fixture_by_competition_list_discipline import FixtureByCompetitionListDiscipline
-from .fixture_by_competition_list_fixture_type import (
-    FixtureByCompetitionListFixtureType,
-)
-from .fixture_by_competition_list_response_default import (
-    FixtureByCompetitionListResponseDefault,
-)
+from .fixture_by_competition_list_fixture_type import FixtureByCompetitionListFixtureType
+from .fixture_by_competition_list_response_default import FixtureByCompetitionListResponseDefault
 from .fixture_by_competition_list_status import FixtureByCompetitionListStatus
-from .fixture_by_entity_all_seasons_list_competitor_type import (
-    FixtureByEntityAllSeasonsListCompetitorType,
-)
-from .fixture_by_entity_all_seasons_list_fixture_type import (
-    FixtureByEntityAllSeasonsListFixtureType,
-)
-from .fixture_by_entity_all_seasons_list_response_default import (
-    FixtureByEntityAllSeasonsListResponseDefault,
-)
-from .fixture_by_entity_all_seasons_list_status import (
-    FixtureByEntityAllSeasonsListStatus,
-)
+from .fixture_by_entity_all_seasons_list_competitor_type import FixtureByEntityAllSeasonsListCompetitorType
+from .fixture_by_entity_all_seasons_list_fixture_type import FixtureByEntityAllSeasonsListFixtureType
+from .fixture_by_entity_all_seasons_list_response_default import FixtureByEntityAllSeasonsListResponseDefault
+from .fixture_by_entity_all_seasons_list_status import FixtureByEntityAllSeasonsListStatus
 from .fixture_by_entity_list_competitor_type import FixtureByEntityListCompetitorType
 from .fixture_by_entity_list_discipline import FixtureByEntityListDiscipline
 from .fixture_by_entity_list_fixture_type import FixtureByEntityListFixtureType
 from .fixture_by_entity_list_response_default import FixtureByEntityListResponseDefault
 from .fixture_by_entity_list_status import FixtureByEntityListStatus
-from .fixture_delete_fixtures_response import FixtureDeleteFixturesResponse
 from .fixture_delete_response_default import FixtureDeleteResponseDefault
-from .fixture_detail_fixtures_response import FixtureDetailFixturesResponse
 from .fixture_detail_response_default import FixtureDetailResponseDefault
-from .fixture_entities_detail_fixture_entities_response import (
-    FixtureEntitiesDetailFixtureEntitiesResponse,
-)
-from .fixture_entities_detail_response_default import (
-    FixtureEntitiesDetailResponseDefault,
-)
-from .fixture_entities_insert_update_fixture_entities_response import (
-    FixtureEntitiesInsertUpdateFixtureEntitiesResponse,
-)
-from .fixture_entities_insert_update_match_teams_post_body import (
-    FixtureEntitiesInsertUpdateMatchTeamsPostBody,
-)
-from .fixture_entities_insert_update_match_teams_post_body_result_status import (
-    FixtureEntitiesInsertUpdateMatchTeamsPostBodyResultStatus,
-)
-from .fixture_entities_insert_update_match_teams_post_body_roster_status import (
-    FixtureEntitiesInsertUpdateMatchTeamsPostBodyRosterStatus,
-)
-from .fixture_entities_insert_update_response_default import (
-    FixtureEntitiesInsertUpdateResponseDefault,
-)
-from .fixture_entities_list_fixture_entities_response import (
-    FixtureEntitiesListFixtureEntitiesResponse,
-)
+from .fixture_entities_detail_response_default import FixtureEntitiesDetailResponseDefault
+from .fixture_entities_insert_update_response_default import FixtureEntitiesInsertUpdateResponseDefault
 from .fixture_entities_list_response_default import FixtureEntitiesListResponseDefault
-from .fixture_entity_delete_fixture_entities_response import (
-    FixtureEntityDeleteFixtureEntitiesResponse,
-)
+from .fixture_entities_response import FixtureEntitiesResponse
 from .fixture_entity_delete_response_default import FixtureEntityDeleteResponseDefault
-from .fixture_external_ids_delete_fixture_external_ids_response import (
-    FixtureExternalIdsDeleteFixtureExternalIdsResponse,
-)
-from .fixture_external_ids_delete_response_default import (
-    FixtureExternalIdsDeleteResponseDefault,
-)
-from .fixture_external_ids_detail_fixture_external_ids_response import (
-    FixtureExternalIdsDetailFixtureExternalIdsResponse,
-)
-from .fixture_external_ids_detail_response_default import (
-    FixtureExternalIdsDetailResponseDefault,
-)
-from .fixture_external_ids_insert_fixture_external_ids_response import (
-    FixtureExternalIdsInsertFixtureExternalIdsResponse,
-)
-from .fixture_external_ids_insert_match_external_ids_post_body import (
-    FixtureExternalIdsInsertMatchExternalIdsPostBody,
-)
-from .fixture_external_ids_insert_response_default import (
-    FixtureExternalIdsInsertResponseDefault,
-)
-from .fixture_external_ids_insert_update_fixture_external_ids_response import (
-    FixtureExternalIdsInsertUpdateFixtureExternalIdsResponse,
-)
-from .fixture_external_ids_insert_update_match_external_ids_post_body import (
-    FixtureExternalIdsInsertUpdateMatchExternalIdsPostBody,
-)
-from .fixture_external_ids_insert_update_response_default import (
-    FixtureExternalIdsInsertUpdateResponseDefault,
-)
-from .fixture_external_ids_list_fixture_external_ids_response import (
-    FixtureExternalIdsListFixtureExternalIdsResponse,
-)
-from .fixture_external_ids_list_response_default import (
-    FixtureExternalIdsListResponseDefault,
-)
-from .fixture_external_ids_update_fixture_external_ids_response import (
-    FixtureExternalIdsUpdateFixtureExternalIdsResponse,
-)
-from .fixture_external_ids_update_match_external_ids_put_body import (
-    FixtureExternalIdsUpdateMatchExternalIdsPutBody,
-)
-from .fixture_external_ids_update_response_default import (
-    FixtureExternalIdsUpdateResponseDefault,
-)
-from .fixture_insert_base_route_fixtures_response import (
-    FixtureInsertBaseRouteFixturesResponse,
-)
-from .fixture_insert_base_route_match_post_body import (
-    FixtureInsertBaseRouteMatchPostBody,
-)
-from .fixture_insert_base_route_match_post_body_broadcasts import (
-    FixtureInsertBaseRouteMatchPostBodyBroadcasts,
-)
-from .fixture_insert_base_route_match_post_body_broadcasts_broadcast_type import (
-    FixtureInsertBaseRouteMatchPostBodyBroadcastsBroadcastType,
-)
-from .fixture_insert_base_route_match_post_body_competitor_type import (
-    FixtureInsertBaseRouteMatchPostBodyCompetitorType,
-)
-from .fixture_insert_base_route_match_post_body_discipline_type_1 import (
-    FixtureInsertBaseRouteMatchPostBodyDisciplineType1,
-)
-from .fixture_insert_base_route_match_post_body_discipline_type_2_type_1 import (
-    FixtureInsertBaseRouteMatchPostBodyDisciplineType2Type1,
-)
-from .fixture_insert_base_route_match_post_body_discipline_type_3_type_1 import (
-    FixtureInsertBaseRouteMatchPostBodyDisciplineType3Type1,
-)
-from .fixture_insert_base_route_match_post_body_environmental_details import (
-    FixtureInsertBaseRouteMatchPostBodyEnvironmentalDetails,
-)
-from .fixture_insert_base_route_match_post_body_fixture_type import (
-    FixtureInsertBaseRouteMatchPostBodyFixtureType,
-)
-from .fixture_insert_base_route_match_post_body_match_competitor import (
-    FixtureInsertBaseRouteMatchPostBodyMatchCompetitor,
-)
-from .fixture_insert_base_route_match_post_body_match_competitor_result_status import (
-    FixtureInsertBaseRouteMatchPostBodyMatchCompetitorResultStatus,
-)
-from .fixture_insert_base_route_match_post_body_match_competitor_roster_status import (
-    FixtureInsertBaseRouteMatchPostBodyMatchCompetitorRosterStatus,
-)
-from .fixture_insert_base_route_match_post_body_maximum_period_type_used_type_1 import (
-    FixtureInsertBaseRouteMatchPostBodyMaximumPeriodTypeUsedType1,
-)
-from .fixture_insert_base_route_match_post_body_maximum_period_type_used_type_2_type_1 import (
-    FixtureInsertBaseRouteMatchPostBodyMaximumPeriodTypeUsedType2Type1,
-)
-from .fixture_insert_base_route_match_post_body_maximum_period_type_used_type_3_type_1 import (
-    FixtureInsertBaseRouteMatchPostBodyMaximumPeriodTypeUsedType3Type1,
-)
-from .fixture_insert_base_route_match_post_body_practice_drill_type_type_1 import (
-    FixtureInsertBaseRouteMatchPostBodyPracticeDrillTypeType1,
-)
-from .fixture_insert_base_route_match_post_body_practice_drill_type_type_2_type_1 import (
-    FixtureInsertBaseRouteMatchPostBodyPracticeDrillTypeType2Type1,
-)
-from .fixture_insert_base_route_match_post_body_practice_drill_type_type_3_type_1 import (
-    FixtureInsertBaseRouteMatchPostBodyPracticeDrillTypeType3Type1,
-)
-from .fixture_insert_base_route_match_post_body_social_media import (
-    FixtureInsertBaseRouteMatchPostBodySocialMedia,
-)
-from .fixture_insert_base_route_match_post_body_status import (
-    FixtureInsertBaseRouteMatchPostBodyStatus,
-)
-from .fixture_insert_base_route_response_default import (
-    FixtureInsertBaseRouteResponseDefault,
-)
-from .fixture_insert_fixtures_response import FixtureInsertFixturesResponse
-from .fixture_insert_match_post_body import FixtureInsertMatchPostBody
-from .fixture_insert_match_post_body_broadcasts import (
-    FixtureInsertMatchPostBodyBroadcasts,
-)
-from .fixture_insert_match_post_body_broadcasts_broadcast_type import (
-    FixtureInsertMatchPostBodyBroadcastsBroadcastType,
-)
-from .fixture_insert_match_post_body_competitor_type import (
-    FixtureInsertMatchPostBodyCompetitorType,
-)
-from .fixture_insert_match_post_body_discipline_type_1 import (
-    FixtureInsertMatchPostBodyDisciplineType1,
-)
-from .fixture_insert_match_post_body_discipline_type_2_type_1 import (
-    FixtureInsertMatchPostBodyDisciplineType2Type1,
-)
-from .fixture_insert_match_post_body_discipline_type_3_type_1 import (
-    FixtureInsertMatchPostBodyDisciplineType3Type1,
-)
-from .fixture_insert_match_post_body_environmental_details import (
-    FixtureInsertMatchPostBodyEnvironmentalDetails,
-)
-from .fixture_insert_match_post_body_fixture_type import (
-    FixtureInsertMatchPostBodyFixtureType,
-)
-from .fixture_insert_match_post_body_match_competitor import (
-    FixtureInsertMatchPostBodyMatchCompetitor,
-)
-from .fixture_insert_match_post_body_match_competitor_result_status import (
-    FixtureInsertMatchPostBodyMatchCompetitorResultStatus,
-)
-from .fixture_insert_match_post_body_match_competitor_roster_status import (
-    FixtureInsertMatchPostBodyMatchCompetitorRosterStatus,
-)
-from .fixture_insert_match_post_body_maximum_period_type_used_type_1 import (
-    FixtureInsertMatchPostBodyMaximumPeriodTypeUsedType1,
-)
-from .fixture_insert_match_post_body_maximum_period_type_used_type_2_type_1 import (
-    FixtureInsertMatchPostBodyMaximumPeriodTypeUsedType2Type1,
-)
-from .fixture_insert_match_post_body_maximum_period_type_used_type_3_type_1 import (
-    FixtureInsertMatchPostBodyMaximumPeriodTypeUsedType3Type1,
-)
-from .fixture_insert_match_post_body_practice_drill_type_type_1 import (
-    FixtureInsertMatchPostBodyPracticeDrillTypeType1,
-)
-from .fixture_insert_match_post_body_practice_drill_type_type_2_type_1 import (
-    FixtureInsertMatchPostBodyPracticeDrillTypeType2Type1,
-)
-from .fixture_insert_match_post_body_practice_drill_type_type_3_type_1 import (
-    FixtureInsertMatchPostBodyPracticeDrillTypeType3Type1,
-)
-from .fixture_insert_match_post_body_social_media import (
-    FixtureInsertMatchPostBodySocialMedia,
-)
-from .fixture_insert_match_post_body_status import FixtureInsertMatchPostBodyStatus
+from .fixture_entity_statistics_periods_response import FixtureEntityStatisticsPeriodsResponse
+from .fixture_entity_statistics_response import FixtureEntityStatisticsResponse
+from .fixture_external_ids_delete_response_default import FixtureExternalIdsDeleteResponseDefault
+from .fixture_external_ids_detail_response_default import FixtureExternalIdsDetailResponseDefault
+from .fixture_external_ids_insert_response_default import FixtureExternalIdsInsertResponseDefault
+from .fixture_external_ids_insert_update_response_default import FixtureExternalIdsInsertUpdateResponseDefault
+from .fixture_external_ids_list_response_default import FixtureExternalIdsListResponseDefault
+from .fixture_external_ids_response import FixtureExternalIdsResponse
+from .fixture_external_ids_update_response_default import FixtureExternalIdsUpdateResponseDefault
+from .fixture_insert_base_route_response_default import FixtureInsertBaseRouteResponseDefault
 from .fixture_insert_response_default import FixtureInsertResponseDefault
 from .fixture_list_competitor_type import FixtureListCompetitorType
 from .fixture_list_discipline import FixtureListDiscipline
 from .fixture_list_fixture_type import FixtureListFixtureType
-from .fixture_list_fixtures_response import FixtureListFixturesResponse
 from .fixture_list_response_default import FixtureListResponseDefault
 from .fixture_list_status import FixtureListStatus
 from .fixture_list_status_not import FixtureListStatusNot
 from .fixture_live_summary_model import FixtureLiveSummaryModel
-from .fixture_live_summary_model_clock_information import (
-    FixtureLiveSummaryModelClockInformation,
-)
-from .fixture_live_summary_model_information_per_entity import (
-    FixtureLiveSummaryModelInformationPerEntity,
-)
-from .fixture_live_summary_model_status_information import (
-    FixtureLiveSummaryModelStatusInformation,
-)
-from .fixture_locking_fixture_locking_post_body import (
-    FixtureLockingFixtureLockingPostBody,
-)
+from .fixture_live_summary_response import FixtureLiveSummaryResponse
+from .fixture_locking_post_body import FixtureLockingPostBody
 from .fixture_locking_response_default import FixtureLockingResponseDefault
-from .fixture_locking_success_response import FixtureLockingSuccessResponse
-from .fixture_pbp_all_delete_fixture_pbp_response import (
-    FixturePbpAllDeleteFixturePbpResponse,
-)
 from .fixture_pbp_all_delete_response_default import FixturePbpAllDeleteResponseDefault
-from .fixture_pbp_delete_fixture_pbp_response import FixturePbpDeleteFixturePbpResponse
 from .fixture_pbp_delete_period_id import FixturePbpDeletePeriodId
 from .fixture_pbp_delete_response_default import FixturePbpDeleteResponseDefault
-from .fixture_pbp_event_add_fixture_pbp_event_post_body import (
-    FixturePbpEventAddFixturePBPEventPostBody,
-)
-from .fixture_pbp_event_add_fixture_pbp_event_post_body_class import (
-    FixturePbpEventAddFixturePBPEventPostBodyClass,
-)
-from .fixture_pbp_event_add_fixture_pbp_event_post_body_current_scores import (
-    FixturePbpEventAddFixturePBPEventPostBodyCurrentScores,
-)
-from .fixture_pbp_event_add_fixture_pbp_event_post_body_period_id import (
-    FixturePbpEventAddFixturePBPEventPostBodyPeriodId,
-)
-from .fixture_pbp_event_add_fixture_pbp_event_response import (
-    FixturePbpEventAddFixturePbpEventResponse,
-)
 from .fixture_pbp_event_add_period_id import FixturePbpEventAddPeriodId
 from .fixture_pbp_event_add_response_default import FixturePbpEventAddResponseDefault
-from .fixture_pbp_event_delete_fixture_pbp_event_response import (
-    FixturePbpEventDeleteFixturePbpEventResponse,
-)
 from .fixture_pbp_event_delete_period_id import FixturePbpEventDeletePeriodId
-from .fixture_pbp_event_delete_response_default import (
-    FixturePbpEventDeleteResponseDefault,
-)
+from .fixture_pbp_event_delete_response_default import FixturePbpEventDeleteResponseDefault
 from .fixture_pbp_event_model import FixturePBPEventModel
 from .fixture_pbp_event_model_class import FixturePBPEventModelClass
-from .fixture_pbp_event_model_current_scores import FixturePBPEventModelCurrentScores
 from .fixture_pbp_event_model_entity import FixturePBPEventModelEntity
-from .fixture_pbp_event_model_entity_resource_type import (
-    FixturePBPEventModelEntityResourceType,
-)
+from .fixture_pbp_event_model_entity_resource_type import FixturePBPEventModelEntityResourceType
 from .fixture_pbp_event_model_fixture import FixturePBPEventModelFixture
-from .fixture_pbp_event_model_fixture_resource_type import (
-    FixturePBPEventModelFixtureResourceType,
-)
+from .fixture_pbp_event_model_fixture_resource_type import FixturePBPEventModelFixtureResourceType
 from .fixture_pbp_event_model_organization import FixturePBPEventModelOrganization
-from .fixture_pbp_event_model_organization_resource_type import (
-    FixturePBPEventModelOrganizationResourceType,
-)
+from .fixture_pbp_event_model_organization_resource_type import FixturePBPEventModelOrganizationResourceType
 from .fixture_pbp_event_model_period_id import FixturePBPEventModelPeriodId
 from .fixture_pbp_event_model_person import FixturePBPEventModelPerson
-from .fixture_pbp_event_model_person_resource_type import (
-    FixturePBPEventModelPersonResourceType,
-)
-from .fixture_pbp_event_update_fixture_pbp_event_put_body import (
-    FixturePbpEventUpdateFixturePBPEventPutBody,
-)
-from .fixture_pbp_event_update_fixture_pbp_event_put_body_class import (
-    FixturePbpEventUpdateFixturePBPEventPutBodyClass,
-)
-from .fixture_pbp_event_update_fixture_pbp_event_put_body_current_scores import (
-    FixturePbpEventUpdateFixturePBPEventPutBodyCurrentScores,
-)
-from .fixture_pbp_event_update_fixture_pbp_event_response import (
-    FixturePbpEventUpdateFixturePbpEventResponse,
-)
+from .fixture_pbp_event_model_person_resource_type import FixturePBPEventModelPersonResourceType
+from .fixture_pbp_event_response import FixturePbpEventResponse
 from .fixture_pbp_event_update_period_id import FixturePbpEventUpdatePeriodId
-from .fixture_pbp_event_update_response_default import (
-    FixturePbpEventUpdateResponseDefault,
-)
-from .fixture_pbp_events_import_response_default import (
-    FixturePbpEventsImportResponseDefault,
-)
-from .fixture_pbp_events_import_success_response import (
-    FixturePbpEventsImportSuccessResponse,
-)
+from .fixture_pbp_event_update_response_default import FixturePbpEventUpdateResponseDefault
+from .fixture_pbp_events_import_response_default import FixturePbpEventsImportResponseDefault
 from .fixture_pbp_export_period_id import FixturePbpExportPeriodId
 from .fixture_pbp_export_response_default import FixturePbpExportResponseDefault
-from .fixture_pbp_export_success_response import FixturePbpExportSuccessResponse
-from .fixture_pbp_external_all_delete_fixture_pbp_external_response import (
-    FixturePbpExternalAllDeleteFixturePbpExternalResponse,
-)
-from .fixture_pbp_external_all_delete_response_default import (
-    FixturePbpExternalAllDeleteResponseDefault,
-)
-from .fixture_pbp_external_delete_fixture_pbp_external_response import (
-    FixturePbpExternalDeleteFixturePbpExternalResponse,
-)
+from .fixture_pbp_external_all_delete_response_default import FixturePbpExternalAllDeleteResponseDefault
 from .fixture_pbp_external_delete_period_id import FixturePbpExternalDeletePeriodId
-from .fixture_pbp_external_delete_response_default import (
-    FixturePbpExternalDeleteResponseDefault,
-)
-from .fixture_pbp_external_events_import_response_default import (
-    FixturePbpExternalEventsImportResponseDefault,
-)
-from .fixture_pbp_external_events_import_success_response import (
-    FixturePbpExternalEventsImportSuccessResponse,
-)
+from .fixture_pbp_external_delete_response_default import FixturePbpExternalDeleteResponseDefault
+from .fixture_pbp_external_events_import_response_default import FixturePbpExternalEventsImportResponseDefault
 from .fixture_pbp_external_export_period_id import FixturePbpExternalExportPeriodId
-from .fixture_pbp_external_export_response_default import (
-    FixturePbpExternalExportResponseDefault,
-)
-from .fixture_pbp_external_export_success_response import (
-    FixturePbpExternalExportSuccessResponse,
-)
-from .fixture_pbp_external_list_fixture_pbp_external_response import (
-    FixturePbpExternalListFixturePbpExternalResponse,
-)
-from .fixture_pbp_external_list_live_fixture_pbp_external_response import (
-    FixturePbpExternalListLiveFixturePbpExternalResponse,
-)
+from .fixture_pbp_external_export_response_default import FixturePbpExternalExportResponseDefault
 from .fixture_pbp_external_list_live_period_id import FixturePbpExternalListLivePeriodId
-from .fixture_pbp_external_list_live_response_default import (
-    FixturePbpExternalListLiveResponseDefault,
-)
+from .fixture_pbp_external_list_live_response_default import FixturePbpExternalListLiveResponseDefault
 from .fixture_pbp_external_list_period_id import FixturePbpExternalListPeriodId
-from .fixture_pbp_external_list_response_default import (
-    FixturePbpExternalListResponseDefault,
-)
-from .fixture_pbp_external_model import FixturePbpExternalModel
-from .fixture_pbp_external_model_event_details import (
-    FixturePbpExternalModelEventDetails,
-)
-from .fixture_pbp_external_model_fixture import FixturePbpExternalModelFixture
-from .fixture_pbp_external_model_fixture_resource_type import (
-    FixturePbpExternalModelFixtureResourceType,
-)
-from .fixture_pbp_external_model_organization import FixturePbpExternalModelOrganization
-from .fixture_pbp_external_model_organization_resource_type import (
-    FixturePbpExternalModelOrganizationResourceType,
-)
-from .fixture_pbp_external_model_period_id import FixturePbpExternalModelPeriodId
-from .fixture_pbp_list_fixture_pbp_event_response import (
-    FixturePbpListFixturePbpEventResponse,
-)
-from .fixture_pbp_list_live_fixture_pbp_event_response import (
-    FixturePbpListLiveFixturePbpEventResponse,
-)
+from .fixture_pbp_external_list_response_default import FixturePbpExternalListResponseDefault
 from .fixture_pbp_list_live_period_id import FixturePbpListLivePeriodId
 from .fixture_pbp_list_live_response_default import FixturePbpListLiveResponseDefault
 from .fixture_pbp_list_period_id import FixturePbpListPeriodId
 from .fixture_pbp_list_response_default import FixturePbpListResponseDefault
 from .fixture_pbp_model import FixturePbpModel
-from .fixture_pbp_model_event_details import FixturePbpModelEventDetails
 from .fixture_pbp_model_fixture import FixturePbpModelFixture
 from .fixture_pbp_model_fixture_resource_type import FixturePbpModelFixtureResourceType
 from .fixture_pbp_model_organization import FixturePbpModelOrganization
-from .fixture_pbp_model_organization_resource_type import (
-    FixturePbpModelOrganizationResourceType,
-)
+from .fixture_pbp_model_organization_resource_type import FixturePbpModelOrganizationResourceType
 from .fixture_pbp_model_period_id import FixturePbpModelPeriodId
-from .fixture_person_delete_fixture_persons_response import (
-    FixturePersonDeleteFixturePersonsResponse,
-)
+from .fixture_pbp_response import FixturePbpResponse
 from .fixture_person_delete_response_default import FixturePersonDeleteResponseDefault
-from .fixture_persons_detail_fixture_persons_response import (
-    FixturePersonsDetailFixturePersonsResponse,
-)
+from .fixture_person_statistics_periods_response import FixturePersonStatisticsPeriodsResponse
+from .fixture_person_statistics_response import FixturePersonStatisticsResponse
 from .fixture_persons_detail_response_default import FixturePersonsDetailResponseDefault
-from .fixture_persons_insert_update_fixture_persons_response import (
-    FixturePersonsInsertUpdateFixturePersonsResponse,
-)
-from .fixture_persons_insert_update_match_persons_post_body import (
-    FixturePersonsInsertUpdateMatchPersonsPostBody,
-)
-from .fixture_persons_insert_update_match_persons_post_body_result_status import (
-    FixturePersonsInsertUpdateMatchPersonsPostBodyResultStatus,
-)
-from .fixture_persons_insert_update_response_default import (
-    FixturePersonsInsertUpdateResponseDefault,
-)
-from .fixture_persons_list_fixture_persons_response import (
-    FixturePersonsListFixturePersonsResponse,
-)
+from .fixture_persons_insert_update_response_default import FixturePersonsInsertUpdateResponseDefault
 from .fixture_persons_list_response_default import FixturePersonsListResponseDefault
-from .fixture_profiles_delete_fixture_profiles_response import (
-    FixtureProfilesDeleteFixtureProfilesResponse,
-)
-from .fixture_profiles_delete_response_default import (
-    FixtureProfilesDeleteResponseDefault,
-)
-from .fixture_profiles_detail_fixture_profiles_response import (
-    FixtureProfilesDetailFixtureProfilesResponse,
-)
-from .fixture_profiles_detail_response_default import (
-    FixtureProfilesDetailResponseDefault,
-)
-from .fixture_profiles_for_fixture_fixture_profiles_response import (
-    FixtureProfilesForFixtureFixtureProfilesResponse,
-)
-from .fixture_profiles_for_fixture_response_default import (
-    FixtureProfilesForFixtureResponseDefault,
-)
-from .fixture_profiles_insert_fixture_profiles_response import (
-    FixtureProfilesInsertFixtureProfilesResponse,
-)
-from .fixture_profiles_insert_match_profiles_post_body import (
-    FixtureProfilesInsertMatchProfilesPostBody,
-)
-from .fixture_profiles_insert_match_profiles_post_body_match_profile_configuration import (
-    FixtureProfilesInsertMatchProfilesPostBodyMatchProfileConfiguration,
-)
-from .fixture_profiles_insert_match_profiles_post_body_match_profile_configuration_match_roles_item import (
-    FixtureProfilesInsertMatchProfilesPostBodyMatchProfileConfigurationMatchRolesItem,
-)
-from .fixture_profiles_insert_match_profiles_post_body_match_profile_configuration_type_of_cards_item import (
-    FixtureProfilesInsertMatchProfilesPostBodyMatchProfileConfigurationTypeOfCardsItem,
-)
-from .fixture_profiles_insert_response_default import (
-    FixtureProfilesInsertResponseDefault,
-)
-from .fixture_profiles_list_fixture_profiles_response import (
-    FixtureProfilesListFixtureProfilesResponse,
-)
+from .fixture_persons_response import FixturePersonsResponse
+from .fixture_profiles_delete_response_default import FixtureProfilesDeleteResponseDefault
+from .fixture_profiles_detail_response_default import FixtureProfilesDetailResponseDefault
+from .fixture_profiles_for_fixture_response_default import FixtureProfilesForFixtureResponseDefault
+from .fixture_profiles_insert_response_default import FixtureProfilesInsertResponseDefault
 from .fixture_profiles_list_response_default import FixtureProfilesListResponseDefault
-from .fixture_profiles_update_fixture_profiles_response import (
-    FixtureProfilesUpdateFixtureProfilesResponse,
-)
-from .fixture_profiles_update_match_profiles_put_body import (
-    FixtureProfilesUpdateMatchProfilesPutBody,
-)
-from .fixture_profiles_update_match_profiles_put_body_match_profile_configuration import (
-    FixtureProfilesUpdateMatchProfilesPutBodyMatchProfileConfiguration,
-)
-from .fixture_profiles_update_match_profiles_put_body_match_profile_configuration_match_roles_item import (
-    FixtureProfilesUpdateMatchProfilesPutBodyMatchProfileConfigurationMatchRolesItem,
-)
-from .fixture_profiles_update_match_profiles_put_body_match_profile_configuration_type_of_cards_item import (
-    FixtureProfilesUpdateMatchProfilesPutBodyMatchProfileConfigurationTypeOfCardsItem,
-)
-from .fixture_profiles_update_response_default import (
-    FixtureProfilesUpdateResponseDefault,
-)
+from .fixture_profiles_response import FixtureProfilesResponse
+from .fixture_profiles_update_response_default import FixtureProfilesUpdateResponseDefault
 from .fixture_progression_model import FixtureProgressionModel
 from .fixture_progression_model_fixture import FixtureProgressionModelFixture
-from .fixture_progression_model_fixture_resource_type import (
-    FixtureProgressionModelFixtureResourceType,
-)
+from .fixture_progression_model_fixture_resource_type import FixtureProgressionModelFixtureResourceType
 from .fixture_progression_model_organization import FixtureProgressionModelOrganization
-from .fixture_progression_model_organization_resource_type import (
-    FixtureProgressionModelOrganizationResourceType,
-)
+from .fixture_progression_model_organization_resource_type import FixtureProgressionModelOrganizationResourceType
 from .fixture_progression_model_season import FixtureProgressionModelSeason
-from .fixture_progression_model_season_resource_type import (
-    FixtureProgressionModelSeasonResourceType,
-)
-from .fixture_progressions_delete_fixture_progressions_response import (
-    FixtureProgressionsDeleteFixtureProgressionsResponse,
-)
-from .fixture_progressions_delete_response_default import (
-    FixtureProgressionsDeleteResponseDefault,
-)
-from .fixture_progressions_detail_fixture_progressions_response import (
-    FixtureProgressionsDetailFixtureProgressionsResponse,
-)
-from .fixture_progressions_detail_response_default import (
-    FixtureProgressionsDetailResponseDefault,
-)
-from .fixture_progressions_insert_fixture_progression_post_body import (
-    FixtureProgressionsInsertFixtureProgressionPostBody,
-)
-from .fixture_progressions_insert_fixture_progressions_response import (
-    FixtureProgressionsInsertFixtureProgressionsResponse,
-)
-from .fixture_progressions_insert_response_default import (
-    FixtureProgressionsInsertResponseDefault,
-)
-from .fixture_progressions_list_fixture_progressions_response import (
-    FixtureProgressionsListFixtureProgressionsResponse,
-)
-from .fixture_progressions_list_response_default import (
-    FixtureProgressionsListResponseDefault,
-)
-from .fixture_progressions_update_fixture_progression_put_body import (
-    FixtureProgressionsUpdateFixtureProgressionPutBody,
-)
-from .fixture_progressions_update_fixture_progressions_response import (
-    FixtureProgressionsUpdateFixtureProgressionsResponse,
-)
-from .fixture_progressions_update_response_default import (
-    FixtureProgressionsUpdateResponseDefault,
-)
-from .fixture_reset_fixture_reset_post_body import FixtureResetFixtureResetPostBody
+from .fixture_progression_model_season_resource_type import FixtureProgressionModelSeasonResourceType
+from .fixture_progression_post_body import FixtureProgressionPostBody
+from .fixture_progression_put_body import FixtureProgressionPutBody
+from .fixture_progressions_delete_response_default import FixtureProgressionsDeleteResponseDefault
+from .fixture_progressions_detail_response_default import FixtureProgressionsDetailResponseDefault
+from .fixture_progressions_insert_response_default import FixtureProgressionsInsertResponseDefault
+from .fixture_progressions_list_response_default import FixtureProgressionsListResponseDefault
+from .fixture_progressions_response import FixtureProgressionsResponse
+from .fixture_progressions_update_response_default import FixtureProgressionsUpdateResponseDefault
+from .fixture_reset_post_body import FixtureResetPostBody
 from .fixture_reset_response_default import FixtureResetResponseDefault
-from .fixture_reset_success_response import FixtureResetSuccessResponse
-from .fixture_roster_delete_all_fixture_roster_response import (
-    FixtureRosterDeleteAllFixtureRosterResponse,
-)
-from .fixture_roster_delete_all_response_default import (
-    FixtureRosterDeleteAllResponseDefault,
-)
-from .fixture_roster_delete_fixture_roster_response import (
-    FixtureRosterDeleteFixtureRosterResponse,
-)
+from .fixture_roster_delete_all_response_default import FixtureRosterDeleteAllResponseDefault
 from .fixture_roster_delete_response_default import FixtureRosterDeleteResponseDefault
-from .fixture_roster_detail_fixture_roster_response import (
-    FixtureRosterDetailFixtureRosterResponse,
-)
 from .fixture_roster_detail_response_default import FixtureRosterDetailResponseDefault
-from .fixture_roster_insert_update_base_route_fixture_roster_response import (
-    FixtureRosterInsertUpdateBaseRouteFixtureRosterResponse,
-)
-from .fixture_roster_insert_update_base_route_match_roster_post_body import (
-    FixtureRosterInsertUpdateBaseRouteMatchRosterPostBody,
-)
-from .fixture_roster_insert_update_base_route_match_roster_post_body_position_type_1 import (
-    FixtureRosterInsertUpdateBaseRouteMatchRosterPostBodyPositionType1,
-)
-from .fixture_roster_insert_update_base_route_match_roster_post_body_position_type_2_type_1 import (
-    FixtureRosterInsertUpdateBaseRouteMatchRosterPostBodyPositionType2Type1,
-)
-from .fixture_roster_insert_update_base_route_match_roster_post_body_position_type_3_type_1 import (
-    FixtureRosterInsertUpdateBaseRouteMatchRosterPostBodyPositionType3Type1,
-)
-from .fixture_roster_insert_update_base_route_response_default import (
-    FixtureRosterInsertUpdateBaseRouteResponseDefault,
-)
-from .fixture_roster_insert_update_fixture_roster_response import (
-    FixtureRosterInsertUpdateFixtureRosterResponse,
-)
-from .fixture_roster_insert_update_match_roster_post_body import (
-    FixtureRosterInsertUpdateMatchRosterPostBody,
-)
-from .fixture_roster_insert_update_match_roster_post_body_position_type_1 import (
-    FixtureRosterInsertUpdateMatchRosterPostBodyPositionType1,
-)
-from .fixture_roster_insert_update_match_roster_post_body_position_type_2_type_1 import (
-    FixtureRosterInsertUpdateMatchRosterPostBodyPositionType2Type1,
-)
-from .fixture_roster_insert_update_match_roster_post_body_position_type_3_type_1 import (
-    FixtureRosterInsertUpdateMatchRosterPostBodyPositionType3Type1,
-)
-from .fixture_roster_insert_update_response_default import (
-    FixtureRosterInsertUpdateResponseDefault,
-)
-from .fixture_roster_list_by_entity_fixture_roster_response import (
-    FixtureRosterListByEntityFixtureRosterResponse,
-)
-from .fixture_roster_list_by_entity_response_default import (
-    FixtureRosterListByEntityResponseDefault,
-)
-from .fixture_roster_list_fixture_roster_response import (
-    FixtureRosterListFixtureRosterResponse,
-)
+from .fixture_roster_insert_update_base_route_response_default import FixtureRosterInsertUpdateBaseRouteResponseDefault
+from .fixture_roster_insert_update_response_default import FixtureRosterInsertUpdateResponseDefault
+from .fixture_roster_list_by_entity_response_default import FixtureRosterListByEntityResponseDefault
 from .fixture_roster_list_response_default import FixtureRosterListResponseDefault
-from .fixture_trigger_emr_merge_response_default import (
-    FixtureTriggerEmrMergeResponseDefault,
-)
-from .fixture_trigger_emr_merge_success_response import (
-    FixtureTriggerEmrMergeSuccessResponse,
-)
-from .fixture_unlocking_fixture_locking_post_body import (
-    FixtureUnlockingFixtureLockingPostBody,
-)
+from .fixture_roster_response import FixtureRosterResponse
+from .fixture_trigger_emr_merge_response_default import FixtureTriggerEmrMergeResponseDefault
 from .fixture_unlocking_response_default import FixtureUnlockingResponseDefault
-from .fixture_unlocking_success_response import FixtureUnlockingSuccessResponse
-from .fixture_update_fixtures_response import FixtureUpdateFixturesResponse
-from .fixture_update_match_put_body import FixtureUpdateMatchPutBody
-from .fixture_update_match_put_body_broadcasts import (
-    FixtureUpdateMatchPutBodyBroadcasts,
-)
-from .fixture_update_match_put_body_broadcasts_broadcast_type import (
-    FixtureUpdateMatchPutBodyBroadcastsBroadcastType,
-)
-from .fixture_update_match_put_body_competitor_type import (
-    FixtureUpdateMatchPutBodyCompetitorType,
-)
-from .fixture_update_match_put_body_discipline_type_1 import (
-    FixtureUpdateMatchPutBodyDisciplineType1,
-)
-from .fixture_update_match_put_body_discipline_type_2_type_1 import (
-    FixtureUpdateMatchPutBodyDisciplineType2Type1,
-)
-from .fixture_update_match_put_body_discipline_type_3_type_1 import (
-    FixtureUpdateMatchPutBodyDisciplineType3Type1,
-)
-from .fixture_update_match_put_body_environmental_details import (
-    FixtureUpdateMatchPutBodyEnvironmentalDetails,
-)
-from .fixture_update_match_put_body_fixture_type import (
-    FixtureUpdateMatchPutBodyFixtureType,
-)
-from .fixture_update_match_put_body_match_competitor import (
-    FixtureUpdateMatchPutBodyMatchCompetitor,
-)
-from .fixture_update_match_put_body_match_competitor_result_status import (
-    FixtureUpdateMatchPutBodyMatchCompetitorResultStatus,
-)
-from .fixture_update_match_put_body_match_competitor_roster_status import (
-    FixtureUpdateMatchPutBodyMatchCompetitorRosterStatus,
-)
-from .fixture_update_match_put_body_maximum_period_type_used_type_1 import (
-    FixtureUpdateMatchPutBodyMaximumPeriodTypeUsedType1,
-)
-from .fixture_update_match_put_body_maximum_period_type_used_type_2_type_1 import (
-    FixtureUpdateMatchPutBodyMaximumPeriodTypeUsedType2Type1,
-)
-from .fixture_update_match_put_body_maximum_period_type_used_type_3_type_1 import (
-    FixtureUpdateMatchPutBodyMaximumPeriodTypeUsedType3Type1,
-)
-from .fixture_update_match_put_body_practice_drill_type_type_1 import (
-    FixtureUpdateMatchPutBodyPracticeDrillTypeType1,
-)
-from .fixture_update_match_put_body_practice_drill_type_type_2_type_1 import (
-    FixtureUpdateMatchPutBodyPracticeDrillTypeType2Type1,
-)
-from .fixture_update_match_put_body_practice_drill_type_type_3_type_1 import (
-    FixtureUpdateMatchPutBodyPracticeDrillTypeType3Type1,
-)
-from .fixture_update_match_put_body_social_media import (
-    FixtureUpdateMatchPutBodySocialMedia,
-)
-from .fixture_update_match_put_body_status import FixtureUpdateMatchPutBodyStatus
 from .fixture_update_response_default import FixtureUpdateResponseDefault
-from .fixture_videostream_disable_fixture_videosteam_post_body import (
-    FixtureVideostreamDisableFixtureVideosteamPostBody,
-)
-from .fixture_videostream_disable_fixture_videosteam_post_body_platform_provider import (
-    FixtureVideostreamDisableFixtureVideosteamPostBodyPlatformProvider,
-)
-from .fixture_videostream_disable_response_default import (
-    FixtureVideostreamDisableResponseDefault,
-)
-from .fixture_videostream_disable_success_response import (
-    FixtureVideostreamDisableSuccessResponse,
-)
-from .fixture_videostream_enable_fixture_videosteam_post_body import (
-    FixtureVideostreamEnableFixtureVideosteamPostBody,
-)
-from .fixture_videostream_enable_fixture_videosteam_post_body_platform_provider import (
-    FixtureVideostreamEnableFixtureVideosteamPostBodyPlatformProvider,
-)
-from .fixture_videostream_enable_response_default import (
-    FixtureVideostreamEnableResponseDefault,
-)
-from .fixture_videostream_enable_success_response import (
-    FixtureVideostreamEnableSuccessResponse,
-)
-from .fixture_videostream_reset_fixture_videosteam_post_body import (
-    FixtureVideostreamResetFixtureVideosteamPostBody,
-)
-from .fixture_videostream_reset_fixture_videosteam_post_body_platform_provider import (
-    FixtureVideostreamResetFixtureVideosteamPostBodyPlatformProvider,
-)
-from .fixture_videostream_reset_response_default import (
-    FixtureVideostreamResetResponseDefault,
-)
-from .fixture_videostream_reset_success_response import (
-    FixtureVideostreamResetSuccessResponse,
-)
-from .fixture_videostream_start_fixture_videosteam_post_body import (
-    FixtureVideostreamStartFixtureVideosteamPostBody,
-)
-from .fixture_videostream_start_fixture_videosteam_post_body_platform_provider import (
-    FixtureVideostreamStartFixtureVideosteamPostBodyPlatformProvider,
-)
-from .fixture_videostream_start_response_default import (
-    FixtureVideostreamStartResponseDefault,
-)
-from .fixture_videostream_start_success_response import (
-    FixtureVideostreamStartSuccessResponse,
-)
-from .fixture_videostream_stop_fixture_videosteam_post_body import (
-    FixtureVideostreamStopFixtureVideosteamPostBody,
-)
-from .fixture_videostream_stop_fixture_videosteam_post_body_platform_provider import (
-    FixtureVideostreamStopFixtureVideosteamPostBodyPlatformProvider,
-)
-from .fixture_videostream_stop_response_default import (
-    FixtureVideostreamStopResponseDefault,
-)
-from .fixture_videostream_stop_success_response import (
-    FixtureVideostreamStopSuccessResponse,
-)
-from .fls_list_fixture_live_summary_response import FlsListFixtureLiveSummaryResponse
+from .fixture_videosteam_post_body import FixtureVideosteamPostBody
+from .fixture_videosteam_post_body_platform_provider import FixtureVideosteamPostBodyPlatformProvider
+from .fixture_videostream_disable_response_default import FixtureVideostreamDisableResponseDefault
+from .fixture_videostream_enable_response_default import FixtureVideostreamEnableResponseDefault
+from .fixture_videostream_reset_response_default import FixtureVideostreamResetResponseDefault
+from .fixture_videostream_start_response_default import FixtureVideostreamStartResponseDefault
+from .fixture_videostream_stop_response_default import FixtureVideostreamStopResponseDefault
 from .fls_list_response_default import FlsListResponseDefault
-from .fps_delete_all_fixture_person_statistics_response import (
-    FpsDeleteAllFixturePersonStatisticsResponse,
-)
 from .fps_delete_all_response_default import FpsDeleteAllResponseDefault
-from .fps_insert_update_fixture_person_statistics_response import (
-    FpsInsertUpdateFixturePersonStatisticsResponse,
-)
-from .fps_insert_update_match_person_statistics_post_body import (
-    FpsInsertUpdateMatchPersonStatisticsPostBody,
-)
-from .fps_insert_update_match_person_statistics_post_body_position_type_1 import (
-    FpsInsertUpdateMatchPersonStatisticsPostBodyPositionType1,
-)
-from .fps_insert_update_match_person_statistics_post_body_position_type_2_type_1 import (
-    FpsInsertUpdateMatchPersonStatisticsPostBodyPositionType2Type1,
-)
-from .fps_insert_update_match_person_statistics_post_body_position_type_3_type_1 import (
-    FpsInsertUpdateMatchPersonStatisticsPostBodyPositionType3Type1,
-)
-from .fps_insert_update_match_person_statistics_post_body_statistics import (
-    FpsInsertUpdateMatchPersonStatisticsPostBodyStatistics,
-)
 from .fps_insert_update_response_default import FpsInsertUpdateResponseDefault
-from .fps_list_by_season_fixture_person_statistics_response import (
-    FpsListBySeasonFixturePersonStatisticsResponse,
-)
 from .fps_list_by_season_response_default import FpsListBySeasonResponseDefault
-from .fps_list_fixture_person_statistics_response import (
-    FpsListFixturePersonStatisticsResponse,
-)
 from .fps_list_response_default import FpsListResponseDefault
-from .fps_listlive_fixture_person_statistics_response import (
-    FpsListliveFixturePersonStatisticsResponse,
-)
 from .fps_listlive_response_default import FpsListliveResponseDefault
-from .fpsp_delete_all_fixture_person_statistics_periods_response import (
-    FpspDeleteAllFixturePersonStatisticsPeriodsResponse,
-)
 from .fpsp_delete_all_period_id import FpspDeleteAllPeriodId
 from .fpsp_delete_all_response_default import FpspDeleteAllResponseDefault
-from .fpsp_insert_update_fixture_person_statistics_periods_response import (
-    FpspInsertUpdateFixturePersonStatisticsPeriodsResponse,
-)
-from .fpsp_insert_update_match_person_statistics_periods_post_body import (
-    FpspInsertUpdateMatchPersonStatisticsPeriodsPostBody,
-)
-from .fpsp_insert_update_match_person_statistics_periods_post_body_period_id import (
-    FpspInsertUpdateMatchPersonStatisticsPeriodsPostBodyPeriodId,
-)
-from .fpsp_insert_update_match_person_statistics_periods_post_body_statistics import (
-    FpspInsertUpdateMatchPersonStatisticsPeriodsPostBodyStatistics,
-)
 from .fpsp_insert_update_response_default import FpspInsertUpdateResponseDefault
-from .fpsp_list_by_season_fixture_person_statistics_periods_response import (
-    FpspListBySeasonFixturePersonStatisticsPeriodsResponse,
-)
 from .fpsp_list_by_season_response_default import FpspListBySeasonResponseDefault
-from .fpsp_listperiod_fixture_person_statistics_periods_response import (
-    FpspListperiodFixturePersonStatisticsPeriodsResponse,
-)
 from .fpsp_listperiod_period_id import FpspListperiodPeriodId
 from .fpsp_listperiod_response_default import FpspListperiodResponseDefault
-from .fpsp_listperiodlive_fixture_person_statistics_periods_response import (
-    FpspListperiodliveFixturePersonStatisticsPeriodsResponse,
-)
 from .fpsp_listperiodlive_period_id import FpspListperiodlivePeriodId
 from .fpsp_listperiodlive_response_default import FpspListperiodliveResponseDefault
 from .game_log_entity_model import GameLogEntityModel
 from .game_log_entity_model_entity import GameLogEntityModelEntity
-from .game_log_entity_model_entity_resource_type import (
-    GameLogEntityModelEntityResourceType,
-)
+from .game_log_entity_model_entity_resource_type import GameLogEntityModelEntityResourceType
 from .game_log_entity_model_fixture import GameLogEntityModelFixture
-from .game_log_entity_model_fixture_resource_type import (
-    GameLogEntityModelFixtureResourceType,
-)
+from .game_log_entity_model_fixture_resource_type import GameLogEntityModelFixtureResourceType
 from .game_log_entity_model_organization import GameLogEntityModelOrganization
-from .game_log_entity_model_organization_resource_type import (
-    GameLogEntityModelOrganizationResourceType,
-)
+from .game_log_entity_model_organization_resource_type import GameLogEntityModelOrganizationResourceType
 from .game_log_entity_model_period_id import GameLogEntityModelPeriodId
 from .game_log_entity_model_statistics import GameLogEntityModelStatistics
+from .game_log_entity_response import GameLogEntityResponse
 from .game_log_person_model import GameLogPersonModel
 from .game_log_person_model_entity import GameLogPersonModelEntity
-from .game_log_person_model_entity_resource_type import (
-    GameLogPersonModelEntityResourceType,
-)
+from .game_log_person_model_entity_resource_type import GameLogPersonModelEntityResourceType
 from .game_log_person_model_fixture import GameLogPersonModelFixture
-from .game_log_person_model_fixture_resource_type import (
-    GameLogPersonModelFixtureResourceType,
-)
+from .game_log_person_model_fixture_resource_type import GameLogPersonModelFixtureResourceType
 from .game_log_person_model_organization import GameLogPersonModelOrganization
-from .game_log_person_model_organization_resource_type import (
-    GameLogPersonModelOrganizationResourceType,
-)
+from .game_log_person_model_organization_resource_type import GameLogPersonModelOrganizationResourceType
 from .game_log_person_model_period_id import GameLogPersonModelPeriodId
 from .game_log_person_model_person import GameLogPersonModelPerson
-from .game_log_person_model_person_resource_type import (
-    GameLogPersonModelPersonResourceType,
-)
+from .game_log_person_model_person_resource_type import GameLogPersonModelPersonResourceType
 from .game_log_person_model_position_type_1 import GameLogPersonModelPositionType1
-from .game_log_person_model_position_type_2_type_1 import (
-    GameLogPersonModelPositionType2Type1,
-)
-from .game_log_person_model_position_type_3_type_1 import (
-    GameLogPersonModelPositionType3Type1,
-)
+from .game_log_person_model_position_type_2_type_1 import GameLogPersonModelPositionType2Type1
+from .game_log_person_model_position_type_3_type_1 import GameLogPersonModelPositionType3Type1
 from .game_log_person_model_statistics import GameLogPersonModelStatistics
+from .game_log_person_response import GameLogPersonResponse
 from .gamelog_listentity_fixture_type import GamelogListentityFixtureType
-from .gamelog_listentity_game_log_entity_response import (
-    GamelogListentityGameLogEntityResponse,
-)
 from .gamelog_listentity_home_away import GamelogListentityHomeAway
 from .gamelog_listentity_response_default import GamelogListentityResponseDefault
 from .gamelog_listentity_win_loss import GamelogListentityWinLoss
 from .gamelog_listperson_fixture_type import GamelogListpersonFixtureType
-from .gamelog_listperson_game_log_person_response import (
-    GamelogListpersonGameLogPersonResponse,
-)
 from .gamelog_listperson_home_away import GamelogListpersonHomeAway
 from .gamelog_listperson_response_default import GamelogListpersonResponseDefault
 from .gamelog_listperson_win_loss import GamelogListpersonWinLoss
 from .head_to_head_entity_model import HeadToHeadEntityModel
 from .head_to_head_entity_model_competition import HeadToHeadEntityModelCompetition
-from .head_to_head_entity_model_competition_resource_type import (
-    HeadToHeadEntityModelCompetitionResourceType,
-)
+from .head_to_head_entity_model_competition_resource_type import HeadToHeadEntityModelCompetitionResourceType
 from .head_to_head_entity_model_fixture import HeadToHeadEntityModelFixture
-from .head_to_head_entity_model_fixture_resource_type import (
-    HeadToHeadEntityModelFixtureResourceType,
-)
+from .head_to_head_entity_model_fixture_resource_type import HeadToHeadEntityModelFixtureResourceType
 from .head_to_head_entity_model_organization import HeadToHeadEntityModelOrganization
-from .head_to_head_entity_model_organization_resource_type import (
-    HeadToHeadEntityModelOrganizationResourceType,
-)
+from .head_to_head_entity_model_organization_resource_type import HeadToHeadEntityModelOrganizationResourceType
 from .head_to_head_entity_model_season import HeadToHeadEntityModelSeason
-from .head_to_head_entity_model_season_resource_type import (
-    HeadToHeadEntityModelSeasonResourceType,
-)
+from .head_to_head_entity_model_season_resource_type import HeadToHeadEntityModelSeasonResourceType
+from .head_to_head_entity_response import HeadToHeadEntityResponse
+from .head_to_head_identification import HeadToHeadIdentification
+from .head_to_head_identification_for_subsequent_checks import HeadToHeadIdentificationForSubsequentChecks
 from .head_to_head_list_fixtures_fixture_type import HeadToHeadListFixturesFixtureType
-from .head_to_head_list_fixtures_head_to_head_entity_response import (
-    HeadToHeadListFixturesHeadToHeadEntityResponse,
-)
 from .head_to_head_list_fixtures_mulitple_competitions_fixture_type import (
     HeadToHeadListFixturesMulitpleCompetitionsFixtureType,
-)
-from .head_to_head_list_fixtures_mulitple_competitions_head_to_head_entity_response import (
-    HeadToHeadListFixturesMulitpleCompetitionsHeadToHeadEntityResponse,
 )
 from .head_to_head_list_fixtures_mulitple_competitions_response_default import (
     HeadToHeadListFixturesMulitpleCompetitionsResponseDefault,
 )
-from .head_to_head_list_fixtures_mulitple_competitions_status import (
-    HeadToHeadListFixturesMulitpleCompetitionsStatus,
-)
+from .head_to_head_list_fixtures_mulitple_competitions_status import HeadToHeadListFixturesMulitpleCompetitionsStatus
 from .head_to_head_list_fixtures_mulitple_competitions_status_not import (
     HeadToHeadListFixturesMulitpleCompetitionsStatusNot,
 )
-from .head_to_head_list_fixtures_response_default import (
-    HeadToHeadListFixturesResponseDefault,
-)
+from .head_to_head_list_fixtures_response_default import HeadToHeadListFixturesResponseDefault
 from .head_to_head_list_fixtures_status import HeadToHeadListFixturesStatus
 from .head_to_head_list_fixtures_status_not import HeadToHeadListFixturesStatusNot
-from .images_delete_images_response import ImagesDeleteImagesResponse
+from .head_to_head_resolution import HeadToHeadResolution
+from .head_to_head_resolution_for_extra_depth_h2_hs import HeadToHeadResolutionForExtraDepthH2Hs
+from .head_to_head_resolution_for_extra_depth_h2_hs_sort_direction import (
+    HeadToHeadResolutionForExtraDepthH2HsSortDirection,
+)
+from .head_to_head_resolution_sort_direction import HeadToHeadResolutionSortDirection
 from .images_delete_response_default import ImagesDeleteResponseDefault
-from .images_detail_images_response import ImagesDetailImagesResponse
 from .images_detail_response_default import ImagesDetailResponseDefault
 from .images_for_fixture_list_base_type import ImagesForFixtureListBaseType
 from .images_for_fixture_list_image_type import ImagesForFixtureListImageType
-from .images_for_fixture_list_images_response import ImagesForFixtureListImagesResponse
 from .images_for_fixture_list_rating import ImagesForFixtureListRating
-from .images_for_fixture_list_response_default import (
-    ImagesForFixtureListResponseDefault,
-)
+from .images_for_fixture_list_response_default import ImagesForFixtureListResponseDefault
 from .images_insert_base_type import ImagesInsertBaseType
 from .images_insert_from_url_base_type import ImagesInsertFromUrlBaseType
 from .images_insert_from_url_image_type import ImagesInsertFromUrlImageType
-from .images_insert_from_url_images_post_body import ImagesInsertFromUrlImagesPostBody
-from .images_insert_from_url_images_response import ImagesInsertFromUrlImagesResponse
 from .images_insert_from_url_response_default import ImagesInsertFromUrlResponseDefault
 from .images_insert_image_type import ImagesInsertImageType
-from .images_insert_images_response import ImagesInsertImagesResponse
 from .images_insert_organization_base_type import ImagesInsertOrganizationBaseType
-from .images_insert_organization_from_url_base_type import (
-    ImagesInsertOrganizationFromUrlBaseType,
-)
-from .images_insert_organization_from_url_image_type import (
-    ImagesInsertOrganizationFromUrlImageType,
-)
-from .images_insert_organization_from_url_images_post_body import (
-    ImagesInsertOrganizationFromUrlImagesPostBody,
-)
-from .images_insert_organization_from_url_images_response import (
-    ImagesInsertOrganizationFromUrlImagesResponse,
-)
-from .images_insert_organization_from_url_response_default import (
-    ImagesInsertOrganizationFromUrlResponseDefault,
-)
+from .images_insert_organization_from_url_base_type import ImagesInsertOrganizationFromUrlBaseType
+from .images_insert_organization_from_url_image_type import ImagesInsertOrganizationFromUrlImageType
+from .images_insert_organization_from_url_response_default import ImagesInsertOrganizationFromUrlResponseDefault
 from .images_insert_organization_image_type import ImagesInsertOrganizationImageType
-from .images_insert_organization_images_response import (
-    ImagesInsertOrganizationImagesResponse,
-)
-from .images_insert_organization_response_default import (
-    ImagesInsertOrganizationResponseDefault,
-)
+from .images_insert_organization_response_default import ImagesInsertOrganizationResponseDefault
 from .images_insert_response_default import ImagesInsertResponseDefault
 from .images_insert_secondary_base_type import ImagesInsertSecondaryBaseType
-from .images_insert_secondary_from_url_base_type import (
-    ImagesInsertSecondaryFromUrlBaseType,
-)
-from .images_insert_secondary_from_url_image_type import (
-    ImagesInsertSecondaryFromUrlImageType,
-)
-from .images_insert_secondary_from_url_images_post_body import (
-    ImagesInsertSecondaryFromUrlImagesPostBody,
-)
-from .images_insert_secondary_from_url_images_response import (
-    ImagesInsertSecondaryFromUrlImagesResponse,
-)
-from .images_insert_secondary_from_url_response_default import (
-    ImagesInsertSecondaryFromUrlResponseDefault,
-)
-from .images_insert_secondary_from_url_secondary_type import (
-    ImagesInsertSecondaryFromUrlSecondaryType,
-)
+from .images_insert_secondary_from_url_base_type import ImagesInsertSecondaryFromUrlBaseType
+from .images_insert_secondary_from_url_image_type import ImagesInsertSecondaryFromUrlImageType
+from .images_insert_secondary_from_url_response_default import ImagesInsertSecondaryFromUrlResponseDefault
+from .images_insert_secondary_from_url_secondary_type import ImagesInsertSecondaryFromUrlSecondaryType
 from .images_insert_secondary_image_type import ImagesInsertSecondaryImageType
-from .images_insert_secondary_images_response import ImagesInsertSecondaryImagesResponse
-from .images_insert_secondary_response_default import (
-    ImagesInsertSecondaryResponseDefault,
-)
+from .images_insert_secondary_response_default import ImagesInsertSecondaryResponseDefault
 from .images_insert_secondary_secondary_type import ImagesInsertSecondarySecondaryType
 from .images_list_base_type import ImagesListBaseType
 from .images_list_id_base_type import ImagesListIdBaseType
 from .images_list_id_image_type import ImagesListIdImageType
-from .images_list_id_images_response import ImagesListIdImagesResponse
 from .images_list_id_rating import ImagesListIdRating
 from .images_list_id_response_default import ImagesListIdResponseDefault
 from .images_list_id_secondary_base_type import ImagesListIdSecondaryBaseType
 from .images_list_id_secondary_image_type import ImagesListIdSecondaryImageType
-from .images_list_id_secondary_images_response import (
-    ImagesListIdSecondaryImagesResponse,
-)
 from .images_list_id_secondary_rating import ImagesListIdSecondaryRating
-from .images_list_id_secondary_response_default import (
-    ImagesListIdSecondaryResponseDefault,
-)
+from .images_list_id_secondary_response_default import ImagesListIdSecondaryResponseDefault
 from .images_list_id_secondary_secondary_type import ImagesListIdSecondarySecondaryType
 from .images_list_image_type import ImagesListImageType
-from .images_list_images_response import ImagesListImagesResponse
 from .images_list_organization_base_type import ImagesListOrganizationBaseType
 from .images_list_organization_image_type import ImagesListOrganizationImageType
-from .images_list_organization_images_response import (
-    ImagesListOrganizationImagesResponse,
-)
 from .images_list_organization_rating import ImagesListOrganizationRating
-from .images_list_organization_response_default import (
-    ImagesListOrganizationResponseDefault,
-)
+from .images_list_organization_response_default import ImagesListOrganizationResponseDefault
 from .images_list_rating import ImagesListRating
 from .images_list_response_default import ImagesListResponseDefault
 from .images_list_secondary_base_type import ImagesListSecondaryBaseType
 from .images_list_secondary_image_type import ImagesListSecondaryImageType
-from .images_list_secondary_images_response import ImagesListSecondaryImagesResponse
 from .images_list_secondary_rating import ImagesListSecondaryRating
 from .images_list_secondary_response_default import ImagesListSecondaryResponseDefault
 from .images_list_secondary_secondary_type import ImagesListSecondarySecondaryType
@@ -2130,674 +612,258 @@ from .images_model_organization import ImagesModelOrganization
 from .images_model_organization_resource_type import ImagesModelOrganizationResourceType
 from .images_model_rating import ImagesModelRating
 from .images_model_secondary_type_type_1 import ImagesModelSecondaryTypeType1
-from .images_model_secondary_type_type_2_type_1 import (
-    ImagesModelSecondaryTypeType2Type1,
-)
-from .images_model_secondary_type_type_3_type_1 import (
-    ImagesModelSecondaryTypeType3Type1,
-)
-from .images_update_images_put_body import ImagesUpdateImagesPutBody
-from .images_update_images_put_body_rating import ImagesUpdateImagesPutBodyRating
-from .images_update_images_response import ImagesUpdateImagesResponse
+from .images_model_secondary_type_type_2_type_1 import ImagesModelSecondaryTypeType2Type1
+from .images_model_secondary_type_type_3_type_1 import ImagesModelSecondaryTypeType3Type1
+from .images_post_body import ImagesPostBody
+from .images_put_body import ImagesPutBody
+from .images_put_body_rating import ImagesPutBodyRating
+from .images_response import ImagesResponse
 from .images_update_response_default import ImagesUpdateResponseDefault
 from .included_data import IncludedData
 from .included_data_resources import IncludedDataResources
-from .included_data_resources_additional_property import (
-    IncludedDataResourcesAdditionalProperty,
-)
-from .leader_criteria_delete_leader_criteria_response import (
-    LeaderCriteriaDeleteLeaderCriteriaResponse,
-)
+from .included_data_resources_additional_property import IncludedDataResourcesAdditionalProperty
+from .information_per_entity import InformationPerEntity
 from .leader_criteria_delete_response_default import LeaderCriteriaDeleteResponseDefault
-from .leader_criteria_detail_leader_criteria_response import (
-    LeaderCriteriaDetailLeaderCriteriaResponse,
-)
 from .leader_criteria_detail_response_default import LeaderCriteriaDetailResponseDefault
-from .leader_criteria_insert_leader_criteria_post_body import (
-    LeaderCriteriaInsertLeaderCriteriaPostBody,
-)
-from .leader_criteria_insert_leader_criteria_response import (
-    LeaderCriteriaInsertLeaderCriteriaResponse,
-)
 from .leader_criteria_insert_response_default import LeaderCriteriaInsertResponseDefault
-from .leader_criteria_list_leader_criteria_response import (
-    LeaderCriteriaListLeaderCriteriaResponse,
-)
 from .leader_criteria_list_response_default import LeaderCriteriaListResponseDefault
 from .leader_criteria_model import LeaderCriteriaModel
 from .leader_criteria_model_organization import LeaderCriteriaModelOrganization
-from .leader_criteria_model_organization_resource_type import (
-    LeaderCriteriaModelOrganizationResourceType,
-)
-from .leader_criteria_update_leader_criteria_put_body import (
-    LeaderCriteriaUpdateLeaderCriteriaPutBody,
-)
-from .leader_criteria_update_leader_criteria_response import (
-    LeaderCriteriaUpdateLeaderCriteriaResponse,
-)
+from .leader_criteria_model_organization_resource_type import LeaderCriteriaModelOrganizationResourceType
+from .leader_criteria_post_body import LeaderCriteriaPostBody
+from .leader_criteria_put_body import LeaderCriteriaPutBody
+from .leader_criteria_response import LeaderCriteriaResponse
 from .leader_criteria_update_response_default import LeaderCriteriaUpdateResponseDefault
 from .leader_qualifier_model import LeaderQualifierModel
 from .leader_qualifier_model_comparison_type import LeaderQualifierModelComparisonType
 from .leader_qualifier_model_leaders_criteria import LeaderQualifierModelLeadersCriteria
-from .leader_qualifier_model_leaders_criteria_resource_type import (
-    LeaderQualifierModelLeadersCriteriaResourceType,
-)
+from .leader_qualifier_model_leaders_criteria_resource_type import LeaderQualifierModelLeadersCriteriaResourceType
 from .leader_qualifier_model_organization import LeaderQualifierModelOrganization
-from .leader_qualifier_model_organization_resource_type import (
-    LeaderQualifierModelOrganizationResourceType,
-)
-from .leader_qualifiers_delete_leader_qualifiers_response import (
-    LeaderQualifiersDeleteLeaderQualifiersResponse,
-)
-from .leader_qualifiers_delete_response_default import (
-    LeaderQualifiersDeleteResponseDefault,
-)
-from .leader_qualifiers_detail_leader_qualifiers_response import (
-    LeaderQualifiersDetailLeaderQualifiersResponse,
-)
-from .leader_qualifiers_detail_response_default import (
-    LeaderQualifiersDetailResponseDefault,
-)
-from .leader_qualifiers_insert_leader_qualifier_post_body import (
-    LeaderQualifiersInsertLeaderQualifierPostBody,
-)
-from .leader_qualifiers_insert_leader_qualifier_post_body_comparison_type import (
-    LeaderQualifiersInsertLeaderQualifierPostBodyComparisonType,
-)
-from .leader_qualifiers_insert_leader_qualifiers_response import (
-    LeaderQualifiersInsertLeaderQualifiersResponse,
-)
-from .leader_qualifiers_insert_response_default import (
-    LeaderQualifiersInsertResponseDefault,
-)
-from .leader_qualifiers_list_leader_qualifiers_response import (
-    LeaderQualifiersListLeaderQualifiersResponse,
-)
+from .leader_qualifier_model_organization_resource_type import LeaderQualifierModelOrganizationResourceType
+from .leader_qualifier_post_body import LeaderQualifierPostBody
+from .leader_qualifier_post_body_comparison_type import LeaderQualifierPostBodyComparisonType
+from .leader_qualifier_put_body import LeaderQualifierPutBody
+from .leader_qualifier_put_body_comparison_type import LeaderQualifierPutBodyComparisonType
+from .leader_qualifiers_delete_response_default import LeaderQualifiersDeleteResponseDefault
+from .leader_qualifiers_detail_response_default import LeaderQualifiersDetailResponseDefault
+from .leader_qualifiers_insert_response_default import LeaderQualifiersInsertResponseDefault
 from .leader_qualifiers_list_response_default import LeaderQualifiersListResponseDefault
-from .leader_qualifiers_update_leader_qualifier_put_body import (
-    LeaderQualifiersUpdateLeaderQualifierPutBody,
-)
-from .leader_qualifiers_update_leader_qualifier_put_body_comparison_type import (
-    LeaderQualifiersUpdateLeaderQualifierPutBodyComparisonType,
-)
-from .leader_qualifiers_update_leader_qualifiers_response import (
-    LeaderQualifiersUpdateLeaderQualifiersResponse,
-)
-from .leader_qualifiers_update_response_default import (
-    LeaderQualifiersUpdateResponseDefault,
-)
-from .league_delete_leagues_response import LeagueDeleteLeaguesResponse
+from .leader_qualifiers_response import LeaderQualifiersResponse
+from .leader_qualifiers_update_response_default import LeaderQualifiersUpdateResponseDefault
+from .leader_summary_response import LeaderSummaryResponse
 from .league_delete_response_default import LeagueDeleteResponseDefault
-from .league_detail_leagues_response import LeagueDetailLeaguesResponse
 from .league_detail_response_default import LeagueDetailResponseDefault
-from .league_external_ids_delete_league_external_ids_response import (
-    LeagueExternalIdsDeleteLeagueExternalIdsResponse,
-)
-from .league_external_ids_delete_response_default import (
-    LeagueExternalIdsDeleteResponseDefault,
-)
-from .league_external_ids_detail_league_external_ids_response import (
-    LeagueExternalIdsDetailLeagueExternalIdsResponse,
-)
-from .league_external_ids_detail_response_default import (
-    LeagueExternalIdsDetailResponseDefault,
-)
-from .league_external_ids_insert_league_external_ids_post_body import (
-    LeagueExternalIdsInsertLeagueExternalIdsPostBody,
-)
-from .league_external_ids_insert_league_external_ids_response import (
-    LeagueExternalIdsInsertLeagueExternalIdsResponse,
-)
-from .league_external_ids_insert_response_default import (
-    LeagueExternalIdsInsertResponseDefault,
-)
-from .league_external_ids_insert_update_league_external_ids_post_body import (
-    LeagueExternalIdsInsertUpdateLeagueExternalIdsPostBody,
-)
-from .league_external_ids_insert_update_league_external_ids_response import (
-    LeagueExternalIdsInsertUpdateLeagueExternalIdsResponse,
-)
-from .league_external_ids_insert_update_response_default import (
-    LeagueExternalIdsInsertUpdateResponseDefault,
-)
-from .league_external_ids_list_league_external_ids_response import (
-    LeagueExternalIdsListLeagueExternalIdsResponse,
-)
-from .league_external_ids_list_response_default import (
-    LeagueExternalIdsListResponseDefault,
-)
+from .league_external_ids_delete_response_default import LeagueExternalIdsDeleteResponseDefault
+from .league_external_ids_detail_response_default import LeagueExternalIdsDetailResponseDefault
+from .league_external_ids_insert_response_default import LeagueExternalIdsInsertResponseDefault
+from .league_external_ids_insert_update_response_default import LeagueExternalIdsInsertUpdateResponseDefault
+from .league_external_ids_list_response_default import LeagueExternalIdsListResponseDefault
 from .league_external_ids_model import LeagueExternalIdsModel
 from .league_external_ids_model_league import LeagueExternalIdsModelLeague
-from .league_external_ids_model_league_resource_type import (
-    LeagueExternalIdsModelLeagueResourceType,
-)
+from .league_external_ids_model_league_resource_type import LeagueExternalIdsModelLeagueResourceType
 from .league_external_ids_model_organization import LeagueExternalIdsModelOrganization
-from .league_external_ids_model_organization_resource_type import (
-    LeagueExternalIdsModelOrganizationResourceType,
-)
-from .league_external_ids_update_league_external_ids_put_body import (
-    LeagueExternalIdsUpdateLeagueExternalIdsPutBody,
-)
-from .league_external_ids_update_league_external_ids_response import (
-    LeagueExternalIdsUpdateLeagueExternalIdsResponse,
-)
-from .league_external_ids_update_response_default import (
-    LeagueExternalIdsUpdateResponseDefault,
-)
-from .league_insert_league_post_body import LeagueInsertLeaguePostBody
-from .league_insert_league_post_body_region_type import (
-    LeagueInsertLeaguePostBodyRegionType,
-)
-from .league_insert_league_post_body_social_media import (
-    LeagueInsertLeaguePostBodySocialMedia,
-)
-from .league_insert_leagues_response import LeagueInsertLeaguesResponse
+from .league_external_ids_model_organization_resource_type import LeagueExternalIdsModelOrganizationResourceType
+from .league_external_ids_post_body import LeagueExternalIdsPostBody
+from .league_external_ids_put_body import LeagueExternalIdsPutBody
+from .league_external_ids_response import LeagueExternalIdsResponse
+from .league_external_ids_update_response_default import LeagueExternalIdsUpdateResponseDefault
 from .league_insert_response_default import LeagueInsertResponseDefault
-from .league_list_leagues_response import LeagueListLeaguesResponse
 from .league_list_region_type import LeagueListRegionType
 from .league_list_response_default import LeagueListResponseDefault
-from .league_model import LeagueModel
-from .league_model_organization import LeagueModelOrganization
-from .league_model_organization_resource_type import LeagueModelOrganizationResourceType
-from .league_model_region_type import LeagueModelRegionType
-from .league_model_social_media import LeagueModelSocialMedia
-from .league_update_league_put_body import LeagueUpdateLeaguePutBody
-from .league_update_league_put_body_region_type import (
-    LeagueUpdateLeaguePutBodyRegionType,
-)
-from .league_update_league_put_body_social_media import (
-    LeagueUpdateLeaguePutBodySocialMedia,
-)
-from .league_update_leagues_response import LeagueUpdateLeaguesResponse
 from .league_update_response_default import LeagueUpdateResponseDefault
 from .match_external_ids_model import MatchExternalIdsModel
 from .match_external_ids_model_fixture import MatchExternalIdsModelFixture
-from .match_external_ids_model_fixture_resource_type import (
-    MatchExternalIdsModelFixtureResourceType,
-)
+from .match_external_ids_model_fixture_resource_type import MatchExternalIdsModelFixtureResourceType
 from .match_external_ids_model_organization import MatchExternalIdsModelOrganization
-from .match_external_ids_model_organization_resource_type import (
-    MatchExternalIdsModelOrganizationResourceType,
-)
-from .match_model import MatchModel
-from .match_model_broadcasts import MatchModelBroadcasts
-from .match_model_broadcasts_broadcast_type import MatchModelBroadcastsBroadcastType
-from .match_model_competitor_type import MatchModelCompetitorType
-from .match_model_discipline_type_1 import MatchModelDisciplineType1
-from .match_model_discipline_type_2_type_1 import MatchModelDisciplineType2Type1
-from .match_model_discipline_type_3_type_1 import MatchModelDisciplineType3Type1
-from .match_model_environmental_details import MatchModelEnvironmentalDetails
-from .match_model_fixture_profile import MatchModelFixtureProfile
-from .match_model_fixture_profile_resource_type import (
-    MatchModelFixtureProfileResourceType,
-)
-from .match_model_fixture_type import MatchModelFixtureType
-from .match_model_match_competitor import MatchModelMatchCompetitor
-from .match_model_match_competitor_result_status import (
-    MatchModelMatchCompetitorResultStatus,
-)
-from .match_model_match_competitor_roster_status import (
-    MatchModelMatchCompetitorRosterStatus,
-)
-from .match_model_maximum_period_type_used_type_1 import (
-    MatchModelMaximumPeriodTypeUsedType1,
-)
-from .match_model_maximum_period_type_used_type_2_type_1 import (
-    MatchModelMaximumPeriodTypeUsedType2Type1,
-)
-from .match_model_maximum_period_type_used_type_3_type_1 import (
-    MatchModelMaximumPeriodTypeUsedType3Type1,
-)
-from .match_model_organization import MatchModelOrganization
-from .match_model_organization_resource_type import MatchModelOrganizationResourceType
-from .match_model_pool import MatchModelPool
-from .match_model_pool_resource_type import MatchModelPoolResourceType
-from .match_model_practice_drill_type_type_1 import MatchModelPracticeDrillTypeType1
-from .match_model_practice_drill_type_type_2_type_1 import (
-    MatchModelPracticeDrillTypeType2Type1,
-)
-from .match_model_practice_drill_type_type_3_type_1 import (
-    MatchModelPracticeDrillTypeType3Type1,
-)
-from .match_model_round import MatchModelRound
-from .match_model_round_resource_type import MatchModelRoundResourceType
-from .match_model_season import MatchModelSeason
-from .match_model_season_resource_type import MatchModelSeasonResourceType
-from .match_model_series import MatchModelSeries
-from .match_model_series_resource_type import MatchModelSeriesResourceType
-from .match_model_social_media import MatchModelSocialMedia
-from .match_model_stage import MatchModelStage
-from .match_model_stage_resource_type import MatchModelStageResourceType
-from .match_model_status import MatchModelStatus
-from .match_model_venue import MatchModelVenue
-from .match_model_venue_resource_type import MatchModelVenueResourceType
+from .match_external_ids_model_organization_resource_type import MatchExternalIdsModelOrganizationResourceType
+from .match_external_ids_post_body import MatchExternalIdsPostBody
+from .match_external_ids_put_body import MatchExternalIdsPutBody
 from .match_person_statistics_model import MatchPersonStatisticsModel
 from .match_person_statistics_model_entity import MatchPersonStatisticsModelEntity
-from .match_person_statistics_model_entity_resource_type import (
-    MatchPersonStatisticsModelEntityResourceType,
-)
+from .match_person_statistics_model_entity_resource_type import MatchPersonStatisticsModelEntityResourceType
 from .match_person_statistics_model_fixture import MatchPersonStatisticsModelFixture
-from .match_person_statistics_model_fixture_resource_type import (
-    MatchPersonStatisticsModelFixtureResourceType,
-)
-from .match_person_statistics_model_organization import (
-    MatchPersonStatisticsModelOrganization,
-)
-from .match_person_statistics_model_organization_resource_type import (
-    MatchPersonStatisticsModelOrganizationResourceType,
-)
+from .match_person_statistics_model_fixture_resource_type import MatchPersonStatisticsModelFixtureResourceType
+from .match_person_statistics_model_organization import MatchPersonStatisticsModelOrganization
+from .match_person_statistics_model_organization_resource_type import MatchPersonStatisticsModelOrganizationResourceType
 from .match_person_statistics_model_person import MatchPersonStatisticsModelPerson
-from .match_person_statistics_model_person_resource_type import (
-    MatchPersonStatisticsModelPersonResourceType,
-)
-from .match_person_statistics_model_position_type_1 import (
-    MatchPersonStatisticsModelPositionType1,
-)
-from .match_person_statistics_model_position_type_2_type_1 import (
-    MatchPersonStatisticsModelPositionType2Type1,
-)
-from .match_person_statistics_model_position_type_3_type_1 import (
-    MatchPersonStatisticsModelPositionType3Type1,
-)
-from .match_person_statistics_model_statistics import (
-    MatchPersonStatisticsModelStatistics,
-)
+from .match_person_statistics_model_person_resource_type import MatchPersonStatisticsModelPersonResourceType
+from .match_person_statistics_model_position_type_1 import MatchPersonStatisticsModelPositionType1
+from .match_person_statistics_model_position_type_2_type_1 import MatchPersonStatisticsModelPositionType2Type1
+from .match_person_statistics_model_position_type_3_type_1 import MatchPersonStatisticsModelPositionType3Type1
+from .match_person_statistics_model_statistics import MatchPersonStatisticsModelStatistics
 from .match_person_statistics_periods_model import MatchPersonStatisticsPeriodsModel
-from .match_person_statistics_periods_model_entity import (
-    MatchPersonStatisticsPeriodsModelEntity,
-)
+from .match_person_statistics_periods_model_entity import MatchPersonStatisticsPeriodsModelEntity
 from .match_person_statistics_periods_model_entity_resource_type import (
     MatchPersonStatisticsPeriodsModelEntityResourceType,
 )
-from .match_person_statistics_periods_model_fixture import (
-    MatchPersonStatisticsPeriodsModelFixture,
-)
+from .match_person_statistics_periods_model_fixture import MatchPersonStatisticsPeriodsModelFixture
 from .match_person_statistics_periods_model_fixture_resource_type import (
     MatchPersonStatisticsPeriodsModelFixtureResourceType,
 )
-from .match_person_statistics_periods_model_organization import (
-    MatchPersonStatisticsPeriodsModelOrganization,
-)
+from .match_person_statistics_periods_model_organization import MatchPersonStatisticsPeriodsModelOrganization
 from .match_person_statistics_periods_model_organization_resource_type import (
     MatchPersonStatisticsPeriodsModelOrganizationResourceType,
 )
-from .match_person_statistics_periods_model_period_id import (
-    MatchPersonStatisticsPeriodsModelPeriodId,
-)
-from .match_person_statistics_periods_model_person import (
-    MatchPersonStatisticsPeriodsModelPerson,
-)
+from .match_person_statistics_periods_model_period_id import MatchPersonStatisticsPeriodsModelPeriodId
+from .match_person_statistics_periods_model_person import MatchPersonStatisticsPeriodsModelPerson
 from .match_person_statistics_periods_model_person_resource_type import (
     MatchPersonStatisticsPeriodsModelPersonResourceType,
 )
-from .match_person_statistics_periods_model_statistics import (
-    MatchPersonStatisticsPeriodsModelStatistics,
-)
+from .match_person_statistics_periods_model_statistics import MatchPersonStatisticsPeriodsModelStatistics
+from .match_person_statistics_periods_post_body import MatchPersonStatisticsPeriodsPostBody
+from .match_person_statistics_periods_post_body_period_id import MatchPersonStatisticsPeriodsPostBodyPeriodId
+from .match_person_statistics_periods_post_body_statistics import MatchPersonStatisticsPeriodsPostBodyStatistics
+from .match_person_statistics_post_body import MatchPersonStatisticsPostBody
+from .match_person_statistics_post_body_position_type_1 import MatchPersonStatisticsPostBodyPositionType1
+from .match_person_statistics_post_body_position_type_2_type_1 import MatchPersonStatisticsPostBodyPositionType2Type1
+from .match_person_statistics_post_body_position_type_3_type_1 import MatchPersonStatisticsPostBodyPositionType3Type1
+from .match_person_statistics_post_body_statistics import MatchPersonStatisticsPostBodyStatistics
 from .match_persons_model import MatchPersonsModel
 from .match_persons_model_entity_group import MatchPersonsModelEntityGroup
-from .match_persons_model_entity_group_resource_type import (
-    MatchPersonsModelEntityGroupResourceType,
-)
+from .match_persons_model_entity_group_resource_type import MatchPersonsModelEntityGroupResourceType
 from .match_persons_model_fixture import MatchPersonsModelFixture
-from .match_persons_model_fixture_resource_type import (
-    MatchPersonsModelFixtureResourceType,
-)
+from .match_persons_model_fixture_resource_type import MatchPersonsModelFixtureResourceType
 from .match_persons_model_organization import MatchPersonsModelOrganization
-from .match_persons_model_organization_resource_type import (
-    MatchPersonsModelOrganizationResourceType,
-)
+from .match_persons_model_organization_resource_type import MatchPersonsModelOrganizationResourceType
 from .match_persons_model_person import MatchPersonsModelPerson
-from .match_persons_model_person_resource_type import (
-    MatchPersonsModelPersonResourceType,
-)
+from .match_persons_model_person_resource_type import MatchPersonsModelPersonResourceType
 from .match_persons_model_result_status import MatchPersonsModelResultStatus
 from .match_persons_model_uniform import MatchPersonsModelUniform
-from .match_persons_model_uniform_resource_type import (
-    MatchPersonsModelUniformResourceType,
-)
+from .match_persons_model_uniform_resource_type import MatchPersonsModelUniformResourceType
+from .match_persons_post_body import MatchPersonsPostBody
+from .match_persons_post_body_result_status import MatchPersonsPostBodyResultStatus
+from .match_profile_configuration import MatchProfileConfiguration
+from .match_profile_configuration_match_roles_item import MatchProfileConfigurationMatchRolesItem
+from .match_profile_configuration_type_of_cards_item import MatchProfileConfigurationTypeOfCardsItem
 from .match_profiles_model import MatchProfilesModel
-from .match_profiles_model_match_profile_configuration import (
-    MatchProfilesModelMatchProfileConfiguration,
-)
-from .match_profiles_model_match_profile_configuration_match_roles_item import (
-    MatchProfilesModelMatchProfileConfigurationMatchRolesItem,
-)
-from .match_profiles_model_match_profile_configuration_type_of_cards_item import (
-    MatchProfilesModelMatchProfileConfigurationTypeOfCardsItem,
-)
 from .match_profiles_model_organization import MatchProfilesModelOrganization
-from .match_profiles_model_organization_resource_type import (
-    MatchProfilesModelOrganizationResourceType,
-)
+from .match_profiles_model_organization_resource_type import MatchProfilesModelOrganizationResourceType
 from .match_roster_model import MatchRosterModel
 from .match_roster_model_entity import MatchRosterModelEntity
 from .match_roster_model_entity_resource_type import MatchRosterModelEntityResourceType
 from .match_roster_model_fixture import MatchRosterModelFixture
-from .match_roster_model_fixture_resource_type import (
-    MatchRosterModelFixtureResourceType,
-)
+from .match_roster_model_fixture_resource_type import MatchRosterModelFixtureResourceType
 from .match_roster_model_organization import MatchRosterModelOrganization
-from .match_roster_model_organization_resource_type import (
-    MatchRosterModelOrganizationResourceType,
-)
+from .match_roster_model_organization_resource_type import MatchRosterModelOrganizationResourceType
 from .match_roster_model_person import MatchRosterModelPerson
 from .match_roster_model_person_resource_type import MatchRosterModelPersonResourceType
 from .match_roster_model_position_type_1 import MatchRosterModelPositionType1
-from .match_roster_model_position_type_2_type_1 import (
-    MatchRosterModelPositionType2Type1,
-)
-from .match_roster_model_position_type_3_type_1 import (
-    MatchRosterModelPositionType3Type1,
-)
+from .match_roster_model_position_type_2_type_1 import MatchRosterModelPositionType2Type1
+from .match_roster_model_position_type_3_type_1 import MatchRosterModelPositionType3Type1
+from .match_roster_post_body import MatchRosterPostBody
+from .match_roster_post_body_position_type_1 import MatchRosterPostBodyPositionType1
+from .match_roster_post_body_position_type_2_type_1 import MatchRosterPostBodyPositionType2Type1
+from .match_roster_post_body_position_type_3_type_1 import MatchRosterPostBodyPositionType3Type1
 from .match_team_period_statistics_model import MatchTeamPeriodStatisticsModel
-from .match_team_period_statistics_model_entity import (
-    MatchTeamPeriodStatisticsModelEntity,
-)
-from .match_team_period_statistics_model_entity_resource_type import (
-    MatchTeamPeriodStatisticsModelEntityResourceType,
-)
-from .match_team_period_statistics_model_fixture import (
-    MatchTeamPeriodStatisticsModelFixture,
-)
-from .match_team_period_statistics_model_fixture_resource_type import (
-    MatchTeamPeriodStatisticsModelFixtureResourceType,
-)
-from .match_team_period_statistics_model_organization import (
-    MatchTeamPeriodStatisticsModelOrganization,
-)
+from .match_team_period_statistics_model_entity import MatchTeamPeriodStatisticsModelEntity
+from .match_team_period_statistics_model_entity_resource_type import MatchTeamPeriodStatisticsModelEntityResourceType
+from .match_team_period_statistics_model_fixture import MatchTeamPeriodStatisticsModelFixture
+from .match_team_period_statistics_model_fixture_resource_type import MatchTeamPeriodStatisticsModelFixtureResourceType
+from .match_team_period_statistics_model_organization import MatchTeamPeriodStatisticsModelOrganization
 from .match_team_period_statistics_model_organization_resource_type import (
     MatchTeamPeriodStatisticsModelOrganizationResourceType,
 )
-from .match_team_period_statistics_model_period_id import (
-    MatchTeamPeriodStatisticsModelPeriodId,
-)
-from .match_team_period_statistics_model_statistics import (
-    MatchTeamPeriodStatisticsModelStatistics,
-)
+from .match_team_period_statistics_model_period_id import MatchTeamPeriodStatisticsModelPeriodId
+from .match_team_period_statistics_model_statistics import MatchTeamPeriodStatisticsModelStatistics
+from .match_team_period_statistics_post_body import MatchTeamPeriodStatisticsPostBody
+from .match_team_period_statistics_post_body_period_id import MatchTeamPeriodStatisticsPostBodyPeriodId
+from .match_team_period_statistics_post_body_statistics import MatchTeamPeriodStatisticsPostBodyStatistics
 from .match_team_statistics_model import MatchTeamStatisticsModel
 from .match_team_statistics_model_entity import MatchTeamStatisticsModelEntity
-from .match_team_statistics_model_entity_resource_type import (
-    MatchTeamStatisticsModelEntityResourceType,
-)
+from .match_team_statistics_model_entity_resource_type import MatchTeamStatisticsModelEntityResourceType
 from .match_team_statistics_model_fixture import MatchTeamStatisticsModelFixture
-from .match_team_statistics_model_fixture_resource_type import (
-    MatchTeamStatisticsModelFixtureResourceType,
-)
-from .match_team_statistics_model_organization import (
-    MatchTeamStatisticsModelOrganization,
-)
-from .match_team_statistics_model_organization_resource_type import (
-    MatchTeamStatisticsModelOrganizationResourceType,
-)
+from .match_team_statistics_model_fixture_resource_type import MatchTeamStatisticsModelFixtureResourceType
+from .match_team_statistics_model_organization import MatchTeamStatisticsModelOrganization
+from .match_team_statistics_model_organization_resource_type import MatchTeamStatisticsModelOrganizationResourceType
 from .match_team_statistics_model_statistics import MatchTeamStatisticsModelStatistics
+from .match_team_statistics_post_body import MatchTeamStatisticsPostBody
+from .match_team_statistics_post_body_statistics import MatchTeamStatisticsPostBodyStatistics
 from .match_teams_model import MatchTeamsModel
 from .match_teams_model_conference import MatchTeamsModelConference
-from .match_teams_model_conference_resource_type import (
-    MatchTeamsModelConferenceResourceType,
-)
+from .match_teams_model_conference_resource_type import MatchTeamsModelConferenceResourceType
 from .match_teams_model_division import MatchTeamsModelDivision
-from .match_teams_model_division_resource_type import (
-    MatchTeamsModelDivisionResourceType,
-)
+from .match_teams_model_division_resource_type import MatchTeamsModelDivisionResourceType
 from .match_teams_model_entity import MatchTeamsModelEntity
 from .match_teams_model_entity_resource_type import MatchTeamsModelEntityResourceType
 from .match_teams_model_fixture import MatchTeamsModelFixture
 from .match_teams_model_fixture_resource_type import MatchTeamsModelFixtureResourceType
 from .match_teams_model_organization import MatchTeamsModelOrganization
-from .match_teams_model_organization_resource_type import (
-    MatchTeamsModelOrganizationResourceType,
-)
+from .match_teams_model_organization_resource_type import MatchTeamsModelOrganizationResourceType
 from .match_teams_model_result_status import MatchTeamsModelResultStatus
 from .match_teams_model_roster_status import MatchTeamsModelRosterStatus
 from .match_teams_model_uniform import MatchTeamsModelUniform
 from .match_teams_model_uniform_resource_type import MatchTeamsModelUniformResourceType
+from .match_teams_post_body import MatchTeamsPostBody
+from .match_teams_post_body_result_status import MatchTeamsPostBodyResultStatus
+from .match_teams_post_body_roster_status import MatchTeamsPostBodyRosterStatus
+from .merge_post_body import MergePostBody
 from .model import Model
-from .organization_delete_organizations_response import (
-    OrganizationDeleteOrganizationsResponse,
-)
 from .organization_delete_response_default import OrganizationDeleteResponseDefault
-from .organization_detail_organizations_response import (
-    OrganizationDetailOrganizationsResponse,
-)
 from .organization_detail_response_default import OrganizationDetailResponseDefault
-from .organization_fixture_list_competitor_type import (
-    OrganizationFixtureListCompetitorType,
-)
+from .organization_fixture_list_competitor_type import OrganizationFixtureListCompetitorType
 from .organization_fixture_list_discipline import OrganizationFixtureListDiscipline
 from .organization_fixture_list_fixture_type import OrganizationFixtureListFixtureType
-from .organization_fixture_list_fixtures_response import (
-    OrganizationFixtureListFixturesResponse,
-)
-from .organization_fixture_list_response_default import (
-    OrganizationFixtureListResponseDefault,
-)
+from .organization_fixture_list_response_default import OrganizationFixtureListResponseDefault
 from .organization_fixture_list_status import OrganizationFixtureListStatus
 from .organization_fixture_list_status_not import OrganizationFixtureListStatusNot
-from .organization_insert_organization_post_body import (
-    OrganizationInsertOrganizationPostBody,
-)
-from .organization_insert_organization_post_body_region_type import (
-    OrganizationInsertOrganizationPostBodyRegionType,
-)
-from .organization_insert_organizations_response import (
-    OrganizationInsertOrganizationsResponse,
-)
 from .organization_insert_response_default import OrganizationInsertResponseDefault
-from .organization_list_organizations_response import (
-    OrganizationListOrganizationsResponse,
-)
 from .organization_list_region_type import OrganizationListRegionType
 from .organization_list_response_default import OrganizationListResponseDefault
 from .organization_model import OrganizationModel
 from .organization_model_region_type import OrganizationModelRegionType
-from .organization_update_organization_put_body import (
-    OrganizationUpdateOrganizationPutBody,
-)
-from .organization_update_organization_put_body_region_type import (
-    OrganizationUpdateOrganizationPutBodyRegionType,
-)
-from .organization_update_organizations_response import (
-    OrganizationUpdateOrganizationsResponse,
-)
+from .organization_post_body import OrganizationPostBody
+from .organization_post_body_region_type import OrganizationPostBodyRegionType
+from .organization_put_body import OrganizationPutBody
+from .organization_put_body_region_type import OrganizationPutBodyRegionType
 from .organization_update_response_default import OrganizationUpdateResponseDefault
-from .orggroup_competition_list_competitions_response import (
-    OrggroupCompetitionListCompetitionsResponse,
-)
-from .orggroup_competition_list_response_default import (
-    OrggroupCompetitionListResponseDefault,
-)
-from .orggroup_fixture_detail_fixtures_response import (
-    OrggroupFixtureDetailFixturesResponse,
-)
-from .orggroup_fixture_detail_response_default import (
-    OrggroupFixtureDetailResponseDefault,
-)
+from .organizations_response import OrganizationsResponse
+from .orggroup_competition_list_response_default import OrggroupCompetitionListResponseDefault
+from .orggroup_fixture_detail_response_default import OrggroupFixtureDetailResponseDefault
 from .orggroup_fixture_list_competitor_type import OrggroupFixtureListCompetitorType
 from .orggroup_fixture_list_fixture_type import OrggroupFixtureListFixtureType
-from .orggroup_fixture_list_fixtures_response import OrggroupFixtureListFixturesResponse
 from .orggroup_fixture_list_response_default import OrggroupFixtureListResponseDefault
 from .orggroup_fixture_list_status import OrggroupFixtureListStatus
-from .partners_delete_blank_model_delete_body import PartnersDeleteBlankModelDeleteBody
-from .partners_delete_blank_model_response import PartnersDeleteBlankModelResponse
 from .partners_delete_response_default import PartnersDeleteResponseDefault
-from .partners_get_blank_model_get_body import PartnersGetBlankModelGetBody
-from .partners_get_blank_model_response import PartnersGetBlankModelResponse
 from .partners_get_response_default import PartnersGetResponseDefault
-from .partners_post_blank_model_post_body import PartnersPostBlankModelPostBody
-from .partners_post_blank_model_response import PartnersPostBlankModelResponse
 from .partners_post_response_default import PartnersPostResponseDefault
-from .partners_put_blank_model_put_body import PartnersPutBlankModelPutBody
-from .partners_put_blank_model_response import PartnersPutBlankModelResponse
 from .partners_put_response_default import PartnersPutResponseDefault
-from .person_delete_persons_response import PersonDeletePersonsResponse
+from .person_additional_details import PersonAdditionalDetails
+from .person_additional_details_dominant_foot import PersonAdditionalDetailsDominantFoot
+from .person_additional_details_dominant_hand import PersonAdditionalDetailsDominantHand
 from .person_delete_response_default import PersonDeleteResponseDefault
-from .person_detail_persons_response import PersonDetailPersonsResponse
 from .person_detail_response_default import PersonDetailResponseDefault
-from .person_external_ids_delete_person_external_ids_response import (
-    PersonExternalIdsDeletePersonExternalIdsResponse,
-)
-from .person_external_ids_delete_response_default import (
-    PersonExternalIdsDeleteResponseDefault,
-)
-from .person_external_ids_detail_person_external_ids_response import (
-    PersonExternalIdsDetailPersonExternalIdsResponse,
-)
-from .person_external_ids_detail_response_default import (
-    PersonExternalIdsDetailResponseDefault,
-)
-from .person_external_ids_insert_person_external_ids_post_body import (
-    PersonExternalIdsInsertPersonExternalIdsPostBody,
-)
-from .person_external_ids_insert_person_external_ids_response import (
-    PersonExternalIdsInsertPersonExternalIdsResponse,
-)
-from .person_external_ids_insert_response_default import (
-    PersonExternalIdsInsertResponseDefault,
-)
-from .person_external_ids_insert_update_person_external_ids_post_body import (
-    PersonExternalIdsInsertUpdatePersonExternalIdsPostBody,
-)
-from .person_external_ids_insert_update_person_external_ids_response import (
-    PersonExternalIdsInsertUpdatePersonExternalIdsResponse,
-)
-from .person_external_ids_insert_update_response_default import (
-    PersonExternalIdsInsertUpdateResponseDefault,
-)
-from .person_external_ids_list_person_external_ids_response import (
-    PersonExternalIdsListPersonExternalIdsResponse,
-)
-from .person_external_ids_list_response_default import (
-    PersonExternalIdsListResponseDefault,
-)
+from .person_external_ids_delete_response_default import PersonExternalIdsDeleteResponseDefault
+from .person_external_ids_detail_response_default import PersonExternalIdsDetailResponseDefault
+from .person_external_ids_insert_response_default import PersonExternalIdsInsertResponseDefault
+from .person_external_ids_insert_update_response_default import PersonExternalIdsInsertUpdateResponseDefault
+from .person_external_ids_list_response_default import PersonExternalIdsListResponseDefault
 from .person_external_ids_model import PersonExternalIdsModel
 from .person_external_ids_model_organization import PersonExternalIdsModelOrganization
-from .person_external_ids_model_organization_resource_type import (
-    PersonExternalIdsModelOrganizationResourceType,
-)
+from .person_external_ids_model_organization_resource_type import PersonExternalIdsModelOrganizationResourceType
 from .person_external_ids_model_person import PersonExternalIdsModelPerson
-from .person_external_ids_model_person_resource_type import (
-    PersonExternalIdsModelPersonResourceType,
-)
-from .person_external_ids_update_person_external_ids_put_body import (
-    PersonExternalIdsUpdatePersonExternalIdsPutBody,
-)
-from .person_external_ids_update_person_external_ids_response import (
-    PersonExternalIdsUpdatePersonExternalIdsResponse,
-)
-from .person_external_ids_update_response_default import (
-    PersonExternalIdsUpdateResponseDefault,
-)
-from .person_insert_person_post_body import PersonInsertPersonPostBody
-from .person_insert_person_post_body_additional_names_type_0 import (
-    PersonInsertPersonPostBodyAdditionalNamesType0,
-)
-from .person_insert_person_post_body_additional_names_type_0_additional_property import (
-    PersonInsertPersonPostBodyAdditionalNamesType0AdditionalProperty,
-)
-from .person_insert_person_post_body_gender import PersonInsertPersonPostBodyGender
-from .person_insert_person_post_body_person_additional_details import (
-    PersonInsertPersonPostBodyPersonAdditionalDetails,
-)
-from .person_insert_person_post_body_person_additional_details_dominant_foot import (
-    PersonInsertPersonPostBodyPersonAdditionalDetailsDominantFoot,
-)
-from .person_insert_person_post_body_person_additional_details_dominant_hand import (
-    PersonInsertPersonPostBodyPersonAdditionalDetailsDominantHand,
-)
-from .person_insert_person_post_body_person_historical_name import (
-    PersonInsertPersonPostBodyPersonHistoricalName,
-)
-from .person_insert_person_post_body_social_media import (
-    PersonInsertPersonPostBodySocialMedia,
-)
-from .person_insert_person_post_body_status import PersonInsertPersonPostBodyStatus
-from .person_insert_persons_response import PersonInsertPersonsResponse
+from .person_external_ids_model_person_resource_type import PersonExternalIdsModelPersonResourceType
+from .person_external_ids_post_body import PersonExternalIdsPostBody
+from .person_external_ids_put_body import PersonExternalIdsPutBody
+from .person_external_ids_response import PersonExternalIdsResponse
+from .person_external_ids_update_response_default import PersonExternalIdsUpdateResponseDefault
+from .person_historical_name import PersonHistoricalName
 from .person_insert_response_default import PersonInsertResponseDefault
-from .person_insert_update_person_post_body import PersonInsertUpdatePersonPostBody
-from .person_insert_update_person_post_body_additional_names_type_0 import (
-    PersonInsertUpdatePersonPostBodyAdditionalNamesType0,
-)
-from .person_insert_update_person_post_body_additional_names_type_0_additional_property import (
-    PersonInsertUpdatePersonPostBodyAdditionalNamesType0AdditionalProperty,
-)
-from .person_insert_update_person_post_body_gender import (
-    PersonInsertUpdatePersonPostBodyGender,
-)
-from .person_insert_update_person_post_body_person_additional_details import (
-    PersonInsertUpdatePersonPostBodyPersonAdditionalDetails,
-)
-from .person_insert_update_person_post_body_person_additional_details_dominant_foot import (
-    PersonInsertUpdatePersonPostBodyPersonAdditionalDetailsDominantFoot,
-)
-from .person_insert_update_person_post_body_person_additional_details_dominant_hand import (
-    PersonInsertUpdatePersonPostBodyPersonAdditionalDetailsDominantHand,
-)
-from .person_insert_update_person_post_body_person_historical_name import (
-    PersonInsertUpdatePersonPostBodyPersonHistoricalName,
-)
-from .person_insert_update_person_post_body_social_media import (
-    PersonInsertUpdatePersonPostBodySocialMedia,
-)
-from .person_insert_update_person_post_body_status import (
-    PersonInsertUpdatePersonPostBodyStatus,
-)
-from .person_insert_update_persons_response import PersonInsertUpdatePersonsResponse
 from .person_insert_update_response_default import PersonInsertUpdateResponseDefault
 from .person_list_gender import PersonListGender
-from .person_list_persons_response import PersonListPersonsResponse
 from .person_list_representing_country import PersonListRepresentingCountry
 from .person_list_response_default import PersonListResponseDefault
 from .person_list_status import PersonListStatus
-from .person_merge_merge_post_body import PersonMergeMergePostBody
 from .person_merge_response_default import PersonMergeResponseDefault
-from .person_merge_success_response import PersonMergeSuccessResponse
 from .person_model import PersonModel
 from .person_model_additional_names_type_0 import PersonModelAdditionalNamesType0
-from .person_model_additional_names_type_0_additional_property import (
-    PersonModelAdditionalNamesType0AdditionalProperty,
-)
+from .person_model_additional_names_type_0_additional_property import PersonModelAdditionalNamesType0AdditionalProperty
 from .person_model_gender import PersonModelGender
 from .person_model_organization import PersonModelOrganization
 from .person_model_organization_resource_type import PersonModelOrganizationResourceType
-from .person_model_person_additional_details import PersonModelPersonAdditionalDetails
-from .person_model_person_additional_details_dominant_foot import (
-    PersonModelPersonAdditionalDetailsDominantFoot,
-)
-from .person_model_person_additional_details_dominant_hand import (
-    PersonModelPersonAdditionalDetailsDominantHand,
-)
-from .person_model_person_historical_name import PersonModelPersonHistoricalName
-from .person_model_social_media import PersonModelSocialMedia
 from .person_model_status import PersonModelStatus
-from .person_swap_merge_post_body import PersonSwapMergePostBody
 from .person_swap_response_default import PersonSwapResponseDefault
-from .person_swap_success_response import PersonSwapSuccessResponse
-from .person_update_person_put_body import PersonUpdatePersonPutBody
-from .person_update_person_put_body_additional_names_type_0 import (
-    PersonUpdatePersonPutBodyAdditionalNamesType0,
-)
-from .person_update_person_put_body_additional_names_type_0_additional_property import (
-    PersonUpdatePersonPutBodyAdditionalNamesType0AdditionalProperty,
-)
-from .person_update_person_put_body_gender import PersonUpdatePersonPutBodyGender
-from .person_update_person_put_body_person_additional_details import (
-    PersonUpdatePersonPutBodyPersonAdditionalDetails,
-)
-from .person_update_person_put_body_person_additional_details_dominant_foot import (
-    PersonUpdatePersonPutBodyPersonAdditionalDetailsDominantFoot,
-)
-from .person_update_person_put_body_person_additional_details_dominant_hand import (
-    PersonUpdatePersonPutBodyPersonAdditionalDetailsDominantHand,
-)
-from .person_update_person_put_body_person_historical_name import (
-    PersonUpdatePersonPutBodyPersonHistoricalName,
-)
-from .person_update_person_put_body_social_media import (
-    PersonUpdatePersonPutBodySocialMedia,
-)
-from .person_update_person_put_body_status import PersonUpdatePersonPutBodyStatus
-from .person_update_persons_response import PersonUpdatePersonsResponse
 from .person_update_response_default import PersonUpdateResponseDefault
+from .persons_response import PersonsResponse
 from .pool_model import PoolModel
 from .pool_model_organization import PoolModelOrganization
 from .pool_model_organization_resource_type import PoolModelOrganizationResourceType
@@ -2805,30 +871,24 @@ from .pool_model_season import PoolModelSeason
 from .pool_model_season_resource_type import PoolModelSeasonResourceType
 from .pool_model_stage import PoolModelStage
 from .pool_model_stage_resource_type import PoolModelStageResourceType
+from .pool_post_body import PoolPostBody
+from .pool_put_body import PoolPutBody
 from .pss_list_age_group import PssListAgeGroup
 from .pss_list_fixture_type import PssListFixtureType
 from .pss_list_representation import PssListRepresentation
 from .pss_list_response_default import PssListResponseDefault
-from .pss_list_season_person_statistics_response import (
-    PssListSeasonPersonStatisticsResponse,
-)
 from .pss_list_season_type import PssListSeasonType
 from .pss_list_standard import PssListStandard
 from .psts_list_age_group import PstsListAgeGroup
 from .psts_list_fixture_type import PstsListFixtureType
 from .psts_list_representation import PstsListRepresentation
 from .psts_list_response_default import PstsListResponseDefault
-from .psts_list_season_person_total_statistics_response import (
-    PstsListSeasonPersonTotalStatisticsResponse,
-)
 from .psts_list_season_type import PstsListSeasonType
 from .psts_list_standard import PstsListStandard
 from .response_links import ResponseLinks
 from .response_meta_data import ResponseMetaData
 from .role_all_delete_response_default import RoleAllDeleteResponseDefault
-from .role_all_delete_roles_response import RoleAllDeleteRolesResponse
 from .role_delete_response_default import RoleDeleteResponseDefault
-from .role_delete_roles_response import RoleDeleteRolesResponse
 from .role_model import RoleModel
 from .role_model_entity import RoleModelEntity
 from .role_model_entity_group import RoleModelEntityGroup
@@ -2844,32 +904,25 @@ from .role_model_role_type_1 import RoleModelRoleType1
 from .role_model_season import RoleModelSeason
 from .role_model_season_resource_type import RoleModelSeasonResourceType
 from .role_model_status import RoleModelStatus
+from .role_post_body import RolePostBody
+from .role_post_body_role import RolePostBodyRole
+from .role_post_body_status import RolePostBodyStatus
+from .role_put_body import RolePutBody
+from .role_put_body_role import RolePutBodyRole
+from .role_put_body_status import RolePutBodyStatus
 from .roles_detail_response_default import RolesDetailResponseDefault
-from .roles_detail_roles_response import RolesDetailRolesResponse
 from .roles_insert_response_default import RolesInsertResponseDefault
-from .roles_insert_role_post_body import RolesInsertRolePostBody
-from .roles_insert_role_post_body_role import RolesInsertRolePostBodyRole
-from .roles_insert_role_post_body_status import RolesInsertRolePostBodyStatus
-from .roles_insert_roles_response import RolesInsertRolesResponse
 from .roles_list_by_fixture_response_default import RolesListByFixtureResponseDefault
 from .roles_list_by_fixture_role import RolesListByFixtureRole
-from .roles_list_by_fixture_roles_response import RolesListByFixtureRolesResponse
 from .roles_list_by_fixture_status import RolesListByFixtureStatus
 from .roles_list_fixtures_response_default import RolesListFixturesResponseDefault
 from .roles_list_fixtures_role import RolesListFixturesRole
-from .roles_list_fixtures_roles_response import RolesListFixturesRolesResponse
 from .roles_list_fixtures_status import RolesListFixturesStatus
-from .roles_list_non_fixtures_response_default import (
-    RolesListNonFixturesResponseDefault,
-)
+from .roles_list_non_fixtures_response_default import RolesListNonFixturesResponseDefault
 from .roles_list_non_fixtures_role import RolesListNonFixturesRole
-from .roles_list_non_fixtures_roles_response import RolesListNonFixturesRolesResponse
 from .roles_list_non_fixtures_status import RolesListNonFixturesStatus
+from .roles_response import RolesResponse
 from .roles_update_response_default import RolesUpdateResponseDefault
-from .roles_update_role_put_body import RolesUpdateRolePutBody
-from .roles_update_role_put_body_role import RolesUpdateRolePutBodyRole
-from .roles_update_role_put_body_status import RolesUpdateRolePutBodyStatus
-from .roles_update_roles_response import RolesUpdateRolesResponse
 from .round_model import RoundModel
 from .round_model_organization import RoundModelOrganization
 from .round_model_organization_resource_type import RoundModelOrganizationResourceType
@@ -2879,944 +932,328 @@ from .round_model_season import RoundModelSeason
 from .round_model_season_resource_type import RoundModelSeasonResourceType
 from .round_model_stage import RoundModelStage
 from .round_model_stage_resource_type import RoundModelStageResourceType
+from .round_post_body import RoundPostBody
+from .round_put_body import RoundPutBody
 from .season_delete_response_default import SeasonDeleteResponseDefault
-from .season_delete_seasons_response import SeasonDeleteSeasonsResponse
 from .season_detail_response_default import SeasonDetailResponseDefault
-from .season_detail_seasons_response import SeasonDetailSeasonsResponse
 from .season_entities_delete_response_default import SeasonEntitiesDeleteResponseDefault
-from .season_entities_delete_season_entities_response import (
-    SeasonEntitiesDeleteSeasonEntitiesResponse,
-)
 from .season_entities_detail_response_default import SeasonEntitiesDetailResponseDefault
-from .season_entities_detail_season_entities_response import (
-    SeasonEntitiesDetailSeasonEntitiesResponse,
-)
-from .season_entities_insert_update_response_default import (
-    SeasonEntitiesInsertUpdateResponseDefault,
-)
-from .season_entities_insert_update_season_entities_response import (
-    SeasonEntitiesInsertUpdateSeasonEntitiesResponse,
-)
+from .season_entities_insert_update_response_default import SeasonEntitiesInsertUpdateResponseDefault
 from .season_entities_insert_update_season_payload_response_default import (
     SeasonEntitiesInsertUpdateSeasonPayloadResponseDefault,
 )
-from .season_entities_insert_update_season_payload_season_entities_response import (
-    SeasonEntitiesInsertUpdateSeasonPayloadSeasonEntitiesResponse,
-)
-from .season_entities_insert_update_season_payload_season_teams_post_body import (
-    SeasonEntitiesInsertUpdateSeasonPayloadSeasonTeamsPostBody,
-)
-from .season_entities_insert_update_season_payload_season_teams_post_body_roster_status import (
-    SeasonEntitiesInsertUpdateSeasonPayloadSeasonTeamsPostBodyRosterStatus,
-)
-from .season_entities_insert_update_season_payload_season_teams_post_body_status import (
-    SeasonEntitiesInsertUpdateSeasonPayloadSeasonTeamsPostBodyStatus,
-)
-from .season_entities_insert_update_season_teams_post_body import (
-    SeasonEntitiesInsertUpdateSeasonTeamsPostBody,
-)
-from .season_entities_insert_update_season_teams_post_body_roster_status import (
-    SeasonEntitiesInsertUpdateSeasonTeamsPostBodyRosterStatus,
-)
-from .season_entities_insert_update_season_teams_post_body_status import (
-    SeasonEntitiesInsertUpdateSeasonTeamsPostBodyStatus,
-)
+from .season_entities_list_response import SeasonEntitiesListResponse
 from .season_entities_list_response_default import SeasonEntitiesListResponseDefault
-from .season_entities_list_season_entities_list_response import (
-    SeasonEntitiesListSeasonEntitiesListResponse,
-)
 from .season_entities_model import SeasonEntitiesModel
 from .season_entities_model_conference import SeasonEntitiesModelConference
-from .season_entities_model_conference_resource_type import (
-    SeasonEntitiesModelConferenceResourceType,
-)
+from .season_entities_model_conference_resource_type import SeasonEntitiesModelConferenceResourceType
 from .season_entities_model_division import SeasonEntitiesModelDivision
-from .season_entities_model_division_resource_type import (
-    SeasonEntitiesModelDivisionResourceType,
-)
+from .season_entities_model_division_resource_type import SeasonEntitiesModelDivisionResourceType
 from .season_entities_model_entity import SeasonEntitiesModelEntity
-from .season_entities_model_entity_resource_type import (
-    SeasonEntitiesModelEntityResourceType,
-)
+from .season_entities_model_entity_resource_type import SeasonEntitiesModelEntityResourceType
 from .season_entities_model_organization import SeasonEntitiesModelOrganization
-from .season_entities_model_organization_resource_type import (
-    SeasonEntitiesModelOrganizationResourceType,
-)
+from .season_entities_model_organization_resource_type import SeasonEntitiesModelOrganizationResourceType
 from .season_entities_model_roster_status import SeasonEntitiesModelRosterStatus
 from .season_entities_model_season import SeasonEntitiesModelSeason
-from .season_entities_model_season_resource_type import (
-    SeasonEntitiesModelSeasonResourceType,
-)
+from .season_entities_model_season_resource_type import SeasonEntitiesModelSeasonResourceType
 from .season_entities_model_status import SeasonEntitiesModelStatus
-from .season_entity_list_by_multiple_seasons_response_default import (
-    SeasonEntityListByMultipleSeasonsResponseDefault,
-)
-from .season_entity_list_by_multiple_seasons_season_entities_list_response import (
-    SeasonEntityListByMultipleSeasonsSeasonEntitiesListResponse,
-)
+from .season_entities_response import SeasonEntitiesResponse
+from .season_entity_base_statistics_response import SeasonEntityBaseStatisticsResponse
+from .season_entity_list_by_multiple_seasons_response_default import SeasonEntityListByMultipleSeasonsResponseDefault
 from .season_entity_list_response_default import SeasonEntityListResponseDefault
-from .season_entity_list_season_entities_list_response import (
-    SeasonEntityListSeasonEntitiesListResponse,
-)
+from .season_entity_placings_response import SeasonEntityPlacingsResponse
 from .season_entity_statistics_model import SeasonEntityStatisticsModel
-from .season_entity_statistics_model_competition import (
-    SeasonEntityStatisticsModelCompetition,
-)
-from .season_entity_statistics_model_competition_resource_type import (
-    SeasonEntityStatisticsModelCompetitionResourceType,
-)
+from .season_entity_statistics_model_competition import SeasonEntityStatisticsModelCompetition
+from .season_entity_statistics_model_competition_resource_type import SeasonEntityStatisticsModelCompetitionResourceType
 from .season_entity_statistics_model_entity import SeasonEntityStatisticsModelEntity
-from .season_entity_statistics_model_entity_resource_type import (
-    SeasonEntityStatisticsModelEntityResourceType,
-)
-from .season_entity_statistics_model_organization import (
-    SeasonEntityStatisticsModelOrganization,
-)
+from .season_entity_statistics_model_entity_resource_type import SeasonEntityStatisticsModelEntityResourceType
+from .season_entity_statistics_model_organization import SeasonEntityStatisticsModelOrganization
 from .season_entity_statistics_model_organization_resource_type import (
     SeasonEntityStatisticsModelOrganizationResourceType,
 )
-from .season_entity_statistics_model_period_id import (
-    SeasonEntityStatisticsModelPeriodId,
-)
+from .season_entity_statistics_model_period_id import SeasonEntityStatisticsModelPeriodId
 from .season_entity_statistics_model_season import SeasonEntityStatisticsModelSeason
-from .season_entity_statistics_model_season_resource_type import (
-    SeasonEntityStatisticsModelSeasonResourceType,
-)
-from .season_entity_statistics_model_statistics import (
-    SeasonEntityStatisticsModelStatistics,
-)
-from .season_external_ids_delete_response_default import (
-    SeasonExternalIdsDeleteResponseDefault,
-)
-from .season_external_ids_delete_season_external_ids_response import (
-    SeasonExternalIdsDeleteSeasonExternalIdsResponse,
-)
-from .season_external_ids_detail_response_default import (
-    SeasonExternalIdsDetailResponseDefault,
-)
-from .season_external_ids_detail_season_external_ids_response import (
-    SeasonExternalIdsDetailSeasonExternalIdsResponse,
-)
-from .season_external_ids_insert_response_default import (
-    SeasonExternalIdsInsertResponseDefault,
-)
-from .season_external_ids_insert_season_external_ids_post_body import (
-    SeasonExternalIdsInsertSeasonExternalIdsPostBody,
-)
-from .season_external_ids_insert_season_external_ids_response import (
-    SeasonExternalIdsInsertSeasonExternalIdsResponse,
-)
-from .season_external_ids_insert_update_response_default import (
-    SeasonExternalIdsInsertUpdateResponseDefault,
-)
-from .season_external_ids_insert_update_season_external_ids_post_body import (
-    SeasonExternalIdsInsertUpdateSeasonExternalIdsPostBody,
-)
-from .season_external_ids_insert_update_season_external_ids_response import (
-    SeasonExternalIdsInsertUpdateSeasonExternalIdsResponse,
-)
-from .season_external_ids_list_response_default import (
-    SeasonExternalIdsListResponseDefault,
-)
-from .season_external_ids_list_season_external_ids_response import (
-    SeasonExternalIdsListSeasonExternalIdsResponse,
-)
+from .season_entity_statistics_model_season_resource_type import SeasonEntityStatisticsModelSeasonResourceType
+from .season_entity_statistics_model_statistics import SeasonEntityStatisticsModelStatistics
+from .season_entity_statistics_response import SeasonEntityStatisticsResponse
+from .season_external_ids_delete_response_default import SeasonExternalIdsDeleteResponseDefault
+from .season_external_ids_detail_response_default import SeasonExternalIdsDetailResponseDefault
+from .season_external_ids_insert_response_default import SeasonExternalIdsInsertResponseDefault
+from .season_external_ids_insert_update_response_default import SeasonExternalIdsInsertUpdateResponseDefault
+from .season_external_ids_list_response_default import SeasonExternalIdsListResponseDefault
 from .season_external_ids_model import SeasonExternalIdsModel
 from .season_external_ids_model_organization import SeasonExternalIdsModelOrganization
-from .season_external_ids_model_organization_resource_type import (
-    SeasonExternalIdsModelOrganizationResourceType,
-)
+from .season_external_ids_model_organization_resource_type import SeasonExternalIdsModelOrganizationResourceType
 from .season_external_ids_model_season import SeasonExternalIdsModelSeason
-from .season_external_ids_model_season_resource_type import (
-    SeasonExternalIdsModelSeasonResourceType,
-)
-from .season_external_ids_update_response_default import (
-    SeasonExternalIdsUpdateResponseDefault,
-)
-from .season_external_ids_update_season_external_ids_put_body import (
-    SeasonExternalIdsUpdateSeasonExternalIdsPutBody,
-)
-from .season_external_ids_update_season_external_ids_response import (
-    SeasonExternalIdsUpdateSeasonExternalIdsResponse,
-)
-from .season_fixture_stages_pools_list_fixture_type import (
-    SeasonFixtureStagesPoolsListFixtureType,
-)
-from .season_fixture_stages_pools_list_response_default import (
-    SeasonFixtureStagesPoolsListResponseDefault,
-)
-from .season_fixture_stages_pools_list_season_fixture_stages_pools_list_response import (
-    SeasonFixtureStagesPoolsListSeasonFixtureStagesPoolsListResponse,
-)
+from .season_external_ids_model_season_resource_type import SeasonExternalIdsModelSeasonResourceType
+from .season_external_ids_post_body import SeasonExternalIdsPostBody
+from .season_external_ids_put_body import SeasonExternalIdsPutBody
+from .season_external_ids_response import SeasonExternalIdsResponse
+from .season_external_ids_update_response_default import SeasonExternalIdsUpdateResponseDefault
+from .season_fixture_stages_pools_list_fixture_type import SeasonFixtureStagesPoolsListFixtureType
+from .season_fixture_stages_pools_list_response import SeasonFixtureStagesPoolsListResponse
+from .season_fixture_stages_pools_list_response_default import SeasonFixtureStagesPoolsListResponseDefault
 from .season_fixture_stages_pools_model import SeasonFixtureStagesPoolsModel
-from .season_fixture_stages_pools_model_fixture_type import (
-    SeasonFixtureStagesPoolsModelFixtureType,
-)
-from .season_fixture_stages_pools_model_organization import (
-    SeasonFixtureStagesPoolsModelOrganization,
-)
+from .season_fixture_stages_pools_model_fixture_type import SeasonFixtureStagesPoolsModelFixtureType
+from .season_fixture_stages_pools_model_organization import SeasonFixtureStagesPoolsModelOrganization
 from .season_fixture_stages_pools_model_organization_resource_type import (
     SeasonFixtureStagesPoolsModelOrganizationResourceType,
 )
 from .season_fixture_stages_pools_model_pool import SeasonFixtureStagesPoolsModelPool
-from .season_fixture_stages_pools_model_pool_resource_type import (
-    SeasonFixtureStagesPoolsModelPoolResourceType,
-)
-from .season_fixture_stages_pools_model_season import (
-    SeasonFixtureStagesPoolsModelSeason,
-)
-from .season_fixture_stages_pools_model_season_resource_type import (
-    SeasonFixtureStagesPoolsModelSeasonResourceType,
-)
+from .season_fixture_stages_pools_model_pool_resource_type import SeasonFixtureStagesPoolsModelPoolResourceType
+from .season_fixture_stages_pools_model_season import SeasonFixtureStagesPoolsModelSeason
+from .season_fixture_stages_pools_model_season_resource_type import SeasonFixtureStagesPoolsModelSeasonResourceType
 from .season_fixture_stages_pools_model_stage import SeasonFixtureStagesPoolsModelStage
-from .season_fixture_stages_pools_model_stage_resource_type import (
-    SeasonFixtureStagesPoolsModelStageResourceType,
-)
+from .season_fixture_stages_pools_model_stage_resource_type import SeasonFixtureStagesPoolsModelStageResourceType
 from .season_insert_response_default import SeasonInsertResponseDefault
-from .season_insert_season_post_body import SeasonInsertSeasonPostBody
-from .season_insert_season_post_body_age_group import SeasonInsertSeasonPostBodyAgeGroup
-from .season_insert_season_post_body_discipline_type_1 import (
-    SeasonInsertSeasonPostBodyDisciplineType1,
-)
-from .season_insert_season_post_body_discipline_type_2_type_1 import (
-    SeasonInsertSeasonPostBodyDisciplineType2Type1,
-)
-from .season_insert_season_post_body_discipline_type_3_type_1 import (
-    SeasonInsertSeasonPostBodyDisciplineType3Type1,
-)
-from .season_insert_season_post_body_event_type import (
-    SeasonInsertSeasonPostBodyEventType,
-)
-from .season_insert_season_post_body_gender import SeasonInsertSeasonPostBodyGender
-from .season_insert_season_post_body_promotion_relegation_rules_type_0_item import (
-    SeasonInsertSeasonPostBodyPromotionRelegationRulesType0Item,
-)
-from .season_insert_season_post_body_promotion_relegation_rules_type_0_item_rule_type import (
-    SeasonInsertSeasonPostBodyPromotionRelegationRulesType0ItemRuleType,
-)
-from .season_insert_season_post_body_representation import (
-    SeasonInsertSeasonPostBodyRepresentation,
-)
-from .season_insert_season_post_body_season_configuration import (
-    SeasonInsertSeasonPostBodySeasonConfiguration,
-)
-from .season_insert_season_post_body_season_type import (
-    SeasonInsertSeasonPostBodySeasonType,
-)
-from .season_insert_season_post_body_seasonroster_configuration import (
-    SeasonInsertSeasonPostBodySEASONROSTERConfiguration,
-)
-from .season_insert_season_post_body_seasonroster_configuration_season_roster_status_allowed_item import (
-    SeasonInsertSeasonPostBodySEASONROSTERConfigurationSeasonRosterStatusAllowedItem,
-)
-from .season_insert_season_post_body_social_media import (
-    SeasonInsertSeasonPostBodySocialMedia,
-)
-from .season_insert_season_post_body_standard import SeasonInsertSeasonPostBodyStandard
-from .season_insert_season_post_body_status import SeasonInsertSeasonPostBodyStatus
-from .season_insert_season_post_body_video_production import (
-    SeasonInsertSeasonPostBodyVideoProduction,
-)
-from .season_insert_seasons_response import SeasonInsertSeasonsResponse
 from .season_leader_summary_model import SeasonLeaderSummaryModel
 from .season_list_age_group import SeasonListAgeGroup
 from .season_list_by_organization_age_group import SeasonListByOrganizationAgeGroup
 from .season_list_by_organization_discipline import SeasonListByOrganizationDiscipline
 from .season_list_by_organization_event_type import SeasonListByOrganizationEventType
 from .season_list_by_organization_gender import SeasonListByOrganizationGender
-from .season_list_by_organization_representation import (
-    SeasonListByOrganizationRepresentation,
-)
-from .season_list_by_organization_response_default import (
-    SeasonListByOrganizationResponseDefault,
-)
+from .season_list_by_organization_representation import SeasonListByOrganizationRepresentation
+from .season_list_by_organization_response_default import SeasonListByOrganizationResponseDefault
 from .season_list_by_organization_season_type import SeasonListByOrganizationSeasonType
-from .season_list_by_organization_seasons_response import (
-    SeasonListByOrganizationSeasonsResponse,
-)
 from .season_list_by_organization_standard import SeasonListByOrganizationStandard
 from .season_list_by_organization_status import SeasonListByOrganizationStatus
-from .season_list_by_organization_video_production import (
-    SeasonListByOrganizationVideoProduction,
-)
+from .season_list_by_organization_video_production import SeasonListByOrganizationVideoProduction
 from .season_list_discipline import SeasonListDiscipline
 from .season_list_event_type import SeasonListEventType
 from .season_list_gender import SeasonListGender
 from .season_list_representation import SeasonListRepresentation
 from .season_list_response_default import SeasonListResponseDefault
 from .season_list_season_type import SeasonListSeasonType
-from .season_list_seasons_response import SeasonListSeasonsResponse
 from .season_list_standard import SeasonListStandard
 from .season_list_status import SeasonListStatus
 from .season_list_video_production import SeasonListVideoProduction
-from .season_model import SeasonModel
-from .season_model_age_group import SeasonModelAgeGroup
-from .season_model_competition import SeasonModelCompetition
-from .season_model_competition_resource_type import SeasonModelCompetitionResourceType
-from .season_model_discipline_type_1 import SeasonModelDisciplineType1
-from .season_model_discipline_type_2_type_1 import SeasonModelDisciplineType2Type1
-from .season_model_discipline_type_3_type_1 import SeasonModelDisciplineType3Type1
-from .season_model_event_type import SeasonModelEventType
-from .season_model_fixture_profile import SeasonModelFixtureProfile
-from .season_model_fixture_profile_resource_type import (
-    SeasonModelFixtureProfileResourceType,
-)
-from .season_model_gender import SeasonModelGender
-from .season_model_leaders_criteria import SeasonModelLeadersCriteria
-from .season_model_leaders_criteria_resource_type import (
-    SeasonModelLeadersCriteriaResourceType,
-)
-from .season_model_organization import SeasonModelOrganization
-from .season_model_organization_resource_type import SeasonModelOrganizationResourceType
-from .season_model_promotion_relegation_rules_type_0_item import (
-    SeasonModelPromotionRelegationRulesType0Item,
-)
-from .season_model_promotion_relegation_rules_type_0_item_rule_type import (
-    SeasonModelPromotionRelegationRulesType0ItemRuleType,
-)
-from .season_model_representation import SeasonModelRepresentation
-from .season_model_season_configuration import SeasonModelSeasonConfiguration
-from .season_model_season_type import SeasonModelSeasonType
-from .season_model_seasonroster_configuration import (
-    SeasonModelSEASONROSTERConfiguration,
-)
-from .season_model_seasonroster_configuration_season_roster_status_allowed_item import (
-    SeasonModelSEASONROSTERConfigurationSeasonRosterStatusAllowedItem,
-)
-from .season_model_social_media import SeasonModelSocialMedia
-from .season_model_standard import SeasonModelStandard
-from .season_model_standing_configuration import SeasonModelStandingConfiguration
-from .season_model_standing_configuration_resource_type import (
-    SeasonModelStandingConfigurationResourceType,
-)
-from .season_model_status import SeasonModelStatus
-from .season_model_video_production import SeasonModelVideoProduction
-from .season_move_merge_post_body import SeasonMoveMergePostBody
 from .season_move_response_default import SeasonMoveResponseDefault
-from .season_move_success_response import SeasonMoveSuccessResponse
 from .season_person_base_statistics_model import SeasonPersonBaseStatisticsModel
-from .season_person_base_statistics_model_competitor_type import (
-    SeasonPersonBaseStatisticsModelCompetitorType,
-)
-from .season_person_base_statistics_model_entity import (
-    SeasonPersonBaseStatisticsModelEntity,
-)
-from .season_person_base_statistics_model_entity_resource_type import (
-    SeasonPersonBaseStatisticsModelEntityResourceType,
-)
-from .season_person_base_statistics_model_fixture_type import (
-    SeasonPersonBaseStatisticsModelFixtureType,
-)
-from .season_person_base_statistics_model_organization import (
-    SeasonPersonBaseStatisticsModelOrganization,
-)
+from .season_person_base_statistics_model_competitor_type import SeasonPersonBaseStatisticsModelCompetitorType
+from .season_person_base_statistics_model_entity import SeasonPersonBaseStatisticsModelEntity
+from .season_person_base_statistics_model_entity_resource_type import SeasonPersonBaseStatisticsModelEntityResourceType
+from .season_person_base_statistics_model_fixture_type import SeasonPersonBaseStatisticsModelFixtureType
+from .season_person_base_statistics_model_organization import SeasonPersonBaseStatisticsModelOrganization
 from .season_person_base_statistics_model_organization_resource_type import (
     SeasonPersonBaseStatisticsModelOrganizationResourceType,
 )
-from .season_person_base_statistics_model_person import (
-    SeasonPersonBaseStatisticsModelPerson,
-)
-from .season_person_base_statistics_model_person_resource_type import (
-    SeasonPersonBaseStatisticsModelPersonResourceType,
-)
-from .season_person_base_statistics_model_season import (
-    SeasonPersonBaseStatisticsModelSeason,
-)
-from .season_person_base_statistics_model_season_resource_type import (
-    SeasonPersonBaseStatisticsModelSeasonResourceType,
-)
-from .season_person_base_statistics_model_statistics import (
-    SeasonPersonBaseStatisticsModelStatistics,
-)
+from .season_person_base_statistics_model_person import SeasonPersonBaseStatisticsModelPerson
+from .season_person_base_statistics_model_person_resource_type import SeasonPersonBaseStatisticsModelPersonResourceType
+from .season_person_base_statistics_model_season import SeasonPersonBaseStatisticsModelSeason
+from .season_person_base_statistics_model_season_resource_type import SeasonPersonBaseStatisticsModelSeasonResourceType
+from .season_person_base_statistics_model_statistics import SeasonPersonBaseStatisticsModelStatistics
+from .season_person_base_statistics_post_body import SeasonPersonBaseStatisticsPostBody
+from .season_person_base_statistics_post_body_competitor_type import SeasonPersonBaseStatisticsPostBodyCompetitorType
+from .season_person_base_statistics_post_body_fixture_type import SeasonPersonBaseStatisticsPostBodyFixtureType
+from .season_person_base_statistics_post_body_statistics import SeasonPersonBaseStatisticsPostBodyStatistics
+from .season_person_base_statistics_response import SeasonPersonBaseStatisticsResponse
 from .season_person_list_response_default import SeasonPersonListResponseDefault
-from .season_person_list_season_persons_list_response import (
-    SeasonPersonListSeasonPersonsListResponse,
-)
+from .season_person_placings_response import SeasonPersonPlacingsResponse
 from .season_person_statistics_model import SeasonPersonStatisticsModel
-from .season_person_statistics_model_competition import (
-    SeasonPersonStatisticsModelCompetition,
-)
-from .season_person_statistics_model_competition_resource_type import (
-    SeasonPersonStatisticsModelCompetitionResourceType,
-)
+from .season_person_statistics_model_competition import SeasonPersonStatisticsModelCompetition
+from .season_person_statistics_model_competition_resource_type import SeasonPersonStatisticsModelCompetitionResourceType
 from .season_person_statistics_model_entity import SeasonPersonStatisticsModelEntity
-from .season_person_statistics_model_entity_resource_type import (
-    SeasonPersonStatisticsModelEntityResourceType,
-)
-from .season_person_statistics_model_organization import (
-    SeasonPersonStatisticsModelOrganization,
-)
+from .season_person_statistics_model_entity_resource_type import SeasonPersonStatisticsModelEntityResourceType
+from .season_person_statistics_model_organization import SeasonPersonStatisticsModelOrganization
 from .season_person_statistics_model_organization_resource_type import (
     SeasonPersonStatisticsModelOrganizationResourceType,
 )
 from .season_person_statistics_model_person import SeasonPersonStatisticsModelPerson
-from .season_person_statistics_model_person_resource_type import (
-    SeasonPersonStatisticsModelPersonResourceType,
-)
+from .season_person_statistics_model_person_resource_type import SeasonPersonStatisticsModelPersonResourceType
 from .season_person_statistics_model_season import SeasonPersonStatisticsModelSeason
-from .season_person_statistics_model_season_resource_type import (
-    SeasonPersonStatisticsModelSeasonResourceType,
-)
-from .season_person_statistics_model_statistics import (
-    SeasonPersonStatisticsModelStatistics,
-)
+from .season_person_statistics_model_season_resource_type import SeasonPersonStatisticsModelSeasonResourceType
+from .season_person_statistics_model_statistics import SeasonPersonStatisticsModelStatistics
+from .season_person_statistics_response import SeasonPersonStatisticsResponse
 from .season_person_total_statistics_model import SeasonPersonTotalStatisticsModel
-from .season_person_total_statistics_model_competition import (
-    SeasonPersonTotalStatisticsModelCompetition,
-)
+from .season_person_total_statistics_model_competition import SeasonPersonTotalStatisticsModelCompetition
 from .season_person_total_statistics_model_competition_resource_type import (
     SeasonPersonTotalStatisticsModelCompetitionResourceType,
 )
-from .season_person_total_statistics_model_organization import (
-    SeasonPersonTotalStatisticsModelOrganization,
-)
+from .season_person_total_statistics_model_organization import SeasonPersonTotalStatisticsModelOrganization
 from .season_person_total_statistics_model_organization_resource_type import (
     SeasonPersonTotalStatisticsModelOrganizationResourceType,
 )
-from .season_person_total_statistics_model_person import (
-    SeasonPersonTotalStatisticsModelPerson,
-)
+from .season_person_total_statistics_model_person import SeasonPersonTotalStatisticsModelPerson
 from .season_person_total_statistics_model_person_resource_type import (
     SeasonPersonTotalStatisticsModelPersonResourceType,
 )
-from .season_person_total_statistics_model_season import (
-    SeasonPersonTotalStatisticsModelSeason,
-)
+from .season_person_total_statistics_model_season import SeasonPersonTotalStatisticsModelSeason
 from .season_person_total_statistics_model_season_resource_type import (
     SeasonPersonTotalStatisticsModelSeasonResourceType,
 )
-from .season_person_total_statistics_model_statistics import (
-    SeasonPersonTotalStatisticsModelStatistics,
-)
+from .season_person_total_statistics_model_statistics import SeasonPersonTotalStatisticsModelStatistics
+from .season_person_total_statistics_response import SeasonPersonTotalStatisticsResponse
 from .season_persons_delete_response_default import SeasonPersonsDeleteResponseDefault
 from .season_persons_detail_response_default import SeasonPersonsDetailResponseDefault
-from .season_persons_insert_update_response_default import (
-    SeasonPersonsInsertUpdateResponseDefault,
-)
-from .season_persons_insert_update_season_persons_post_body import (
-    SeasonPersonsInsertUpdateSeasonPersonsPostBody,
-)
-from .season_persons_insert_update_season_persons_post_body_status import (
-    SeasonPersonsInsertUpdateSeasonPersonsPostBodyStatus,
-)
+from .season_persons_insert_update_response_default import SeasonPersonsInsertUpdateResponseDefault
+from .season_persons_list_response import SeasonPersonsListResponse
 from .season_persons_list_response_default import SeasonPersonsListResponseDefault
-from .season_persons_list_season_persons_list_response import (
-    SeasonPersonsListSeasonPersonsListResponse,
-)
 from .season_persons_model import SeasonPersonsModel
 from .season_persons_model_entity_group import SeasonPersonsModelEntityGroup
-from .season_persons_model_entity_group_resource_type import (
-    SeasonPersonsModelEntityGroupResourceType,
-)
+from .season_persons_model_entity_group_resource_type import SeasonPersonsModelEntityGroupResourceType
 from .season_persons_model_organization import SeasonPersonsModelOrganization
-from .season_persons_model_organization_resource_type import (
-    SeasonPersonsModelOrganizationResourceType,
-)
+from .season_persons_model_organization_resource_type import SeasonPersonsModelOrganizationResourceType
 from .season_persons_model_person import SeasonPersonsModelPerson
-from .season_persons_model_person_resource_type import (
-    SeasonPersonsModelPersonResourceType,
-)
+from .season_persons_model_person_resource_type import SeasonPersonsModelPersonResourceType
 from .season_persons_model_season import SeasonPersonsModelSeason
-from .season_persons_model_season_resource_type import (
-    SeasonPersonsModelSeasonResourceType,
-)
+from .season_persons_model_season_resource_type import SeasonPersonsModelSeasonResourceType
 from .season_persons_model_status import SeasonPersonsModelStatus
+from .season_persons_post_body import SeasonPersonsPostBody
+from .season_persons_post_body_status import SeasonPersonsPostBodyStatus
 from .season_pool_detail_response_default import SeasonPoolDetailResponseDefault
-from .season_pool_detail_season_pools_response import (
-    SeasonPoolDetailSeasonPoolsResponse,
-)
-from .season_pool_insert_pool_post_body import SeasonPoolInsertPoolPostBody
 from .season_pool_insert_response_default import SeasonPoolInsertResponseDefault
-from .season_pool_insert_season_pools_response import (
-    SeasonPoolInsertSeasonPoolsResponse,
-)
 from .season_pool_list_response_default import SeasonPoolListResponseDefault
-from .season_pool_list_season_pools_response import SeasonPoolListSeasonPoolsResponse
-from .season_pool_update_pool_put_body import SeasonPoolUpdatePoolPutBody
 from .season_pool_update_response_default import SeasonPoolUpdateResponseDefault
-from .season_pool_update_season_pools_response import (
-    SeasonPoolUpdateSeasonPoolsResponse,
-)
 from .season_pools_delete_response_default import SeasonPoolsDeleteResponseDefault
-from .season_pools_delete_season_pools_response import (
-    SeasonPoolsDeleteSeasonPoolsResponse,
-)
+from .season_pools_response import SeasonPoolsResponse
 from .season_roster_delete_response_default import SeasonRosterDeleteResponseDefault
-from .season_roster_delete_season_roster_response import (
-    SeasonRosterDeleteSeasonRosterResponse,
-)
 from .season_roster_detail_response_default import SeasonRosterDetailResponseDefault
-from .season_roster_detail_season_roster_response import (
-    SeasonRosterDetailSeasonRosterResponse,
-)
 from .season_roster_detail_status import SeasonRosterDetailStatus
-from .season_roster_insert_update_response_default import (
-    SeasonRosterInsertUpdateResponseDefault,
-)
-from .season_roster_insert_update_season_roster_post_body import (
-    SeasonRosterInsertUpdateSeasonRosterPostBody,
-)
-from .season_roster_insert_update_season_roster_post_body_position_type_1 import (
-    SeasonRosterInsertUpdateSeasonRosterPostBodyPositionType1,
-)
-from .season_roster_insert_update_season_roster_post_body_position_type_2_type_1 import (
-    SeasonRosterInsertUpdateSeasonRosterPostBodyPositionType2Type1,
-)
-from .season_roster_insert_update_season_roster_post_body_position_type_3_type_1 import (
-    SeasonRosterInsertUpdateSeasonRosterPostBodyPositionType3Type1,
-)
-from .season_roster_insert_update_season_roster_post_body_status import (
-    SeasonRosterInsertUpdateSeasonRosterPostBodyStatus,
-)
-from .season_roster_insert_update_season_roster_response import (
-    SeasonRosterInsertUpdateSeasonRosterResponse,
-)
-from .season_roster_list_by_entity_response_default import (
-    SeasonRosterListByEntityResponseDefault,
-)
-from .season_roster_list_by_entity_season_roster_response import (
-    SeasonRosterListByEntitySeasonRosterResponse,
-)
+from .season_roster_insert_update_response_default import SeasonRosterInsertUpdateResponseDefault
+from .season_roster_list_by_entity_response_default import SeasonRosterListByEntityResponseDefault
 from .season_roster_list_by_entity_status import SeasonRosterListByEntityStatus
 from .season_roster_list_response_default import SeasonRosterListResponseDefault
-from .season_roster_list_season_roster_response import (
-    SeasonRosterListSeasonRosterResponse,
-)
 from .season_roster_list_status import SeasonRosterListStatus
 from .season_roster_model import SeasonRosterModel
 from .season_roster_model_conference import SeasonRosterModelConference
-from .season_roster_model_conference_resource_type import (
-    SeasonRosterModelConferenceResourceType,
-)
+from .season_roster_model_conference_resource_type import SeasonRosterModelConferenceResourceType
 from .season_roster_model_division import SeasonRosterModelDivision
-from .season_roster_model_division_resource_type import (
-    SeasonRosterModelDivisionResourceType,
-)
+from .season_roster_model_division_resource_type import SeasonRosterModelDivisionResourceType
 from .season_roster_model_entity import SeasonRosterModelEntity
 from .season_roster_model_entity_group import SeasonRosterModelEntityGroup
-from .season_roster_model_entity_group_resource_type import (
-    SeasonRosterModelEntityGroupResourceType,
-)
-from .season_roster_model_entity_resource_type import (
-    SeasonRosterModelEntityResourceType,
-)
+from .season_roster_model_entity_group_resource_type import SeasonRosterModelEntityGroupResourceType
+from .season_roster_model_entity_resource_type import SeasonRosterModelEntityResourceType
 from .season_roster_model_organization import SeasonRosterModelOrganization
-from .season_roster_model_organization_resource_type import (
-    SeasonRosterModelOrganizationResourceType,
-)
+from .season_roster_model_organization_resource_type import SeasonRosterModelOrganizationResourceType
 from .season_roster_model_person import SeasonRosterModelPerson
-from .season_roster_model_person_resource_type import (
-    SeasonRosterModelPersonResourceType,
-)
+from .season_roster_model_person_resource_type import SeasonRosterModelPersonResourceType
 from .season_roster_model_position_type_1 import SeasonRosterModelPositionType1
-from .season_roster_model_position_type_2_type_1 import (
-    SeasonRosterModelPositionType2Type1,
-)
-from .season_roster_model_position_type_3_type_1 import (
-    SeasonRosterModelPositionType3Type1,
-)
+from .season_roster_model_position_type_2_type_1 import SeasonRosterModelPositionType2Type1
+from .season_roster_model_position_type_3_type_1 import SeasonRosterModelPositionType3Type1
 from .season_roster_model_season import SeasonRosterModelSeason
-from .season_roster_model_season_resource_type import (
-    SeasonRosterModelSeasonResourceType,
-)
+from .season_roster_model_season_resource_type import SeasonRosterModelSeasonResourceType
 from .season_roster_model_status import SeasonRosterModelStatus
+from .season_roster_post_body import SeasonRosterPostBody
+from .season_roster_post_body_position_type_1 import SeasonRosterPostBodyPositionType1
+from .season_roster_post_body_position_type_2_type_1 import SeasonRosterPostBodyPositionType2Type1
+from .season_roster_post_body_position_type_3_type_1 import SeasonRosterPostBodyPositionType3Type1
+from .season_roster_post_body_status import SeasonRosterPostBodyStatus
+from .season_roster_response import SeasonRosterResponse
 from .season_round_detail_response_default import SeasonRoundDetailResponseDefault
-from .season_round_detail_season_rounds_response import (
-    SeasonRoundDetailSeasonRoundsResponse,
-)
 from .season_round_insert_response_default import SeasonRoundInsertResponseDefault
-from .season_round_insert_round_post_body import SeasonRoundInsertRoundPostBody
-from .season_round_insert_season_rounds_response import (
-    SeasonRoundInsertSeasonRoundsResponse,
-)
-from .season_round_insert_update_response_default import (
-    SeasonRoundInsertUpdateResponseDefault,
-)
-from .season_round_insert_update_round_post_body import (
-    SeasonRoundInsertUpdateRoundPostBody,
-)
-from .season_round_insert_update_season_rounds_response import (
-    SeasonRoundInsertUpdateSeasonRoundsResponse,
-)
+from .season_round_insert_update_response_default import SeasonRoundInsertUpdateResponseDefault
 from .season_round_list_response_default import SeasonRoundListResponseDefault
-from .season_round_list_season_rounds_response import (
-    SeasonRoundListSeasonRoundsResponse,
-)
 from .season_round_update_response_default import SeasonRoundUpdateResponseDefault
-from .season_round_update_round_put_body import SeasonRoundUpdateRoundPutBody
-from .season_round_update_season_rounds_response import (
-    SeasonRoundUpdateSeasonRoundsResponse,
-)
 from .season_rounds_delete_response_default import SeasonRoundsDeleteResponseDefault
-from .season_rounds_delete_season_rounds_response import (
-    SeasonRoundsDeleteSeasonRoundsResponse,
-)
-from .season_series_calculate_response_default import (
-    SeasonSeriesCalculateResponseDefault,
-)
-from .season_series_calculate_success_response import (
-    SeasonSeriesCalculateSuccessResponse,
-)
+from .season_rounds_response import SeasonRoundsResponse
+from .season_series_calculate_response_default import SeasonSeriesCalculateResponseDefault
+from .season_series_competitor import SeasonSeriesCompetitor
+from .season_series_competitor_series_result import SeasonSeriesCompetitorSeriesResult
 from .season_series_delete_response_default import SeasonSeriesDeleteResponseDefault
-from .season_series_delete_season_series_response import (
-    SeasonSeriesDeleteSeasonSeriesResponse,
-)
 from .season_series_detail_response_default import SeasonSeriesDetailResponseDefault
-from .season_series_detail_season_series_response import (
-    SeasonSeriesDetailSeasonSeriesResponse,
-)
 from .season_series_insert_response_default import SeasonSeriesInsertResponseDefault
-from .season_series_insert_season_series_response import (
-    SeasonSeriesInsertSeasonSeriesResponse,
-)
-from .season_series_insert_series_post_body import SeasonSeriesInsertSeriesPostBody
-from .season_series_insert_series_post_body_season_series_competitor import (
-    SeasonSeriesInsertSeriesPostBodySeasonSeriesCompetitor,
-)
-from .season_series_insert_series_post_body_season_series_competitor_series_result import (
-    SeasonSeriesInsertSeriesPostBodySeasonSeriesCompetitorSeriesResult,
-)
-from .season_series_insert_series_post_body_series_type import (
-    SeasonSeriesInsertSeriesPostBodySeriesType,
-)
-from .season_series_insert_series_post_body_status import (
-    SeasonSeriesInsertSeriesPostBodyStatus,
-)
 from .season_series_list_response_default import SeasonSeriesListResponseDefault
-from .season_series_list_season_series_response import (
-    SeasonSeriesListSeasonSeriesResponse,
-)
 from .season_series_list_series_type import SeasonSeriesListSeriesType
+from .season_series_response import SeasonSeriesResponse
 from .season_series_update_response_default import SeasonSeriesUpdateResponseDefault
-from .season_series_update_season_series_response import (
-    SeasonSeriesUpdateSeasonSeriesResponse,
-)
-from .season_series_update_series_put_body import SeasonSeriesUpdateSeriesPutBody
-from .season_series_update_series_put_body_season_series_competitor import (
-    SeasonSeriesUpdateSeriesPutBodySeasonSeriesCompetitor,
-)
-from .season_series_update_series_put_body_season_series_competitor_series_result import (
-    SeasonSeriesUpdateSeriesPutBodySeasonSeriesCompetitorSeriesResult,
-)
-from .season_series_update_series_put_body_series_type import (
-    SeasonSeriesUpdateSeriesPutBodySeriesType,
-)
-from .season_series_update_series_put_body_status import (
-    SeasonSeriesUpdateSeriesPutBodyStatus,
-)
 from .season_stage_detail_response_default import SeasonStageDetailResponseDefault
-from .season_stage_detail_season_stages_response import (
-    SeasonStageDetailSeasonStagesResponse,
-)
 from .season_stage_insert_response_default import SeasonStageInsertResponseDefault
-from .season_stage_insert_season_stage_post_body import (
-    SeasonStageInsertSeasonStagePostBody,
-)
-from .season_stage_insert_season_stages_response import (
-    SeasonStageInsertSeasonStagesResponse,
-)
 from .season_stage_list_response_default import SeasonStageListResponseDefault
-from .season_stage_list_season_stages_response import (
-    SeasonStageListSeasonStagesResponse,
-)
 from .season_stage_model import SeasonStageModel
 from .season_stage_model_organization import SeasonStageModelOrganization
-from .season_stage_model_organization_resource_type import (
-    SeasonStageModelOrganizationResourceType,
-)
+from .season_stage_model_organization_resource_type import SeasonStageModelOrganizationResourceType
 from .season_stage_model_season import SeasonStageModelSeason
 from .season_stage_model_season_resource_type import SeasonStageModelSeasonResourceType
+from .season_stage_post_body import SeasonStagePostBody
+from .season_stage_put_body import SeasonStagePutBody
 from .season_stage_update_response_default import SeasonStageUpdateResponseDefault
-from .season_stage_update_season_stage_put_body import (
-    SeasonStageUpdateSeasonStagePutBody,
-)
-from .season_stage_update_season_stages_response import (
-    SeasonStageUpdateSeasonStagesResponse,
-)
 from .season_stages_delete_response_default import SeasonStagesDeleteResponseDefault
-from .season_stages_delete_season_stages_response import (
-    SeasonStagesDeleteSeasonStagesResponse,
-)
-from .season_standings_stages_pools_list_fixture_type import (
-    SeasonStandingsStagesPoolsListFixtureType,
-)
-from .season_standings_stages_pools_list_response_default import (
-    SeasonStandingsStagesPoolsListResponseDefault,
-)
-from .season_standings_stages_pools_list_season_standings_stages_pools_list_response import (
-    SeasonStandingsStagesPoolsListSeasonStandingsStagesPoolsListResponse,
-)
+from .season_stages_response import SeasonStagesResponse
+from .season_standings_stages_pools_list_fixture_type import SeasonStandingsStagesPoolsListFixtureType
+from .season_standings_stages_pools_list_response import SeasonStandingsStagesPoolsListResponse
+from .season_standings_stages_pools_list_response_default import SeasonStandingsStagesPoolsListResponseDefault
 from .season_standings_stages_pools_model import SeasonStandingsStagesPoolsModel
-from .season_standings_stages_pools_model_organization import (
-    SeasonStandingsStagesPoolsModelOrganization,
-)
+from .season_standings_stages_pools_model_organization import SeasonStandingsStagesPoolsModelOrganization
 from .season_standings_stages_pools_model_organization_resource_type import (
     SeasonStandingsStagesPoolsModelOrganizationResourceType,
 )
-from .season_standings_stages_pools_model_pool import (
-    SeasonStandingsStagesPoolsModelPool,
-)
-from .season_standings_stages_pools_model_pool_resource_type import (
-    SeasonStandingsStagesPoolsModelPoolResourceType,
-)
-from .season_standings_stages_pools_model_season import (
-    SeasonStandingsStagesPoolsModelSeason,
-)
-from .season_standings_stages_pools_model_season_resource_type import (
-    SeasonStandingsStagesPoolsModelSeasonResourceType,
-)
-from .season_standings_stages_pools_model_stage import (
-    SeasonStandingsStagesPoolsModelStage,
-)
-from .season_standings_stages_pools_model_stage_resource_type import (
-    SeasonStandingsStagesPoolsModelStageResourceType,
-)
+from .season_standings_stages_pools_model_pool import SeasonStandingsStagesPoolsModelPool
+from .season_standings_stages_pools_model_pool_resource_type import SeasonStandingsStagesPoolsModelPoolResourceType
+from .season_standings_stages_pools_model_season import SeasonStandingsStagesPoolsModelSeason
+from .season_standings_stages_pools_model_season_resource_type import SeasonStandingsStagesPoolsModelSeasonResourceType
+from .season_standings_stages_pools_model_stage import SeasonStandingsStagesPoolsModelStage
+from .season_standings_stages_pools_model_stage_resource_type import SeasonStandingsStagesPoolsModelStageResourceType
 from .season_team_base_statistics_model import SeasonTeamBaseStatisticsModel
-from .season_team_base_statistics_model_competitor_type import (
-    SeasonTeamBaseStatisticsModelCompetitorType,
-)
-from .season_team_base_statistics_model_entity import (
-    SeasonTeamBaseStatisticsModelEntity,
-)
-from .season_team_base_statistics_model_entity_resource_type import (
-    SeasonTeamBaseStatisticsModelEntityResourceType,
-)
-from .season_team_base_statistics_model_fixture_type import (
-    SeasonTeamBaseStatisticsModelFixtureType,
-)
-from .season_team_base_statistics_model_organization import (
-    SeasonTeamBaseStatisticsModelOrganization,
-)
+from .season_team_base_statistics_model_competitor_type import SeasonTeamBaseStatisticsModelCompetitorType
+from .season_team_base_statistics_model_entity import SeasonTeamBaseStatisticsModelEntity
+from .season_team_base_statistics_model_entity_resource_type import SeasonTeamBaseStatisticsModelEntityResourceType
+from .season_team_base_statistics_model_fixture_type import SeasonTeamBaseStatisticsModelFixtureType
+from .season_team_base_statistics_model_organization import SeasonTeamBaseStatisticsModelOrganization
 from .season_team_base_statistics_model_organization_resource_type import (
     SeasonTeamBaseStatisticsModelOrganizationResourceType,
 )
-from .season_team_base_statistics_model_season import (
-    SeasonTeamBaseStatisticsModelSeason,
-)
-from .season_team_base_statistics_model_season_resource_type import (
-    SeasonTeamBaseStatisticsModelSeasonResourceType,
-)
-from .season_team_base_statistics_model_statistics import (
-    SeasonTeamBaseStatisticsModelStatistics,
-)
+from .season_team_base_statistics_model_season import SeasonTeamBaseStatisticsModelSeason
+from .season_team_base_statistics_model_season_resource_type import SeasonTeamBaseStatisticsModelSeasonResourceType
+from .season_team_base_statistics_model_statistics import SeasonTeamBaseStatisticsModelStatistics
+from .season_team_base_statistics_post_body import SeasonTeamBaseStatisticsPostBody
+from .season_team_base_statistics_post_body_competitor_type import SeasonTeamBaseStatisticsPostBodyCompetitorType
+from .season_team_base_statistics_post_body_fixture_type import SeasonTeamBaseStatisticsPostBodyFixtureType
+from .season_team_base_statistics_post_body_statistics import SeasonTeamBaseStatisticsPostBodyStatistics
 from .season_teams_model import SeasonTeamsModel
 from .season_teams_model_conference import SeasonTeamsModelConference
-from .season_teams_model_conference_resource_type import (
-    SeasonTeamsModelConferenceResourceType,
-)
+from .season_teams_model_conference_resource_type import SeasonTeamsModelConferenceResourceType
 from .season_teams_model_division import SeasonTeamsModelDivision
-from .season_teams_model_division_resource_type import (
-    SeasonTeamsModelDivisionResourceType,
-)
+from .season_teams_model_division_resource_type import SeasonTeamsModelDivisionResourceType
 from .season_teams_model_entity import SeasonTeamsModelEntity
 from .season_teams_model_entity_resource_type import SeasonTeamsModelEntityResourceType
 from .season_teams_model_organization import SeasonTeamsModelOrganization
-from .season_teams_model_organization_resource_type import (
-    SeasonTeamsModelOrganizationResourceType,
-)
+from .season_teams_model_organization_resource_type import SeasonTeamsModelOrganizationResourceType
 from .season_teams_model_roster_status import SeasonTeamsModelRosterStatus
 from .season_teams_model_season import SeasonTeamsModelSeason
 from .season_teams_model_season_resource_type import SeasonTeamsModelSeasonResourceType
 from .season_teams_model_status import SeasonTeamsModelStatus
+from .season_teams_post_body import SeasonTeamsPostBody
+from .season_teams_post_body_roster_status import SeasonTeamsPostBodyRosterStatus
+from .season_teams_post_body_status import SeasonTeamsPostBodyStatus
 from .season_update_response_default import SeasonUpdateResponseDefault
-from .season_update_season_put_body import SeasonUpdateSeasonPutBody
-from .season_update_season_put_body_age_group import SeasonUpdateSeasonPutBodyAgeGroup
-from .season_update_season_put_body_discipline_type_1 import (
-    SeasonUpdateSeasonPutBodyDisciplineType1,
-)
-from .season_update_season_put_body_discipline_type_2_type_1 import (
-    SeasonUpdateSeasonPutBodyDisciplineType2Type1,
-)
-from .season_update_season_put_body_discipline_type_3_type_1 import (
-    SeasonUpdateSeasonPutBodyDisciplineType3Type1,
-)
-from .season_update_season_put_body_event_type import SeasonUpdateSeasonPutBodyEventType
-from .season_update_season_put_body_gender import SeasonUpdateSeasonPutBodyGender
-from .season_update_season_put_body_promotion_relegation_rules_type_0_item import (
-    SeasonUpdateSeasonPutBodyPromotionRelegationRulesType0Item,
-)
-from .season_update_season_put_body_promotion_relegation_rules_type_0_item_rule_type import (
-    SeasonUpdateSeasonPutBodyPromotionRelegationRulesType0ItemRuleType,
-)
-from .season_update_season_put_body_representation import (
-    SeasonUpdateSeasonPutBodyRepresentation,
-)
-from .season_update_season_put_body_season_configuration import (
-    SeasonUpdateSeasonPutBodySeasonConfiguration,
-)
-from .season_update_season_put_body_season_type import (
-    SeasonUpdateSeasonPutBodySeasonType,
-)
-from .season_update_season_put_body_seasonroster_configuration import (
-    SeasonUpdateSeasonPutBodySEASONROSTERConfiguration,
-)
-from .season_update_season_put_body_seasonroster_configuration_season_roster_status_allowed_item import (
-    SeasonUpdateSeasonPutBodySEASONROSTERConfigurationSeasonRosterStatusAllowedItem,
-)
-from .season_update_season_put_body_social_media import (
-    SeasonUpdateSeasonPutBodySocialMedia,
-)
-from .season_update_season_put_body_standard import SeasonUpdateSeasonPutBodyStandard
-from .season_update_season_put_body_status import SeasonUpdateSeasonPutBodyStatus
-from .season_update_season_put_body_video_production import (
-    SeasonUpdateSeasonPutBodyVideoProduction,
-)
-from .season_update_seasons_response import SeasonUpdateSeasonsResponse
-from .season_venue_videostream_disable_fixture_videosteam_post_body import (
-    SeasonVenueVideostreamDisableFixtureVideosteamPostBody,
-)
-from .season_venue_videostream_disable_fixture_videosteam_post_body_platform_provider import (
-    SeasonVenueVideostreamDisableFixtureVideosteamPostBodyPlatformProvider,
-)
-from .season_venue_videostream_disable_response_default import (
-    SeasonVenueVideostreamDisableResponseDefault,
-)
-from .season_venue_videostream_disable_success_response import (
-    SeasonVenueVideostreamDisableSuccessResponse,
-)
-from .season_venue_videostream_enable_fixture_videosteam_post_body import (
-    SeasonVenueVideostreamEnableFixtureVideosteamPostBody,
-)
-from .season_venue_videostream_enable_fixture_videosteam_post_body_platform_provider import (
-    SeasonVenueVideostreamEnableFixtureVideosteamPostBodyPlatformProvider,
-)
-from .season_venue_videostream_enable_response_default import (
-    SeasonVenueVideostreamEnableResponseDefault,
-)
-from .season_venue_videostream_enable_success_response import (
-    SeasonVenueVideostreamEnableSuccessResponse,
-)
+from .season_venue_videostream_disable_response_default import SeasonVenueVideostreamDisableResponseDefault
+from .season_venue_videostream_enable_response_default import SeasonVenueVideostreamEnableResponseDefault
 from .season_venues_list_response_default import SeasonVenuesListResponseDefault
-from .season_venues_list_season_venues_list_response import (
-    SeasonVenuesListSeasonVenuesListResponse,
-)
-from .season_venues_model import SeasonVenuesModel
-from .season_venues_model_organization import SeasonVenuesModelOrganization
-from .season_venues_model_organization_resource_type import (
-    SeasonVenuesModelOrganizationResourceType,
-)
-from .season_venues_model_season import SeasonVenuesModelSeason
-from .season_venues_model_season_resource_type import (
-    SeasonVenuesModelSeasonResourceType,
-)
-from .season_venues_model_season_venues_address import (
-    SeasonVenuesModelSeasonVenuesAddress,
-)
-from .season_venues_model_site import SeasonVenuesModelSite
-from .season_venues_model_site_resource_type import SeasonVenuesModelSiteResourceType
-from .season_venues_model_social_media import SeasonVenuesModelSocialMedia
-from .season_videostream_disable_fixture_videosteam_post_body import (
-    SeasonVideostreamDisableFixtureVideosteamPostBody,
-)
-from .season_videostream_disable_fixture_videosteam_post_body_platform_provider import (
-    SeasonVideostreamDisableFixtureVideosteamPostBodyPlatformProvider,
-)
-from .season_videostream_disable_response_default import (
-    SeasonVideostreamDisableResponseDefault,
-)
-from .season_videostream_disable_success_response import (
-    SeasonVideostreamDisableSuccessResponse,
-)
-from .season_videostream_enable_fixture_videosteam_post_body import (
-    SeasonVideostreamEnableFixtureVideosteamPostBody,
-)
-from .season_videostream_enable_fixture_videosteam_post_body_platform_provider import (
-    SeasonVideostreamEnableFixtureVideosteamPostBodyPlatformProvider,
-)
-from .season_videostream_enable_response_default import (
-    SeasonVideostreamEnableResponseDefault,
-)
-from .season_videostream_enable_success_response import (
-    SeasonVideostreamEnableSuccessResponse,
-)
+from .season_videostream_disable_response_default import SeasonVideostreamDisableResponseDefault
+from .season_videostream_enable_response_default import SeasonVideostreamEnableResponseDefault
 from .seasonperson_placings_model import SEASONPERSONPlacingsModel
-from .seasonperson_placings_model_organization import (
-    SEASONPERSONPlacingsModelOrganization,
-)
-from .seasonperson_placings_model_organization_resource_type import (
-    SEASONPERSONPlacingsModelOrganizationResourceType,
-)
+from .seasonperson_placings_model_organization import SEASONPERSONPlacingsModelOrganization
+from .seasonperson_placings_model_organization_resource_type import SEASONPERSONPlacingsModelOrganizationResourceType
 from .seasonperson_placings_model_person import SEASONPERSONPlacingsModelPerson
-from .seasonperson_placings_model_person_resource_type import (
-    SEASONPERSONPlacingsModelPersonResourceType,
-)
+from .seasonperson_placings_model_person_resource_type import SEASONPERSONPlacingsModelPersonResourceType
 from .seasonperson_placings_model_season import SEASONPERSONPlacingsModelSeason
-from .seasonperson_placings_model_season_resource_type import (
-    SEASONPERSONPlacingsModelSeasonResourceType,
-)
-from .seasons_roster_list_by_entity_response_default import (
-    SeasonsRosterListByEntityResponseDefault,
-)
-from .seasons_roster_list_by_entity_season_roster_response import (
-    SeasonsRosterListByEntitySeasonRosterResponse,
-)
+from .seasonperson_placings_model_season_resource_type import SEASONPERSONPlacingsModelSeasonResourceType
+from .seasonperson_placings_post_body import SEASONPERSONPlacingsPostBody
+from .seasonperson_placings_put_body import SEASONPERSONPlacingsPutBody
+from .seasons_roster_list_by_entity_response_default import SeasonsRosterListByEntityResponseDefault
 from .seasons_roster_list_by_entity_status import SeasonsRosterListByEntityStatus
 from .seasonteam_placings_model import SEASONTEAMPlacingsModel
 from .seasonteam_placings_model_entity import SEASONTEAMPlacingsModelEntity
-from .seasonteam_placings_model_entity_resource_type import (
-    SEASONTEAMPlacingsModelEntityResourceType,
-)
+from .seasonteam_placings_model_entity_resource_type import SEASONTEAMPlacingsModelEntityResourceType
 from .seasonteam_placings_model_organization import SEASONTEAMPlacingsModelOrganization
-from .seasonteam_placings_model_organization_resource_type import (
-    SEASONTEAMPlacingsModelOrganizationResourceType,
-)
+from .seasonteam_placings_model_organization_resource_type import SEASONTEAMPlacingsModelOrganizationResourceType
 from .seasonteam_placings_model_season import SEASONTEAMPlacingsModelSeason
-from .seasonteam_placings_model_season_resource_type import (
-    SEASONTEAMPlacingsModelSeasonResourceType,
-)
+from .seasonteam_placings_model_season_resource_type import SEASONTEAMPlacingsModelSeasonResourceType
+from .seasonteam_placings_post_body import SEASONTEAMPlacingsPostBody
+from .seasonteam_placings_put_body import SEASONTEAMPlacingsPutBody
 from .sebs_delete_all_competitor_type import SebsDeleteAllCompetitorType
 from .sebs_delete_all_fixture_type import SebsDeleteAllFixtureType
 from .sebs_delete_all_response_default import SebsDeleteAllResponseDefault
-from .sebs_delete_all_season_entity_base_statistics_response import (
-    SebsDeleteAllSeasonEntityBaseStatisticsResponse,
-)
 from .sebs_insert_update_response_default import SebsInsertUpdateResponseDefault
-from .sebs_insert_update_season_entity_base_statistics_response import (
-    SebsInsertUpdateSeasonEntityBaseStatisticsResponse,
-)
-from .sebs_insert_update_season_team_base_statistics_post_body import (
-    SebsInsertUpdateSeasonTeamBaseStatisticsPostBody,
-)
-from .sebs_insert_update_season_team_base_statistics_post_body_competitor_type import (
-    SebsInsertUpdateSeasonTeamBaseStatisticsPostBodyCompetitorType,
-)
-from .sebs_insert_update_season_team_base_statistics_post_body_fixture_type import (
-    SebsInsertUpdateSeasonTeamBaseStatisticsPostBodyFixtureType,
-)
-from .sebs_insert_update_season_team_base_statistics_post_body_statistics import (
-    SebsInsertUpdateSeasonTeamBaseStatisticsPostBodyStatistics,
-)
 from .sebs_list_competitor_type import SebsListCompetitorType
 from .sebs_list_fixture_type import SebsListFixtureType
 from .sebs_list_representing_country import SebsListRepresentingCountry
 from .sebs_list_response_default import SebsListResponseDefault
-from .sebs_list_season_entity_base_statistics_response import (
-    SebsListSeasonEntityBaseStatisticsResponse,
-)
 from .sep_delete_response_default import SepDeleteResponseDefault
-from .sep_delete_season_entity_placings_response import (
-    SepDeleteSeasonEntityPlacingsResponse,
-)
 from .sep_detail_response_default import SepDetailResponseDefault
-from .sep_detail_season_entity_placings_response import (
-    SepDetailSeasonEntityPlacingsResponse,
-)
 from .sep_insert_response_default import SepInsertResponseDefault
-from .sep_insert_season_entity_placings_response import (
-    SepInsertSeasonEntityPlacingsResponse,
-)
-from .sep_insert_seasonteam_placings_post_body import (
-    SepInsertSEASONTEAMPlacingsPostBody,
-)
 from .sep_list_response_default import SepListResponseDefault
-from .sep_list_season_entity_placings_response import (
-    SepListSeasonEntityPlacingsResponse,
-)
 from .sep_update_response_default import SepUpdateResponseDefault
-from .sep_update_season_entity_placings_response import (
-    SepUpdateSeasonEntityPlacingsResponse,
-)
-from .sep_update_seasonteam_placings_put_body import SepUpdateSEASONTEAMPlacingsPutBody
 from .series_model import SeriesModel
 from .series_model_conference import SeriesModelConference
 from .series_model_conference_resource_type import SeriesModelConferenceResourceType
@@ -3828,10 +1265,6 @@ from .series_model_pool import SeriesModelPool
 from .series_model_pool_resource_type import SeriesModelPoolResourceType
 from .series_model_season import SeriesModelSeason
 from .series_model_season_resource_type import SeriesModelSeasonResourceType
-from .series_model_season_series_competitor import SeriesModelSeasonSeriesCompetitor
-from .series_model_season_series_competitor_series_result import (
-    SeriesModelSeasonSeriesCompetitorSeriesResult,
-)
 from .series_model_series_type import SeriesModelSeriesType
 from .series_model_stage import SeriesModelStage
 from .series_model_stage_resource_type import SeriesModelStageResourceType
@@ -3839,164 +1272,58 @@ from .series_model_status import SeriesModelStatus
 from .ses_list_fixture_type import SesListFixtureType
 from .ses_list_home_away import SesListHomeAway
 from .ses_list_response_default import SesListResponseDefault
-from .ses_list_season_entity_statistics_response import (
-    SesListSeasonEntityStatisticsResponse,
-)
 from .ses_list_win_loss import SesListWinLoss
 from .ses_listperiods_fixture_type import SesListperiodsFixtureType
 from .ses_listperiods_home_away import SesListperiodsHomeAway
 from .ses_listperiods_period_id import SesListperiodsPeriodId
 from .ses_listperiods_response_default import SesListperiodsResponseDefault
-from .ses_listperiods_season_entity_statistics_response import (
-    SesListperiodsSeasonEntityStatisticsResponse,
-)
 from .ses_listperiods_win_loss import SesListperiodsWinLoss
 from .site_delete_response_default import SiteDeleteResponseDefault
-from .site_delete_sites_response import SiteDeleteSitesResponse
 from .site_detail_response_default import SiteDetailResponseDefault
-from .site_detail_sites_response import SiteDetailSitesResponse
-from .site_external_ids_delete_response_default import (
-    SiteExternalIdsDeleteResponseDefault,
-)
-from .site_external_ids_delete_site_external_ids_response import (
-    SiteExternalIdsDeleteSiteExternalIdsResponse,
-)
-from .site_external_ids_detail_response_default import (
-    SiteExternalIdsDetailResponseDefault,
-)
-from .site_external_ids_detail_site_external_ids_response import (
-    SiteExternalIdsDetailSiteExternalIdsResponse,
-)
-from .site_external_ids_insert_response_default import (
-    SiteExternalIdsInsertResponseDefault,
-)
-from .site_external_ids_insert_site_external_ids_post_body import (
-    SiteExternalIdsInsertSiteExternalIdsPostBody,
-)
-from .site_external_ids_insert_site_external_ids_response import (
-    SiteExternalIdsInsertSiteExternalIdsResponse,
-)
-from .site_external_ids_insert_update_response_default import (
-    SiteExternalIdsInsertUpdateResponseDefault,
-)
-from .site_external_ids_insert_update_site_external_ids_post_body import (
-    SiteExternalIdsInsertUpdateSiteExternalIdsPostBody,
-)
-from .site_external_ids_insert_update_site_external_ids_response import (
-    SiteExternalIdsInsertUpdateSiteExternalIdsResponse,
-)
+from .site_external_ids_delete_response_default import SiteExternalIdsDeleteResponseDefault
+from .site_external_ids_detail_response_default import SiteExternalIdsDetailResponseDefault
+from .site_external_ids_insert_response_default import SiteExternalIdsInsertResponseDefault
+from .site_external_ids_insert_update_response_default import SiteExternalIdsInsertUpdateResponseDefault
 from .site_external_ids_list_response_default import SiteExternalIdsListResponseDefault
-from .site_external_ids_list_site_external_ids_response import (
-    SiteExternalIdsListSiteExternalIdsResponse,
-)
 from .site_external_ids_model import SiteExternalIdsModel
 from .site_external_ids_model_organization import SiteExternalIdsModelOrganization
-from .site_external_ids_model_organization_resource_type import (
-    SiteExternalIdsModelOrganizationResourceType,
-)
+from .site_external_ids_model_organization_resource_type import SiteExternalIdsModelOrganizationResourceType
 from .site_external_ids_model_site import SiteExternalIdsModelSite
-from .site_external_ids_model_site_resource_type import (
-    SiteExternalIdsModelSiteResourceType,
-)
-from .site_external_ids_update_response_default import (
-    SiteExternalIdsUpdateResponseDefault,
-)
-from .site_external_ids_update_site_external_ids_put_body import (
-    SiteExternalIdsUpdateSiteExternalIdsPutBody,
-)
-from .site_external_ids_update_site_external_ids_response import (
-    SiteExternalIdsUpdateSiteExternalIdsResponse,
-)
+from .site_external_ids_model_site_resource_type import SiteExternalIdsModelSiteResourceType
+from .site_external_ids_post_body import SiteExternalIdsPostBody
+from .site_external_ids_put_body import SiteExternalIdsPutBody
+from .site_external_ids_response import SiteExternalIdsResponse
+from .site_external_ids_update_response_default import SiteExternalIdsUpdateResponseDefault
 from .site_insert_response_default import SiteInsertResponseDefault
-from .site_insert_site_post_body import SiteInsertSitePostBody
-from .site_insert_site_post_body_site_address import SiteInsertSitePostBodySiteAddress
-from .site_insert_site_post_body_social_media import SiteInsertSitePostBodySocialMedia
-from .site_insert_sites_response import SiteInsertSitesResponse
 from .site_list_response_default import SiteListResponseDefault
-from .site_list_sites_response import SiteListSitesResponse
-from .site_model import SiteModel
-from .site_model_organization import SiteModelOrganization
-from .site_model_organization_resource_type import SiteModelOrganizationResourceType
-from .site_model_site_address import SiteModelSiteAddress
-from .site_model_social_media import SiteModelSocialMedia
 from .site_update_response_default import SiteUpdateResponseDefault
-from .site_update_site_put_body import SiteUpdateSitePutBody
-from .site_update_site_put_body_site_address import SiteUpdateSitePutBodySiteAddress
-from .site_update_site_put_body_social_media import SiteUpdateSitePutBodySocialMedia
-from .site_update_sites_response import SiteUpdateSitesResponse
 from .sl_list_fixture_type import SlListFixtureType
 from .sl_list_home_away import SlListHomeAway
 from .sl_list_response_default import SlListResponseDefault
-from .sl_list_season_person_statistics_response import (
-    SlListSeasonPersonStatisticsResponse,
-)
 from .sl_list_summary_fixture_type import SlListSummaryFixtureType
 from .sl_list_summary_home_away import SlListSummaryHomeAway
-from .sl_list_summary_leader_summary_response import SlListSummaryLeaderSummaryResponse
 from .sl_list_summary_response_default import SlListSummaryResponseDefault
 from .sl_list_summary_win_loss import SlListSummaryWinLoss
 from .sl_list_win_loss import SlListWinLoss
+from .social_media import SocialMedia
+from .sorting import Sorting
+from .sorting_sort_direction import SortingSortDirection
 from .spbs_delete_all_competitor_type import SpbsDeleteAllCompetitorType
 from .spbs_delete_all_fixture_type import SpbsDeleteAllFixtureType
 from .spbs_delete_all_response_default import SpbsDeleteAllResponseDefault
-from .spbs_delete_all_season_person_base_statistics_response import (
-    SpbsDeleteAllSeasonPersonBaseStatisticsResponse,
-)
 from .spbs_insert_update_response_default import SpbsInsertUpdateResponseDefault
-from .spbs_insert_update_season_person_base_statistics_post_body import (
-    SpbsInsertUpdateSeasonPersonBaseStatisticsPostBody,
-)
-from .spbs_insert_update_season_person_base_statistics_post_body_competitor_type import (
-    SpbsInsertUpdateSeasonPersonBaseStatisticsPostBodyCompetitorType,
-)
-from .spbs_insert_update_season_person_base_statistics_post_body_fixture_type import (
-    SpbsInsertUpdateSeasonPersonBaseStatisticsPostBodyFixtureType,
-)
-from .spbs_insert_update_season_person_base_statistics_post_body_statistics import (
-    SpbsInsertUpdateSeasonPersonBaseStatisticsPostBodyStatistics,
-)
-from .spbs_insert_update_season_person_base_statistics_response import (
-    SpbsInsertUpdateSeasonPersonBaseStatisticsResponse,
-)
 from .spbs_list_competitor_type import SpbsListCompetitorType
 from .spbs_list_fixture_type import SpbsListFixtureType
 from .spbs_list_representing_country import SpbsListRepresentingCountry
 from .spbs_list_response_default import SpbsListResponseDefault
-from .spbs_list_season_person_base_statistics_response import (
-    SpbsListSeasonPersonBaseStatisticsResponse,
-)
 from .spp_delete_response_default import SppDeleteResponseDefault
-from .spp_delete_season_person_placings_response import (
-    SppDeleteSeasonPersonPlacingsResponse,
-)
 from .spp_detail_response_default import SppDetailResponseDefault
-from .spp_detail_season_person_placings_response import (
-    SppDetailSeasonPersonPlacingsResponse,
-)
 from .spp_insert_response_default import SppInsertResponseDefault
-from .spp_insert_season_person_placings_response import (
-    SppInsertSeasonPersonPlacingsResponse,
-)
-from .spp_insert_seasonperson_placings_post_body import (
-    SppInsertSEASONPERSONPlacingsPostBody,
-)
 from .spp_list_response_default import SppListResponseDefault
-from .spp_list_season_person_placings_response import (
-    SppListSeasonPersonPlacingsResponse,
-)
 from .spp_update_response_default import SppUpdateResponseDefault
-from .spp_update_season_person_placings_response import (
-    SppUpdateSeasonPersonPlacingsResponse,
-)
-from .spp_update_seasonperson_placings_put_body import (
-    SppUpdateSEASONPERSONPlacingsPutBody,
-)
 from .sps_list_fixture_type import SpsListFixtureType
 from .sps_list_home_away import SpsListHomeAway
 from .sps_list_response_default import SpsListResponseDefault
-from .sps_list_season_person_statistics_response import (
-    SpsListSeasonPersonStatisticsResponse,
-)
 from .sps_list_win_loss import SpsListWinLoss
 from .spsp_listperiods_fixture_type import SpspListperiodsFixtureType
 from .spsp_listperiods_home_away import SpspListperiodsHomeAway
@@ -4006,345 +1333,81 @@ from .spsp_listperiods_win_loss import SpspListperiodsWinLoss
 from .spts_list_fixture_type import SptsListFixtureType
 from .spts_list_home_away import SptsListHomeAway
 from .spts_list_response_default import SptsListResponseDefault
-from .spts_list_season_person_total_statistics_response import (
-    SptsListSeasonPersonTotalStatisticsResponse,
-)
 from .spts_list_win_loss import SptsListWinLoss
 from .standing_adjustment_model import StandingAdjustmentModel
-from .standing_adjustment_model_adjustment_field import (
-    StandingAdjustmentModelAdjustmentField,
-)
-from .standing_adjustment_model_adjustment_group import (
-    StandingAdjustmentModelAdjustmentGroup,
-)
-from .standing_adjustment_model_adjustment_type import (
-    StandingAdjustmentModelAdjustmentType,
-)
+from .standing_adjustment_model_adjustment_field import StandingAdjustmentModelAdjustmentField
+from .standing_adjustment_model_adjustment_group import StandingAdjustmentModelAdjustmentGroup
+from .standing_adjustment_model_adjustment_type import StandingAdjustmentModelAdjustmentType
 from .standing_adjustment_model_conference import StandingAdjustmentModelConference
-from .standing_adjustment_model_conference_resource_type import (
-    StandingAdjustmentModelConferenceResourceType,
-)
+from .standing_adjustment_model_conference_resource_type import StandingAdjustmentModelConferenceResourceType
 from .standing_adjustment_model_division import StandingAdjustmentModelDivision
-from .standing_adjustment_model_division_resource_type import (
-    StandingAdjustmentModelDivisionResourceType,
-)
+from .standing_adjustment_model_division_resource_type import StandingAdjustmentModelDivisionResourceType
 from .standing_adjustment_model_entity import StandingAdjustmentModelEntity
-from .standing_adjustment_model_entity_resource_type import (
-    StandingAdjustmentModelEntityResourceType,
-)
+from .standing_adjustment_model_entity_resource_type import StandingAdjustmentModelEntityResourceType
 from .standing_adjustment_model_organization import StandingAdjustmentModelOrganization
-from .standing_adjustment_model_organization_resource_type import (
-    StandingAdjustmentModelOrganizationResourceType,
-)
+from .standing_adjustment_model_organization_resource_type import StandingAdjustmentModelOrganizationResourceType
 from .standing_adjustment_model_pool import StandingAdjustmentModelPool
-from .standing_adjustment_model_pool_resource_type import (
-    StandingAdjustmentModelPoolResourceType,
-)
+from .standing_adjustment_model_pool_resource_type import StandingAdjustmentModelPoolResourceType
 from .standing_adjustment_model_round import StandingAdjustmentModelRound
-from .standing_adjustment_model_round_resource_type import (
-    StandingAdjustmentModelRoundResourceType,
-)
+from .standing_adjustment_model_round_resource_type import StandingAdjustmentModelRoundResourceType
 from .standing_adjustment_model_season import StandingAdjustmentModelSeason
-from .standing_adjustment_model_season_resource_type import (
-    StandingAdjustmentModelSeasonResourceType,
-)
+from .standing_adjustment_model_season_resource_type import StandingAdjustmentModelSeasonResourceType
 from .standing_adjustment_model_stage import StandingAdjustmentModelStage
-from .standing_adjustment_model_stage_resource_type import (
-    StandingAdjustmentModelStageResourceType,
-)
-from .standing_adjustments_delete_response_default import (
-    StandingAdjustmentsDeleteResponseDefault,
-)
-from .standing_adjustments_delete_standing_adjustments_response import (
-    StandingAdjustmentsDeleteStandingAdjustmentsResponse,
-)
-from .standing_adjustments_detail_response_default import (
-    StandingAdjustmentsDetailResponseDefault,
-)
-from .standing_adjustments_detail_standing_adjustments_response import (
-    StandingAdjustmentsDetailStandingAdjustmentsResponse,
-)
+from .standing_adjustment_model_stage_resource_type import StandingAdjustmentModelStageResourceType
+from .standing_adjustment_post_body import StandingAdjustmentPostBody
+from .standing_adjustment_post_body_adjustment_field import StandingAdjustmentPostBodyAdjustmentField
+from .standing_adjustment_post_body_adjustment_group import StandingAdjustmentPostBodyAdjustmentGroup
+from .standing_adjustment_post_body_adjustment_type import StandingAdjustmentPostBodyAdjustmentType
+from .standing_adjustment_put_body import StandingAdjustmentPutBody
+from .standing_adjustment_put_body_adjustment_field import StandingAdjustmentPutBodyAdjustmentField
+from .standing_adjustment_put_body_adjustment_group import StandingAdjustmentPutBodyAdjustmentGroup
+from .standing_adjustment_put_body_adjustment_type import StandingAdjustmentPutBodyAdjustmentType
+from .standing_adjustments_delete_response_default import StandingAdjustmentsDeleteResponseDefault
+from .standing_adjustments_detail_response_default import StandingAdjustmentsDetailResponseDefault
 from .standing_adjustments_groupingkey_delete_response_default import (
     StandingAdjustmentsGroupingkeyDeleteResponseDefault,
 )
-from .standing_adjustments_groupingkey_delete_standing_adjustments_response import (
-    StandingAdjustmentsGroupingkeyDeleteStandingAdjustmentsResponse,
-)
-from .standing_adjustments_insert_response_default import (
-    StandingAdjustmentsInsertResponseDefault,
-)
-from .standing_adjustments_insert_standing_adjustment_post_body import (
-    StandingAdjustmentsInsertStandingAdjustmentPostBody,
-)
-from .standing_adjustments_insert_standing_adjustment_post_body_adjustment_field import (
-    StandingAdjustmentsInsertStandingAdjustmentPostBodyAdjustmentField,
-)
-from .standing_adjustments_insert_standing_adjustment_post_body_adjustment_group import (
-    StandingAdjustmentsInsertStandingAdjustmentPostBodyAdjustmentGroup,
-)
-from .standing_adjustments_insert_standing_adjustment_post_body_adjustment_type import (
-    StandingAdjustmentsInsertStandingAdjustmentPostBodyAdjustmentType,
-)
-from .standing_adjustments_insert_standing_adjustments_response import (
-    StandingAdjustmentsInsertStandingAdjustmentsResponse,
-)
-from .standing_adjustments_list_response_default import (
-    StandingAdjustmentsListResponseDefault,
-)
-from .standing_adjustments_list_standing_adjustments_response import (
-    StandingAdjustmentsListStandingAdjustmentsResponse,
-)
-from .standing_adjustments_season_delete_response_default import (
-    StandingAdjustmentsSeasonDeleteResponseDefault,
-)
-from .standing_adjustments_season_delete_standing_adjustments_response import (
-    StandingAdjustmentsSeasonDeleteStandingAdjustmentsResponse,
-)
-from .standing_adjustments_update_response_default import (
-    StandingAdjustmentsUpdateResponseDefault,
-)
-from .standing_adjustments_update_standing_adjustment_put_body import (
-    StandingAdjustmentsUpdateStandingAdjustmentPutBody,
-)
-from .standing_adjustments_update_standing_adjustment_put_body_adjustment_field import (
-    StandingAdjustmentsUpdateStandingAdjustmentPutBodyAdjustmentField,
-)
-from .standing_adjustments_update_standing_adjustment_put_body_adjustment_group import (
-    StandingAdjustmentsUpdateStandingAdjustmentPutBodyAdjustmentGroup,
-)
-from .standing_adjustments_update_standing_adjustment_put_body_adjustment_type import (
-    StandingAdjustmentsUpdateStandingAdjustmentPutBodyAdjustmentType,
-)
-from .standing_adjustments_update_standing_adjustments_response import (
-    StandingAdjustmentsUpdateStandingAdjustmentsResponse,
-)
+from .standing_adjustments_insert_response_default import StandingAdjustmentsInsertResponseDefault
+from .standing_adjustments_list_response_default import StandingAdjustmentsListResponseDefault
+from .standing_adjustments_response import StandingAdjustmentsResponse
+from .standing_adjustments_season_delete_response_default import StandingAdjustmentsSeasonDeleteResponseDefault
+from .standing_adjustments_update_response_default import StandingAdjustmentsUpdateResponseDefault
 from .standing_all_delete_response_default import StandingAllDeleteResponseDefault
-from .standing_all_delete_success_response import StandingAllDeleteSuccessResponse
 from .standing_build_live_response_default import StandingBuildLiveResponseDefault
-from .standing_build_live_success_response import StandingBuildLiveSuccessResponse
 from .standing_build_response_default import StandingBuildResponseDefault
-from .standing_build_success_response import StandingBuildSuccessResponse
-from .standing_configurations_delete_response_default import (
-    StandingConfigurationsDeleteResponseDefault,
-)
-from .standing_configurations_delete_standing_configurations_response import (
-    StandingConfigurationsDeleteStandingConfigurationsResponse,
-)
-from .standing_configurations_detail_response_default import (
-    StandingConfigurationsDetailResponseDefault,
-)
-from .standing_configurations_detail_standing_configurations_response import (
-    StandingConfigurationsDetailStandingConfigurationsResponse,
-)
-from .standing_configurations_insert_response_default import (
-    StandingConfigurationsInsertResponseDefault,
-)
-from .standing_configurations_insert_standing_configurations_post_body import (
-    StandingConfigurationsInsertStandingConfigurationsPostBody,
-)
-from .standing_configurations_insert_standing_configurations_post_body_standing_building import (
-    StandingConfigurationsInsertStandingConfigurationsPostBodyStandingBuilding,
-)
-from .standing_configurations_insert_standing_configurations_post_body_standing_building_build_type import (
-    StandingConfigurationsInsertStandingConfigurationsPostBodyStandingBuildingBuildType,
-)
-from .standing_configurations_insert_standing_configurations_post_body_standing_building_fixture_types_item import (
-    StandingConfigurationsInsertStandingConfigurationsPostBodyStandingBuildingFixtureTypesItem,
-)
-from .standing_configurations_insert_standing_configurations_post_body_standing_building_grouping import (
-    StandingConfigurationsInsertStandingConfigurationsPostBodyStandingBuildingGrouping,
-)
-from .standing_configurations_insert_standing_configurations_post_body_standing_configuration import (
-    StandingConfigurationsInsertStandingConfigurationsPostBodyStandingConfiguration,
-)
-from .standing_configurations_insert_standing_configurations_post_body_standing_configuration_head_to_head_identification import (
-    StandingConfigurationsInsertStandingConfigurationsPostBodyStandingConfigurationHeadToHeadIdentification,
-)
-from .standing_configurations_insert_standing_configurations_post_body_standing_configuration_head_to_head_identification_for_subsequent_checks import (
-    StandingConfigurationsInsertStandingConfigurationsPostBodyStandingConfigurationHeadToHeadIdentificationForSubsequentChecks,
-)
-from .standing_configurations_insert_standing_configurations_post_body_standing_configuration_head_to_head_resolution import (
-    StandingConfigurationsInsertStandingConfigurationsPostBodyStandingConfigurationHeadToHeadResolution,
-)
-from .standing_configurations_insert_standing_configurations_post_body_standing_configuration_head_to_head_resolution_for_extra_depth_h2_hs import (
-    StandingConfigurationsInsertStandingConfigurationsPostBodyStandingConfigurationHeadToHeadResolutionForExtraDepthH2Hs,
-)
-from .standing_configurations_insert_standing_configurations_post_body_standing_configuration_head_to_head_resolution_for_extra_depth_h2_hs_sort_direction import (
-    StandingConfigurationsInsertStandingConfigurationsPostBodyStandingConfigurationHeadToHeadResolutionForExtraDepthH2HsSortDirection,
-)
-from .standing_configurations_insert_standing_configurations_post_body_standing_configuration_head_to_head_resolution_sort_direction import (
-    StandingConfigurationsInsertStandingConfigurationsPostBodyStandingConfigurationHeadToHeadResolutionSortDirection,
-)
-from .standing_configurations_insert_standing_configurations_post_body_standing_configuration_sorting import (
-    StandingConfigurationsInsertStandingConfigurationsPostBodyStandingConfigurationSorting,
-)
-from .standing_configurations_insert_standing_configurations_post_body_standing_configuration_sorting_sort_direction import (
-    StandingConfigurationsInsertStandingConfigurationsPostBodyStandingConfigurationSortingSortDirection,
-)
-from .standing_configurations_insert_standing_configurations_post_body_standing_configuration_streak import (
-    StandingConfigurationsInsertStandingConfigurationsPostBodyStandingConfigurationStreak,
-)
-from .standing_configurations_insert_standing_configurations_response import (
-    StandingConfigurationsInsertStandingConfigurationsResponse,
-)
-from .standing_configurations_list_response_default import (
-    StandingConfigurationsListResponseDefault,
-)
-from .standing_configurations_list_standing_configurations_response import (
-    StandingConfigurationsListStandingConfigurationsResponse,
-)
+from .standing_building import StandingBuilding
+from .standing_building_build_type import StandingBuildingBuildType
+from .standing_building_fixture_types_item import StandingBuildingFixtureTypesItem
+from .standing_building_grouping import StandingBuildingGrouping
+from .standing_configuration import StandingConfiguration
+from .standing_configuration_streak import StandingConfigurationStreak
+from .standing_configurations_delete_response_default import StandingConfigurationsDeleteResponseDefault
+from .standing_configurations_detail_response_default import StandingConfigurationsDetailResponseDefault
+from .standing_configurations_insert_response_default import StandingConfigurationsInsertResponseDefault
+from .standing_configurations_list_response_default import StandingConfigurationsListResponseDefault
 from .standing_configurations_model import StandingConfigurationsModel
-from .standing_configurations_model_organization import (
-    StandingConfigurationsModelOrganization,
-)
+from .standing_configurations_model_organization import StandingConfigurationsModelOrganization
 from .standing_configurations_model_organization_resource_type import (
     StandingConfigurationsModelOrganizationResourceType,
 )
-from .standing_configurations_model_standing_building import (
-    StandingConfigurationsModelStandingBuilding,
-)
-from .standing_configurations_model_standing_building_build_type import (
-    StandingConfigurationsModelStandingBuildingBuildType,
-)
-from .standing_configurations_model_standing_building_fixture_types_item import (
-    StandingConfigurationsModelStandingBuildingFixtureTypesItem,
-)
-from .standing_configurations_model_standing_building_grouping import (
-    StandingConfigurationsModelStandingBuildingGrouping,
-)
-from .standing_configurations_model_standing_configuration import (
-    StandingConfigurationsModelStandingConfiguration,
-)
-from .standing_configurations_model_standing_configuration_head_to_head_identification import (
-    StandingConfigurationsModelStandingConfigurationHeadToHeadIdentification,
-)
-from .standing_configurations_model_standing_configuration_head_to_head_identification_for_subsequent_checks import (
-    StandingConfigurationsModelStandingConfigurationHeadToHeadIdentificationForSubsequentChecks,
-)
-from .standing_configurations_model_standing_configuration_head_to_head_resolution import (
-    StandingConfigurationsModelStandingConfigurationHeadToHeadResolution,
-)
-from .standing_configurations_model_standing_configuration_head_to_head_resolution_for_extra_depth_h2_hs import (
-    StandingConfigurationsModelStandingConfigurationHeadToHeadResolutionForExtraDepthH2Hs,
-)
-from .standing_configurations_model_standing_configuration_head_to_head_resolution_for_extra_depth_h2_hs_sort_direction import (
-    StandingConfigurationsModelStandingConfigurationHeadToHeadResolutionForExtraDepthH2HsSortDirection,
-)
-from .standing_configurations_model_standing_configuration_head_to_head_resolution_sort_direction import (
-    StandingConfigurationsModelStandingConfigurationHeadToHeadResolutionSortDirection,
-)
-from .standing_configurations_model_standing_configuration_sorting import (
-    StandingConfigurationsModelStandingConfigurationSorting,
-)
-from .standing_configurations_model_standing_configuration_sorting_sort_direction import (
-    StandingConfigurationsModelStandingConfigurationSortingSortDirection,
-)
-from .standing_configurations_model_standing_configuration_streak import (
-    StandingConfigurationsModelStandingConfigurationStreak,
-)
-from .standing_configurations_update_response_default import (
-    StandingConfigurationsUpdateResponseDefault,
-)
-from .standing_configurations_update_standing_configurations_put_body import (
-    StandingConfigurationsUpdateStandingConfigurationsPutBody,
-)
-from .standing_configurations_update_standing_configurations_put_body_standing_building import (
-    StandingConfigurationsUpdateStandingConfigurationsPutBodyStandingBuilding,
-)
-from .standing_configurations_update_standing_configurations_put_body_standing_building_build_type import (
-    StandingConfigurationsUpdateStandingConfigurationsPutBodyStandingBuildingBuildType,
-)
-from .standing_configurations_update_standing_configurations_put_body_standing_building_fixture_types_item import (
-    StandingConfigurationsUpdateStandingConfigurationsPutBodyStandingBuildingFixtureTypesItem,
-)
-from .standing_configurations_update_standing_configurations_put_body_standing_building_grouping import (
-    StandingConfigurationsUpdateStandingConfigurationsPutBodyStandingBuildingGrouping,
-)
-from .standing_configurations_update_standing_configurations_put_body_standing_configuration import (
-    StandingConfigurationsUpdateStandingConfigurationsPutBodyStandingConfiguration,
-)
-from .standing_configurations_update_standing_configurations_put_body_standing_configuration_head_to_head_identification import (
-    StandingConfigurationsUpdateStandingConfigurationsPutBodyStandingConfigurationHeadToHeadIdentification,
-)
-from .standing_configurations_update_standing_configurations_put_body_standing_configuration_head_to_head_identification_for_subsequent_checks import (
-    StandingConfigurationsUpdateStandingConfigurationsPutBodyStandingConfigurationHeadToHeadIdentificationForSubsequentChecks,
-)
-from .standing_configurations_update_standing_configurations_put_body_standing_configuration_head_to_head_resolution import (
-    StandingConfigurationsUpdateStandingConfigurationsPutBodyStandingConfigurationHeadToHeadResolution,
-)
-from .standing_configurations_update_standing_configurations_put_body_standing_configuration_head_to_head_resolution_for_extra_depth_h2_hs import (
-    StandingConfigurationsUpdateStandingConfigurationsPutBodyStandingConfigurationHeadToHeadResolutionForExtraDepthH2Hs,
-)
-from .standing_configurations_update_standing_configurations_put_body_standing_configuration_head_to_head_resolution_for_extra_depth_h2_hs_sort_direction import (
-    StandingConfigurationsUpdateStandingConfigurationsPutBodyStandingConfigurationHeadToHeadResolutionForExtraDepthH2HsSortDirection,
-)
-from .standing_configurations_update_standing_configurations_put_body_standing_configuration_head_to_head_resolution_sort_direction import (
-    StandingConfigurationsUpdateStandingConfigurationsPutBodyStandingConfigurationHeadToHeadResolutionSortDirection,
-)
-from .standing_configurations_update_standing_configurations_put_body_standing_configuration_sorting import (
-    StandingConfigurationsUpdateStandingConfigurationsPutBodyStandingConfigurationSorting,
-)
-from .standing_configurations_update_standing_configurations_put_body_standing_configuration_sorting_sort_direction import (
-    StandingConfigurationsUpdateStandingConfigurationsPutBodyStandingConfigurationSortingSortDirection,
-)
-from .standing_configurations_update_standing_configurations_put_body_standing_configuration_streak import (
-    StandingConfigurationsUpdateStandingConfigurationsPutBodyStandingConfigurationStreak,
-)
-from .standing_configurations_update_standing_configurations_response import (
-    StandingConfigurationsUpdateStandingConfigurationsResponse,
-)
+from .standing_configurations_response import StandingConfigurationsResponse
+from .standing_configurations_update_response_default import StandingConfigurationsUpdateResponseDefault
 from .standing_delete_response_default import StandingDeleteResponseDefault
-from .standing_delete_standings_response import StandingDeleteStandingsResponse
 from .standing_detail_response_default import StandingDetailResponseDefault
-from .standing_detail_standings_response import StandingDetailStandingsResponse
 from .standing_insert_response_default import StandingInsertResponseDefault
-from .standing_insert_standing_post_body import StandingInsertStandingPostBody
-from .standing_insert_standing_post_body_calculated import (
-    StandingInsertStandingPostBodyCalculated,
-)
-from .standing_insert_standing_post_body_calculated_additional_property import (
-    StandingInsertStandingPostBodyCalculatedAdditionalProperty,
-)
-from .standing_insert_standing_post_body_fixture_type import (
-    StandingInsertStandingPostBodyFixtureType,
-)
-from .standing_insert_standing_post_body_grouping_base import (
-    StandingInsertStandingPostBodyGroupingBase,
-)
-from .standing_insert_standing_post_body_grouping_conference_division import (
-    StandingInsertStandingPostBodyGroupingConferenceDivision,
-)
-from .standing_insert_standing_post_body_grouping_stage_pool import (
-    StandingInsertStandingPostBodyGroupingStagePool,
-)
-from .standing_insert_standing_post_body_points import (
-    StandingInsertStandingPostBodyPoints,
-)
-from .standing_insert_standing_post_body_points_additional_property import (
-    StandingInsertStandingPostBodyPointsAdditionalProperty,
-)
-from .standing_insert_standings_response import StandingInsertStandingsResponse
 from .standing_list_fixture_type import StandingListFixtureType
 from .standing_list_grouping_base import StandingListGroupingBase
-from .standing_list_grouping_conference_division import (
-    StandingListGroupingConferenceDivision,
-)
+from .standing_list_grouping_conference_division import StandingListGroupingConferenceDivision
 from .standing_list_grouping_stage_pool import StandingListGroupingStagePool
 from .standing_list_response_default import StandingListResponseDefault
-from .standing_list_standings_response import StandingListStandingsResponse
 from .standing_live_list_fixture_type import StandingLiveListFixtureType
 from .standing_live_list_grouping_base import StandingLiveListGroupingBase
-from .standing_live_list_grouping_conference_division import (
-    StandingLiveListGroupingConferenceDivision,
-)
+from .standing_live_list_grouping_conference_division import StandingLiveListGroupingConferenceDivision
 from .standing_live_list_grouping_stage_pool import StandingLiveListGroupingStagePool
 from .standing_live_list_response_default import StandingLiveListResponseDefault
-from .standing_live_list_standings_response import StandingLiveListStandingsResponse
 from .standing_model import StandingModel
 from .standing_model_calculated import StandingModelCalculated
-from .standing_model_calculated_additional_property import (
-    StandingModelCalculatedAdditionalProperty,
-)
+from .standing_model_calculated_additional_property import StandingModelCalculatedAdditionalProperty
 from .standing_model_conference import StandingModelConference
 from .standing_model_conference_resource_type import StandingModelConferenceResourceType
 from .standing_model_division import StandingModelDivision
@@ -4353,18 +1416,12 @@ from .standing_model_entity import StandingModelEntity
 from .standing_model_entity_resource_type import StandingModelEntityResourceType
 from .standing_model_fixture_type import StandingModelFixtureType
 from .standing_model_grouping_base import StandingModelGroupingBase
-from .standing_model_grouping_conference_division import (
-    StandingModelGroupingConferenceDivision,
-)
+from .standing_model_grouping_conference_division import StandingModelGroupingConferenceDivision
 from .standing_model_grouping_stage_pool import StandingModelGroupingStagePool
 from .standing_model_organization import StandingModelOrganization
-from .standing_model_organization_resource_type import (
-    StandingModelOrganizationResourceType,
-)
+from .standing_model_organization_resource_type import StandingModelOrganizationResourceType
 from .standing_model_points import StandingModelPoints
-from .standing_model_points_additional_property import (
-    StandingModelPointsAdditionalProperty,
-)
+from .standing_model_points_additional_property import StandingModelPointsAdditionalProperty
 from .standing_model_pool import StandingModelPool
 from .standing_model_pool_resource_type import StandingModelPoolResourceType
 from .standing_model_round import StandingModelRound
@@ -4374,429 +1431,137 @@ from .standing_model_season_resource_type import StandingModelSeasonResourceType
 from .standing_model_stage import StandingModelStage
 from .standing_model_stage_resource_type import StandingModelStageResourceType
 from .standing_model_standing_configuration import StandingModelStandingConfiguration
-from .standing_model_standing_configuration_resource_type import (
-    StandingModelStandingConfigurationResourceType,
-)
-from .standing_progressions_delete_response_default import (
-    StandingProgressionsDeleteResponseDefault,
-)
-from .standing_progressions_delete_standing_progressions_response import (
-    StandingProgressionsDeleteStandingProgressionsResponse,
-)
-from .standing_progressions_detail_response_default import (
-    StandingProgressionsDetailResponseDefault,
-)
-from .standing_progressions_detail_standing_progressions_response import (
-    StandingProgressionsDetailStandingProgressionsResponse,
-)
-from .standing_progressions_insert_response_default import (
-    StandingProgressionsInsertResponseDefault,
-)
-from .standing_progressions_insert_standing_progressions_post_body import (
-    StandingProgressionsInsertStandingProgressionsPostBody,
-)
-from .standing_progressions_insert_standing_progressions_response import (
-    StandingProgressionsInsertStandingProgressionsResponse,
-)
-from .standing_progressions_list_response_default import (
-    StandingProgressionsListResponseDefault,
-)
-from .standing_progressions_list_standing_progressions_response import (
-    StandingProgressionsListStandingProgressionsResponse,
-)
+from .standing_model_standing_configuration_resource_type import StandingModelStandingConfigurationResourceType
+from .standing_post_body import StandingPostBody
+from .standing_post_body_calculated import StandingPostBodyCalculated
+from .standing_post_body_calculated_additional_property import StandingPostBodyCalculatedAdditionalProperty
+from .standing_post_body_fixture_type import StandingPostBodyFixtureType
+from .standing_post_body_grouping_base import StandingPostBodyGroupingBase
+from .standing_post_body_grouping_conference_division import StandingPostBodyGroupingConferenceDivision
+from .standing_post_body_grouping_stage_pool import StandingPostBodyGroupingStagePool
+from .standing_post_body_points import StandingPostBodyPoints
+from .standing_post_body_points_additional_property import StandingPostBodyPointsAdditionalProperty
+from .standing_progressions_delete_response_default import StandingProgressionsDeleteResponseDefault
+from .standing_progressions_detail_response_default import StandingProgressionsDetailResponseDefault
+from .standing_progressions_insert_response_default import StandingProgressionsInsertResponseDefault
+from .standing_progressions_list_response_default import StandingProgressionsListResponseDefault
 from .standing_progressions_model import StandingProgressionsModel
-from .standing_progressions_model_organization import (
-    StandingProgressionsModelOrganization,
-)
-from .standing_progressions_model_organization_resource_type import (
-    StandingProgressionsModelOrganizationResourceType,
-)
+from .standing_progressions_model_organization import StandingProgressionsModelOrganization
+from .standing_progressions_model_organization_resource_type import StandingProgressionsModelOrganizationResourceType
 from .standing_progressions_model_pool import StandingProgressionsModelPool
-from .standing_progressions_model_pool_resource_type import (
-    StandingProgressionsModelPoolResourceType,
-)
+from .standing_progressions_model_pool_resource_type import StandingProgressionsModelPoolResourceType
 from .standing_progressions_model_season import StandingProgressionsModelSeason
-from .standing_progressions_model_season_resource_type import (
-    StandingProgressionsModelSeasonResourceType,
-)
+from .standing_progressions_model_season_resource_type import StandingProgressionsModelSeasonResourceType
 from .standing_progressions_model_stage import StandingProgressionsModelStage
-from .standing_progressions_model_stage_resource_type import (
-    StandingProgressionsModelStageResourceType,
-)
-from .standing_progressions_update_response_default import (
-    StandingProgressionsUpdateResponseDefault,
-)
-from .standing_progressions_update_standing_progressions_put_body import (
-    StandingProgressionsUpdateStandingProgressionsPutBody,
-)
-from .standing_progressions_update_standing_progressions_response import (
-    StandingProgressionsUpdateStandingProgressionsResponse,
-)
+from .standing_progressions_model_stage_resource_type import StandingProgressionsModelStageResourceType
+from .standing_progressions_post_body import StandingProgressionsPostBody
+from .standing_progressions_put_body import StandingProgressionsPutBody
+from .standing_progressions_response import StandingProgressionsResponse
+from .standing_progressions_update_response_default import StandingProgressionsUpdateResponseDefault
+from .standing_put_body import StandingPutBody
+from .standing_put_body_calculated import StandingPutBodyCalculated
+from .standing_put_body_calculated_additional_property import StandingPutBodyCalculatedAdditionalProperty
+from .standing_put_body_fixture_type import StandingPutBodyFixtureType
+from .standing_put_body_grouping_base import StandingPutBodyGroupingBase
+from .standing_put_body_grouping_conference_division import StandingPutBodyGroupingConferenceDivision
+from .standing_put_body_grouping_stage_pool import StandingPutBodyGroupingStagePool
+from .standing_put_body_points import StandingPutBodyPoints
+from .standing_put_body_points_additional_property import StandingPutBodyPointsAdditionalProperty
 from .standing_update_response_default import StandingUpdateResponseDefault
-from .standing_update_standing_put_body import StandingUpdateStandingPutBody
-from .standing_update_standing_put_body_calculated import (
-    StandingUpdateStandingPutBodyCalculated,
-)
-from .standing_update_standing_put_body_calculated_additional_property import (
-    StandingUpdateStandingPutBodyCalculatedAdditionalProperty,
-)
-from .standing_update_standing_put_body_fixture_type import (
-    StandingUpdateStandingPutBodyFixtureType,
-)
-from .standing_update_standing_put_body_grouping_base import (
-    StandingUpdateStandingPutBodyGroupingBase,
-)
-from .standing_update_standing_put_body_grouping_conference_division import (
-    StandingUpdateStandingPutBodyGroupingConferenceDivision,
-)
-from .standing_update_standing_put_body_grouping_stage_pool import (
-    StandingUpdateStandingPutBodyGroupingStagePool,
-)
-from .standing_update_standing_put_body_points import (
-    StandingUpdateStandingPutBodyPoints,
-)
-from .standing_update_standing_put_body_points_additional_property import (
-    StandingUpdateStandingPutBodyPointsAdditionalProperty,
-)
-from .standing_update_standings_response import StandingUpdateStandingsResponse
+from .standings_response import StandingsResponse
+from .status_information import StatusInformation
+from .success_response import SuccessResponse
 from .team_external_ids_model import TeamExternalIdsModel
 from .team_external_ids_model_entity import TeamExternalIdsModelEntity
-from .team_external_ids_model_entity_resource_type import (
-    TeamExternalIdsModelEntityResourceType,
-)
+from .team_external_ids_model_entity_resource_type import TeamExternalIdsModelEntityResourceType
 from .team_external_ids_model_organization import TeamExternalIdsModelOrganization
-from .team_external_ids_model_organization_resource_type import (
-    TeamExternalIdsModelOrganizationResourceType,
-)
-from .team_model import TeamModel
-from .team_model_additional_names import TeamModelAdditionalNames
-from .team_model_age_group_type_1 import TeamModelAgeGroupType1
-from .team_model_age_group_type_2_type_1 import TeamModelAgeGroupType2Type1
-from .team_model_age_group_type_3_type_1 import TeamModelAgeGroupType3Type1
-from .team_model_colors import TeamModelColors
-from .team_model_contact_details import TeamModelContactDetails
-from .team_model_discipline_type_1 import TeamModelDisciplineType1
-from .team_model_discipline_type_2_type_1 import TeamModelDisciplineType2Type1
-from .team_model_discipline_type_3_type_1 import TeamModelDisciplineType3Type1
-from .team_model_entity_additional_details import TeamModelEntityAdditionalDetails
-from .team_model_entity_group import TeamModelEntityGroup
-from .team_model_entity_group_resource_type import TeamModelEntityGroupResourceType
-from .team_model_gender_type_1 import TeamModelGenderType1
-from .team_model_gender_type_2_type_1 import TeamModelGenderType2Type1
-from .team_model_gender_type_3_type_1 import TeamModelGenderType3Type1
-from .team_model_organization import TeamModelOrganization
-from .team_model_organization_resource_type import TeamModelOrganizationResourceType
-from .team_model_social_media import TeamModelSocialMedia
-from .team_model_standard_type_1 import TeamModelStandardType1
-from .team_model_standard_type_2_type_1 import TeamModelStandardType2Type1
-from .team_model_standard_type_3_type_1 import TeamModelStandardType3Type1
-from .team_model_status import TeamModelStatus
-from .team_model_team_address import TeamModelTeamAddress
-from .team_model_team_historical_name import TeamModelTeamHistoricalName
+from .team_external_ids_model_organization_resource_type import TeamExternalIdsModelOrganizationResourceType
+from .team_external_ids_post_body import TeamExternalIdsPostBody
+from .team_external_ids_put_body import TeamExternalIdsPutBody
+from .transfer_component import TransferComponent
 from .transfer_detail_response_default import TransferDetailResponseDefault
-from .transfer_detail_transfers_response import TransferDetailTransfersResponse
 from .transfer_model import TransferModel
 from .transfer_model_competition import TransferModelCompetition
-from .transfer_model_competition_resource_type import (
-    TransferModelCompetitionResourceType,
-)
+from .transfer_model_competition_resource_type import TransferModelCompetitionResourceType
 from .transfer_model_organization import TransferModelOrganization
-from .transfer_model_organization_resource_type import (
-    TransferModelOrganizationResourceType,
-)
+from .transfer_model_organization_resource_type import TransferModelOrganizationResourceType
 from .transfer_model_season import TransferModelSeason
 from .transfer_model_season_resource_type import TransferModelSeasonResourceType
 from .transfer_model_status_type_1 import TransferModelStatusType1
 from .transfer_model_status_type_2_type_1 import TransferModelStatusType2Type1
 from .transfer_model_status_type_3_type_1 import TransferModelStatusType3Type1
-from .transfer_model_transfer_component import TransferModelTransferComponent
 from .transfer_model_transfer_type import TransferModelTransferType
 from .transfers_delete_response_default import TransfersDeleteResponseDefault
-from .transfers_delete_transfers_response import TransfersDeleteTransfersResponse
 from .transfers_insert_response_default import TransfersInsertResponseDefault
-from .transfers_insert_transfer_post_body import TransfersInsertTransferPostBody
-from .transfers_insert_transfer_post_body_status_type_1 import (
-    TransfersInsertTransferPostBodyStatusType1,
-)
-from .transfers_insert_transfer_post_body_status_type_2_type_1 import (
-    TransfersInsertTransferPostBodyStatusType2Type1,
-)
-from .transfers_insert_transfer_post_body_status_type_3_type_1 import (
-    TransfersInsertTransferPostBodyStatusType3Type1,
-)
-from .transfers_insert_transfer_post_body_transfer_component import (
-    TransfersInsertTransferPostBodyTransferComponent,
-)
-from .transfers_insert_transfer_post_body_transfer_type import (
-    TransfersInsertTransferPostBodyTransferType,
-)
-from .transfers_insert_transfers_response import TransfersInsertTransfersResponse
 from .transfers_list_response_default import TransfersListResponseDefault
 from .transfers_list_transfer_type import TransfersListTransferType
-from .transfers_list_transfers_response import TransfersListTransfersResponse
+from .transfers_response import TransfersResponse
 from .transfers_update_response_default import TransfersUpdateResponseDefault
-from .transfers_update_transfer_put_body import TransfersUpdateTransferPutBody
-from .transfers_update_transfer_put_body_status_type_1 import (
-    TransfersUpdateTransferPutBodyStatusType1,
-)
-from .transfers_update_transfer_put_body_status_type_2_type_1 import (
-    TransfersUpdateTransferPutBodyStatusType2Type1,
-)
-from .transfers_update_transfer_put_body_status_type_3_type_1 import (
-    TransfersUpdateTransferPutBodyStatusType3Type1,
-)
-from .transfers_update_transfer_put_body_transfer_component import (
-    TransfersUpdateTransferPutBodyTransferComponent,
-)
-from .transfers_update_transfer_put_body_transfer_type import (
-    TransfersUpdateTransferPutBodyTransferType,
-)
-from .transfers_update_transfers_response import TransfersUpdateTransfersResponse
 from .uniform_items_by_season_list_item_type import UniformItemsBySeasonListItemType
-from .uniform_items_by_season_list_response_default import (
-    UniformItemsBySeasonListResponseDefault,
-)
-from .uniform_items_by_season_list_uniform_items_response import (
-    UniformItemsBySeasonListUniformItemsResponse,
-)
+from .uniform_items_by_season_list_response_default import UniformItemsBySeasonListResponseDefault
 from .uniform_items_delete_response_default import UniformItemsDeleteResponseDefault
-from .uniform_items_delete_uniform_items_response import (
-    UniformItemsDeleteUniformItemsResponse,
-)
 from .uniform_items_detail_response_default import UniformItemsDetailResponseDefault
-from .uniform_items_detail_uniform_items_response import (
-    UniformItemsDetailUniformItemsResponse,
-)
-from .uniform_items_insert_base_route_response_default import (
-    UniformItemsInsertBaseRouteResponseDefault,
-)
-from .uniform_items_insert_base_route_uniform_items_post_body import (
-    UniformItemsInsertBaseRouteUniformItemsPostBody,
-)
-from .uniform_items_insert_base_route_uniform_items_post_body_colors import (
-    UniformItemsInsertBaseRouteUniformItemsPostBodyColors,
-)
-from .uniform_items_insert_base_route_uniform_items_post_body_item_type import (
-    UniformItemsInsertBaseRouteUniformItemsPostBodyItemType,
-)
-from .uniform_items_insert_base_route_uniform_items_response import (
-    UniformItemsInsertBaseRouteUniformItemsResponse,
-)
+from .uniform_items_insert_base_route_response_default import UniformItemsInsertBaseRouteResponseDefault
 from .uniform_items_insert_response_default import UniformItemsInsertResponseDefault
-from .uniform_items_insert_uniform_items_post_body import (
-    UniformItemsInsertUniformItemsPostBody,
-)
-from .uniform_items_insert_uniform_items_post_body_colors import (
-    UniformItemsInsertUniformItemsPostBodyColors,
-)
-from .uniform_items_insert_uniform_items_post_body_item_type import (
-    UniformItemsInsertUniformItemsPostBodyItemType,
-)
-from .uniform_items_insert_uniform_items_response import (
-    UniformItemsInsertUniformItemsResponse,
-)
 from .uniform_items_list_item_type import UniformItemsListItemType
 from .uniform_items_list_response_default import UniformItemsListResponseDefault
-from .uniform_items_list_uniform_items_response import (
-    UniformItemsListUniformItemsResponse,
-)
 from .uniform_items_model import UniformItemsModel
 from .uniform_items_model_colors import UniformItemsModelColors
 from .uniform_items_model_item_type import UniformItemsModelItemType
 from .uniform_items_model_organization import UniformItemsModelOrganization
-from .uniform_items_model_organization_resource_type import (
-    UniformItemsModelOrganizationResourceType,
-)
+from .uniform_items_model_organization_resource_type import UniformItemsModelOrganizationResourceType
 from .uniform_items_model_uniform import UniformItemsModelUniform
-from .uniform_items_model_uniform_resource_type import (
-    UniformItemsModelUniformResourceType,
-)
+from .uniform_items_model_uniform_resource_type import UniformItemsModelUniformResourceType
+from .uniform_items_post_body import UniformItemsPostBody
+from .uniform_items_post_body_colors import UniformItemsPostBodyColors
+from .uniform_items_post_body_item_type import UniformItemsPostBodyItemType
+from .uniform_items_put_body import UniformItemsPutBody
+from .uniform_items_put_body_colors import UniformItemsPutBodyColors
+from .uniform_items_put_body_item_type import UniformItemsPutBodyItemType
+from .uniform_items_response import UniformItemsResponse
 from .uniform_items_update_response_default import UniformItemsUpdateResponseDefault
-from .uniform_items_update_uniform_items_put_body import (
-    UniformItemsUpdateUniformItemsPutBody,
-)
-from .uniform_items_update_uniform_items_put_body_colors import (
-    UniformItemsUpdateUniformItemsPutBodyColors,
-)
-from .uniform_items_update_uniform_items_put_body_item_type import (
-    UniformItemsUpdateUniformItemsPutBodyItemType,
-)
-from .uniform_items_update_uniform_items_response import (
-    UniformItemsUpdateUniformItemsResponse,
-)
 from .uniforms_by_season_list_base_type import UniformsBySeasonListBaseType
-from .uniforms_by_season_list_response_default import (
-    UniformsBySeasonListResponseDefault,
-)
-from .uniforms_by_season_list_uniforms_response import (
-    UniformsBySeasonListUniformsResponse,
-)
+from .uniforms_by_season_list_response_default import UniformsBySeasonListResponseDefault
 from .uniforms_delete_response_default import UniformsDeleteResponseDefault
-from .uniforms_delete_uniforms_response import UniformsDeleteUniformsResponse
 from .uniforms_detail_response_default import UniformsDetailResponseDefault
-from .uniforms_detail_uniforms_response import UniformsDetailUniformsResponse
 from .uniforms_insert_response_default import UniformsInsertResponseDefault
-from .uniforms_insert_uniforms_post_body import UniformsInsertUniformsPostBody
-from .uniforms_insert_uniforms_post_body_base_type import (
-    UniformsInsertUniformsPostBodyBaseType,
-)
-from .uniforms_insert_uniforms_response import UniformsInsertUniformsResponse
 from .uniforms_list_base_type import UniformsListBaseType
 from .uniforms_list_response_default import UniformsListResponseDefault
-from .uniforms_list_uniforms_response import UniformsListUniformsResponse
 from .uniforms_model import UniformsModel
 from .uniforms_model_base_type import UniformsModelBaseType
 from .uniforms_model_organization import UniformsModelOrganization
-from .uniforms_model_organization_resource_type import (
-    UniformsModelOrganizationResourceType,
-)
+from .uniforms_model_organization_resource_type import UniformsModelOrganizationResourceType
+from .uniforms_post_body import UniformsPostBody
+from .uniforms_post_body_base_type import UniformsPostBodyBaseType
+from .uniforms_put_body import UniformsPutBody
+from .uniforms_put_body_base_type import UniformsPutBodyBaseType
+from .uniforms_response import UniformsResponse
 from .uniforms_update_response_default import UniformsUpdateResponseDefault
-from .uniforms_update_uniforms_put_body import UniformsUpdateUniformsPutBody
-from .uniforms_update_uniforms_put_body_base_type import (
-    UniformsUpdateUniformsPutBodyBaseType,
-)
-from .uniforms_update_uniforms_response import UniformsUpdateUniformsResponse
 from .venue_delete_response_default import VenueDeleteResponseDefault
-from .venue_delete_venues_response import VenueDeleteVenuesResponse
 from .venue_detail_response_default import VenueDetailResponseDefault
-from .venue_detail_venues_response import VenueDetailVenuesResponse
-from .venue_external_ids_delete_response_default import (
-    VenueExternalIdsDeleteResponseDefault,
-)
-from .venue_external_ids_delete_venue_external_ids_response import (
-    VenueExternalIdsDeleteVenueExternalIdsResponse,
-)
-from .venue_external_ids_detail_response_default import (
-    VenueExternalIdsDetailResponseDefault,
-)
-from .venue_external_ids_detail_venue_external_ids_response import (
-    VenueExternalIdsDetailVenueExternalIdsResponse,
-)
-from .venue_external_ids_insert_response_default import (
-    VenueExternalIdsInsertResponseDefault,
-)
-from .venue_external_ids_insert_update_response_default import (
-    VenueExternalIdsInsertUpdateResponseDefault,
-)
-from .venue_external_ids_insert_update_venue_external_ids_post_body import (
-    VenueExternalIdsInsertUpdateVenueExternalIdsPostBody,
-)
-from .venue_external_ids_insert_update_venue_external_ids_response import (
-    VenueExternalIdsInsertUpdateVenueExternalIdsResponse,
-)
-from .venue_external_ids_insert_venue_external_ids_post_body import (
-    VenueExternalIdsInsertVenueExternalIdsPostBody,
-)
-from .venue_external_ids_insert_venue_external_ids_response import (
-    VenueExternalIdsInsertVenueExternalIdsResponse,
-)
-from .venue_external_ids_list_response_default import (
-    VenueExternalIdsListResponseDefault,
-)
-from .venue_external_ids_list_venue_external_ids_response import (
-    VenueExternalIdsListVenueExternalIdsResponse,
-)
+from .venue_external_ids_delete_response_default import VenueExternalIdsDeleteResponseDefault
+from .venue_external_ids_detail_response_default import VenueExternalIdsDetailResponseDefault
+from .venue_external_ids_insert_response_default import VenueExternalIdsInsertResponseDefault
+from .venue_external_ids_insert_update_response_default import VenueExternalIdsInsertUpdateResponseDefault
+from .venue_external_ids_list_response_default import VenueExternalIdsListResponseDefault
 from .venue_external_ids_model import VenueExternalIdsModel
 from .venue_external_ids_model_organization import VenueExternalIdsModelOrganization
-from .venue_external_ids_model_organization_resource_type import (
-    VenueExternalIdsModelOrganizationResourceType,
-)
+from .venue_external_ids_model_organization_resource_type import VenueExternalIdsModelOrganizationResourceType
 from .venue_external_ids_model_venue import VenueExternalIdsModelVenue
-from .venue_external_ids_model_venue_resource_type import (
-    VenueExternalIdsModelVenueResourceType,
-)
-from .venue_external_ids_update_response_default import (
-    VenueExternalIdsUpdateResponseDefault,
-)
-from .venue_external_ids_update_venue_external_ids_put_body import (
-    VenueExternalIdsUpdateVenueExternalIdsPutBody,
-)
-from .venue_external_ids_update_venue_external_ids_response import (
-    VenueExternalIdsUpdateVenueExternalIdsResponse,
-)
+from .venue_external_ids_model_venue_resource_type import VenueExternalIdsModelVenueResourceType
+from .venue_external_ids_post_body import VenueExternalIdsPostBody
+from .venue_external_ids_put_body import VenueExternalIdsPutBody
+from .venue_external_ids_response import VenueExternalIdsResponse
+from .venue_external_ids_update_response_default import VenueExternalIdsUpdateResponseDefault
 from .venue_insert_response_default import VenueInsertResponseDefault
-from .venue_insert_venue_post_body import VenueInsertVenuePostBody
-from .venue_insert_venue_post_body_social_media import (
-    VenueInsertVenuePostBodySocialMedia,
-)
-from .venue_insert_venue_post_body_status import VenueInsertVenuePostBodyStatus
-from .venue_insert_venue_post_body_venue_address import (
-    VenueInsertVenuePostBodyVenueAddress,
-)
-from .venue_insert_venue_post_body_venue_historical_name import (
-    VenueInsertVenuePostBodyVenueHistoricalName,
-)
-from .venue_insert_venues_response import VenueInsertVenuesResponse
 from .venue_list_by_site_id_response_default import VenueListBySiteIdResponseDefault
 from .venue_list_by_site_id_status import VenueListBySiteIdStatus
-from .venue_list_by_site_id_venues_response import VenueListBySiteIdVenuesResponse
 from .venue_list_response_default import VenueListResponseDefault
 from .venue_list_status import VenueListStatus
-from .venue_list_venues_response import VenueListVenuesResponse
-from .venue_model import VenueModel
-from .venue_model_organization import VenueModelOrganization
-from .venue_model_organization_resource_type import VenueModelOrganizationResourceType
-from .venue_model_site import VenueModelSite
-from .venue_model_site_resource_type import VenueModelSiteResourceType
-from .venue_model_social_media import VenueModelSocialMedia
-from .venue_model_status import VenueModelStatus
-from .venue_model_venue_address import VenueModelVenueAddress
-from .venue_model_venue_historical_name import VenueModelVenueHistoricalName
 from .venue_update_response_default import VenueUpdateResponseDefault
-from .venue_update_venue_put_body import VenueUpdateVenuePutBody
-from .venue_update_venue_put_body_social_media import VenueUpdateVenuePutBodySocialMedia
-from .venue_update_venue_put_body_status import VenueUpdateVenuePutBodyStatus
-from .venue_update_venue_put_body_venue_address import (
-    VenueUpdateVenuePutBodyVenueAddress,
-)
-from .venue_update_venue_put_body_venue_historical_name import (
-    VenueUpdateVenuePutBodyVenueHistoricalName,
-)
-from .venue_update_venues_response import VenueUpdateVenuesResponse
 from .video_file_delete_response_default import VideoFileDeleteResponseDefault
 from .video_file_detail_response_default import VideoFileDetailResponseDefault
 from .video_file_insert_response_default import VideoFileInsertResponseDefault
-from .video_file_insert_video_file_post_body import VideoFileInsertVideoFilePostBody
-from .video_file_insert_video_file_post_body_content import (
-    VideoFileInsertVideoFilePostBodyContent,
-)
-from .video_file_insert_video_file_post_body_feed_type import (
-    VideoFileInsertVideoFilePostBodyFeedType,
-)
-from .video_file_insert_video_file_post_body_format import (
-    VideoFileInsertVideoFilePostBodyFormat,
-)
-from .video_file_insert_video_file_post_body_origin_type_1 import (
-    VideoFileInsertVideoFilePostBodyOriginType1,
-)
-from .video_file_insert_video_file_post_body_origin_type_2_type_1 import (
-    VideoFileInsertVideoFilePostBodyOriginType2Type1,
-)
-from .video_file_insert_video_file_post_body_origin_type_3_type_1 import (
-    VideoFileInsertVideoFilePostBodyOriginType3Type1,
-)
-from .video_file_insert_video_file_post_body_resolution import (
-    VideoFileInsertVideoFilePostBodyResolution,
-)
-from .video_file_insert_video_file_post_body_status_type_1 import (
-    VideoFileInsertVideoFilePostBodyStatusType1,
-)
-from .video_file_insert_video_file_post_body_status_type_2_type_1 import (
-    VideoFileInsertVideoFilePostBodyStatusType2Type1,
-)
-from .video_file_insert_video_file_post_body_status_type_3_type_1 import (
-    VideoFileInsertVideoFilePostBodyStatusType3Type1,
-)
-from .video_file_insert_video_file_post_body_storage_provider_type_1 import (
-    VideoFileInsertVideoFilePostBodyStorageProviderType1,
-)
-from .video_file_insert_video_file_post_body_storage_provider_type_2_type_1 import (
-    VideoFileInsertVideoFilePostBodyStorageProviderType2Type1,
-)
-from .video_file_insert_video_file_post_body_storage_provider_type_3_type_1 import (
-    VideoFileInsertVideoFilePostBodyStorageProviderType3Type1,
-)
-from .video_file_insert_video_files_response import VideoFileInsertVideoFilesResponse
 from .video_file_list_content import VideoFileListContent
 from .video_file_list_feed_type import VideoFileListFeedType
 from .video_file_list_format import VideoFileListFormat
@@ -4804,7 +1569,6 @@ from .video_file_list_origin import VideoFileListOrigin
 from .video_file_list_response_default import VideoFileListResponseDefault
 from .video_file_list_status import VideoFileListStatus
 from .video_file_list_storage_provider import VideoFileListStorageProvider
-from .video_file_list_video_files_response import VideoFileListVideoFilesResponse
 from .video_file_model import VideoFileModel
 from .video_file_model_content import VideoFileModelContent
 from .video_file_model_feed_type import VideoFileModelFeedType
@@ -4812,9 +1576,7 @@ from .video_file_model_fixture import VideoFileModelFixture
 from .video_file_model_fixture_resource_type import VideoFileModelFixtureResourceType
 from .video_file_model_format import VideoFileModelFormat
 from .video_file_model_organization import VideoFileModelOrganization
-from .video_file_model_organization_resource_type import (
-    VideoFileModelOrganizationResourceType,
-)
+from .video_file_model_organization_resource_type import VideoFileModelOrganizationResourceType
 from .video_file_model_origin_type_1 import VideoFileModelOriginType1
 from .video_file_model_origin_type_2_type_1 import VideoFileModelOriginType2Type1
 from .video_file_model_origin_type_3_type_1 import VideoFileModelOriginType3Type1
@@ -4823,254 +1585,112 @@ from .video_file_model_status_type_1 import VideoFileModelStatusType1
 from .video_file_model_status_type_2_type_1 import VideoFileModelStatusType2Type1
 from .video_file_model_status_type_3_type_1 import VideoFileModelStatusType3Type1
 from .video_file_model_storage_provider_type_1 import VideoFileModelStorageProviderType1
-from .video_file_model_storage_provider_type_2_type_1 import (
-    VideoFileModelStorageProviderType2Type1,
-)
-from .video_file_model_storage_provider_type_3_type_1 import (
-    VideoFileModelStorageProviderType3Type1,
-)
-from .video_stream_inputs_fixture_list_feed_type import (
-    VideoStreamInputsFixtureListFeedType,
-)
-from .video_stream_inputs_fixture_list_response_default import (
-    VideoStreamInputsFixtureListResponseDefault,
-)
-from .video_stream_inputs_fixture_list_video_stream_inputs_response import (
-    VideoStreamInputsFixtureListVideoStreamInputsResponse,
-)
+from .video_file_model_storage_provider_type_2_type_1 import VideoFileModelStorageProviderType2Type1
+from .video_file_model_storage_provider_type_3_type_1 import VideoFileModelStorageProviderType3Type1
+from .video_file_post_body import VideoFilePostBody
+from .video_file_post_body_content import VideoFilePostBodyContent
+from .video_file_post_body_feed_type import VideoFilePostBodyFeedType
+from .video_file_post_body_format import VideoFilePostBodyFormat
+from .video_file_post_body_origin_type_1 import VideoFilePostBodyOriginType1
+from .video_file_post_body_origin_type_2_type_1 import VideoFilePostBodyOriginType2Type1
+from .video_file_post_body_origin_type_3_type_1 import VideoFilePostBodyOriginType3Type1
+from .video_file_post_body_resolution import VideoFilePostBodyResolution
+from .video_file_post_body_status_type_1 import VideoFilePostBodyStatusType1
+from .video_file_post_body_status_type_2_type_1 import VideoFilePostBodyStatusType2Type1
+from .video_file_post_body_status_type_3_type_1 import VideoFilePostBodyStatusType3Type1
+from .video_file_post_body_storage_provider_type_1 import VideoFilePostBodyStorageProviderType1
+from .video_file_post_body_storage_provider_type_2_type_1 import VideoFilePostBodyStorageProviderType2Type1
+from .video_file_post_body_storage_provider_type_3_type_1 import VideoFilePostBodyStorageProviderType3Type1
+from .video_files_response import VideoFilesResponse
+from .video_stream_inputs_fixture_list_feed_type import VideoStreamInputsFixtureListFeedType
+from .video_stream_inputs_fixture_list_response_default import VideoStreamInputsFixtureListResponseDefault
 from .video_stream_inputs_list_feed_type import VideoStreamInputsListFeedType
-from .video_stream_inputs_list_response_default import (
-    VideoStreamInputsListResponseDefault,
-)
-from .video_stream_inputs_list_video_stream_inputs_response import (
-    VideoStreamInputsListVideoStreamInputsResponse,
-)
+from .video_stream_inputs_list_response_default import VideoStreamInputsListResponseDefault
 from .video_stream_inputs_model import VideoStreamInputsModel
-from .video_stream_inputs_model_audio_ambience_channel import (
-    VideoStreamInputsModelAudioAmbienceChannel,
-)
-from .video_stream_inputs_model_audio_commentary_channel import (
-    VideoStreamInputsModelAudioCommentaryChannel,
-)
+from .video_stream_inputs_model_audio_ambience_channel import VideoStreamInputsModelAudioAmbienceChannel
+from .video_stream_inputs_model_audio_commentary_channel import VideoStreamInputsModelAudioCommentaryChannel
 from .video_stream_inputs_model_competition import VideoStreamInputsModelCompetition
-from .video_stream_inputs_model_competition_resource_type import (
-    VideoStreamInputsModelCompetitionResourceType,
-)
+from .video_stream_inputs_model_competition_resource_type import VideoStreamInputsModelCompetitionResourceType
 from .video_stream_inputs_model_feed_type import VideoStreamInputsModelFeedType
 from .video_stream_inputs_model_fixture import VideoStreamInputsModelFixture
-from .video_stream_inputs_model_fixture_resource_type import (
-    VideoStreamInputsModelFixtureResourceType,
-)
-from .video_stream_inputs_model_input_resolution import (
-    VideoStreamInputsModelInputResolution,
-)
+from .video_stream_inputs_model_fixture_resource_type import VideoStreamInputsModelFixtureResourceType
+from .video_stream_inputs_model_input_resolution import VideoStreamInputsModelInputResolution
 from .video_stream_inputs_model_organization import VideoStreamInputsModelOrganization
-from .video_stream_inputs_model_organization_resource_type import (
-    VideoStreamInputsModelOrganizationResourceType,
-)
+from .video_stream_inputs_model_organization_resource_type import VideoStreamInputsModelOrganizationResourceType
 from .video_stream_inputs_model_venue import VideoStreamInputsModelVenue
-from .video_stream_inputs_model_venue_resource_type import (
-    VideoStreamInputsModelVenueResourceType,
-)
+from .video_stream_inputs_model_venue_resource_type import VideoStreamInputsModelVenueResourceType
 from .video_stream_inputs_org_list_feed_type import VideoStreamInputsOrgListFeedType
-from .video_stream_inputs_org_list_response_default import (
-    VideoStreamInputsOrgListResponseDefault,
-)
-from .video_stream_inputs_org_list_video_stream_inputs_response import (
-    VideoStreamInputsOrgListVideoStreamInputsResponse,
-)
-from .video_stream_local_delete_response_default import (
-    VideoStreamLocalDeleteResponseDefault,
-)
-from .video_stream_local_delete_video_stream_local_response import (
-    VideoStreamLocalDeleteVideoStreamLocalResponse,
-)
-from .video_stream_local_detail_response_default import (
-    VideoStreamLocalDetailResponseDefault,
-)
-from .video_stream_local_detail_video_stream_local_response import (
-    VideoStreamLocalDetailVideoStreamLocalResponse,
-)
-from .video_stream_local_insert_response_default import (
-    VideoStreamLocalInsertResponseDefault,
-)
-from .video_stream_local_insert_video_stream_local_post_body import (
-    VideoStreamLocalInsertVideoStreamLocalPostBody,
-)
-from .video_stream_local_insert_video_stream_local_post_body_format import (
-    VideoStreamLocalInsertVideoStreamLocalPostBodyFormat,
-)
-from .video_stream_local_insert_video_stream_local_response import (
-    VideoStreamLocalInsertVideoStreamLocalResponse,
-)
+from .video_stream_inputs_org_list_response_default import VideoStreamInputsOrgListResponseDefault
+from .video_stream_inputs_response import VideoStreamInputsResponse
+from .video_stream_local_delete_response_default import VideoStreamLocalDeleteResponseDefault
+from .video_stream_local_detail_response_default import VideoStreamLocalDetailResponseDefault
+from .video_stream_local_insert_response_default import VideoStreamLocalInsertResponseDefault
 from .video_stream_local_list_format import VideoStreamLocalListFormat
-from .video_stream_local_list_response_default import (
-    VideoStreamLocalListResponseDefault,
-)
-from .video_stream_local_list_video_stream_local_response import (
-    VideoStreamLocalListVideoStreamLocalResponse,
-)
+from .video_stream_local_list_response_default import VideoStreamLocalListResponseDefault
 from .video_stream_local_model import VideoStreamLocalModel
 from .video_stream_local_model_fixture import VideoStreamLocalModelFixture
-from .video_stream_local_model_fixture_resource_type import (
-    VideoStreamLocalModelFixtureResourceType,
-)
+from .video_stream_local_model_fixture_resource_type import VideoStreamLocalModelFixtureResourceType
 from .video_stream_local_model_format import VideoStreamLocalModelFormat
 from .video_stream_local_model_organization import VideoStreamLocalModelOrganization
-from .video_stream_local_model_organization_resource_type import (
-    VideoStreamLocalModelOrganizationResourceType,
-)
-from .video_stream_local_update_response_default import (
-    VideoStreamLocalUpdateResponseDefault,
-)
-from .video_stream_local_update_video_stream_local_put_body import (
-    VideoStreamLocalUpdateVideoStreamLocalPutBody,
-)
-from .video_stream_local_update_video_stream_local_put_body_format import (
-    VideoStreamLocalUpdateVideoStreamLocalPutBodyFormat,
-)
-from .video_stream_local_update_video_stream_local_response import (
-    VideoStreamLocalUpdateVideoStreamLocalResponse,
-)
-from .video_stream_outputs_fixture_list_content import (
-    VideoStreamOutputsFixtureListContent,
-)
-from .video_stream_outputs_fixture_list_feed_type import (
-    VideoStreamOutputsFixtureListFeedType,
-)
-from .video_stream_outputs_fixture_list_response_default import (
-    VideoStreamOutputsFixtureListResponseDefault,
-)
-from .video_stream_outputs_fixture_list_video_stream_outputs_response import (
-    VideoStreamOutputsFixtureListVideoStreamOutputsResponse,
-)
+from .video_stream_local_model_organization_resource_type import VideoStreamLocalModelOrganizationResourceType
+from .video_stream_local_post_body import VideoStreamLocalPostBody
+from .video_stream_local_post_body_format import VideoStreamLocalPostBodyFormat
+from .video_stream_local_put_body import VideoStreamLocalPutBody
+from .video_stream_local_put_body_format import VideoStreamLocalPutBodyFormat
+from .video_stream_local_response import VideoStreamLocalResponse
+from .video_stream_local_update_response_default import VideoStreamLocalUpdateResponseDefault
+from .video_stream_outputs_fixture_list_content import VideoStreamOutputsFixtureListContent
+from .video_stream_outputs_fixture_list_feed_type import VideoStreamOutputsFixtureListFeedType
+from .video_stream_outputs_fixture_list_response_default import VideoStreamOutputsFixtureListResponseDefault
 from .video_stream_outputs_model import VideoStreamOutputsModel
 from .video_stream_outputs_model_competition import VideoStreamOutputsModelCompetition
-from .video_stream_outputs_model_competition_resource_type import (
-    VideoStreamOutputsModelCompetitionResourceType,
-)
+from .video_stream_outputs_model_competition_resource_type import VideoStreamOutputsModelCompetitionResourceType
 from .video_stream_outputs_model_content import VideoStreamOutputsModelContent
 from .video_stream_outputs_model_feed_type import VideoStreamOutputsModelFeedType
 from .video_stream_outputs_model_fixture import VideoStreamOutputsModelFixture
-from .video_stream_outputs_model_fixture_resource_type import (
-    VideoStreamOutputsModelFixtureResourceType,
-)
-from .video_stream_outputs_model_input_resolution import (
-    VideoStreamOutputsModelInputResolution,
-)
+from .video_stream_outputs_model_fixture_resource_type import VideoStreamOutputsModelFixtureResourceType
+from .video_stream_outputs_model_input_resolution import VideoStreamOutputsModelInputResolution
 from .video_stream_outputs_model_organization import VideoStreamOutputsModelOrganization
-from .video_stream_outputs_model_organization_resource_type import (
-    VideoStreamOutputsModelOrganizationResourceType,
-)
+from .video_stream_outputs_model_organization_resource_type import VideoStreamOutputsModelOrganizationResourceType
 from .video_stream_outputs_model_venue import VideoStreamOutputsModelVenue
-from .video_stream_outputs_model_venue_resource_type import (
-    VideoStreamOutputsModelVenueResourceType,
-)
+from .video_stream_outputs_model_venue_resource_type import VideoStreamOutputsModelVenueResourceType
 from .video_stream_outputs_org_list_content import VideoStreamOutputsOrgListContent
 from .video_stream_outputs_org_list_feed_type import VideoStreamOutputsOrgListFeedType
-from .video_stream_outputs_org_list_response_default import (
-    VideoStreamOutputsOrgListResponseDefault,
-)
-from .video_stream_outputs_org_list_video_stream_outputs_response import (
-    VideoStreamOutputsOrgListVideoStreamOutputsResponse,
-)
-from .video_stream_outputs_orggroup_list_content import (
-    VideoStreamOutputsOrggroupListContent,
-)
-from .video_stream_outputs_orggroup_list_feed_type import (
-    VideoStreamOutputsOrggroupListFeedType,
-)
-from .video_stream_outputs_orggroup_list_response_default import (
-    VideoStreamOutputsOrggroupListResponseDefault,
-)
-from .video_stream_outputs_orggroup_list_video_stream_outputs_response import (
-    VideoStreamOutputsOrggroupListVideoStreamOutputsResponse,
-)
-from .video_subscription_delete_response_default import (
-    VideoSubscriptionDeleteResponseDefault,
-)
-from .video_subscription_delete_video_subscriptions_response import (
-    VideoSubscriptionDeleteVideoSubscriptionsResponse,
-)
-from .video_subscription_detail_response_default import (
-    VideoSubscriptionDetailResponseDefault,
-)
-from .video_subscription_detail_video_subscriptions_response import (
-    VideoSubscriptionDetailVideoSubscriptionsResponse,
-)
-from .video_subscription_insert_response_default import (
-    VideoSubscriptionInsertResponseDefault,
-)
-from .video_subscription_insert_video_subscription_post_body import (
-    VideoSubscriptionInsertVideoSubscriptionPostBody,
-)
-from .video_subscription_insert_video_subscription_post_body_audio import (
-    VideoSubscriptionInsertVideoSubscriptionPostBodyAudio,
-)
-from .video_subscription_insert_video_subscription_post_body_content import (
-    VideoSubscriptionInsertVideoSubscriptionPostBodyContent,
-)
-from .video_subscription_insert_video_subscription_post_body_feed_type import (
-    VideoSubscriptionInsertVideoSubscriptionPostBodyFeedType,
-)
-from .video_subscription_insert_video_subscription_post_body_output_format import (
-    VideoSubscriptionInsertVideoSubscriptionPostBodyOutputFormat,
-)
-from .video_subscription_insert_video_subscription_post_body_output_resolution import (
-    VideoSubscriptionInsertVideoSubscriptionPostBodyOutputResolution,
-)
-from .video_subscription_insert_video_subscriptions_response import (
-    VideoSubscriptionInsertVideoSubscriptionsResponse,
-)
-from .video_subscription_list_response_default import (
-    VideoSubscriptionListResponseDefault,
-)
-from .video_subscription_list_video_subscriptions_response import (
-    VideoSubscriptionListVideoSubscriptionsResponse,
-)
+from .video_stream_outputs_org_list_response_default import VideoStreamOutputsOrgListResponseDefault
+from .video_stream_outputs_orggroup_list_content import VideoStreamOutputsOrggroupListContent
+from .video_stream_outputs_orggroup_list_feed_type import VideoStreamOutputsOrggroupListFeedType
+from .video_stream_outputs_orggroup_list_response_default import VideoStreamOutputsOrggroupListResponseDefault
+from .video_stream_outputs_response import VideoStreamOutputsResponse
+from .video_subscription_delete_response_default import VideoSubscriptionDeleteResponseDefault
+from .video_subscription_detail_response_default import VideoSubscriptionDetailResponseDefault
+from .video_subscription_insert_response_default import VideoSubscriptionInsertResponseDefault
+from .video_subscription_list_response_default import VideoSubscriptionListResponseDefault
 from .video_subscription_model import VideoSubscriptionModel
 from .video_subscription_model_audio import VideoSubscriptionModelAudio
 from .video_subscription_model_content import VideoSubscriptionModelContent
 from .video_subscription_model_feed_type import VideoSubscriptionModelFeedType
 from .video_subscription_model_fixture import VideoSubscriptionModelFixture
-from .video_subscription_model_fixture_resource_type import (
-    VideoSubscriptionModelFixtureResourceType,
-)
+from .video_subscription_model_fixture_resource_type import VideoSubscriptionModelFixtureResourceType
 from .video_subscription_model_organization import VideoSubscriptionModelOrganization
-from .video_subscription_model_organization_resource_type import (
-    VideoSubscriptionModelOrganizationResourceType,
-)
+from .video_subscription_model_organization_resource_type import VideoSubscriptionModelOrganizationResourceType
 from .video_subscription_model_output_format import VideoSubscriptionModelOutputFormat
-from .video_subscription_model_output_resolution import (
-    VideoSubscriptionModelOutputResolution,
-)
-from .video_subscriptions_update_response_default import (
-    VideoSubscriptionsUpdateResponseDefault,
-)
-from .video_subscriptions_update_video_subscription_put_body import (
-    VideoSubscriptionsUpdateVideoSubscriptionPutBody,
-)
-from .video_subscriptions_update_video_subscription_put_body_audio import (
-    VideoSubscriptionsUpdateVideoSubscriptionPutBodyAudio,
-)
-from .video_subscriptions_update_video_subscription_put_body_content import (
-    VideoSubscriptionsUpdateVideoSubscriptionPutBodyContent,
-)
-from .video_subscriptions_update_video_subscription_put_body_feed_type import (
-    VideoSubscriptionsUpdateVideoSubscriptionPutBodyFeedType,
-)
-from .video_subscriptions_update_video_subscription_put_body_output_format import (
-    VideoSubscriptionsUpdateVideoSubscriptionPutBodyOutputFormat,
-)
-from .video_subscriptions_update_video_subscription_put_body_output_resolution import (
-    VideoSubscriptionsUpdateVideoSubscriptionPutBodyOutputResolution,
-)
-from .video_subscriptions_update_video_subscriptions_response import (
-    VideoSubscriptionsUpdateVideoSubscriptionsResponse,
-)
+from .video_subscription_model_output_resolution import VideoSubscriptionModelOutputResolution
+from .video_subscription_post_body import VideoSubscriptionPostBody
+from .video_subscription_post_body_audio import VideoSubscriptionPostBodyAudio
+from .video_subscription_post_body_content import VideoSubscriptionPostBodyContent
+from .video_subscription_post_body_feed_type import VideoSubscriptionPostBodyFeedType
+from .video_subscription_post_body_output_format import VideoSubscriptionPostBodyOutputFormat
+from .video_subscription_post_body_output_resolution import VideoSubscriptionPostBodyOutputResolution
+from .video_subscription_put_body import VideoSubscriptionPutBody
+from .video_subscription_put_body_audio import VideoSubscriptionPutBodyAudio
+from .video_subscription_put_body_content import VideoSubscriptionPutBodyContent
+from .video_subscription_put_body_feed_type import VideoSubscriptionPutBodyFeedType
+from .video_subscription_put_body_output_format import VideoSubscriptionPutBodyOutputFormat
+from .video_subscription_put_body_output_resolution import VideoSubscriptionPutBodyOutputResolution
+from .video_subscriptions_response import VideoSubscriptionsResponse
+from .video_subscriptions_update_response_default import VideoSubscriptionsUpdateResponseDefault
 
 __all__ = (
-    "AwardDeleteAwardsResponse",
     "AwardDeleteResponseDefault",
     "AwardModel",
     "AwardModelAward",
@@ -5088,28 +1708,27 @@ __all__ = (
     "AwardModelPersonResourceType",
     "AwardModelSeason",
     "AwardModelSeasonResourceType",
-    "AwardsDetailAwardsResponse",
+    "AwardPostBody",
+    "AwardPostBodyAward",
+    "AwardPutBody",
+    "AwardPutBodyAward",
     "AwardsDetailResponseDefault",
-    "AwardsInsertAwardPostBody",
-    "AwardsInsertAwardPostBodyAward",
-    "AwardsInsertAwardsResponse",
     "AwardsInsertResponseDefault",
     "AwardsListFixturesAward",
-    "AwardsListFixturesAwardsResponse",
     "AwardsListFixturesResponseDefault",
     "AwardsListNonFixturesAward",
-    "AwardsListNonFixturesAwardsResponse",
     "AwardsListNonFixturesResponseDefault",
     "AwardsListSeasonsAward",
-    "AwardsListSeasonsAwardsResponse",
     "AwardsListSeasonsResponseDefault",
-    "AwardsUpdateAwardPutBody",
-    "AwardsUpdateAwardPutBodyAward",
-    "AwardsUpdateAwardsResponse",
+    "AwardsResponse",
     "AwardsUpdateResponseDefault",
+    "BlankModelDeleteBody",
+    "BlankModelGetBody",
     "BlankModelModel",
+    "BlankModelPostBody",
+    "BlankModelPutBody",
+    "BlankModelResponse",
     "CaprsListAgeGroup",
-    "CaprsListCareerPersonRepresentationalStatisticsResponse",
     "CaprsListDiscipline",
     "CaprsListFixtureType",
     "CaprsListHomeAway",
@@ -5117,14 +1736,11 @@ __all__ = (
     "CaprsListRepresentingCountry",
     "CaprsListResponseDefault",
     "CaprsListWinLoss",
-    "CapsListCareerPersonStatisticsResponse",
     "CapsListFixtureType",
     "CapsListHomeAway",
-    "CapsListpersonCareerPersonStatisticsResponse",
     "CapsListpersonFixtureType",
     "CapsListpersonHomeAway",
     "CapsListpersonResponseDefault",
-    "CapsListPersonSeasonCareerPersonSeasonStatisticsResponse",
     "CapsListPersonSeasonFixtureType",
     "CapsListPersonSeasonHomeAway",
     "CapsListPersonSeasonResponseDefault",
@@ -5142,6 +1758,7 @@ __all__ = (
     "CareerPersonRepresentationalStatisticsModelPerson",
     "CareerPersonRepresentationalStatisticsModelPersonResourceType",
     "CareerPersonRepresentationalStatisticsModelStatistics",
+    "CareerPersonRepresentationalStatisticsResponse",
     "CareerPersonSeasonStatisticsModel",
     "CareerPersonSeasonStatisticsModelEntity",
     "CareerPersonSeasonStatisticsModelEntityResourceType",
@@ -5152,17 +1769,16 @@ __all__ = (
     "CareerPersonSeasonStatisticsModelSeason",
     "CareerPersonSeasonStatisticsModelSeasonResourceType",
     "CareerPersonSeasonStatisticsModelStatistics",
+    "CareerPersonSeasonStatisticsResponse",
     "CareerPersonStatisticsModel",
     "CareerPersonStatisticsModelOrganization",
     "CareerPersonStatisticsModelOrganizationResourceType",
     "CareerPersonStatisticsModelPerson",
     "CareerPersonStatisticsModelPersonResourceType",
     "CareerPersonStatisticsModelStatistics",
-    "CesListCompetitionEntityStatisticsResponse",
-    "CesListentityCompetitionEntityStatisticsResponse",
+    "CareerPersonStatisticsResponse",
     "CesListentityFixtureType",
     "CesListentityHomeAway",
-    "CesListentityPeriodsCompetitionEntityStatisticsResponse",
     "CesListentityPeriodsFixtureType",
     "CesListentityPeriodsHomeAway",
     "CesListentityPeriodsPeriodId",
@@ -5172,7 +1788,6 @@ __all__ = (
     "CesListentityWinLoss",
     "CesListFixtureType",
     "CesListHomeAway",
-    "CesListperiodsCompetitionEntityStatisticsResponse",
     "CesListperiodsFixtureType",
     "CesListperiodsHomeAway",
     "CesListperiodsPeriodId",
@@ -5180,32 +1795,22 @@ __all__ = (
     "CesListperiodsWinLoss",
     "CesListResponseDefault",
     "CesListWinLoss",
-    "ChangeLogListChangeLogResponse",
     "ChangeLogListChangeType",
     "ChangeLogListResponseDefault",
     "ChangeLogModel",
     "ChangeLogModelChangeType",
     "ChangeLogModelOrganization",
     "ChangeLogModelOrganizationResourceType",
+    "ChangeLogResponse",
+    "ClockInformation",
     "ClubExternalIdsModel",
     "ClubExternalIdsModelEntityGroup",
     "ClubExternalIdsModelEntityGroupResourceType",
     "ClubExternalIdsModelOrganization",
     "ClubExternalIdsModelOrganizationResourceType",
-    "ClubModel",
-    "ClubModelAdditionalNames",
-    "ClubModelClubAddress",
-    "ClubModelClubHistoricalName",
-    "ClubModelColors",
-    "ClubModelContactDetails",
-    "ClubModelEntityAdditionalDetails",
-    "ClubModelOrganization",
-    "ClubModelOrganizationResourceType",
-    "ClubModelSocialMedia",
-    "ClubModelStatus",
-    "CompetitionDeleteCompetitionsResponse",
+    "ClubExternalIdsPostBody",
+    "ClubExternalIdsPutBody",
     "CompetitionDeleteResponseDefault",
-    "CompetitionDetailCompetitionsResponse",
     "CompetitionDetailResponseDefault",
     "CompetitionEntityStatisticsModel",
     "CompetitionEntityStatisticsModelCompetition",
@@ -5215,57 +1820,30 @@ __all__ = (
     "CompetitionEntityStatisticsModelOrganization",
     "CompetitionEntityStatisticsModelOrganizationResourceType",
     "CompetitionEntityStatisticsModelStatistics",
-    "CompetitionExternalIdsDeleteCompetitionExternalIdsResponse",
+    "CompetitionEntityStatisticsResponse",
     "CompetitionExternalIdsDeleteResponseDefault",
-    "CompetitionExternalIdsDetailCompetitionExternalIdsResponse",
     "CompetitionExternalIdsDetailResponseDefault",
-    "CompetitionExternalIdsInsertCompetitionExternalIdsPostBody",
-    "CompetitionExternalIdsInsertCompetitionExternalIdsResponse",
     "CompetitionExternalIdsInsertResponseDefault",
-    "CompetitionExternalIdsInsertUpdateCompetitionExternalIdsPostBody",
-    "CompetitionExternalIdsInsertUpdateCompetitionExternalIdsResponse",
     "CompetitionExternalIdsInsertUpdateResponseDefault",
-    "CompetitionExternalIdsListCompetitionExternalIdsResponse",
     "CompetitionExternalIdsListResponseDefault",
     "CompetitionExternalIdsModel",
     "CompetitionExternalIdsModelCompetition",
     "CompetitionExternalIdsModelCompetitionResourceType",
     "CompetitionExternalIdsModelOrganization",
     "CompetitionExternalIdsModelOrganizationResourceType",
-    "CompetitionExternalIdsUpdateCompetitionExternalIdsPutBody",
-    "CompetitionExternalIdsUpdateCompetitionExternalIdsResponse",
+    "CompetitionExternalIdsPostBody",
+    "CompetitionExternalIdsPutBody",
+    "CompetitionExternalIdsResponse",
     "CompetitionExternalIdsUpdateResponseDefault",
-    "CompetitionInsertCompetitionPostBody",
-    "CompetitionInsertCompetitionPostBodyAgeGroupType1",
-    "CompetitionInsertCompetitionPostBodyAgeGroupType2Type1",
-    "CompetitionInsertCompetitionPostBodyAgeGroupType3Type1",
-    "CompetitionInsertCompetitionPostBodyCompetitionHistoricalName",
-    "CompetitionInsertCompetitionPostBodyEventType",
-    "CompetitionInsertCompetitionPostBodySocialMedia",
-    "CompetitionInsertCompetitionsResponse",
     "CompetitionInsertResponseDefault",
     "CompetitionListAgeGroup",
     "CompetitionListByLeagueIdAgeGroup",
-    "CompetitionListByLeagueIdCompetitionsResponse",
     "CompetitionListByLeagueIdResponseDefault",
-    "CompetitionListCompetitionsResponse",
     "CompetitionListResponseDefault",
     "CompetitionListSeasonStatusAgeGroup",
-    "CompetitionListSeasonStatusCompetitionsSeasonStatusResponse",
     "CompetitionListSeasonStatusResponseDefault",
     "CompetitionListSeasonStatusSeasonStatus",
     "CompetitionListSeasonStatusSeasonVideoProduction",
-    "CompetitionModel",
-    "CompetitionModelAgeGroupType1",
-    "CompetitionModelAgeGroupType2Type1",
-    "CompetitionModelAgeGroupType3Type1",
-    "CompetitionModelCompetitionHistoricalName",
-    "CompetitionModelEventType",
-    "CompetitionModelLeague",
-    "CompetitionModelLeagueResourceType",
-    "CompetitionModelOrganization",
-    "CompetitionModelOrganizationResourceType",
-    "CompetitionModelSocialMedia",
     "CompetitionPersonStatisticsModel",
     "CompetitionPersonStatisticsModelCompetition",
     "CompetitionPersonStatisticsModelCompetitionResourceType",
@@ -5274,50 +1852,11 @@ __all__ = (
     "CompetitionPersonStatisticsModelPerson",
     "CompetitionPersonStatisticsModelPersonResourceType",
     "CompetitionPersonStatisticsModelStatistics",
-    "CompetitionSeasonStatusModel",
-    "CompetitionSeasonStatusModelAgeGroupType1",
-    "CompetitionSeasonStatusModelAgeGroupType2Type1",
-    "CompetitionSeasonStatusModelAgeGroupType3Type1",
-    "CompetitionSeasonStatusModelCompetitionHistoricalName",
-    "CompetitionSeasonStatusModelEventType",
-    "CompetitionSeasonStatusModelLeague",
-    "CompetitionSeasonStatusModelLeagueResourceType",
-    "CompetitionSeasonStatusModelOrganization",
-    "CompetitionSeasonStatusModelOrganizationResourceType",
-    "CompetitionSeasonStatusModelSocialMedia",
-    "CompetitionUpdateCompetitionPutBody",
-    "CompetitionUpdateCompetitionPutBodyAgeGroupType1",
-    "CompetitionUpdateCompetitionPutBodyAgeGroupType2Type1",
-    "CompetitionUpdateCompetitionPutBodyAgeGroupType3Type1",
-    "CompetitionUpdateCompetitionPutBodyCompetitionHistoricalName",
-    "CompetitionUpdateCompetitionPutBodyEventType",
-    "CompetitionUpdateCompetitionPutBodySocialMedia",
-    "CompetitionUpdateCompetitionsResponse",
+    "CompetitionPersonStatisticsResponse",
     "CompetitionUpdateResponseDefault",
-    "ConductDeleteConductResponse",
     "ConductDeleteResponseDefault",
-    "ConductDetailConductResponse",
     "ConductDetailResponseDefault",
-    "ConductInsertConductPostBody",
-    "ConductInsertConductPostBodyConductPenaltyResult",
-    "ConductInsertConductPostBodyConductPenaltyResultPenaltyType",
-    "ConductInsertConductPostBodyConductTypeItem",
-    "ConductInsertConductPostBodyFineStatusType1",
-    "ConductInsertConductPostBodyFineStatusType2Type1",
-    "ConductInsertConductPostBodyFineStatusType3Type1",
-    "ConductInsertConductPostBodyHearingStatusType1",
-    "ConductInsertConductPostBodyHearingStatusType2Type1",
-    "ConductInsertConductPostBodyHearingStatusType3Type1",
-    "ConductInsertConductPostBodyPeriodId",
-    "ConductInsertConductPostBodyRoleType1",
-    "ConductInsertConductPostBodyRoleType2Type1",
-    "ConductInsertConductPostBodyRoleType3Type1",
-    "ConductInsertConductPostBodyStatusType1",
-    "ConductInsertConductPostBodyStatusType2Type1",
-    "ConductInsertConductPostBodyStatusType3Type1",
-    "ConductInsertConductResponse",
     "ConductInsertResponseDefault",
-    "ConductListConductResponse",
     "ConductListConductStatusType1",
     "ConductListConductStatusType2Type1",
     "ConductListConductStatusType3Type1",
@@ -5326,8 +1865,6 @@ __all__ = (
     "ConductModel",
     "ConductModelCompetition",
     "ConductModelCompetitionResourceType",
-    "ConductModelConductPenaltyResult",
-    "ConductModelConductPenaltyResultPenaltyType",
     "ConductModelConductTypeItem",
     "ConductModelEntity",
     "ConductModelEntityGroup",
@@ -5356,268 +1893,108 @@ __all__ = (
     "ConductModelStatusType3Type1",
     "ConductModelVenue",
     "ConductModelVenueResourceType",
-    "ConductUpdateConductPutBody",
-    "ConductUpdateConductPutBodyConductPenaltyResult",
-    "ConductUpdateConductPutBodyConductPenaltyResultPenaltyType",
-    "ConductUpdateConductPutBodyConductTypeItem",
-    "ConductUpdateConductPutBodyFineStatusType1",
-    "ConductUpdateConductPutBodyFineStatusType2Type1",
-    "ConductUpdateConductPutBodyFineStatusType3Type1",
-    "ConductUpdateConductPutBodyHearingStatusType1",
-    "ConductUpdateConductPutBodyHearingStatusType2Type1",
-    "ConductUpdateConductPutBodyHearingStatusType3Type1",
-    "ConductUpdateConductPutBodyPeriodId",
-    "ConductUpdateConductPutBodyRoleType1",
-    "ConductUpdateConductPutBodyRoleType2Type1",
-    "ConductUpdateConductPutBodyRoleType3Type1",
-    "ConductUpdateConductPutBodyStatusType1",
-    "ConductUpdateConductPutBodyStatusType2Type1",
-    "ConductUpdateConductPutBodyStatusType3Type1",
-    "ConductUpdateConductResponse",
+    "ConductPenaltyResult",
+    "ConductPenaltyResultPenaltyType",
+    "ConductResponse",
     "ConductUpdateResponseDefault",
-    "ConferenceDeleteConferencesResponse",
     "ConferenceDeleteResponseDefault",
-    "ConferenceDetailConferencesResponse",
     "ConferenceDetailResponseDefault",
-    "ConferenceExternalIdsDeleteConferenceExternalIdsResponse",
     "ConferenceExternalIdsDeleteResponseDefault",
-    "ConferenceExternalIdsDetailConferenceExternalIdsResponse",
     "ConferenceExternalIdsDetailResponseDefault",
-    "ConferenceExternalIdsInsertConferenceExternalIdsPostBody",
-    "ConferenceExternalIdsInsertConferenceExternalIdsResponse",
     "ConferenceExternalIdsInsertResponseDefault",
-    "ConferenceExternalIdsInsertUpdateConferenceExternalIdsPostBody",
-    "ConferenceExternalIdsInsertUpdateConferenceExternalIdsResponse",
     "ConferenceExternalIdsInsertUpdateResponseDefault",
-    "ConferenceExternalIdsListConferenceExternalIdsResponse",
     "ConferenceExternalIdsListResponseDefault",
     "ConferenceExternalIdsModel",
     "ConferenceExternalIdsModelConference",
     "ConferenceExternalIdsModelConferenceResourceType",
     "ConferenceExternalIdsModelOrganization",
     "ConferenceExternalIdsModelOrganizationResourceType",
-    "ConferenceExternalIdsUpdateConferenceExternalIdsPutBody",
-    "ConferenceExternalIdsUpdateConferenceExternalIdsResponse",
+    "ConferenceExternalIdsPostBody",
+    "ConferenceExternalIdsPutBody",
+    "ConferenceExternalIdsResponse",
     "ConferenceExternalIdsUpdateResponseDefault",
-    "ConferenceInsertConferencePostBody",
-    "ConferenceInsertConferencePostBodySocialMedia",
-    "ConferenceInsertConferencesResponse",
     "ConferenceInsertResponseDefault",
-    "ConferenceListConferencesResponse",
     "ConferenceListResponseDefault",
-    "ConferenceModel",
-    "ConferenceModelOrganization",
-    "ConferenceModelOrganizationResourceType",
-    "ConferenceModelSocialMedia",
-    "ConferenceUpdateConferencePutBody",
-    "ConferenceUpdateConferencePutBodySocialMedia",
-    "ConferenceUpdateConferencesResponse",
     "ConferenceUpdateResponseDefault",
-    "CpsListCompetitionPersonStatisticsResponse",
     "CpsListFixtureType",
     "CpsListHomeAway",
     "CpsListResponseDefault",
     "CpsListWinLoss",
-    "DivisionDeleteDivisionsResponse",
+    "CurrentScores",
     "DivisionDeleteResponseDefault",
-    "DivisionDetailDivisionsResponse",
     "DivisionDetailResponseDefault",
-    "DivisionExternalIdsDeleteDivisionExternalIdsResponse",
     "DivisionExternalIdsDeleteResponseDefault",
-    "DivisionExternalIdsDetailDivisionExternalIdsResponse",
     "DivisionExternalIdsDetailResponseDefault",
-    "DivisionExternalIdsInsertDivisionExternalIdsPostBody",
-    "DivisionExternalIdsInsertDivisionExternalIdsResponse",
     "DivisionExternalIdsInsertResponseDefault",
-    "DivisionExternalIdsInsertUpdateDivisionExternalIdsPostBody",
-    "DivisionExternalIdsInsertUpdateDivisionExternalIdsResponse",
     "DivisionExternalIdsInsertUpdateResponseDefault",
-    "DivisionExternalIdsListDivisionExternalIdsResponse",
     "DivisionExternalIdsListResponseDefault",
     "DivisionExternalIdsModel",
     "DivisionExternalIdsModelDivision",
     "DivisionExternalIdsModelDivisionResourceType",
     "DivisionExternalIdsModelOrganization",
     "DivisionExternalIdsModelOrganizationResourceType",
-    "DivisionExternalIdsUpdateDivisionExternalIdsPutBody",
-    "DivisionExternalIdsUpdateDivisionExternalIdsResponse",
+    "DivisionExternalIdsPostBody",
+    "DivisionExternalIdsPutBody",
+    "DivisionExternalIdsResponse",
     "DivisionExternalIdsUpdateResponseDefault",
-    "DivisionInsertDivisionPostBody",
-    "DivisionInsertDivisionPostBodySocialMedia",
-    "DivisionInsertDivisionsResponse",
     "DivisionInsertResponseDefault",
-    "DivisionListDivisionsResponse",
     "DivisionListResponseDefault",
-    "DivisionModel",
-    "DivisionModelConference",
-    "DivisionModelConferenceResourceType",
-    "DivisionModelOrganization",
-    "DivisionModelOrganizationResourceType",
-    "DivisionModelSocialMedia",
-    "DivisionUpdateDivisionPutBody",
-    "DivisionUpdateDivisionPutBodySocialMedia",
-    "DivisionUpdateDivisionsResponse",
     "DivisionUpdateResponseDefault",
-    "EntityDeleteEntitiesResponse",
     "EntityDeleteResponseDefault",
-    "EntityDetailEntitiesResponse",
     "EntityDetailResponseDefault",
-    "EntityExternalIdsDeleteEntityExternalIdsResponse",
     "EntityExternalIdsDeleteResponseDefault",
-    "EntityExternalIdsDetailEntityExternalIdsResponse",
     "EntityExternalIdsDetailResponseDefault",
-    "EntityExternalIdsInsertEntityExternalIdsResponse",
     "EntityExternalIdsInsertResponseDefault",
-    "EntityExternalIdsInsertTeamExternalIdsPostBody",
-    "EntityExternalIdsInsertUpdateEntityExternalIdsResponse",
     "EntityExternalIdsInsertUpdateResponseDefault",
-    "EntityExternalIdsInsertUpdateTeamExternalIdsPostBody",
-    "EntityExternalIdsListEntityExternalIdsResponse",
     "EntityExternalIdsListResponseDefault",
-    "EntityExternalIdsUpdateEntityExternalIdsResponse",
+    "EntityExternalIdsResponse",
     "EntityExternalIdsUpdateResponseDefault",
-    "EntityExternalIdsUpdateTeamExternalIdsPutBody",
-    "EntityGroupDeleteEntityGroupsResponse",
     "EntityGroupDeleteResponseDefault",
-    "EntityGroupDetailEntityGroupsResponse",
     "EntityGroupDetailResponseDefault",
-    "EntityGroupExternalIdsDeleteEntityGroupExternalIdsResponse",
     "EntityGroupExternalIdsDeleteResponseDefault",
-    "EntityGroupExternalIdsDetailEntityGroupExternalIdsResponse",
     "EntityGroupExternalIdsDetailResponseDefault",
-    "EntityGroupExternalIdsInsertClubExternalIdsPostBody",
-    "EntityGroupExternalIdsInsertEntityGroupExternalIdsResponse",
     "EntityGroupExternalIdsInsertResponseDefault",
-    "EntityGroupExternalIdsInsertUpdateClubExternalIdsPostBody",
-    "EntityGroupExternalIdsInsertUpdateEntityGroupExternalIdsResponse",
     "EntityGroupExternalIdsInsertUpdateResponseDefault",
-    "EntityGroupExternalIdsListEntityGroupExternalIdsResponse",
     "EntityGroupExternalIdsListResponseDefault",
-    "EntityGroupExternalIdsUpdateClubExternalIdsPutBody",
-    "EntityGroupExternalIdsUpdateEntityGroupExternalIdsResponse",
+    "EntityGroupExternalIdsResponse",
     "EntityGroupExternalIdsUpdateResponseDefault",
-    "EntityGroupInsertClubPostBody",
-    "EntityGroupInsertClubPostBodyAdditionalNames",
-    "EntityGroupInsertClubPostBodyClubAddress",
-    "EntityGroupInsertClubPostBodyClubHistoricalName",
-    "EntityGroupInsertClubPostBodyColors",
-    "EntityGroupInsertClubPostBodyContactDetails",
-    "EntityGroupInsertClubPostBodyEntityAdditionalDetails",
-    "EntityGroupInsertClubPostBodySocialMedia",
-    "EntityGroupInsertClubPostBodyStatus",
-    "EntityGroupInsertEntityGroupsResponse",
     "EntityGroupInsertResponseDefault",
-    "EntityGroupListEntityGroupsResponse",
     "EntityGroupListResponseDefault",
     "EntityGroupListStatus",
-    "EntityGroupUpdateClubPutBody",
-    "EntityGroupUpdateClubPutBodyAdditionalNames",
-    "EntityGroupUpdateClubPutBodyClubAddress",
-    "EntityGroupUpdateClubPutBodyClubHistoricalName",
-    "EntityGroupUpdateClubPutBodyColors",
-    "EntityGroupUpdateClubPutBodyContactDetails",
-    "EntityGroupUpdateClubPutBodyEntityAdditionalDetails",
-    "EntityGroupUpdateClubPutBodySocialMedia",
-    "EntityGroupUpdateClubPutBodyStatus",
-    "EntityGroupUpdateEntityGroupsResponse",
     "EntityGroupUpdateResponseDefault",
-    "EntityInsertEntitiesResponse",
     "EntityInsertResponseDefault",
-    "EntityInsertTeamPostBody",
-    "EntityInsertTeamPostBodyAdditionalNames",
-    "EntityInsertTeamPostBodyAgeGroupType1",
-    "EntityInsertTeamPostBodyAgeGroupType2Type1",
-    "EntityInsertTeamPostBodyAgeGroupType3Type1",
-    "EntityInsertTeamPostBodyColors",
-    "EntityInsertTeamPostBodyContactDetails",
-    "EntityInsertTeamPostBodyDisciplineType1",
-    "EntityInsertTeamPostBodyDisciplineType2Type1",
-    "EntityInsertTeamPostBodyDisciplineType3Type1",
-    "EntityInsertTeamPostBodyEntityAdditionalDetails",
-    "EntityInsertTeamPostBodyGenderType1",
-    "EntityInsertTeamPostBodyGenderType2Type1",
-    "EntityInsertTeamPostBodyGenderType3Type1",
-    "EntityInsertTeamPostBodySocialMedia",
-    "EntityInsertTeamPostBodyStandardType1",
-    "EntityInsertTeamPostBodyStandardType2Type1",
-    "EntityInsertTeamPostBodyStandardType3Type1",
-    "EntityInsertTeamPostBodyStatus",
-    "EntityInsertTeamPostBodyTeamAddress",
-    "EntityInsertTeamPostBodyTeamHistoricalName",
     "EntityListAgeGroup",
     "EntityListByEntityGroupAgeGroup",
     "EntityListByEntityGroupDiscipline",
-    "EntityListByEntityGroupEntitiesResponse",
     "EntityListByEntityGroupGender",
     "EntityListByEntityGroupResponseDefault",
     "EntityListByEntityGroupStandard",
     "EntityListByEntityGroupStatus",
     "EntityListDiscipline",
-    "EntityListEntitiesResponse",
     "EntityListGender",
     "EntityListRepresentingCountry",
     "EntityListResponseDefault",
     "EntityListStandard",
     "EntityListStatus",
-    "EntityMergeMergePostBody",
     "EntityMergeResponseDefault",
-    "EntityMergeSuccessResponse",
-    "EntitySwapMergePostBody",
     "EntitySwapResponseDefault",
-    "EntitySwapSuccessResponse",
-    "EntityUpdateEntitiesResponse",
     "EntityUpdateResponseDefault",
-    "EntityUpdateTeamPutBody",
-    "EntityUpdateTeamPutBodyAdditionalNames",
-    "EntityUpdateTeamPutBodyAgeGroupType1",
-    "EntityUpdateTeamPutBodyAgeGroupType2Type1",
-    "EntityUpdateTeamPutBodyAgeGroupType3Type1",
-    "EntityUpdateTeamPutBodyColors",
-    "EntityUpdateTeamPutBodyContactDetails",
-    "EntityUpdateTeamPutBodyDisciplineType1",
-    "EntityUpdateTeamPutBodyDisciplineType2Type1",
-    "EntityUpdateTeamPutBodyDisciplineType3Type1",
-    "EntityUpdateTeamPutBodyEntityAdditionalDetails",
-    "EntityUpdateTeamPutBodyGenderType1",
-    "EntityUpdateTeamPutBodyGenderType2Type1",
-    "EntityUpdateTeamPutBodyGenderType3Type1",
-    "EntityUpdateTeamPutBodySocialMedia",
-    "EntityUpdateTeamPutBodyStandardType1",
-    "EntityUpdateTeamPutBodyStandardType2Type1",
-    "EntityUpdateTeamPutBodyStandardType3Type1",
-    "EntityUpdateTeamPutBodyStatus",
-    "EntityUpdateTeamPutBodyTeamAddress",
-    "EntityUpdateTeamPutBodyTeamHistoricalName",
     "ErrorListModel",
     "ErrorListModelReason",
     "ErrorModel",
-    "FesDeleteAllFixtureEntityStatisticsResponse",
+    "EventDetails",
     "FesDeleteAllResponseDefault",
-    "FesInsertUpdateFixtureEntityStatisticsResponse",
-    "FesInsertUpdateMatchTeamStatisticsPostBody",
-    "FesInsertUpdateMatchTeamStatisticsPostBodyStatistics",
     "FesInsertUpdateResponseDefault",
-    "FesListBySeasonFixtureEntityStatisticsResponse",
     "FesListBySeasonResponseDefault",
-    "FesListFixtureEntityStatisticsResponse",
-    "FesListliveFixtureEntityStatisticsResponse",
     "FesListliveResponseDefault",
-    "FesListperiodBySeasonFixtureEntityStatisticsPeriodsResponse",
     "FesListperiodBySeasonResponseDefault",
-    "FesListperiodFixtureEntityStatisticsPeriodsResponse",
-    "FesListperiodliveFixtureEntityStatisticsPeriodsResponse",
     "FesListperiodlivePeriodId",
     "FesListperiodliveResponseDefault",
     "FesListperiodPeriodId",
     "FesListperiodResponseDefault",
     "FesListResponseDefault",
-    "FespDeleteAllFixtureEntityStatisticsPeriodsResponse",
     "FespDeleteAllPeriodId",
     "FespDeleteAllResponseDefault",
-    "FespInsertUpdateFixtureEntityStatisticsPeriodsResponse",
-    "FespInsertUpdateMatchTeamPeriodStatisticsPostBody",
-    "FespInsertUpdateMatchTeamPeriodStatisticsPostBodyPeriodId",
-    "FespInsertUpdateMatchTeamPeriodStatisticsPostBodyStatistics",
     "FespInsertUpdateResponseDefault",
     "FixtureByCompetitionListCompetitorType",
     "FixtureByCompetitionListDiscipline",
@@ -5633,112 +2010,43 @@ __all__ = (
     "FixtureByEntityListFixtureType",
     "FixtureByEntityListResponseDefault",
     "FixtureByEntityListStatus",
-    "FixtureDeleteFixturesResponse",
     "FixtureDeleteResponseDefault",
-    "FixtureDetailFixturesResponse",
     "FixtureDetailResponseDefault",
-    "FixtureEntitiesDetailFixtureEntitiesResponse",
     "FixtureEntitiesDetailResponseDefault",
-    "FixtureEntitiesInsertUpdateFixtureEntitiesResponse",
-    "FixtureEntitiesInsertUpdateMatchTeamsPostBody",
-    "FixtureEntitiesInsertUpdateMatchTeamsPostBodyResultStatus",
-    "FixtureEntitiesInsertUpdateMatchTeamsPostBodyRosterStatus",
     "FixtureEntitiesInsertUpdateResponseDefault",
-    "FixtureEntitiesListFixtureEntitiesResponse",
     "FixtureEntitiesListResponseDefault",
-    "FixtureEntityDeleteFixtureEntitiesResponse",
+    "FixtureEntitiesResponse",
     "FixtureEntityDeleteResponseDefault",
-    "FixtureExternalIdsDeleteFixtureExternalIdsResponse",
+    "FixtureEntityStatisticsPeriodsResponse",
+    "FixtureEntityStatisticsResponse",
     "FixtureExternalIdsDeleteResponseDefault",
-    "FixtureExternalIdsDetailFixtureExternalIdsResponse",
     "FixtureExternalIdsDetailResponseDefault",
-    "FixtureExternalIdsInsertFixtureExternalIdsResponse",
-    "FixtureExternalIdsInsertMatchExternalIdsPostBody",
     "FixtureExternalIdsInsertResponseDefault",
-    "FixtureExternalIdsInsertUpdateFixtureExternalIdsResponse",
-    "FixtureExternalIdsInsertUpdateMatchExternalIdsPostBody",
     "FixtureExternalIdsInsertUpdateResponseDefault",
-    "FixtureExternalIdsListFixtureExternalIdsResponse",
     "FixtureExternalIdsListResponseDefault",
-    "FixtureExternalIdsUpdateFixtureExternalIdsResponse",
-    "FixtureExternalIdsUpdateMatchExternalIdsPutBody",
+    "FixtureExternalIdsResponse",
     "FixtureExternalIdsUpdateResponseDefault",
-    "FixtureInsertBaseRouteFixturesResponse",
-    "FixtureInsertBaseRouteMatchPostBody",
-    "FixtureInsertBaseRouteMatchPostBodyBroadcasts",
-    "FixtureInsertBaseRouteMatchPostBodyBroadcastsBroadcastType",
-    "FixtureInsertBaseRouteMatchPostBodyCompetitorType",
-    "FixtureInsertBaseRouteMatchPostBodyDisciplineType1",
-    "FixtureInsertBaseRouteMatchPostBodyDisciplineType2Type1",
-    "FixtureInsertBaseRouteMatchPostBodyDisciplineType3Type1",
-    "FixtureInsertBaseRouteMatchPostBodyEnvironmentalDetails",
-    "FixtureInsertBaseRouteMatchPostBodyFixtureType",
-    "FixtureInsertBaseRouteMatchPostBodyMatchCompetitor",
-    "FixtureInsertBaseRouteMatchPostBodyMatchCompetitorResultStatus",
-    "FixtureInsertBaseRouteMatchPostBodyMatchCompetitorRosterStatus",
-    "FixtureInsertBaseRouteMatchPostBodyMaximumPeriodTypeUsedType1",
-    "FixtureInsertBaseRouteMatchPostBodyMaximumPeriodTypeUsedType2Type1",
-    "FixtureInsertBaseRouteMatchPostBodyMaximumPeriodTypeUsedType3Type1",
-    "FixtureInsertBaseRouteMatchPostBodyPracticeDrillTypeType1",
-    "FixtureInsertBaseRouteMatchPostBodyPracticeDrillTypeType2Type1",
-    "FixtureInsertBaseRouteMatchPostBodyPracticeDrillTypeType3Type1",
-    "FixtureInsertBaseRouteMatchPostBodySocialMedia",
-    "FixtureInsertBaseRouteMatchPostBodyStatus",
     "FixtureInsertBaseRouteResponseDefault",
-    "FixtureInsertFixturesResponse",
-    "FixtureInsertMatchPostBody",
-    "FixtureInsertMatchPostBodyBroadcasts",
-    "FixtureInsertMatchPostBodyBroadcastsBroadcastType",
-    "FixtureInsertMatchPostBodyCompetitorType",
-    "FixtureInsertMatchPostBodyDisciplineType1",
-    "FixtureInsertMatchPostBodyDisciplineType2Type1",
-    "FixtureInsertMatchPostBodyDisciplineType3Type1",
-    "FixtureInsertMatchPostBodyEnvironmentalDetails",
-    "FixtureInsertMatchPostBodyFixtureType",
-    "FixtureInsertMatchPostBodyMatchCompetitor",
-    "FixtureInsertMatchPostBodyMatchCompetitorResultStatus",
-    "FixtureInsertMatchPostBodyMatchCompetitorRosterStatus",
-    "FixtureInsertMatchPostBodyMaximumPeriodTypeUsedType1",
-    "FixtureInsertMatchPostBodyMaximumPeriodTypeUsedType2Type1",
-    "FixtureInsertMatchPostBodyMaximumPeriodTypeUsedType3Type1",
-    "FixtureInsertMatchPostBodyPracticeDrillTypeType1",
-    "FixtureInsertMatchPostBodyPracticeDrillTypeType2Type1",
-    "FixtureInsertMatchPostBodyPracticeDrillTypeType3Type1",
-    "FixtureInsertMatchPostBodySocialMedia",
-    "FixtureInsertMatchPostBodyStatus",
     "FixtureInsertResponseDefault",
     "FixtureListCompetitorType",
     "FixtureListDiscipline",
-    "FixtureListFixturesResponse",
     "FixtureListFixtureType",
     "FixtureListResponseDefault",
     "FixtureListStatus",
     "FixtureListStatusNot",
     "FixtureLiveSummaryModel",
-    "FixtureLiveSummaryModelClockInformation",
-    "FixtureLiveSummaryModelInformationPerEntity",
-    "FixtureLiveSummaryModelStatusInformation",
-    "FixtureLockingFixtureLockingPostBody",
+    "FixtureLiveSummaryResponse",
+    "FixtureLockingPostBody",
     "FixtureLockingResponseDefault",
-    "FixtureLockingSuccessResponse",
-    "FixturePbpAllDeleteFixturePbpResponse",
     "FixturePbpAllDeleteResponseDefault",
-    "FixturePbpDeleteFixturePbpResponse",
     "FixturePbpDeletePeriodId",
     "FixturePbpDeleteResponseDefault",
-    "FixturePbpEventAddFixturePBPEventPostBody",
-    "FixturePbpEventAddFixturePBPEventPostBodyClass",
-    "FixturePbpEventAddFixturePBPEventPostBodyCurrentScores",
-    "FixturePbpEventAddFixturePBPEventPostBodyPeriodId",
-    "FixturePbpEventAddFixturePbpEventResponse",
     "FixturePbpEventAddPeriodId",
     "FixturePbpEventAddResponseDefault",
-    "FixturePbpEventDeleteFixturePbpEventResponse",
     "FixturePbpEventDeletePeriodId",
     "FixturePbpEventDeleteResponseDefault",
     "FixturePBPEventModel",
     "FixturePBPEventModelClass",
-    "FixturePBPEventModelCurrentScores",
     "FixturePBPEventModelEntity",
     "FixturePBPEventModelEntityResourceType",
     "FixturePBPEventModelFixture",
@@ -5748,82 +2056,46 @@ __all__ = (
     "FixturePBPEventModelPeriodId",
     "FixturePBPEventModelPerson",
     "FixturePBPEventModelPersonResourceType",
+    "FixturePbpEventResponse",
     "FixturePbpEventsImportResponseDefault",
-    "FixturePbpEventsImportSuccessResponse",
-    "FixturePbpEventUpdateFixturePBPEventPutBody",
-    "FixturePbpEventUpdateFixturePBPEventPutBodyClass",
-    "FixturePbpEventUpdateFixturePBPEventPutBodyCurrentScores",
-    "FixturePbpEventUpdateFixturePbpEventResponse",
     "FixturePbpEventUpdatePeriodId",
     "FixturePbpEventUpdateResponseDefault",
     "FixturePbpExportPeriodId",
     "FixturePbpExportResponseDefault",
-    "FixturePbpExportSuccessResponse",
-    "FixturePbpExternalAllDeleteFixturePbpExternalResponse",
     "FixturePbpExternalAllDeleteResponseDefault",
-    "FixturePbpExternalDeleteFixturePbpExternalResponse",
     "FixturePbpExternalDeletePeriodId",
     "FixturePbpExternalDeleteResponseDefault",
     "FixturePbpExternalEventsImportResponseDefault",
-    "FixturePbpExternalEventsImportSuccessResponse",
     "FixturePbpExternalExportPeriodId",
     "FixturePbpExternalExportResponseDefault",
-    "FixturePbpExternalExportSuccessResponse",
-    "FixturePbpExternalListFixturePbpExternalResponse",
-    "FixturePbpExternalListLiveFixturePbpExternalResponse",
     "FixturePbpExternalListLivePeriodId",
     "FixturePbpExternalListLiveResponseDefault",
     "FixturePbpExternalListPeriodId",
     "FixturePbpExternalListResponseDefault",
-    "FixturePbpExternalModel",
-    "FixturePbpExternalModelEventDetails",
-    "FixturePbpExternalModelFixture",
-    "FixturePbpExternalModelFixtureResourceType",
-    "FixturePbpExternalModelOrganization",
-    "FixturePbpExternalModelOrganizationResourceType",
-    "FixturePbpExternalModelPeriodId",
-    "FixturePbpListFixturePbpEventResponse",
-    "FixturePbpListLiveFixturePbpEventResponse",
     "FixturePbpListLivePeriodId",
     "FixturePbpListLiveResponseDefault",
     "FixturePbpListPeriodId",
     "FixturePbpListResponseDefault",
     "FixturePbpModel",
-    "FixturePbpModelEventDetails",
     "FixturePbpModelFixture",
     "FixturePbpModelFixtureResourceType",
     "FixturePbpModelOrganization",
     "FixturePbpModelOrganizationResourceType",
     "FixturePbpModelPeriodId",
-    "FixturePersonDeleteFixturePersonsResponse",
+    "FixturePbpResponse",
     "FixturePersonDeleteResponseDefault",
-    "FixturePersonsDetailFixturePersonsResponse",
     "FixturePersonsDetailResponseDefault",
-    "FixturePersonsInsertUpdateFixturePersonsResponse",
-    "FixturePersonsInsertUpdateMatchPersonsPostBody",
-    "FixturePersonsInsertUpdateMatchPersonsPostBodyResultStatus",
     "FixturePersonsInsertUpdateResponseDefault",
-    "FixturePersonsListFixturePersonsResponse",
     "FixturePersonsListResponseDefault",
-    "FixtureProfilesDeleteFixtureProfilesResponse",
+    "FixturePersonsResponse",
+    "FixturePersonStatisticsPeriodsResponse",
+    "FixturePersonStatisticsResponse",
     "FixtureProfilesDeleteResponseDefault",
-    "FixtureProfilesDetailFixtureProfilesResponse",
     "FixtureProfilesDetailResponseDefault",
-    "FixtureProfilesForFixtureFixtureProfilesResponse",
     "FixtureProfilesForFixtureResponseDefault",
-    "FixtureProfilesInsertFixtureProfilesResponse",
-    "FixtureProfilesInsertMatchProfilesPostBody",
-    "FixtureProfilesInsertMatchProfilesPostBodyMatchProfileConfiguration",
-    "FixtureProfilesInsertMatchProfilesPostBodyMatchProfileConfigurationMatchRolesItem",
-    "FixtureProfilesInsertMatchProfilesPostBodyMatchProfileConfigurationTypeOfCardsItem",
     "FixtureProfilesInsertResponseDefault",
-    "FixtureProfilesListFixtureProfilesResponse",
     "FixtureProfilesListResponseDefault",
-    "FixtureProfilesUpdateFixtureProfilesResponse",
-    "FixtureProfilesUpdateMatchProfilesPutBody",
-    "FixtureProfilesUpdateMatchProfilesPutBodyMatchProfileConfiguration",
-    "FixtureProfilesUpdateMatchProfilesPutBodyMatchProfileConfigurationMatchRolesItem",
-    "FixtureProfilesUpdateMatchProfilesPutBodyMatchProfileConfigurationTypeOfCardsItem",
+    "FixtureProfilesResponse",
     "FixtureProfilesUpdateResponseDefault",
     "FixtureProgressionModel",
     "FixtureProgressionModelFixture",
@@ -5832,119 +2104,44 @@ __all__ = (
     "FixtureProgressionModelOrganizationResourceType",
     "FixtureProgressionModelSeason",
     "FixtureProgressionModelSeasonResourceType",
-    "FixtureProgressionsDeleteFixtureProgressionsResponse",
+    "FixtureProgressionPostBody",
+    "FixtureProgressionPutBody",
     "FixtureProgressionsDeleteResponseDefault",
-    "FixtureProgressionsDetailFixtureProgressionsResponse",
     "FixtureProgressionsDetailResponseDefault",
-    "FixtureProgressionsInsertFixtureProgressionPostBody",
-    "FixtureProgressionsInsertFixtureProgressionsResponse",
     "FixtureProgressionsInsertResponseDefault",
-    "FixtureProgressionsListFixtureProgressionsResponse",
     "FixtureProgressionsListResponseDefault",
-    "FixtureProgressionsUpdateFixtureProgressionPutBody",
-    "FixtureProgressionsUpdateFixtureProgressionsResponse",
+    "FixtureProgressionsResponse",
     "FixtureProgressionsUpdateResponseDefault",
-    "FixtureResetFixtureResetPostBody",
+    "FixtureResetPostBody",
     "FixtureResetResponseDefault",
-    "FixtureResetSuccessResponse",
-    "FixtureRosterDeleteAllFixtureRosterResponse",
     "FixtureRosterDeleteAllResponseDefault",
-    "FixtureRosterDeleteFixtureRosterResponse",
     "FixtureRosterDeleteResponseDefault",
-    "FixtureRosterDetailFixtureRosterResponse",
     "FixtureRosterDetailResponseDefault",
-    "FixtureRosterInsertUpdateBaseRouteFixtureRosterResponse",
-    "FixtureRosterInsertUpdateBaseRouteMatchRosterPostBody",
-    "FixtureRosterInsertUpdateBaseRouteMatchRosterPostBodyPositionType1",
-    "FixtureRosterInsertUpdateBaseRouteMatchRosterPostBodyPositionType2Type1",
-    "FixtureRosterInsertUpdateBaseRouteMatchRosterPostBodyPositionType3Type1",
     "FixtureRosterInsertUpdateBaseRouteResponseDefault",
-    "FixtureRosterInsertUpdateFixtureRosterResponse",
-    "FixtureRosterInsertUpdateMatchRosterPostBody",
-    "FixtureRosterInsertUpdateMatchRosterPostBodyPositionType1",
-    "FixtureRosterInsertUpdateMatchRosterPostBodyPositionType2Type1",
-    "FixtureRosterInsertUpdateMatchRosterPostBodyPositionType3Type1",
     "FixtureRosterInsertUpdateResponseDefault",
-    "FixtureRosterListByEntityFixtureRosterResponse",
     "FixtureRosterListByEntityResponseDefault",
-    "FixtureRosterListFixtureRosterResponse",
     "FixtureRosterListResponseDefault",
+    "FixtureRosterResponse",
     "FixtureTriggerEmrMergeResponseDefault",
-    "FixtureTriggerEmrMergeSuccessResponse",
-    "FixtureUnlockingFixtureLockingPostBody",
     "FixtureUnlockingResponseDefault",
-    "FixtureUnlockingSuccessResponse",
-    "FixtureUpdateFixturesResponse",
-    "FixtureUpdateMatchPutBody",
-    "FixtureUpdateMatchPutBodyBroadcasts",
-    "FixtureUpdateMatchPutBodyBroadcastsBroadcastType",
-    "FixtureUpdateMatchPutBodyCompetitorType",
-    "FixtureUpdateMatchPutBodyDisciplineType1",
-    "FixtureUpdateMatchPutBodyDisciplineType2Type1",
-    "FixtureUpdateMatchPutBodyDisciplineType3Type1",
-    "FixtureUpdateMatchPutBodyEnvironmentalDetails",
-    "FixtureUpdateMatchPutBodyFixtureType",
-    "FixtureUpdateMatchPutBodyMatchCompetitor",
-    "FixtureUpdateMatchPutBodyMatchCompetitorResultStatus",
-    "FixtureUpdateMatchPutBodyMatchCompetitorRosterStatus",
-    "FixtureUpdateMatchPutBodyMaximumPeriodTypeUsedType1",
-    "FixtureUpdateMatchPutBodyMaximumPeriodTypeUsedType2Type1",
-    "FixtureUpdateMatchPutBodyMaximumPeriodTypeUsedType3Type1",
-    "FixtureUpdateMatchPutBodyPracticeDrillTypeType1",
-    "FixtureUpdateMatchPutBodyPracticeDrillTypeType2Type1",
-    "FixtureUpdateMatchPutBodyPracticeDrillTypeType3Type1",
-    "FixtureUpdateMatchPutBodySocialMedia",
-    "FixtureUpdateMatchPutBodyStatus",
     "FixtureUpdateResponseDefault",
-    "FixtureVideostreamDisableFixtureVideosteamPostBody",
-    "FixtureVideostreamDisableFixtureVideosteamPostBodyPlatformProvider",
+    "FixtureVideosteamPostBody",
+    "FixtureVideosteamPostBodyPlatformProvider",
     "FixtureVideostreamDisableResponseDefault",
-    "FixtureVideostreamDisableSuccessResponse",
-    "FixtureVideostreamEnableFixtureVideosteamPostBody",
-    "FixtureVideostreamEnableFixtureVideosteamPostBodyPlatformProvider",
     "FixtureVideostreamEnableResponseDefault",
-    "FixtureVideostreamEnableSuccessResponse",
-    "FixtureVideostreamResetFixtureVideosteamPostBody",
-    "FixtureVideostreamResetFixtureVideosteamPostBodyPlatformProvider",
     "FixtureVideostreamResetResponseDefault",
-    "FixtureVideostreamResetSuccessResponse",
-    "FixtureVideostreamStartFixtureVideosteamPostBody",
-    "FixtureVideostreamStartFixtureVideosteamPostBodyPlatformProvider",
     "FixtureVideostreamStartResponseDefault",
-    "FixtureVideostreamStartSuccessResponse",
-    "FixtureVideostreamStopFixtureVideosteamPostBody",
-    "FixtureVideostreamStopFixtureVideosteamPostBodyPlatformProvider",
     "FixtureVideostreamStopResponseDefault",
-    "FixtureVideostreamStopSuccessResponse",
-    "FlsListFixtureLiveSummaryResponse",
     "FlsListResponseDefault",
-    "FpsDeleteAllFixturePersonStatisticsResponse",
     "FpsDeleteAllResponseDefault",
-    "FpsInsertUpdateFixturePersonStatisticsResponse",
-    "FpsInsertUpdateMatchPersonStatisticsPostBody",
-    "FpsInsertUpdateMatchPersonStatisticsPostBodyPositionType1",
-    "FpsInsertUpdateMatchPersonStatisticsPostBodyPositionType2Type1",
-    "FpsInsertUpdateMatchPersonStatisticsPostBodyPositionType3Type1",
-    "FpsInsertUpdateMatchPersonStatisticsPostBodyStatistics",
     "FpsInsertUpdateResponseDefault",
-    "FpsListBySeasonFixturePersonStatisticsResponse",
     "FpsListBySeasonResponseDefault",
-    "FpsListFixturePersonStatisticsResponse",
-    "FpsListliveFixturePersonStatisticsResponse",
     "FpsListliveResponseDefault",
     "FpsListResponseDefault",
-    "FpspDeleteAllFixturePersonStatisticsPeriodsResponse",
     "FpspDeleteAllPeriodId",
     "FpspDeleteAllResponseDefault",
-    "FpspInsertUpdateFixturePersonStatisticsPeriodsResponse",
-    "FpspInsertUpdateMatchPersonStatisticsPeriodsPostBody",
-    "FpspInsertUpdateMatchPersonStatisticsPeriodsPostBodyPeriodId",
-    "FpspInsertUpdateMatchPersonStatisticsPeriodsPostBodyStatistics",
     "FpspInsertUpdateResponseDefault",
-    "FpspListBySeasonFixturePersonStatisticsPeriodsResponse",
     "FpspListBySeasonResponseDefault",
-    "FpspListperiodFixturePersonStatisticsPeriodsResponse",
-    "FpspListperiodliveFixturePersonStatisticsPeriodsResponse",
     "FpspListperiodlivePeriodId",
     "FpspListperiodliveResponseDefault",
     "FpspListperiodPeriodId",
@@ -5958,13 +2155,12 @@ __all__ = (
     "GameLogEntityModelOrganizationResourceType",
     "GameLogEntityModelPeriodId",
     "GameLogEntityModelStatistics",
+    "GameLogEntityResponse",
     "GamelogListentityFixtureType",
-    "GamelogListentityGameLogEntityResponse",
     "GamelogListentityHomeAway",
     "GamelogListentityResponseDefault",
     "GamelogListentityWinLoss",
     "GamelogListpersonFixtureType",
-    "GamelogListpersonGameLogPersonResponse",
     "GamelogListpersonHomeAway",
     "GamelogListpersonResponseDefault",
     "GamelogListpersonWinLoss",
@@ -5982,6 +2178,7 @@ __all__ = (
     "GameLogPersonModelPositionType2Type1",
     "GameLogPersonModelPositionType3Type1",
     "GameLogPersonModelStatistics",
+    "GameLogPersonResponse",
     "HeadToHeadEntityModel",
     "HeadToHeadEntityModelCompetition",
     "HeadToHeadEntityModelCompetitionResourceType",
@@ -5991,77 +2188,65 @@ __all__ = (
     "HeadToHeadEntityModelOrganizationResourceType",
     "HeadToHeadEntityModelSeason",
     "HeadToHeadEntityModelSeasonResourceType",
+    "HeadToHeadEntityResponse",
+    "HeadToHeadIdentification",
+    "HeadToHeadIdentificationForSubsequentChecks",
     "HeadToHeadListFixturesFixtureType",
-    "HeadToHeadListFixturesHeadToHeadEntityResponse",
     "HeadToHeadListFixturesMulitpleCompetitionsFixtureType",
-    "HeadToHeadListFixturesMulitpleCompetitionsHeadToHeadEntityResponse",
     "HeadToHeadListFixturesMulitpleCompetitionsResponseDefault",
     "HeadToHeadListFixturesMulitpleCompetitionsStatus",
     "HeadToHeadListFixturesMulitpleCompetitionsStatusNot",
     "HeadToHeadListFixturesResponseDefault",
     "HeadToHeadListFixturesStatus",
     "HeadToHeadListFixturesStatusNot",
-    "ImagesDeleteImagesResponse",
+    "HeadToHeadResolution",
+    "HeadToHeadResolutionForExtraDepthH2Hs",
+    "HeadToHeadResolutionForExtraDepthH2HsSortDirection",
+    "HeadToHeadResolutionSortDirection",
     "ImagesDeleteResponseDefault",
-    "ImagesDetailImagesResponse",
     "ImagesDetailResponseDefault",
     "ImagesForFixtureListBaseType",
-    "ImagesForFixtureListImagesResponse",
     "ImagesForFixtureListImageType",
     "ImagesForFixtureListRating",
     "ImagesForFixtureListResponseDefault",
     "ImagesInsertBaseType",
     "ImagesInsertFromUrlBaseType",
-    "ImagesInsertFromUrlImagesPostBody",
-    "ImagesInsertFromUrlImagesResponse",
     "ImagesInsertFromUrlImageType",
     "ImagesInsertFromUrlResponseDefault",
-    "ImagesInsertImagesResponse",
     "ImagesInsertImageType",
     "ImagesInsertOrganizationBaseType",
     "ImagesInsertOrganizationFromUrlBaseType",
-    "ImagesInsertOrganizationFromUrlImagesPostBody",
-    "ImagesInsertOrganizationFromUrlImagesResponse",
     "ImagesInsertOrganizationFromUrlImageType",
     "ImagesInsertOrganizationFromUrlResponseDefault",
-    "ImagesInsertOrganizationImagesResponse",
     "ImagesInsertOrganizationImageType",
     "ImagesInsertOrganizationResponseDefault",
     "ImagesInsertResponseDefault",
     "ImagesInsertSecondaryBaseType",
     "ImagesInsertSecondaryFromUrlBaseType",
-    "ImagesInsertSecondaryFromUrlImagesPostBody",
-    "ImagesInsertSecondaryFromUrlImagesResponse",
     "ImagesInsertSecondaryFromUrlImageType",
     "ImagesInsertSecondaryFromUrlResponseDefault",
     "ImagesInsertSecondaryFromUrlSecondaryType",
-    "ImagesInsertSecondaryImagesResponse",
     "ImagesInsertSecondaryImageType",
     "ImagesInsertSecondaryResponseDefault",
     "ImagesInsertSecondarySecondaryType",
     "ImagesListBaseType",
     "ImagesListIdBaseType",
-    "ImagesListIdImagesResponse",
     "ImagesListIdImageType",
     "ImagesListIdRating",
     "ImagesListIdResponseDefault",
     "ImagesListIdSecondaryBaseType",
-    "ImagesListIdSecondaryImagesResponse",
     "ImagesListIdSecondaryImageType",
     "ImagesListIdSecondaryRating",
     "ImagesListIdSecondaryResponseDefault",
     "ImagesListIdSecondarySecondaryType",
-    "ImagesListImagesResponse",
     "ImagesListImageType",
     "ImagesListOrganizationBaseType",
-    "ImagesListOrganizationImagesResponse",
     "ImagesListOrganizationImageType",
     "ImagesListOrganizationRating",
     "ImagesListOrganizationResponseDefault",
     "ImagesListRating",
     "ImagesListResponseDefault",
     "ImagesListSecondaryBaseType",
-    "ImagesListSecondaryImagesResponse",
     "ImagesListSecondaryImageType",
     "ImagesListSecondaryRating",
     "ImagesListSecondaryResponseDefault",
@@ -6076,27 +2261,25 @@ __all__ = (
     "ImagesModelSecondaryTypeType1",
     "ImagesModelSecondaryTypeType2Type1",
     "ImagesModelSecondaryTypeType3Type1",
-    "ImagesUpdateImagesPutBody",
-    "ImagesUpdateImagesPutBodyRating",
-    "ImagesUpdateImagesResponse",
+    "ImagesPostBody",
+    "ImagesPutBody",
+    "ImagesPutBodyRating",
+    "ImagesResponse",
     "ImagesUpdateResponseDefault",
     "IncludedData",
     "IncludedDataResources",
     "IncludedDataResourcesAdditionalProperty",
-    "LeaderCriteriaDeleteLeaderCriteriaResponse",
+    "InformationPerEntity",
     "LeaderCriteriaDeleteResponseDefault",
-    "LeaderCriteriaDetailLeaderCriteriaResponse",
     "LeaderCriteriaDetailResponseDefault",
-    "LeaderCriteriaInsertLeaderCriteriaPostBody",
-    "LeaderCriteriaInsertLeaderCriteriaResponse",
     "LeaderCriteriaInsertResponseDefault",
-    "LeaderCriteriaListLeaderCriteriaResponse",
     "LeaderCriteriaListResponseDefault",
     "LeaderCriteriaModel",
     "LeaderCriteriaModelOrganization",
     "LeaderCriteriaModelOrganizationResourceType",
-    "LeaderCriteriaUpdateLeaderCriteriaPutBody",
-    "LeaderCriteriaUpdateLeaderCriteriaResponse",
+    "LeaderCriteriaPostBody",
+    "LeaderCriteriaPutBody",
+    "LeaderCriteriaResponse",
     "LeaderCriteriaUpdateResponseDefault",
     "LeaderQualifierModel",
     "LeaderQualifierModelComparisonType",
@@ -6104,103 +2287,44 @@ __all__ = (
     "LeaderQualifierModelLeadersCriteriaResourceType",
     "LeaderQualifierModelOrganization",
     "LeaderQualifierModelOrganizationResourceType",
-    "LeaderQualifiersDeleteLeaderQualifiersResponse",
+    "LeaderQualifierPostBody",
+    "LeaderQualifierPostBodyComparisonType",
+    "LeaderQualifierPutBody",
+    "LeaderQualifierPutBodyComparisonType",
     "LeaderQualifiersDeleteResponseDefault",
-    "LeaderQualifiersDetailLeaderQualifiersResponse",
     "LeaderQualifiersDetailResponseDefault",
-    "LeaderQualifiersInsertLeaderQualifierPostBody",
-    "LeaderQualifiersInsertLeaderQualifierPostBodyComparisonType",
-    "LeaderQualifiersInsertLeaderQualifiersResponse",
     "LeaderQualifiersInsertResponseDefault",
-    "LeaderQualifiersListLeaderQualifiersResponse",
     "LeaderQualifiersListResponseDefault",
-    "LeaderQualifiersUpdateLeaderQualifierPutBody",
-    "LeaderQualifiersUpdateLeaderQualifierPutBodyComparisonType",
-    "LeaderQualifiersUpdateLeaderQualifiersResponse",
+    "LeaderQualifiersResponse",
     "LeaderQualifiersUpdateResponseDefault",
-    "LeagueDeleteLeaguesResponse",
+    "LeaderSummaryResponse",
     "LeagueDeleteResponseDefault",
-    "LeagueDetailLeaguesResponse",
     "LeagueDetailResponseDefault",
-    "LeagueExternalIdsDeleteLeagueExternalIdsResponse",
     "LeagueExternalIdsDeleteResponseDefault",
-    "LeagueExternalIdsDetailLeagueExternalIdsResponse",
     "LeagueExternalIdsDetailResponseDefault",
-    "LeagueExternalIdsInsertLeagueExternalIdsPostBody",
-    "LeagueExternalIdsInsertLeagueExternalIdsResponse",
     "LeagueExternalIdsInsertResponseDefault",
-    "LeagueExternalIdsInsertUpdateLeagueExternalIdsPostBody",
-    "LeagueExternalIdsInsertUpdateLeagueExternalIdsResponse",
     "LeagueExternalIdsInsertUpdateResponseDefault",
-    "LeagueExternalIdsListLeagueExternalIdsResponse",
     "LeagueExternalIdsListResponseDefault",
     "LeagueExternalIdsModel",
     "LeagueExternalIdsModelLeague",
     "LeagueExternalIdsModelLeagueResourceType",
     "LeagueExternalIdsModelOrganization",
     "LeagueExternalIdsModelOrganizationResourceType",
-    "LeagueExternalIdsUpdateLeagueExternalIdsPutBody",
-    "LeagueExternalIdsUpdateLeagueExternalIdsResponse",
+    "LeagueExternalIdsPostBody",
+    "LeagueExternalIdsPutBody",
+    "LeagueExternalIdsResponse",
     "LeagueExternalIdsUpdateResponseDefault",
-    "LeagueInsertLeaguePostBody",
-    "LeagueInsertLeaguePostBodyRegionType",
-    "LeagueInsertLeaguePostBodySocialMedia",
-    "LeagueInsertLeaguesResponse",
     "LeagueInsertResponseDefault",
-    "LeagueListLeaguesResponse",
     "LeagueListRegionType",
     "LeagueListResponseDefault",
-    "LeagueModel",
-    "LeagueModelOrganization",
-    "LeagueModelOrganizationResourceType",
-    "LeagueModelRegionType",
-    "LeagueModelSocialMedia",
-    "LeagueUpdateLeaguePutBody",
-    "LeagueUpdateLeaguePutBodyRegionType",
-    "LeagueUpdateLeaguePutBodySocialMedia",
-    "LeagueUpdateLeaguesResponse",
     "LeagueUpdateResponseDefault",
     "MatchExternalIdsModel",
     "MatchExternalIdsModelFixture",
     "MatchExternalIdsModelFixtureResourceType",
     "MatchExternalIdsModelOrganization",
     "MatchExternalIdsModelOrganizationResourceType",
-    "MatchModel",
-    "MatchModelBroadcasts",
-    "MatchModelBroadcastsBroadcastType",
-    "MatchModelCompetitorType",
-    "MatchModelDisciplineType1",
-    "MatchModelDisciplineType2Type1",
-    "MatchModelDisciplineType3Type1",
-    "MatchModelEnvironmentalDetails",
-    "MatchModelFixtureProfile",
-    "MatchModelFixtureProfileResourceType",
-    "MatchModelFixtureType",
-    "MatchModelMatchCompetitor",
-    "MatchModelMatchCompetitorResultStatus",
-    "MatchModelMatchCompetitorRosterStatus",
-    "MatchModelMaximumPeriodTypeUsedType1",
-    "MatchModelMaximumPeriodTypeUsedType2Type1",
-    "MatchModelMaximumPeriodTypeUsedType3Type1",
-    "MatchModelOrganization",
-    "MatchModelOrganizationResourceType",
-    "MatchModelPool",
-    "MatchModelPoolResourceType",
-    "MatchModelPracticeDrillTypeType1",
-    "MatchModelPracticeDrillTypeType2Type1",
-    "MatchModelPracticeDrillTypeType3Type1",
-    "MatchModelRound",
-    "MatchModelRoundResourceType",
-    "MatchModelSeason",
-    "MatchModelSeasonResourceType",
-    "MatchModelSeries",
-    "MatchModelSeriesResourceType",
-    "MatchModelSocialMedia",
-    "MatchModelStage",
-    "MatchModelStageResourceType",
-    "MatchModelStatus",
-    "MatchModelVenue",
-    "MatchModelVenueResourceType",
+    "MatchExternalIdsPostBody",
+    "MatchExternalIdsPutBody",
     "MatchPersonsModel",
     "MatchPersonsModelEntityGroup",
     "MatchPersonsModelEntityGroupResourceType",
@@ -6213,6 +2337,8 @@ __all__ = (
     "MatchPersonsModelResultStatus",
     "MatchPersonsModelUniform",
     "MatchPersonsModelUniformResourceType",
+    "MatchPersonsPostBody",
+    "MatchPersonsPostBodyResultStatus",
     "MatchPersonStatisticsModel",
     "MatchPersonStatisticsModelEntity",
     "MatchPersonStatisticsModelEntityResourceType",
@@ -6237,10 +2363,18 @@ __all__ = (
     "MatchPersonStatisticsPeriodsModelPerson",
     "MatchPersonStatisticsPeriodsModelPersonResourceType",
     "MatchPersonStatisticsPeriodsModelStatistics",
+    "MatchPersonStatisticsPeriodsPostBody",
+    "MatchPersonStatisticsPeriodsPostBodyPeriodId",
+    "MatchPersonStatisticsPeriodsPostBodyStatistics",
+    "MatchPersonStatisticsPostBody",
+    "MatchPersonStatisticsPostBodyPositionType1",
+    "MatchPersonStatisticsPostBodyPositionType2Type1",
+    "MatchPersonStatisticsPostBodyPositionType3Type1",
+    "MatchPersonStatisticsPostBodyStatistics",
+    "MatchProfileConfiguration",
+    "MatchProfileConfigurationMatchRolesItem",
+    "MatchProfileConfigurationTypeOfCardsItem",
     "MatchProfilesModel",
-    "MatchProfilesModelMatchProfileConfiguration",
-    "MatchProfilesModelMatchProfileConfigurationMatchRolesItem",
-    "MatchProfilesModelMatchProfileConfigurationTypeOfCardsItem",
     "MatchProfilesModelOrganization",
     "MatchProfilesModelOrganizationResourceType",
     "MatchRosterModel",
@@ -6255,6 +2389,10 @@ __all__ = (
     "MatchRosterModelPositionType1",
     "MatchRosterModelPositionType2Type1",
     "MatchRosterModelPositionType3Type1",
+    "MatchRosterPostBody",
+    "MatchRosterPostBodyPositionType1",
+    "MatchRosterPostBodyPositionType2Type1",
+    "MatchRosterPostBodyPositionType3Type1",
     "MatchTeamPeriodStatisticsModel",
     "MatchTeamPeriodStatisticsModelEntity",
     "MatchTeamPeriodStatisticsModelEntityResourceType",
@@ -6264,6 +2402,9 @@ __all__ = (
     "MatchTeamPeriodStatisticsModelOrganizationResourceType",
     "MatchTeamPeriodStatisticsModelPeriodId",
     "MatchTeamPeriodStatisticsModelStatistics",
+    "MatchTeamPeriodStatisticsPostBody",
+    "MatchTeamPeriodStatisticsPostBodyPeriodId",
+    "MatchTeamPeriodStatisticsPostBodyStatistics",
     "MatchTeamsModel",
     "MatchTeamsModelConference",
     "MatchTeamsModelConferenceResourceType",
@@ -6279,6 +2420,9 @@ __all__ = (
     "MatchTeamsModelRosterStatus",
     "MatchTeamsModelUniform",
     "MatchTeamsModelUniformResourceType",
+    "MatchTeamsPostBody",
+    "MatchTeamsPostBodyResultStatus",
+    "MatchTeamsPostBodyRosterStatus",
     "MatchTeamStatisticsModel",
     "MatchTeamStatisticsModelEntity",
     "MatchTeamStatisticsModelEntityResourceType",
@@ -6287,134 +2431,75 @@ __all__ = (
     "MatchTeamStatisticsModelOrganization",
     "MatchTeamStatisticsModelOrganizationResourceType",
     "MatchTeamStatisticsModelStatistics",
+    "MatchTeamStatisticsPostBody",
+    "MatchTeamStatisticsPostBodyStatistics",
+    "MergePostBody",
     "Model",
-    "OrganizationDeleteOrganizationsResponse",
     "OrganizationDeleteResponseDefault",
-    "OrganizationDetailOrganizationsResponse",
     "OrganizationDetailResponseDefault",
     "OrganizationFixtureListCompetitorType",
     "OrganizationFixtureListDiscipline",
-    "OrganizationFixtureListFixturesResponse",
     "OrganizationFixtureListFixtureType",
     "OrganizationFixtureListResponseDefault",
     "OrganizationFixtureListStatus",
     "OrganizationFixtureListStatusNot",
-    "OrganizationInsertOrganizationPostBody",
-    "OrganizationInsertOrganizationPostBodyRegionType",
-    "OrganizationInsertOrganizationsResponse",
     "OrganizationInsertResponseDefault",
-    "OrganizationListOrganizationsResponse",
     "OrganizationListRegionType",
     "OrganizationListResponseDefault",
     "OrganizationModel",
     "OrganizationModelRegionType",
-    "OrganizationUpdateOrganizationPutBody",
-    "OrganizationUpdateOrganizationPutBodyRegionType",
-    "OrganizationUpdateOrganizationsResponse",
+    "OrganizationPostBody",
+    "OrganizationPostBodyRegionType",
+    "OrganizationPutBody",
+    "OrganizationPutBodyRegionType",
+    "OrganizationsResponse",
     "OrganizationUpdateResponseDefault",
-    "OrggroupCompetitionListCompetitionsResponse",
     "OrggroupCompetitionListResponseDefault",
-    "OrggroupFixtureDetailFixturesResponse",
     "OrggroupFixtureDetailResponseDefault",
     "OrggroupFixtureListCompetitorType",
-    "OrggroupFixtureListFixturesResponse",
     "OrggroupFixtureListFixtureType",
     "OrggroupFixtureListResponseDefault",
     "OrggroupFixtureListStatus",
-    "PartnersDeleteBlankModelDeleteBody",
-    "PartnersDeleteBlankModelResponse",
     "PartnersDeleteResponseDefault",
-    "PartnersGetBlankModelGetBody",
-    "PartnersGetBlankModelResponse",
     "PartnersGetResponseDefault",
-    "PartnersPostBlankModelPostBody",
-    "PartnersPostBlankModelResponse",
     "PartnersPostResponseDefault",
-    "PartnersPutBlankModelPutBody",
-    "PartnersPutBlankModelResponse",
     "PartnersPutResponseDefault",
-    "PersonDeletePersonsResponse",
+    "PersonAdditionalDetails",
+    "PersonAdditionalDetailsDominantFoot",
+    "PersonAdditionalDetailsDominantHand",
     "PersonDeleteResponseDefault",
-    "PersonDetailPersonsResponse",
     "PersonDetailResponseDefault",
-    "PersonExternalIdsDeletePersonExternalIdsResponse",
     "PersonExternalIdsDeleteResponseDefault",
-    "PersonExternalIdsDetailPersonExternalIdsResponse",
     "PersonExternalIdsDetailResponseDefault",
-    "PersonExternalIdsInsertPersonExternalIdsPostBody",
-    "PersonExternalIdsInsertPersonExternalIdsResponse",
     "PersonExternalIdsInsertResponseDefault",
-    "PersonExternalIdsInsertUpdatePersonExternalIdsPostBody",
-    "PersonExternalIdsInsertUpdatePersonExternalIdsResponse",
     "PersonExternalIdsInsertUpdateResponseDefault",
-    "PersonExternalIdsListPersonExternalIdsResponse",
     "PersonExternalIdsListResponseDefault",
     "PersonExternalIdsModel",
     "PersonExternalIdsModelOrganization",
     "PersonExternalIdsModelOrganizationResourceType",
     "PersonExternalIdsModelPerson",
     "PersonExternalIdsModelPersonResourceType",
-    "PersonExternalIdsUpdatePersonExternalIdsPutBody",
-    "PersonExternalIdsUpdatePersonExternalIdsResponse",
+    "PersonExternalIdsPostBody",
+    "PersonExternalIdsPutBody",
+    "PersonExternalIdsResponse",
     "PersonExternalIdsUpdateResponseDefault",
-    "PersonInsertPersonPostBody",
-    "PersonInsertPersonPostBodyAdditionalNamesType0",
-    "PersonInsertPersonPostBodyAdditionalNamesType0AdditionalProperty",
-    "PersonInsertPersonPostBodyGender",
-    "PersonInsertPersonPostBodyPersonAdditionalDetails",
-    "PersonInsertPersonPostBodyPersonAdditionalDetailsDominantFoot",
-    "PersonInsertPersonPostBodyPersonAdditionalDetailsDominantHand",
-    "PersonInsertPersonPostBodyPersonHistoricalName",
-    "PersonInsertPersonPostBodySocialMedia",
-    "PersonInsertPersonPostBodyStatus",
-    "PersonInsertPersonsResponse",
+    "PersonHistoricalName",
     "PersonInsertResponseDefault",
-    "PersonInsertUpdatePersonPostBody",
-    "PersonInsertUpdatePersonPostBodyAdditionalNamesType0",
-    "PersonInsertUpdatePersonPostBodyAdditionalNamesType0AdditionalProperty",
-    "PersonInsertUpdatePersonPostBodyGender",
-    "PersonInsertUpdatePersonPostBodyPersonAdditionalDetails",
-    "PersonInsertUpdatePersonPostBodyPersonAdditionalDetailsDominantFoot",
-    "PersonInsertUpdatePersonPostBodyPersonAdditionalDetailsDominantHand",
-    "PersonInsertUpdatePersonPostBodyPersonHistoricalName",
-    "PersonInsertUpdatePersonPostBodySocialMedia",
-    "PersonInsertUpdatePersonPostBodyStatus",
-    "PersonInsertUpdatePersonsResponse",
     "PersonInsertUpdateResponseDefault",
     "PersonListGender",
-    "PersonListPersonsResponse",
     "PersonListRepresentingCountry",
     "PersonListResponseDefault",
     "PersonListStatus",
-    "PersonMergeMergePostBody",
     "PersonMergeResponseDefault",
-    "PersonMergeSuccessResponse",
     "PersonModel",
     "PersonModelAdditionalNamesType0",
     "PersonModelAdditionalNamesType0AdditionalProperty",
     "PersonModelGender",
     "PersonModelOrganization",
     "PersonModelOrganizationResourceType",
-    "PersonModelPersonAdditionalDetails",
-    "PersonModelPersonAdditionalDetailsDominantFoot",
-    "PersonModelPersonAdditionalDetailsDominantHand",
-    "PersonModelPersonHistoricalName",
-    "PersonModelSocialMedia",
     "PersonModelStatus",
-    "PersonSwapMergePostBody",
+    "PersonsResponse",
     "PersonSwapResponseDefault",
-    "PersonSwapSuccessResponse",
-    "PersonUpdatePersonPutBody",
-    "PersonUpdatePersonPutBodyAdditionalNamesType0",
-    "PersonUpdatePersonPutBodyAdditionalNamesType0AdditionalProperty",
-    "PersonUpdatePersonPutBodyGender",
-    "PersonUpdatePersonPutBodyPersonAdditionalDetails",
-    "PersonUpdatePersonPutBodyPersonAdditionalDetailsDominantFoot",
-    "PersonUpdatePersonPutBodyPersonAdditionalDetailsDominantHand",
-    "PersonUpdatePersonPutBodyPersonHistoricalName",
-    "PersonUpdatePersonPutBodySocialMedia",
-    "PersonUpdatePersonPutBodyStatus",
-    "PersonUpdatePersonsResponse",
     "PersonUpdateResponseDefault",
     "PoolModel",
     "PoolModelOrganization",
@@ -6423,26 +2508,24 @@ __all__ = (
     "PoolModelSeasonResourceType",
     "PoolModelStage",
     "PoolModelStageResourceType",
+    "PoolPostBody",
+    "PoolPutBody",
     "PssListAgeGroup",
     "PssListFixtureType",
     "PssListRepresentation",
     "PssListResponseDefault",
-    "PssListSeasonPersonStatisticsResponse",
     "PssListSeasonType",
     "PssListStandard",
     "PstsListAgeGroup",
     "PstsListFixtureType",
     "PstsListRepresentation",
     "PstsListResponseDefault",
-    "PstsListSeasonPersonTotalStatisticsResponse",
     "PstsListSeasonType",
     "PstsListStandard",
     "ResponseLinks",
     "ResponseMetaData",
     "RoleAllDeleteResponseDefault",
-    "RoleAllDeleteRolesResponse",
     "RoleDeleteResponseDefault",
-    "RoleDeleteRolesResponse",
     "RoleModel",
     "RoleModelEntity",
     "RoleModelEntityGroup",
@@ -6458,30 +2541,25 @@ __all__ = (
     "RoleModelSeason",
     "RoleModelSeasonResourceType",
     "RoleModelStatus",
+    "RolePostBody",
+    "RolePostBodyRole",
+    "RolePostBodyStatus",
+    "RolePutBody",
+    "RolePutBodyRole",
+    "RolePutBodyStatus",
     "RolesDetailResponseDefault",
-    "RolesDetailRolesResponse",
     "RolesInsertResponseDefault",
-    "RolesInsertRolePostBody",
-    "RolesInsertRolePostBodyRole",
-    "RolesInsertRolePostBodyStatus",
-    "RolesInsertRolesResponse",
     "RolesListByFixtureResponseDefault",
     "RolesListByFixtureRole",
-    "RolesListByFixtureRolesResponse",
     "RolesListByFixtureStatus",
     "RolesListFixturesResponseDefault",
     "RolesListFixturesRole",
-    "RolesListFixturesRolesResponse",
     "RolesListFixturesStatus",
     "RolesListNonFixturesResponseDefault",
     "RolesListNonFixturesRole",
-    "RolesListNonFixturesRolesResponse",
     "RolesListNonFixturesStatus",
+    "RolesResponse",
     "RolesUpdateResponseDefault",
-    "RolesUpdateRolePutBody",
-    "RolesUpdateRolePutBodyRole",
-    "RolesUpdateRolePutBodyStatus",
-    "RolesUpdateRolesResponse",
     "RoundModel",
     "RoundModelOrganization",
     "RoundModelOrganizationResourceType",
@@ -6491,26 +2569,16 @@ __all__ = (
     "RoundModelSeasonResourceType",
     "RoundModelStage",
     "RoundModelStageResourceType",
+    "RoundPostBody",
+    "RoundPutBody",
     "SeasonDeleteResponseDefault",
-    "SeasonDeleteSeasonsResponse",
     "SeasonDetailResponseDefault",
-    "SeasonDetailSeasonsResponse",
     "SeasonEntitiesDeleteResponseDefault",
-    "SeasonEntitiesDeleteSeasonEntitiesResponse",
     "SeasonEntitiesDetailResponseDefault",
-    "SeasonEntitiesDetailSeasonEntitiesResponse",
     "SeasonEntitiesInsertUpdateResponseDefault",
-    "SeasonEntitiesInsertUpdateSeasonEntitiesResponse",
     "SeasonEntitiesInsertUpdateSeasonPayloadResponseDefault",
-    "SeasonEntitiesInsertUpdateSeasonPayloadSeasonEntitiesResponse",
-    "SeasonEntitiesInsertUpdateSeasonPayloadSeasonTeamsPostBody",
-    "SeasonEntitiesInsertUpdateSeasonPayloadSeasonTeamsPostBodyRosterStatus",
-    "SeasonEntitiesInsertUpdateSeasonPayloadSeasonTeamsPostBodyStatus",
-    "SeasonEntitiesInsertUpdateSeasonTeamsPostBody",
-    "SeasonEntitiesInsertUpdateSeasonTeamsPostBodyRosterStatus",
-    "SeasonEntitiesInsertUpdateSeasonTeamsPostBodyStatus",
+    "SeasonEntitiesListResponse",
     "SeasonEntitiesListResponseDefault",
-    "SeasonEntitiesListSeasonEntitiesListResponse",
     "SeasonEntitiesModel",
     "SeasonEntitiesModelConference",
     "SeasonEntitiesModelConferenceResourceType",
@@ -6524,10 +2592,11 @@ __all__ = (
     "SeasonEntitiesModelSeason",
     "SeasonEntitiesModelSeasonResourceType",
     "SeasonEntitiesModelStatus",
+    "SeasonEntitiesResponse",
+    "SeasonEntityBaseStatisticsResponse",
     "SeasonEntityListByMultipleSeasonsResponseDefault",
-    "SeasonEntityListByMultipleSeasonsSeasonEntitiesListResponse",
     "SeasonEntityListResponseDefault",
-    "SeasonEntityListSeasonEntitiesListResponse",
+    "SeasonEntityPlacingsResponse",
     "SeasonEntityStatisticsModel",
     "SeasonEntityStatisticsModelCompetition",
     "SeasonEntityStatisticsModelCompetitionResourceType",
@@ -6539,29 +2608,24 @@ __all__ = (
     "SeasonEntityStatisticsModelSeason",
     "SeasonEntityStatisticsModelSeasonResourceType",
     "SeasonEntityStatisticsModelStatistics",
+    "SeasonEntityStatisticsResponse",
     "SeasonExternalIdsDeleteResponseDefault",
-    "SeasonExternalIdsDeleteSeasonExternalIdsResponse",
     "SeasonExternalIdsDetailResponseDefault",
-    "SeasonExternalIdsDetailSeasonExternalIdsResponse",
     "SeasonExternalIdsInsertResponseDefault",
-    "SeasonExternalIdsInsertSeasonExternalIdsPostBody",
-    "SeasonExternalIdsInsertSeasonExternalIdsResponse",
     "SeasonExternalIdsInsertUpdateResponseDefault",
-    "SeasonExternalIdsInsertUpdateSeasonExternalIdsPostBody",
-    "SeasonExternalIdsInsertUpdateSeasonExternalIdsResponse",
     "SeasonExternalIdsListResponseDefault",
-    "SeasonExternalIdsListSeasonExternalIdsResponse",
     "SeasonExternalIdsModel",
     "SeasonExternalIdsModelOrganization",
     "SeasonExternalIdsModelOrganizationResourceType",
     "SeasonExternalIdsModelSeason",
     "SeasonExternalIdsModelSeasonResourceType",
+    "SeasonExternalIdsPostBody",
+    "SeasonExternalIdsPutBody",
+    "SeasonExternalIdsResponse",
     "SeasonExternalIdsUpdateResponseDefault",
-    "SeasonExternalIdsUpdateSeasonExternalIdsPutBody",
-    "SeasonExternalIdsUpdateSeasonExternalIdsResponse",
     "SeasonFixtureStagesPoolsListFixtureType",
+    "SeasonFixtureStagesPoolsListResponse",
     "SeasonFixtureStagesPoolsListResponseDefault",
-    "SeasonFixtureStagesPoolsListSeasonFixtureStagesPoolsListResponse",
     "SeasonFixtureStagesPoolsModel",
     "SeasonFixtureStagesPoolsModelFixtureType",
     "SeasonFixtureStagesPoolsModelOrganization",
@@ -6573,25 +2637,6 @@ __all__ = (
     "SeasonFixtureStagesPoolsModelStage",
     "SeasonFixtureStagesPoolsModelStageResourceType",
     "SeasonInsertResponseDefault",
-    "SeasonInsertSeasonPostBody",
-    "SeasonInsertSeasonPostBodyAgeGroup",
-    "SeasonInsertSeasonPostBodyDisciplineType1",
-    "SeasonInsertSeasonPostBodyDisciplineType2Type1",
-    "SeasonInsertSeasonPostBodyDisciplineType3Type1",
-    "SeasonInsertSeasonPostBodyEventType",
-    "SeasonInsertSeasonPostBodyGender",
-    "SeasonInsertSeasonPostBodyPromotionRelegationRulesType0Item",
-    "SeasonInsertSeasonPostBodyPromotionRelegationRulesType0ItemRuleType",
-    "SeasonInsertSeasonPostBodyRepresentation",
-    "SeasonInsertSeasonPostBodySeasonConfiguration",
-    "SeasonInsertSeasonPostBodySEASONROSTERConfiguration",
-    "SeasonInsertSeasonPostBodySEASONROSTERConfigurationSeasonRosterStatusAllowedItem",
-    "SeasonInsertSeasonPostBodySeasonType",
-    "SeasonInsertSeasonPostBodySocialMedia",
-    "SeasonInsertSeasonPostBodyStandard",
-    "SeasonInsertSeasonPostBodyStatus",
-    "SeasonInsertSeasonPostBodyVideoProduction",
-    "SeasonInsertSeasonsResponse",
     "SeasonLeaderSummaryModel",
     "SeasonListAgeGroup",
     "SeasonListByOrganizationAgeGroup",
@@ -6600,7 +2645,6 @@ __all__ = (
     "SeasonListByOrganizationGender",
     "SeasonListByOrganizationRepresentation",
     "SeasonListByOrganizationResponseDefault",
-    "SeasonListByOrganizationSeasonsResponse",
     "SeasonListByOrganizationSeasonType",
     "SeasonListByOrganizationStandard",
     "SeasonListByOrganizationStatus",
@@ -6610,42 +2654,11 @@ __all__ = (
     "SeasonListGender",
     "SeasonListRepresentation",
     "SeasonListResponseDefault",
-    "SeasonListSeasonsResponse",
     "SeasonListSeasonType",
     "SeasonListStandard",
     "SeasonListStatus",
     "SeasonListVideoProduction",
-    "SeasonModel",
-    "SeasonModelAgeGroup",
-    "SeasonModelCompetition",
-    "SeasonModelCompetitionResourceType",
-    "SeasonModelDisciplineType1",
-    "SeasonModelDisciplineType2Type1",
-    "SeasonModelDisciplineType3Type1",
-    "SeasonModelEventType",
-    "SeasonModelFixtureProfile",
-    "SeasonModelFixtureProfileResourceType",
-    "SeasonModelGender",
-    "SeasonModelLeadersCriteria",
-    "SeasonModelLeadersCriteriaResourceType",
-    "SeasonModelOrganization",
-    "SeasonModelOrganizationResourceType",
-    "SeasonModelPromotionRelegationRulesType0Item",
-    "SeasonModelPromotionRelegationRulesType0ItemRuleType",
-    "SeasonModelRepresentation",
-    "SeasonModelSeasonConfiguration",
-    "SeasonModelSEASONROSTERConfiguration",
-    "SeasonModelSEASONROSTERConfigurationSeasonRosterStatusAllowedItem",
-    "SeasonModelSeasonType",
-    "SeasonModelSocialMedia",
-    "SeasonModelStandard",
-    "SeasonModelStandingConfiguration",
-    "SeasonModelStandingConfigurationResourceType",
-    "SeasonModelStatus",
-    "SeasonModelVideoProduction",
-    "SeasonMoveMergePostBody",
     "SeasonMoveResponseDefault",
-    "SeasonMoveSuccessResponse",
     "SeasonPersonBaseStatisticsModel",
     "SeasonPersonBaseStatisticsModelCompetitorType",
     "SeasonPersonBaseStatisticsModelEntity",
@@ -6658,8 +2671,12 @@ __all__ = (
     "SeasonPersonBaseStatisticsModelSeason",
     "SeasonPersonBaseStatisticsModelSeasonResourceType",
     "SeasonPersonBaseStatisticsModelStatistics",
+    "SeasonPersonBaseStatisticsPostBody",
+    "SeasonPersonBaseStatisticsPostBodyCompetitorType",
+    "SeasonPersonBaseStatisticsPostBodyFixtureType",
+    "SeasonPersonBaseStatisticsPostBodyStatistics",
+    "SeasonPersonBaseStatisticsResponse",
     "SeasonPersonListResponseDefault",
-    "SeasonPersonListSeasonPersonsListResponse",
     "SEASONPERSONPlacingsModel",
     "SEASONPERSONPlacingsModelOrganization",
     "SEASONPERSONPlacingsModelOrganizationResourceType",
@@ -6667,13 +2684,14 @@ __all__ = (
     "SEASONPERSONPlacingsModelPersonResourceType",
     "SEASONPERSONPlacingsModelSeason",
     "SEASONPERSONPlacingsModelSeasonResourceType",
+    "SEASONPERSONPlacingsPostBody",
+    "SEASONPERSONPlacingsPutBody",
+    "SeasonPersonPlacingsResponse",
     "SeasonPersonsDeleteResponseDefault",
     "SeasonPersonsDetailResponseDefault",
     "SeasonPersonsInsertUpdateResponseDefault",
-    "SeasonPersonsInsertUpdateSeasonPersonsPostBody",
-    "SeasonPersonsInsertUpdateSeasonPersonsPostBodyStatus",
+    "SeasonPersonsListResponse",
     "SeasonPersonsListResponseDefault",
-    "SeasonPersonsListSeasonPersonsListResponse",
     "SeasonPersonsModel",
     "SeasonPersonsModelEntityGroup",
     "SeasonPersonsModelEntityGroupResourceType",
@@ -6684,6 +2702,8 @@ __all__ = (
     "SeasonPersonsModelSeason",
     "SeasonPersonsModelSeasonResourceType",
     "SeasonPersonsModelStatus",
+    "SeasonPersonsPostBody",
+    "SeasonPersonsPostBodyStatus",
     "SeasonPersonStatisticsModel",
     "SeasonPersonStatisticsModelCompetition",
     "SeasonPersonStatisticsModelCompetitionResourceType",
@@ -6696,6 +2716,7 @@ __all__ = (
     "SeasonPersonStatisticsModelSeason",
     "SeasonPersonStatisticsModelSeasonResourceType",
     "SeasonPersonStatisticsModelStatistics",
+    "SeasonPersonStatisticsResponse",
     "SeasonPersonTotalStatisticsModel",
     "SeasonPersonTotalStatisticsModelCompetition",
     "SeasonPersonTotalStatisticsModelCompetitionResourceType",
@@ -6706,35 +2727,20 @@ __all__ = (
     "SeasonPersonTotalStatisticsModelSeason",
     "SeasonPersonTotalStatisticsModelSeasonResourceType",
     "SeasonPersonTotalStatisticsModelStatistics",
+    "SeasonPersonTotalStatisticsResponse",
     "SeasonPoolDetailResponseDefault",
-    "SeasonPoolDetailSeasonPoolsResponse",
-    "SeasonPoolInsertPoolPostBody",
     "SeasonPoolInsertResponseDefault",
-    "SeasonPoolInsertSeasonPoolsResponse",
     "SeasonPoolListResponseDefault",
-    "SeasonPoolListSeasonPoolsResponse",
     "SeasonPoolsDeleteResponseDefault",
-    "SeasonPoolsDeleteSeasonPoolsResponse",
-    "SeasonPoolUpdatePoolPutBody",
+    "SeasonPoolsResponse",
     "SeasonPoolUpdateResponseDefault",
-    "SeasonPoolUpdateSeasonPoolsResponse",
     "SeasonRosterDeleteResponseDefault",
-    "SeasonRosterDeleteSeasonRosterResponse",
     "SeasonRosterDetailResponseDefault",
-    "SeasonRosterDetailSeasonRosterResponse",
     "SeasonRosterDetailStatus",
     "SeasonRosterInsertUpdateResponseDefault",
-    "SeasonRosterInsertUpdateSeasonRosterPostBody",
-    "SeasonRosterInsertUpdateSeasonRosterPostBodyPositionType1",
-    "SeasonRosterInsertUpdateSeasonRosterPostBodyPositionType2Type1",
-    "SeasonRosterInsertUpdateSeasonRosterPostBodyPositionType3Type1",
-    "SeasonRosterInsertUpdateSeasonRosterPostBodyStatus",
-    "SeasonRosterInsertUpdateSeasonRosterResponse",
     "SeasonRosterListByEntityResponseDefault",
-    "SeasonRosterListByEntitySeasonRosterResponse",
     "SeasonRosterListByEntityStatus",
     "SeasonRosterListResponseDefault",
-    "SeasonRosterListSeasonRosterResponse",
     "SeasonRosterListStatus",
     "SeasonRosterModel",
     "SeasonRosterModelConference",
@@ -6755,67 +2761,47 @@ __all__ = (
     "SeasonRosterModelSeason",
     "SeasonRosterModelSeasonResourceType",
     "SeasonRosterModelStatus",
+    "SeasonRosterPostBody",
+    "SeasonRosterPostBodyPositionType1",
+    "SeasonRosterPostBodyPositionType2Type1",
+    "SeasonRosterPostBodyPositionType3Type1",
+    "SeasonRosterPostBodyStatus",
+    "SeasonRosterResponse",
     "SeasonRoundDetailResponseDefault",
-    "SeasonRoundDetailSeasonRoundsResponse",
     "SeasonRoundInsertResponseDefault",
-    "SeasonRoundInsertRoundPostBody",
-    "SeasonRoundInsertSeasonRoundsResponse",
     "SeasonRoundInsertUpdateResponseDefault",
-    "SeasonRoundInsertUpdateRoundPostBody",
-    "SeasonRoundInsertUpdateSeasonRoundsResponse",
     "SeasonRoundListResponseDefault",
-    "SeasonRoundListSeasonRoundsResponse",
     "SeasonRoundsDeleteResponseDefault",
-    "SeasonRoundsDeleteSeasonRoundsResponse",
+    "SeasonRoundsResponse",
     "SeasonRoundUpdateResponseDefault",
-    "SeasonRoundUpdateRoundPutBody",
-    "SeasonRoundUpdateSeasonRoundsResponse",
     "SeasonSeriesCalculateResponseDefault",
-    "SeasonSeriesCalculateSuccessResponse",
+    "SeasonSeriesCompetitor",
+    "SeasonSeriesCompetitorSeriesResult",
     "SeasonSeriesDeleteResponseDefault",
-    "SeasonSeriesDeleteSeasonSeriesResponse",
     "SeasonSeriesDetailResponseDefault",
-    "SeasonSeriesDetailSeasonSeriesResponse",
     "SeasonSeriesInsertResponseDefault",
-    "SeasonSeriesInsertSeasonSeriesResponse",
-    "SeasonSeriesInsertSeriesPostBody",
-    "SeasonSeriesInsertSeriesPostBodySeasonSeriesCompetitor",
-    "SeasonSeriesInsertSeriesPostBodySeasonSeriesCompetitorSeriesResult",
-    "SeasonSeriesInsertSeriesPostBodySeriesType",
-    "SeasonSeriesInsertSeriesPostBodyStatus",
     "SeasonSeriesListResponseDefault",
-    "SeasonSeriesListSeasonSeriesResponse",
     "SeasonSeriesListSeriesType",
+    "SeasonSeriesResponse",
     "SeasonSeriesUpdateResponseDefault",
-    "SeasonSeriesUpdateSeasonSeriesResponse",
-    "SeasonSeriesUpdateSeriesPutBody",
-    "SeasonSeriesUpdateSeriesPutBodySeasonSeriesCompetitor",
-    "SeasonSeriesUpdateSeriesPutBodySeasonSeriesCompetitorSeriesResult",
-    "SeasonSeriesUpdateSeriesPutBodySeriesType",
-    "SeasonSeriesUpdateSeriesPutBodyStatus",
     "SeasonsRosterListByEntityResponseDefault",
-    "SeasonsRosterListByEntitySeasonRosterResponse",
     "SeasonsRosterListByEntityStatus",
     "SeasonStageDetailResponseDefault",
-    "SeasonStageDetailSeasonStagesResponse",
     "SeasonStageInsertResponseDefault",
-    "SeasonStageInsertSeasonStagePostBody",
-    "SeasonStageInsertSeasonStagesResponse",
     "SeasonStageListResponseDefault",
-    "SeasonStageListSeasonStagesResponse",
     "SeasonStageModel",
     "SeasonStageModelOrganization",
     "SeasonStageModelOrganizationResourceType",
     "SeasonStageModelSeason",
     "SeasonStageModelSeasonResourceType",
+    "SeasonStagePostBody",
+    "SeasonStagePutBody",
     "SeasonStagesDeleteResponseDefault",
-    "SeasonStagesDeleteSeasonStagesResponse",
+    "SeasonStagesResponse",
     "SeasonStageUpdateResponseDefault",
-    "SeasonStageUpdateSeasonStagePutBody",
-    "SeasonStageUpdateSeasonStagesResponse",
     "SeasonStandingsStagesPoolsListFixtureType",
+    "SeasonStandingsStagesPoolsListResponse",
     "SeasonStandingsStagesPoolsListResponseDefault",
-    "SeasonStandingsStagesPoolsListSeasonStandingsStagesPoolsListResponse",
     "SeasonStandingsStagesPoolsModel",
     "SeasonStandingsStagesPoolsModelOrganization",
     "SeasonStandingsStagesPoolsModelOrganizationResourceType",
@@ -6835,6 +2821,10 @@ __all__ = (
     "SeasonTeamBaseStatisticsModelSeason",
     "SeasonTeamBaseStatisticsModelSeasonResourceType",
     "SeasonTeamBaseStatisticsModelStatistics",
+    "SeasonTeamBaseStatisticsPostBody",
+    "SeasonTeamBaseStatisticsPostBodyCompetitorType",
+    "SeasonTeamBaseStatisticsPostBodyFixtureType",
+    "SeasonTeamBaseStatisticsPostBodyStatistics",
     "SEASONTEAMPlacingsModel",
     "SEASONTEAMPlacingsModelEntity",
     "SEASONTEAMPlacingsModelEntityResourceType",
@@ -6842,6 +2832,8 @@ __all__ = (
     "SEASONTEAMPlacingsModelOrganizationResourceType",
     "SEASONTEAMPlacingsModelSeason",
     "SEASONTEAMPlacingsModelSeasonResourceType",
+    "SEASONTEAMPlacingsPostBody",
+    "SEASONTEAMPlacingsPutBody",
     "SeasonTeamsModel",
     "SeasonTeamsModelConference",
     "SeasonTeamsModelConferenceResourceType",
@@ -6855,80 +2847,28 @@ __all__ = (
     "SeasonTeamsModelSeason",
     "SeasonTeamsModelSeasonResourceType",
     "SeasonTeamsModelStatus",
+    "SeasonTeamsPostBody",
+    "SeasonTeamsPostBodyRosterStatus",
+    "SeasonTeamsPostBodyStatus",
     "SeasonUpdateResponseDefault",
-    "SeasonUpdateSeasonPutBody",
-    "SeasonUpdateSeasonPutBodyAgeGroup",
-    "SeasonUpdateSeasonPutBodyDisciplineType1",
-    "SeasonUpdateSeasonPutBodyDisciplineType2Type1",
-    "SeasonUpdateSeasonPutBodyDisciplineType3Type1",
-    "SeasonUpdateSeasonPutBodyEventType",
-    "SeasonUpdateSeasonPutBodyGender",
-    "SeasonUpdateSeasonPutBodyPromotionRelegationRulesType0Item",
-    "SeasonUpdateSeasonPutBodyPromotionRelegationRulesType0ItemRuleType",
-    "SeasonUpdateSeasonPutBodyRepresentation",
-    "SeasonUpdateSeasonPutBodySeasonConfiguration",
-    "SeasonUpdateSeasonPutBodySEASONROSTERConfiguration",
-    "SeasonUpdateSeasonPutBodySEASONROSTERConfigurationSeasonRosterStatusAllowedItem",
-    "SeasonUpdateSeasonPutBodySeasonType",
-    "SeasonUpdateSeasonPutBodySocialMedia",
-    "SeasonUpdateSeasonPutBodyStandard",
-    "SeasonUpdateSeasonPutBodyStatus",
-    "SeasonUpdateSeasonPutBodyVideoProduction",
-    "SeasonUpdateSeasonsResponse",
     "SeasonVenuesListResponseDefault",
-    "SeasonVenuesListSeasonVenuesListResponse",
-    "SeasonVenuesModel",
-    "SeasonVenuesModelOrganization",
-    "SeasonVenuesModelOrganizationResourceType",
-    "SeasonVenuesModelSeason",
-    "SeasonVenuesModelSeasonResourceType",
-    "SeasonVenuesModelSeasonVenuesAddress",
-    "SeasonVenuesModelSite",
-    "SeasonVenuesModelSiteResourceType",
-    "SeasonVenuesModelSocialMedia",
-    "SeasonVenueVideostreamDisableFixtureVideosteamPostBody",
-    "SeasonVenueVideostreamDisableFixtureVideosteamPostBodyPlatformProvider",
     "SeasonVenueVideostreamDisableResponseDefault",
-    "SeasonVenueVideostreamDisableSuccessResponse",
-    "SeasonVenueVideostreamEnableFixtureVideosteamPostBody",
-    "SeasonVenueVideostreamEnableFixtureVideosteamPostBodyPlatformProvider",
     "SeasonVenueVideostreamEnableResponseDefault",
-    "SeasonVenueVideostreamEnableSuccessResponse",
-    "SeasonVideostreamDisableFixtureVideosteamPostBody",
-    "SeasonVideostreamDisableFixtureVideosteamPostBodyPlatformProvider",
     "SeasonVideostreamDisableResponseDefault",
-    "SeasonVideostreamDisableSuccessResponse",
-    "SeasonVideostreamEnableFixtureVideosteamPostBody",
-    "SeasonVideostreamEnableFixtureVideosteamPostBodyPlatformProvider",
     "SeasonVideostreamEnableResponseDefault",
-    "SeasonVideostreamEnableSuccessResponse",
     "SebsDeleteAllCompetitorType",
     "SebsDeleteAllFixtureType",
     "SebsDeleteAllResponseDefault",
-    "SebsDeleteAllSeasonEntityBaseStatisticsResponse",
     "SebsInsertUpdateResponseDefault",
-    "SebsInsertUpdateSeasonEntityBaseStatisticsResponse",
-    "SebsInsertUpdateSeasonTeamBaseStatisticsPostBody",
-    "SebsInsertUpdateSeasonTeamBaseStatisticsPostBodyCompetitorType",
-    "SebsInsertUpdateSeasonTeamBaseStatisticsPostBodyFixtureType",
-    "SebsInsertUpdateSeasonTeamBaseStatisticsPostBodyStatistics",
     "SebsListCompetitorType",
     "SebsListFixtureType",
     "SebsListRepresentingCountry",
     "SebsListResponseDefault",
-    "SebsListSeasonEntityBaseStatisticsResponse",
     "SepDeleteResponseDefault",
-    "SepDeleteSeasonEntityPlacingsResponse",
     "SepDetailResponseDefault",
-    "SepDetailSeasonEntityPlacingsResponse",
     "SepInsertResponseDefault",
-    "SepInsertSeasonEntityPlacingsResponse",
-    "SepInsertSEASONTEAMPlacingsPostBody",
     "SepListResponseDefault",
-    "SepListSeasonEntityPlacingsResponse",
     "SepUpdateResponseDefault",
-    "SepUpdateSeasonEntityPlacingsResponse",
-    "SepUpdateSEASONTEAMPlacingsPutBody",
     "SeriesModel",
     "SeriesModelConference",
     "SeriesModelConferenceResourceType",
@@ -6940,8 +2880,6 @@ __all__ = (
     "SeriesModelPoolResourceType",
     "SeriesModelSeason",
     "SeriesModelSeasonResourceType",
-    "SeriesModelSeasonSeriesCompetitor",
-    "SeriesModelSeasonSeriesCompetitorSeriesResult",
     "SeriesModelSeriesType",
     "SeriesModelStage",
     "SeriesModelStageResourceType",
@@ -6952,93 +2890,55 @@ __all__ = (
     "SesListperiodsHomeAway",
     "SesListperiodsPeriodId",
     "SesListperiodsResponseDefault",
-    "SesListperiodsSeasonEntityStatisticsResponse",
     "SesListperiodsWinLoss",
     "SesListResponseDefault",
-    "SesListSeasonEntityStatisticsResponse",
     "SesListWinLoss",
     "SiteDeleteResponseDefault",
-    "SiteDeleteSitesResponse",
     "SiteDetailResponseDefault",
-    "SiteDetailSitesResponse",
     "SiteExternalIdsDeleteResponseDefault",
-    "SiteExternalIdsDeleteSiteExternalIdsResponse",
     "SiteExternalIdsDetailResponseDefault",
-    "SiteExternalIdsDetailSiteExternalIdsResponse",
     "SiteExternalIdsInsertResponseDefault",
-    "SiteExternalIdsInsertSiteExternalIdsPostBody",
-    "SiteExternalIdsInsertSiteExternalIdsResponse",
     "SiteExternalIdsInsertUpdateResponseDefault",
-    "SiteExternalIdsInsertUpdateSiteExternalIdsPostBody",
-    "SiteExternalIdsInsertUpdateSiteExternalIdsResponse",
     "SiteExternalIdsListResponseDefault",
-    "SiteExternalIdsListSiteExternalIdsResponse",
     "SiteExternalIdsModel",
     "SiteExternalIdsModelOrganization",
     "SiteExternalIdsModelOrganizationResourceType",
     "SiteExternalIdsModelSite",
     "SiteExternalIdsModelSiteResourceType",
+    "SiteExternalIdsPostBody",
+    "SiteExternalIdsPutBody",
+    "SiteExternalIdsResponse",
     "SiteExternalIdsUpdateResponseDefault",
-    "SiteExternalIdsUpdateSiteExternalIdsPutBody",
-    "SiteExternalIdsUpdateSiteExternalIdsResponse",
     "SiteInsertResponseDefault",
-    "SiteInsertSitePostBody",
-    "SiteInsertSitePostBodySiteAddress",
-    "SiteInsertSitePostBodySocialMedia",
-    "SiteInsertSitesResponse",
     "SiteListResponseDefault",
-    "SiteListSitesResponse",
-    "SiteModel",
-    "SiteModelOrganization",
-    "SiteModelOrganizationResourceType",
-    "SiteModelSiteAddress",
-    "SiteModelSocialMedia",
     "SiteUpdateResponseDefault",
-    "SiteUpdateSitePutBody",
-    "SiteUpdateSitePutBodySiteAddress",
-    "SiteUpdateSitePutBodySocialMedia",
-    "SiteUpdateSitesResponse",
     "SlListFixtureType",
     "SlListHomeAway",
     "SlListResponseDefault",
-    "SlListSeasonPersonStatisticsResponse",
     "SlListSummaryFixtureType",
     "SlListSummaryHomeAway",
-    "SlListSummaryLeaderSummaryResponse",
     "SlListSummaryResponseDefault",
     "SlListSummaryWinLoss",
     "SlListWinLoss",
+    "SocialMedia",
+    "Sorting",
+    "SortingSortDirection",
     "SpbsDeleteAllCompetitorType",
     "SpbsDeleteAllFixtureType",
     "SpbsDeleteAllResponseDefault",
-    "SpbsDeleteAllSeasonPersonBaseStatisticsResponse",
     "SpbsInsertUpdateResponseDefault",
-    "SpbsInsertUpdateSeasonPersonBaseStatisticsPostBody",
-    "SpbsInsertUpdateSeasonPersonBaseStatisticsPostBodyCompetitorType",
-    "SpbsInsertUpdateSeasonPersonBaseStatisticsPostBodyFixtureType",
-    "SpbsInsertUpdateSeasonPersonBaseStatisticsPostBodyStatistics",
-    "SpbsInsertUpdateSeasonPersonBaseStatisticsResponse",
     "SpbsListCompetitorType",
     "SpbsListFixtureType",
     "SpbsListRepresentingCountry",
     "SpbsListResponseDefault",
-    "SpbsListSeasonPersonBaseStatisticsResponse",
     "SppDeleteResponseDefault",
-    "SppDeleteSeasonPersonPlacingsResponse",
     "SppDetailResponseDefault",
-    "SppDetailSeasonPersonPlacingsResponse",
     "SppInsertResponseDefault",
-    "SppInsertSEASONPERSONPlacingsPostBody",
-    "SppInsertSeasonPersonPlacingsResponse",
     "SppListResponseDefault",
-    "SppListSeasonPersonPlacingsResponse",
     "SppUpdateResponseDefault",
-    "SppUpdateSEASONPERSONPlacingsPutBody",
-    "SppUpdateSeasonPersonPlacingsResponse",
     "SpsListFixtureType",
     "SpsListHomeAway",
     "SpsListResponseDefault",
-    "SpsListSeasonPersonStatisticsResponse",
     "SpsListWinLoss",
     "SpspListperiodsFixtureType",
     "SpspListperiodsHomeAway",
@@ -7048,7 +2948,6 @@ __all__ = (
     "SptsListFixtureType",
     "SptsListHomeAway",
     "SptsListResponseDefault",
-    "SptsListSeasonPersonTotalStatisticsResponse",
     "SptsListWinLoss",
     "StandingAdjustmentModel",
     "StandingAdjustmentModelAdjustmentField",
@@ -7070,118 +2969,53 @@ __all__ = (
     "StandingAdjustmentModelSeasonResourceType",
     "StandingAdjustmentModelStage",
     "StandingAdjustmentModelStageResourceType",
+    "StandingAdjustmentPostBody",
+    "StandingAdjustmentPostBodyAdjustmentField",
+    "StandingAdjustmentPostBodyAdjustmentGroup",
+    "StandingAdjustmentPostBodyAdjustmentType",
+    "StandingAdjustmentPutBody",
+    "StandingAdjustmentPutBodyAdjustmentField",
+    "StandingAdjustmentPutBodyAdjustmentGroup",
+    "StandingAdjustmentPutBodyAdjustmentType",
     "StandingAdjustmentsDeleteResponseDefault",
-    "StandingAdjustmentsDeleteStandingAdjustmentsResponse",
     "StandingAdjustmentsDetailResponseDefault",
-    "StandingAdjustmentsDetailStandingAdjustmentsResponse",
     "StandingAdjustmentsGroupingkeyDeleteResponseDefault",
-    "StandingAdjustmentsGroupingkeyDeleteStandingAdjustmentsResponse",
     "StandingAdjustmentsInsertResponseDefault",
-    "StandingAdjustmentsInsertStandingAdjustmentPostBody",
-    "StandingAdjustmentsInsertStandingAdjustmentPostBodyAdjustmentField",
-    "StandingAdjustmentsInsertStandingAdjustmentPostBodyAdjustmentGroup",
-    "StandingAdjustmentsInsertStandingAdjustmentPostBodyAdjustmentType",
-    "StandingAdjustmentsInsertStandingAdjustmentsResponse",
     "StandingAdjustmentsListResponseDefault",
-    "StandingAdjustmentsListStandingAdjustmentsResponse",
+    "StandingAdjustmentsResponse",
     "StandingAdjustmentsSeasonDeleteResponseDefault",
-    "StandingAdjustmentsSeasonDeleteStandingAdjustmentsResponse",
     "StandingAdjustmentsUpdateResponseDefault",
-    "StandingAdjustmentsUpdateStandingAdjustmentPutBody",
-    "StandingAdjustmentsUpdateStandingAdjustmentPutBodyAdjustmentField",
-    "StandingAdjustmentsUpdateStandingAdjustmentPutBodyAdjustmentGroup",
-    "StandingAdjustmentsUpdateStandingAdjustmentPutBodyAdjustmentType",
-    "StandingAdjustmentsUpdateStandingAdjustmentsResponse",
     "StandingAllDeleteResponseDefault",
-    "StandingAllDeleteSuccessResponse",
+    "StandingBuilding",
+    "StandingBuildingBuildType",
+    "StandingBuildingFixtureTypesItem",
+    "StandingBuildingGrouping",
     "StandingBuildLiveResponseDefault",
-    "StandingBuildLiveSuccessResponse",
     "StandingBuildResponseDefault",
-    "StandingBuildSuccessResponse",
+    "StandingConfiguration",
     "StandingConfigurationsDeleteResponseDefault",
-    "StandingConfigurationsDeleteStandingConfigurationsResponse",
     "StandingConfigurationsDetailResponseDefault",
-    "StandingConfigurationsDetailStandingConfigurationsResponse",
     "StandingConfigurationsInsertResponseDefault",
-    "StandingConfigurationsInsertStandingConfigurationsPostBody",
-    "StandingConfigurationsInsertStandingConfigurationsPostBodyStandingBuilding",
-    "StandingConfigurationsInsertStandingConfigurationsPostBodyStandingBuildingBuildType",
-    "StandingConfigurationsInsertStandingConfigurationsPostBodyStandingBuildingFixtureTypesItem",
-    "StandingConfigurationsInsertStandingConfigurationsPostBodyStandingBuildingGrouping",
-    "StandingConfigurationsInsertStandingConfigurationsPostBodyStandingConfiguration",
-    "StandingConfigurationsInsertStandingConfigurationsPostBodyStandingConfigurationHeadToHeadIdentification",
-    "StandingConfigurationsInsertStandingConfigurationsPostBodyStandingConfigurationHeadToHeadIdentificationForSubsequentChecks",
-    "StandingConfigurationsInsertStandingConfigurationsPostBodyStandingConfigurationHeadToHeadResolution",
-    "StandingConfigurationsInsertStandingConfigurationsPostBodyStandingConfigurationHeadToHeadResolutionForExtraDepthH2Hs",
-    "StandingConfigurationsInsertStandingConfigurationsPostBodyStandingConfigurationHeadToHeadResolutionForExtraDepthH2HsSortDirection",
-    "StandingConfigurationsInsertStandingConfigurationsPostBodyStandingConfigurationHeadToHeadResolutionSortDirection",
-    "StandingConfigurationsInsertStandingConfigurationsPostBodyStandingConfigurationSorting",
-    "StandingConfigurationsInsertStandingConfigurationsPostBodyStandingConfigurationSortingSortDirection",
-    "StandingConfigurationsInsertStandingConfigurationsPostBodyStandingConfigurationStreak",
-    "StandingConfigurationsInsertStandingConfigurationsResponse",
     "StandingConfigurationsListResponseDefault",
-    "StandingConfigurationsListStandingConfigurationsResponse",
     "StandingConfigurationsModel",
     "StandingConfigurationsModelOrganization",
     "StandingConfigurationsModelOrganizationResourceType",
-    "StandingConfigurationsModelStandingBuilding",
-    "StandingConfigurationsModelStandingBuildingBuildType",
-    "StandingConfigurationsModelStandingBuildingFixtureTypesItem",
-    "StandingConfigurationsModelStandingBuildingGrouping",
-    "StandingConfigurationsModelStandingConfiguration",
-    "StandingConfigurationsModelStandingConfigurationHeadToHeadIdentification",
-    "StandingConfigurationsModelStandingConfigurationHeadToHeadIdentificationForSubsequentChecks",
-    "StandingConfigurationsModelStandingConfigurationHeadToHeadResolution",
-    "StandingConfigurationsModelStandingConfigurationHeadToHeadResolutionForExtraDepthH2Hs",
-    "StandingConfigurationsModelStandingConfigurationHeadToHeadResolutionForExtraDepthH2HsSortDirection",
-    "StandingConfigurationsModelStandingConfigurationHeadToHeadResolutionSortDirection",
-    "StandingConfigurationsModelStandingConfigurationSorting",
-    "StandingConfigurationsModelStandingConfigurationSortingSortDirection",
-    "StandingConfigurationsModelStandingConfigurationStreak",
+    "StandingConfigurationsResponse",
+    "StandingConfigurationStreak",
     "StandingConfigurationsUpdateResponseDefault",
-    "StandingConfigurationsUpdateStandingConfigurationsPutBody",
-    "StandingConfigurationsUpdateStandingConfigurationsPutBodyStandingBuilding",
-    "StandingConfigurationsUpdateStandingConfigurationsPutBodyStandingBuildingBuildType",
-    "StandingConfigurationsUpdateStandingConfigurationsPutBodyStandingBuildingFixtureTypesItem",
-    "StandingConfigurationsUpdateStandingConfigurationsPutBodyStandingBuildingGrouping",
-    "StandingConfigurationsUpdateStandingConfigurationsPutBodyStandingConfiguration",
-    "StandingConfigurationsUpdateStandingConfigurationsPutBodyStandingConfigurationHeadToHeadIdentification",
-    "StandingConfigurationsUpdateStandingConfigurationsPutBodyStandingConfigurationHeadToHeadIdentificationForSubsequentChecks",
-    "StandingConfigurationsUpdateStandingConfigurationsPutBodyStandingConfigurationHeadToHeadResolution",
-    "StandingConfigurationsUpdateStandingConfigurationsPutBodyStandingConfigurationHeadToHeadResolutionForExtraDepthH2Hs",
-    "StandingConfigurationsUpdateStandingConfigurationsPutBodyStandingConfigurationHeadToHeadResolutionForExtraDepthH2HsSortDirection",
-    "StandingConfigurationsUpdateStandingConfigurationsPutBodyStandingConfigurationHeadToHeadResolutionSortDirection",
-    "StandingConfigurationsUpdateStandingConfigurationsPutBodyStandingConfigurationSorting",
-    "StandingConfigurationsUpdateStandingConfigurationsPutBodyStandingConfigurationSortingSortDirection",
-    "StandingConfigurationsUpdateStandingConfigurationsPutBodyStandingConfigurationStreak",
-    "StandingConfigurationsUpdateStandingConfigurationsResponse",
     "StandingDeleteResponseDefault",
-    "StandingDeleteStandingsResponse",
     "StandingDetailResponseDefault",
-    "StandingDetailStandingsResponse",
     "StandingInsertResponseDefault",
-    "StandingInsertStandingPostBody",
-    "StandingInsertStandingPostBodyCalculated",
-    "StandingInsertStandingPostBodyCalculatedAdditionalProperty",
-    "StandingInsertStandingPostBodyFixtureType",
-    "StandingInsertStandingPostBodyGroupingBase",
-    "StandingInsertStandingPostBodyGroupingConferenceDivision",
-    "StandingInsertStandingPostBodyGroupingStagePool",
-    "StandingInsertStandingPostBodyPoints",
-    "StandingInsertStandingPostBodyPointsAdditionalProperty",
-    "StandingInsertStandingsResponse",
     "StandingListFixtureType",
     "StandingListGroupingBase",
     "StandingListGroupingConferenceDivision",
     "StandingListGroupingStagePool",
     "StandingListResponseDefault",
-    "StandingListStandingsResponse",
     "StandingLiveListFixtureType",
     "StandingLiveListGroupingBase",
     "StandingLiveListGroupingConferenceDivision",
     "StandingLiveListGroupingStagePool",
     "StandingLiveListResponseDefault",
-    "StandingLiveListStandingsResponse",
     "StandingModel",
     "StandingModelCalculated",
     "StandingModelCalculatedAdditionalProperty",
@@ -7209,15 +3043,19 @@ __all__ = (
     "StandingModelStageResourceType",
     "StandingModelStandingConfiguration",
     "StandingModelStandingConfigurationResourceType",
+    "StandingPostBody",
+    "StandingPostBodyCalculated",
+    "StandingPostBodyCalculatedAdditionalProperty",
+    "StandingPostBodyFixtureType",
+    "StandingPostBodyGroupingBase",
+    "StandingPostBodyGroupingConferenceDivision",
+    "StandingPostBodyGroupingStagePool",
+    "StandingPostBodyPoints",
+    "StandingPostBodyPointsAdditionalProperty",
     "StandingProgressionsDeleteResponseDefault",
-    "StandingProgressionsDeleteStandingProgressionsResponse",
     "StandingProgressionsDetailResponseDefault",
-    "StandingProgressionsDetailStandingProgressionsResponse",
     "StandingProgressionsInsertResponseDefault",
-    "StandingProgressionsInsertStandingProgressionsPostBody",
-    "StandingProgressionsInsertStandingProgressionsResponse",
     "StandingProgressionsListResponseDefault",
-    "StandingProgressionsListStandingProgressionsResponse",
     "StandingProgressionsModel",
     "StandingProgressionsModelOrganization",
     "StandingProgressionsModelOrganizationResourceType",
@@ -7227,52 +3065,32 @@ __all__ = (
     "StandingProgressionsModelSeasonResourceType",
     "StandingProgressionsModelStage",
     "StandingProgressionsModelStageResourceType",
+    "StandingProgressionsPostBody",
+    "StandingProgressionsPutBody",
+    "StandingProgressionsResponse",
     "StandingProgressionsUpdateResponseDefault",
-    "StandingProgressionsUpdateStandingProgressionsPutBody",
-    "StandingProgressionsUpdateStandingProgressionsResponse",
+    "StandingPutBody",
+    "StandingPutBodyCalculated",
+    "StandingPutBodyCalculatedAdditionalProperty",
+    "StandingPutBodyFixtureType",
+    "StandingPutBodyGroupingBase",
+    "StandingPutBodyGroupingConferenceDivision",
+    "StandingPutBodyGroupingStagePool",
+    "StandingPutBodyPoints",
+    "StandingPutBodyPointsAdditionalProperty",
+    "StandingsResponse",
     "StandingUpdateResponseDefault",
-    "StandingUpdateStandingPutBody",
-    "StandingUpdateStandingPutBodyCalculated",
-    "StandingUpdateStandingPutBodyCalculatedAdditionalProperty",
-    "StandingUpdateStandingPutBodyFixtureType",
-    "StandingUpdateStandingPutBodyGroupingBase",
-    "StandingUpdateStandingPutBodyGroupingConferenceDivision",
-    "StandingUpdateStandingPutBodyGroupingStagePool",
-    "StandingUpdateStandingPutBodyPoints",
-    "StandingUpdateStandingPutBodyPointsAdditionalProperty",
-    "StandingUpdateStandingsResponse",
+    "StatusInformation",
+    "SuccessResponse",
     "TeamExternalIdsModel",
     "TeamExternalIdsModelEntity",
     "TeamExternalIdsModelEntityResourceType",
     "TeamExternalIdsModelOrganization",
     "TeamExternalIdsModelOrganizationResourceType",
-    "TeamModel",
-    "TeamModelAdditionalNames",
-    "TeamModelAgeGroupType1",
-    "TeamModelAgeGroupType2Type1",
-    "TeamModelAgeGroupType3Type1",
-    "TeamModelColors",
-    "TeamModelContactDetails",
-    "TeamModelDisciplineType1",
-    "TeamModelDisciplineType2Type1",
-    "TeamModelDisciplineType3Type1",
-    "TeamModelEntityAdditionalDetails",
-    "TeamModelEntityGroup",
-    "TeamModelEntityGroupResourceType",
-    "TeamModelGenderType1",
-    "TeamModelGenderType2Type1",
-    "TeamModelGenderType3Type1",
-    "TeamModelOrganization",
-    "TeamModelOrganizationResourceType",
-    "TeamModelSocialMedia",
-    "TeamModelStandardType1",
-    "TeamModelStandardType2Type1",
-    "TeamModelStandardType3Type1",
-    "TeamModelStatus",
-    "TeamModelTeamAddress",
-    "TeamModelTeamHistoricalName",
+    "TeamExternalIdsPostBody",
+    "TeamExternalIdsPutBody",
+    "TransferComponent",
     "TransferDetailResponseDefault",
-    "TransferDetailTransfersResponse",
     "TransferModel",
     "TransferModelCompetition",
     "TransferModelCompetitionResourceType",
@@ -7283,49 +3101,21 @@ __all__ = (
     "TransferModelStatusType1",
     "TransferModelStatusType2Type1",
     "TransferModelStatusType3Type1",
-    "TransferModelTransferComponent",
     "TransferModelTransferType",
     "TransfersDeleteResponseDefault",
-    "TransfersDeleteTransfersResponse",
     "TransfersInsertResponseDefault",
-    "TransfersInsertTransferPostBody",
-    "TransfersInsertTransferPostBodyStatusType1",
-    "TransfersInsertTransferPostBodyStatusType2Type1",
-    "TransfersInsertTransferPostBodyStatusType3Type1",
-    "TransfersInsertTransferPostBodyTransferComponent",
-    "TransfersInsertTransferPostBodyTransferType",
-    "TransfersInsertTransfersResponse",
     "TransfersListResponseDefault",
-    "TransfersListTransfersResponse",
     "TransfersListTransferType",
+    "TransfersResponse",
     "TransfersUpdateResponseDefault",
-    "TransfersUpdateTransferPutBody",
-    "TransfersUpdateTransferPutBodyStatusType1",
-    "TransfersUpdateTransferPutBodyStatusType2Type1",
-    "TransfersUpdateTransferPutBodyStatusType3Type1",
-    "TransfersUpdateTransferPutBodyTransferComponent",
-    "TransfersUpdateTransferPutBodyTransferType",
-    "TransfersUpdateTransfersResponse",
     "UniformItemsBySeasonListItemType",
     "UniformItemsBySeasonListResponseDefault",
-    "UniformItemsBySeasonListUniformItemsResponse",
     "UniformItemsDeleteResponseDefault",
-    "UniformItemsDeleteUniformItemsResponse",
     "UniformItemsDetailResponseDefault",
-    "UniformItemsDetailUniformItemsResponse",
     "UniformItemsInsertBaseRouteResponseDefault",
-    "UniformItemsInsertBaseRouteUniformItemsPostBody",
-    "UniformItemsInsertBaseRouteUniformItemsPostBodyColors",
-    "UniformItemsInsertBaseRouteUniformItemsPostBodyItemType",
-    "UniformItemsInsertBaseRouteUniformItemsResponse",
     "UniformItemsInsertResponseDefault",
-    "UniformItemsInsertUniformItemsPostBody",
-    "UniformItemsInsertUniformItemsPostBodyColors",
-    "UniformItemsInsertUniformItemsPostBodyItemType",
-    "UniformItemsInsertUniformItemsResponse",
     "UniformItemsListItemType",
     "UniformItemsListResponseDefault",
-    "UniformItemsListUniformItemsResponse",
     "UniformItemsModel",
     "UniformItemsModelColors",
     "UniformItemsModelItemType",
@@ -7333,104 +3123,56 @@ __all__ = (
     "UniformItemsModelOrganizationResourceType",
     "UniformItemsModelUniform",
     "UniformItemsModelUniformResourceType",
+    "UniformItemsPostBody",
+    "UniformItemsPostBodyColors",
+    "UniformItemsPostBodyItemType",
+    "UniformItemsPutBody",
+    "UniformItemsPutBodyColors",
+    "UniformItemsPutBodyItemType",
+    "UniformItemsResponse",
     "UniformItemsUpdateResponseDefault",
-    "UniformItemsUpdateUniformItemsPutBody",
-    "UniformItemsUpdateUniformItemsPutBodyColors",
-    "UniformItemsUpdateUniformItemsPutBodyItemType",
-    "UniformItemsUpdateUniformItemsResponse",
     "UniformsBySeasonListBaseType",
     "UniformsBySeasonListResponseDefault",
-    "UniformsBySeasonListUniformsResponse",
     "UniformsDeleteResponseDefault",
-    "UniformsDeleteUniformsResponse",
     "UniformsDetailResponseDefault",
-    "UniformsDetailUniformsResponse",
     "UniformsInsertResponseDefault",
-    "UniformsInsertUniformsPostBody",
-    "UniformsInsertUniformsPostBodyBaseType",
-    "UniformsInsertUniformsResponse",
     "UniformsListBaseType",
     "UniformsListResponseDefault",
-    "UniformsListUniformsResponse",
     "UniformsModel",
     "UniformsModelBaseType",
     "UniformsModelOrganization",
     "UniformsModelOrganizationResourceType",
+    "UniformsPostBody",
+    "UniformsPostBodyBaseType",
+    "UniformsPutBody",
+    "UniformsPutBodyBaseType",
+    "UniformsResponse",
     "UniformsUpdateResponseDefault",
-    "UniformsUpdateUniformsPutBody",
-    "UniformsUpdateUniformsPutBodyBaseType",
-    "UniformsUpdateUniformsResponse",
     "VenueDeleteResponseDefault",
-    "VenueDeleteVenuesResponse",
     "VenueDetailResponseDefault",
-    "VenueDetailVenuesResponse",
     "VenueExternalIdsDeleteResponseDefault",
-    "VenueExternalIdsDeleteVenueExternalIdsResponse",
     "VenueExternalIdsDetailResponseDefault",
-    "VenueExternalIdsDetailVenueExternalIdsResponse",
     "VenueExternalIdsInsertResponseDefault",
     "VenueExternalIdsInsertUpdateResponseDefault",
-    "VenueExternalIdsInsertUpdateVenueExternalIdsPostBody",
-    "VenueExternalIdsInsertUpdateVenueExternalIdsResponse",
-    "VenueExternalIdsInsertVenueExternalIdsPostBody",
-    "VenueExternalIdsInsertVenueExternalIdsResponse",
     "VenueExternalIdsListResponseDefault",
-    "VenueExternalIdsListVenueExternalIdsResponse",
     "VenueExternalIdsModel",
     "VenueExternalIdsModelOrganization",
     "VenueExternalIdsModelOrganizationResourceType",
     "VenueExternalIdsModelVenue",
     "VenueExternalIdsModelVenueResourceType",
+    "VenueExternalIdsPostBody",
+    "VenueExternalIdsPutBody",
+    "VenueExternalIdsResponse",
     "VenueExternalIdsUpdateResponseDefault",
-    "VenueExternalIdsUpdateVenueExternalIdsPutBody",
-    "VenueExternalIdsUpdateVenueExternalIdsResponse",
     "VenueInsertResponseDefault",
-    "VenueInsertVenuePostBody",
-    "VenueInsertVenuePostBodySocialMedia",
-    "VenueInsertVenuePostBodyStatus",
-    "VenueInsertVenuePostBodyVenueAddress",
-    "VenueInsertVenuePostBodyVenueHistoricalName",
-    "VenueInsertVenuesResponse",
     "VenueListBySiteIdResponseDefault",
     "VenueListBySiteIdStatus",
-    "VenueListBySiteIdVenuesResponse",
     "VenueListResponseDefault",
     "VenueListStatus",
-    "VenueListVenuesResponse",
-    "VenueModel",
-    "VenueModelOrganization",
-    "VenueModelOrganizationResourceType",
-    "VenueModelSite",
-    "VenueModelSiteResourceType",
-    "VenueModelSocialMedia",
-    "VenueModelStatus",
-    "VenueModelVenueAddress",
-    "VenueModelVenueHistoricalName",
     "VenueUpdateResponseDefault",
-    "VenueUpdateVenuePutBody",
-    "VenueUpdateVenuePutBodySocialMedia",
-    "VenueUpdateVenuePutBodyStatus",
-    "VenueUpdateVenuePutBodyVenueAddress",
-    "VenueUpdateVenuePutBodyVenueHistoricalName",
-    "VenueUpdateVenuesResponse",
     "VideoFileDeleteResponseDefault",
     "VideoFileDetailResponseDefault",
     "VideoFileInsertResponseDefault",
-    "VideoFileInsertVideoFilePostBody",
-    "VideoFileInsertVideoFilePostBodyContent",
-    "VideoFileInsertVideoFilePostBodyFeedType",
-    "VideoFileInsertVideoFilePostBodyFormat",
-    "VideoFileInsertVideoFilePostBodyOriginType1",
-    "VideoFileInsertVideoFilePostBodyOriginType2Type1",
-    "VideoFileInsertVideoFilePostBodyOriginType3Type1",
-    "VideoFileInsertVideoFilePostBodyResolution",
-    "VideoFileInsertVideoFilePostBodyStatusType1",
-    "VideoFileInsertVideoFilePostBodyStatusType2Type1",
-    "VideoFileInsertVideoFilePostBodyStatusType3Type1",
-    "VideoFileInsertVideoFilePostBodyStorageProviderType1",
-    "VideoFileInsertVideoFilePostBodyStorageProviderType2Type1",
-    "VideoFileInsertVideoFilePostBodyStorageProviderType3Type1",
-    "VideoFileInsertVideoFilesResponse",
     "VideoFileListContent",
     "VideoFileListFeedType",
     "VideoFileListFormat",
@@ -7438,7 +3180,6 @@ __all__ = (
     "VideoFileListResponseDefault",
     "VideoFileListStatus",
     "VideoFileListStorageProvider",
-    "VideoFileListVideoFilesResponse",
     "VideoFileModel",
     "VideoFileModelContent",
     "VideoFileModelFeedType",
@@ -7457,12 +3198,25 @@ __all__ = (
     "VideoFileModelStorageProviderType1",
     "VideoFileModelStorageProviderType2Type1",
     "VideoFileModelStorageProviderType3Type1",
+    "VideoFilePostBody",
+    "VideoFilePostBodyContent",
+    "VideoFilePostBodyFeedType",
+    "VideoFilePostBodyFormat",
+    "VideoFilePostBodyOriginType1",
+    "VideoFilePostBodyOriginType2Type1",
+    "VideoFilePostBodyOriginType3Type1",
+    "VideoFilePostBodyResolution",
+    "VideoFilePostBodyStatusType1",
+    "VideoFilePostBodyStatusType2Type1",
+    "VideoFilePostBodyStatusType3Type1",
+    "VideoFilePostBodyStorageProviderType1",
+    "VideoFilePostBodyStorageProviderType2Type1",
+    "VideoFilePostBodyStorageProviderType3Type1",
+    "VideoFilesResponse",
     "VideoStreamInputsFixtureListFeedType",
     "VideoStreamInputsFixtureListResponseDefault",
-    "VideoStreamInputsFixtureListVideoStreamInputsResponse",
     "VideoStreamInputsListFeedType",
     "VideoStreamInputsListResponseDefault",
-    "VideoStreamInputsListVideoStreamInputsResponse",
     "VideoStreamInputsModel",
     "VideoStreamInputsModelAudioAmbienceChannel",
     "VideoStreamInputsModelAudioCommentaryChannel",
@@ -7478,32 +3232,27 @@ __all__ = (
     "VideoStreamInputsModelVenueResourceType",
     "VideoStreamInputsOrgListFeedType",
     "VideoStreamInputsOrgListResponseDefault",
-    "VideoStreamInputsOrgListVideoStreamInputsResponse",
+    "VideoStreamInputsResponse",
     "VideoStreamLocalDeleteResponseDefault",
-    "VideoStreamLocalDeleteVideoStreamLocalResponse",
     "VideoStreamLocalDetailResponseDefault",
-    "VideoStreamLocalDetailVideoStreamLocalResponse",
     "VideoStreamLocalInsertResponseDefault",
-    "VideoStreamLocalInsertVideoStreamLocalPostBody",
-    "VideoStreamLocalInsertVideoStreamLocalPostBodyFormat",
-    "VideoStreamLocalInsertVideoStreamLocalResponse",
     "VideoStreamLocalListFormat",
     "VideoStreamLocalListResponseDefault",
-    "VideoStreamLocalListVideoStreamLocalResponse",
     "VideoStreamLocalModel",
     "VideoStreamLocalModelFixture",
     "VideoStreamLocalModelFixtureResourceType",
     "VideoStreamLocalModelFormat",
     "VideoStreamLocalModelOrganization",
     "VideoStreamLocalModelOrganizationResourceType",
+    "VideoStreamLocalPostBody",
+    "VideoStreamLocalPostBodyFormat",
+    "VideoStreamLocalPutBody",
+    "VideoStreamLocalPutBodyFormat",
+    "VideoStreamLocalResponse",
     "VideoStreamLocalUpdateResponseDefault",
-    "VideoStreamLocalUpdateVideoStreamLocalPutBody",
-    "VideoStreamLocalUpdateVideoStreamLocalPutBodyFormat",
-    "VideoStreamLocalUpdateVideoStreamLocalResponse",
     "VideoStreamOutputsFixtureListContent",
     "VideoStreamOutputsFixtureListFeedType",
     "VideoStreamOutputsFixtureListResponseDefault",
-    "VideoStreamOutputsFixtureListVideoStreamOutputsResponse",
     "VideoStreamOutputsModel",
     "VideoStreamOutputsModelCompetition",
     "VideoStreamOutputsModelCompetitionResourceType",
@@ -7519,25 +3268,14 @@ __all__ = (
     "VideoStreamOutputsOrggroupListContent",
     "VideoStreamOutputsOrggroupListFeedType",
     "VideoStreamOutputsOrggroupListResponseDefault",
-    "VideoStreamOutputsOrggroupListVideoStreamOutputsResponse",
     "VideoStreamOutputsOrgListContent",
     "VideoStreamOutputsOrgListFeedType",
     "VideoStreamOutputsOrgListResponseDefault",
-    "VideoStreamOutputsOrgListVideoStreamOutputsResponse",
+    "VideoStreamOutputsResponse",
     "VideoSubscriptionDeleteResponseDefault",
-    "VideoSubscriptionDeleteVideoSubscriptionsResponse",
     "VideoSubscriptionDetailResponseDefault",
-    "VideoSubscriptionDetailVideoSubscriptionsResponse",
     "VideoSubscriptionInsertResponseDefault",
-    "VideoSubscriptionInsertVideoSubscriptionPostBody",
-    "VideoSubscriptionInsertVideoSubscriptionPostBodyAudio",
-    "VideoSubscriptionInsertVideoSubscriptionPostBodyContent",
-    "VideoSubscriptionInsertVideoSubscriptionPostBodyFeedType",
-    "VideoSubscriptionInsertVideoSubscriptionPostBodyOutputFormat",
-    "VideoSubscriptionInsertVideoSubscriptionPostBodyOutputResolution",
-    "VideoSubscriptionInsertVideoSubscriptionsResponse",
     "VideoSubscriptionListResponseDefault",
-    "VideoSubscriptionListVideoSubscriptionsResponse",
     "VideoSubscriptionModel",
     "VideoSubscriptionModelAudio",
     "VideoSubscriptionModelContent",
@@ -7548,12 +3286,18 @@ __all__ = (
     "VideoSubscriptionModelOrganizationResourceType",
     "VideoSubscriptionModelOutputFormat",
     "VideoSubscriptionModelOutputResolution",
+    "VideoSubscriptionPostBody",
+    "VideoSubscriptionPostBodyAudio",
+    "VideoSubscriptionPostBodyContent",
+    "VideoSubscriptionPostBodyFeedType",
+    "VideoSubscriptionPostBodyOutputFormat",
+    "VideoSubscriptionPostBodyOutputResolution",
+    "VideoSubscriptionPutBody",
+    "VideoSubscriptionPutBodyAudio",
+    "VideoSubscriptionPutBodyContent",
+    "VideoSubscriptionPutBodyFeedType",
+    "VideoSubscriptionPutBodyOutputFormat",
+    "VideoSubscriptionPutBodyOutputResolution",
+    "VideoSubscriptionsResponse",
     "VideoSubscriptionsUpdateResponseDefault",
-    "VideoSubscriptionsUpdateVideoSubscriptionPutBody",
-    "VideoSubscriptionsUpdateVideoSubscriptionPutBodyAudio",
-    "VideoSubscriptionsUpdateVideoSubscriptionPutBodyContent",
-    "VideoSubscriptionsUpdateVideoSubscriptionPutBodyFeedType",
-    "VideoSubscriptionsUpdateVideoSubscriptionPutBodyOutputFormat",
-    "VideoSubscriptionsUpdateVideoSubscriptionPutBodyOutputResolution",
-    "VideoSubscriptionsUpdateVideoSubscriptionsResponse",
 )

@@ -5,9 +5,8 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.person_merge_merge_post_body import PersonMergeMergePostBody
+from ...models.merge_post_body import MergePostBody
 from ...models.person_merge_response_default import PersonMergeResponseDefault
-from ...models.person_merge_success_response import PersonMergeSuccessResponse
 from ...types import UNSET, Response, Unset
 
 
@@ -16,7 +15,7 @@ def _get_kwargs(
     from_person_id: UUID,
     to_person_id: UUID,
     *,
-    body: PersonMergeMergePostBody,
+    body: MergePostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
@@ -52,12 +51,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[PersonMergeResponseDefault, PersonMergeSuccessResponse]:
-    if response.status_code == 200:
-        response_200 = PersonMergeSuccessResponse.from_dict(response.json())
-
-        return response_200
-
+) -> PersonMergeResponseDefault:
     response_default = PersonMergeResponseDefault.from_dict(response.json())
 
     return response_default
@@ -65,7 +59,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[Union[PersonMergeResponseDefault, PersonMergeSuccessResponse]]:
+) -> Response[PersonMergeResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -80,12 +74,12 @@ def sync_detailed(
     to_person_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: PersonMergeMergePostBody,
+    body: MergePostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[Union[PersonMergeResponseDefault, PersonMergeSuccessResponse]]:
+) -> Response[PersonMergeResponseDefault]:
     """Merge two person records
 
      Merge the records of two persons
@@ -99,14 +93,14 @@ def sync_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (PersonMergeMergePostBody):
+        body (MergePostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[PersonMergeResponseDefault, PersonMergeSuccessResponse]]
+        Response[PersonMergeResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -133,12 +127,12 @@ def sync(
     to_person_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: PersonMergeMergePostBody,
+    body: MergePostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[Union[PersonMergeResponseDefault, PersonMergeSuccessResponse]]:
+) -> Optional[PersonMergeResponseDefault]:
     """Merge two person records
 
      Merge the records of two persons
@@ -152,14 +146,14 @@ def sync(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (PersonMergeMergePostBody):
+        body (MergePostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[PersonMergeResponseDefault, PersonMergeSuccessResponse]
+        PersonMergeResponseDefault
     """
 
     return sync_detailed(
@@ -181,12 +175,12 @@ async def asyncio_detailed(
     to_person_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: PersonMergeMergePostBody,
+    body: MergePostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[Union[PersonMergeResponseDefault, PersonMergeSuccessResponse]]:
+) -> Response[PersonMergeResponseDefault]:
     """Merge two person records
 
      Merge the records of two persons
@@ -200,14 +194,14 @@ async def asyncio_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (PersonMergeMergePostBody):
+        body (MergePostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[PersonMergeResponseDefault, PersonMergeSuccessResponse]]
+        Response[PersonMergeResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -232,12 +226,12 @@ async def asyncio(
     to_person_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: PersonMergeMergePostBody,
+    body: MergePostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[Union[PersonMergeResponseDefault, PersonMergeSuccessResponse]]:
+) -> Optional[PersonMergeResponseDefault]:
     """Merge two person records
 
      Merge the records of two persons
@@ -251,14 +245,14 @@ async def asyncio(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (PersonMergeMergePostBody):
+        body (MergePostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[PersonMergeResponseDefault, PersonMergeSuccessResponse]
+        PersonMergeResponseDefault
     """
 
     return (

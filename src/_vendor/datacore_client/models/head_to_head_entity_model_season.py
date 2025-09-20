@@ -4,9 +4,7 @@ from typing import Any, TypeVar, Union
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-from ..models.head_to_head_entity_model_season_resource_type import (
-    HeadToHeadEntityModelSeasonResourceType,
-)
+from ..models.head_to_head_entity_model_season_resource_type import HeadToHeadEntityModelSeasonResourceType
 from ..types import UNSET, Unset
 
 T = TypeVar("T", bound="HeadToHeadEntityModelSeason")

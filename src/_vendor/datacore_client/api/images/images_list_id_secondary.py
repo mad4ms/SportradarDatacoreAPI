@@ -8,16 +8,9 @@ import httpx
 from ...client import AuthenticatedClient, Client
 from ...models.images_list_id_secondary_base_type import ImagesListIdSecondaryBaseType
 from ...models.images_list_id_secondary_image_type import ImagesListIdSecondaryImageType
-from ...models.images_list_id_secondary_images_response import (
-    ImagesListIdSecondaryImagesResponse,
-)
 from ...models.images_list_id_secondary_rating import ImagesListIdSecondaryRating
-from ...models.images_list_id_secondary_response_default import (
-    ImagesListIdSecondaryResponseDefault,
-)
-from ...models.images_list_id_secondary_secondary_type import (
-    ImagesListIdSecondarySecondaryType,
-)
+from ...models.images_list_id_secondary_response_default import ImagesListIdSecondaryResponseDefault
+from ...models.images_list_id_secondary_secondary_type import ImagesListIdSecondarySecondaryType
 from ...types import UNSET, Response, Unset
 
 
@@ -88,12 +81,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[ImagesListIdSecondaryImagesResponse, ImagesListIdSecondaryResponseDefault]:
-    if response.status_code == 200:
-        response_200 = ImagesListIdSecondaryImagesResponse.from_dict(response.json())
-
-        return response_200
-
+) -> ImagesListIdSecondaryResponseDefault:
     response_default = ImagesListIdSecondaryResponseDefault.from_dict(response.json())
 
     return response_default
@@ -101,9 +89,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[ImagesListIdSecondaryImagesResponse, ImagesListIdSecondaryResponseDefault]
-]:
+) -> Response[ImagesListIdSecondaryResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -130,9 +116,7 @@ def sync_detailed(
     offset: Union[Unset, int] = UNSET,
     rating: Union[Unset, ImagesListIdSecondaryRating] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[
-    Union[ImagesListIdSecondaryImagesResponse, ImagesListIdSecondaryResponseDefault]
-]:
+) -> Response[ImagesListIdSecondaryResponseDefault]:
     """Get a list of images for a specific base and secondary id
 
      Return a list of images for the base id for a secondary id
@@ -160,7 +144,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[ImagesListIdSecondaryImagesResponse, ImagesListIdSecondaryResponseDefault]]
+        Response[ImagesListIdSecondaryResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -206,9 +190,7 @@ def sync(
     offset: Union[Unset, int] = UNSET,
     rating: Union[Unset, ImagesListIdSecondaryRating] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[
-    Union[ImagesListIdSecondaryImagesResponse, ImagesListIdSecondaryResponseDefault]
-]:
+) -> Optional[ImagesListIdSecondaryResponseDefault]:
     """Get a list of images for a specific base and secondary id
 
      Return a list of images for the base id for a secondary id
@@ -236,7 +218,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[ImagesListIdSecondaryImagesResponse, ImagesListIdSecondaryResponseDefault]
+        ImagesListIdSecondaryResponseDefault
     """
 
     return sync_detailed(
@@ -277,9 +259,7 @@ async def asyncio_detailed(
     offset: Union[Unset, int] = UNSET,
     rating: Union[Unset, ImagesListIdSecondaryRating] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[
-    Union[ImagesListIdSecondaryImagesResponse, ImagesListIdSecondaryResponseDefault]
-]:
+) -> Response[ImagesListIdSecondaryResponseDefault]:
     """Get a list of images for a specific base and secondary id
 
      Return a list of images for the base id for a secondary id
@@ -307,7 +287,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[ImagesListIdSecondaryImagesResponse, ImagesListIdSecondaryResponseDefault]]
+        Response[ImagesListIdSecondaryResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -351,9 +331,7 @@ async def asyncio(
     offset: Union[Unset, int] = UNSET,
     rating: Union[Unset, ImagesListIdSecondaryRating] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[
-    Union[ImagesListIdSecondaryImagesResponse, ImagesListIdSecondaryResponseDefault]
-]:
+) -> Optional[ImagesListIdSecondaryResponseDefault]:
     """Get a list of images for a specific base and secondary id
 
      Return a list of images for the base id for a secondary id
@@ -381,7 +359,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[ImagesListIdSecondaryImagesResponse, ImagesListIdSecondaryResponseDefault]
+        ImagesListIdSecondaryResponseDefault
     """
 
     return (

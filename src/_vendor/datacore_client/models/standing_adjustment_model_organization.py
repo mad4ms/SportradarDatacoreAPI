@@ -50,9 +50,7 @@ class StandingAdjustmentModelOrganization:
         if isinstance(_resource_type, Unset):
             resource_type = UNSET
         else:
-            resource_type = StandingAdjustmentModelOrganizationResourceType(
-                _resource_type
-            )
+            resource_type = StandingAdjustmentModelOrganizationResourceType(_resource_type)
 
         id = d.pop("id", UNSET)
 

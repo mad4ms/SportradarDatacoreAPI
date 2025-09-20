@@ -5,9 +5,8 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
+from ...models.standing_put_body import StandingPutBody
 from ...models.standing_update_response_default import StandingUpdateResponseDefault
-from ...models.standing_update_standing_put_body import StandingUpdateStandingPutBody
-from ...models.standing_update_standings_response import StandingUpdateStandingsResponse
 from ...types import UNSET, Response, Unset
 
 
@@ -15,7 +14,7 @@ def _get_kwargs(
     organization_id: str,
     standing_id: UUID,
     *,
-    body: StandingUpdateStandingPutBody,
+    body: StandingPutBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
@@ -51,12 +50,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[StandingUpdateResponseDefault, StandingUpdateStandingsResponse]:
-    if response.status_code == 200:
-        response_200 = StandingUpdateStandingsResponse.from_dict(response.json())
-
-        return response_200
-
+) -> StandingUpdateResponseDefault:
     response_default = StandingUpdateResponseDefault.from_dict(response.json())
 
     return response_default
@@ -64,7 +58,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[Union[StandingUpdateResponseDefault, StandingUpdateStandingsResponse]]:
+) -> Response[StandingUpdateResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -78,12 +72,12 @@ def sync_detailed(
     standing_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: StandingUpdateStandingPutBody,
+    body: StandingPutBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[Union[StandingUpdateResponseDefault, StandingUpdateStandingsResponse]]:
+) -> Response[StandingUpdateResponseDefault]:
     """Update a standing
 
      Change the information of a specific standing
@@ -96,14 +90,14 @@ def sync_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (StandingUpdateStandingPutBody):
+        body (StandingPutBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[StandingUpdateResponseDefault, StandingUpdateStandingsResponse]]
+        Response[StandingUpdateResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -128,12 +122,12 @@ def sync(
     standing_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: StandingUpdateStandingPutBody,
+    body: StandingPutBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[Union[StandingUpdateResponseDefault, StandingUpdateStandingsResponse]]:
+) -> Optional[StandingUpdateResponseDefault]:
     """Update a standing
 
      Change the information of a specific standing
@@ -146,14 +140,14 @@ def sync(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (StandingUpdateStandingPutBody):
+        body (StandingPutBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[StandingUpdateResponseDefault, StandingUpdateStandingsResponse]
+        StandingUpdateResponseDefault
     """
 
     return sync_detailed(
@@ -173,12 +167,12 @@ async def asyncio_detailed(
     standing_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: StandingUpdateStandingPutBody,
+    body: StandingPutBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[Union[StandingUpdateResponseDefault, StandingUpdateStandingsResponse]]:
+) -> Response[StandingUpdateResponseDefault]:
     """Update a standing
 
      Change the information of a specific standing
@@ -191,14 +185,14 @@ async def asyncio_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (StandingUpdateStandingPutBody):
+        body (StandingPutBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[StandingUpdateResponseDefault, StandingUpdateStandingsResponse]]
+        Response[StandingUpdateResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -221,12 +215,12 @@ async def asyncio(
     standing_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: StandingUpdateStandingPutBody,
+    body: StandingPutBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[Union[StandingUpdateResponseDefault, StandingUpdateStandingsResponse]]:
+) -> Optional[StandingUpdateResponseDefault]:
     """Update a standing
 
      Change the information of a specific standing
@@ -239,14 +233,14 @@ async def asyncio(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (StandingUpdateStandingPutBody):
+        body (StandingPutBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[StandingUpdateResponseDefault, StandingUpdateStandingsResponse]
+        StandingUpdateResponseDefault
     """
 
     return (

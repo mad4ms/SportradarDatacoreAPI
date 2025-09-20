@@ -7,12 +7,8 @@ from attrs import define as _attrs_define
 from dateutil.parser import isoparse
 
 from ..models.match_roster_model_position_type_1 import MatchRosterModelPositionType1
-from ..models.match_roster_model_position_type_2_type_1 import (
-    MatchRosterModelPositionType2Type1,
-)
-from ..models.match_roster_model_position_type_3_type_1 import (
-    MatchRosterModelPositionType3Type1,
-)
+from ..models.match_roster_model_position_type_2_type_1 import MatchRosterModelPositionType2Type1
+from ..models.match_roster_model_position_type_3_type_1 import MatchRosterModelPositionType3Type1
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
@@ -182,9 +178,7 @@ class MatchRosterModel:
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.match_roster_model_entity import MatchRosterModelEntity
         from ..models.match_roster_model_fixture import MatchRosterModelFixture
-        from ..models.match_roster_model_organization import (
-            MatchRosterModelOrganization,
-        )
+        from ..models.match_roster_model_organization import MatchRosterModelOrganization
         from ..models.match_roster_model_person import MatchRosterModelPerson
 
         d = dict(src_dict)

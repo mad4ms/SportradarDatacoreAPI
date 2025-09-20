@@ -11,9 +11,7 @@ from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
     from ..models.season_persons_model_entity_group import SeasonPersonsModelEntityGroup
-    from ..models.season_persons_model_organization import (
-        SeasonPersonsModelOrganization,
-    )
+    from ..models.season_persons_model_organization import SeasonPersonsModelOrganization
     from ..models.season_persons_model_person import SeasonPersonsModelPerson
     from ..models.season_persons_model_season import SeasonPersonsModelSeason
 
@@ -147,12 +145,8 @@ class SeasonPersonsModel:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.season_persons_model_entity_group import (
-            SeasonPersonsModelEntityGroup,
-        )
-        from ..models.season_persons_model_organization import (
-            SeasonPersonsModelOrganization,
-        )
+        from ..models.season_persons_model_entity_group import SeasonPersonsModelEntityGroup
+        from ..models.season_persons_model_organization import SeasonPersonsModelOrganization
         from ..models.season_persons_model_person import SeasonPersonsModelPerson
         from ..models.season_persons_model_season import SeasonPersonsModelSeason
 

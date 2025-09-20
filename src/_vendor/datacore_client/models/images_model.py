@@ -11,12 +11,8 @@ from ..models.images_model_file_type import ImagesModelFileType
 from ..models.images_model_image_type import ImagesModelImageType
 from ..models.images_model_rating import ImagesModelRating
 from ..models.images_model_secondary_type_type_1 import ImagesModelSecondaryTypeType1
-from ..models.images_model_secondary_type_type_2_type_1 import (
-    ImagesModelSecondaryTypeType2Type1,
-)
-from ..models.images_model_secondary_type_type_3_type_1 import (
-    ImagesModelSecondaryTypeType3Type1,
-)
+from ..models.images_model_secondary_type_type_2_type_1 import ImagesModelSecondaryTypeType2Type1
+from ..models.images_model_secondary_type_type_3_type_1 import ImagesModelSecondaryTypeType3Type1
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:

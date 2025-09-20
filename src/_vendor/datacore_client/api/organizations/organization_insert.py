@@ -4,21 +4,14 @@ from typing import Any, Optional, Union
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.organization_insert_organization_post_body import (
-    OrganizationInsertOrganizationPostBody,
-)
-from ...models.organization_insert_organizations_response import (
-    OrganizationInsertOrganizationsResponse,
-)
-from ...models.organization_insert_response_default import (
-    OrganizationInsertResponseDefault,
-)
+from ...models.organization_insert_response_default import OrganizationInsertResponseDefault
+from ...models.organization_post_body import OrganizationPostBody
 from ...types import UNSET, Response, Unset
 
 
 def _get_kwargs(
     *,
-    body: OrganizationInsertOrganizationPostBody,
+    body: OrganizationPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
@@ -54,14 +47,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[OrganizationInsertOrganizationsResponse, OrganizationInsertResponseDefault]:
-    if response.status_code == 200:
-        response_200 = OrganizationInsertOrganizationsResponse.from_dict(
-            response.json()
-        )
-
-        return response_200
-
+) -> OrganizationInsertResponseDefault:
     response_default = OrganizationInsertResponseDefault.from_dict(response.json())
 
     return response_default
@@ -69,9 +55,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[OrganizationInsertOrganizationsResponse, OrganizationInsertResponseDefault]
-]:
+) -> Response[OrganizationInsertResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -83,14 +67,12 @@ def _build_response(
 def sync_detailed(
     *,
     client: AuthenticatedClient,
-    body: OrganizationInsertOrganizationPostBody,
+    body: OrganizationPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[OrganizationInsertOrganizationsResponse, OrganizationInsertResponseDefault]
-]:
+) -> Response[OrganizationInsertResponseDefault]:
     """Create a new organization
 
      Add a new organization to the system
@@ -101,14 +83,14 @@ def sync_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (OrganizationInsertOrganizationPostBody):
+        body (OrganizationPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[OrganizationInsertOrganizationsResponse, OrganizationInsertResponseDefault]]
+        Response[OrganizationInsertResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -129,14 +111,12 @@ def sync_detailed(
 def sync(
     *,
     client: AuthenticatedClient,
-    body: OrganizationInsertOrganizationPostBody,
+    body: OrganizationPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[OrganizationInsertOrganizationsResponse, OrganizationInsertResponseDefault]
-]:
+) -> Optional[OrganizationInsertResponseDefault]:
     """Create a new organization
 
      Add a new organization to the system
@@ -147,14 +127,14 @@ def sync(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (OrganizationInsertOrganizationPostBody):
+        body (OrganizationPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[OrganizationInsertOrganizationsResponse, OrganizationInsertResponseDefault]
+        OrganizationInsertResponseDefault
     """
 
     return sync_detailed(
@@ -170,14 +150,12 @@ def sync(
 async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
-    body: OrganizationInsertOrganizationPostBody,
+    body: OrganizationPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[OrganizationInsertOrganizationsResponse, OrganizationInsertResponseDefault]
-]:
+) -> Response[OrganizationInsertResponseDefault]:
     """Create a new organization
 
      Add a new organization to the system
@@ -188,14 +166,14 @@ async def asyncio_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (OrganizationInsertOrganizationPostBody):
+        body (OrganizationPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[OrganizationInsertOrganizationsResponse, OrganizationInsertResponseDefault]]
+        Response[OrganizationInsertResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -214,14 +192,12 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: AuthenticatedClient,
-    body: OrganizationInsertOrganizationPostBody,
+    body: OrganizationPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[OrganizationInsertOrganizationsResponse, OrganizationInsertResponseDefault]
-]:
+) -> Optional[OrganizationInsertResponseDefault]:
     """Create a new organization
 
      Add a new organization to the system
@@ -232,14 +208,14 @@ async def asyncio(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (OrganizationInsertOrganizationPostBody):
+        body (OrganizationPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[OrganizationInsertOrganizationsResponse, OrganizationInsertResponseDefault]
+        OrganizationInsertResponseDefault
     """
 
     return (

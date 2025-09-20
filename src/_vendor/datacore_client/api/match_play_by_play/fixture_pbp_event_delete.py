@@ -5,13 +5,8 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.fixture_pbp_event_delete_fixture_pbp_event_response import (
-    FixturePbpEventDeleteFixturePbpEventResponse,
-)
 from ...models.fixture_pbp_event_delete_period_id import FixturePbpEventDeletePeriodId
-from ...models.fixture_pbp_event_delete_response_default import (
-    FixturePbpEventDeleteResponseDefault,
-)
+from ...models.fixture_pbp_event_delete_response_default import FixturePbpEventDeleteResponseDefault
 from ...types import UNSET, Response, Unset
 
 
@@ -52,16 +47,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[
-    FixturePbpEventDeleteFixturePbpEventResponse, FixturePbpEventDeleteResponseDefault
-]:
-    if response.status_code == 200:
-        response_200 = FixturePbpEventDeleteFixturePbpEventResponse.from_dict(
-            response.json()
-        )
-
-        return response_200
-
+) -> FixturePbpEventDeleteResponseDefault:
     response_default = FixturePbpEventDeleteResponseDefault.from_dict(response.json())
 
     return response_default
@@ -69,12 +55,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[
-        FixturePbpEventDeleteFixturePbpEventResponse,
-        FixturePbpEventDeleteResponseDefault,
-    ]
-]:
+) -> Response[FixturePbpEventDeleteResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -95,12 +76,7 @@ def sync_detailed(
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
     section: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        FixturePbpEventDeleteFixturePbpEventResponse,
-        FixturePbpEventDeleteResponseDefault,
-    ]
-]:
+) -> Response[FixturePbpEventDeleteResponseDefault]:
     """Delete a match play-by-play event
 
      Delete a specific period play-by-play from a match event
@@ -122,7 +98,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[FixturePbpEventDeleteFixturePbpEventResponse, FixturePbpEventDeleteResponseDefault]]
+        Response[FixturePbpEventDeleteResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -156,12 +132,7 @@ def sync(
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
     section: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        FixturePbpEventDeleteFixturePbpEventResponse,
-        FixturePbpEventDeleteResponseDefault,
-    ]
-]:
+) -> Optional[FixturePbpEventDeleteResponseDefault]:
     """Delete a match play-by-play event
 
      Delete a specific period play-by-play from a match event
@@ -183,7 +154,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[FixturePbpEventDeleteFixturePbpEventResponse, FixturePbpEventDeleteResponseDefault]
+        FixturePbpEventDeleteResponseDefault
     """
 
     return sync_detailed(
@@ -212,12 +183,7 @@ async def asyncio_detailed(
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
     section: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        FixturePbpEventDeleteFixturePbpEventResponse,
-        FixturePbpEventDeleteResponseDefault,
-    ]
-]:
+) -> Response[FixturePbpEventDeleteResponseDefault]:
     """Delete a match play-by-play event
 
      Delete a specific period play-by-play from a match event
@@ -239,7 +205,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[FixturePbpEventDeleteFixturePbpEventResponse, FixturePbpEventDeleteResponseDefault]]
+        Response[FixturePbpEventDeleteResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -271,12 +237,7 @@ async def asyncio(
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
     section: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        FixturePbpEventDeleteFixturePbpEventResponse,
-        FixturePbpEventDeleteResponseDefault,
-    ]
-]:
+) -> Optional[FixturePbpEventDeleteResponseDefault]:
     """Delete a match play-by-play event
 
      Delete a specific period play-by-play from a match event
@@ -298,7 +259,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[FixturePbpEventDeleteFixturePbpEventResponse, FixturePbpEventDeleteResponseDefault]
+        FixturePbpEventDeleteResponseDefault
     """
 
     return (

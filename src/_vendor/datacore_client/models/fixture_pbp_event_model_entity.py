@@ -4,9 +4,7 @@ from typing import Any, TypeVar, Union
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-from ..models.fixture_pbp_event_model_entity_resource_type import (
-    FixturePBPEventModelEntityResourceType,
-)
+from ..models.fixture_pbp_event_model_entity_resource_type import FixturePBPEventModelEntityResourceType
 from ..types import UNSET, Unset
 
 T = TypeVar("T", bound="FixturePBPEventModelEntity")

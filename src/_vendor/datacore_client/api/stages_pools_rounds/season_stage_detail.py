@@ -5,12 +5,7 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.season_stage_detail_response_default import (
-    SeasonStageDetailResponseDefault,
-)
-from ...models.season_stage_detail_season_stages_response import (
-    SeasonStageDetailSeasonStagesResponse,
-)
+from ...models.season_stage_detail_response_default import SeasonStageDetailResponseDefault
 from ...types import UNSET, Response, Unset
 
 
@@ -53,12 +48,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[SeasonStageDetailResponseDefault, SeasonStageDetailSeasonStagesResponse]:
-    if response.status_code == 200:
-        response_200 = SeasonStageDetailSeasonStagesResponse.from_dict(response.json())
-
-        return response_200
-
+) -> SeasonStageDetailResponseDefault:
     response_default = SeasonStageDetailResponseDefault.from_dict(response.json())
 
     return response_default
@@ -66,9 +56,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[SeasonStageDetailResponseDefault, SeasonStageDetailSeasonStagesResponse]
-]:
+) -> Response[SeasonStageDetailResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -89,9 +77,7 @@ def sync_detailed(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Response[
-    Union[SeasonStageDetailResponseDefault, SeasonStageDetailSeasonStagesResponse]
-]:
+) -> Response[SeasonStageDetailResponseDefault]:
     """Get a stage
 
      Return detailed information about a specific stage
@@ -113,7 +99,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SeasonStageDetailResponseDefault, SeasonStageDetailSeasonStagesResponse]]
+        Response[SeasonStageDetailResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -147,9 +133,7 @@ def sync(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Optional[
-    Union[SeasonStageDetailResponseDefault, SeasonStageDetailSeasonStagesResponse]
-]:
+) -> Optional[SeasonStageDetailResponseDefault]:
     """Get a stage
 
      Return detailed information about a specific stage
@@ -171,7 +155,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SeasonStageDetailResponseDefault, SeasonStageDetailSeasonStagesResponse]
+        SeasonStageDetailResponseDefault
     """
 
     return sync_detailed(
@@ -200,9 +184,7 @@ async def asyncio_detailed(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Response[
-    Union[SeasonStageDetailResponseDefault, SeasonStageDetailSeasonStagesResponse]
-]:
+) -> Response[SeasonStageDetailResponseDefault]:
     """Get a stage
 
      Return detailed information about a specific stage
@@ -224,7 +206,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SeasonStageDetailResponseDefault, SeasonStageDetailSeasonStagesResponse]]
+        Response[SeasonStageDetailResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -256,9 +238,7 @@ async def asyncio(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Optional[
-    Union[SeasonStageDetailResponseDefault, SeasonStageDetailSeasonStagesResponse]
-]:
+) -> Optional[SeasonStageDetailResponseDefault]:
     """Get a stage
 
      Return detailed information about a specific stage
@@ -280,7 +260,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SeasonStageDetailResponseDefault, SeasonStageDetailSeasonStagesResponse]
+        SeasonStageDetailResponseDefault
     """
 
     return (

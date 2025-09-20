@@ -10,29 +10,15 @@ from ..models.video_file_model_content import VideoFileModelContent
 from ..models.video_file_model_feed_type import VideoFileModelFeedType
 from ..models.video_file_model_format import VideoFileModelFormat
 from ..models.video_file_model_origin_type_1 import VideoFileModelOriginType1
-from ..models.video_file_model_origin_type_2_type_1 import (
-    VideoFileModelOriginType2Type1,
-)
-from ..models.video_file_model_origin_type_3_type_1 import (
-    VideoFileModelOriginType3Type1,
-)
+from ..models.video_file_model_origin_type_2_type_1 import VideoFileModelOriginType2Type1
+from ..models.video_file_model_origin_type_3_type_1 import VideoFileModelOriginType3Type1
 from ..models.video_file_model_resolution import VideoFileModelResolution
 from ..models.video_file_model_status_type_1 import VideoFileModelStatusType1
-from ..models.video_file_model_status_type_2_type_1 import (
-    VideoFileModelStatusType2Type1,
-)
-from ..models.video_file_model_status_type_3_type_1 import (
-    VideoFileModelStatusType3Type1,
-)
-from ..models.video_file_model_storage_provider_type_1 import (
-    VideoFileModelStorageProviderType1,
-)
-from ..models.video_file_model_storage_provider_type_2_type_1 import (
-    VideoFileModelStorageProviderType2Type1,
-)
-from ..models.video_file_model_storage_provider_type_3_type_1 import (
-    VideoFileModelStorageProviderType3Type1,
-)
+from ..models.video_file_model_status_type_2_type_1 import VideoFileModelStatusType2Type1
+from ..models.video_file_model_status_type_3_type_1 import VideoFileModelStatusType3Type1
+from ..models.video_file_model_storage_provider_type_1 import VideoFileModelStorageProviderType1
+from ..models.video_file_model_storage_provider_type_2_type_1 import VideoFileModelStorageProviderType2Type1
+from ..models.video_file_model_storage_provider_type_3_type_1 import VideoFileModelStorageProviderType3Type1
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
@@ -124,11 +110,7 @@ class VideoFileModel:
     content: Union[Unset, VideoFileModelContent] = UNSET
     fps: Union[Unset, int] = 25
     origin: Union[
-        None,
-        Unset,
-        VideoFileModelOriginType1,
-        VideoFileModelOriginType2Type1,
-        VideoFileModelOriginType3Type1,
+        None, Unset, VideoFileModelOriginType1, VideoFileModelOriginType2Type1, VideoFileModelOriginType3Type1
     ] = UNSET
     format_: Union[Unset, VideoFileModelFormat] = UNSET
     storage_provider: Union[
@@ -142,11 +124,7 @@ class VideoFileModel:
     length: Union[None, Unset, float] = UNSET
     encoding: Union[Unset, str] = UNSET
     status: Union[
-        None,
-        Unset,
-        VideoFileModelStatusType1,
-        VideoFileModelStatusType2Type1,
-        VideoFileModelStatusType3Type1,
+        None, Unset, VideoFileModelStatusType1, VideoFileModelStatusType2Type1, VideoFileModelStatusType3Type1
     ] = UNSET
     start_time: Union[Unset, datetime.datetime] = UNSET
     expiry: Union[None, Unset, datetime.datetime] = UNSET
@@ -392,11 +370,7 @@ class VideoFileModel:
         def _parse_origin(
             data: object,
         ) -> Union[
-            None,
-            Unset,
-            VideoFileModelOriginType1,
-            VideoFileModelOriginType2Type1,
-            VideoFileModelOriginType3Type1,
+            None, Unset, VideoFileModelOriginType1, VideoFileModelOriginType2Type1, VideoFileModelOriginType3Type1
         ]:
             if data is None:
                 return data
@@ -470,9 +444,7 @@ class VideoFileModel:
             try:
                 if not isinstance(data, str):
                     raise TypeError()
-                storage_provider_type_2_type_1 = (
-                    VideoFileModelStorageProviderType2Type1(data)
-                )
+                storage_provider_type_2_type_1 = VideoFileModelStorageProviderType2Type1(data)
 
                 return storage_provider_type_2_type_1
             except:  # noqa: E722
@@ -480,9 +452,7 @@ class VideoFileModel:
             try:
                 if not isinstance(data, str):
                     raise TypeError()
-                storage_provider_type_3_type_1 = (
-                    VideoFileModelStorageProviderType3Type1(data)
-                )
+                storage_provider_type_3_type_1 = VideoFileModelStorageProviderType3Type1(data)
 
                 return storage_provider_type_3_type_1
             except:  # noqa: E722
@@ -523,11 +493,7 @@ class VideoFileModel:
         def _parse_status(
             data: object,
         ) -> Union[
-            None,
-            Unset,
-            VideoFileModelStatusType1,
-            VideoFileModelStatusType2Type1,
-            VideoFileModelStatusType3Type1,
+            None, Unset, VideoFileModelStatusType1, VideoFileModelStatusType2Type1, VideoFileModelStatusType3Type1
         ]:
             if data is None:
                 return data

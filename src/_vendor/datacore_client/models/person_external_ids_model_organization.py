@@ -4,9 +4,7 @@ from typing import Any, TypeVar, Union
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-from ..models.person_external_ids_model_organization_resource_type import (
-    PersonExternalIdsModelOrganizationResourceType,
-)
+from ..models.person_external_ids_model_organization_resource_type import PersonExternalIdsModelOrganizationResourceType
 from ..types import UNSET, Unset
 
 T = TypeVar("T", bound="PersonExternalIdsModelOrganization")
@@ -50,9 +48,7 @@ class PersonExternalIdsModelOrganization:
         if isinstance(_resource_type, Unset):
             resource_type = UNSET
         else:
-            resource_type = PersonExternalIdsModelOrganizationResourceType(
-                _resource_type
-            )
+            resource_type = PersonExternalIdsModelOrganizationResourceType(_resource_type)
 
         id = d.pop("id", UNSET)
 

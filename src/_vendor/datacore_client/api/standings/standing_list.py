@@ -8,12 +8,10 @@ import httpx
 from ...client import AuthenticatedClient, Client
 from ...models.standing_list_fixture_type import StandingListFixtureType
 from ...models.standing_list_grouping_base import StandingListGroupingBase
-from ...models.standing_list_grouping_conference_division import (
-    StandingListGroupingConferenceDivision,
-)
+from ...models.standing_list_grouping_conference_division import StandingListGroupingConferenceDivision
 from ...models.standing_list_grouping_stage_pool import StandingListGroupingStagePool
 from ...models.standing_list_response_default import StandingListResponseDefault
-from ...models.standing_list_standings_response import StandingListStandingsResponse
+from ...models.standings_response import StandingsResponse
 from ...types import UNSET, Response, Unset
 
 
@@ -29,9 +27,7 @@ def _get_kwargs(
     fields: Union[Unset, str] = UNSET,
     fixture_type: Union[Unset, StandingListFixtureType] = UNSET,
     grouping_base: Union[Unset, StandingListGroupingBase] = UNSET,
-    grouping_conference_division: Union[
-        Unset, StandingListGroupingConferenceDivision
-    ] = UNSET,
+    grouping_conference_division: Union[Unset, StandingListGroupingConferenceDivision] = UNSET,
     grouping_stage_pool: Union[Unset, StandingListGroupingStagePool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     in_progress: Union[Unset, bool] = UNSET,
@@ -145,9 +141,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[StandingListResponseDefault, StandingListStandingsResponse]:
+) -> Union[StandingListResponseDefault, StandingsResponse]:
     if response.status_code == 200:
-        response_200 = StandingListStandingsResponse.from_dict(response.json())
+        response_200 = StandingsResponse.from_dict(response.json())
 
         return response_200
 
@@ -158,7 +154,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[Union[StandingListResponseDefault, StandingListStandingsResponse]]:
+) -> Response[Union[StandingListResponseDefault, StandingsResponse]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -180,9 +176,7 @@ def sync_detailed(
     fields: Union[Unset, str] = UNSET,
     fixture_type: Union[Unset, StandingListFixtureType] = UNSET,
     grouping_base: Union[Unset, StandingListGroupingBase] = UNSET,
-    grouping_conference_division: Union[
-        Unset, StandingListGroupingConferenceDivision
-    ] = UNSET,
+    grouping_conference_division: Union[Unset, StandingListGroupingConferenceDivision] = UNSET,
     grouping_stage_pool: Union[Unset, StandingListGroupingStagePool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     in_progress: Union[Unset, bool] = UNSET,
@@ -198,7 +192,7 @@ def sync_detailed(
     stage_code: Union[Unset, str] = UNSET,
     standing_configuration_id: Union[Unset, UUID] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[Union[StandingListResponseDefault, StandingListStandingsResponse]]:
+) -> Response[Union[StandingListResponseDefault, StandingsResponse]]:
     """Get a list of standings
 
      Return a list of available standings for a season
@@ -239,7 +233,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[StandingListResponseDefault, StandingListStandingsResponse]]
+        Response[Union[StandingListResponseDefault, StandingsResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -291,9 +285,7 @@ def sync(
     fields: Union[Unset, str] = UNSET,
     fixture_type: Union[Unset, StandingListFixtureType] = UNSET,
     grouping_base: Union[Unset, StandingListGroupingBase] = UNSET,
-    grouping_conference_division: Union[
-        Unset, StandingListGroupingConferenceDivision
-    ] = UNSET,
+    grouping_conference_division: Union[Unset, StandingListGroupingConferenceDivision] = UNSET,
     grouping_stage_pool: Union[Unset, StandingListGroupingStagePool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     in_progress: Union[Unset, bool] = UNSET,
@@ -309,7 +301,7 @@ def sync(
     stage_code: Union[Unset, str] = UNSET,
     standing_configuration_id: Union[Unset, UUID] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[Union[StandingListResponseDefault, StandingListStandingsResponse]]:
+) -> Optional[Union[StandingListResponseDefault, StandingsResponse]]:
     """Get a list of standings
 
      Return a list of available standings for a season
@@ -350,7 +342,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[StandingListResponseDefault, StandingListStandingsResponse]
+        Union[StandingListResponseDefault, StandingsResponse]
     """
 
     return sync_detailed(
@@ -397,9 +389,7 @@ async def asyncio_detailed(
     fields: Union[Unset, str] = UNSET,
     fixture_type: Union[Unset, StandingListFixtureType] = UNSET,
     grouping_base: Union[Unset, StandingListGroupingBase] = UNSET,
-    grouping_conference_division: Union[
-        Unset, StandingListGroupingConferenceDivision
-    ] = UNSET,
+    grouping_conference_division: Union[Unset, StandingListGroupingConferenceDivision] = UNSET,
     grouping_stage_pool: Union[Unset, StandingListGroupingStagePool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     in_progress: Union[Unset, bool] = UNSET,
@@ -415,7 +405,7 @@ async def asyncio_detailed(
     stage_code: Union[Unset, str] = UNSET,
     standing_configuration_id: Union[Unset, UUID] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[Union[StandingListResponseDefault, StandingListStandingsResponse]]:
+) -> Response[Union[StandingListResponseDefault, StandingsResponse]]:
     """Get a list of standings
 
      Return a list of available standings for a season
@@ -456,7 +446,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[StandingListResponseDefault, StandingListStandingsResponse]]
+        Response[Union[StandingListResponseDefault, StandingsResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -506,9 +496,7 @@ async def asyncio(
     fields: Union[Unset, str] = UNSET,
     fixture_type: Union[Unset, StandingListFixtureType] = UNSET,
     grouping_base: Union[Unset, StandingListGroupingBase] = UNSET,
-    grouping_conference_division: Union[
-        Unset, StandingListGroupingConferenceDivision
-    ] = UNSET,
+    grouping_conference_division: Union[Unset, StandingListGroupingConferenceDivision] = UNSET,
     grouping_stage_pool: Union[Unset, StandingListGroupingStagePool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     in_progress: Union[Unset, bool] = UNSET,
@@ -524,7 +512,7 @@ async def asyncio(
     stage_code: Union[Unset, str] = UNSET,
     standing_configuration_id: Union[Unset, UUID] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[Union[StandingListResponseDefault, StandingListStandingsResponse]]:
+) -> Optional[Union[StandingListResponseDefault, StandingsResponse]]:
     """Get a list of standings
 
      Return a list of available standings for a season
@@ -565,7 +553,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[StandingListResponseDefault, StandingListStandingsResponse]
+        Union[StandingListResponseDefault, StandingsResponse]
     """
 
     return (

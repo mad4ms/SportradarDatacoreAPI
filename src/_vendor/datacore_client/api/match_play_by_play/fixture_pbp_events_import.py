@@ -5,12 +5,7 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.fixture_pbp_events_import_response_default import (
-    FixturePbpEventsImportResponseDefault,
-)
-from ...models.fixture_pbp_events_import_success_response import (
-    FixturePbpEventsImportSuccessResponse,
-)
+from ...models.fixture_pbp_events_import_response_default import FixturePbpEventsImportResponseDefault
 from ...types import UNSET, Response, Unset
 
 
@@ -46,14 +41,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[
-    FixturePbpEventsImportResponseDefault, FixturePbpEventsImportSuccessResponse
-]:
-    if response.status_code == 200:
-        response_200 = FixturePbpEventsImportSuccessResponse.from_dict(response.json())
-
-        return response_200
-
+) -> FixturePbpEventsImportResponseDefault:
     response_default = FixturePbpEventsImportResponseDefault.from_dict(response.json())
 
     return response_default
@@ -61,9 +49,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[FixturePbpEventsImportResponseDefault, FixturePbpEventsImportSuccessResponse]
-]:
+) -> Response[FixturePbpEventsImportResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -81,9 +67,7 @@ def sync_detailed(
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[FixturePbpEventsImportResponseDefault, FixturePbpEventsImportSuccessResponse]
-]:
+) -> Response[FixturePbpEventsImportResponseDefault]:
     """Add or Update historical play-by-play records for a match
 
 
@@ -110,7 +94,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[FixturePbpEventsImportResponseDefault, FixturePbpEventsImportSuccessResponse]]
+        Response[FixturePbpEventsImportResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -138,9 +122,7 @@ def sync(
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[FixturePbpEventsImportResponseDefault, FixturePbpEventsImportSuccessResponse]
-]:
+) -> Optional[FixturePbpEventsImportResponseDefault]:
     """Add or Update historical play-by-play records for a match
 
 
@@ -167,7 +149,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[FixturePbpEventsImportResponseDefault, FixturePbpEventsImportSuccessResponse]
+        FixturePbpEventsImportResponseDefault
     """
 
     return sync_detailed(
@@ -190,9 +172,7 @@ async def asyncio_detailed(
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[FixturePbpEventsImportResponseDefault, FixturePbpEventsImportSuccessResponse]
-]:
+) -> Response[FixturePbpEventsImportResponseDefault]:
     """Add or Update historical play-by-play records for a match
 
 
@@ -219,7 +199,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[FixturePbpEventsImportResponseDefault, FixturePbpEventsImportSuccessResponse]]
+        Response[FixturePbpEventsImportResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -245,9 +225,7 @@ async def asyncio(
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[FixturePbpEventsImportResponseDefault, FixturePbpEventsImportSuccessResponse]
-]:
+) -> Optional[FixturePbpEventsImportResponseDefault]:
     """Add or Update historical play-by-play records for a match
 
 
@@ -274,7 +252,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[FixturePbpEventsImportResponseDefault, FixturePbpEventsImportSuccessResponse]
+        FixturePbpEventsImportResponseDefault
     """
 
     return (

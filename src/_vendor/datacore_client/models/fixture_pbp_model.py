@@ -10,7 +10,7 @@ from ..models.fixture_pbp_model_period_id import FixturePbpModelPeriodId
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.fixture_pbp_model_event_details import FixturePbpModelEventDetails
+    from ..models.event_details import EventDetails
     from ..models.fixture_pbp_model_fixture import FixturePbpModelFixture
     from ..models.fixture_pbp_model_organization import FixturePbpModelOrganization
 
@@ -36,7 +36,7 @@ class FixturePbpModel:
             >- `13` Extra time 2 period 2
             >- `14` Shoot Out
         section (Union[Unset, str]): The section of the period (sub-period)
-        events (Union['FixturePbpModelEventDetails', None, Unset]): Event details
+        events (Union['EventDetails', None, Unset]): Event details
         updated (Union[Unset, datetime.datetime]): Date/time last modified. In UTC
         added (Union[Unset, datetime.datetime]): Date/time added. In UTC
     """
@@ -47,12 +47,12 @@ class FixturePbpModel:
     fixture: Union[Unset, "FixturePbpModelFixture"] = UNSET
     period_id: Union[Unset, FixturePbpModelPeriodId] = UNSET
     section: Union[Unset, str] = UNSET
-    events: Union["FixturePbpModelEventDetails", None, Unset] = UNSET
+    events: Union["EventDetails", None, Unset] = UNSET
     updated: Union[Unset, datetime.datetime] = UNSET
     added: Union[Unset, datetime.datetime] = UNSET
 
     def to_dict(self) -> dict[str, Any]:
-        from ..models.fixture_pbp_model_event_details import FixturePbpModelEventDetails
+        from ..models.event_details import EventDetails
 
         organization_id = self.organization_id
 
@@ -77,7 +77,7 @@ class FixturePbpModel:
         events: Union[None, Unset, dict[str, Any]]
         if isinstance(self.events, Unset):
             events = UNSET
-        elif isinstance(self.events, FixturePbpModelEventDetails):
+        elif isinstance(self.events, EventDetails):
             events = self.events.to_dict()
         else:
             events = self.events
@@ -116,7 +116,7 @@ class FixturePbpModel:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.fixture_pbp_model_event_details import FixturePbpModelEventDetails
+        from ..models.event_details import EventDetails
         from ..models.fixture_pbp_model_fixture import FixturePbpModelFixture
         from ..models.fixture_pbp_model_organization import FixturePbpModelOrganization
 
@@ -153,9 +153,7 @@ class FixturePbpModel:
 
         section = d.pop("section", UNSET)
 
-        def _parse_events(
-            data: object,
-        ) -> Union["FixturePbpModelEventDetails", None, Unset]:
+        def _parse_events(data: object) -> Union["EventDetails", None, Unset]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -163,12 +161,12 @@ class FixturePbpModel:
             try:
                 if not isinstance(data, dict):
                     raise TypeError()
-                events_type_0 = FixturePbpModelEventDetails.from_dict(data)
+                events_type_0 = EventDetails.from_dict(data)
 
                 return events_type_0
             except:  # noqa: E722
                 pass
-            return cast(Union["FixturePbpModelEventDetails", None, Unset], data)
+            return cast(Union["EventDetails", None, Unset], data)
 
         events = _parse_events(d.pop("events", UNSET))
 

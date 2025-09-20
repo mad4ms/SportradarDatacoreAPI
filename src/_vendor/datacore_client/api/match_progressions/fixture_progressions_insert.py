@@ -5,15 +5,8 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.fixture_progressions_insert_fixture_progression_post_body import (
-    FixtureProgressionsInsertFixtureProgressionPostBody,
-)
-from ...models.fixture_progressions_insert_fixture_progressions_response import (
-    FixtureProgressionsInsertFixtureProgressionsResponse,
-)
-from ...models.fixture_progressions_insert_response_default import (
-    FixtureProgressionsInsertResponseDefault,
-)
+from ...models.fixture_progression_post_body import FixtureProgressionPostBody
+from ...models.fixture_progressions_insert_response_default import FixtureProgressionsInsertResponseDefault
 from ...types import UNSET, Response, Unset
 
 
@@ -21,7 +14,7 @@ def _get_kwargs(
     organization_id: str,
     season_id: UUID,
     *,
-    body: FixtureProgressionsInsertFixtureProgressionPostBody,
+    body: FixtureProgressionPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
@@ -57,32 +50,15 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[
-    FixtureProgressionsInsertFixtureProgressionsResponse,
-    FixtureProgressionsInsertResponseDefault,
-]:
-    if response.status_code == 200:
-        response_200 = FixtureProgressionsInsertFixtureProgressionsResponse.from_dict(
-            response.json()
-        )
-
-        return response_200
-
-    response_default = FixtureProgressionsInsertResponseDefault.from_dict(
-        response.json()
-    )
+) -> FixtureProgressionsInsertResponseDefault:
+    response_default = FixtureProgressionsInsertResponseDefault.from_dict(response.json())
 
     return response_default
 
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[
-        FixtureProgressionsInsertFixtureProgressionsResponse,
-        FixtureProgressionsInsertResponseDefault,
-    ]
-]:
+) -> Response[FixtureProgressionsInsertResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -96,17 +72,12 @@ def sync_detailed(
     season_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: FixtureProgressionsInsertFixtureProgressionPostBody,
+    body: FixtureProgressionPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        FixtureProgressionsInsertFixtureProgressionsResponse,
-        FixtureProgressionsInsertResponseDefault,
-    ]
-]:
+) -> Response[FixtureProgressionsInsertResponseDefault]:
     """Create a match progression
 
      Add a new match progression
@@ -119,14 +90,14 @@ def sync_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (FixtureProgressionsInsertFixtureProgressionPostBody):
+        body (FixtureProgressionPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[FixtureProgressionsInsertFixtureProgressionsResponse, FixtureProgressionsInsertResponseDefault]]
+        Response[FixtureProgressionsInsertResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -151,17 +122,12 @@ def sync(
     season_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: FixtureProgressionsInsertFixtureProgressionPostBody,
+    body: FixtureProgressionPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        FixtureProgressionsInsertFixtureProgressionsResponse,
-        FixtureProgressionsInsertResponseDefault,
-    ]
-]:
+) -> Optional[FixtureProgressionsInsertResponseDefault]:
     """Create a match progression
 
      Add a new match progression
@@ -174,14 +140,14 @@ def sync(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (FixtureProgressionsInsertFixtureProgressionPostBody):
+        body (FixtureProgressionPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[FixtureProgressionsInsertFixtureProgressionsResponse, FixtureProgressionsInsertResponseDefault]
+        FixtureProgressionsInsertResponseDefault
     """
 
     return sync_detailed(
@@ -201,17 +167,12 @@ async def asyncio_detailed(
     season_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: FixtureProgressionsInsertFixtureProgressionPostBody,
+    body: FixtureProgressionPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        FixtureProgressionsInsertFixtureProgressionsResponse,
-        FixtureProgressionsInsertResponseDefault,
-    ]
-]:
+) -> Response[FixtureProgressionsInsertResponseDefault]:
     """Create a match progression
 
      Add a new match progression
@@ -224,14 +185,14 @@ async def asyncio_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (FixtureProgressionsInsertFixtureProgressionPostBody):
+        body (FixtureProgressionPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[FixtureProgressionsInsertFixtureProgressionsResponse, FixtureProgressionsInsertResponseDefault]]
+        Response[FixtureProgressionsInsertResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -254,17 +215,12 @@ async def asyncio(
     season_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: FixtureProgressionsInsertFixtureProgressionPostBody,
+    body: FixtureProgressionPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        FixtureProgressionsInsertFixtureProgressionsResponse,
-        FixtureProgressionsInsertResponseDefault,
-    ]
-]:
+) -> Optional[FixtureProgressionsInsertResponseDefault]:
     """Create a match progression
 
      Add a new match progression
@@ -277,14 +233,14 @@ async def asyncio(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (FixtureProgressionsInsertFixtureProgressionPostBody):
+        body (FixtureProgressionPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[FixtureProgressionsInsertFixtureProgressionsResponse, FixtureProgressionsInsertResponseDefault]
+        FixtureProgressionsInsertResponseDefault
     """
 
     return (

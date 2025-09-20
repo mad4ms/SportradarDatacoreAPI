@@ -10,9 +10,7 @@ from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
     from ..models.match_external_ids_model_fixture import MatchExternalIdsModelFixture
-    from ..models.match_external_ids_model_organization import (
-        MatchExternalIdsModelOrganization,
-    )
+    from ..models.match_external_ids_model_organization import MatchExternalIdsModelOrganization
 
 
 T = TypeVar("T", bound="MatchExternalIdsModel")
@@ -109,12 +107,8 @@ class MatchExternalIdsModel:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.match_external_ids_model_fixture import (
-            MatchExternalIdsModelFixture,
-        )
-        from ..models.match_external_ids_model_organization import (
-            MatchExternalIdsModelOrganization,
-        )
+        from ..models.match_external_ids_model_fixture import MatchExternalIdsModelFixture
+        from ..models.match_external_ids_model_organization import MatchExternalIdsModelOrganization
 
         d = dict(src_dict)
         _fixture_external_id = d.pop("fixtureExternalId", UNSET)

@@ -5,15 +5,9 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.season_entities_insert_update_response_default import (
-    SeasonEntitiesInsertUpdateResponseDefault,
-)
-from ...models.season_entities_insert_update_season_entities_response import (
-    SeasonEntitiesInsertUpdateSeasonEntitiesResponse,
-)
-from ...models.season_entities_insert_update_season_teams_post_body import (
-    SeasonEntitiesInsertUpdateSeasonTeamsPostBody,
-)
+from ...models.season_entities_insert_update_response_default import SeasonEntitiesInsertUpdateResponseDefault
+from ...models.season_entities_response import SeasonEntitiesResponse
+from ...models.season_teams_post_body import SeasonTeamsPostBody
 from ...types import UNSET, Response, Unset
 
 
@@ -21,7 +15,7 @@ def _get_kwargs(
     organization_id: str,
     season_id: UUID,
     *,
-    body: SeasonEntitiesInsertUpdateSeasonTeamsPostBody,
+    body: SeasonTeamsPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
@@ -57,32 +51,20 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[
-    SeasonEntitiesInsertUpdateResponseDefault,
-    SeasonEntitiesInsertUpdateSeasonEntitiesResponse,
-]:
+) -> Union[SeasonEntitiesInsertUpdateResponseDefault, SeasonEntitiesResponse]:
     if response.status_code == 200:
-        response_200 = SeasonEntitiesInsertUpdateSeasonEntitiesResponse.from_dict(
-            response.json()
-        )
+        response_200 = SeasonEntitiesResponse.from_dict(response.json())
 
         return response_200
 
-    response_default = SeasonEntitiesInsertUpdateResponseDefault.from_dict(
-        response.json()
-    )
+    response_default = SeasonEntitiesInsertUpdateResponseDefault.from_dict(response.json())
 
     return response_default
 
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[
-        SeasonEntitiesInsertUpdateResponseDefault,
-        SeasonEntitiesInsertUpdateSeasonEntitiesResponse,
-    ]
-]:
+) -> Response[Union[SeasonEntitiesInsertUpdateResponseDefault, SeasonEntitiesResponse]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -96,17 +78,12 @@ def sync_detailed(
     season_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: SeasonEntitiesInsertUpdateSeasonTeamsPostBody,
+    body: SeasonTeamsPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        SeasonEntitiesInsertUpdateResponseDefault,
-        SeasonEntitiesInsertUpdateSeasonEntitiesResponse,
-    ]
-]:
+) -> Response[Union[SeasonEntitiesInsertUpdateResponseDefault, SeasonEntitiesResponse]]:
     """Add or Update a team in a season
 
      Depending on primary keys, Add a team or update an existing entitiy in a season
@@ -119,14 +96,14 @@ def sync_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (SeasonEntitiesInsertUpdateSeasonTeamsPostBody):
+        body (SeasonTeamsPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SeasonEntitiesInsertUpdateResponseDefault, SeasonEntitiesInsertUpdateSeasonEntitiesResponse]]
+        Response[Union[SeasonEntitiesInsertUpdateResponseDefault, SeasonEntitiesResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -151,17 +128,12 @@ def sync(
     season_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: SeasonEntitiesInsertUpdateSeasonTeamsPostBody,
+    body: SeasonTeamsPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        SeasonEntitiesInsertUpdateResponseDefault,
-        SeasonEntitiesInsertUpdateSeasonEntitiesResponse,
-    ]
-]:
+) -> Optional[Union[SeasonEntitiesInsertUpdateResponseDefault, SeasonEntitiesResponse]]:
     """Add or Update a team in a season
 
      Depending on primary keys, Add a team or update an existing entitiy in a season
@@ -174,14 +146,14 @@ def sync(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (SeasonEntitiesInsertUpdateSeasonTeamsPostBody):
+        body (SeasonTeamsPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SeasonEntitiesInsertUpdateResponseDefault, SeasonEntitiesInsertUpdateSeasonEntitiesResponse]
+        Union[SeasonEntitiesInsertUpdateResponseDefault, SeasonEntitiesResponse]
     """
 
     return sync_detailed(
@@ -201,17 +173,12 @@ async def asyncio_detailed(
     season_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: SeasonEntitiesInsertUpdateSeasonTeamsPostBody,
+    body: SeasonTeamsPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        SeasonEntitiesInsertUpdateResponseDefault,
-        SeasonEntitiesInsertUpdateSeasonEntitiesResponse,
-    ]
-]:
+) -> Response[Union[SeasonEntitiesInsertUpdateResponseDefault, SeasonEntitiesResponse]]:
     """Add or Update a team in a season
 
      Depending on primary keys, Add a team or update an existing entitiy in a season
@@ -224,14 +191,14 @@ async def asyncio_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (SeasonEntitiesInsertUpdateSeasonTeamsPostBody):
+        body (SeasonTeamsPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SeasonEntitiesInsertUpdateResponseDefault, SeasonEntitiesInsertUpdateSeasonEntitiesResponse]]
+        Response[Union[SeasonEntitiesInsertUpdateResponseDefault, SeasonEntitiesResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -254,17 +221,12 @@ async def asyncio(
     season_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: SeasonEntitiesInsertUpdateSeasonTeamsPostBody,
+    body: SeasonTeamsPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        SeasonEntitiesInsertUpdateResponseDefault,
-        SeasonEntitiesInsertUpdateSeasonEntitiesResponse,
-    ]
-]:
+) -> Optional[Union[SeasonEntitiesInsertUpdateResponseDefault, SeasonEntitiesResponse]]:
     """Add or Update a team in a season
 
      Depending on primary keys, Add a team or update an existing entitiy in a season
@@ -277,14 +239,14 @@ async def asyncio(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (SeasonEntitiesInsertUpdateSeasonTeamsPostBody):
+        body (SeasonTeamsPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SeasonEntitiesInsertUpdateResponseDefault, SeasonEntitiesInsertUpdateSeasonEntitiesResponse]
+        Union[SeasonEntitiesInsertUpdateResponseDefault, SeasonEntitiesResponse]
     """
 
     return (

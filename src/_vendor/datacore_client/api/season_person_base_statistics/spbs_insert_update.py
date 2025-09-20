@@ -4,22 +4,15 @@ from typing import Any, Optional, Union
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.spbs_insert_update_response_default import (
-    SpbsInsertUpdateResponseDefault,
-)
-from ...models.spbs_insert_update_season_person_base_statistics_post_body import (
-    SpbsInsertUpdateSeasonPersonBaseStatisticsPostBody,
-)
-from ...models.spbs_insert_update_season_person_base_statistics_response import (
-    SpbsInsertUpdateSeasonPersonBaseStatisticsResponse,
-)
+from ...models.season_person_base_statistics_post_body import SeasonPersonBaseStatisticsPostBody
+from ...models.spbs_insert_update_response_default import SpbsInsertUpdateResponseDefault
 from ...types import UNSET, Response, Unset
 
 
 def _get_kwargs(
     organization_id: str,
     *,
-    body: SpbsInsertUpdateSeasonPersonBaseStatisticsPostBody,
+    body: SeasonPersonBaseStatisticsPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
@@ -55,16 +48,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[
-    SpbsInsertUpdateResponseDefault, SpbsInsertUpdateSeasonPersonBaseStatisticsResponse
-]:
-    if response.status_code == 200:
-        response_200 = SpbsInsertUpdateSeasonPersonBaseStatisticsResponse.from_dict(
-            response.json()
-        )
-
-        return response_200
-
+) -> SpbsInsertUpdateResponseDefault:
     response_default = SpbsInsertUpdateResponseDefault.from_dict(response.json())
 
     return response_default
@@ -72,12 +56,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[
-        SpbsInsertUpdateResponseDefault,
-        SpbsInsertUpdateSeasonPersonBaseStatisticsResponse,
-    ]
-]:
+) -> Response[SpbsInsertUpdateResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -90,17 +69,12 @@ def sync_detailed(
     organization_id: str,
     *,
     client: AuthenticatedClient,
-    body: SpbsInsertUpdateSeasonPersonBaseStatisticsPostBody,
+    body: SeasonPersonBaseStatisticsPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        SpbsInsertUpdateResponseDefault,
-        SpbsInsertUpdateSeasonPersonBaseStatisticsResponse,
-    ]
-]:
+) -> Response[SpbsInsertUpdateResponseDefault]:
     """Create/Update season person base statistics
 
      Depending on the data, add or update a base statistic record for a person in a season.
@@ -112,14 +86,14 @@ def sync_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (SpbsInsertUpdateSeasonPersonBaseStatisticsPostBody):
+        body (SeasonPersonBaseStatisticsPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SpbsInsertUpdateResponseDefault, SpbsInsertUpdateSeasonPersonBaseStatisticsResponse]]
+        Response[SpbsInsertUpdateResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -142,17 +116,12 @@ def sync(
     organization_id: str,
     *,
     client: AuthenticatedClient,
-    body: SpbsInsertUpdateSeasonPersonBaseStatisticsPostBody,
+    body: SeasonPersonBaseStatisticsPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        SpbsInsertUpdateResponseDefault,
-        SpbsInsertUpdateSeasonPersonBaseStatisticsResponse,
-    ]
-]:
+) -> Optional[SpbsInsertUpdateResponseDefault]:
     """Create/Update season person base statistics
 
      Depending on the data, add or update a base statistic record for a person in a season.
@@ -164,14 +133,14 @@ def sync(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (SpbsInsertUpdateSeasonPersonBaseStatisticsPostBody):
+        body (SeasonPersonBaseStatisticsPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SpbsInsertUpdateResponseDefault, SpbsInsertUpdateSeasonPersonBaseStatisticsResponse]
+        SpbsInsertUpdateResponseDefault
     """
 
     return sync_detailed(
@@ -189,17 +158,12 @@ async def asyncio_detailed(
     organization_id: str,
     *,
     client: AuthenticatedClient,
-    body: SpbsInsertUpdateSeasonPersonBaseStatisticsPostBody,
+    body: SeasonPersonBaseStatisticsPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        SpbsInsertUpdateResponseDefault,
-        SpbsInsertUpdateSeasonPersonBaseStatisticsResponse,
-    ]
-]:
+) -> Response[SpbsInsertUpdateResponseDefault]:
     """Create/Update season person base statistics
 
      Depending on the data, add or update a base statistic record for a person in a season.
@@ -211,14 +175,14 @@ async def asyncio_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (SpbsInsertUpdateSeasonPersonBaseStatisticsPostBody):
+        body (SeasonPersonBaseStatisticsPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SpbsInsertUpdateResponseDefault, SpbsInsertUpdateSeasonPersonBaseStatisticsResponse]]
+        Response[SpbsInsertUpdateResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -239,17 +203,12 @@ async def asyncio(
     organization_id: str,
     *,
     client: AuthenticatedClient,
-    body: SpbsInsertUpdateSeasonPersonBaseStatisticsPostBody,
+    body: SeasonPersonBaseStatisticsPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        SpbsInsertUpdateResponseDefault,
-        SpbsInsertUpdateSeasonPersonBaseStatisticsResponse,
-    ]
-]:
+) -> Optional[SpbsInsertUpdateResponseDefault]:
     """Create/Update season person base statistics
 
      Depending on the data, add or update a base statistic record for a person in a season.
@@ -261,14 +220,14 @@ async def asyncio(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (SpbsInsertUpdateSeasonPersonBaseStatisticsPostBody):
+        body (SeasonPersonBaseStatisticsPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SpbsInsertUpdateResponseDefault, SpbsInsertUpdateSeasonPersonBaseStatisticsResponse]
+        SpbsInsertUpdateResponseDefault
     """
 
     return (

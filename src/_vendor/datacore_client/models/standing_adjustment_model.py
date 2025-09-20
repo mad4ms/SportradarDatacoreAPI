@@ -6,28 +6,16 @@ from uuid import UUID
 from attrs import define as _attrs_define
 from dateutil.parser import isoparse
 
-from ..models.standing_adjustment_model_adjustment_field import (
-    StandingAdjustmentModelAdjustmentField,
-)
-from ..models.standing_adjustment_model_adjustment_group import (
-    StandingAdjustmentModelAdjustmentGroup,
-)
-from ..models.standing_adjustment_model_adjustment_type import (
-    StandingAdjustmentModelAdjustmentType,
-)
+from ..models.standing_adjustment_model_adjustment_field import StandingAdjustmentModelAdjustmentField
+from ..models.standing_adjustment_model_adjustment_group import StandingAdjustmentModelAdjustmentGroup
+from ..models.standing_adjustment_model_adjustment_type import StandingAdjustmentModelAdjustmentType
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.standing_adjustment_model_conference import (
-        StandingAdjustmentModelConference,
-    )
-    from ..models.standing_adjustment_model_division import (
-        StandingAdjustmentModelDivision,
-    )
+    from ..models.standing_adjustment_model_conference import StandingAdjustmentModelConference
+    from ..models.standing_adjustment_model_division import StandingAdjustmentModelDivision
     from ..models.standing_adjustment_model_entity import StandingAdjustmentModelEntity
-    from ..models.standing_adjustment_model_organization import (
-        StandingAdjustmentModelOrganization,
-    )
+    from ..models.standing_adjustment_model_organization import StandingAdjustmentModelOrganization
     from ..models.standing_adjustment_model_pool import StandingAdjustmentModelPool
     from ..models.standing_adjustment_model_round import StandingAdjustmentModelRound
     from ..models.standing_adjustment_model_season import StandingAdjustmentModelSeason
@@ -354,28 +342,14 @@ class StandingAdjustmentModel:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.standing_adjustment_model_conference import (
-            StandingAdjustmentModelConference,
-        )
-        from ..models.standing_adjustment_model_division import (
-            StandingAdjustmentModelDivision,
-        )
-        from ..models.standing_adjustment_model_entity import (
-            StandingAdjustmentModelEntity,
-        )
-        from ..models.standing_adjustment_model_organization import (
-            StandingAdjustmentModelOrganization,
-        )
+        from ..models.standing_adjustment_model_conference import StandingAdjustmentModelConference
+        from ..models.standing_adjustment_model_division import StandingAdjustmentModelDivision
+        from ..models.standing_adjustment_model_entity import StandingAdjustmentModelEntity
+        from ..models.standing_adjustment_model_organization import StandingAdjustmentModelOrganization
         from ..models.standing_adjustment_model_pool import StandingAdjustmentModelPool
-        from ..models.standing_adjustment_model_round import (
-            StandingAdjustmentModelRound,
-        )
-        from ..models.standing_adjustment_model_season import (
-            StandingAdjustmentModelSeason,
-        )
-        from ..models.standing_adjustment_model_stage import (
-            StandingAdjustmentModelStage,
-        )
+        from ..models.standing_adjustment_model_round import StandingAdjustmentModelRound
+        from ..models.standing_adjustment_model_season import StandingAdjustmentModelSeason
+        from ..models.standing_adjustment_model_stage import StandingAdjustmentModelStage
 
         d = dict(src_dict)
         _standing_adjustment_id = d.pop("standingAdjustmentId", UNSET)
@@ -561,9 +535,7 @@ class StandingAdjustmentModel:
                 return data
             return cast(Union[None, Unset, str], data)
 
-        reason_description = _parse_reason_description(
-            d.pop("reasonDescription", UNSET)
-        )
+        reason_description = _parse_reason_description(d.pop("reasonDescription", UNSET))
 
         def _parse_grouping_key(data: object) -> Union[None, Unset, str]:
             if data is None:

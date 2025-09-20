@@ -70,9 +70,7 @@ class CompetitionExternalIdsInsertUpdateResponseDefault:
             error=error,
         )
 
-        competition_external_ids_insert_update_response_default.additional_properties = (
-            d
-        )
+        competition_external_ids_insert_update_response_default.additional_properties = d
         return competition_external_ids_insert_update_response_default
 
     @property

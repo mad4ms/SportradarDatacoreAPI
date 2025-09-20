@@ -70,9 +70,7 @@ class StandingAdjustmentsGroupingkeyDeleteResponseDefault:
             error=error,
         )
 
-        standing_adjustments_groupingkey_delete_response_default.additional_properties = (
-            d
-        )
+        standing_adjustments_groupingkey_delete_response_default.additional_properties = d
         return standing_adjustments_groupingkey_delete_response_default
 
     @property

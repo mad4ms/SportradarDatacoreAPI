@@ -66,9 +66,7 @@ class SeasonTeamsModel:
     conference: Union[Unset, "SeasonTeamsModelConference"] = UNSET
     division_id: Union[None, UUID, Unset] = UNSET
     division: Union[Unset, "SeasonTeamsModelDivision"] = UNSET
-    roster_status: Union[Unset, SeasonTeamsModelRosterStatus] = (
-        SeasonTeamsModelRosterStatus.UNKNOWN
-    )
+    roster_status: Union[Unset, SeasonTeamsModelRosterStatus] = SeasonTeamsModelRosterStatus.UNKNOWN
     status: Union[Unset, SeasonTeamsModelStatus] = UNSET
     seed: Union[None, Unset, int] = UNSET
     external_id: Union[None, Unset, str] = UNSET
@@ -193,9 +191,7 @@ class SeasonTeamsModel:
         from ..models.season_teams_model_conference import SeasonTeamsModelConference
         from ..models.season_teams_model_division import SeasonTeamsModelDivision
         from ..models.season_teams_model_entity import SeasonTeamsModelEntity
-        from ..models.season_teams_model_organization import (
-            SeasonTeamsModelOrganization,
-        )
+        from ..models.season_teams_model_organization import SeasonTeamsModelOrganization
         from ..models.season_teams_model_season import SeasonTeamsModelSeason
 
         d = dict(src_dict)

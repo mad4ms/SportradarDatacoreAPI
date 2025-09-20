@@ -5,13 +5,8 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.season_round_insert_response_default import (
-    SeasonRoundInsertResponseDefault,
-)
-from ...models.season_round_insert_round_post_body import SeasonRoundInsertRoundPostBody
-from ...models.season_round_insert_season_rounds_response import (
-    SeasonRoundInsertSeasonRoundsResponse,
-)
+from ...models.round_post_body import RoundPostBody
+from ...models.season_round_insert_response_default import SeasonRoundInsertResponseDefault
 from ...types import UNSET, Response, Unset
 
 
@@ -19,7 +14,7 @@ def _get_kwargs(
     organization_id: str,
     season_id: UUID,
     *,
-    body: SeasonRoundInsertRoundPostBody,
+    body: RoundPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
@@ -55,12 +50,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[SeasonRoundInsertResponseDefault, SeasonRoundInsertSeasonRoundsResponse]:
-    if response.status_code == 200:
-        response_200 = SeasonRoundInsertSeasonRoundsResponse.from_dict(response.json())
-
-        return response_200
-
+) -> SeasonRoundInsertResponseDefault:
     response_default = SeasonRoundInsertResponseDefault.from_dict(response.json())
 
     return response_default
@@ -68,9 +58,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[SeasonRoundInsertResponseDefault, SeasonRoundInsertSeasonRoundsResponse]
-]:
+) -> Response[SeasonRoundInsertResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -84,14 +72,12 @@ def sync_detailed(
     season_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: SeasonRoundInsertRoundPostBody,
+    body: RoundPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[SeasonRoundInsertResponseDefault, SeasonRoundInsertSeasonRoundsResponse]
-]:
+) -> Response[SeasonRoundInsertResponseDefault]:
     """Create a round
 
      Add a new round in a season
@@ -104,14 +90,14 @@ def sync_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (SeasonRoundInsertRoundPostBody):
+        body (RoundPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SeasonRoundInsertResponseDefault, SeasonRoundInsertSeasonRoundsResponse]]
+        Response[SeasonRoundInsertResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -136,14 +122,12 @@ def sync(
     season_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: SeasonRoundInsertRoundPostBody,
+    body: RoundPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[SeasonRoundInsertResponseDefault, SeasonRoundInsertSeasonRoundsResponse]
-]:
+) -> Optional[SeasonRoundInsertResponseDefault]:
     """Create a round
 
      Add a new round in a season
@@ -156,14 +140,14 @@ def sync(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (SeasonRoundInsertRoundPostBody):
+        body (RoundPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SeasonRoundInsertResponseDefault, SeasonRoundInsertSeasonRoundsResponse]
+        SeasonRoundInsertResponseDefault
     """
 
     return sync_detailed(
@@ -183,14 +167,12 @@ async def asyncio_detailed(
     season_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: SeasonRoundInsertRoundPostBody,
+    body: RoundPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[SeasonRoundInsertResponseDefault, SeasonRoundInsertSeasonRoundsResponse]
-]:
+) -> Response[SeasonRoundInsertResponseDefault]:
     """Create a round
 
      Add a new round in a season
@@ -203,14 +185,14 @@ async def asyncio_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (SeasonRoundInsertRoundPostBody):
+        body (RoundPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SeasonRoundInsertResponseDefault, SeasonRoundInsertSeasonRoundsResponse]]
+        Response[SeasonRoundInsertResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -233,14 +215,12 @@ async def asyncio(
     season_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: SeasonRoundInsertRoundPostBody,
+    body: RoundPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[SeasonRoundInsertResponseDefault, SeasonRoundInsertSeasonRoundsResponse]
-]:
+) -> Optional[SeasonRoundInsertResponseDefault]:
     """Create a round
 
      Add a new round in a season
@@ -253,14 +233,14 @@ async def asyncio(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (SeasonRoundInsertRoundPostBody):
+        body (RoundPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SeasonRoundInsertResponseDefault, SeasonRoundInsertSeasonRoundsResponse]
+        SeasonRoundInsertResponseDefault
     """
 
     return (

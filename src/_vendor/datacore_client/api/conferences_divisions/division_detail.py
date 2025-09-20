@@ -5,7 +5,6 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.division_detail_divisions_response import DivisionDetailDivisionsResponse
 from ...models.division_detail_response_default import DivisionDetailResponseDefault
 from ...types import UNSET, Response, Unset
 
@@ -48,12 +47,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[DivisionDetailDivisionsResponse, DivisionDetailResponseDefault]:
-    if response.status_code == 200:
-        response_200 = DivisionDetailDivisionsResponse.from_dict(response.json())
-
-        return response_200
-
+) -> DivisionDetailResponseDefault:
     response_default = DivisionDetailResponseDefault.from_dict(response.json())
 
     return response_default
@@ -61,7 +55,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[Union[DivisionDetailDivisionsResponse, DivisionDetailResponseDefault]]:
+) -> Response[DivisionDetailResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -81,7 +75,7 @@ def sync_detailed(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Response[Union[DivisionDetailDivisionsResponse, DivisionDetailResponseDefault]]:
+) -> Response[DivisionDetailResponseDefault]:
     """Get a division
 
      Return detailed information about a specific division
@@ -102,7 +96,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[DivisionDetailDivisionsResponse, DivisionDetailResponseDefault]]
+        Response[DivisionDetailResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -134,7 +128,7 @@ def sync(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Optional[Union[DivisionDetailDivisionsResponse, DivisionDetailResponseDefault]]:
+) -> Optional[DivisionDetailResponseDefault]:
     """Get a division
 
      Return detailed information about a specific division
@@ -155,7 +149,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[DivisionDetailDivisionsResponse, DivisionDetailResponseDefault]
+        DivisionDetailResponseDefault
     """
 
     return sync_detailed(
@@ -182,7 +176,7 @@ async def asyncio_detailed(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Response[Union[DivisionDetailDivisionsResponse, DivisionDetailResponseDefault]]:
+) -> Response[DivisionDetailResponseDefault]:
     """Get a division
 
      Return detailed information about a specific division
@@ -203,7 +197,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[DivisionDetailDivisionsResponse, DivisionDetailResponseDefault]]
+        Response[DivisionDetailResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -233,7 +227,7 @@ async def asyncio(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Optional[Union[DivisionDetailDivisionsResponse, DivisionDetailResponseDefault]]:
+) -> Optional[DivisionDetailResponseDefault]:
     """Get a division
 
      Return detailed information about a specific division
@@ -254,7 +248,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[DivisionDetailDivisionsResponse, DivisionDetailResponseDefault]
+        DivisionDetailResponseDefault
     """
 
     return (

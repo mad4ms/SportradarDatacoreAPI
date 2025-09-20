@@ -7,7 +7,6 @@ import httpx
 from ...client import AuthenticatedClient, Client
 from ...models.entity_list_age_group import EntityListAgeGroup
 from ...models.entity_list_discipline import EntityListDiscipline
-from ...models.entity_list_entities_response import EntityListEntitiesResponse
 from ...models.entity_list_gender import EntityListGender
 from ...models.entity_list_representing_country import EntityListRepresentingCountry
 from ...models.entity_list_response_default import EntityListResponseDefault
@@ -125,12 +124,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[EntityListEntitiesResponse, EntityListResponseDefault]:
-    if response.status_code == 200:
-        response_200 = EntityListEntitiesResponse.from_dict(response.json())
-
-        return response_200
-
+) -> EntityListResponseDefault:
     response_default = EntityListResponseDefault.from_dict(response.json())
 
     return response_default
@@ -138,7 +132,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[Union[EntityListEntitiesResponse, EntityListResponseDefault]]:
+) -> Response[EntityListResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -171,7 +165,7 @@ def sync_detailed(
     standard: Union[Unset, EntityListStandard] = UNSET,
     status: Union[Unset, EntityListStatus] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[Union[EntityListEntitiesResponse, EntityListResponseDefault]]:
+) -> Response[EntityListResponseDefault]:
     """Get a list of teams
 
      Return a list of available teams
@@ -207,7 +201,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[EntityListEntitiesResponse, EntityListResponseDefault]]
+        Response[EntityListResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -265,7 +259,7 @@ def sync(
     standard: Union[Unset, EntityListStandard] = UNSET,
     status: Union[Unset, EntityListStatus] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[Union[EntityListEntitiesResponse, EntityListResponseDefault]]:
+) -> Optional[EntityListResponseDefault]:
     """Get a list of teams
 
      Return a list of available teams
@@ -301,7 +295,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[EntityListEntitiesResponse, EntityListResponseDefault]
+        EntityListResponseDefault
     """
 
     return sync_detailed(
@@ -354,7 +348,7 @@ async def asyncio_detailed(
     standard: Union[Unset, EntityListStandard] = UNSET,
     status: Union[Unset, EntityListStatus] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[Union[EntityListEntitiesResponse, EntityListResponseDefault]]:
+) -> Response[EntityListResponseDefault]:
     """Get a list of teams
 
      Return a list of available teams
@@ -390,7 +384,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[EntityListEntitiesResponse, EntityListResponseDefault]]
+        Response[EntityListResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -446,7 +440,7 @@ async def asyncio(
     standard: Union[Unset, EntityListStandard] = UNSET,
     status: Union[Unset, EntityListStatus] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[Union[EntityListEntitiesResponse, EntityListResponseDefault]]:
+) -> Optional[EntityListResponseDefault]:
     """Get a list of teams
 
      Return a list of available teams
@@ -482,7 +476,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[EntityListEntitiesResponse, EntityListResponseDefault]
+        EntityListResponseDefault
     """
 
     return (

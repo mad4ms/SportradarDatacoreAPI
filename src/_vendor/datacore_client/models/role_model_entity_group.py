@@ -4,9 +4,7 @@ from typing import Any, TypeVar, Union
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-from ..models.role_model_entity_group_resource_type import (
-    RoleModelEntityGroupResourceType,
-)
+from ..models.role_model_entity_group_resource_type import RoleModelEntityGroupResourceType
 from ..types import UNSET, Unset
 
 T = TypeVar("T", bound="RoleModelEntityGroup")

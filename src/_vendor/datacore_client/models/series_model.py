@@ -11,14 +11,12 @@ from ..models.series_model_status import SeriesModelStatus
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
+    from ..models.season_series_competitor import SeasonSeriesCompetitor
     from ..models.series_model_conference import SeriesModelConference
     from ..models.series_model_division import SeriesModelDivision
     from ..models.series_model_organization import SeriesModelOrganization
     from ..models.series_model_pool import SeriesModelPool
     from ..models.series_model_season import SeriesModelSeason
-    from ..models.series_model_season_series_competitor import (
-        SeriesModelSeasonSeriesCompetitor,
-    )
     from ..models.series_model_stage import SeriesModelStage
 
 
@@ -75,8 +73,8 @@ class SeriesModel:
         external_id (Union[None, Unset, str]): The Id of the data as set by the provider of the data Example: A123.
         updated (Union[Unset, datetime.datetime]): Date/time last modified. In UTC
         added (Union[Unset, datetime.datetime]): Date/time added. In UTC
-        competitors (Union[None, Unset, list['SeriesModelSeasonSeriesCompetitor']]): Array of competitors in the series.
-            A competitor may have a results and a ranking
+        competitors (Union[None, Unset, list['SeasonSeriesCompetitor']]): Array of competitors in the series. A
+            competitor may have a results and a ranking
     """
 
     series_code: Union[Unset, str] = UNSET
@@ -109,7 +107,7 @@ class SeriesModel:
     external_id: Union[None, Unset, str] = UNSET
     updated: Union[Unset, datetime.datetime] = UNSET
     added: Union[Unset, datetime.datetime] = UNSET
-    competitors: Union[None, Unset, list["SeriesModelSeasonSeriesCompetitor"]] = UNSET
+    competitors: Union[None, Unset, list["SeasonSeriesCompetitor"]] = UNSET
 
     def to_dict(self) -> dict[str, Any]:
         series_code = self.series_code
@@ -346,14 +344,12 @@ class SeriesModel:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
+        from ..models.season_series_competitor import SeasonSeriesCompetitor
         from ..models.series_model_conference import SeriesModelConference
         from ..models.series_model_division import SeriesModelDivision
         from ..models.series_model_organization import SeriesModelOrganization
         from ..models.series_model_pool import SeriesModelPool
         from ..models.series_model_season import SeriesModelSeason
-        from ..models.series_model_season_series_competitor import (
-            SeriesModelSeasonSeriesCompetitor,
-        )
         from ..models.series_model_stage import SeriesModelStage
 
         d = dict(src_dict)
@@ -439,9 +435,7 @@ class SeriesModel:
                 return data
             return cast(Union[None, Unset, str], data)
 
-        abbreviation_local = _parse_abbreviation_local(
-            d.pop("abbreviationLocal", UNSET)
-        )
+        abbreviation_local = _parse_abbreviation_local(d.pop("abbreviationLocal", UNSET))
 
         def _parse_name_latin(data: object) -> Union[None, Unset, str]:
             if data is None:
@@ -459,9 +453,7 @@ class SeriesModel:
                 return data
             return cast(Union[None, Unset, str], data)
 
-        abbreviation_latin = _parse_abbreviation_latin(
-            d.pop("abbreviationLatin", UNSET)
-        )
+        abbreviation_latin = _parse_abbreviation_latin(d.pop("abbreviationLatin", UNSET))
 
         _status = d.pop("status", UNSET)
         status: Union[Unset, SeriesModelStatus]
@@ -504,9 +496,7 @@ class SeriesModel:
                 return data
             return cast(Union[None, Unset, int], data)
 
-        max_fixtures_number = _parse_max_fixtures_number(
-            d.pop("maxFixturesNumber", UNSET)
-        )
+        max_fixtures_number = _parse_max_fixtures_number(d.pop("maxFixturesNumber", UNSET))
 
         def _parse_winner(data: object) -> Union[None, UUID, Unset]:
             if data is None:
@@ -623,9 +613,7 @@ class SeriesModel:
         else:
             added = isoparse(_added)
 
-        def _parse_competitors(
-            data: object,
-        ) -> Union[None, Unset, list["SeriesModelSeasonSeriesCompetitor"]]:
+        def _parse_competitors(data: object) -> Union[None, Unset, list["SeasonSeriesCompetitor"]]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -636,20 +624,14 @@ class SeriesModel:
                 competitors_type_0 = []
                 _competitors_type_0 = data
                 for competitors_type_0_item_data in _competitors_type_0:
-                    competitors_type_0_item = (
-                        SeriesModelSeasonSeriesCompetitor.from_dict(
-                            competitors_type_0_item_data
-                        )
-                    )
+                    competitors_type_0_item = SeasonSeriesCompetitor.from_dict(competitors_type_0_item_data)
 
                     competitors_type_0.append(competitors_type_0_item)
 
                 return competitors_type_0
             except:  # noqa: E722
                 pass
-            return cast(
-                Union[None, Unset, list["SeriesModelSeasonSeriesCompetitor"]], data
-            )
+            return cast(Union[None, Unset, list["SeasonSeriesCompetitor"]], data)
 
         competitors = _parse_competitors(d.pop("competitors", UNSET))
 

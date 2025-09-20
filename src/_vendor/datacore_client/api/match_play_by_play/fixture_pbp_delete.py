@@ -5,13 +5,8 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.fixture_pbp_delete_fixture_pbp_response import (
-    FixturePbpDeleteFixturePbpResponse,
-)
 from ...models.fixture_pbp_delete_period_id import FixturePbpDeletePeriodId
-from ...models.fixture_pbp_delete_response_default import (
-    FixturePbpDeleteResponseDefault,
-)
+from ...models.fixture_pbp_delete_response_default import FixturePbpDeleteResponseDefault
 from ...types import UNSET, Response, Unset
 
 
@@ -54,12 +49,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[FixturePbpDeleteFixturePbpResponse, FixturePbpDeleteResponseDefault]:
-    if response.status_code == 200:
-        response_200 = FixturePbpDeleteFixturePbpResponse.from_dict(response.json())
-
-        return response_200
-
+) -> FixturePbpDeleteResponseDefault:
     response_default = FixturePbpDeleteResponseDefault.from_dict(response.json())
 
     return response_default
@@ -67,9 +57,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[FixturePbpDeleteFixturePbpResponse, FixturePbpDeleteResponseDefault]
-]:
+) -> Response[FixturePbpDeleteResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -90,9 +78,7 @@ def sync_detailed(
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
     section: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[FixturePbpDeleteFixturePbpResponse, FixturePbpDeleteResponseDefault]
-]:
+) -> Response[FixturePbpDeleteResponseDefault]:
     """Delete a match play-by-play
 
      Delete a specific period play-by-play from a match
@@ -114,7 +100,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[FixturePbpDeleteFixturePbpResponse, FixturePbpDeleteResponseDefault]]
+        Response[FixturePbpDeleteResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -148,9 +134,7 @@ def sync(
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
     section: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[FixturePbpDeleteFixturePbpResponse, FixturePbpDeleteResponseDefault]
-]:
+) -> Optional[FixturePbpDeleteResponseDefault]:
     """Delete a match play-by-play
 
      Delete a specific period play-by-play from a match
@@ -172,7 +156,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[FixturePbpDeleteFixturePbpResponse, FixturePbpDeleteResponseDefault]
+        FixturePbpDeleteResponseDefault
     """
 
     return sync_detailed(
@@ -201,9 +185,7 @@ async def asyncio_detailed(
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
     section: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[FixturePbpDeleteFixturePbpResponse, FixturePbpDeleteResponseDefault]
-]:
+) -> Response[FixturePbpDeleteResponseDefault]:
     """Delete a match play-by-play
 
      Delete a specific period play-by-play from a match
@@ -225,7 +207,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[FixturePbpDeleteFixturePbpResponse, FixturePbpDeleteResponseDefault]]
+        Response[FixturePbpDeleteResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -257,9 +239,7 @@ async def asyncio(
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
     section: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[FixturePbpDeleteFixturePbpResponse, FixturePbpDeleteResponseDefault]
-]:
+) -> Optional[FixturePbpDeleteResponseDefault]:
     """Delete a match play-by-play
 
      Delete a specific period play-by-play from a match
@@ -281,7 +261,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[FixturePbpDeleteFixturePbpResponse, FixturePbpDeleteResponseDefault]
+        FixturePbpDeleteResponseDefault
     """
 
     return (

@@ -5,12 +5,7 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.orggroup_fixture_detail_fixtures_response import (
-    OrggroupFixtureDetailFixturesResponse,
-)
-from ...models.orggroup_fixture_detail_response_default import (
-    OrggroupFixtureDetailResponseDefault,
-)
+from ...models.orggroup_fixture_detail_response_default import OrggroupFixtureDetailResponseDefault
 from ...types import UNSET, Response, Unset
 
 
@@ -52,12 +47,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[OrggroupFixtureDetailFixturesResponse, OrggroupFixtureDetailResponseDefault]:
-    if response.status_code == 200:
-        response_200 = OrggroupFixtureDetailFixturesResponse.from_dict(response.json())
-
-        return response_200
-
+) -> OrggroupFixtureDetailResponseDefault:
     response_default = OrggroupFixtureDetailResponseDefault.from_dict(response.json())
 
     return response_default
@@ -65,9 +55,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[OrggroupFixtureDetailFixturesResponse, OrggroupFixtureDetailResponseDefault]
-]:
+) -> Response[OrggroupFixtureDetailResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -87,9 +75,7 @@ def sync_detailed(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Response[
-    Union[OrggroupFixtureDetailFixturesResponse, OrggroupFixtureDetailResponseDefault]
-]:
+) -> Response[OrggroupFixtureDetailResponseDefault]:
     """Get a single match for the organization group
 
      Return detailed information about a specific match for the organization group
@@ -110,7 +96,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[OrggroupFixtureDetailFixturesResponse, OrggroupFixtureDetailResponseDefault]]
+        Response[OrggroupFixtureDetailResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -142,9 +128,7 @@ def sync(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Optional[
-    Union[OrggroupFixtureDetailFixturesResponse, OrggroupFixtureDetailResponseDefault]
-]:
+) -> Optional[OrggroupFixtureDetailResponseDefault]:
     """Get a single match for the organization group
 
      Return detailed information about a specific match for the organization group
@@ -165,7 +149,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[OrggroupFixtureDetailFixturesResponse, OrggroupFixtureDetailResponseDefault]
+        OrggroupFixtureDetailResponseDefault
     """
 
     return sync_detailed(
@@ -192,9 +176,7 @@ async def asyncio_detailed(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Response[
-    Union[OrggroupFixtureDetailFixturesResponse, OrggroupFixtureDetailResponseDefault]
-]:
+) -> Response[OrggroupFixtureDetailResponseDefault]:
     """Get a single match for the organization group
 
      Return detailed information about a specific match for the organization group
@@ -215,7 +197,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[OrggroupFixtureDetailFixturesResponse, OrggroupFixtureDetailResponseDefault]]
+        Response[OrggroupFixtureDetailResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -245,9 +227,7 @@ async def asyncio(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Optional[
-    Union[OrggroupFixtureDetailFixturesResponse, OrggroupFixtureDetailResponseDefault]
-]:
+) -> Optional[OrggroupFixtureDetailResponseDefault]:
     """Get a single match for the organization group
 
      Return detailed information about a specific match for the organization group
@@ -268,7 +248,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[OrggroupFixtureDetailFixturesResponse, OrggroupFixtureDetailResponseDefault]
+        OrggroupFixtureDetailResponseDefault
     """
 
     return (

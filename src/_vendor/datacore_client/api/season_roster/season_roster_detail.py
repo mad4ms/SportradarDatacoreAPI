@@ -5,12 +5,7 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.season_roster_detail_response_default import (
-    SeasonRosterDetailResponseDefault,
-)
-from ...models.season_roster_detail_season_roster_response import (
-    SeasonRosterDetailSeasonRosterResponse,
-)
+from ...models.season_roster_detail_response_default import SeasonRosterDetailResponseDefault
 from ...models.season_roster_detail_status import SeasonRosterDetailStatus
 from ...types import UNSET, Response, Unset
 
@@ -61,12 +56,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[SeasonRosterDetailResponseDefault, SeasonRosterDetailSeasonRosterResponse]:
-    if response.status_code == 200:
-        response_200 = SeasonRosterDetailSeasonRosterResponse.from_dict(response.json())
-
-        return response_200
-
+) -> SeasonRosterDetailResponseDefault:
     response_default = SeasonRosterDetailResponseDefault.from_dict(response.json())
 
     return response_default
@@ -74,9 +64,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[SeasonRosterDetailResponseDefault, SeasonRosterDetailSeasonRosterResponse]
-]:
+) -> Response[SeasonRosterDetailResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -98,9 +86,7 @@ def sync_detailed(
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
     status: Union[Unset, SeasonRosterDetailStatus] = UNSET,
-) -> Response[
-    Union[SeasonRosterDetailResponseDefault, SeasonRosterDetailSeasonRosterResponse]
-]:
+) -> Response[SeasonRosterDetailResponseDefault]:
     """Get the roster detail for a person for the season
 
      Return the detailed roster detail for a specific person for the season
@@ -123,7 +109,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SeasonRosterDetailResponseDefault, SeasonRosterDetailSeasonRosterResponse]]
+        Response[SeasonRosterDetailResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -159,9 +145,7 @@ def sync(
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
     status: Union[Unset, SeasonRosterDetailStatus] = UNSET,
-) -> Optional[
-    Union[SeasonRosterDetailResponseDefault, SeasonRosterDetailSeasonRosterResponse]
-]:
+) -> Optional[SeasonRosterDetailResponseDefault]:
     """Get the roster detail for a person for the season
 
      Return the detailed roster detail for a specific person for the season
@@ -184,7 +168,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SeasonRosterDetailResponseDefault, SeasonRosterDetailSeasonRosterResponse]
+        SeasonRosterDetailResponseDefault
     """
 
     return sync_detailed(
@@ -215,9 +199,7 @@ async def asyncio_detailed(
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
     status: Union[Unset, SeasonRosterDetailStatus] = UNSET,
-) -> Response[
-    Union[SeasonRosterDetailResponseDefault, SeasonRosterDetailSeasonRosterResponse]
-]:
+) -> Response[SeasonRosterDetailResponseDefault]:
     """Get the roster detail for a person for the season
 
      Return the detailed roster detail for a specific person for the season
@@ -240,7 +222,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SeasonRosterDetailResponseDefault, SeasonRosterDetailSeasonRosterResponse]]
+        Response[SeasonRosterDetailResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -274,9 +256,7 @@ async def asyncio(
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
     status: Union[Unset, SeasonRosterDetailStatus] = UNSET,
-) -> Optional[
-    Union[SeasonRosterDetailResponseDefault, SeasonRosterDetailSeasonRosterResponse]
-]:
+) -> Optional[SeasonRosterDetailResponseDefault]:
     """Get the roster detail for a person for the season
 
      Return the detailed roster detail for a specific person for the season
@@ -299,7 +279,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SeasonRosterDetailResponseDefault, SeasonRosterDetailSeasonRosterResponse]
+        SeasonRosterDetailResponseDefault
     """
 
     return (

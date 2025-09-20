@@ -50,9 +50,7 @@ class SeasonTeamBaseStatisticsModelEntity:
         if isinstance(_resource_type, Unset):
             resource_type = UNSET
         else:
-            resource_type = SeasonTeamBaseStatisticsModelEntityResourceType(
-                _resource_type
-            )
+            resource_type = SeasonTeamBaseStatisticsModelEntityResourceType(_resource_type)
 
         id = d.pop("id", UNSET)
 

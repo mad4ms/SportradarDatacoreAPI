@@ -593,9 +593,7 @@ class StandingModelCalculatedAdditionalProperty:
                 return data
             return cast(Union[None, Unset, float], data)
 
-        lowest_score_for_home = _parse_lowest_score_for_home(
-            d.pop("lowestScoreForHome", UNSET)
-        )
+        lowest_score_for_home = _parse_lowest_score_for_home(d.pop("lowestScoreForHome", UNSET))
 
         def _parse_lowest_score_for_away(data: object) -> Union[None, Unset, float]:
             if data is None:
@@ -604,9 +602,7 @@ class StandingModelCalculatedAdditionalProperty:
                 return data
             return cast(Union[None, Unset, float], data)
 
-        lowest_score_for_away = _parse_lowest_score_for_away(
-            d.pop("lowestScoreForAway", UNSET)
-        )
+        lowest_score_for_away = _parse_lowest_score_for_away(d.pop("lowestScoreForAway", UNSET))
 
         def _parse_highest_score_for(data: object) -> Union[None, Unset, float]:
             if data is None:
@@ -624,9 +620,7 @@ class StandingModelCalculatedAdditionalProperty:
                 return data
             return cast(Union[None, Unset, float], data)
 
-        highest_score_for_home = _parse_highest_score_for_home(
-            d.pop("highestScoreForHome", UNSET)
-        )
+        highest_score_for_home = _parse_highest_score_for_home(d.pop("highestScoreForHome", UNSET))
 
         def _parse_highest_score_for_away(data: object) -> Union[None, Unset, float]:
             if data is None:
@@ -635,9 +629,7 @@ class StandingModelCalculatedAdditionalProperty:
                 return data
             return cast(Union[None, Unset, float], data)
 
-        highest_score_for_away = _parse_highest_score_for_away(
-            d.pop("highestScoreForAway", UNSET)
-        )
+        highest_score_for_away = _parse_highest_score_for_away(d.pop("highestScoreForAway", UNSET))
 
         def _parse_lowest_score_against(data: object) -> Union[None, Unset, float]:
             if data is None:
@@ -646,9 +638,7 @@ class StandingModelCalculatedAdditionalProperty:
                 return data
             return cast(Union[None, Unset, float], data)
 
-        lowest_score_against = _parse_lowest_score_against(
-            d.pop("lowestScoreAgainst", UNSET)
-        )
+        lowest_score_against = _parse_lowest_score_against(d.pop("lowestScoreAgainst", UNSET))
 
         def _parse_lowest_score_against_home(data: object) -> Union[None, Unset, float]:
             if data is None:
@@ -657,9 +647,7 @@ class StandingModelCalculatedAdditionalProperty:
                 return data
             return cast(Union[None, Unset, float], data)
 
-        lowest_score_against_home = _parse_lowest_score_against_home(
-            d.pop("lowestScoreAgainstHome", UNSET)
-        )
+        lowest_score_against_home = _parse_lowest_score_against_home(d.pop("lowestScoreAgainstHome", UNSET))
 
         def _parse_lowest_score_against_away(data: object) -> Union[None, Unset, float]:
             if data is None:
@@ -668,9 +656,7 @@ class StandingModelCalculatedAdditionalProperty:
                 return data
             return cast(Union[None, Unset, float], data)
 
-        lowest_score_against_away = _parse_lowest_score_against_away(
-            d.pop("lowestScoreAgainstAway", UNSET)
-        )
+        lowest_score_against_away = _parse_lowest_score_against_away(d.pop("lowestScoreAgainstAway", UNSET))
 
         def _parse_highest_score_against(data: object) -> Union[None, Unset, float]:
             if data is None:
@@ -679,35 +665,25 @@ class StandingModelCalculatedAdditionalProperty:
                 return data
             return cast(Union[None, Unset, float], data)
 
-        highest_score_against = _parse_highest_score_against(
-            d.pop("highestScoreAgainst", UNSET)
-        )
+        highest_score_against = _parse_highest_score_against(d.pop("highestScoreAgainst", UNSET))
 
-        def _parse_highest_score_against_home(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_highest_score_against_home(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        highest_score_against_home = _parse_highest_score_against_home(
-            d.pop("highestScoreAgainstHome", UNSET)
-        )
+        highest_score_against_home = _parse_highest_score_against_home(d.pop("highestScoreAgainstHome", UNSET))
 
-        def _parse_highest_score_against_away(
-            data: object,
-        ) -> Union[None, Unset, float]:
+        def _parse_highest_score_against_away(data: object) -> Union[None, Unset, float]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, float], data)
 
-        highest_score_against_away = _parse_highest_score_against_away(
-            d.pop("highestScoreAgainstAway", UNSET)
-        )
+        highest_score_against_away = _parse_highest_score_against_away(d.pop("highestScoreAgainstAway", UNSET))
 
         streak = d.pop("streak", UNSET)
 

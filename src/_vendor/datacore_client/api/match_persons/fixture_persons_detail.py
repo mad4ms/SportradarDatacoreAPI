@@ -5,12 +5,7 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.fixture_persons_detail_fixture_persons_response import (
-    FixturePersonsDetailFixturePersonsResponse,
-)
-from ...models.fixture_persons_detail_response_default import (
-    FixturePersonsDetailResponseDefault,
-)
+from ...models.fixture_persons_detail_response_default import FixturePersonsDetailResponseDefault
 from ...types import UNSET, Response, Unset
 
 
@@ -53,16 +48,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[
-    FixturePersonsDetailFixturePersonsResponse, FixturePersonsDetailResponseDefault
-]:
-    if response.status_code == 200:
-        response_200 = FixturePersonsDetailFixturePersonsResponse.from_dict(
-            response.json()
-        )
-
-        return response_200
-
+) -> FixturePersonsDetailResponseDefault:
     response_default = FixturePersonsDetailResponseDefault.from_dict(response.json())
 
     return response_default
@@ -70,11 +56,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[
-        FixturePersonsDetailFixturePersonsResponse, FixturePersonsDetailResponseDefault
-    ]
-]:
+) -> Response[FixturePersonsDetailResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -95,11 +77,7 @@ def sync_detailed(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Response[
-    Union[
-        FixturePersonsDetailFixturePersonsResponse, FixturePersonsDetailResponseDefault
-    ]
-]:
+) -> Response[FixturePersonsDetailResponseDefault]:
     """Get a person in a match
 
      Return the detail of a specific person in a match
@@ -121,7 +99,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[FixturePersonsDetailFixturePersonsResponse, FixturePersonsDetailResponseDefault]]
+        Response[FixturePersonsDetailResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -155,11 +133,7 @@ def sync(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Optional[
-    Union[
-        FixturePersonsDetailFixturePersonsResponse, FixturePersonsDetailResponseDefault
-    ]
-]:
+) -> Optional[FixturePersonsDetailResponseDefault]:
     """Get a person in a match
 
      Return the detail of a specific person in a match
@@ -181,7 +155,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[FixturePersonsDetailFixturePersonsResponse, FixturePersonsDetailResponseDefault]
+        FixturePersonsDetailResponseDefault
     """
 
     return sync_detailed(
@@ -210,11 +184,7 @@ async def asyncio_detailed(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Response[
-    Union[
-        FixturePersonsDetailFixturePersonsResponse, FixturePersonsDetailResponseDefault
-    ]
-]:
+) -> Response[FixturePersonsDetailResponseDefault]:
     """Get a person in a match
 
      Return the detail of a specific person in a match
@@ -236,7 +206,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[FixturePersonsDetailFixturePersonsResponse, FixturePersonsDetailResponseDefault]]
+        Response[FixturePersonsDetailResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -268,11 +238,7 @@ async def asyncio(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Optional[
-    Union[
-        FixturePersonsDetailFixturePersonsResponse, FixturePersonsDetailResponseDefault
-    ]
-]:
+) -> Optional[FixturePersonsDetailResponseDefault]:
     """Get a person in a match
 
      Return the detail of a specific person in a match
@@ -294,7 +260,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[FixturePersonsDetailFixturePersonsResponse, FixturePersonsDetailResponseDefault]
+        FixturePersonsDetailResponseDefault
     """
 
     return (

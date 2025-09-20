@@ -5,12 +5,7 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.division_external_ids_detail_division_external_ids_response import (
-    DivisionExternalIdsDetailDivisionExternalIdsResponse,
-)
-from ...models.division_external_ids_detail_response_default import (
-    DivisionExternalIdsDetailResponseDefault,
-)
+from ...models.division_external_ids_detail_response_default import DivisionExternalIdsDetailResponseDefault
 from ...types import UNSET, Response, Unset
 
 
@@ -52,32 +47,15 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[
-    DivisionExternalIdsDetailDivisionExternalIdsResponse,
-    DivisionExternalIdsDetailResponseDefault,
-]:
-    if response.status_code == 200:
-        response_200 = DivisionExternalIdsDetailDivisionExternalIdsResponse.from_dict(
-            response.json()
-        )
-
-        return response_200
-
-    response_default = DivisionExternalIdsDetailResponseDefault.from_dict(
-        response.json()
-    )
+) -> DivisionExternalIdsDetailResponseDefault:
+    response_default = DivisionExternalIdsDetailResponseDefault.from_dict(response.json())
 
     return response_default
 
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[
-        DivisionExternalIdsDetailDivisionExternalIdsResponse,
-        DivisionExternalIdsDetailResponseDefault,
-    ]
-]:
+) -> Response[DivisionExternalIdsDetailResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -97,12 +75,7 @@ def sync_detailed(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Response[
-    Union[
-        DivisionExternalIdsDetailDivisionExternalIdsResponse,
-        DivisionExternalIdsDetailResponseDefault,
-    ]
-]:
+) -> Response[DivisionExternalIdsDetailResponseDefault]:
     """Get a division external identifier details
 
      Detailed information about a specific division external identifier
@@ -123,7 +96,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[DivisionExternalIdsDetailDivisionExternalIdsResponse, DivisionExternalIdsDetailResponseDefault]]
+        Response[DivisionExternalIdsDetailResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -155,12 +128,7 @@ def sync(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Optional[
-    Union[
-        DivisionExternalIdsDetailDivisionExternalIdsResponse,
-        DivisionExternalIdsDetailResponseDefault,
-    ]
-]:
+) -> Optional[DivisionExternalIdsDetailResponseDefault]:
     """Get a division external identifier details
 
      Detailed information about a specific division external identifier
@@ -181,7 +149,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[DivisionExternalIdsDetailDivisionExternalIdsResponse, DivisionExternalIdsDetailResponseDefault]
+        DivisionExternalIdsDetailResponseDefault
     """
 
     return sync_detailed(
@@ -208,12 +176,7 @@ async def asyncio_detailed(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Response[
-    Union[
-        DivisionExternalIdsDetailDivisionExternalIdsResponse,
-        DivisionExternalIdsDetailResponseDefault,
-    ]
-]:
+) -> Response[DivisionExternalIdsDetailResponseDefault]:
     """Get a division external identifier details
 
      Detailed information about a specific division external identifier
@@ -234,7 +197,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[DivisionExternalIdsDetailDivisionExternalIdsResponse, DivisionExternalIdsDetailResponseDefault]]
+        Response[DivisionExternalIdsDetailResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -264,12 +227,7 @@ async def asyncio(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Optional[
-    Union[
-        DivisionExternalIdsDetailDivisionExternalIdsResponse,
-        DivisionExternalIdsDetailResponseDefault,
-    ]
-]:
+) -> Optional[DivisionExternalIdsDetailResponseDefault]:
     """Get a division external identifier details
 
      Detailed information about a specific division external identifier
@@ -290,7 +248,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[DivisionExternalIdsDetailDivisionExternalIdsResponse, DivisionExternalIdsDetailResponseDefault]
+        DivisionExternalIdsDetailResponseDefault
     """
 
     return (

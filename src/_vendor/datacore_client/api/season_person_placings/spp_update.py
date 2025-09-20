@@ -5,13 +5,8 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
+from ...models.seasonperson_placings_put_body import SEASONPERSONPlacingsPutBody
 from ...models.spp_update_response_default import SppUpdateResponseDefault
-from ...models.spp_update_season_person_placings_response import (
-    SppUpdateSeasonPersonPlacingsResponse,
-)
-from ...models.spp_update_seasonperson_placings_put_body import (
-    SppUpdateSEASONPERSONPlacingsPutBody,
-)
 from ...types import UNSET, Response, Unset
 
 
@@ -19,7 +14,7 @@ def _get_kwargs(
     organization_id: str,
     placing_id: UUID,
     *,
-    body: SppUpdateSEASONPERSONPlacingsPutBody,
+    body: SEASONPERSONPlacingsPutBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
@@ -55,12 +50,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[SppUpdateResponseDefault, SppUpdateSeasonPersonPlacingsResponse]:
-    if response.status_code == 200:
-        response_200 = SppUpdateSeasonPersonPlacingsResponse.from_dict(response.json())
-
-        return response_200
-
+) -> SppUpdateResponseDefault:
     response_default = SppUpdateResponseDefault.from_dict(response.json())
 
     return response_default
@@ -68,7 +58,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[Union[SppUpdateResponseDefault, SppUpdateSeasonPersonPlacingsResponse]]:
+) -> Response[SppUpdateResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -82,12 +72,12 @@ def sync_detailed(
     placing_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: SppUpdateSEASONPERSONPlacingsPutBody,
+    body: SEASONPERSONPlacingsPutBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[Union[SppUpdateResponseDefault, SppUpdateSeasonPersonPlacingsResponse]]:
+) -> Response[SppUpdateResponseDefault]:
     """Update a specific season person placing
 
      Change the information of a specific season person placing
@@ -100,14 +90,14 @@ def sync_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (SppUpdateSEASONPERSONPlacingsPutBody):
+        body (SEASONPERSONPlacingsPutBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SppUpdateResponseDefault, SppUpdateSeasonPersonPlacingsResponse]]
+        Response[SppUpdateResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -132,12 +122,12 @@ def sync(
     placing_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: SppUpdateSEASONPERSONPlacingsPutBody,
+    body: SEASONPERSONPlacingsPutBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[Union[SppUpdateResponseDefault, SppUpdateSeasonPersonPlacingsResponse]]:
+) -> Optional[SppUpdateResponseDefault]:
     """Update a specific season person placing
 
      Change the information of a specific season person placing
@@ -150,14 +140,14 @@ def sync(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (SppUpdateSEASONPERSONPlacingsPutBody):
+        body (SEASONPERSONPlacingsPutBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SppUpdateResponseDefault, SppUpdateSeasonPersonPlacingsResponse]
+        SppUpdateResponseDefault
     """
 
     return sync_detailed(
@@ -177,12 +167,12 @@ async def asyncio_detailed(
     placing_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: SppUpdateSEASONPERSONPlacingsPutBody,
+    body: SEASONPERSONPlacingsPutBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[Union[SppUpdateResponseDefault, SppUpdateSeasonPersonPlacingsResponse]]:
+) -> Response[SppUpdateResponseDefault]:
     """Update a specific season person placing
 
      Change the information of a specific season person placing
@@ -195,14 +185,14 @@ async def asyncio_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (SppUpdateSEASONPERSONPlacingsPutBody):
+        body (SEASONPERSONPlacingsPutBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SppUpdateResponseDefault, SppUpdateSeasonPersonPlacingsResponse]]
+        Response[SppUpdateResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -225,12 +215,12 @@ async def asyncio(
     placing_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: SppUpdateSEASONPERSONPlacingsPutBody,
+    body: SEASONPERSONPlacingsPutBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[Union[SppUpdateResponseDefault, SppUpdateSeasonPersonPlacingsResponse]]:
+) -> Optional[SppUpdateResponseDefault]:
     """Update a specific season person placing
 
      Change the information of a specific season person placing
@@ -243,14 +233,14 @@ async def asyncio(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (SppUpdateSEASONPERSONPlacingsPutBody):
+        body (SEASONPERSONPlacingsPutBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SppUpdateResponseDefault, SppUpdateSeasonPersonPlacingsResponse]
+        SppUpdateResponseDefault
     """
 
     return (

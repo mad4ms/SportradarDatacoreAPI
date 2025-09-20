@@ -50,9 +50,7 @@ class LeaderQualifierModelLeadersCriteria:
         if isinstance(_resource_type, Unset):
             resource_type = UNSET
         else:
-            resource_type = LeaderQualifierModelLeadersCriteriaResourceType(
-                _resource_type
-            )
+            resource_type = LeaderQualifierModelLeadersCriteriaResourceType(_resource_type)
 
         id = d.pop("id", UNSET)
 

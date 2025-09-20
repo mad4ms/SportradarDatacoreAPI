@@ -10,9 +10,7 @@ from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
     from ..models.league_external_ids_model_league import LeagueExternalIdsModelLeague
-    from ..models.league_external_ids_model_organization import (
-        LeagueExternalIdsModelOrganization,
-    )
+    from ..models.league_external_ids_model_organization import LeagueExternalIdsModelOrganization
 
 
 T = TypeVar("T", bound="LeagueExternalIdsModel")
@@ -109,12 +107,8 @@ class LeagueExternalIdsModel:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.league_external_ids_model_league import (
-            LeagueExternalIdsModelLeague,
-        )
-        from ..models.league_external_ids_model_organization import (
-            LeagueExternalIdsModelOrganization,
-        )
+        from ..models.league_external_ids_model_league import LeagueExternalIdsModelLeague
+        from ..models.league_external_ids_model_organization import LeagueExternalIdsModelOrganization
 
         d = dict(src_dict)
         _league_external_id = d.pop("leagueExternalId", UNSET)

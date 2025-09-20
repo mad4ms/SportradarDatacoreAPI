@@ -5,13 +5,8 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.season_pool_update_pool_put_body import SeasonPoolUpdatePoolPutBody
-from ...models.season_pool_update_response_default import (
-    SeasonPoolUpdateResponseDefault,
-)
-from ...models.season_pool_update_season_pools_response import (
-    SeasonPoolUpdateSeasonPoolsResponse,
-)
+from ...models.pool_put_body import PoolPutBody
+from ...models.season_pool_update_response_default import SeasonPoolUpdateResponseDefault
 from ...types import UNSET, Response, Unset
 
 
@@ -20,7 +15,7 @@ def _get_kwargs(
     season_id: UUID,
     pool_code: str,
     *,
-    body: SeasonPoolUpdatePoolPutBody,
+    body: PoolPutBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
@@ -56,12 +51,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[SeasonPoolUpdateResponseDefault, SeasonPoolUpdateSeasonPoolsResponse]:
-    if response.status_code == 200:
-        response_200 = SeasonPoolUpdateSeasonPoolsResponse.from_dict(response.json())
-
-        return response_200
-
+) -> SeasonPoolUpdateResponseDefault:
     response_default = SeasonPoolUpdateResponseDefault.from_dict(response.json())
 
     return response_default
@@ -69,9 +59,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[SeasonPoolUpdateResponseDefault, SeasonPoolUpdateSeasonPoolsResponse]
-]:
+) -> Response[SeasonPoolUpdateResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -86,14 +74,12 @@ def sync_detailed(
     pool_code: str,
     *,
     client: AuthenticatedClient,
-    body: SeasonPoolUpdatePoolPutBody,
+    body: PoolPutBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[SeasonPoolUpdateResponseDefault, SeasonPoolUpdateSeasonPoolsResponse]
-]:
+) -> Response[SeasonPoolUpdateResponseDefault]:
     """Update a pool
 
      Change the information of a specific pool
@@ -107,14 +93,14 @@ def sync_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (SeasonPoolUpdatePoolPutBody):
+        body (PoolPutBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SeasonPoolUpdateResponseDefault, SeasonPoolUpdateSeasonPoolsResponse]]
+        Response[SeasonPoolUpdateResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -141,14 +127,12 @@ def sync(
     pool_code: str,
     *,
     client: AuthenticatedClient,
-    body: SeasonPoolUpdatePoolPutBody,
+    body: PoolPutBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[SeasonPoolUpdateResponseDefault, SeasonPoolUpdateSeasonPoolsResponse]
-]:
+) -> Optional[SeasonPoolUpdateResponseDefault]:
     """Update a pool
 
      Change the information of a specific pool
@@ -162,14 +146,14 @@ def sync(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (SeasonPoolUpdatePoolPutBody):
+        body (PoolPutBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SeasonPoolUpdateResponseDefault, SeasonPoolUpdateSeasonPoolsResponse]
+        SeasonPoolUpdateResponseDefault
     """
 
     return sync_detailed(
@@ -191,14 +175,12 @@ async def asyncio_detailed(
     pool_code: str,
     *,
     client: AuthenticatedClient,
-    body: SeasonPoolUpdatePoolPutBody,
+    body: PoolPutBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[SeasonPoolUpdateResponseDefault, SeasonPoolUpdateSeasonPoolsResponse]
-]:
+) -> Response[SeasonPoolUpdateResponseDefault]:
     """Update a pool
 
      Change the information of a specific pool
@@ -212,14 +194,14 @@ async def asyncio_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (SeasonPoolUpdatePoolPutBody):
+        body (PoolPutBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SeasonPoolUpdateResponseDefault, SeasonPoolUpdateSeasonPoolsResponse]]
+        Response[SeasonPoolUpdateResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -244,14 +226,12 @@ async def asyncio(
     pool_code: str,
     *,
     client: AuthenticatedClient,
-    body: SeasonPoolUpdatePoolPutBody,
+    body: PoolPutBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[SeasonPoolUpdateResponseDefault, SeasonPoolUpdateSeasonPoolsResponse]
-]:
+) -> Optional[SeasonPoolUpdateResponseDefault]:
     """Update a pool
 
      Change the information of a specific pool
@@ -265,14 +245,14 @@ async def asyncio(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (SeasonPoolUpdatePoolPutBody):
+        body (PoolPutBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SeasonPoolUpdateResponseDefault, SeasonPoolUpdateSeasonPoolsResponse]
+        SeasonPoolUpdateResponseDefault
     """
 
     return (

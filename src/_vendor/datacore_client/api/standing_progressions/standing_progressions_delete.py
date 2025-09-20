@@ -5,12 +5,7 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.standing_progressions_delete_response_default import (
-    StandingProgressionsDeleteResponseDefault,
-)
-from ...models.standing_progressions_delete_standing_progressions_response import (
-    StandingProgressionsDeleteStandingProgressionsResponse,
-)
+from ...models.standing_progressions_delete_response_default import StandingProgressionsDeleteResponseDefault
 from ...types import UNSET, Response, Unset
 
 
@@ -50,32 +45,15 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[
-    StandingProgressionsDeleteResponseDefault,
-    StandingProgressionsDeleteStandingProgressionsResponse,
-]:
-    if response.status_code == 200:
-        response_200 = StandingProgressionsDeleteStandingProgressionsResponse.from_dict(
-            response.json()
-        )
-
-        return response_200
-
-    response_default = StandingProgressionsDeleteResponseDefault.from_dict(
-        response.json()
-    )
+) -> StandingProgressionsDeleteResponseDefault:
+    response_default = StandingProgressionsDeleteResponseDefault.from_dict(response.json())
 
     return response_default
 
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[
-        StandingProgressionsDeleteResponseDefault,
-        StandingProgressionsDeleteStandingProgressionsResponse,
-    ]
-]:
+) -> Response[StandingProgressionsDeleteResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -95,12 +73,7 @@ def sync_detailed(
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        StandingProgressionsDeleteResponseDefault,
-        StandingProgressionsDeleteStandingProgressionsResponse,
-    ]
-]:
+) -> Response[StandingProgressionsDeleteResponseDefault]:
     """Delete a standing progression
 
      Delete a specific standing progression
@@ -121,7 +94,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[StandingProgressionsDeleteResponseDefault, StandingProgressionsDeleteStandingProgressionsResponse]]
+        Response[StandingProgressionsDeleteResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -153,12 +126,7 @@ def sync(
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        StandingProgressionsDeleteResponseDefault,
-        StandingProgressionsDeleteStandingProgressionsResponse,
-    ]
-]:
+) -> Optional[StandingProgressionsDeleteResponseDefault]:
     """Delete a standing progression
 
      Delete a specific standing progression
@@ -179,7 +147,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[StandingProgressionsDeleteResponseDefault, StandingProgressionsDeleteStandingProgressionsResponse]
+        StandingProgressionsDeleteResponseDefault
     """
 
     return sync_detailed(
@@ -206,12 +174,7 @@ async def asyncio_detailed(
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        StandingProgressionsDeleteResponseDefault,
-        StandingProgressionsDeleteStandingProgressionsResponse,
-    ]
-]:
+) -> Response[StandingProgressionsDeleteResponseDefault]:
     """Delete a standing progression
 
      Delete a specific standing progression
@@ -232,7 +195,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[StandingProgressionsDeleteResponseDefault, StandingProgressionsDeleteStandingProgressionsResponse]]
+        Response[StandingProgressionsDeleteResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -262,12 +225,7 @@ async def asyncio(
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        StandingProgressionsDeleteResponseDefault,
-        StandingProgressionsDeleteStandingProgressionsResponse,
-    ]
-]:
+) -> Optional[StandingProgressionsDeleteResponseDefault]:
     """Delete a standing progression
 
      Delete a specific standing progression
@@ -288,7 +246,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[StandingProgressionsDeleteResponseDefault, StandingProgressionsDeleteStandingProgressionsResponse]
+        StandingProgressionsDeleteResponseDefault
     """
 
     return (

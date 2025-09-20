@@ -5,9 +5,6 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.fps_delete_all_fixture_person_statistics_response import (
-    FpsDeleteAllFixturePersonStatisticsResponse,
-)
 from ...models.fps_delete_all_response_default import FpsDeleteAllResponseDefault
 from ...types import UNSET, Response, Unset
 
@@ -59,14 +56,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[FpsDeleteAllFixturePersonStatisticsResponse, FpsDeleteAllResponseDefault]:
-    if response.status_code == 200:
-        response_200 = FpsDeleteAllFixturePersonStatisticsResponse.from_dict(
-            response.json()
-        )
-
-        return response_200
-
+) -> FpsDeleteAllResponseDefault:
     response_default = FpsDeleteAllResponseDefault.from_dict(response.json())
 
     return response_default
@@ -74,9 +64,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[FpsDeleteAllFixturePersonStatisticsResponse, FpsDeleteAllResponseDefault]
-]:
+) -> Response[FpsDeleteAllResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -97,9 +85,7 @@ def sync_detailed(
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
     person_id: Union[Unset, UUID] = UNSET,
-) -> Response[
-    Union[FpsDeleteAllFixturePersonStatisticsResponse, FpsDeleteAllResponseDefault]
-]:
+) -> Response[FpsDeleteAllResponseDefault]:
     """Delete person total statistics
 
      Delete a total statistic record for a person in a match.
@@ -121,7 +107,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[FpsDeleteAllFixturePersonStatisticsResponse, FpsDeleteAllResponseDefault]]
+        Response[FpsDeleteAllResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -155,9 +141,7 @@ def sync(
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
     person_id: Union[Unset, UUID] = UNSET,
-) -> Optional[
-    Union[FpsDeleteAllFixturePersonStatisticsResponse, FpsDeleteAllResponseDefault]
-]:
+) -> Optional[FpsDeleteAllResponseDefault]:
     """Delete person total statistics
 
      Delete a total statistic record for a person in a match.
@@ -179,7 +163,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[FpsDeleteAllFixturePersonStatisticsResponse, FpsDeleteAllResponseDefault]
+        FpsDeleteAllResponseDefault
     """
 
     return sync_detailed(
@@ -208,9 +192,7 @@ async def asyncio_detailed(
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
     person_id: Union[Unset, UUID] = UNSET,
-) -> Response[
-    Union[FpsDeleteAllFixturePersonStatisticsResponse, FpsDeleteAllResponseDefault]
-]:
+) -> Response[FpsDeleteAllResponseDefault]:
     """Delete person total statistics
 
      Delete a total statistic record for a person in a match.
@@ -232,7 +214,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[FpsDeleteAllFixturePersonStatisticsResponse, FpsDeleteAllResponseDefault]]
+        Response[FpsDeleteAllResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -264,9 +246,7 @@ async def asyncio(
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
     person_id: Union[Unset, UUID] = UNSET,
-) -> Optional[
-    Union[FpsDeleteAllFixturePersonStatisticsResponse, FpsDeleteAllResponseDefault]
-]:
+) -> Optional[FpsDeleteAllResponseDefault]:
     """Delete person total statistics
 
      Delete a total statistic record for a person in a match.
@@ -288,7 +268,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[FpsDeleteAllFixturePersonStatisticsResponse, FpsDeleteAllResponseDefault]
+        FpsDeleteAllResponseDefault
     """
 
     return (

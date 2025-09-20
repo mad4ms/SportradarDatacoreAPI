@@ -6,12 +6,8 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.fixture_progressions_list_fixture_progressions_response import (
-    FixtureProgressionsListFixtureProgressionsResponse,
-)
-from ...models.fixture_progressions_list_response_default import (
-    FixtureProgressionsListResponseDefault,
-)
+from ...models.fixture_progressions_list_response_default import FixtureProgressionsListResponseDefault
+from ...models.fixture_progressions_response import FixtureProgressionsResponse
 from ...types import UNSET, Response, Unset
 
 
@@ -77,14 +73,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[
-    FixtureProgressionsListFixtureProgressionsResponse,
-    FixtureProgressionsListResponseDefault,
-]:
+) -> Union[FixtureProgressionsListResponseDefault, FixtureProgressionsResponse]:
     if response.status_code == 200:
-        response_200 = FixtureProgressionsListFixtureProgressionsResponse.from_dict(
-            response.json()
-        )
+        response_200 = FixtureProgressionsResponse.from_dict(response.json())
 
         return response_200
 
@@ -95,12 +86,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[
-        FixtureProgressionsListFixtureProgressionsResponse,
-        FixtureProgressionsListResponseDefault,
-    ]
-]:
+) -> Response[Union[FixtureProgressionsListResponseDefault, FixtureProgressionsResponse]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -124,12 +110,7 @@ def sync_detailed(
     offset: Union[Unset, int] = UNSET,
     to_fixture_id: Union[Unset, UUID] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[
-    Union[
-        FixtureProgressionsListFixtureProgressionsResponse,
-        FixtureProgressionsListResponseDefault,
-    ]
-]:
+) -> Response[Union[FixtureProgressionsListResponseDefault, FixtureProgressionsResponse]]:
     """Get a list of match progressions
 
      Return a list of match progressions
@@ -154,7 +135,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[FixtureProgressionsListFixtureProgressionsResponse, FixtureProgressionsListResponseDefault]]
+        Response[Union[FixtureProgressionsListResponseDefault, FixtureProgressionsResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -194,12 +175,7 @@ def sync(
     offset: Union[Unset, int] = UNSET,
     to_fixture_id: Union[Unset, UUID] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[
-    Union[
-        FixtureProgressionsListFixtureProgressionsResponse,
-        FixtureProgressionsListResponseDefault,
-    ]
-]:
+) -> Optional[Union[FixtureProgressionsListResponseDefault, FixtureProgressionsResponse]]:
     """Get a list of match progressions
 
      Return a list of match progressions
@@ -224,7 +200,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[FixtureProgressionsListFixtureProgressionsResponse, FixtureProgressionsListResponseDefault]
+        Union[FixtureProgressionsListResponseDefault, FixtureProgressionsResponse]
     """
 
     return sync_detailed(
@@ -259,12 +235,7 @@ async def asyncio_detailed(
     offset: Union[Unset, int] = UNSET,
     to_fixture_id: Union[Unset, UUID] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[
-    Union[
-        FixtureProgressionsListFixtureProgressionsResponse,
-        FixtureProgressionsListResponseDefault,
-    ]
-]:
+) -> Response[Union[FixtureProgressionsListResponseDefault, FixtureProgressionsResponse]]:
     """Get a list of match progressions
 
      Return a list of match progressions
@@ -289,7 +260,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[FixtureProgressionsListFixtureProgressionsResponse, FixtureProgressionsListResponseDefault]]
+        Response[Union[FixtureProgressionsListResponseDefault, FixtureProgressionsResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -327,12 +298,7 @@ async def asyncio(
     offset: Union[Unset, int] = UNSET,
     to_fixture_id: Union[Unset, UUID] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[
-    Union[
-        FixtureProgressionsListFixtureProgressionsResponse,
-        FixtureProgressionsListResponseDefault,
-    ]
-]:
+) -> Optional[Union[FixtureProgressionsListResponseDefault, FixtureProgressionsResponse]]:
     """Get a list of match progressions
 
      Return a list of match progressions
@@ -357,7 +323,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[FixtureProgressionsListFixtureProgressionsResponse, FixtureProgressionsListResponseDefault]
+        Union[FixtureProgressionsListResponseDefault, FixtureProgressionsResponse]
     """
 
     return (

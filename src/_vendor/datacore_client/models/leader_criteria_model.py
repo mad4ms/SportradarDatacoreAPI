@@ -9,9 +9,7 @@ from dateutil.parser import isoparse
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.leader_criteria_model_organization import (
-        LeaderCriteriaModelOrganization,
-    )
+    from ..models.leader_criteria_model_organization import LeaderCriteriaModelOrganization
 
 
 T = TypeVar("T", bound="LeaderCriteriaModel")
@@ -79,9 +77,7 @@ class LeaderCriteriaModel:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.leader_criteria_model_organization import (
-            LeaderCriteriaModelOrganization,
-        )
+        from ..models.leader_criteria_model_organization import LeaderCriteriaModelOrganization
 
         d = dict(src_dict)
         _added = d.pop("added", UNSET)

@@ -6,27 +6,17 @@ from uuid import UUID
 from attrs import define as _attrs_define
 from dateutil.parser import isoparse
 
-from ..models.match_person_statistics_periods_model_period_id import (
-    MatchPersonStatisticsPeriodsModelPeriodId,
-)
+from ..models.match_person_statistics_periods_model_period_id import MatchPersonStatisticsPeriodsModelPeriodId
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.match_person_statistics_periods_model_entity import (
-        MatchPersonStatisticsPeriodsModelEntity,
-    )
-    from ..models.match_person_statistics_periods_model_fixture import (
-        MatchPersonStatisticsPeriodsModelFixture,
-    )
+    from ..models.match_person_statistics_periods_model_entity import MatchPersonStatisticsPeriodsModelEntity
+    from ..models.match_person_statistics_periods_model_fixture import MatchPersonStatisticsPeriodsModelFixture
     from ..models.match_person_statistics_periods_model_organization import (
         MatchPersonStatisticsPeriodsModelOrganization,
     )
-    from ..models.match_person_statistics_periods_model_person import (
-        MatchPersonStatisticsPeriodsModelPerson,
-    )
-    from ..models.match_person_statistics_periods_model_statistics import (
-        MatchPersonStatisticsPeriodsModelStatistics,
-    )
+    from ..models.match_person_statistics_periods_model_person import MatchPersonStatisticsPeriodsModelPerson
+    from ..models.match_person_statistics_periods_model_statistics import MatchPersonStatisticsPeriodsModelStatistics
 
 
 T = TypeVar("T", bound="MatchPersonStatisticsPeriodsModel")
@@ -163,18 +153,12 @@ class MatchPersonStatisticsPeriodsModel:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.match_person_statistics_periods_model_entity import (
-            MatchPersonStatisticsPeriodsModelEntity,
-        )
-        from ..models.match_person_statistics_periods_model_fixture import (
-            MatchPersonStatisticsPeriodsModelFixture,
-        )
+        from ..models.match_person_statistics_periods_model_entity import MatchPersonStatisticsPeriodsModelEntity
+        from ..models.match_person_statistics_periods_model_fixture import MatchPersonStatisticsPeriodsModelFixture
         from ..models.match_person_statistics_periods_model_organization import (
             MatchPersonStatisticsPeriodsModelOrganization,
         )
-        from ..models.match_person_statistics_periods_model_person import (
-            MatchPersonStatisticsPeriodsModelPerson,
-        )
+        from ..models.match_person_statistics_periods_model_person import MatchPersonStatisticsPeriodsModelPerson
         from ..models.match_person_statistics_periods_model_statistics import (
             MatchPersonStatisticsPeriodsModelStatistics,
         )
@@ -239,18 +223,14 @@ class MatchPersonStatisticsPeriodsModel:
         if isinstance(_organization, Unset):
             organization = UNSET
         else:
-            organization = MatchPersonStatisticsPeriodsModelOrganization.from_dict(
-                _organization
-            )
+            organization = MatchPersonStatisticsPeriodsModelOrganization.from_dict(_organization)
 
         _statistics = d.pop("statistics", UNSET)
         statistics: Union[Unset, MatchPersonStatisticsPeriodsModelStatistics]
         if isinstance(_statistics, Unset):
             statistics = UNSET
         else:
-            statistics = MatchPersonStatisticsPeriodsModelStatistics.from_dict(
-                _statistics
-            )
+            statistics = MatchPersonStatisticsPeriodsModelStatistics.from_dict(_statistics)
 
         _period_id = d.pop("periodId", UNSET)
         period_id: Union[Unset, MatchPersonStatisticsPeriodsModelPeriodId]

@@ -4,9 +4,7 @@ from typing import Any, TypeVar, Union
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-from ..models.conduct_model_competition_resource_type import (
-    ConductModelCompetitionResourceType,
-)
+from ..models.conduct_model_competition_resource_type import ConductModelCompetitionResourceType
 from ..types import UNSET, Unset
 
 T = TypeVar("T", bound="ConductModelCompetition")

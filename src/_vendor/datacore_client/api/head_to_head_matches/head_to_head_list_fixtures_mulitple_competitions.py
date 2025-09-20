@@ -9,9 +9,6 @@ from ...client import AuthenticatedClient, Client
 from ...models.head_to_head_list_fixtures_mulitple_competitions_fixture_type import (
     HeadToHeadListFixturesMulitpleCompetitionsFixtureType,
 )
-from ...models.head_to_head_list_fixtures_mulitple_competitions_head_to_head_entity_response import (
-    HeadToHeadListFixturesMulitpleCompetitionsHeadToHeadEntityResponse,
-)
 from ...models.head_to_head_list_fixtures_mulitple_competitions_response_default import (
     HeadToHeadListFixturesMulitpleCompetitionsResponseDefault,
 )
@@ -33,9 +30,7 @@ def _get_kwargs(
     competition_ids: Union[Unset, UUID] = UNSET,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
-    fixture_type: Union[
-        Unset, HeadToHeadListFixturesMulitpleCompetitionsFixtureType
-    ] = UNSET,
+    fixture_type: Union[Unset, HeadToHeadListFixturesMulitpleCompetitionsFixtureType] = UNSET,
     from_time_local: Union[Unset, datetime.datetime] = UNSET,
     from_time_utc: Union[Unset, datetime.datetime] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
@@ -45,9 +40,7 @@ def _get_kwargs(
     season_id: Union[Unset, UUID] = UNSET,
     season_ids: Union[Unset, UUID] = UNSET,
     status: Union[Unset, HeadToHeadListFixturesMulitpleCompetitionsStatus] = UNSET,
-    status_not: Union[
-        Unset, HeadToHeadListFixturesMulitpleCompetitionsStatusNot
-    ] = UNSET,
+    status_not: Union[Unset, HeadToHeadListFixturesMulitpleCompetitionsStatusNot] = UNSET,
     to_time_local: Union[Unset, datetime.datetime] = UNSET,
     to_time_utc: Union[Unset, datetime.datetime] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
@@ -142,34 +135,15 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[
-    HeadToHeadListFixturesMulitpleCompetitionsHeadToHeadEntityResponse,
-    HeadToHeadListFixturesMulitpleCompetitionsResponseDefault,
-]:
-    if response.status_code == 200:
-        response_200 = HeadToHeadListFixturesMulitpleCompetitionsHeadToHeadEntityResponse.from_dict(
-            response.json()
-        )
-
-        return response_200
-
-    response_default = (
-        HeadToHeadListFixturesMulitpleCompetitionsResponseDefault.from_dict(
-            response.json()
-        )
-    )
+) -> HeadToHeadListFixturesMulitpleCompetitionsResponseDefault:
+    response_default = HeadToHeadListFixturesMulitpleCompetitionsResponseDefault.from_dict(response.json())
 
     return response_default
 
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[
-        HeadToHeadListFixturesMulitpleCompetitionsHeadToHeadEntityResponse,
-        HeadToHeadListFixturesMulitpleCompetitionsResponseDefault,
-    ]
-]:
+) -> Response[HeadToHeadListFixturesMulitpleCompetitionsResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -188,9 +162,7 @@ def sync_detailed(
     competition_ids: Union[Unset, UUID] = UNSET,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
-    fixture_type: Union[
-        Unset, HeadToHeadListFixturesMulitpleCompetitionsFixtureType
-    ] = UNSET,
+    fixture_type: Union[Unset, HeadToHeadListFixturesMulitpleCompetitionsFixtureType] = UNSET,
     from_time_local: Union[Unset, datetime.datetime] = UNSET,
     from_time_utc: Union[Unset, datetime.datetime] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
@@ -200,18 +172,11 @@ def sync_detailed(
     season_id: Union[Unset, UUID] = UNSET,
     season_ids: Union[Unset, UUID] = UNSET,
     status: Union[Unset, HeadToHeadListFixturesMulitpleCompetitionsStatus] = UNSET,
-    status_not: Union[
-        Unset, HeadToHeadListFixturesMulitpleCompetitionsStatusNot
-    ] = UNSET,
+    status_not: Union[Unset, HeadToHeadListFixturesMulitpleCompetitionsStatusNot] = UNSET,
     to_time_local: Union[Unset, datetime.datetime] = UNSET,
     to_time_utc: Union[Unset, datetime.datetime] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[
-    Union[
-        HeadToHeadListFixturesMulitpleCompetitionsHeadToHeadEntityResponse,
-        HeadToHeadListFixturesMulitpleCompetitionsResponseDefault,
-    ]
-]:
+) -> Response[HeadToHeadListFixturesMulitpleCompetitionsResponseDefault]:
     """Match History for head-to-head of two teams across multiple seasons or competitions
 
      Return the Matches for a two specific teams in multiple seasons or competitions.
@@ -250,7 +215,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[HeadToHeadListFixturesMulitpleCompetitionsHeadToHeadEntityResponse, HeadToHeadListFixturesMulitpleCompetitionsResponseDefault]]
+        Response[HeadToHeadListFixturesMulitpleCompetitionsResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -294,9 +259,7 @@ def sync(
     competition_ids: Union[Unset, UUID] = UNSET,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
-    fixture_type: Union[
-        Unset, HeadToHeadListFixturesMulitpleCompetitionsFixtureType
-    ] = UNSET,
+    fixture_type: Union[Unset, HeadToHeadListFixturesMulitpleCompetitionsFixtureType] = UNSET,
     from_time_local: Union[Unset, datetime.datetime] = UNSET,
     from_time_utc: Union[Unset, datetime.datetime] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
@@ -306,18 +269,11 @@ def sync(
     season_id: Union[Unset, UUID] = UNSET,
     season_ids: Union[Unset, UUID] = UNSET,
     status: Union[Unset, HeadToHeadListFixturesMulitpleCompetitionsStatus] = UNSET,
-    status_not: Union[
-        Unset, HeadToHeadListFixturesMulitpleCompetitionsStatusNot
-    ] = UNSET,
+    status_not: Union[Unset, HeadToHeadListFixturesMulitpleCompetitionsStatusNot] = UNSET,
     to_time_local: Union[Unset, datetime.datetime] = UNSET,
     to_time_utc: Union[Unset, datetime.datetime] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[
-    Union[
-        HeadToHeadListFixturesMulitpleCompetitionsHeadToHeadEntityResponse,
-        HeadToHeadListFixturesMulitpleCompetitionsResponseDefault,
-    ]
-]:
+) -> Optional[HeadToHeadListFixturesMulitpleCompetitionsResponseDefault]:
     """Match History for head-to-head of two teams across multiple seasons or competitions
 
      Return the Matches for a two specific teams in multiple seasons or competitions.
@@ -356,7 +312,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[HeadToHeadListFixturesMulitpleCompetitionsHeadToHeadEntityResponse, HeadToHeadListFixturesMulitpleCompetitionsResponseDefault]
+        HeadToHeadListFixturesMulitpleCompetitionsResponseDefault
     """
 
     return sync_detailed(
@@ -395,9 +351,7 @@ async def asyncio_detailed(
     competition_ids: Union[Unset, UUID] = UNSET,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
-    fixture_type: Union[
-        Unset, HeadToHeadListFixturesMulitpleCompetitionsFixtureType
-    ] = UNSET,
+    fixture_type: Union[Unset, HeadToHeadListFixturesMulitpleCompetitionsFixtureType] = UNSET,
     from_time_local: Union[Unset, datetime.datetime] = UNSET,
     from_time_utc: Union[Unset, datetime.datetime] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
@@ -407,18 +361,11 @@ async def asyncio_detailed(
     season_id: Union[Unset, UUID] = UNSET,
     season_ids: Union[Unset, UUID] = UNSET,
     status: Union[Unset, HeadToHeadListFixturesMulitpleCompetitionsStatus] = UNSET,
-    status_not: Union[
-        Unset, HeadToHeadListFixturesMulitpleCompetitionsStatusNot
-    ] = UNSET,
+    status_not: Union[Unset, HeadToHeadListFixturesMulitpleCompetitionsStatusNot] = UNSET,
     to_time_local: Union[Unset, datetime.datetime] = UNSET,
     to_time_utc: Union[Unset, datetime.datetime] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[
-    Union[
-        HeadToHeadListFixturesMulitpleCompetitionsHeadToHeadEntityResponse,
-        HeadToHeadListFixturesMulitpleCompetitionsResponseDefault,
-    ]
-]:
+) -> Response[HeadToHeadListFixturesMulitpleCompetitionsResponseDefault]:
     """Match History for head-to-head of two teams across multiple seasons or competitions
 
      Return the Matches for a two specific teams in multiple seasons or competitions.
@@ -457,7 +404,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[HeadToHeadListFixturesMulitpleCompetitionsHeadToHeadEntityResponse, HeadToHeadListFixturesMulitpleCompetitionsResponseDefault]]
+        Response[HeadToHeadListFixturesMulitpleCompetitionsResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -499,9 +446,7 @@ async def asyncio(
     competition_ids: Union[Unset, UUID] = UNSET,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
-    fixture_type: Union[
-        Unset, HeadToHeadListFixturesMulitpleCompetitionsFixtureType
-    ] = UNSET,
+    fixture_type: Union[Unset, HeadToHeadListFixturesMulitpleCompetitionsFixtureType] = UNSET,
     from_time_local: Union[Unset, datetime.datetime] = UNSET,
     from_time_utc: Union[Unset, datetime.datetime] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
@@ -511,18 +456,11 @@ async def asyncio(
     season_id: Union[Unset, UUID] = UNSET,
     season_ids: Union[Unset, UUID] = UNSET,
     status: Union[Unset, HeadToHeadListFixturesMulitpleCompetitionsStatus] = UNSET,
-    status_not: Union[
-        Unset, HeadToHeadListFixturesMulitpleCompetitionsStatusNot
-    ] = UNSET,
+    status_not: Union[Unset, HeadToHeadListFixturesMulitpleCompetitionsStatusNot] = UNSET,
     to_time_local: Union[Unset, datetime.datetime] = UNSET,
     to_time_utc: Union[Unset, datetime.datetime] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[
-    Union[
-        HeadToHeadListFixturesMulitpleCompetitionsHeadToHeadEntityResponse,
-        HeadToHeadListFixturesMulitpleCompetitionsResponseDefault,
-    ]
-]:
+) -> Optional[HeadToHeadListFixturesMulitpleCompetitionsResponseDefault]:
     """Match History for head-to-head of two teams across multiple seasons or competitions
 
      Return the Matches for a two specific teams in multiple seasons or competitions.
@@ -561,7 +499,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[HeadToHeadListFixturesMulitpleCompetitionsHeadToHeadEntityResponse, HeadToHeadListFixturesMulitpleCompetitionsResponseDefault]
+        HeadToHeadListFixturesMulitpleCompetitionsResponseDefault
     """
 
     return (

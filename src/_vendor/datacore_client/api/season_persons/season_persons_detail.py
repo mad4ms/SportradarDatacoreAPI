@@ -6,9 +6,7 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.season_persons_detail_response_default import (
-    SeasonPersonsDetailResponseDefault,
-)
+from ...models.season_persons_detail_response_default import SeasonPersonsDetailResponseDefault
 from ...types import UNSET, Response, Unset
 
 

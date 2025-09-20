@@ -6,33 +6,17 @@ from uuid import UUID
 from attrs import define as _attrs_define
 from dateutil.parser import isoparse
 
-from ..models.match_person_statistics_model_position_type_1 import (
-    MatchPersonStatisticsModelPositionType1,
-)
-from ..models.match_person_statistics_model_position_type_2_type_1 import (
-    MatchPersonStatisticsModelPositionType2Type1,
-)
-from ..models.match_person_statistics_model_position_type_3_type_1 import (
-    MatchPersonStatisticsModelPositionType3Type1,
-)
+from ..models.match_person_statistics_model_position_type_1 import MatchPersonStatisticsModelPositionType1
+from ..models.match_person_statistics_model_position_type_2_type_1 import MatchPersonStatisticsModelPositionType2Type1
+from ..models.match_person_statistics_model_position_type_3_type_1 import MatchPersonStatisticsModelPositionType3Type1
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.match_person_statistics_model_entity import (
-        MatchPersonStatisticsModelEntity,
-    )
-    from ..models.match_person_statistics_model_fixture import (
-        MatchPersonStatisticsModelFixture,
-    )
-    from ..models.match_person_statistics_model_organization import (
-        MatchPersonStatisticsModelOrganization,
-    )
-    from ..models.match_person_statistics_model_person import (
-        MatchPersonStatisticsModelPerson,
-    )
-    from ..models.match_person_statistics_model_statistics import (
-        MatchPersonStatisticsModelStatistics,
-    )
+    from ..models.match_person_statistics_model_entity import MatchPersonStatisticsModelEntity
+    from ..models.match_person_statistics_model_fixture import MatchPersonStatisticsModelFixture
+    from ..models.match_person_statistics_model_organization import MatchPersonStatisticsModelOrganization
+    from ..models.match_person_statistics_model_person import MatchPersonStatisticsModelPerson
+    from ..models.match_person_statistics_model_statistics import MatchPersonStatisticsModelStatistics
 
 
 T = TypeVar("T", bound="MatchPersonStatisticsModel")
@@ -225,21 +209,11 @@ class MatchPersonStatisticsModel:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.match_person_statistics_model_entity import (
-            MatchPersonStatisticsModelEntity,
-        )
-        from ..models.match_person_statistics_model_fixture import (
-            MatchPersonStatisticsModelFixture,
-        )
-        from ..models.match_person_statistics_model_organization import (
-            MatchPersonStatisticsModelOrganization,
-        )
-        from ..models.match_person_statistics_model_person import (
-            MatchPersonStatisticsModelPerson,
-        )
-        from ..models.match_person_statistics_model_statistics import (
-            MatchPersonStatisticsModelStatistics,
-        )
+        from ..models.match_person_statistics_model_entity import MatchPersonStatisticsModelEntity
+        from ..models.match_person_statistics_model_fixture import MatchPersonStatisticsModelFixture
+        from ..models.match_person_statistics_model_organization import MatchPersonStatisticsModelOrganization
+        from ..models.match_person_statistics_model_person import MatchPersonStatisticsModelPerson
+        from ..models.match_person_statistics_model_statistics import MatchPersonStatisticsModelStatistics
 
         d = dict(src_dict)
         _person_id = d.pop("personId", UNSET)
@@ -301,9 +275,7 @@ class MatchPersonStatisticsModel:
         if isinstance(_organization, Unset):
             organization = UNSET
         else:
-            organization = MatchPersonStatisticsModelOrganization.from_dict(
-                _organization
-            )
+            organization = MatchPersonStatisticsModelOrganization.from_dict(_organization)
 
         _statistics = d.pop("statistics", UNSET)
         statistics: Union[Unset, MatchPersonStatisticsModelStatistics]
@@ -345,9 +317,7 @@ class MatchPersonStatisticsModel:
             try:
                 if not isinstance(data, str):
                     raise TypeError()
-                position_type_2_type_1 = MatchPersonStatisticsModelPositionType2Type1(
-                    data
-                )
+                position_type_2_type_1 = MatchPersonStatisticsModelPositionType2Type1(data)
 
                 return position_type_2_type_1
             except:  # noqa: E722
@@ -355,9 +325,7 @@ class MatchPersonStatisticsModel:
             try:
                 if not isinstance(data, str):
                     raise TypeError()
-                position_type_3_type_1 = MatchPersonStatisticsModelPositionType3Type1(
-                    data
-                )
+                position_type_3_type_1 = MatchPersonStatisticsModelPositionType3Type1(data)
 
                 return position_type_3_type_1
             except:  # noqa: E722
@@ -382,9 +350,7 @@ class MatchPersonStatisticsModel:
                 return data
             return cast(Union[None, Unset, str], data)
 
-        did_not_play_reason = _parse_did_not_play_reason(
-            d.pop("didNotPlayReason", UNSET)
-        )
+        did_not_play_reason = _parse_did_not_play_reason(d.pop("didNotPlayReason", UNSET))
 
         starter = d.pop("starter", UNSET)
 

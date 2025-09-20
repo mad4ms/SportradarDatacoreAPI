@@ -5,7 +5,6 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.person_delete_persons_response import PersonDeletePersonsResponse
 from ...models.person_delete_response_default import PersonDeleteResponseDefault
 from ...types import UNSET, Response, Unset
 
@@ -45,12 +44,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[PersonDeletePersonsResponse, PersonDeleteResponseDefault]:
-    if response.status_code == 200:
-        response_200 = PersonDeletePersonsResponse.from_dict(response.json())
-
-        return response_200
-
+) -> PersonDeleteResponseDefault:
     response_default = PersonDeleteResponseDefault.from_dict(response.json())
 
     return response_default
@@ -58,7 +52,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[Union[PersonDeletePersonsResponse, PersonDeleteResponseDefault]]:
+) -> Response[PersonDeleteResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -77,7 +71,7 @@ def sync_detailed(
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[Union[PersonDeletePersonsResponse, PersonDeleteResponseDefault]]:
+) -> Response[PersonDeleteResponseDefault]:
     """Delete a person
 
      Delete a specific person
@@ -97,7 +91,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[PersonDeletePersonsResponse, PersonDeleteResponseDefault]]
+        Response[PersonDeleteResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -127,7 +121,7 @@ def sync(
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[Union[PersonDeletePersonsResponse, PersonDeleteResponseDefault]]:
+) -> Optional[PersonDeleteResponseDefault]:
     """Delete a person
 
      Delete a specific person
@@ -147,7 +141,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[PersonDeletePersonsResponse, PersonDeleteResponseDefault]
+        PersonDeleteResponseDefault
     """
 
     return sync_detailed(
@@ -172,7 +166,7 @@ async def asyncio_detailed(
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[Union[PersonDeletePersonsResponse, PersonDeleteResponseDefault]]:
+) -> Response[PersonDeleteResponseDefault]:
     """Delete a person
 
      Delete a specific person
@@ -192,7 +186,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[PersonDeletePersonsResponse, PersonDeleteResponseDefault]]
+        Response[PersonDeleteResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -220,7 +214,7 @@ async def asyncio(
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[Union[PersonDeletePersonsResponse, PersonDeleteResponseDefault]]:
+) -> Optional[PersonDeleteResponseDefault]:
     """Delete a person
 
      Delete a specific person
@@ -240,7 +234,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[PersonDeletePersonsResponse, PersonDeleteResponseDefault]
+        PersonDeleteResponseDefault
     """
 
     return (

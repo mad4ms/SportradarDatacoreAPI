@@ -5,18 +5,9 @@ from typing import Any, Optional, Union
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.competition_list_season_status_age_group import (
-    CompetitionListSeasonStatusAgeGroup,
-)
-from ...models.competition_list_season_status_competitions_season_status_response import (
-    CompetitionListSeasonStatusCompetitionsSeasonStatusResponse,
-)
-from ...models.competition_list_season_status_response_default import (
-    CompetitionListSeasonStatusResponseDefault,
-)
-from ...models.competition_list_season_status_season_status import (
-    CompetitionListSeasonStatusSeasonStatus,
-)
+from ...models.competition_list_season_status_age_group import CompetitionListSeasonStatusAgeGroup
+from ...models.competition_list_season_status_response_default import CompetitionListSeasonStatusResponseDefault
+from ...models.competition_list_season_status_season_status import CompetitionListSeasonStatusSeasonStatus
 from ...models.competition_list_season_status_season_video_production import (
     CompetitionListSeasonStatusSeasonVideoProduction,
 )
@@ -37,9 +28,7 @@ def _get_kwargs(
     offset: Union[Unset, int] = UNSET,
     season_status: Union[Unset, CompetitionListSeasonStatusSeasonStatus] = UNSET,
     season_updated: Union[Unset, datetime.datetime] = UNSET,
-    season_video_production: Union[
-        Unset, CompetitionListSeasonStatusSeasonVideoProduction
-    ] = UNSET,
+    season_video_production: Union[Unset, CompetitionListSeasonStatusSeasonVideoProduction] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
 ) -> dict[str, Any]:
     params: dict[str, Any] = {}
@@ -107,34 +96,15 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[
-    CompetitionListSeasonStatusCompetitionsSeasonStatusResponse,
-    CompetitionListSeasonStatusResponseDefault,
-]:
-    if response.status_code == 200:
-        response_200 = (
-            CompetitionListSeasonStatusCompetitionsSeasonStatusResponse.from_dict(
-                response.json()
-            )
-        )
-
-        return response_200
-
-    response_default = CompetitionListSeasonStatusResponseDefault.from_dict(
-        response.json()
-    )
+) -> CompetitionListSeasonStatusResponseDefault:
+    response_default = CompetitionListSeasonStatusResponseDefault.from_dict(response.json())
 
     return response_default
 
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[
-        CompetitionListSeasonStatusCompetitionsSeasonStatusResponse,
-        CompetitionListSeasonStatusResponseDefault,
-    ]
-]:
+) -> Response[CompetitionListSeasonStatusResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -158,16 +128,9 @@ def sync_detailed(
     offset: Union[Unset, int] = UNSET,
     season_status: Union[Unset, CompetitionListSeasonStatusSeasonStatus] = UNSET,
     season_updated: Union[Unset, datetime.datetime] = UNSET,
-    season_video_production: Union[
-        Unset, CompetitionListSeasonStatusSeasonVideoProduction
-    ] = UNSET,
+    season_video_production: Union[Unset, CompetitionListSeasonStatusSeasonVideoProduction] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[
-    Union[
-        CompetitionListSeasonStatusCompetitionsSeasonStatusResponse,
-        CompetitionListSeasonStatusResponseDefault,
-    ]
-]:
+) -> Response[CompetitionListSeasonStatusResponseDefault]:
     """Get a list of competitions that have active seasons
 
      Return a list of available competitions that have active seasons
@@ -195,7 +158,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[CompetitionListSeasonStatusCompetitionsSeasonStatusResponse, CompetitionListSeasonStatusResponseDefault]]
+        Response[CompetitionListSeasonStatusResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -237,16 +200,9 @@ def sync(
     offset: Union[Unset, int] = UNSET,
     season_status: Union[Unset, CompetitionListSeasonStatusSeasonStatus] = UNSET,
     season_updated: Union[Unset, datetime.datetime] = UNSET,
-    season_video_production: Union[
-        Unset, CompetitionListSeasonStatusSeasonVideoProduction
-    ] = UNSET,
+    season_video_production: Union[Unset, CompetitionListSeasonStatusSeasonVideoProduction] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[
-    Union[
-        CompetitionListSeasonStatusCompetitionsSeasonStatusResponse,
-        CompetitionListSeasonStatusResponseDefault,
-    ]
-]:
+) -> Optional[CompetitionListSeasonStatusResponseDefault]:
     """Get a list of competitions that have active seasons
 
      Return a list of available competitions that have active seasons
@@ -274,7 +230,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[CompetitionListSeasonStatusCompetitionsSeasonStatusResponse, CompetitionListSeasonStatusResponseDefault]
+        CompetitionListSeasonStatusResponseDefault
     """
 
     return sync_detailed(
@@ -311,16 +267,9 @@ async def asyncio_detailed(
     offset: Union[Unset, int] = UNSET,
     season_status: Union[Unset, CompetitionListSeasonStatusSeasonStatus] = UNSET,
     season_updated: Union[Unset, datetime.datetime] = UNSET,
-    season_video_production: Union[
-        Unset, CompetitionListSeasonStatusSeasonVideoProduction
-    ] = UNSET,
+    season_video_production: Union[Unset, CompetitionListSeasonStatusSeasonVideoProduction] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[
-    Union[
-        CompetitionListSeasonStatusCompetitionsSeasonStatusResponse,
-        CompetitionListSeasonStatusResponseDefault,
-    ]
-]:
+) -> Response[CompetitionListSeasonStatusResponseDefault]:
     """Get a list of competitions that have active seasons
 
      Return a list of available competitions that have active seasons
@@ -348,7 +297,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[CompetitionListSeasonStatusCompetitionsSeasonStatusResponse, CompetitionListSeasonStatusResponseDefault]]
+        Response[CompetitionListSeasonStatusResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -388,16 +337,9 @@ async def asyncio(
     offset: Union[Unset, int] = UNSET,
     season_status: Union[Unset, CompetitionListSeasonStatusSeasonStatus] = UNSET,
     season_updated: Union[Unset, datetime.datetime] = UNSET,
-    season_video_production: Union[
-        Unset, CompetitionListSeasonStatusSeasonVideoProduction
-    ] = UNSET,
+    season_video_production: Union[Unset, CompetitionListSeasonStatusSeasonVideoProduction] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[
-    Union[
-        CompetitionListSeasonStatusCompetitionsSeasonStatusResponse,
-        CompetitionListSeasonStatusResponseDefault,
-    ]
-]:
+) -> Optional[CompetitionListSeasonStatusResponseDefault]:
     """Get a list of competitions that have active seasons
 
      Return a list of available competitions that have active seasons
@@ -425,7 +367,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[CompetitionListSeasonStatusCompetitionsSeasonStatusResponse, CompetitionListSeasonStatusResponseDefault]
+        CompetitionListSeasonStatusResponseDefault
     """
 
     return (

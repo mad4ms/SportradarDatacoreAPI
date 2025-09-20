@@ -7,24 +7,14 @@ from attrs import define as _attrs_define
 from dateutil.parser import isoparse
 
 from ..models.video_stream_outputs_model_content import VideoStreamOutputsModelContent
-from ..models.video_stream_outputs_model_feed_type import (
-    VideoStreamOutputsModelFeedType,
-)
-from ..models.video_stream_outputs_model_input_resolution import (
-    VideoStreamOutputsModelInputResolution,
-)
+from ..models.video_stream_outputs_model_feed_type import VideoStreamOutputsModelFeedType
+from ..models.video_stream_outputs_model_input_resolution import VideoStreamOutputsModelInputResolution
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.video_stream_outputs_model_competition import (
-        VideoStreamOutputsModelCompetition,
-    )
-    from ..models.video_stream_outputs_model_fixture import (
-        VideoStreamOutputsModelFixture,
-    )
-    from ..models.video_stream_outputs_model_organization import (
-        VideoStreamOutputsModelOrganization,
-    )
+    from ..models.video_stream_outputs_model_competition import VideoStreamOutputsModelCompetition
+    from ..models.video_stream_outputs_model_fixture import VideoStreamOutputsModelFixture
+    from ..models.video_stream_outputs_model_organization import VideoStreamOutputsModelOrganization
     from ..models.video_stream_outputs_model_venue import VideoStreamOutputsModelVenue
 
 
@@ -92,9 +82,7 @@ class VideoStreamOutputsModel:
     feed_type: Union[Unset, VideoStreamOutputsModelFeedType] = UNSET
     input_resolution: Union[Unset, VideoStreamOutputsModelInputResolution] = UNSET
     name: Union[Unset, str] = UNSET
-    content: Union[Unset, VideoStreamOutputsModelContent] = (
-        VideoStreamOutputsModelContent.CLEAN
-    )
+    content: Union[Unset, VideoStreamOutputsModelContent] = VideoStreamOutputsModelContent.CLEAN
     updated: Union[Unset, datetime.datetime] = UNSET
     added: Union[Unset, datetime.datetime] = UNSET
     audio_ambience: Union[Unset, bool] = UNSET
@@ -221,18 +209,10 @@ class VideoStreamOutputsModel:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.video_stream_outputs_model_competition import (
-            VideoStreamOutputsModelCompetition,
-        )
-        from ..models.video_stream_outputs_model_fixture import (
-            VideoStreamOutputsModelFixture,
-        )
-        from ..models.video_stream_outputs_model_organization import (
-            VideoStreamOutputsModelOrganization,
-        )
-        from ..models.video_stream_outputs_model_venue import (
-            VideoStreamOutputsModelVenue,
-        )
+        from ..models.video_stream_outputs_model_competition import VideoStreamOutputsModelCompetition
+        from ..models.video_stream_outputs_model_fixture import VideoStreamOutputsModelFixture
+        from ..models.video_stream_outputs_model_organization import VideoStreamOutputsModelOrganization
+        from ..models.video_stream_outputs_model_venue import VideoStreamOutputsModelVenue
 
         d = dict(src_dict)
         _video_input_id = d.pop("videoInputId", UNSET)

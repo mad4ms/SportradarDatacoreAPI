@@ -7,12 +7,7 @@ import httpx
 
 from ...client import AuthenticatedClient, Client
 from ...models.uniforms_by_season_list_base_type import UniformsBySeasonListBaseType
-from ...models.uniforms_by_season_list_response_default import (
-    UniformsBySeasonListResponseDefault,
-)
-from ...models.uniforms_by_season_list_uniforms_response import (
-    UniformsBySeasonListUniformsResponse,
-)
+from ...models.uniforms_by_season_list_response_default import UniformsBySeasonListResponseDefault
 from ...types import UNSET, Response, Unset
 
 
@@ -118,12 +113,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[UniformsBySeasonListResponseDefault, UniformsBySeasonListUniformsResponse]:
-    if response.status_code == 200:
-        response_200 = UniformsBySeasonListUniformsResponse.from_dict(response.json())
-
-        return response_200
-
+) -> UniformsBySeasonListResponseDefault:
     response_default = UniformsBySeasonListResponseDefault.from_dict(response.json())
 
     return response_default
@@ -131,9 +121,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[UniformsBySeasonListResponseDefault, UniformsBySeasonListUniformsResponse]
-]:
+) -> Response[UniformsBySeasonListResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -165,9 +153,7 @@ def sync_detailed(
     offset: Union[Unset, int] = UNSET,
     sort_by: Union[Unset, str] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[
-    Union[UniformsBySeasonListResponseDefault, UniformsBySeasonListUniformsResponse]
-]:
+) -> Response[UniformsBySeasonListResponseDefault]:
     """Get a list of Uniforms for a season
 
      Return a list of Uniforms for a season
@@ -201,7 +187,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[UniformsBySeasonListResponseDefault, UniformsBySeasonListUniformsResponse]]
+        Response[UniformsBySeasonListResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -257,9 +243,7 @@ def sync(
     offset: Union[Unset, int] = UNSET,
     sort_by: Union[Unset, str] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[
-    Union[UniformsBySeasonListResponseDefault, UniformsBySeasonListUniformsResponse]
-]:
+) -> Optional[UniformsBySeasonListResponseDefault]:
     """Get a list of Uniforms for a season
 
      Return a list of Uniforms for a season
@@ -293,7 +277,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[UniformsBySeasonListResponseDefault, UniformsBySeasonListUniformsResponse]
+        UniformsBySeasonListResponseDefault
     """
 
     return sync_detailed(
@@ -344,9 +328,7 @@ async def asyncio_detailed(
     offset: Union[Unset, int] = UNSET,
     sort_by: Union[Unset, str] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[
-    Union[UniformsBySeasonListResponseDefault, UniformsBySeasonListUniformsResponse]
-]:
+) -> Response[UniformsBySeasonListResponseDefault]:
     """Get a list of Uniforms for a season
 
      Return a list of Uniforms for a season
@@ -380,7 +362,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[UniformsBySeasonListResponseDefault, UniformsBySeasonListUniformsResponse]]
+        Response[UniformsBySeasonListResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -434,9 +416,7 @@ async def asyncio(
     offset: Union[Unset, int] = UNSET,
     sort_by: Union[Unset, str] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[
-    Union[UniformsBySeasonListResponseDefault, UniformsBySeasonListUniformsResponse]
-]:
+) -> Optional[UniformsBySeasonListResponseDefault]:
     """Get a list of Uniforms for a season
 
      Return a list of Uniforms for a season
@@ -470,7 +450,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[UniformsBySeasonListResponseDefault, UniformsBySeasonListUniformsResponse]
+        UniformsBySeasonListResponseDefault
     """
 
     return (

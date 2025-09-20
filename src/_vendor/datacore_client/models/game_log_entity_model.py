@@ -12,9 +12,7 @@ from ..types import UNSET, Unset
 if TYPE_CHECKING:
     from ..models.game_log_entity_model_entity import GameLogEntityModelEntity
     from ..models.game_log_entity_model_fixture import GameLogEntityModelFixture
-    from ..models.game_log_entity_model_organization import (
-        GameLogEntityModelOrganization,
-    )
+    from ..models.game_log_entity_model_organization import GameLogEntityModelOrganization
     from ..models.game_log_entity_model_statistics import GameLogEntityModelStatistics
 
 
@@ -132,12 +130,8 @@ class GameLogEntityModel:
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.game_log_entity_model_entity import GameLogEntityModelEntity
         from ..models.game_log_entity_model_fixture import GameLogEntityModelFixture
-        from ..models.game_log_entity_model_organization import (
-            GameLogEntityModelOrganization,
-        )
-        from ..models.game_log_entity_model_statistics import (
-            GameLogEntityModelStatistics,
-        )
+        from ..models.game_log_entity_model_organization import GameLogEntityModelOrganization
+        from ..models.game_log_entity_model_statistics import GameLogEntityModelStatistics
 
         d = dict(src_dict)
         organization_id = d.pop("organizationId", UNSET)

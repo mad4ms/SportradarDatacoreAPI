@@ -5,8 +5,7 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.images_update_images_put_body import ImagesUpdateImagesPutBody
-from ...models.images_update_images_response import ImagesUpdateImagesResponse
+from ...models.images_put_body import ImagesPutBody
 from ...models.images_update_response_default import ImagesUpdateResponseDefault
 from ...types import UNSET, Response, Unset
 
@@ -15,7 +14,7 @@ def _get_kwargs(
     organization_id: str,
     image_id: UUID,
     *,
-    body: ImagesUpdateImagesPutBody,
+    body: ImagesPutBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
@@ -51,12 +50,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[ImagesUpdateImagesResponse, ImagesUpdateResponseDefault]:
-    if response.status_code == 200:
-        response_200 = ImagesUpdateImagesResponse.from_dict(response.json())
-
-        return response_200
-
+) -> ImagesUpdateResponseDefault:
     response_default = ImagesUpdateResponseDefault.from_dict(response.json())
 
     return response_default
@@ -64,7 +58,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[Union[ImagesUpdateImagesResponse, ImagesUpdateResponseDefault]]:
+) -> Response[ImagesUpdateResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -78,12 +72,12 @@ def sync_detailed(
     image_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: ImagesUpdateImagesPutBody,
+    body: ImagesPutBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[Union[ImagesUpdateImagesResponse, ImagesUpdateResponseDefault]]:
+) -> Response[ImagesUpdateResponseDefault]:
     """Update the rating for an image
 
      Set the rating for an image
@@ -96,14 +90,14 @@ def sync_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (ImagesUpdateImagesPutBody):
+        body (ImagesPutBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[ImagesUpdateImagesResponse, ImagesUpdateResponseDefault]]
+        Response[ImagesUpdateResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -128,12 +122,12 @@ def sync(
     image_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: ImagesUpdateImagesPutBody,
+    body: ImagesPutBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[Union[ImagesUpdateImagesResponse, ImagesUpdateResponseDefault]]:
+) -> Optional[ImagesUpdateResponseDefault]:
     """Update the rating for an image
 
      Set the rating for an image
@@ -146,14 +140,14 @@ def sync(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (ImagesUpdateImagesPutBody):
+        body (ImagesPutBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[ImagesUpdateImagesResponse, ImagesUpdateResponseDefault]
+        ImagesUpdateResponseDefault
     """
 
     return sync_detailed(
@@ -173,12 +167,12 @@ async def asyncio_detailed(
     image_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: ImagesUpdateImagesPutBody,
+    body: ImagesPutBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[Union[ImagesUpdateImagesResponse, ImagesUpdateResponseDefault]]:
+) -> Response[ImagesUpdateResponseDefault]:
     """Update the rating for an image
 
      Set the rating for an image
@@ -191,14 +185,14 @@ async def asyncio_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (ImagesUpdateImagesPutBody):
+        body (ImagesPutBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[ImagesUpdateImagesResponse, ImagesUpdateResponseDefault]]
+        Response[ImagesUpdateResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -221,12 +215,12 @@ async def asyncio(
     image_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: ImagesUpdateImagesPutBody,
+    body: ImagesPutBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[Union[ImagesUpdateImagesResponse, ImagesUpdateResponseDefault]]:
+) -> Optional[ImagesUpdateResponseDefault]:
     """Update the rating for an image
 
      Set the rating for an image
@@ -239,14 +233,14 @@ async def asyncio(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (ImagesUpdateImagesPutBody):
+        body (ImagesPutBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[ImagesUpdateImagesResponse, ImagesUpdateResponseDefault]
+        ImagesUpdateResponseDefault
     """
 
     return (

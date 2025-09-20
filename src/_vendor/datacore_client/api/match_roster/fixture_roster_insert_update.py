@@ -5,15 +5,8 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.fixture_roster_insert_update_fixture_roster_response import (
-    FixtureRosterInsertUpdateFixtureRosterResponse,
-)
-from ...models.fixture_roster_insert_update_match_roster_post_body import (
-    FixtureRosterInsertUpdateMatchRosterPostBody,
-)
-from ...models.fixture_roster_insert_update_response_default import (
-    FixtureRosterInsertUpdateResponseDefault,
-)
+from ...models.fixture_roster_insert_update_response_default import FixtureRosterInsertUpdateResponseDefault
+from ...models.match_roster_post_body import MatchRosterPostBody
 from ...types import UNSET, Response, Unset
 
 
@@ -21,7 +14,7 @@ def _get_kwargs(
     organization_id: str,
     fixture_id: UUID,
     *,
-    body: FixtureRosterInsertUpdateMatchRosterPostBody,
+    body: MatchRosterPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
@@ -57,32 +50,15 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[
-    FixtureRosterInsertUpdateFixtureRosterResponse,
-    FixtureRosterInsertUpdateResponseDefault,
-]:
-    if response.status_code == 200:
-        response_200 = FixtureRosterInsertUpdateFixtureRosterResponse.from_dict(
-            response.json()
-        )
-
-        return response_200
-
-    response_default = FixtureRosterInsertUpdateResponseDefault.from_dict(
-        response.json()
-    )
+) -> FixtureRosterInsertUpdateResponseDefault:
+    response_default = FixtureRosterInsertUpdateResponseDefault.from_dict(response.json())
 
     return response_default
 
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[
-        FixtureRosterInsertUpdateFixtureRosterResponse,
-        FixtureRosterInsertUpdateResponseDefault,
-    ]
-]:
+) -> Response[FixtureRosterInsertUpdateResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -96,17 +72,12 @@ def sync_detailed(
     fixture_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: FixtureRosterInsertUpdateMatchRosterPostBody,
+    body: MatchRosterPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        FixtureRosterInsertUpdateFixtureRosterResponse,
-        FixtureRosterInsertUpdateResponseDefault,
-    ]
-]:
+) -> Response[FixtureRosterInsertUpdateResponseDefault]:
     """Create/Update a match roster
 
      Depending on the data, Add a new match roster entry or update an existing one
@@ -119,14 +90,14 @@ def sync_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (FixtureRosterInsertUpdateMatchRosterPostBody):
+        body (MatchRosterPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[FixtureRosterInsertUpdateFixtureRosterResponse, FixtureRosterInsertUpdateResponseDefault]]
+        Response[FixtureRosterInsertUpdateResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -151,17 +122,12 @@ def sync(
     fixture_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: FixtureRosterInsertUpdateMatchRosterPostBody,
+    body: MatchRosterPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        FixtureRosterInsertUpdateFixtureRosterResponse,
-        FixtureRosterInsertUpdateResponseDefault,
-    ]
-]:
+) -> Optional[FixtureRosterInsertUpdateResponseDefault]:
     """Create/Update a match roster
 
      Depending on the data, Add a new match roster entry or update an existing one
@@ -174,14 +140,14 @@ def sync(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (FixtureRosterInsertUpdateMatchRosterPostBody):
+        body (MatchRosterPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[FixtureRosterInsertUpdateFixtureRosterResponse, FixtureRosterInsertUpdateResponseDefault]
+        FixtureRosterInsertUpdateResponseDefault
     """
 
     return sync_detailed(
@@ -201,17 +167,12 @@ async def asyncio_detailed(
     fixture_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: FixtureRosterInsertUpdateMatchRosterPostBody,
+    body: MatchRosterPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        FixtureRosterInsertUpdateFixtureRosterResponse,
-        FixtureRosterInsertUpdateResponseDefault,
-    ]
-]:
+) -> Response[FixtureRosterInsertUpdateResponseDefault]:
     """Create/Update a match roster
 
      Depending on the data, Add a new match roster entry or update an existing one
@@ -224,14 +185,14 @@ async def asyncio_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (FixtureRosterInsertUpdateMatchRosterPostBody):
+        body (MatchRosterPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[FixtureRosterInsertUpdateFixtureRosterResponse, FixtureRosterInsertUpdateResponseDefault]]
+        Response[FixtureRosterInsertUpdateResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -254,17 +215,12 @@ async def asyncio(
     fixture_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: FixtureRosterInsertUpdateMatchRosterPostBody,
+    body: MatchRosterPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        FixtureRosterInsertUpdateFixtureRosterResponse,
-        FixtureRosterInsertUpdateResponseDefault,
-    ]
-]:
+) -> Optional[FixtureRosterInsertUpdateResponseDefault]:
     """Create/Update a match roster
 
      Depending on the data, Add a new match roster entry or update an existing one
@@ -277,14 +233,14 @@ async def asyncio(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (FixtureRosterInsertUpdateMatchRosterPostBody):
+        body (MatchRosterPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[FixtureRosterInsertUpdateFixtureRosterResponse, FixtureRosterInsertUpdateResponseDefault]
+        FixtureRosterInsertUpdateResponseDefault
     """
 
     return (

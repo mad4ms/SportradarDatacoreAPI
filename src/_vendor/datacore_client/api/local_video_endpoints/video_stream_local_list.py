@@ -7,12 +7,8 @@ import httpx
 
 from ...client import AuthenticatedClient, Client
 from ...models.video_stream_local_list_format import VideoStreamLocalListFormat
-from ...models.video_stream_local_list_response_default import (
-    VideoStreamLocalListResponseDefault,
-)
-from ...models.video_stream_local_list_video_stream_local_response import (
-    VideoStreamLocalListVideoStreamLocalResponse,
-)
+from ...models.video_stream_local_list_response_default import VideoStreamLocalListResponseDefault
+from ...models.video_stream_local_response import VideoStreamLocalResponse
 from ...types import UNSET, Response, Unset
 
 
@@ -79,13 +75,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[
-    VideoStreamLocalListResponseDefault, VideoStreamLocalListVideoStreamLocalResponse
-]:
+) -> Union[VideoStreamLocalListResponseDefault, VideoStreamLocalResponse]:
     if response.status_code == 200:
-        response_200 = VideoStreamLocalListVideoStreamLocalResponse.from_dict(
-            response.json()
-        )
+        response_200 = VideoStreamLocalResponse.from_dict(response.json())
 
         return response_200
 
@@ -96,12 +88,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[
-        VideoStreamLocalListResponseDefault,
-        VideoStreamLocalListVideoStreamLocalResponse,
-    ]
-]:
+) -> Response[Union[VideoStreamLocalListResponseDefault, VideoStreamLocalResponse]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -126,12 +113,7 @@ def sync_detailed(
     provider: Union[Unset, str] = UNSET,
     source_number: Union[Unset, int] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[
-    Union[
-        VideoStreamLocalListResponseDefault,
-        VideoStreamLocalListVideoStreamLocalResponse,
-    ]
-]:
+) -> Response[Union[VideoStreamLocalListResponseDefault, VideoStreamLocalResponse]]:
     """Get a list of streaming endpoints
 
      Return a list of streaming endpoints
@@ -157,7 +139,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[VideoStreamLocalListResponseDefault, VideoStreamLocalListVideoStreamLocalResponse]]
+        Response[Union[VideoStreamLocalListResponseDefault, VideoStreamLocalResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -199,12 +181,7 @@ def sync(
     provider: Union[Unset, str] = UNSET,
     source_number: Union[Unset, int] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[
-    Union[
-        VideoStreamLocalListResponseDefault,
-        VideoStreamLocalListVideoStreamLocalResponse,
-    ]
-]:
+) -> Optional[Union[VideoStreamLocalListResponseDefault, VideoStreamLocalResponse]]:
     """Get a list of streaming endpoints
 
      Return a list of streaming endpoints
@@ -230,7 +207,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[VideoStreamLocalListResponseDefault, VideoStreamLocalListVideoStreamLocalResponse]
+        Union[VideoStreamLocalListResponseDefault, VideoStreamLocalResponse]
     """
 
     return sync_detailed(
@@ -267,12 +244,7 @@ async def asyncio_detailed(
     provider: Union[Unset, str] = UNSET,
     source_number: Union[Unset, int] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[
-    Union[
-        VideoStreamLocalListResponseDefault,
-        VideoStreamLocalListVideoStreamLocalResponse,
-    ]
-]:
+) -> Response[Union[VideoStreamLocalListResponseDefault, VideoStreamLocalResponse]]:
     """Get a list of streaming endpoints
 
      Return a list of streaming endpoints
@@ -298,7 +270,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[VideoStreamLocalListResponseDefault, VideoStreamLocalListVideoStreamLocalResponse]]
+        Response[Union[VideoStreamLocalListResponseDefault, VideoStreamLocalResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -338,12 +310,7 @@ async def asyncio(
     provider: Union[Unset, str] = UNSET,
     source_number: Union[Unset, int] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[
-    Union[
-        VideoStreamLocalListResponseDefault,
-        VideoStreamLocalListVideoStreamLocalResponse,
-    ]
-]:
+) -> Optional[Union[VideoStreamLocalListResponseDefault, VideoStreamLocalResponse]]:
     """Get a list of streaming endpoints
 
      Return a list of streaming endpoints
@@ -369,7 +336,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[VideoStreamLocalListResponseDefault, VideoStreamLocalListVideoStreamLocalResponse]
+        Union[VideoStreamLocalListResponseDefault, VideoStreamLocalResponse]
     """
 
     return (

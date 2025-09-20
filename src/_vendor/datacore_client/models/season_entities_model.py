@@ -14,9 +14,7 @@ if TYPE_CHECKING:
     from ..models.season_entities_model_conference import SeasonEntitiesModelConference
     from ..models.season_entities_model_division import SeasonEntitiesModelDivision
     from ..models.season_entities_model_entity import SeasonEntitiesModelEntity
-    from ..models.season_entities_model_organization import (
-        SeasonEntitiesModelOrganization,
-    )
+    from ..models.season_entities_model_organization import SeasonEntitiesModelOrganization
     from ..models.season_entities_model_season import SeasonEntitiesModelSeason
 
 
@@ -74,9 +72,7 @@ class SeasonEntitiesModel:
     external_id: Union[None, Unset, str] = UNSET
     updated: Union[Unset, datetime.datetime] = UNSET
     added: Union[Unset, datetime.datetime] = UNSET
-    roster_status: Union[Unset, SeasonEntitiesModelRosterStatus] = (
-        SeasonEntitiesModelRosterStatus.UNKNOWN
-    )
+    roster_status: Union[Unset, SeasonEntitiesModelRosterStatus] = SeasonEntitiesModelRosterStatus.UNKNOWN
 
     def to_dict(self) -> dict[str, Any]:
         season_id: Union[Unset, str] = UNSET
@@ -189,14 +185,10 @@ class SeasonEntitiesModel:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.season_entities_model_conference import (
-            SeasonEntitiesModelConference,
-        )
+        from ..models.season_entities_model_conference import SeasonEntitiesModelConference
         from ..models.season_entities_model_division import SeasonEntitiesModelDivision
         from ..models.season_entities_model_entity import SeasonEntitiesModelEntity
-        from ..models.season_entities_model_organization import (
-            SeasonEntitiesModelOrganization,
-        )
+        from ..models.season_entities_model_organization import SeasonEntitiesModelOrganization
         from ..models.season_entities_model_season import SeasonEntitiesModelSeason
 
         d = dict(src_dict)

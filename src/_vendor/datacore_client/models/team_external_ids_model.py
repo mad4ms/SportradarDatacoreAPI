@@ -10,9 +10,7 @@ from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
     from ..models.team_external_ids_model_entity import TeamExternalIdsModelEntity
-    from ..models.team_external_ids_model_organization import (
-        TeamExternalIdsModelOrganization,
-    )
+    from ..models.team_external_ids_model_organization import TeamExternalIdsModelOrganization
 
 
 T = TypeVar("T", bound="TeamExternalIdsModel")
@@ -109,9 +107,7 @@ class TeamExternalIdsModel:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.team_external_ids_model_entity import TeamExternalIdsModelEntity
-        from ..models.team_external_ids_model_organization import (
-            TeamExternalIdsModelOrganization,
-        )
+        from ..models.team_external_ids_model_organization import TeamExternalIdsModelOrganization
 
         d = dict(src_dict)
         _entity_external_id = d.pop("entityExternalId", UNSET)

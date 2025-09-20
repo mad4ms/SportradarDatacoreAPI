@@ -5,15 +5,8 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.division_external_ids_update_division_external_ids_put_body import (
-    DivisionExternalIdsUpdateDivisionExternalIdsPutBody,
-)
-from ...models.division_external_ids_update_division_external_ids_response import (
-    DivisionExternalIdsUpdateDivisionExternalIdsResponse,
-)
-from ...models.division_external_ids_update_response_default import (
-    DivisionExternalIdsUpdateResponseDefault,
-)
+from ...models.division_external_ids_put_body import DivisionExternalIdsPutBody
+from ...models.division_external_ids_update_response_default import DivisionExternalIdsUpdateResponseDefault
 from ...types import UNSET, Response, Unset
 
 
@@ -21,7 +14,7 @@ def _get_kwargs(
     organization_id: str,
     division_external_id: UUID,
     *,
-    body: DivisionExternalIdsUpdateDivisionExternalIdsPutBody,
+    body: DivisionExternalIdsPutBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
@@ -57,32 +50,15 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[
-    DivisionExternalIdsUpdateDivisionExternalIdsResponse,
-    DivisionExternalIdsUpdateResponseDefault,
-]:
-    if response.status_code == 200:
-        response_200 = DivisionExternalIdsUpdateDivisionExternalIdsResponse.from_dict(
-            response.json()
-        )
-
-        return response_200
-
-    response_default = DivisionExternalIdsUpdateResponseDefault.from_dict(
-        response.json()
-    )
+) -> DivisionExternalIdsUpdateResponseDefault:
+    response_default = DivisionExternalIdsUpdateResponseDefault.from_dict(response.json())
 
     return response_default
 
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[
-        DivisionExternalIdsUpdateDivisionExternalIdsResponse,
-        DivisionExternalIdsUpdateResponseDefault,
-    ]
-]:
+) -> Response[DivisionExternalIdsUpdateResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -96,17 +72,12 @@ def sync_detailed(
     division_external_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: DivisionExternalIdsUpdateDivisionExternalIdsPutBody,
+    body: DivisionExternalIdsPutBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        DivisionExternalIdsUpdateDivisionExternalIdsResponse,
-        DivisionExternalIdsUpdateResponseDefault,
-    ]
-]:
+) -> Response[DivisionExternalIdsUpdateResponseDefault]:
     """Update a division external identifier information
 
      Change the external identifier information of a specific division
@@ -119,14 +90,14 @@ def sync_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (DivisionExternalIdsUpdateDivisionExternalIdsPutBody):
+        body (DivisionExternalIdsPutBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[DivisionExternalIdsUpdateDivisionExternalIdsResponse, DivisionExternalIdsUpdateResponseDefault]]
+        Response[DivisionExternalIdsUpdateResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -151,17 +122,12 @@ def sync(
     division_external_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: DivisionExternalIdsUpdateDivisionExternalIdsPutBody,
+    body: DivisionExternalIdsPutBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        DivisionExternalIdsUpdateDivisionExternalIdsResponse,
-        DivisionExternalIdsUpdateResponseDefault,
-    ]
-]:
+) -> Optional[DivisionExternalIdsUpdateResponseDefault]:
     """Update a division external identifier information
 
      Change the external identifier information of a specific division
@@ -174,14 +140,14 @@ def sync(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (DivisionExternalIdsUpdateDivisionExternalIdsPutBody):
+        body (DivisionExternalIdsPutBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[DivisionExternalIdsUpdateDivisionExternalIdsResponse, DivisionExternalIdsUpdateResponseDefault]
+        DivisionExternalIdsUpdateResponseDefault
     """
 
     return sync_detailed(
@@ -201,17 +167,12 @@ async def asyncio_detailed(
     division_external_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: DivisionExternalIdsUpdateDivisionExternalIdsPutBody,
+    body: DivisionExternalIdsPutBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        DivisionExternalIdsUpdateDivisionExternalIdsResponse,
-        DivisionExternalIdsUpdateResponseDefault,
-    ]
-]:
+) -> Response[DivisionExternalIdsUpdateResponseDefault]:
     """Update a division external identifier information
 
      Change the external identifier information of a specific division
@@ -224,14 +185,14 @@ async def asyncio_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (DivisionExternalIdsUpdateDivisionExternalIdsPutBody):
+        body (DivisionExternalIdsPutBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[DivisionExternalIdsUpdateDivisionExternalIdsResponse, DivisionExternalIdsUpdateResponseDefault]]
+        Response[DivisionExternalIdsUpdateResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -254,17 +215,12 @@ async def asyncio(
     division_external_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: DivisionExternalIdsUpdateDivisionExternalIdsPutBody,
+    body: DivisionExternalIdsPutBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        DivisionExternalIdsUpdateDivisionExternalIdsResponse,
-        DivisionExternalIdsUpdateResponseDefault,
-    ]
-]:
+) -> Optional[DivisionExternalIdsUpdateResponseDefault]:
     """Update a division external identifier information
 
      Change the external identifier information of a specific division
@@ -277,14 +233,14 @@ async def asyncio(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (DivisionExternalIdsUpdateDivisionExternalIdsPutBody):
+        body (DivisionExternalIdsPutBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[DivisionExternalIdsUpdateDivisionExternalIdsResponse, DivisionExternalIdsUpdateResponseDefault]
+        DivisionExternalIdsUpdateResponseDefault
     """
 
     return (

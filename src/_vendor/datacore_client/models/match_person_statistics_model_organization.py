@@ -21,9 +21,7 @@ class MatchPersonStatisticsModelOrganization:
         id (Union[Unset, str]): Unique identifier for this resource Example: 9.
     """
 
-    resource_type: Union[Unset, MatchPersonStatisticsModelOrganizationResourceType] = (
-        UNSET
-    )
+    resource_type: Union[Unset, MatchPersonStatisticsModelOrganizationResourceType] = UNSET
     id: Union[Unset, str] = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
@@ -52,9 +50,7 @@ class MatchPersonStatisticsModelOrganization:
         if isinstance(_resource_type, Unset):
             resource_type = UNSET
         else:
-            resource_type = MatchPersonStatisticsModelOrganizationResourceType(
-                _resource_type
-            )
+            resource_type = MatchPersonStatisticsModelOrganizationResourceType(_resource_type)
 
         id = d.pop("id", UNSET)
 

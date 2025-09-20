@@ -1,0 +1,10 @@
+{
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python.exe",
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}/src",
+    "${workspaceFolder}/src/_vendor"
+  ],
+  "pylint.args": [
+    "--init-hook=import sys, pathlib; root=pathlib.Path().resolve(); sys.path[:0]=[str(root/'src'), str(root/'src'/'_vendor')]"
+  ]
+}

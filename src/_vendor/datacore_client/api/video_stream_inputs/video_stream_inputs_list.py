@@ -7,12 +7,8 @@ import httpx
 
 from ...client import AuthenticatedClient, Client
 from ...models.video_stream_inputs_list_feed_type import VideoStreamInputsListFeedType
-from ...models.video_stream_inputs_list_response_default import (
-    VideoStreamInputsListResponseDefault,
-)
-from ...models.video_stream_inputs_list_video_stream_inputs_response import (
-    VideoStreamInputsListVideoStreamInputsResponse,
-)
+from ...models.video_stream_inputs_list_response_default import VideoStreamInputsListResponseDefault
+from ...models.video_stream_inputs_response import VideoStreamInputsResponse
 from ...types import UNSET, Response, Unset
 
 
@@ -129,13 +125,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[
-    VideoStreamInputsListResponseDefault, VideoStreamInputsListVideoStreamInputsResponse
-]:
+) -> Union[VideoStreamInputsListResponseDefault, VideoStreamInputsResponse]:
     if response.status_code == 200:
-        response_200 = VideoStreamInputsListVideoStreamInputsResponse.from_dict(
-            response.json()
-        )
+        response_200 = VideoStreamInputsResponse.from_dict(response.json())
 
         return response_200
 
@@ -146,12 +138,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[
-        VideoStreamInputsListResponseDefault,
-        VideoStreamInputsListVideoStreamInputsResponse,
-    ]
-]:
+) -> Response[Union[VideoStreamInputsListResponseDefault, VideoStreamInputsResponse]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -184,12 +171,7 @@ def sync_detailed(
     to_time_utc: Union[Unset, datetime.datetime] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
     venue_id: Union[Unset, UUID] = UNSET,
-) -> Response[
-    Union[
-        VideoStreamInputsListResponseDefault,
-        VideoStreamInputsListVideoStreamInputsResponse,
-    ]
-]:
+) -> Response[Union[VideoStreamInputsListResponseDefault, VideoStreamInputsResponse]]:
     """List available video inputs for a master venue
 
      Display the list of video stream inputs for a master venue. This will only display inputs for
@@ -224,7 +206,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[VideoStreamInputsListResponseDefault, VideoStreamInputsListVideoStreamInputsResponse]]
+        Response[Union[VideoStreamInputsListResponseDefault, VideoStreamInputsResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -282,12 +264,7 @@ def sync(
     to_time_utc: Union[Unset, datetime.datetime] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
     venue_id: Union[Unset, UUID] = UNSET,
-) -> Optional[
-    Union[
-        VideoStreamInputsListResponseDefault,
-        VideoStreamInputsListVideoStreamInputsResponse,
-    ]
-]:
+) -> Optional[Union[VideoStreamInputsListResponseDefault, VideoStreamInputsResponse]]:
     """List available video inputs for a master venue
 
      Display the list of video stream inputs for a master venue. This will only display inputs for
@@ -322,7 +299,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[VideoStreamInputsListResponseDefault, VideoStreamInputsListVideoStreamInputsResponse]
+        Union[VideoStreamInputsListResponseDefault, VideoStreamInputsResponse]
     """
 
     return sync_detailed(
@@ -375,12 +352,7 @@ async def asyncio_detailed(
     to_time_utc: Union[Unset, datetime.datetime] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
     venue_id: Union[Unset, UUID] = UNSET,
-) -> Response[
-    Union[
-        VideoStreamInputsListResponseDefault,
-        VideoStreamInputsListVideoStreamInputsResponse,
-    ]
-]:
+) -> Response[Union[VideoStreamInputsListResponseDefault, VideoStreamInputsResponse]]:
     """List available video inputs for a master venue
 
      Display the list of video stream inputs for a master venue. This will only display inputs for
@@ -415,7 +387,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[VideoStreamInputsListResponseDefault, VideoStreamInputsListVideoStreamInputsResponse]]
+        Response[Union[VideoStreamInputsListResponseDefault, VideoStreamInputsResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -471,12 +443,7 @@ async def asyncio(
     to_time_utc: Union[Unset, datetime.datetime] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
     venue_id: Union[Unset, UUID] = UNSET,
-) -> Optional[
-    Union[
-        VideoStreamInputsListResponseDefault,
-        VideoStreamInputsListVideoStreamInputsResponse,
-    ]
-]:
+) -> Optional[Union[VideoStreamInputsListResponseDefault, VideoStreamInputsResponse]]:
     """List available video inputs for a master venue
 
      Display the list of video stream inputs for a master venue. This will only display inputs for
@@ -511,7 +478,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[VideoStreamInputsListResponseDefault, VideoStreamInputsListVideoStreamInputsResponse]
+        Union[VideoStreamInputsListResponseDefault, VideoStreamInputsResponse]
     """
 
     return (

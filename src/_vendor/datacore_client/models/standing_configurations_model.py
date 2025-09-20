@@ -9,15 +9,9 @@ from dateutil.parser import isoparse
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.standing_configurations_model_organization import (
-        StandingConfigurationsModelOrganization,
-    )
-    from ..models.standing_configurations_model_standing_building import (
-        StandingConfigurationsModelStandingBuilding,
-    )
-    from ..models.standing_configurations_model_standing_configuration import (
-        StandingConfigurationsModelStandingConfiguration,
-    )
+    from ..models.standing_building import StandingBuilding
+    from ..models.standing_configuration import StandingConfiguration
+    from ..models.standing_configurations_model_organization import StandingConfigurationsModelOrganization
 
 
 T = TypeVar("T", bound="StandingConfigurationsModel")
@@ -36,8 +30,8 @@ class StandingConfigurationsModel:
             [local](#section/Introduction/Character-Sets-and-Names) language Example: Test season.
         name_latin (Union[None, Unset, str]): The name of the ~standing_configurations~ in
             [latin](#section/Introduction/Character-Sets-and-Names) characters Example: Test season.
-        build_rules (Union[Unset, StandingConfigurationsModelStandingBuilding]): Suilding definitions
-        configuration (Union[Unset, StandingConfigurationsModelStandingConfiguration]): Configuration definitions
+        build_rules (Union[Unset, StandingBuilding]): Suilding definitions
+        configuration (Union[Unset, StandingConfiguration]): Configuration definitions
         external_id (Union[None, Unset, str]): The Id of the data as set by the provider of the data Example: A123.
         updated (Union[Unset, datetime.datetime]): Date/time last modified. In UTC
         added (Union[Unset, datetime.datetime]): Date/time added. In UTC
@@ -48,10 +42,8 @@ class StandingConfigurationsModel:
     organization: Union[Unset, "StandingConfigurationsModelOrganization"] = UNSET
     name_local: Union[Unset, str] = UNSET
     name_latin: Union[None, Unset, str] = UNSET
-    build_rules: Union[Unset, "StandingConfigurationsModelStandingBuilding"] = UNSET
-    configuration: Union[Unset, "StandingConfigurationsModelStandingConfiguration"] = (
-        UNSET
-    )
+    build_rules: Union[Unset, "StandingBuilding"] = UNSET
+    configuration: Union[Unset, "StandingConfiguration"] = UNSET
     external_id: Union[None, Unset, str] = UNSET
     updated: Union[Unset, datetime.datetime] = UNSET
     added: Union[Unset, datetime.datetime] = UNSET
@@ -125,15 +117,9 @@ class StandingConfigurationsModel:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.standing_configurations_model_organization import (
-            StandingConfigurationsModelOrganization,
-        )
-        from ..models.standing_configurations_model_standing_building import (
-            StandingConfigurationsModelStandingBuilding,
-        )
-        from ..models.standing_configurations_model_standing_configuration import (
-            StandingConfigurationsModelStandingConfiguration,
-        )
+        from ..models.standing_building import StandingBuilding
+        from ..models.standing_configuration import StandingConfiguration
+        from ..models.standing_configurations_model_organization import StandingConfigurationsModelOrganization
 
         d = dict(src_dict)
         _standing_configuration_id = d.pop("standingConfigurationId", UNSET)
@@ -150,9 +136,7 @@ class StandingConfigurationsModel:
         if isinstance(_organization, Unset):
             organization = UNSET
         else:
-            organization = StandingConfigurationsModelOrganization.from_dict(
-                _organization
-            )
+            organization = StandingConfigurationsModelOrganization.from_dict(_organization)
 
         name_local = d.pop("nameLocal", UNSET)
 
@@ -166,22 +150,18 @@ class StandingConfigurationsModel:
         name_latin = _parse_name_latin(d.pop("nameLatin", UNSET))
 
         _build_rules = d.pop("buildRules", UNSET)
-        build_rules: Union[Unset, StandingConfigurationsModelStandingBuilding]
+        build_rules: Union[Unset, StandingBuilding]
         if isinstance(_build_rules, Unset):
             build_rules = UNSET
         else:
-            build_rules = StandingConfigurationsModelStandingBuilding.from_dict(
-                _build_rules
-            )
+            build_rules = StandingBuilding.from_dict(_build_rules)
 
         _configuration = d.pop("configuration", UNSET)
-        configuration: Union[Unset, StandingConfigurationsModelStandingConfiguration]
+        configuration: Union[Unset, StandingConfiguration]
         if isinstance(_configuration, Unset):
             configuration = UNSET
         else:
-            configuration = StandingConfigurationsModelStandingConfiguration.from_dict(
-                _configuration
-            )
+            configuration = StandingConfiguration.from_dict(_configuration)
 
         def _parse_external_id(data: object) -> Union[None, Unset, str]:
             if data is None:

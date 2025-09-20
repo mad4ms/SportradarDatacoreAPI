@@ -5,11 +5,8 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.fixture_locking_fixture_locking_post_body import (
-    FixtureLockingFixtureLockingPostBody,
-)
+from ...models.fixture_locking_post_body import FixtureLockingPostBody
 from ...models.fixture_locking_response_default import FixtureLockingResponseDefault
-from ...models.fixture_locking_success_response import FixtureLockingSuccessResponse
 from ...types import UNSET, Response, Unset
 
 
@@ -17,7 +14,7 @@ def _get_kwargs(
     organization_id: str,
     fixture_id: UUID,
     *,
-    body: FixtureLockingFixtureLockingPostBody,
+    body: FixtureLockingPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
@@ -53,12 +50,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[FixtureLockingResponseDefault, FixtureLockingSuccessResponse]:
-    if response.status_code == 200:
-        response_200 = FixtureLockingSuccessResponse.from_dict(response.json())
-
-        return response_200
-
+) -> FixtureLockingResponseDefault:
     response_default = FixtureLockingResponseDefault.from_dict(response.json())
 
     return response_default
@@ -66,7 +58,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[Union[FixtureLockingResponseDefault, FixtureLockingSuccessResponse]]:
+) -> Response[FixtureLockingResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -80,12 +72,12 @@ def sync_detailed(
     fixture_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: FixtureLockingFixtureLockingPostBody,
+    body: FixtureLockingPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[Union[FixtureLockingResponseDefault, FixtureLockingSuccessResponse]]:
+) -> Response[FixtureLockingResponseDefault]:
     """Locking match
 
      Locking a specific match record
@@ -98,14 +90,14 @@ def sync_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (FixtureLockingFixtureLockingPostBody):
+        body (FixtureLockingPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[FixtureLockingResponseDefault, FixtureLockingSuccessResponse]]
+        Response[FixtureLockingResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -130,12 +122,12 @@ def sync(
     fixture_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: FixtureLockingFixtureLockingPostBody,
+    body: FixtureLockingPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[Union[FixtureLockingResponseDefault, FixtureLockingSuccessResponse]]:
+) -> Optional[FixtureLockingResponseDefault]:
     """Locking match
 
      Locking a specific match record
@@ -148,14 +140,14 @@ def sync(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (FixtureLockingFixtureLockingPostBody):
+        body (FixtureLockingPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[FixtureLockingResponseDefault, FixtureLockingSuccessResponse]
+        FixtureLockingResponseDefault
     """
 
     return sync_detailed(
@@ -175,12 +167,12 @@ async def asyncio_detailed(
     fixture_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: FixtureLockingFixtureLockingPostBody,
+    body: FixtureLockingPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[Union[FixtureLockingResponseDefault, FixtureLockingSuccessResponse]]:
+) -> Response[FixtureLockingResponseDefault]:
     """Locking match
 
      Locking a specific match record
@@ -193,14 +185,14 @@ async def asyncio_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (FixtureLockingFixtureLockingPostBody):
+        body (FixtureLockingPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[FixtureLockingResponseDefault, FixtureLockingSuccessResponse]]
+        Response[FixtureLockingResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -223,12 +215,12 @@ async def asyncio(
     fixture_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: FixtureLockingFixtureLockingPostBody,
+    body: FixtureLockingPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[Union[FixtureLockingResponseDefault, FixtureLockingSuccessResponse]]:
+) -> Optional[FixtureLockingResponseDefault]:
     """Locking match
 
      Locking a specific match record
@@ -241,14 +233,14 @@ async def asyncio(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (FixtureLockingFixtureLockingPostBody):
+        body (FixtureLockingPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[FixtureLockingResponseDefault, FixtureLockingSuccessResponse]
+        FixtureLockingResponseDefault
     """
 
     return (

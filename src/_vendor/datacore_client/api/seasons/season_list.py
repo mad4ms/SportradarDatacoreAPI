@@ -13,7 +13,6 @@ from ...models.season_list_gender import SeasonListGender
 from ...models.season_list_representation import SeasonListRepresentation
 from ...models.season_list_response_default import SeasonListResponseDefault
 from ...models.season_list_season_type import SeasonListSeasonType
-from ...models.season_list_seasons_response import SeasonListSeasonsResponse
 from ...models.season_list_standard import SeasonListStandard
 from ...models.season_list_status import SeasonListStatus
 from ...models.season_list_video_production import SeasonListVideoProduction
@@ -154,12 +153,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[SeasonListResponseDefault, SeasonListSeasonsResponse]:
-    if response.status_code == 200:
-        response_200 = SeasonListSeasonsResponse.from_dict(response.json())
-
-        return response_200
-
+) -> SeasonListResponseDefault:
     response_default = SeasonListResponseDefault.from_dict(response.json())
 
     return response_default
@@ -167,7 +161,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[Union[SeasonListResponseDefault, SeasonListSeasonsResponse]]:
+) -> Response[SeasonListResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -203,7 +197,7 @@ def sync_detailed(
     status: Union[Unset, SeasonListStatus] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
     video_production: Union[Unset, SeasonListVideoProduction] = UNSET,
-) -> Response[Union[SeasonListResponseDefault, SeasonListSeasonsResponse]]:
+) -> Response[SeasonListResponseDefault]:
     """Get a list of seasons
 
      Return a list of seasons in the competition.
@@ -240,7 +234,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SeasonListResponseDefault, SeasonListSeasonsResponse]]
+        Response[SeasonListResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -304,7 +298,7 @@ def sync(
     status: Union[Unset, SeasonListStatus] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
     video_production: Union[Unset, SeasonListVideoProduction] = UNSET,
-) -> Optional[Union[SeasonListResponseDefault, SeasonListSeasonsResponse]]:
+) -> Optional[SeasonListResponseDefault]:
     """Get a list of seasons
 
      Return a list of seasons in the competition.
@@ -341,7 +335,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SeasonListResponseDefault, SeasonListSeasonsResponse]
+        SeasonListResponseDefault
     """
 
     return sync_detailed(
@@ -400,7 +394,7 @@ async def asyncio_detailed(
     status: Union[Unset, SeasonListStatus] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
     video_production: Union[Unset, SeasonListVideoProduction] = UNSET,
-) -> Response[Union[SeasonListResponseDefault, SeasonListSeasonsResponse]]:
+) -> Response[SeasonListResponseDefault]:
     """Get a list of seasons
 
      Return a list of seasons in the competition.
@@ -437,7 +431,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SeasonListResponseDefault, SeasonListSeasonsResponse]]
+        Response[SeasonListResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -499,7 +493,7 @@ async def asyncio(
     status: Union[Unset, SeasonListStatus] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
     video_production: Union[Unset, SeasonListVideoProduction] = UNSET,
-) -> Optional[Union[SeasonListResponseDefault, SeasonListSeasonsResponse]]:
+) -> Optional[SeasonListResponseDefault]:
     """Get a list of seasons
 
      Return a list of seasons in the competition.
@@ -536,7 +530,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SeasonListResponseDefault, SeasonListSeasonsResponse]
+        SeasonListResponseDefault
     """
 
     return (

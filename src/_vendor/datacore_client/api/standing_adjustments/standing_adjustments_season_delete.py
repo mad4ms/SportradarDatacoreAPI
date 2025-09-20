@@ -5,12 +5,7 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.standing_adjustments_season_delete_response_default import (
-    StandingAdjustmentsSeasonDeleteResponseDefault,
-)
-from ...models.standing_adjustments_season_delete_standing_adjustments_response import (
-    StandingAdjustmentsSeasonDeleteStandingAdjustmentsResponse,
-)
+from ...models.standing_adjustments_season_delete_response_default import StandingAdjustmentsSeasonDeleteResponseDefault
 from ...types import UNSET, Response, Unset
 
 
@@ -49,34 +44,15 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[
-    StandingAdjustmentsSeasonDeleteResponseDefault,
-    StandingAdjustmentsSeasonDeleteStandingAdjustmentsResponse,
-]:
-    if response.status_code == 200:
-        response_200 = (
-            StandingAdjustmentsSeasonDeleteStandingAdjustmentsResponse.from_dict(
-                response.json()
-            )
-        )
-
-        return response_200
-
-    response_default = StandingAdjustmentsSeasonDeleteResponseDefault.from_dict(
-        response.json()
-    )
+) -> StandingAdjustmentsSeasonDeleteResponseDefault:
+    response_default = StandingAdjustmentsSeasonDeleteResponseDefault.from_dict(response.json())
 
     return response_default
 
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[
-        StandingAdjustmentsSeasonDeleteResponseDefault,
-        StandingAdjustmentsSeasonDeleteStandingAdjustmentsResponse,
-    ]
-]:
+) -> Response[StandingAdjustmentsSeasonDeleteResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -95,12 +71,7 @@ def sync_detailed(
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        StandingAdjustmentsSeasonDeleteResponseDefault,
-        StandingAdjustmentsSeasonDeleteStandingAdjustmentsResponse,
-    ]
-]:
+) -> Response[StandingAdjustmentsSeasonDeleteResponseDefault]:
     """Delete all standing adjustments for season
 
      Delete all standing adjustments for season
@@ -120,7 +91,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[StandingAdjustmentsSeasonDeleteResponseDefault, StandingAdjustmentsSeasonDeleteStandingAdjustmentsResponse]]
+        Response[StandingAdjustmentsSeasonDeleteResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -150,12 +121,7 @@ def sync(
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        StandingAdjustmentsSeasonDeleteResponseDefault,
-        StandingAdjustmentsSeasonDeleteStandingAdjustmentsResponse,
-    ]
-]:
+) -> Optional[StandingAdjustmentsSeasonDeleteResponseDefault]:
     """Delete all standing adjustments for season
 
      Delete all standing adjustments for season
@@ -175,7 +141,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[StandingAdjustmentsSeasonDeleteResponseDefault, StandingAdjustmentsSeasonDeleteStandingAdjustmentsResponse]
+        StandingAdjustmentsSeasonDeleteResponseDefault
     """
 
     return sync_detailed(
@@ -200,12 +166,7 @@ async def asyncio_detailed(
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        StandingAdjustmentsSeasonDeleteResponseDefault,
-        StandingAdjustmentsSeasonDeleteStandingAdjustmentsResponse,
-    ]
-]:
+) -> Response[StandingAdjustmentsSeasonDeleteResponseDefault]:
     """Delete all standing adjustments for season
 
      Delete all standing adjustments for season
@@ -225,7 +186,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[StandingAdjustmentsSeasonDeleteResponseDefault, StandingAdjustmentsSeasonDeleteStandingAdjustmentsResponse]]
+        Response[StandingAdjustmentsSeasonDeleteResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -253,12 +214,7 @@ async def asyncio(
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        StandingAdjustmentsSeasonDeleteResponseDefault,
-        StandingAdjustmentsSeasonDeleteStandingAdjustmentsResponse,
-    ]
-]:
+) -> Optional[StandingAdjustmentsSeasonDeleteResponseDefault]:
     """Delete all standing adjustments for season
 
      Delete all standing adjustments for season
@@ -278,7 +234,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[StandingAdjustmentsSeasonDeleteResponseDefault, StandingAdjustmentsSeasonDeleteStandingAdjustmentsResponse]
+        StandingAdjustmentsSeasonDeleteResponseDefault
     """
 
     return (

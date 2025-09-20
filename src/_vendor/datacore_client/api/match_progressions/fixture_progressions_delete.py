@@ -5,12 +5,7 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.fixture_progressions_delete_fixture_progressions_response import (
-    FixtureProgressionsDeleteFixtureProgressionsResponse,
-)
-from ...models.fixture_progressions_delete_response_default import (
-    FixtureProgressionsDeleteResponseDefault,
-)
+from ...models.fixture_progressions_delete_response_default import FixtureProgressionsDeleteResponseDefault
 from ...types import UNSET, Response, Unset
 
 
@@ -51,32 +46,15 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[
-    FixtureProgressionsDeleteFixtureProgressionsResponse,
-    FixtureProgressionsDeleteResponseDefault,
-]:
-    if response.status_code == 200:
-        response_200 = FixtureProgressionsDeleteFixtureProgressionsResponse.from_dict(
-            response.json()
-        )
-
-        return response_200
-
-    response_default = FixtureProgressionsDeleteResponseDefault.from_dict(
-        response.json()
-    )
+) -> FixtureProgressionsDeleteResponseDefault:
+    response_default = FixtureProgressionsDeleteResponseDefault.from_dict(response.json())
 
     return response_default
 
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[
-        FixtureProgressionsDeleteFixtureProgressionsResponse,
-        FixtureProgressionsDeleteResponseDefault,
-    ]
-]:
+) -> Response[FixtureProgressionsDeleteResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -97,12 +75,7 @@ def sync_detailed(
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        FixtureProgressionsDeleteFixtureProgressionsResponse,
-        FixtureProgressionsDeleteResponseDefault,
-    ]
-]:
+) -> Response[FixtureProgressionsDeleteResponseDefault]:
     """Delete a match progression
 
      Delete a specific match progression
@@ -124,7 +97,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[FixtureProgressionsDeleteFixtureProgressionsResponse, FixtureProgressionsDeleteResponseDefault]]
+        Response[FixtureProgressionsDeleteResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -158,12 +131,7 @@ def sync(
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        FixtureProgressionsDeleteFixtureProgressionsResponse,
-        FixtureProgressionsDeleteResponseDefault,
-    ]
-]:
+) -> Optional[FixtureProgressionsDeleteResponseDefault]:
     """Delete a match progression
 
      Delete a specific match progression
@@ -185,7 +153,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[FixtureProgressionsDeleteFixtureProgressionsResponse, FixtureProgressionsDeleteResponseDefault]
+        FixtureProgressionsDeleteResponseDefault
     """
 
     return sync_detailed(
@@ -214,12 +182,7 @@ async def asyncio_detailed(
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        FixtureProgressionsDeleteFixtureProgressionsResponse,
-        FixtureProgressionsDeleteResponseDefault,
-    ]
-]:
+) -> Response[FixtureProgressionsDeleteResponseDefault]:
     """Delete a match progression
 
      Delete a specific match progression
@@ -241,7 +204,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[FixtureProgressionsDeleteFixtureProgressionsResponse, FixtureProgressionsDeleteResponseDefault]]
+        Response[FixtureProgressionsDeleteResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -273,12 +236,7 @@ async def asyncio(
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        FixtureProgressionsDeleteFixtureProgressionsResponse,
-        FixtureProgressionsDeleteResponseDefault,
-    ]
-]:
+) -> Optional[FixtureProgressionsDeleteResponseDefault]:
     """Delete a match progression
 
      Delete a specific match progression
@@ -300,7 +258,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[FixtureProgressionsDeleteFixtureProgressionsResponse, FixtureProgressionsDeleteResponseDefault]
+        FixtureProgressionsDeleteResponseDefault
     """
 
     return (

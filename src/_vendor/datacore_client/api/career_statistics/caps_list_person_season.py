@@ -5,17 +5,11 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.caps_list_person_season_career_person_season_statistics_response import (
-    CapsListPersonSeasonCareerPersonSeasonStatisticsResponse,
-)
-from ...models.caps_list_person_season_fixture_type import (
-    CapsListPersonSeasonFixtureType,
-)
+from ...models.caps_list_person_season_fixture_type import CapsListPersonSeasonFixtureType
 from ...models.caps_list_person_season_home_away import CapsListPersonSeasonHomeAway
-from ...models.caps_list_person_season_response_default import (
-    CapsListPersonSeasonResponseDefault,
-)
+from ...models.caps_list_person_season_response_default import CapsListPersonSeasonResponseDefault
 from ...models.caps_list_person_season_win_loss import CapsListPersonSeasonWinLoss
+from ...models.career_person_season_statistics_response import CareerPersonSeasonStatisticsResponse
 from ...types import UNSET, Response, Unset
 
 
@@ -87,16 +81,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[
-    CapsListPersonSeasonCareerPersonSeasonStatisticsResponse,
-    CapsListPersonSeasonResponseDefault,
-]:
+) -> Union[CapsListPersonSeasonResponseDefault, CareerPersonSeasonStatisticsResponse]:
     if response.status_code == 200:
-        response_200 = (
-            CapsListPersonSeasonCareerPersonSeasonStatisticsResponse.from_dict(
-                response.json()
-            )
-        )
+        response_200 = CareerPersonSeasonStatisticsResponse.from_dict(response.json())
 
         return response_200
 
@@ -107,12 +94,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[
-        CapsListPersonSeasonCareerPersonSeasonStatisticsResponse,
-        CapsListPersonSeasonResponseDefault,
-    ]
-]:
+) -> Response[Union[CapsListPersonSeasonResponseDefault, CareerPersonSeasonStatisticsResponse]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -138,12 +120,7 @@ def sync_detailed(
     offset: Union[Unset, int] = UNSET,
     starter: Union[Unset, bool] = UNSET,
     win_loss: Union[Unset, CapsListPersonSeasonWinLoss] = UNSET,
-) -> Response[
-    Union[
-        CapsListPersonSeasonCareerPersonSeasonStatisticsResponse,
-        CapsListPersonSeasonResponseDefault,
-    ]
-]:
+) -> Response[Union[CapsListPersonSeasonResponseDefault, CareerPersonSeasonStatisticsResponse]]:
     """Statistics for a person in their career by season and entity
 
      Return the statistics for a specific person in their career by season and entity.
@@ -170,7 +147,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[CapsListPersonSeasonCareerPersonSeasonStatisticsResponse, CapsListPersonSeasonResponseDefault]]
+        Response[Union[CapsListPersonSeasonResponseDefault, CareerPersonSeasonStatisticsResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -214,12 +191,7 @@ def sync(
     offset: Union[Unset, int] = UNSET,
     starter: Union[Unset, bool] = UNSET,
     win_loss: Union[Unset, CapsListPersonSeasonWinLoss] = UNSET,
-) -> Optional[
-    Union[
-        CapsListPersonSeasonCareerPersonSeasonStatisticsResponse,
-        CapsListPersonSeasonResponseDefault,
-    ]
-]:
+) -> Optional[Union[CapsListPersonSeasonResponseDefault, CareerPersonSeasonStatisticsResponse]]:
     """Statistics for a person in their career by season and entity
 
      Return the statistics for a specific person in their career by season and entity.
@@ -246,7 +218,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[CapsListPersonSeasonCareerPersonSeasonStatisticsResponse, CapsListPersonSeasonResponseDefault]
+        Union[CapsListPersonSeasonResponseDefault, CareerPersonSeasonStatisticsResponse]
     """
 
     return sync_detailed(
@@ -285,12 +257,7 @@ async def asyncio_detailed(
     offset: Union[Unset, int] = UNSET,
     starter: Union[Unset, bool] = UNSET,
     win_loss: Union[Unset, CapsListPersonSeasonWinLoss] = UNSET,
-) -> Response[
-    Union[
-        CapsListPersonSeasonCareerPersonSeasonStatisticsResponse,
-        CapsListPersonSeasonResponseDefault,
-    ]
-]:
+) -> Response[Union[CapsListPersonSeasonResponseDefault, CareerPersonSeasonStatisticsResponse]]:
     """Statistics for a person in their career by season and entity
 
      Return the statistics for a specific person in their career by season and entity.
@@ -317,7 +284,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[CapsListPersonSeasonCareerPersonSeasonStatisticsResponse, CapsListPersonSeasonResponseDefault]]
+        Response[Union[CapsListPersonSeasonResponseDefault, CareerPersonSeasonStatisticsResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -359,12 +326,7 @@ async def asyncio(
     offset: Union[Unset, int] = UNSET,
     starter: Union[Unset, bool] = UNSET,
     win_loss: Union[Unset, CapsListPersonSeasonWinLoss] = UNSET,
-) -> Optional[
-    Union[
-        CapsListPersonSeasonCareerPersonSeasonStatisticsResponse,
-        CapsListPersonSeasonResponseDefault,
-    ]
-]:
+) -> Optional[Union[CapsListPersonSeasonResponseDefault, CareerPersonSeasonStatisticsResponse]]:
     """Statistics for a person in their career by season and entity
 
      Return the statistics for a specific person in their career by season and entity.
@@ -391,7 +353,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[CapsListPersonSeasonCareerPersonSeasonStatisticsResponse, CapsListPersonSeasonResponseDefault]
+        Union[CapsListPersonSeasonResponseDefault, CareerPersonSeasonStatisticsResponse]
     """
 
     return (

@@ -294,9 +294,7 @@ class RoundModel:
                 return data
             return cast(Union[None, Unset, str], data)
 
-        abbreviation_local = _parse_abbreviation_local(
-            d.pop("abbreviationLocal", UNSET)
-        )
+        abbreviation_local = _parse_abbreviation_local(d.pop("abbreviationLocal", UNSET))
 
         def _parse_abbreviation_latin(data: object) -> Union[None, Unset, str]:
             if data is None:
@@ -305,9 +303,7 @@ class RoundModel:
                 return data
             return cast(Union[None, Unset, str], data)
 
-        abbreviation_latin = _parse_abbreviation_latin(
-            d.pop("abbreviationLatin", UNSET)
-        )
+        abbreviation_latin = _parse_abbreviation_latin(d.pop("abbreviationLatin", UNSET))
 
         def _parse_round_order(data: object) -> Union[None, Unset, int]:
             if data is None:

@@ -5,15 +5,8 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.uniform_items_insert_response_default import (
-    UniformItemsInsertResponseDefault,
-)
-from ...models.uniform_items_insert_uniform_items_post_body import (
-    UniformItemsInsertUniformItemsPostBody,
-)
-from ...models.uniform_items_insert_uniform_items_response import (
-    UniformItemsInsertUniformItemsResponse,
-)
+from ...models.uniform_items_insert_response_default import UniformItemsInsertResponseDefault
+from ...models.uniform_items_post_body import UniformItemsPostBody
 from ...types import UNSET, Response, Unset
 
 
@@ -21,7 +14,7 @@ def _get_kwargs(
     organization_id: str,
     uniform_id: UUID,
     *,
-    body: UniformItemsInsertUniformItemsPostBody,
+    body: UniformItemsPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
@@ -57,12 +50,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[UniformItemsInsertResponseDefault, UniformItemsInsertUniformItemsResponse]:
-    if response.status_code == 200:
-        response_200 = UniformItemsInsertUniformItemsResponse.from_dict(response.json())
-
-        return response_200
-
+) -> UniformItemsInsertResponseDefault:
     response_default = UniformItemsInsertResponseDefault.from_dict(response.json())
 
     return response_default
@@ -70,9 +58,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[UniformItemsInsertResponseDefault, UniformItemsInsertUniformItemsResponse]
-]:
+) -> Response[UniformItemsInsertResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -86,14 +72,12 @@ def sync_detailed(
     uniform_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: UniformItemsInsertUniformItemsPostBody,
+    body: UniformItemsPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[UniformItemsInsertResponseDefault, UniformItemsInsertUniformItemsResponse]
-]:
+) -> Response[UniformItemsInsertResponseDefault]:
     """Create a new Uniform Item
 
      Insert a new Uniform Item
@@ -106,14 +90,14 @@ def sync_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (UniformItemsInsertUniformItemsPostBody):
+        body (UniformItemsPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[UniformItemsInsertResponseDefault, UniformItemsInsertUniformItemsResponse]]
+        Response[UniformItemsInsertResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -138,14 +122,12 @@ def sync(
     uniform_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: UniformItemsInsertUniformItemsPostBody,
+    body: UniformItemsPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[UniformItemsInsertResponseDefault, UniformItemsInsertUniformItemsResponse]
-]:
+) -> Optional[UniformItemsInsertResponseDefault]:
     """Create a new Uniform Item
 
      Insert a new Uniform Item
@@ -158,14 +140,14 @@ def sync(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (UniformItemsInsertUniformItemsPostBody):
+        body (UniformItemsPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[UniformItemsInsertResponseDefault, UniformItemsInsertUniformItemsResponse]
+        UniformItemsInsertResponseDefault
     """
 
     return sync_detailed(
@@ -185,14 +167,12 @@ async def asyncio_detailed(
     uniform_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: UniformItemsInsertUniformItemsPostBody,
+    body: UniformItemsPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[UniformItemsInsertResponseDefault, UniformItemsInsertUniformItemsResponse]
-]:
+) -> Response[UniformItemsInsertResponseDefault]:
     """Create a new Uniform Item
 
      Insert a new Uniform Item
@@ -205,14 +185,14 @@ async def asyncio_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (UniformItemsInsertUniformItemsPostBody):
+        body (UniformItemsPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[UniformItemsInsertResponseDefault, UniformItemsInsertUniformItemsResponse]]
+        Response[UniformItemsInsertResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -235,14 +215,12 @@ async def asyncio(
     uniform_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: UniformItemsInsertUniformItemsPostBody,
+    body: UniformItemsPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[UniformItemsInsertResponseDefault, UniformItemsInsertUniformItemsResponse]
-]:
+) -> Optional[UniformItemsInsertResponseDefault]:
     """Create a new Uniform Item
 
      Insert a new Uniform Item
@@ -255,14 +233,14 @@ async def asyncio(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (UniformItemsInsertUniformItemsPostBody):
+        body (UniformItemsPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[UniformItemsInsertResponseDefault, UniformItemsInsertUniformItemsResponse]
+        UniformItemsInsertResponseDefault
     """
 
     return (

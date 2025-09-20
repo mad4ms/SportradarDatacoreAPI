@@ -9,9 +9,7 @@ from dateutil.parser import isoparse
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.site_external_ids_model_organization import (
-        SiteExternalIdsModelOrganization,
-    )
+    from ..models.site_external_ids_model_organization import SiteExternalIdsModelOrganization
     from ..models.site_external_ids_model_site import SiteExternalIdsModelSite
 
 
@@ -109,9 +107,7 @@ class SiteExternalIdsModel:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.site_external_ids_model_organization import (
-            SiteExternalIdsModelOrganization,
-        )
+        from ..models.site_external_ids_model_organization import SiteExternalIdsModelOrganization
         from ..models.site_external_ids_model_site import SiteExternalIdsModelSite
 
         d = dict(src_dict)

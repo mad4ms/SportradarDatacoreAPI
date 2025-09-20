@@ -7,12 +7,8 @@ from attrs import define as _attrs_define
 from dateutil.parser import isoparse
 
 from ..models.season_roster_model_position_type_1 import SeasonRosterModelPositionType1
-from ..models.season_roster_model_position_type_2_type_1 import (
-    SeasonRosterModelPositionType2Type1,
-)
-from ..models.season_roster_model_position_type_3_type_1 import (
-    SeasonRosterModelPositionType3Type1,
-)
+from ..models.season_roster_model_position_type_2_type_1 import SeasonRosterModelPositionType2Type1
+from ..models.season_roster_model_position_type_3_type_1 import SeasonRosterModelPositionType3Type1
 from ..models.season_roster_model_status import SeasonRosterModelStatus
 from ..types import UNSET, Unset
 
@@ -258,12 +254,8 @@ class SeasonRosterModel:
         from ..models.season_roster_model_conference import SeasonRosterModelConference
         from ..models.season_roster_model_division import SeasonRosterModelDivision
         from ..models.season_roster_model_entity import SeasonRosterModelEntity
-        from ..models.season_roster_model_entity_group import (
-            SeasonRosterModelEntityGroup,
-        )
-        from ..models.season_roster_model_organization import (
-            SeasonRosterModelOrganization,
-        )
+        from ..models.season_roster_model_entity_group import SeasonRosterModelEntityGroup
+        from ..models.season_roster_model_organization import SeasonRosterModelOrganization
         from ..models.season_roster_model_person import SeasonRosterModelPerson
         from ..models.season_roster_model_season import SeasonRosterModelSeason
 

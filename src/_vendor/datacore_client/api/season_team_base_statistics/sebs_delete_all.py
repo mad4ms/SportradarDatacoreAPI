@@ -8,9 +8,6 @@ from ...client import AuthenticatedClient, Client
 from ...models.sebs_delete_all_competitor_type import SebsDeleteAllCompetitorType
 from ...models.sebs_delete_all_fixture_type import SebsDeleteAllFixtureType
 from ...models.sebs_delete_all_response_default import SebsDeleteAllResponseDefault
-from ...models.sebs_delete_all_season_entity_base_statistics_response import (
-    SebsDeleteAllSeasonEntityBaseStatisticsResponse,
-)
 from ...types import UNSET, Response, Unset
 
 
@@ -69,16 +66,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[
-    SebsDeleteAllResponseDefault, SebsDeleteAllSeasonEntityBaseStatisticsResponse
-]:
-    if response.status_code == 200:
-        response_200 = SebsDeleteAllSeasonEntityBaseStatisticsResponse.from_dict(
-            response.json()
-        )
-
-        return response_200
-
+) -> SebsDeleteAllResponseDefault:
     response_default = SebsDeleteAllResponseDefault.from_dict(response.json())
 
     return response_default
@@ -86,9 +74,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[SebsDeleteAllResponseDefault, SebsDeleteAllSeasonEntityBaseStatisticsResponse]
-]:
+) -> Response[SebsDeleteAllResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -110,9 +96,7 @@ def sync_detailed(
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[SebsDeleteAllResponseDefault, SebsDeleteAllSeasonEntityBaseStatisticsResponse]
-]:
+) -> Response[SebsDeleteAllResponseDefault]:
     """Delete season team base statistics
 
      Delete a base statistic record for a team in a season.
@@ -135,7 +119,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SebsDeleteAllResponseDefault, SebsDeleteAllSeasonEntityBaseStatisticsResponse]]
+        Response[SebsDeleteAllResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -171,9 +155,7 @@ def sync(
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[SebsDeleteAllResponseDefault, SebsDeleteAllSeasonEntityBaseStatisticsResponse]
-]:
+) -> Optional[SebsDeleteAllResponseDefault]:
     """Delete season team base statistics
 
      Delete a base statistic record for a team in a season.
@@ -196,7 +178,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SebsDeleteAllResponseDefault, SebsDeleteAllSeasonEntityBaseStatisticsResponse]
+        SebsDeleteAllResponseDefault
     """
 
     return sync_detailed(
@@ -227,9 +209,7 @@ async def asyncio_detailed(
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[SebsDeleteAllResponseDefault, SebsDeleteAllSeasonEntityBaseStatisticsResponse]
-]:
+) -> Response[SebsDeleteAllResponseDefault]:
     """Delete season team base statistics
 
      Delete a base statistic record for a team in a season.
@@ -252,7 +232,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SebsDeleteAllResponseDefault, SebsDeleteAllSeasonEntityBaseStatisticsResponse]]
+        Response[SebsDeleteAllResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -286,9 +266,7 @@ async def asyncio(
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[SebsDeleteAllResponseDefault, SebsDeleteAllSeasonEntityBaseStatisticsResponse]
-]:
+) -> Optional[SebsDeleteAllResponseDefault]:
     """Delete season team base statistics
 
      Delete a base statistic record for a team in a season.
@@ -311,7 +289,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SebsDeleteAllResponseDefault, SebsDeleteAllSeasonEntityBaseStatisticsResponse]
+        SebsDeleteAllResponseDefault
     """
 
     return (

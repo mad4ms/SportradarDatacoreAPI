@@ -6,35 +6,16 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.season_list_by_organization_age_group import (
-    SeasonListByOrganizationAgeGroup,
-)
-from ...models.season_list_by_organization_discipline import (
-    SeasonListByOrganizationDiscipline,
-)
-from ...models.season_list_by_organization_event_type import (
-    SeasonListByOrganizationEventType,
-)
+from ...models.season_list_by_organization_age_group import SeasonListByOrganizationAgeGroup
+from ...models.season_list_by_organization_discipline import SeasonListByOrganizationDiscipline
+from ...models.season_list_by_organization_event_type import SeasonListByOrganizationEventType
 from ...models.season_list_by_organization_gender import SeasonListByOrganizationGender
-from ...models.season_list_by_organization_representation import (
-    SeasonListByOrganizationRepresentation,
-)
-from ...models.season_list_by_organization_response_default import (
-    SeasonListByOrganizationResponseDefault,
-)
-from ...models.season_list_by_organization_season_type import (
-    SeasonListByOrganizationSeasonType,
-)
-from ...models.season_list_by_organization_seasons_response import (
-    SeasonListByOrganizationSeasonsResponse,
-)
-from ...models.season_list_by_organization_standard import (
-    SeasonListByOrganizationStandard,
-)
+from ...models.season_list_by_organization_representation import SeasonListByOrganizationRepresentation
+from ...models.season_list_by_organization_response_default import SeasonListByOrganizationResponseDefault
+from ...models.season_list_by_organization_season_type import SeasonListByOrganizationSeasonType
+from ...models.season_list_by_organization_standard import SeasonListByOrganizationStandard
 from ...models.season_list_by_organization_status import SeasonListByOrganizationStatus
-from ...models.season_list_by_organization_video_production import (
-    SeasonListByOrganizationVideoProduction,
-)
+from ...models.season_list_by_organization_video_production import SeasonListByOrganizationVideoProduction
 from ...types import UNSET, Response, Unset
 
 
@@ -177,30 +158,15 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[
-    SeasonListByOrganizationResponseDefault, SeasonListByOrganizationSeasonsResponse
-]:
-    if response.status_code == 200:
-        response_200 = SeasonListByOrganizationSeasonsResponse.from_dict(
-            response.json()
-        )
-
-        return response_200
-
-    response_default = SeasonListByOrganizationResponseDefault.from_dict(
-        response.json()
-    )
+) -> SeasonListByOrganizationResponseDefault:
+    response_default = SeasonListByOrganizationResponseDefault.from_dict(response.json())
 
     return response_default
 
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[
-        SeasonListByOrganizationResponseDefault, SeasonListByOrganizationSeasonsResponse
-    ]
-]:
+) -> Response[SeasonListByOrganizationResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -236,11 +202,7 @@ def sync_detailed(
     status: Union[Unset, SeasonListByOrganizationStatus] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
     video_production: Union[Unset, SeasonListByOrganizationVideoProduction] = UNSET,
-) -> Response[
-    Union[
-        SeasonListByOrganizationResponseDefault, SeasonListByOrganizationSeasonsResponse
-    ]
-]:
+) -> Response[SeasonListByOrganizationResponseDefault]:
     """Get a list of seasons for an organization
 
      Return a list of seasons in an organization.
@@ -278,7 +240,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SeasonListByOrganizationResponseDefault, SeasonListByOrganizationSeasonsResponse]]
+        Response[SeasonListByOrganizationResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -342,11 +304,7 @@ def sync(
     status: Union[Unset, SeasonListByOrganizationStatus] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
     video_production: Union[Unset, SeasonListByOrganizationVideoProduction] = UNSET,
-) -> Optional[
-    Union[
-        SeasonListByOrganizationResponseDefault, SeasonListByOrganizationSeasonsResponse
-    ]
-]:
+) -> Optional[SeasonListByOrganizationResponseDefault]:
     """Get a list of seasons for an organization
 
      Return a list of seasons in an organization.
@@ -384,7 +342,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SeasonListByOrganizationResponseDefault, SeasonListByOrganizationSeasonsResponse]
+        SeasonListByOrganizationResponseDefault
     """
 
     return sync_detailed(
@@ -443,11 +401,7 @@ async def asyncio_detailed(
     status: Union[Unset, SeasonListByOrganizationStatus] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
     video_production: Union[Unset, SeasonListByOrganizationVideoProduction] = UNSET,
-) -> Response[
-    Union[
-        SeasonListByOrganizationResponseDefault, SeasonListByOrganizationSeasonsResponse
-    ]
-]:
+) -> Response[SeasonListByOrganizationResponseDefault]:
     """Get a list of seasons for an organization
 
      Return a list of seasons in an organization.
@@ -485,7 +439,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SeasonListByOrganizationResponseDefault, SeasonListByOrganizationSeasonsResponse]]
+        Response[SeasonListByOrganizationResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -547,11 +501,7 @@ async def asyncio(
     status: Union[Unset, SeasonListByOrganizationStatus] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
     video_production: Union[Unset, SeasonListByOrganizationVideoProduction] = UNSET,
-) -> Optional[
-    Union[
-        SeasonListByOrganizationResponseDefault, SeasonListByOrganizationSeasonsResponse
-    ]
-]:
+) -> Optional[SeasonListByOrganizationResponseDefault]:
     """Get a list of seasons for an organization
 
      Return a list of seasons in an organization.
@@ -589,7 +539,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SeasonListByOrganizationResponseDefault, SeasonListByOrganizationSeasonsResponse]
+        SeasonListByOrganizationResponseDefault
     """
 
     return (

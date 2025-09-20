@@ -20,9 +20,9 @@ class PersonModelAdditionalNamesType0:
 
     """
 
-    additional_properties: dict[
-        str, "PersonModelAdditionalNamesType0AdditionalProperty"
-    ] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, "PersonModelAdditionalNamesType0AdditionalProperty"] = _attrs_field(
+        init=False, factory=dict
+    )
 
     def to_dict(self) -> dict[str, Any]:
         field_dict: dict[str, Any] = {}
@@ -42,29 +42,21 @@ class PersonModelAdditionalNamesType0:
 
         additional_properties = {}
         for prop_name, prop_dict in d.items():
-            additional_property = (
-                PersonModelAdditionalNamesType0AdditionalProperty.from_dict(prop_dict)
-            )
+            additional_property = PersonModelAdditionalNamesType0AdditionalProperty.from_dict(prop_dict)
 
             additional_properties[prop_name] = additional_property
 
-        person_model_additional_names_type_0.additional_properties = (
-            additional_properties
-        )
+        person_model_additional_names_type_0.additional_properties = additional_properties
         return person_model_additional_names_type_0
 
     @property
     def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
-    def __getitem__(
-        self, key: str
-    ) -> "PersonModelAdditionalNamesType0AdditionalProperty":
+    def __getitem__(self, key: str) -> "PersonModelAdditionalNamesType0AdditionalProperty":
         return self.additional_properties[key]
 
-    def __setitem__(
-        self, key: str, value: "PersonModelAdditionalNamesType0AdditionalProperty"
-    ) -> None:
+    def __setitem__(self, key: str, value: "PersonModelAdditionalNamesType0AdditionalProperty") -> None:
         self.additional_properties[key] = value
 
     def __delitem__(self, key: str) -> None:

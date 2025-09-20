@@ -5,9 +5,6 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.fpsp_delete_all_fixture_person_statistics_periods_response import (
-    FpspDeleteAllFixturePersonStatisticsPeriodsResponse,
-)
 from ...models.fpsp_delete_all_period_id import FpspDeleteAllPeriodId
 from ...models.fpsp_delete_all_response_default import FpspDeleteAllResponseDefault
 from ...types import UNSET, Response, Unset
@@ -70,16 +67,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[
-    FpspDeleteAllFixturePersonStatisticsPeriodsResponse, FpspDeleteAllResponseDefault
-]:
-    if response.status_code == 200:
-        response_200 = FpspDeleteAllFixturePersonStatisticsPeriodsResponse.from_dict(
-            response.json()
-        )
-
-        return response_200
-
+) -> FpspDeleteAllResponseDefault:
     response_default = FpspDeleteAllResponseDefault.from_dict(response.json())
 
     return response_default
@@ -87,12 +75,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[
-        FpspDeleteAllFixturePersonStatisticsPeriodsResponse,
-        FpspDeleteAllResponseDefault,
-    ]
-]:
+) -> Response[FpspDeleteAllResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -115,12 +98,7 @@ def sync_detailed(
     period_id: Union[Unset, FpspDeleteAllPeriodId] = UNSET,
     person_id: Union[Unset, UUID] = UNSET,
     section: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        FpspDeleteAllFixturePersonStatisticsPeriodsResponse,
-        FpspDeleteAllResponseDefault,
-    ]
-]:
+) -> Response[FpspDeleteAllResponseDefault]:
     """Delete person period statistics
 
      Delete a period statistic record for a person in a match.
@@ -144,7 +122,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[FpspDeleteAllFixturePersonStatisticsPeriodsResponse, FpspDeleteAllResponseDefault]]
+        Response[FpspDeleteAllResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -182,12 +160,7 @@ def sync(
     period_id: Union[Unset, FpspDeleteAllPeriodId] = UNSET,
     person_id: Union[Unset, UUID] = UNSET,
     section: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        FpspDeleteAllFixturePersonStatisticsPeriodsResponse,
-        FpspDeleteAllResponseDefault,
-    ]
-]:
+) -> Optional[FpspDeleteAllResponseDefault]:
     """Delete person period statistics
 
      Delete a period statistic record for a person in a match.
@@ -211,7 +184,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[FpspDeleteAllFixturePersonStatisticsPeriodsResponse, FpspDeleteAllResponseDefault]
+        FpspDeleteAllResponseDefault
     """
 
     return sync_detailed(
@@ -244,12 +217,7 @@ async def asyncio_detailed(
     period_id: Union[Unset, FpspDeleteAllPeriodId] = UNSET,
     person_id: Union[Unset, UUID] = UNSET,
     section: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        FpspDeleteAllFixturePersonStatisticsPeriodsResponse,
-        FpspDeleteAllResponseDefault,
-    ]
-]:
+) -> Response[FpspDeleteAllResponseDefault]:
     """Delete person period statistics
 
      Delete a period statistic record for a person in a match.
@@ -273,7 +241,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[FpspDeleteAllFixturePersonStatisticsPeriodsResponse, FpspDeleteAllResponseDefault]]
+        Response[FpspDeleteAllResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -309,12 +277,7 @@ async def asyncio(
     period_id: Union[Unset, FpspDeleteAllPeriodId] = UNSET,
     person_id: Union[Unset, UUID] = UNSET,
     section: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        FpspDeleteAllFixturePersonStatisticsPeriodsResponse,
-        FpspDeleteAllResponseDefault,
-    ]
-]:
+) -> Optional[FpspDeleteAllResponseDefault]:
     """Delete person period statistics
 
      Delete a period statistic record for a person in a match.
@@ -338,7 +301,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[FpspDeleteAllFixturePersonStatisticsPeriodsResponse, FpspDeleteAllResponseDefault]
+        FpspDeleteAllResponseDefault
     """
 
     return (

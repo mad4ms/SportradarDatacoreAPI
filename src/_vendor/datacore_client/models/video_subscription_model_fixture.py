@@ -4,9 +4,7 @@ from typing import Any, TypeVar, Union
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-from ..models.video_subscription_model_fixture_resource_type import (
-    VideoSubscriptionModelFixtureResourceType,
-)
+from ..models.video_subscription_model_fixture_resource_type import VideoSubscriptionModelFixtureResourceType
 from ..types import UNSET, Unset
 
 T = TypeVar("T", bound="VideoSubscriptionModelFixture")

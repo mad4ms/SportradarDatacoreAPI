@@ -5,12 +5,7 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.fixture_roster_delete_all_fixture_roster_response import (
-    FixtureRosterDeleteAllFixtureRosterResponse,
-)
-from ...models.fixture_roster_delete_all_response_default import (
-    FixtureRosterDeleteAllResponseDefault,
-)
+from ...models.fixture_roster_delete_all_response_default import FixtureRosterDeleteAllResponseDefault
 from ...types import UNSET, Response, Unset
 
 
@@ -49,16 +44,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[
-    FixtureRosterDeleteAllFixtureRosterResponse, FixtureRosterDeleteAllResponseDefault
-]:
-    if response.status_code == 200:
-        response_200 = FixtureRosterDeleteAllFixtureRosterResponse.from_dict(
-            response.json()
-        )
-
-        return response_200
-
+) -> FixtureRosterDeleteAllResponseDefault:
     response_default = FixtureRosterDeleteAllResponseDefault.from_dict(response.json())
 
     return response_default
@@ -66,12 +52,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[
-        FixtureRosterDeleteAllFixtureRosterResponse,
-        FixtureRosterDeleteAllResponseDefault,
-    ]
-]:
+) -> Response[FixtureRosterDeleteAllResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -90,12 +71,7 @@ def sync_detailed(
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        FixtureRosterDeleteAllFixtureRosterResponse,
-        FixtureRosterDeleteAllResponseDefault,
-    ]
-]:
+) -> Response[FixtureRosterDeleteAllResponseDefault]:
     """Delete entire match roster
 
      Delete entire match roster
@@ -115,7 +91,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[FixtureRosterDeleteAllFixtureRosterResponse, FixtureRosterDeleteAllResponseDefault]]
+        Response[FixtureRosterDeleteAllResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -145,12 +121,7 @@ def sync(
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        FixtureRosterDeleteAllFixtureRosterResponse,
-        FixtureRosterDeleteAllResponseDefault,
-    ]
-]:
+) -> Optional[FixtureRosterDeleteAllResponseDefault]:
     """Delete entire match roster
 
      Delete entire match roster
@@ -170,7 +141,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[FixtureRosterDeleteAllFixtureRosterResponse, FixtureRosterDeleteAllResponseDefault]
+        FixtureRosterDeleteAllResponseDefault
     """
 
     return sync_detailed(
@@ -195,12 +166,7 @@ async def asyncio_detailed(
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        FixtureRosterDeleteAllFixtureRosterResponse,
-        FixtureRosterDeleteAllResponseDefault,
-    ]
-]:
+) -> Response[FixtureRosterDeleteAllResponseDefault]:
     """Delete entire match roster
 
      Delete entire match roster
@@ -220,7 +186,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[FixtureRosterDeleteAllFixtureRosterResponse, FixtureRosterDeleteAllResponseDefault]]
+        Response[FixtureRosterDeleteAllResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -248,12 +214,7 @@ async def asyncio(
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        FixtureRosterDeleteAllFixtureRosterResponse,
-        FixtureRosterDeleteAllResponseDefault,
-    ]
-]:
+) -> Optional[FixtureRosterDeleteAllResponseDefault]:
     """Delete entire match roster
 
      Delete entire match roster
@@ -273,7 +234,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[FixtureRosterDeleteAllFixtureRosterResponse, FixtureRosterDeleteAllResponseDefault]
+        FixtureRosterDeleteAllResponseDefault
     """
 
     return (

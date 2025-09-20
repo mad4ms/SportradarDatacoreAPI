@@ -5,11 +5,9 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
+from ...models.leader_summary_response import LeaderSummaryResponse
 from ...models.sl_list_summary_fixture_type import SlListSummaryFixtureType
 from ...models.sl_list_summary_home_away import SlListSummaryHomeAway
-from ...models.sl_list_summary_leader_summary_response import (
-    SlListSummaryLeaderSummaryResponse,
-)
 from ...models.sl_list_summary_response_default import SlListSummaryResponseDefault
 from ...models.sl_list_summary_win_loss import SlListSummaryWinLoss
 from ...types import UNSET, Response, Unset
@@ -98,9 +96,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[SlListSummaryLeaderSummaryResponse, SlListSummaryResponseDefault]:
+) -> Union[LeaderSummaryResponse, SlListSummaryResponseDefault]:
     if response.status_code == 200:
-        response_200 = SlListSummaryLeaderSummaryResponse.from_dict(response.json())
+        response_200 = LeaderSummaryResponse.from_dict(response.json())
 
         return response_200
 
@@ -111,7 +109,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[Union[SlListSummaryLeaderSummaryResponse, SlListSummaryResponseDefault]]:
+) -> Response[Union[LeaderSummaryResponse, SlListSummaryResponseDefault]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -140,7 +138,7 @@ def sync_detailed(
     starter: Union[Unset, bool] = UNSET,
     statistics: Union[Unset, str] = UNSET,
     win_loss: Union[Unset, SlListSummaryWinLoss] = UNSET,
-) -> Response[Union[SlListSummaryLeaderSummaryResponse, SlListSummaryResponseDefault]]:
+) -> Response[Union[LeaderSummaryResponse, SlListSummaryResponseDefault]]:
     """Season statistical leader summary
 
      Return a summary of the leading persons for a number of statistics in a season.
@@ -177,7 +175,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SlListSummaryLeaderSummaryResponse, SlListSummaryResponseDefault]]
+        Response[Union[LeaderSummaryResponse, SlListSummaryResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -227,7 +225,7 @@ def sync(
     starter: Union[Unset, bool] = UNSET,
     statistics: Union[Unset, str] = UNSET,
     win_loss: Union[Unset, SlListSummaryWinLoss] = UNSET,
-) -> Optional[Union[SlListSummaryLeaderSummaryResponse, SlListSummaryResponseDefault]]:
+) -> Optional[Union[LeaderSummaryResponse, SlListSummaryResponseDefault]]:
     """Season statistical leader summary
 
      Return a summary of the leading persons for a number of statistics in a season.
@@ -264,7 +262,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SlListSummaryLeaderSummaryResponse, SlListSummaryResponseDefault]
+        Union[LeaderSummaryResponse, SlListSummaryResponseDefault]
     """
 
     return sync_detailed(
@@ -309,7 +307,7 @@ async def asyncio_detailed(
     starter: Union[Unset, bool] = UNSET,
     statistics: Union[Unset, str] = UNSET,
     win_loss: Union[Unset, SlListSummaryWinLoss] = UNSET,
-) -> Response[Union[SlListSummaryLeaderSummaryResponse, SlListSummaryResponseDefault]]:
+) -> Response[Union[LeaderSummaryResponse, SlListSummaryResponseDefault]]:
     """Season statistical leader summary
 
      Return a summary of the leading persons for a number of statistics in a season.
@@ -346,7 +344,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SlListSummaryLeaderSummaryResponse, SlListSummaryResponseDefault]]
+        Response[Union[LeaderSummaryResponse, SlListSummaryResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -394,7 +392,7 @@ async def asyncio(
     starter: Union[Unset, bool] = UNSET,
     statistics: Union[Unset, str] = UNSET,
     win_loss: Union[Unset, SlListSummaryWinLoss] = UNSET,
-) -> Optional[Union[SlListSummaryLeaderSummaryResponse, SlListSummaryResponseDefault]]:
+) -> Optional[Union[LeaderSummaryResponse, SlListSummaryResponseDefault]]:
     """Season statistical leader summary
 
      Return a summary of the leading persons for a number of statistics in a season.
@@ -431,7 +429,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SlListSummaryLeaderSummaryResponse, SlListSummaryResponseDefault]
+        Union[LeaderSummaryResponse, SlListSummaryResponseDefault]
     """
 
     return (

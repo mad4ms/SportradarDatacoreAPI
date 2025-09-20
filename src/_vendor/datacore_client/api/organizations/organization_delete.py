@@ -4,12 +4,7 @@ from typing import Any, Optional, Union
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.organization_delete_organizations_response import (
-    OrganizationDeleteOrganizationsResponse,
-)
-from ...models.organization_delete_response_default import (
-    OrganizationDeleteResponseDefault,
-)
+from ...models.organization_delete_response_default import OrganizationDeleteResponseDefault
 from ...types import UNSET, Response, Unset
 
 
@@ -44,14 +39,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[OrganizationDeleteOrganizationsResponse, OrganizationDeleteResponseDefault]:
-    if response.status_code == 200:
-        response_200 = OrganizationDeleteOrganizationsResponse.from_dict(
-            response.json()
-        )
-
-        return response_200
-
+) -> OrganizationDeleteResponseDefault:
     response_default = OrganizationDeleteResponseDefault.from_dict(response.json())
 
     return response_default
@@ -59,9 +47,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[OrganizationDeleteOrganizationsResponse, OrganizationDeleteResponseDefault]
-]:
+) -> Response[OrganizationDeleteResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -78,9 +64,7 @@ def sync_detailed(
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[OrganizationDeleteOrganizationsResponse, OrganizationDeleteResponseDefault]
-]:
+) -> Response[OrganizationDeleteResponseDefault]:
     """Delete an organization
 
      Delete an organization
@@ -98,7 +82,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[OrganizationDeleteOrganizationsResponse, OrganizationDeleteResponseDefault]]
+        Response[OrganizationDeleteResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -124,9 +108,7 @@ def sync(
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[OrganizationDeleteOrganizationsResponse, OrganizationDeleteResponseDefault]
-]:
+) -> Optional[OrganizationDeleteResponseDefault]:
     """Delete an organization
 
      Delete an organization
@@ -144,7 +126,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[OrganizationDeleteOrganizationsResponse, OrganizationDeleteResponseDefault]
+        OrganizationDeleteResponseDefault
     """
 
     return sync_detailed(
@@ -165,9 +147,7 @@ async def asyncio_detailed(
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[OrganizationDeleteOrganizationsResponse, OrganizationDeleteResponseDefault]
-]:
+) -> Response[OrganizationDeleteResponseDefault]:
     """Delete an organization
 
      Delete an organization
@@ -185,7 +165,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[OrganizationDeleteOrganizationsResponse, OrganizationDeleteResponseDefault]]
+        Response[OrganizationDeleteResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -209,9 +189,7 @@ async def asyncio(
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[OrganizationDeleteOrganizationsResponse, OrganizationDeleteResponseDefault]
-]:
+) -> Optional[OrganizationDeleteResponseDefault]:
     """Delete an organization
 
      Delete an organization
@@ -229,7 +207,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[OrganizationDeleteOrganizationsResponse, OrganizationDeleteResponseDefault]
+        OrganizationDeleteResponseDefault
     """
 
     return (

@@ -5,9 +5,6 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.conference_detail_conferences_response import (
-    ConferenceDetailConferencesResponse,
-)
 from ...models.conference_detail_response_default import ConferenceDetailResponseDefault
 from ...types import UNSET, Response, Unset
 
@@ -50,12 +47,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[ConferenceDetailConferencesResponse, ConferenceDetailResponseDefault]:
-    if response.status_code == 200:
-        response_200 = ConferenceDetailConferencesResponse.from_dict(response.json())
-
-        return response_200
-
+) -> ConferenceDetailResponseDefault:
     response_default = ConferenceDetailResponseDefault.from_dict(response.json())
 
     return response_default
@@ -63,9 +55,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[ConferenceDetailConferencesResponse, ConferenceDetailResponseDefault]
-]:
+) -> Response[ConferenceDetailResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -85,9 +75,7 @@ def sync_detailed(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Response[
-    Union[ConferenceDetailConferencesResponse, ConferenceDetailResponseDefault]
-]:
+) -> Response[ConferenceDetailResponseDefault]:
     """Get a conference
 
      Return detailed information about a specific conference
@@ -108,7 +96,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[ConferenceDetailConferencesResponse, ConferenceDetailResponseDefault]]
+        Response[ConferenceDetailResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -140,9 +128,7 @@ def sync(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Optional[
-    Union[ConferenceDetailConferencesResponse, ConferenceDetailResponseDefault]
-]:
+) -> Optional[ConferenceDetailResponseDefault]:
     """Get a conference
 
      Return detailed information about a specific conference
@@ -163,7 +149,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[ConferenceDetailConferencesResponse, ConferenceDetailResponseDefault]
+        ConferenceDetailResponseDefault
     """
 
     return sync_detailed(
@@ -190,9 +176,7 @@ async def asyncio_detailed(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Response[
-    Union[ConferenceDetailConferencesResponse, ConferenceDetailResponseDefault]
-]:
+) -> Response[ConferenceDetailResponseDefault]:
     """Get a conference
 
      Return detailed information about a specific conference
@@ -213,7 +197,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[ConferenceDetailConferencesResponse, ConferenceDetailResponseDefault]]
+        Response[ConferenceDetailResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -243,9 +227,7 @@ async def asyncio(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Optional[
-    Union[ConferenceDetailConferencesResponse, ConferenceDetailResponseDefault]
-]:
+) -> Optional[ConferenceDetailResponseDefault]:
     """Get a conference
 
      Return detailed information about a specific conference
@@ -266,7 +248,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[ConferenceDetailConferencesResponse, ConferenceDetailResponseDefault]
+        ConferenceDetailResponseDefault
     """
 
     return (

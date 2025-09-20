@@ -4,9 +4,7 @@ from typing import Any, TypeVar, Union
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-from ..models.video_stream_inputs_model_competition_resource_type import (
-    VideoStreamInputsModelCompetitionResourceType,
-)
+from ..models.video_stream_inputs_model_competition_resource_type import VideoStreamInputsModelCompetitionResourceType
 from ..types import UNSET, Unset
 
 T = TypeVar("T", bound="VideoStreamInputsModelCompetition")
@@ -50,9 +48,7 @@ class VideoStreamInputsModelCompetition:
         if isinstance(_resource_type, Unset):
             resource_type = UNSET
         else:
-            resource_type = VideoStreamInputsModelCompetitionResourceType(
-                _resource_type
-            )
+            resource_type = VideoStreamInputsModelCompetitionResourceType(_resource_type)
 
         id = d.pop("id", UNSET)
 

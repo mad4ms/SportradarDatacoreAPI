@@ -5,15 +5,8 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.standing_adjustments_insert_response_default import (
-    StandingAdjustmentsInsertResponseDefault,
-)
-from ...models.standing_adjustments_insert_standing_adjustment_post_body import (
-    StandingAdjustmentsInsertStandingAdjustmentPostBody,
-)
-from ...models.standing_adjustments_insert_standing_adjustments_response import (
-    StandingAdjustmentsInsertStandingAdjustmentsResponse,
-)
+from ...models.standing_adjustment_post_body import StandingAdjustmentPostBody
+from ...models.standing_adjustments_insert_response_default import StandingAdjustmentsInsertResponseDefault
 from ...types import UNSET, Response, Unset
 
 
@@ -21,7 +14,7 @@ def _get_kwargs(
     organization_id: str,
     season_id: UUID,
     *,
-    body: StandingAdjustmentsInsertStandingAdjustmentPostBody,
+    body: StandingAdjustmentPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
@@ -57,32 +50,15 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[
-    StandingAdjustmentsInsertResponseDefault,
-    StandingAdjustmentsInsertStandingAdjustmentsResponse,
-]:
-    if response.status_code == 200:
-        response_200 = StandingAdjustmentsInsertStandingAdjustmentsResponse.from_dict(
-            response.json()
-        )
-
-        return response_200
-
-    response_default = StandingAdjustmentsInsertResponseDefault.from_dict(
-        response.json()
-    )
+) -> StandingAdjustmentsInsertResponseDefault:
+    response_default = StandingAdjustmentsInsertResponseDefault.from_dict(response.json())
 
     return response_default
 
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[
-        StandingAdjustmentsInsertResponseDefault,
-        StandingAdjustmentsInsertStandingAdjustmentsResponse,
-    ]
-]:
+) -> Response[StandingAdjustmentsInsertResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -96,17 +72,12 @@ def sync_detailed(
     season_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: StandingAdjustmentsInsertStandingAdjustmentPostBody,
+    body: StandingAdjustmentPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        StandingAdjustmentsInsertResponseDefault,
-        StandingAdjustmentsInsertStandingAdjustmentsResponse,
-    ]
-]:
+) -> Response[StandingAdjustmentsInsertResponseDefault]:
     """Create a new standing adjustment
 
      Insert a new standing adjustment
@@ -119,14 +90,14 @@ def sync_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (StandingAdjustmentsInsertStandingAdjustmentPostBody):
+        body (StandingAdjustmentPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[StandingAdjustmentsInsertResponseDefault, StandingAdjustmentsInsertStandingAdjustmentsResponse]]
+        Response[StandingAdjustmentsInsertResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -151,17 +122,12 @@ def sync(
     season_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: StandingAdjustmentsInsertStandingAdjustmentPostBody,
+    body: StandingAdjustmentPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        StandingAdjustmentsInsertResponseDefault,
-        StandingAdjustmentsInsertStandingAdjustmentsResponse,
-    ]
-]:
+) -> Optional[StandingAdjustmentsInsertResponseDefault]:
     """Create a new standing adjustment
 
      Insert a new standing adjustment
@@ -174,14 +140,14 @@ def sync(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (StandingAdjustmentsInsertStandingAdjustmentPostBody):
+        body (StandingAdjustmentPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[StandingAdjustmentsInsertResponseDefault, StandingAdjustmentsInsertStandingAdjustmentsResponse]
+        StandingAdjustmentsInsertResponseDefault
     """
 
     return sync_detailed(
@@ -201,17 +167,12 @@ async def asyncio_detailed(
     season_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: StandingAdjustmentsInsertStandingAdjustmentPostBody,
+    body: StandingAdjustmentPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        StandingAdjustmentsInsertResponseDefault,
-        StandingAdjustmentsInsertStandingAdjustmentsResponse,
-    ]
-]:
+) -> Response[StandingAdjustmentsInsertResponseDefault]:
     """Create a new standing adjustment
 
      Insert a new standing adjustment
@@ -224,14 +185,14 @@ async def asyncio_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (StandingAdjustmentsInsertStandingAdjustmentPostBody):
+        body (StandingAdjustmentPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[StandingAdjustmentsInsertResponseDefault, StandingAdjustmentsInsertStandingAdjustmentsResponse]]
+        Response[StandingAdjustmentsInsertResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -254,17 +215,12 @@ async def asyncio(
     season_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: StandingAdjustmentsInsertStandingAdjustmentPostBody,
+    body: StandingAdjustmentPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        StandingAdjustmentsInsertResponseDefault,
-        StandingAdjustmentsInsertStandingAdjustmentsResponse,
-    ]
-]:
+) -> Optional[StandingAdjustmentsInsertResponseDefault]:
     """Create a new standing adjustment
 
      Insert a new standing adjustment
@@ -277,14 +233,14 @@ async def asyncio(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (StandingAdjustmentsInsertStandingAdjustmentPostBody):
+        body (StandingAdjustmentPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[StandingAdjustmentsInsertResponseDefault, StandingAdjustmentsInsertStandingAdjustmentsResponse]
+        StandingAdjustmentsInsertResponseDefault
     """
 
     return (

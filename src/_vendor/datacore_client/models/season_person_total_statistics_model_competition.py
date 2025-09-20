@@ -21,9 +21,7 @@ class SeasonPersonTotalStatisticsModelCompetition:
         id (Union[Unset, str]): Unique identifier for this resource Example: 009e9276-5c80-11e8-9c2d-fa7ae01bbebc.
     """
 
-    resource_type: Union[
-        Unset, SeasonPersonTotalStatisticsModelCompetitionResourceType
-    ] = UNSET
+    resource_type: Union[Unset, SeasonPersonTotalStatisticsModelCompetitionResourceType] = UNSET
     id: Union[Unset, str] = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
@@ -48,15 +46,11 @@ class SeasonPersonTotalStatisticsModelCompetition:
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         d = dict(src_dict)
         _resource_type = d.pop("resourceType", UNSET)
-        resource_type: Union[
-            Unset, SeasonPersonTotalStatisticsModelCompetitionResourceType
-        ]
+        resource_type: Union[Unset, SeasonPersonTotalStatisticsModelCompetitionResourceType]
         if isinstance(_resource_type, Unset):
             resource_type = UNSET
         else:
-            resource_type = SeasonPersonTotalStatisticsModelCompetitionResourceType(
-                _resource_type
-            )
+            resource_type = SeasonPersonTotalStatisticsModelCompetitionResourceType(_resource_type)
 
         id = d.pop("id", UNSET)
 

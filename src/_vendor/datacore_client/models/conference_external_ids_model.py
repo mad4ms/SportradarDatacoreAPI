@@ -9,12 +9,8 @@ from dateutil.parser import isoparse
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.conference_external_ids_model_conference import (
-        ConferenceExternalIdsModelConference,
-    )
-    from ..models.conference_external_ids_model_organization import (
-        ConferenceExternalIdsModelOrganization,
-    )
+    from ..models.conference_external_ids_model_conference import ConferenceExternalIdsModelConference
+    from ..models.conference_external_ids_model_organization import ConferenceExternalIdsModelOrganization
 
 
 T = TypeVar("T", bound="ConferenceExternalIdsModel")
@@ -115,12 +111,8 @@ class ConferenceExternalIdsModel:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.conference_external_ids_model_conference import (
-            ConferenceExternalIdsModelConference,
-        )
-        from ..models.conference_external_ids_model_organization import (
-            ConferenceExternalIdsModelOrganization,
-        )
+        from ..models.conference_external_ids_model_conference import ConferenceExternalIdsModelConference
+        from ..models.conference_external_ids_model_organization import ConferenceExternalIdsModelOrganization
 
         d = dict(src_dict)
         _conference_external_id = d.pop("conferenceExternalId", UNSET)
@@ -137,9 +129,7 @@ class ConferenceExternalIdsModel:
         if isinstance(_organization, Unset):
             organization = UNSET
         else:
-            organization = ConferenceExternalIdsModelOrganization.from_dict(
-                _organization
-            )
+            organization = ConferenceExternalIdsModelOrganization.from_dict(_organization)
 
         def _parse_conference_id(data: object) -> Union[None, UUID, Unset]:
             if data is None:

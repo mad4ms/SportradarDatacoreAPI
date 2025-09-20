@@ -8,9 +8,7 @@ from dateutil.parser import isoparse
 
 from ..models.standing_model_fixture_type import StandingModelFixtureType
 from ..models.standing_model_grouping_base import StandingModelGroupingBase
-from ..models.standing_model_grouping_conference_division import (
-    StandingModelGroupingConferenceDivision,
-)
+from ..models.standing_model_grouping_conference_division import StandingModelGroupingConferenceDivision
 from ..models.standing_model_grouping_stage_pool import StandingModelGroupingStagePool
 from ..types import UNSET, Unset
 
@@ -25,9 +23,7 @@ if TYPE_CHECKING:
     from ..models.standing_model_round import StandingModelRound
     from ..models.standing_model_season import StandingModelSeason
     from ..models.standing_model_stage import StandingModelStage
-    from ..models.standing_model_standing_configuration import (
-        StandingModelStandingConfiguration,
-    )
+    from ..models.standing_model_standing_configuration import StandingModelStandingConfiguration
 
 
 T = TypeVar("T", bound="StandingModel")
@@ -117,9 +113,7 @@ class StandingModel:
     live: Union[Unset, bool] = UNSET
     locked: Union[Unset, bool] = UNSET
     grouping_base: Union[Unset, StandingModelGroupingBase] = UNSET
-    grouping_conference_division: Union[
-        Unset, StandingModelGroupingConferenceDivision
-    ] = UNSET
+    grouping_conference_division: Union[Unset, StandingModelGroupingConferenceDivision] = UNSET
     grouping_stage_pool: Union[Unset, StandingModelGroupingStagePool] = UNSET
     stage_code: Union[None, Unset, str] = UNSET
     stage: Union[Unset, "StandingModelStage"] = UNSET
@@ -385,9 +379,7 @@ class StandingModel:
         from ..models.standing_model_round import StandingModelRound
         from ..models.standing_model_season import StandingModelSeason
         from ..models.standing_model_stage import StandingModelStage
-        from ..models.standing_model_standing_configuration import (
-            StandingModelStandingConfiguration,
-        )
+        from ..models.standing_model_standing_configuration import StandingModelStandingConfiguration
 
         d = dict(src_dict)
         _standing_id = d.pop("standingId", UNSET)
@@ -498,15 +490,11 @@ class StandingModel:
             grouping_base = StandingModelGroupingBase(_grouping_base)
 
         _grouping_conference_division = d.pop("groupingConferenceDivision", UNSET)
-        grouping_conference_division: Union[
-            Unset, StandingModelGroupingConferenceDivision
-        ]
+        grouping_conference_division: Union[Unset, StandingModelGroupingConferenceDivision]
         if isinstance(_grouping_conference_division, Unset):
             grouping_conference_division = UNSET
         else:
-            grouping_conference_division = StandingModelGroupingConferenceDivision(
-                _grouping_conference_division
-            )
+            grouping_conference_division = StandingModelGroupingConferenceDivision(_grouping_conference_division)
 
         _grouping_stage_pool = d.pop("groupingStagePool", UNSET)
         grouping_stage_pool: Union[Unset, StandingModelGroupingStagePool]
@@ -587,18 +575,14 @@ class StandingModel:
                 pass
             return cast(Union[None, UUID, Unset], data)
 
-        standing_configuration_id = _parse_standing_configuration_id(
-            d.pop("standingConfigurationId", UNSET)
-        )
+        standing_configuration_id = _parse_standing_configuration_id(d.pop("standingConfigurationId", UNSET))
 
         _standing_configuration = d.pop("standingConfiguration", UNSET)
         standing_configuration: Union[Unset, StandingModelStandingConfiguration]
         if isinstance(_standing_configuration, Unset):
             standing_configuration = UNSET
         else:
-            standing_configuration = StandingModelStandingConfiguration.from_dict(
-                _standing_configuration
-            )
+            standing_configuration = StandingModelStandingConfiguration.from_dict(_standing_configuration)
 
         _fixture_type = d.pop("fixtureType", UNSET)
         fixture_type: Union[Unset, StandingModelFixtureType]

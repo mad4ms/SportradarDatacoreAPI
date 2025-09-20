@@ -101,9 +101,7 @@ class MatchTeamsModel:
     shoot_out_attempts: Union[None, Unset, str] = UNSET
     is_neutral_venue: Union[Unset, bool] = UNSET
     include_in_representation: Union[Unset, bool] = True
-    roster_status: Union[Unset, MatchTeamsModelRosterStatus] = (
-        MatchTeamsModelRosterStatus.UNKNOWN
-    )
+    roster_status: Union[Unset, MatchTeamsModelRosterStatus] = MatchTeamsModelRosterStatus.UNKNOWN
     uniform_id: Union[None, UUID, Unset] = UNSET
     uniform: Union[Unset, "MatchTeamsModelUniform"] = UNSET
     external_id: Union[None, Unset, str] = UNSET
@@ -261,9 +259,7 @@ class MatchTeamsModel:
         if division is not UNSET:
             field_dict["division"] = division
         if include_in_conference_statistics is not UNSET:
-            field_dict["includeInConferenceStatistics"] = (
-                include_in_conference_statistics
-            )
+            field_dict["includeInConferenceStatistics"] = include_in_conference_statistics
         if is_home is not UNSET:
             field_dict["isHome"] = is_home
         if draw is not UNSET:
@@ -418,18 +414,14 @@ class MatchTeamsModel:
 
         result_place = _parse_result_place(d.pop("resultPlace", UNSET))
 
-        def _parse_result_secondary_score_place(
-            data: object,
-        ) -> Union[None, Unset, int]:
+        def _parse_result_secondary_score_place(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
             return cast(Union[None, Unset, int], data)
 
-        result_secondary_score_place = _parse_result_secondary_score_place(
-            d.pop("resultSecondaryScorePlace", UNSET)
-        )
+        result_secondary_score_place = _parse_result_secondary_score_place(d.pop("resultSecondaryScorePlace", UNSET))
 
         def _parse_starting_number(data: object) -> Union[None, Unset, int]:
             if data is None:

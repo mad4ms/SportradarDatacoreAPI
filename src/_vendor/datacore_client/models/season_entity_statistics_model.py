@@ -4,27 +4,15 @@ from uuid import UUID
 
 from attrs import define as _attrs_define
 
-from ..models.season_entity_statistics_model_period_id import (
-    SeasonEntityStatisticsModelPeriodId,
-)
+from ..models.season_entity_statistics_model_period_id import SeasonEntityStatisticsModelPeriodId
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.season_entity_statistics_model_competition import (
-        SeasonEntityStatisticsModelCompetition,
-    )
-    from ..models.season_entity_statistics_model_entity import (
-        SeasonEntityStatisticsModelEntity,
-    )
-    from ..models.season_entity_statistics_model_organization import (
-        SeasonEntityStatisticsModelOrganization,
-    )
-    from ..models.season_entity_statistics_model_season import (
-        SeasonEntityStatisticsModelSeason,
-    )
-    from ..models.season_entity_statistics_model_statistics import (
-        SeasonEntityStatisticsModelStatistics,
-    )
+    from ..models.season_entity_statistics_model_competition import SeasonEntityStatisticsModelCompetition
+    from ..models.season_entity_statistics_model_entity import SeasonEntityStatisticsModelEntity
+    from ..models.season_entity_statistics_model_organization import SeasonEntityStatisticsModelOrganization
+    from ..models.season_entity_statistics_model_season import SeasonEntityStatisticsModelSeason
+    from ..models.season_entity_statistics_model_statistics import SeasonEntityStatisticsModelStatistics
 
 
 T = TypeVar("T", bound="SeasonEntityStatisticsModel")
@@ -134,21 +122,11 @@ class SeasonEntityStatisticsModel:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.season_entity_statistics_model_competition import (
-            SeasonEntityStatisticsModelCompetition,
-        )
-        from ..models.season_entity_statistics_model_entity import (
-            SeasonEntityStatisticsModelEntity,
-        )
-        from ..models.season_entity_statistics_model_organization import (
-            SeasonEntityStatisticsModelOrganization,
-        )
-        from ..models.season_entity_statistics_model_season import (
-            SeasonEntityStatisticsModelSeason,
-        )
-        from ..models.season_entity_statistics_model_statistics import (
-            SeasonEntityStatisticsModelStatistics,
-        )
+        from ..models.season_entity_statistics_model_competition import SeasonEntityStatisticsModelCompetition
+        from ..models.season_entity_statistics_model_entity import SeasonEntityStatisticsModelEntity
+        from ..models.season_entity_statistics_model_organization import SeasonEntityStatisticsModelOrganization
+        from ..models.season_entity_statistics_model_season import SeasonEntityStatisticsModelSeason
+        from ..models.season_entity_statistics_model_statistics import SeasonEntityStatisticsModelStatistics
 
         d = dict(src_dict)
         _entity_id = d.pop("entityId", UNSET)
@@ -172,9 +150,7 @@ class SeasonEntityStatisticsModel:
         if isinstance(_organization, Unset):
             organization = UNSET
         else:
-            organization = SeasonEntityStatisticsModelOrganization.from_dict(
-                _organization
-            )
+            organization = SeasonEntityStatisticsModelOrganization.from_dict(_organization)
 
         _season_id = d.pop("seasonId", UNSET)
         season_id: Union[Unset, UUID]

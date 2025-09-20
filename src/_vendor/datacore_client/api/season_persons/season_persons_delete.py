@@ -5,9 +5,7 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.season_persons_delete_response_default import (
-    SeasonPersonsDeleteResponseDefault,
-)
+from ...models.season_persons_delete_response_default import SeasonPersonsDeleteResponseDefault
 from ...types import UNSET, Response, Unset
 
 

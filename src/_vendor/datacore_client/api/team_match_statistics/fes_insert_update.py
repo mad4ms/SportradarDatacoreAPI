@@ -4,20 +4,15 @@ from typing import Any, Optional, Union
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.fes_insert_update_fixture_entity_statistics_response import (
-    FesInsertUpdateFixtureEntityStatisticsResponse,
-)
-from ...models.fes_insert_update_match_team_statistics_post_body import (
-    FesInsertUpdateMatchTeamStatisticsPostBody,
-)
 from ...models.fes_insert_update_response_default import FesInsertUpdateResponseDefault
+from ...models.match_team_statistics_post_body import MatchTeamStatisticsPostBody
 from ...types import UNSET, Response, Unset
 
 
 def _get_kwargs(
     organization_id: str,
     *,
-    body: FesInsertUpdateMatchTeamStatisticsPostBody,
+    body: MatchTeamStatisticsPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
@@ -53,16 +48,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[
-    FesInsertUpdateFixtureEntityStatisticsResponse, FesInsertUpdateResponseDefault
-]:
-    if response.status_code == 200:
-        response_200 = FesInsertUpdateFixtureEntityStatisticsResponse.from_dict(
-            response.json()
-        )
-
-        return response_200
-
+) -> FesInsertUpdateResponseDefault:
     response_default = FesInsertUpdateResponseDefault.from_dict(response.json())
 
     return response_default
@@ -70,11 +56,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[
-        FesInsertUpdateFixtureEntityStatisticsResponse, FesInsertUpdateResponseDefault
-    ]
-]:
+) -> Response[FesInsertUpdateResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -87,16 +69,12 @@ def sync_detailed(
     organization_id: str,
     *,
     client: AuthenticatedClient,
-    body: FesInsertUpdateMatchTeamStatisticsPostBody,
+    body: MatchTeamStatisticsPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        FesInsertUpdateFixtureEntityStatisticsResponse, FesInsertUpdateResponseDefault
-    ]
-]:
+) -> Response[FesInsertUpdateResponseDefault]:
     """Create/Update team total statistics
 
      Depending on the data, Add or update a statistic record for ~ENTITYPREIX~ team in the match.
@@ -108,14 +86,14 @@ def sync_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (FesInsertUpdateMatchTeamStatisticsPostBody):
+        body (MatchTeamStatisticsPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[FesInsertUpdateFixtureEntityStatisticsResponse, FesInsertUpdateResponseDefault]]
+        Response[FesInsertUpdateResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -138,16 +116,12 @@ def sync(
     organization_id: str,
     *,
     client: AuthenticatedClient,
-    body: FesInsertUpdateMatchTeamStatisticsPostBody,
+    body: MatchTeamStatisticsPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        FesInsertUpdateFixtureEntityStatisticsResponse, FesInsertUpdateResponseDefault
-    ]
-]:
+) -> Optional[FesInsertUpdateResponseDefault]:
     """Create/Update team total statistics
 
      Depending on the data, Add or update a statistic record for ~ENTITYPREIX~ team in the match.
@@ -159,14 +133,14 @@ def sync(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (FesInsertUpdateMatchTeamStatisticsPostBody):
+        body (MatchTeamStatisticsPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[FesInsertUpdateFixtureEntityStatisticsResponse, FesInsertUpdateResponseDefault]
+        FesInsertUpdateResponseDefault
     """
 
     return sync_detailed(
@@ -184,16 +158,12 @@ async def asyncio_detailed(
     organization_id: str,
     *,
     client: AuthenticatedClient,
-    body: FesInsertUpdateMatchTeamStatisticsPostBody,
+    body: MatchTeamStatisticsPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        FesInsertUpdateFixtureEntityStatisticsResponse, FesInsertUpdateResponseDefault
-    ]
-]:
+) -> Response[FesInsertUpdateResponseDefault]:
     """Create/Update team total statistics
 
      Depending on the data, Add or update a statistic record for ~ENTITYPREIX~ team in the match.
@@ -205,14 +175,14 @@ async def asyncio_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (FesInsertUpdateMatchTeamStatisticsPostBody):
+        body (MatchTeamStatisticsPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[FesInsertUpdateFixtureEntityStatisticsResponse, FesInsertUpdateResponseDefault]]
+        Response[FesInsertUpdateResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -233,16 +203,12 @@ async def asyncio(
     organization_id: str,
     *,
     client: AuthenticatedClient,
-    body: FesInsertUpdateMatchTeamStatisticsPostBody,
+    body: MatchTeamStatisticsPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        FesInsertUpdateFixtureEntityStatisticsResponse, FesInsertUpdateResponseDefault
-    ]
-]:
+) -> Optional[FesInsertUpdateResponseDefault]:
     """Create/Update team total statistics
 
      Depending on the data, Add or update a statistic record for ~ENTITYPREIX~ team in the match.
@@ -254,14 +220,14 @@ async def asyncio(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (FesInsertUpdateMatchTeamStatisticsPostBody):
+        body (MatchTeamStatisticsPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[FesInsertUpdateFixtureEntityStatisticsResponse, FesInsertUpdateResponseDefault]
+        FesInsertUpdateResponseDefault
     """
 
     return (

@@ -5,12 +5,8 @@ from typing import Any, Optional, Union
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.conference_external_ids_list_conference_external_ids_response import (
-    ConferenceExternalIdsListConferenceExternalIdsResponse,
-)
-from ...models.conference_external_ids_list_response_default import (
-    ConferenceExternalIdsListResponseDefault,
-)
+from ...models.conference_external_ids_list_response_default import ConferenceExternalIdsListResponseDefault
+from ...models.conference_external_ids_response import ConferenceExternalIdsResponse
 from ...types import UNSET, Response, Unset
 
 
@@ -75,32 +71,20 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[
-    ConferenceExternalIdsListConferenceExternalIdsResponse,
-    ConferenceExternalIdsListResponseDefault,
-]:
+) -> Union[ConferenceExternalIdsListResponseDefault, ConferenceExternalIdsResponse]:
     if response.status_code == 200:
-        response_200 = ConferenceExternalIdsListConferenceExternalIdsResponse.from_dict(
-            response.json()
-        )
+        response_200 = ConferenceExternalIdsResponse.from_dict(response.json())
 
         return response_200
 
-    response_default = ConferenceExternalIdsListResponseDefault.from_dict(
-        response.json()
-    )
+    response_default = ConferenceExternalIdsListResponseDefault.from_dict(response.json())
 
     return response_default
 
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[
-        ConferenceExternalIdsListConferenceExternalIdsResponse,
-        ConferenceExternalIdsListResponseDefault,
-    ]
-]:
+) -> Response[Union[ConferenceExternalIdsListResponseDefault, ConferenceExternalIdsResponse]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -125,12 +109,7 @@ def sync_detailed(
     source_external_id: Union[Unset, str] = UNSET,
     source_type: Union[Unset, str] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[
-    Union[
-        ConferenceExternalIdsListConferenceExternalIdsResponse,
-        ConferenceExternalIdsListResponseDefault,
-    ]
-]:
+) -> Response[Union[ConferenceExternalIdsListResponseDefault, ConferenceExternalIdsResponse]]:
     """Get a list of a conference external ids
 
      A list of conference external ids
@@ -156,7 +135,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[ConferenceExternalIdsListConferenceExternalIdsResponse, ConferenceExternalIdsListResponseDefault]]
+        Response[Union[ConferenceExternalIdsListResponseDefault, ConferenceExternalIdsResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -198,12 +177,7 @@ def sync(
     source_external_id: Union[Unset, str] = UNSET,
     source_type: Union[Unset, str] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[
-    Union[
-        ConferenceExternalIdsListConferenceExternalIdsResponse,
-        ConferenceExternalIdsListResponseDefault,
-    ]
-]:
+) -> Optional[Union[ConferenceExternalIdsListResponseDefault, ConferenceExternalIdsResponse]]:
     """Get a list of a conference external ids
 
      A list of conference external ids
@@ -229,7 +203,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[ConferenceExternalIdsListConferenceExternalIdsResponse, ConferenceExternalIdsListResponseDefault]
+        Union[ConferenceExternalIdsListResponseDefault, ConferenceExternalIdsResponse]
     """
 
     return sync_detailed(
@@ -266,12 +240,7 @@ async def asyncio_detailed(
     source_external_id: Union[Unset, str] = UNSET,
     source_type: Union[Unset, str] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[
-    Union[
-        ConferenceExternalIdsListConferenceExternalIdsResponse,
-        ConferenceExternalIdsListResponseDefault,
-    ]
-]:
+) -> Response[Union[ConferenceExternalIdsListResponseDefault, ConferenceExternalIdsResponse]]:
     """Get a list of a conference external ids
 
      A list of conference external ids
@@ -297,7 +266,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[ConferenceExternalIdsListConferenceExternalIdsResponse, ConferenceExternalIdsListResponseDefault]]
+        Response[Union[ConferenceExternalIdsListResponseDefault, ConferenceExternalIdsResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -337,12 +306,7 @@ async def asyncio(
     source_external_id: Union[Unset, str] = UNSET,
     source_type: Union[Unset, str] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[
-    Union[
-        ConferenceExternalIdsListConferenceExternalIdsResponse,
-        ConferenceExternalIdsListResponseDefault,
-    ]
-]:
+) -> Optional[Union[ConferenceExternalIdsListResponseDefault, ConferenceExternalIdsResponse]]:
     """Get a list of a conference external ids
 
      A list of conference external ids
@@ -368,7 +332,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[ConferenceExternalIdsListConferenceExternalIdsResponse, ConferenceExternalIdsListResponseDefault]
+        Union[ConferenceExternalIdsListResponseDefault, ConferenceExternalIdsResponse]
     """
 
     return (

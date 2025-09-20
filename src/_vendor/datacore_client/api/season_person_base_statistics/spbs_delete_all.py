@@ -8,9 +8,6 @@ from ...client import AuthenticatedClient, Client
 from ...models.spbs_delete_all_competitor_type import SpbsDeleteAllCompetitorType
 from ...models.spbs_delete_all_fixture_type import SpbsDeleteAllFixtureType
 from ...models.spbs_delete_all_response_default import SpbsDeleteAllResponseDefault
-from ...models.spbs_delete_all_season_person_base_statistics_response import (
-    SpbsDeleteAllSeasonPersonBaseStatisticsResponse,
-)
 from ...types import UNSET, Response, Unset
 
 
@@ -75,16 +72,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[
-    SpbsDeleteAllResponseDefault, SpbsDeleteAllSeasonPersonBaseStatisticsResponse
-]:
-    if response.status_code == 200:
-        response_200 = SpbsDeleteAllSeasonPersonBaseStatisticsResponse.from_dict(
-            response.json()
-        )
-
-        return response_200
-
+) -> SpbsDeleteAllResponseDefault:
     response_default = SpbsDeleteAllResponseDefault.from_dict(response.json())
 
     return response_default
@@ -92,9 +80,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[SpbsDeleteAllResponseDefault, SpbsDeleteAllSeasonPersonBaseStatisticsResponse]
-]:
+) -> Response[SpbsDeleteAllResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -117,9 +103,7 @@ def sync_detailed(
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
     person_id: Union[Unset, UUID] = UNSET,
-) -> Response[
-    Union[SpbsDeleteAllResponseDefault, SpbsDeleteAllSeasonPersonBaseStatisticsResponse]
-]:
+) -> Response[SpbsDeleteAllResponseDefault]:
     """Delete season person base statistics
 
      Delete a base statistic record for a person in a season.
@@ -143,7 +127,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SpbsDeleteAllResponseDefault, SpbsDeleteAllSeasonPersonBaseStatisticsResponse]]
+        Response[SpbsDeleteAllResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -181,9 +165,7 @@ def sync(
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
     person_id: Union[Unset, UUID] = UNSET,
-) -> Optional[
-    Union[SpbsDeleteAllResponseDefault, SpbsDeleteAllSeasonPersonBaseStatisticsResponse]
-]:
+) -> Optional[SpbsDeleteAllResponseDefault]:
     """Delete season person base statistics
 
      Delete a base statistic record for a person in a season.
@@ -207,7 +189,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SpbsDeleteAllResponseDefault, SpbsDeleteAllSeasonPersonBaseStatisticsResponse]
+        SpbsDeleteAllResponseDefault
     """
 
     return sync_detailed(
@@ -240,9 +222,7 @@ async def asyncio_detailed(
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
     person_id: Union[Unset, UUID] = UNSET,
-) -> Response[
-    Union[SpbsDeleteAllResponseDefault, SpbsDeleteAllSeasonPersonBaseStatisticsResponse]
-]:
+) -> Response[SpbsDeleteAllResponseDefault]:
     """Delete season person base statistics
 
      Delete a base statistic record for a person in a season.
@@ -266,7 +246,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SpbsDeleteAllResponseDefault, SpbsDeleteAllSeasonPersonBaseStatisticsResponse]]
+        Response[SpbsDeleteAllResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -302,9 +282,7 @@ async def asyncio(
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
     person_id: Union[Unset, UUID] = UNSET,
-) -> Optional[
-    Union[SpbsDeleteAllResponseDefault, SpbsDeleteAllSeasonPersonBaseStatisticsResponse]
-]:
+) -> Optional[SpbsDeleteAllResponseDefault]:
     """Delete season person base statistics
 
      Delete a base statistic record for a person in a season.
@@ -328,7 +306,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SpbsDeleteAllResponseDefault, SpbsDeleteAllSeasonPersonBaseStatisticsResponse]
+        SpbsDeleteAllResponseDefault
     """
 
     return (

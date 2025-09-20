@@ -5,15 +5,8 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.video_subscriptions_update_response_default import (
-    VideoSubscriptionsUpdateResponseDefault,
-)
-from ...models.video_subscriptions_update_video_subscription_put_body import (
-    VideoSubscriptionsUpdateVideoSubscriptionPutBody,
-)
-from ...models.video_subscriptions_update_video_subscriptions_response import (
-    VideoSubscriptionsUpdateVideoSubscriptionsResponse,
-)
+from ...models.video_subscription_put_body import VideoSubscriptionPutBody
+from ...models.video_subscriptions_update_response_default import VideoSubscriptionsUpdateResponseDefault
 from ...types import UNSET, Response, Unset
 
 
@@ -21,7 +14,7 @@ def _get_kwargs(
     organization_id: str,
     subscription_id: UUID,
     *,
-    body: VideoSubscriptionsUpdateVideoSubscriptionPutBody,
+    body: VideoSubscriptionPutBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     force_delete: Union[Unset, bool] = UNSET,
@@ -60,32 +53,15 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[
-    VideoSubscriptionsUpdateResponseDefault,
-    VideoSubscriptionsUpdateVideoSubscriptionsResponse,
-]:
-    if response.status_code == 200:
-        response_200 = VideoSubscriptionsUpdateVideoSubscriptionsResponse.from_dict(
-            response.json()
-        )
-
-        return response_200
-
-    response_default = VideoSubscriptionsUpdateResponseDefault.from_dict(
-        response.json()
-    )
+) -> VideoSubscriptionsUpdateResponseDefault:
+    response_default = VideoSubscriptionsUpdateResponseDefault.from_dict(response.json())
 
     return response_default
 
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[
-        VideoSubscriptionsUpdateResponseDefault,
-        VideoSubscriptionsUpdateVideoSubscriptionsResponse,
-    ]
-]:
+) -> Response[VideoSubscriptionsUpdateResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -99,18 +75,13 @@ def sync_detailed(
     subscription_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: VideoSubscriptionsUpdateVideoSubscriptionPutBody,
+    body: VideoSubscriptionPutBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        VideoSubscriptionsUpdateResponseDefault,
-        VideoSubscriptionsUpdateVideoSubscriptionsResponse,
-    ]
-]:
+) -> Response[VideoSubscriptionsUpdateResponseDefault]:
     """Update a video subscription
 
      Change the information of an existing video subscription
@@ -124,14 +95,14 @@ def sync_detailed(
         force_delete (Union[Unset, bool]):  Example: True.
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (VideoSubscriptionsUpdateVideoSubscriptionPutBody):
+        body (VideoSubscriptionPutBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[VideoSubscriptionsUpdateResponseDefault, VideoSubscriptionsUpdateVideoSubscriptionsResponse]]
+        Response[VideoSubscriptionsUpdateResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -157,18 +128,13 @@ def sync(
     subscription_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: VideoSubscriptionsUpdateVideoSubscriptionPutBody,
+    body: VideoSubscriptionPutBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        VideoSubscriptionsUpdateResponseDefault,
-        VideoSubscriptionsUpdateVideoSubscriptionsResponse,
-    ]
-]:
+) -> Optional[VideoSubscriptionsUpdateResponseDefault]:
     """Update a video subscription
 
      Change the information of an existing video subscription
@@ -182,14 +148,14 @@ def sync(
         force_delete (Union[Unset, bool]):  Example: True.
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (VideoSubscriptionsUpdateVideoSubscriptionPutBody):
+        body (VideoSubscriptionPutBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[VideoSubscriptionsUpdateResponseDefault, VideoSubscriptionsUpdateVideoSubscriptionsResponse]
+        VideoSubscriptionsUpdateResponseDefault
     """
 
     return sync_detailed(
@@ -210,18 +176,13 @@ async def asyncio_detailed(
     subscription_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: VideoSubscriptionsUpdateVideoSubscriptionPutBody,
+    body: VideoSubscriptionPutBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        VideoSubscriptionsUpdateResponseDefault,
-        VideoSubscriptionsUpdateVideoSubscriptionsResponse,
-    ]
-]:
+) -> Response[VideoSubscriptionsUpdateResponseDefault]:
     """Update a video subscription
 
      Change the information of an existing video subscription
@@ -235,14 +196,14 @@ async def asyncio_detailed(
         force_delete (Union[Unset, bool]):  Example: True.
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (VideoSubscriptionsUpdateVideoSubscriptionPutBody):
+        body (VideoSubscriptionPutBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[VideoSubscriptionsUpdateResponseDefault, VideoSubscriptionsUpdateVideoSubscriptionsResponse]]
+        Response[VideoSubscriptionsUpdateResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -266,18 +227,13 @@ async def asyncio(
     subscription_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: VideoSubscriptionsUpdateVideoSubscriptionPutBody,
+    body: VideoSubscriptionPutBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        VideoSubscriptionsUpdateResponseDefault,
-        VideoSubscriptionsUpdateVideoSubscriptionsResponse,
-    ]
-]:
+) -> Optional[VideoSubscriptionsUpdateResponseDefault]:
     """Update a video subscription
 
      Change the information of an existing video subscription
@@ -291,14 +247,14 @@ async def asyncio(
         force_delete (Union[Unset, bool]):  Example: True.
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (VideoSubscriptionsUpdateVideoSubscriptionPutBody):
+        body (VideoSubscriptionPutBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[VideoSubscriptionsUpdateResponseDefault, VideoSubscriptionsUpdateVideoSubscriptionsResponse]
+        VideoSubscriptionsUpdateResponseDefault
     """
 
     return (

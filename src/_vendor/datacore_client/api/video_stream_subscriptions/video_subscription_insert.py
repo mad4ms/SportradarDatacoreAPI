@@ -4,22 +4,15 @@ from typing import Any, Optional, Union
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.video_subscription_insert_response_default import (
-    VideoSubscriptionInsertResponseDefault,
-)
-from ...models.video_subscription_insert_video_subscription_post_body import (
-    VideoSubscriptionInsertVideoSubscriptionPostBody,
-)
-from ...models.video_subscription_insert_video_subscriptions_response import (
-    VideoSubscriptionInsertVideoSubscriptionsResponse,
-)
+from ...models.video_subscription_insert_response_default import VideoSubscriptionInsertResponseDefault
+from ...models.video_subscription_post_body import VideoSubscriptionPostBody
 from ...types import UNSET, Response, Unset
 
 
 def _get_kwargs(
     organization_id: str,
     *,
-    body: VideoSubscriptionInsertVideoSubscriptionPostBody,
+    body: VideoSubscriptionPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
@@ -55,17 +48,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[
-    VideoSubscriptionInsertResponseDefault,
-    VideoSubscriptionInsertVideoSubscriptionsResponse,
-]:
-    if response.status_code == 200:
-        response_200 = VideoSubscriptionInsertVideoSubscriptionsResponse.from_dict(
-            response.json()
-        )
-
-        return response_200
-
+) -> VideoSubscriptionInsertResponseDefault:
     response_default = VideoSubscriptionInsertResponseDefault.from_dict(response.json())
 
     return response_default
@@ -73,12 +56,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[
-        VideoSubscriptionInsertResponseDefault,
-        VideoSubscriptionInsertVideoSubscriptionsResponse,
-    ]
-]:
+) -> Response[VideoSubscriptionInsertResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -91,17 +69,12 @@ def sync_detailed(
     organization_id: str,
     *,
     client: AuthenticatedClient,
-    body: VideoSubscriptionInsertVideoSubscriptionPostBody,
+    body: VideoSubscriptionPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        VideoSubscriptionInsertResponseDefault,
-        VideoSubscriptionInsertVideoSubscriptionsResponse,
-    ]
-]:
+) -> Response[VideoSubscriptionInsertResponseDefault]:
     """Subscribe to a video stream
 
      Subscribe to an upcoming video stream. Any subscription must be in place a minimum of 1 hour before
@@ -114,14 +87,14 @@ def sync_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (VideoSubscriptionInsertVideoSubscriptionPostBody):
+        body (VideoSubscriptionPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[VideoSubscriptionInsertResponseDefault, VideoSubscriptionInsertVideoSubscriptionsResponse]]
+        Response[VideoSubscriptionInsertResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -144,17 +117,12 @@ def sync(
     organization_id: str,
     *,
     client: AuthenticatedClient,
-    body: VideoSubscriptionInsertVideoSubscriptionPostBody,
+    body: VideoSubscriptionPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        VideoSubscriptionInsertResponseDefault,
-        VideoSubscriptionInsertVideoSubscriptionsResponse,
-    ]
-]:
+) -> Optional[VideoSubscriptionInsertResponseDefault]:
     """Subscribe to a video stream
 
      Subscribe to an upcoming video stream. Any subscription must be in place a minimum of 1 hour before
@@ -167,14 +135,14 @@ def sync(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (VideoSubscriptionInsertVideoSubscriptionPostBody):
+        body (VideoSubscriptionPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[VideoSubscriptionInsertResponseDefault, VideoSubscriptionInsertVideoSubscriptionsResponse]
+        VideoSubscriptionInsertResponseDefault
     """
 
     return sync_detailed(
@@ -192,17 +160,12 @@ async def asyncio_detailed(
     organization_id: str,
     *,
     client: AuthenticatedClient,
-    body: VideoSubscriptionInsertVideoSubscriptionPostBody,
+    body: VideoSubscriptionPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        VideoSubscriptionInsertResponseDefault,
-        VideoSubscriptionInsertVideoSubscriptionsResponse,
-    ]
-]:
+) -> Response[VideoSubscriptionInsertResponseDefault]:
     """Subscribe to a video stream
 
      Subscribe to an upcoming video stream. Any subscription must be in place a minimum of 1 hour before
@@ -215,14 +178,14 @@ async def asyncio_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (VideoSubscriptionInsertVideoSubscriptionPostBody):
+        body (VideoSubscriptionPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[VideoSubscriptionInsertResponseDefault, VideoSubscriptionInsertVideoSubscriptionsResponse]]
+        Response[VideoSubscriptionInsertResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -243,17 +206,12 @@ async def asyncio(
     organization_id: str,
     *,
     client: AuthenticatedClient,
-    body: VideoSubscriptionInsertVideoSubscriptionPostBody,
+    body: VideoSubscriptionPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        VideoSubscriptionInsertResponseDefault,
-        VideoSubscriptionInsertVideoSubscriptionsResponse,
-    ]
-]:
+) -> Optional[VideoSubscriptionInsertResponseDefault]:
     """Subscribe to a video stream
 
      Subscribe to an upcoming video stream. Any subscription must be in place a minimum of 1 hour before
@@ -266,14 +224,14 @@ async def asyncio(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (VideoSubscriptionInsertVideoSubscriptionPostBody):
+        body (VideoSubscriptionPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[VideoSubscriptionInsertResponseDefault, VideoSubscriptionInsertVideoSubscriptionsResponse]
+        VideoSubscriptionInsertResponseDefault
     """
 
     return (

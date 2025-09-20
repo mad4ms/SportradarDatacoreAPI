@@ -72,9 +72,7 @@ class CareerPersonRepresentationalStatisticsModel:
     person_id: Union[Unset, UUID] = UNSET
     person: Union[Unset, "CareerPersonRepresentationalStatisticsModelPerson"] = UNSET
     organization_id: Union[Unset, str] = UNSET
-    organization: Union[
-        Unset, "CareerPersonRepresentationalStatisticsModelOrganization"
-    ] = UNSET
+    organization: Union[Unset, "CareerPersonRepresentationalStatisticsModelOrganization"] = UNSET
     age_group: Union[Unset, CareerPersonRepresentationalStatisticsModelAgeGroup] = UNSET
     discipline: Union[
         CareerPersonRepresentationalStatisticsModelDisciplineType1,
@@ -84,9 +82,7 @@ class CareerPersonRepresentationalStatisticsModel:
         Unset,
     ] = UNSET
     representing: Union[None, Unset, str] = UNSET
-    statistics: Union[
-        Unset, "CareerPersonRepresentationalStatisticsModelStatistics"
-    ] = UNSET
+    statistics: Union[Unset, "CareerPersonRepresentationalStatisticsModelStatistics"] = UNSET
 
     def to_dict(self) -> dict[str, Any]:
         person_id: Union[Unset, str] = UNSET
@@ -110,19 +106,11 @@ class CareerPersonRepresentationalStatisticsModel:
         discipline: Union[None, Unset, str]
         if isinstance(self.discipline, Unset):
             discipline = UNSET
-        elif isinstance(
-            self.discipline, CareerPersonRepresentationalStatisticsModelDisciplineType1
-        ):
+        elif isinstance(self.discipline, CareerPersonRepresentationalStatisticsModelDisciplineType1):
             discipline = self.discipline.value
-        elif isinstance(
-            self.discipline,
-            CareerPersonRepresentationalStatisticsModelDisciplineType2Type1,
-        ):
+        elif isinstance(self.discipline, CareerPersonRepresentationalStatisticsModelDisciplineType2Type1):
             discipline = self.discipline.value
-        elif isinstance(
-            self.discipline,
-            CareerPersonRepresentationalStatisticsModelDisciplineType3Type1,
-        ):
+        elif isinstance(self.discipline, CareerPersonRepresentationalStatisticsModelDisciplineType3Type1):
             discipline = self.discipline.value
         else:
             discipline = self.discipline
@@ -184,24 +172,16 @@ class CareerPersonRepresentationalStatisticsModel:
         if isinstance(_person, Unset):
             person = UNSET
         else:
-            person = CareerPersonRepresentationalStatisticsModelPerson.from_dict(
-                _person
-            )
+            person = CareerPersonRepresentationalStatisticsModelPerson.from_dict(_person)
 
         organization_id = d.pop("organizationId", UNSET)
 
         _organization = d.pop("organization", UNSET)
-        organization: Union[
-            Unset, CareerPersonRepresentationalStatisticsModelOrganization
-        ]
+        organization: Union[Unset, CareerPersonRepresentationalStatisticsModelOrganization]
         if isinstance(_organization, Unset):
             organization = UNSET
         else:
-            organization = (
-                CareerPersonRepresentationalStatisticsModelOrganization.from_dict(
-                    _organization
-                )
-            )
+            organization = CareerPersonRepresentationalStatisticsModelOrganization.from_dict(_organization)
 
         _age_group = d.pop("ageGroup", UNSET)
         age_group: Union[Unset, CareerPersonRepresentationalStatisticsModelAgeGroup]
@@ -226,9 +206,7 @@ class CareerPersonRepresentationalStatisticsModel:
             try:
                 if not isinstance(data, str):
                     raise TypeError()
-                discipline_type_1 = (
-                    CareerPersonRepresentationalStatisticsModelDisciplineType1(data)
-                )
+                discipline_type_1 = CareerPersonRepresentationalStatisticsModelDisciplineType1(data)
 
                 return discipline_type_1
             except:  # noqa: E722
@@ -236,11 +214,7 @@ class CareerPersonRepresentationalStatisticsModel:
             try:
                 if not isinstance(data, str):
                     raise TypeError()
-                discipline_type_2_type_1 = (
-                    CareerPersonRepresentationalStatisticsModelDisciplineType2Type1(
-                        data
-                    )
-                )
+                discipline_type_2_type_1 = CareerPersonRepresentationalStatisticsModelDisciplineType2Type1(data)
 
                 return discipline_type_2_type_1
             except:  # noqa: E722
@@ -248,11 +222,7 @@ class CareerPersonRepresentationalStatisticsModel:
             try:
                 if not isinstance(data, str):
                     raise TypeError()
-                discipline_type_3_type_1 = (
-                    CareerPersonRepresentationalStatisticsModelDisciplineType3Type1(
-                        data
-                    )
-                )
+                discipline_type_3_type_1 = CareerPersonRepresentationalStatisticsModelDisciplineType3Type1(data)
 
                 return discipline_type_3_type_1
             except:  # noqa: E722
@@ -284,11 +254,7 @@ class CareerPersonRepresentationalStatisticsModel:
         if isinstance(_statistics, Unset):
             statistics = UNSET
         else:
-            statistics = (
-                CareerPersonRepresentationalStatisticsModelStatistics.from_dict(
-                    _statistics
-                )
-            )
+            statistics = CareerPersonRepresentationalStatisticsModelStatistics.from_dict(_statistics)
 
         career_person_representational_statistics_model = cls(
             person_id=person_id,

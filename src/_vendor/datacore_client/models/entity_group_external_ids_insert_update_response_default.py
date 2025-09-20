@@ -70,9 +70,7 @@ class EntityGroupExternalIdsInsertUpdateResponseDefault:
             error=error,
         )
 
-        entity_group_external_ids_insert_update_response_default.additional_properties = (
-            d
-        )
+        entity_group_external_ids_insert_update_response_default.additional_properties = d
         return entity_group_external_ids_insert_update_response_default
 
     @property

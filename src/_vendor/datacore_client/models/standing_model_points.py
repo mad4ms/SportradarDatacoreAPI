@@ -5,9 +5,7 @@ from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
 if TYPE_CHECKING:
-    from ..models.standing_model_points_additional_property import (
-        StandingModelPointsAdditionalProperty,
-    )
+    from ..models.standing_model_points_additional_property import StandingModelPointsAdditionalProperty
 
 
 T = TypeVar("T", bound="StandingModelPoints")
@@ -17,9 +15,7 @@ T = TypeVar("T", bound="StandingModelPoints")
 class StandingModelPoints:
     """standings points fields"""
 
-    additional_properties: dict[str, "StandingModelPointsAdditionalProperty"] = (
-        _attrs_field(init=False, factory=dict)
-    )
+    additional_properties: dict[str, "StandingModelPointsAdditionalProperty"] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
         field_dict: dict[str, Any] = {}
@@ -30,18 +26,14 @@ class StandingModelPoints:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.standing_model_points_additional_property import (
-            StandingModelPointsAdditionalProperty,
-        )
+        from ..models.standing_model_points_additional_property import StandingModelPointsAdditionalProperty
 
         d = dict(src_dict)
         standing_model_points = cls()
 
         additional_properties = {}
         for prop_name, prop_dict in d.items():
-            additional_property = StandingModelPointsAdditionalProperty.from_dict(
-                prop_dict
-            )
+            additional_property = StandingModelPointsAdditionalProperty.from_dict(prop_dict)
 
             additional_properties[prop_name] = additional_property
 
@@ -55,9 +47,7 @@ class StandingModelPoints:
     def __getitem__(self, key: str) -> "StandingModelPointsAdditionalProperty":
         return self.additional_properties[key]
 
-    def __setitem__(
-        self, key: str, value: "StandingModelPointsAdditionalProperty"
-    ) -> None:
+    def __setitem__(self, key: str, value: "StandingModelPointsAdditionalProperty") -> None:
         self.additional_properties[key] = value
 
     def __delitem__(self, key: str) -> None:

@@ -9,15 +9,9 @@ from dateutil.parser import isoparse
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.seasonperson_placings_model_organization import (
-        SEASONPERSONPlacingsModelOrganization,
-    )
-    from ..models.seasonperson_placings_model_person import (
-        SEASONPERSONPlacingsModelPerson,
-    )
-    from ..models.seasonperson_placings_model_season import (
-        SEASONPERSONPlacingsModelSeason,
-    )
+    from ..models.seasonperson_placings_model_organization import SEASONPERSONPlacingsModelOrganization
+    from ..models.seasonperson_placings_model_person import SEASONPERSONPlacingsModelPerson
+    from ..models.seasonperson_placings_model_season import SEASONPERSONPlacingsModelSeason
 
 
 T = TypeVar("T", bound="SEASONPERSONPlacingsModel")
@@ -139,15 +133,9 @@ class SEASONPERSONPlacingsModel:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.seasonperson_placings_model_organization import (
-            SEASONPERSONPlacingsModelOrganization,
-        )
-        from ..models.seasonperson_placings_model_person import (
-            SEASONPERSONPlacingsModelPerson,
-        )
-        from ..models.seasonperson_placings_model_season import (
-            SEASONPERSONPlacingsModelSeason,
-        )
+        from ..models.seasonperson_placings_model_organization import SEASONPERSONPlacingsModelOrganization
+        from ..models.seasonperson_placings_model_person import SEASONPERSONPlacingsModelPerson
+        from ..models.seasonperson_placings_model_season import SEASONPERSONPlacingsModelSeason
 
         d = dict(src_dict)
         _placing_id = d.pop("placingId", UNSET)
@@ -164,9 +152,7 @@ class SEASONPERSONPlacingsModel:
         if isinstance(_organization, Unset):
             organization = UNSET
         else:
-            organization = SEASONPERSONPlacingsModelOrganization.from_dict(
-                _organization
-            )
+            organization = SEASONPERSONPlacingsModelOrganization.from_dict(_organization)
 
         _season_id = d.pop("seasonId", UNSET)
         season_id: Union[Unset, UUID]

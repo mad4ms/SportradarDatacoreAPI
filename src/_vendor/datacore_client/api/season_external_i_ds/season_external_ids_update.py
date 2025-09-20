@@ -5,15 +5,8 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.season_external_ids_update_response_default import (
-    SeasonExternalIdsUpdateResponseDefault,
-)
-from ...models.season_external_ids_update_season_external_ids_put_body import (
-    SeasonExternalIdsUpdateSeasonExternalIdsPutBody,
-)
-from ...models.season_external_ids_update_season_external_ids_response import (
-    SeasonExternalIdsUpdateSeasonExternalIdsResponse,
-)
+from ...models.season_external_ids_put_body import SeasonExternalIdsPutBody
+from ...models.season_external_ids_update_response_default import SeasonExternalIdsUpdateResponseDefault
 from ...types import UNSET, Response, Unset
 
 
@@ -21,7 +14,7 @@ def _get_kwargs(
     organization_id: str,
     season_external_id: UUID,
     *,
-    body: SeasonExternalIdsUpdateSeasonExternalIdsPutBody,
+    body: SeasonExternalIdsPutBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
@@ -57,17 +50,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[
-    SeasonExternalIdsUpdateResponseDefault,
-    SeasonExternalIdsUpdateSeasonExternalIdsResponse,
-]:
-    if response.status_code == 200:
-        response_200 = SeasonExternalIdsUpdateSeasonExternalIdsResponse.from_dict(
-            response.json()
-        )
-
-        return response_200
-
+) -> SeasonExternalIdsUpdateResponseDefault:
     response_default = SeasonExternalIdsUpdateResponseDefault.from_dict(response.json())
 
     return response_default
@@ -75,12 +58,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[
-        SeasonExternalIdsUpdateResponseDefault,
-        SeasonExternalIdsUpdateSeasonExternalIdsResponse,
-    ]
-]:
+) -> Response[SeasonExternalIdsUpdateResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -94,17 +72,12 @@ def sync_detailed(
     season_external_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: SeasonExternalIdsUpdateSeasonExternalIdsPutBody,
+    body: SeasonExternalIdsPutBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        SeasonExternalIdsUpdateResponseDefault,
-        SeasonExternalIdsUpdateSeasonExternalIdsResponse,
-    ]
-]:
+) -> Response[SeasonExternalIdsUpdateResponseDefault]:
     """Update a season external identifier information
 
      Change the external identifier information of a specific season
@@ -117,14 +90,14 @@ def sync_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (SeasonExternalIdsUpdateSeasonExternalIdsPutBody):
+        body (SeasonExternalIdsPutBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SeasonExternalIdsUpdateResponseDefault, SeasonExternalIdsUpdateSeasonExternalIdsResponse]]
+        Response[SeasonExternalIdsUpdateResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -149,17 +122,12 @@ def sync(
     season_external_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: SeasonExternalIdsUpdateSeasonExternalIdsPutBody,
+    body: SeasonExternalIdsPutBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        SeasonExternalIdsUpdateResponseDefault,
-        SeasonExternalIdsUpdateSeasonExternalIdsResponse,
-    ]
-]:
+) -> Optional[SeasonExternalIdsUpdateResponseDefault]:
     """Update a season external identifier information
 
      Change the external identifier information of a specific season
@@ -172,14 +140,14 @@ def sync(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (SeasonExternalIdsUpdateSeasonExternalIdsPutBody):
+        body (SeasonExternalIdsPutBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SeasonExternalIdsUpdateResponseDefault, SeasonExternalIdsUpdateSeasonExternalIdsResponse]
+        SeasonExternalIdsUpdateResponseDefault
     """
 
     return sync_detailed(
@@ -199,17 +167,12 @@ async def asyncio_detailed(
     season_external_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: SeasonExternalIdsUpdateSeasonExternalIdsPutBody,
+    body: SeasonExternalIdsPutBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        SeasonExternalIdsUpdateResponseDefault,
-        SeasonExternalIdsUpdateSeasonExternalIdsResponse,
-    ]
-]:
+) -> Response[SeasonExternalIdsUpdateResponseDefault]:
     """Update a season external identifier information
 
      Change the external identifier information of a specific season
@@ -222,14 +185,14 @@ async def asyncio_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (SeasonExternalIdsUpdateSeasonExternalIdsPutBody):
+        body (SeasonExternalIdsPutBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SeasonExternalIdsUpdateResponseDefault, SeasonExternalIdsUpdateSeasonExternalIdsResponse]]
+        Response[SeasonExternalIdsUpdateResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -252,17 +215,12 @@ async def asyncio(
     season_external_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: SeasonExternalIdsUpdateSeasonExternalIdsPutBody,
+    body: SeasonExternalIdsPutBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        SeasonExternalIdsUpdateResponseDefault,
-        SeasonExternalIdsUpdateSeasonExternalIdsResponse,
-    ]
-]:
+) -> Optional[SeasonExternalIdsUpdateResponseDefault]:
     """Update a season external identifier information
 
      Change the external identifier information of a specific season
@@ -275,14 +233,14 @@ async def asyncio(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (SeasonExternalIdsUpdateSeasonExternalIdsPutBody):
+        body (SeasonExternalIdsPutBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SeasonExternalIdsUpdateResponseDefault, SeasonExternalIdsUpdateSeasonExternalIdsResponse]
+        SeasonExternalIdsUpdateResponseDefault
     """
 
     return (

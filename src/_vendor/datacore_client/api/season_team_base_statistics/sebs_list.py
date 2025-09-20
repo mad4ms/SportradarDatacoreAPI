@@ -6,13 +6,11 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
+from ...models.season_entity_base_statistics_response import SeasonEntityBaseStatisticsResponse
 from ...models.sebs_list_competitor_type import SebsListCompetitorType
 from ...models.sebs_list_fixture_type import SebsListFixtureType
 from ...models.sebs_list_representing_country import SebsListRepresentingCountry
 from ...models.sebs_list_response_default import SebsListResponseDefault
-from ...models.sebs_list_season_entity_base_statistics_response import (
-    SebsListSeasonEntityBaseStatisticsResponse,
-)
 from ...types import UNSET, Response, Unset
 
 
@@ -96,11 +94,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[SebsListResponseDefault, SebsListSeasonEntityBaseStatisticsResponse]:
+) -> Union[SeasonEntityBaseStatisticsResponse, SebsListResponseDefault]:
     if response.status_code == 200:
-        response_200 = SebsListSeasonEntityBaseStatisticsResponse.from_dict(
-            response.json()
-        )
+        response_200 = SeasonEntityBaseStatisticsResponse.from_dict(response.json())
 
         return response_200
 
@@ -111,9 +107,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[SebsListResponseDefault, SebsListSeasonEntityBaseStatisticsResponse]
-]:
+) -> Response[Union[SeasonEntityBaseStatisticsResponse, SebsListResponseDefault]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -140,9 +134,7 @@ def sync_detailed(
     representing: Union[Unset, str] = UNSET,
     representing_country: Union[Unset, SebsListRepresentingCountry] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[
-    Union[SebsListResponseDefault, SebsListSeasonEntityBaseStatisticsResponse]
-]:
+) -> Response[Union[SeasonEntityBaseStatisticsResponse, SebsListResponseDefault]]:
     """Team season base statistics
 
      Return a list of team base statistics for a season
@@ -170,7 +162,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SebsListResponseDefault, SebsListSeasonEntityBaseStatisticsResponse]]
+        Response[Union[SeasonEntityBaseStatisticsResponse, SebsListResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -216,9 +208,7 @@ def sync(
     representing: Union[Unset, str] = UNSET,
     representing_country: Union[Unset, SebsListRepresentingCountry] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[
-    Union[SebsListResponseDefault, SebsListSeasonEntityBaseStatisticsResponse]
-]:
+) -> Optional[Union[SeasonEntityBaseStatisticsResponse, SebsListResponseDefault]]:
     """Team season base statistics
 
      Return a list of team base statistics for a season
@@ -246,7 +236,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SebsListResponseDefault, SebsListSeasonEntityBaseStatisticsResponse]
+        Union[SeasonEntityBaseStatisticsResponse, SebsListResponseDefault]
     """
 
     return sync_detailed(
@@ -287,9 +277,7 @@ async def asyncio_detailed(
     representing: Union[Unset, str] = UNSET,
     representing_country: Union[Unset, SebsListRepresentingCountry] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[
-    Union[SebsListResponseDefault, SebsListSeasonEntityBaseStatisticsResponse]
-]:
+) -> Response[Union[SeasonEntityBaseStatisticsResponse, SebsListResponseDefault]]:
     """Team season base statistics
 
      Return a list of team base statistics for a season
@@ -317,7 +305,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SebsListResponseDefault, SebsListSeasonEntityBaseStatisticsResponse]]
+        Response[Union[SeasonEntityBaseStatisticsResponse, SebsListResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -361,9 +349,7 @@ async def asyncio(
     representing: Union[Unset, str] = UNSET,
     representing_country: Union[Unset, SebsListRepresentingCountry] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[
-    Union[SebsListResponseDefault, SebsListSeasonEntityBaseStatisticsResponse]
-]:
+) -> Optional[Union[SeasonEntityBaseStatisticsResponse, SebsListResponseDefault]]:
     """Team season base statistics
 
      Return a list of team base statistics for a season
@@ -391,7 +377,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SebsListResponseDefault, SebsListSeasonEntityBaseStatisticsResponse]
+        Union[SeasonEntityBaseStatisticsResponse, SebsListResponseDefault]
     """
 
     return (

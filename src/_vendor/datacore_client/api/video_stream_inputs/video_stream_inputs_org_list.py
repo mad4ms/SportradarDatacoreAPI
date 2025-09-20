@@ -6,15 +6,8 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.video_stream_inputs_org_list_feed_type import (
-    VideoStreamInputsOrgListFeedType,
-)
-from ...models.video_stream_inputs_org_list_response_default import (
-    VideoStreamInputsOrgListResponseDefault,
-)
-from ...models.video_stream_inputs_org_list_video_stream_inputs_response import (
-    VideoStreamInputsOrgListVideoStreamInputsResponse,
-)
+from ...models.video_stream_inputs_org_list_feed_type import VideoStreamInputsOrgListFeedType
+from ...models.video_stream_inputs_org_list_response_default import VideoStreamInputsOrgListResponseDefault
 from ...types import UNSET, Response, Unset
 
 
@@ -137,32 +130,15 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[
-    VideoStreamInputsOrgListResponseDefault,
-    VideoStreamInputsOrgListVideoStreamInputsResponse,
-]:
-    if response.status_code == 200:
-        response_200 = VideoStreamInputsOrgListVideoStreamInputsResponse.from_dict(
-            response.json()
-        )
-
-        return response_200
-
-    response_default = VideoStreamInputsOrgListResponseDefault.from_dict(
-        response.json()
-    )
+) -> VideoStreamInputsOrgListResponseDefault:
+    response_default = VideoStreamInputsOrgListResponseDefault.from_dict(response.json())
 
     return response_default
 
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[
-        VideoStreamInputsOrgListResponseDefault,
-        VideoStreamInputsOrgListVideoStreamInputsResponse,
-    ]
-]:
+) -> Response[VideoStreamInputsOrgListResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -196,12 +172,7 @@ def sync_detailed(
     updated: Union[Unset, datetime.datetime] = UNSET,
     venue_id: Union[Unset, UUID] = UNSET,
     video_input_id: Union[Unset, UUID] = UNSET,
-) -> Response[
-    Union[
-        VideoStreamInputsOrgListResponseDefault,
-        VideoStreamInputsOrgListVideoStreamInputsResponse,
-    ]
-]:
+) -> Response[VideoStreamInputsOrgListResponseDefault]:
     """List available video inputs for an organization
 
      Display the list of video inputs for an organization. This will only display inputs for matches in
@@ -237,7 +208,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[VideoStreamInputsOrgListResponseDefault, VideoStreamInputsOrgListVideoStreamInputsResponse]]
+        Response[VideoStreamInputsOrgListResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -297,12 +268,7 @@ def sync(
     updated: Union[Unset, datetime.datetime] = UNSET,
     venue_id: Union[Unset, UUID] = UNSET,
     video_input_id: Union[Unset, UUID] = UNSET,
-) -> Optional[
-    Union[
-        VideoStreamInputsOrgListResponseDefault,
-        VideoStreamInputsOrgListVideoStreamInputsResponse,
-    ]
-]:
+) -> Optional[VideoStreamInputsOrgListResponseDefault]:
     """List available video inputs for an organization
 
      Display the list of video inputs for an organization. This will only display inputs for matches in
@@ -338,7 +304,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[VideoStreamInputsOrgListResponseDefault, VideoStreamInputsOrgListVideoStreamInputsResponse]
+        VideoStreamInputsOrgListResponseDefault
     """
 
     return sync_detailed(
@@ -393,12 +359,7 @@ async def asyncio_detailed(
     updated: Union[Unset, datetime.datetime] = UNSET,
     venue_id: Union[Unset, UUID] = UNSET,
     video_input_id: Union[Unset, UUID] = UNSET,
-) -> Response[
-    Union[
-        VideoStreamInputsOrgListResponseDefault,
-        VideoStreamInputsOrgListVideoStreamInputsResponse,
-    ]
-]:
+) -> Response[VideoStreamInputsOrgListResponseDefault]:
     """List available video inputs for an organization
 
      Display the list of video inputs for an organization. This will only display inputs for matches in
@@ -434,7 +395,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[VideoStreamInputsOrgListResponseDefault, VideoStreamInputsOrgListVideoStreamInputsResponse]]
+        Response[VideoStreamInputsOrgListResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -492,12 +453,7 @@ async def asyncio(
     updated: Union[Unset, datetime.datetime] = UNSET,
     venue_id: Union[Unset, UUID] = UNSET,
     video_input_id: Union[Unset, UUID] = UNSET,
-) -> Optional[
-    Union[
-        VideoStreamInputsOrgListResponseDefault,
-        VideoStreamInputsOrgListVideoStreamInputsResponse,
-    ]
-]:
+) -> Optional[VideoStreamInputsOrgListResponseDefault]:
     """List available video inputs for an organization
 
      Display the list of video inputs for an organization. This will only display inputs for matches in
@@ -533,7 +489,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[VideoStreamInputsOrgListResponseDefault, VideoStreamInputsOrgListVideoStreamInputsResponse]
+        VideoStreamInputsOrgListResponseDefault
     """
 
     return (

@@ -893,6 +893,7 @@ source = { editable = "." }
 dependencies = [
     { name = "attrs" },
     { name = "httpx" },
+    { name = "openapi-python-client" },
     { name = "pandas" },
     { name = "pydantic" },
     { name = "pytest" },
@@ -919,6 +920,7 @@ requires-dist = [
     { name = "attrs", specifier = ">=25.3.0" },
     { name = "httpx", specifier = ">=0.27.0" },
     { name = "mypy", marker = "extra == 'dev'", specifier = ">=1.10.0" },
+    { name = "openapi-python-client", specifier = ">=0.26.1" },
     { name = "openapi-python-client", marker = "extra == 'dev'", specifier = ">=0.26.1" },
     { name = "openapi-spec-validator", marker = "extra == 'dev'", specifier = ">=0.7.2" },
     { name = "pandas", specifier = ">=2.2.2" },

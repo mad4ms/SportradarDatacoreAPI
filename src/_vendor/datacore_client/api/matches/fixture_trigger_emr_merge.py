@@ -5,12 +5,8 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.fixture_trigger_emr_merge_response_default import (
-    FixtureTriggerEmrMergeResponseDefault,
-)
-from ...models.fixture_trigger_emr_merge_success_response import (
-    FixtureTriggerEmrMergeSuccessResponse,
-)
+from ...models.fixture_trigger_emr_merge_response_default import FixtureTriggerEmrMergeResponseDefault
+from ...models.success_response import SuccessResponse
 from ...types import UNSET, Response, Unset
 
 
@@ -46,11 +42,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[
-    FixtureTriggerEmrMergeResponseDefault, FixtureTriggerEmrMergeSuccessResponse
-]:
+) -> Union[FixtureTriggerEmrMergeResponseDefault, SuccessResponse]:
     if response.status_code == 200:
-        response_200 = FixtureTriggerEmrMergeSuccessResponse.from_dict(response.json())
+        response_200 = SuccessResponse.from_dict(response.json())
 
         return response_200
 
@@ -61,9 +55,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[FixtureTriggerEmrMergeResponseDefault, FixtureTriggerEmrMergeSuccessResponse]
-]:
+) -> Response[Union[FixtureTriggerEmrMergeResponseDefault, SuccessResponse]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -81,9 +73,7 @@ def sync_detailed(
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[FixtureTriggerEmrMergeResponseDefault, FixtureTriggerEmrMergeSuccessResponse]
-]:
+) -> Response[Union[FixtureTriggerEmrMergeResponseDefault, SuccessResponse]]:
     """Trigger EMR merge process for the match
 
      Triggers match EMR merge process.
@@ -102,7 +92,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[FixtureTriggerEmrMergeResponseDefault, FixtureTriggerEmrMergeSuccessResponse]]
+        Response[Union[FixtureTriggerEmrMergeResponseDefault, SuccessResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -130,9 +120,7 @@ def sync(
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[FixtureTriggerEmrMergeResponseDefault, FixtureTriggerEmrMergeSuccessResponse]
-]:
+) -> Optional[Union[FixtureTriggerEmrMergeResponseDefault, SuccessResponse]]:
     """Trigger EMR merge process for the match
 
      Triggers match EMR merge process.
@@ -151,7 +139,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[FixtureTriggerEmrMergeResponseDefault, FixtureTriggerEmrMergeSuccessResponse]
+        Union[FixtureTriggerEmrMergeResponseDefault, SuccessResponse]
     """
 
     return sync_detailed(
@@ -174,9 +162,7 @@ async def asyncio_detailed(
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[FixtureTriggerEmrMergeResponseDefault, FixtureTriggerEmrMergeSuccessResponse]
-]:
+) -> Response[Union[FixtureTriggerEmrMergeResponseDefault, SuccessResponse]]:
     """Trigger EMR merge process for the match
 
      Triggers match EMR merge process.
@@ -195,7 +181,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[FixtureTriggerEmrMergeResponseDefault, FixtureTriggerEmrMergeSuccessResponse]]
+        Response[Union[FixtureTriggerEmrMergeResponseDefault, SuccessResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -221,9 +207,7 @@ async def asyncio(
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[FixtureTriggerEmrMergeResponseDefault, FixtureTriggerEmrMergeSuccessResponse]
-]:
+) -> Optional[Union[FixtureTriggerEmrMergeResponseDefault, SuccessResponse]]:
     """Trigger EMR merge process for the match
 
      Triggers match EMR merge process.
@@ -242,7 +226,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[FixtureTriggerEmrMergeResponseDefault, FixtureTriggerEmrMergeSuccessResponse]
+        Union[FixtureTriggerEmrMergeResponseDefault, SuccessResponse]
     """
 
     return (

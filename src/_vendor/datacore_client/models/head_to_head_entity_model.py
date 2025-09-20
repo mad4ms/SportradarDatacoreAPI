@@ -7,13 +7,9 @@ from attrs import define as _attrs_define
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.head_to_head_entity_model_competition import (
-        HeadToHeadEntityModelCompetition,
-    )
+    from ..models.head_to_head_entity_model_competition import HeadToHeadEntityModelCompetition
     from ..models.head_to_head_entity_model_fixture import HeadToHeadEntityModelFixture
-    from ..models.head_to_head_entity_model_organization import (
-        HeadToHeadEntityModelOrganization,
-    )
+    from ..models.head_to_head_entity_model_organization import HeadToHeadEntityModelOrganization
     from ..models.head_to_head_entity_model_season import HeadToHeadEntityModelSeason
 
 
@@ -102,18 +98,10 @@ class HeadToHeadEntityModel:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.head_to_head_entity_model_competition import (
-            HeadToHeadEntityModelCompetition,
-        )
-        from ..models.head_to_head_entity_model_fixture import (
-            HeadToHeadEntityModelFixture,
-        )
-        from ..models.head_to_head_entity_model_organization import (
-            HeadToHeadEntityModelOrganization,
-        )
-        from ..models.head_to_head_entity_model_season import (
-            HeadToHeadEntityModelSeason,
-        )
+        from ..models.head_to_head_entity_model_competition import HeadToHeadEntityModelCompetition
+        from ..models.head_to_head_entity_model_fixture import HeadToHeadEntityModelFixture
+        from ..models.head_to_head_entity_model_organization import HeadToHeadEntityModelOrganization
+        from ..models.head_to_head_entity_model_season import HeadToHeadEntityModelSeason
 
         d = dict(src_dict)
         organization_id = d.pop("organizationId", UNSET)

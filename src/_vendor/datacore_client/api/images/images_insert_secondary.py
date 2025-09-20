@@ -7,15 +7,8 @@ import httpx
 from ...client import AuthenticatedClient, Client
 from ...models.images_insert_secondary_base_type import ImagesInsertSecondaryBaseType
 from ...models.images_insert_secondary_image_type import ImagesInsertSecondaryImageType
-from ...models.images_insert_secondary_images_response import (
-    ImagesInsertSecondaryImagesResponse,
-)
-from ...models.images_insert_secondary_response_default import (
-    ImagesInsertSecondaryResponseDefault,
-)
-from ...models.images_insert_secondary_secondary_type import (
-    ImagesInsertSecondarySecondaryType,
-)
+from ...models.images_insert_secondary_response_default import ImagesInsertSecondaryResponseDefault
+from ...models.images_insert_secondary_secondary_type import ImagesInsertSecondarySecondaryType
 from ...types import UNSET, File, Response, Unset
 
 
@@ -63,12 +56,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[ImagesInsertSecondaryImagesResponse, ImagesInsertSecondaryResponseDefault]:
-    if response.status_code == 200:
-        response_200 = ImagesInsertSecondaryImagesResponse.from_dict(response.json())
-
-        return response_200
-
+) -> ImagesInsertSecondaryResponseDefault:
     response_default = ImagesInsertSecondaryResponseDefault.from_dict(response.json())
 
     return response_default
@@ -76,9 +64,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[ImagesInsertSecondaryImagesResponse, ImagesInsertSecondaryResponseDefault]
-]:
+) -> Response[ImagesInsertSecondaryResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -101,9 +87,7 @@ def sync_detailed(
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[ImagesInsertSecondaryImagesResponse, ImagesInsertSecondaryResponseDefault]
-]:
+) -> Response[ImagesInsertSecondaryResponseDefault]:
     """Upload a new image in a secondary type
 
      Add a new image for a type in a secondary type.
@@ -155,7 +139,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[ImagesInsertSecondaryImagesResponse, ImagesInsertSecondaryResponseDefault]]
+        Response[ImagesInsertSecondaryResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -193,9 +177,7 @@ def sync(
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[ImagesInsertSecondaryImagesResponse, ImagesInsertSecondaryResponseDefault]
-]:
+) -> Optional[ImagesInsertSecondaryResponseDefault]:
     """Upload a new image in a secondary type
 
      Add a new image for a type in a secondary type.
@@ -247,7 +229,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[ImagesInsertSecondaryImagesResponse, ImagesInsertSecondaryResponseDefault]
+        ImagesInsertSecondaryResponseDefault
     """
 
     return sync_detailed(
@@ -280,9 +262,7 @@ async def asyncio_detailed(
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[ImagesInsertSecondaryImagesResponse, ImagesInsertSecondaryResponseDefault]
-]:
+) -> Response[ImagesInsertSecondaryResponseDefault]:
     """Upload a new image in a secondary type
 
      Add a new image for a type in a secondary type.
@@ -334,7 +314,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[ImagesInsertSecondaryImagesResponse, ImagesInsertSecondaryResponseDefault]]
+        Response[ImagesInsertSecondaryResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -370,9 +350,7 @@ async def asyncio(
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[ImagesInsertSecondaryImagesResponse, ImagesInsertSecondaryResponseDefault]
-]:
+) -> Optional[ImagesInsertSecondaryResponseDefault]:
     """Upload a new image in a secondary type
 
      Add a new image for a type in a secondary type.
@@ -424,7 +402,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[ImagesInsertSecondaryImagesResponse, ImagesInsertSecondaryResponseDefault]
+        ImagesInsertSecondaryResponseDefault
     """
 
     return (

@@ -4,9 +4,7 @@ from typing import Any, TypeVar, Union
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-from ..models.season_entities_model_organization_resource_type import (
-    SeasonEntitiesModelOrganizationResourceType,
-)
+from ..models.season_entities_model_organization_resource_type import SeasonEntitiesModelOrganizationResourceType
 from ..types import UNSET, Unset
 
 T = TypeVar("T", bound="SeasonEntitiesModelOrganization")

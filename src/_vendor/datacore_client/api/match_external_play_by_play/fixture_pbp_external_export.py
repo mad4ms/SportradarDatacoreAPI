@@ -5,15 +5,8 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.fixture_pbp_external_export_period_id import (
-    FixturePbpExternalExportPeriodId,
-)
-from ...models.fixture_pbp_external_export_response_default import (
-    FixturePbpExternalExportResponseDefault,
-)
-from ...models.fixture_pbp_external_export_success_response import (
-    FixturePbpExternalExportSuccessResponse,
-)
+from ...models.fixture_pbp_external_export_period_id import FixturePbpExternalExportPeriodId
+from ...models.fixture_pbp_external_export_response_default import FixturePbpExternalExportResponseDefault
 from ...types import UNSET, Response, Unset
 
 
@@ -62,30 +55,15 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[
-    FixturePbpExternalExportResponseDefault, FixturePbpExternalExportSuccessResponse
-]:
-    if response.status_code == 200:
-        response_200 = FixturePbpExternalExportSuccessResponse.from_dict(
-            response.json()
-        )
-
-        return response_200
-
-    response_default = FixturePbpExternalExportResponseDefault.from_dict(
-        response.json()
-    )
+) -> FixturePbpExternalExportResponseDefault:
+    response_default = FixturePbpExternalExportResponseDefault.from_dict(response.json())
 
     return response_default
 
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[
-        FixturePbpExternalExportResponseDefault, FixturePbpExternalExportSuccessResponse
-    ]
-]:
+) -> Response[FixturePbpExternalExportResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -106,11 +84,7 @@ def sync_detailed(
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
     period_id: Union[Unset, FixturePbpExternalExportPeriodId] = UNSET,
-) -> Response[
-    Union[
-        FixturePbpExternalExportResponseDefault, FixturePbpExternalExportSuccessResponse
-    ]
-]:
+) -> Response[FixturePbpExternalExportResponseDefault]:
     """Get a full list of match external events, suitable for subsequent import.
 
      Includes play-by-play external events for a match
@@ -132,7 +106,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[FixturePbpExternalExportResponseDefault, FixturePbpExternalExportSuccessResponse]]
+        Response[FixturePbpExternalExportResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -166,11 +140,7 @@ def sync(
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
     period_id: Union[Unset, FixturePbpExternalExportPeriodId] = UNSET,
-) -> Optional[
-    Union[
-        FixturePbpExternalExportResponseDefault, FixturePbpExternalExportSuccessResponse
-    ]
-]:
+) -> Optional[FixturePbpExternalExportResponseDefault]:
     """Get a full list of match external events, suitable for subsequent import.
 
      Includes play-by-play external events for a match
@@ -192,7 +162,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[FixturePbpExternalExportResponseDefault, FixturePbpExternalExportSuccessResponse]
+        FixturePbpExternalExportResponseDefault
     """
 
     return sync_detailed(
@@ -221,11 +191,7 @@ async def asyncio_detailed(
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
     period_id: Union[Unset, FixturePbpExternalExportPeriodId] = UNSET,
-) -> Response[
-    Union[
-        FixturePbpExternalExportResponseDefault, FixturePbpExternalExportSuccessResponse
-    ]
-]:
+) -> Response[FixturePbpExternalExportResponseDefault]:
     """Get a full list of match external events, suitable for subsequent import.
 
      Includes play-by-play external events for a match
@@ -247,7 +213,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[FixturePbpExternalExportResponseDefault, FixturePbpExternalExportSuccessResponse]]
+        Response[FixturePbpExternalExportResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -279,11 +245,7 @@ async def asyncio(
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
     period_id: Union[Unset, FixturePbpExternalExportPeriodId] = UNSET,
-) -> Optional[
-    Union[
-        FixturePbpExternalExportResponseDefault, FixturePbpExternalExportSuccessResponse
-    ]
-]:
+) -> Optional[FixturePbpExternalExportResponseDefault]:
     """Get a full list of match external events, suitable for subsequent import.
 
      Includes play-by-play external events for a match
@@ -305,7 +267,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[FixturePbpExternalExportResponseDefault, FixturePbpExternalExportSuccessResponse]
+        FixturePbpExternalExportResponseDefault
     """
 
     return (

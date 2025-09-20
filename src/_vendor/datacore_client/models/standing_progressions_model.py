@@ -9,16 +9,10 @@ from dateutil.parser import isoparse
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.standing_progressions_model_organization import (
-        StandingProgressionsModelOrganization,
-    )
+    from ..models.standing_progressions_model_organization import StandingProgressionsModelOrganization
     from ..models.standing_progressions_model_pool import StandingProgressionsModelPool
-    from ..models.standing_progressions_model_season import (
-        StandingProgressionsModelSeason,
-    )
-    from ..models.standing_progressions_model_stage import (
-        StandingProgressionsModelStage,
-    )
+    from ..models.standing_progressions_model_season import StandingProgressionsModelSeason
+    from ..models.standing_progressions_model_stage import StandingProgressionsModelStage
 
 
 T = TypeVar("T", bound="StandingProgressionsModel")
@@ -166,18 +160,10 @@ class StandingProgressionsModel:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.standing_progressions_model_organization import (
-            StandingProgressionsModelOrganization,
-        )
-        from ..models.standing_progressions_model_pool import (
-            StandingProgressionsModelPool,
-        )
-        from ..models.standing_progressions_model_season import (
-            StandingProgressionsModelSeason,
-        )
-        from ..models.standing_progressions_model_stage import (
-            StandingProgressionsModelStage,
-        )
+        from ..models.standing_progressions_model_organization import StandingProgressionsModelOrganization
+        from ..models.standing_progressions_model_pool import StandingProgressionsModelPool
+        from ..models.standing_progressions_model_season import StandingProgressionsModelSeason
+        from ..models.standing_progressions_model_stage import StandingProgressionsModelStage
 
         d = dict(src_dict)
         _standing_progression_id = d.pop("standingProgressionId", UNSET)
@@ -194,9 +180,7 @@ class StandingProgressionsModel:
         if isinstance(_organization, Unset):
             organization = UNSET
         else:
-            organization = StandingProgressionsModelOrganization.from_dict(
-                _organization
-            )
+            organization = StandingProgressionsModelOrganization.from_dict(_organization)
 
         _season_id = d.pop("seasonId", UNSET)
         season_id: Union[Unset, UUID]

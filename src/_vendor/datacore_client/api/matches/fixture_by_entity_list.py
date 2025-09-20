@@ -6,14 +6,10 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.fixture_by_entity_list_competitor_type import (
-    FixtureByEntityListCompetitorType,
-)
+from ...models.fixture_by_entity_list_competitor_type import FixtureByEntityListCompetitorType
 from ...models.fixture_by_entity_list_discipline import FixtureByEntityListDiscipline
 from ...models.fixture_by_entity_list_fixture_type import FixtureByEntityListFixtureType
-from ...models.fixture_by_entity_list_response_default import (
-    FixtureByEntityListResponseDefault,
-)
+from ...models.fixture_by_entity_list_response_default import FixtureByEntityListResponseDefault
 from ...models.fixture_by_entity_list_status import FixtureByEntityListStatus
 from ...types import UNSET, Response, Unset
 

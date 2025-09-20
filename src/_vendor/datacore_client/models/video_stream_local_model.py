@@ -11,9 +11,7 @@ from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
     from ..models.video_stream_local_model_fixture import VideoStreamLocalModelFixture
-    from ..models.video_stream_local_model_organization import (
-        VideoStreamLocalModelOrganization,
-    )
+    from ..models.video_stream_local_model_organization import VideoStreamLocalModelOrganization
 
 
 T = TypeVar("T", bound="VideoStreamLocalModel")
@@ -122,12 +120,8 @@ class VideoStreamLocalModel:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.video_stream_local_model_fixture import (
-            VideoStreamLocalModelFixture,
-        )
-        from ..models.video_stream_local_model_organization import (
-            VideoStreamLocalModelOrganization,
-        )
+        from ..models.video_stream_local_model_fixture import VideoStreamLocalModelFixture
+        from ..models.video_stream_local_model_organization import VideoStreamLocalModelOrganization
 
         d = dict(src_dict)
         _url_id = d.pop("urlId", UNSET)

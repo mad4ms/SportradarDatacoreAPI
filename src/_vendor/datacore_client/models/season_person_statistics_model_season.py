@@ -4,9 +4,7 @@ from typing import Any, TypeVar, Union
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-from ..models.season_person_statistics_model_season_resource_type import (
-    SeasonPersonStatisticsModelSeasonResourceType,
-)
+from ..models.season_person_statistics_model_season_resource_type import SeasonPersonStatisticsModelSeasonResourceType
 from ..types import UNSET, Unset
 
 T = TypeVar("T", bound="SeasonPersonStatisticsModelSeason")
@@ -50,9 +48,7 @@ class SeasonPersonStatisticsModelSeason:
         if isinstance(_resource_type, Unset):
             resource_type = UNSET
         else:
-            resource_type = SeasonPersonStatisticsModelSeasonResourceType(
-                _resource_type
-            )
+            resource_type = SeasonPersonStatisticsModelSeasonResourceType(_resource_type)
 
         id = d.pop("id", UNSET)
 

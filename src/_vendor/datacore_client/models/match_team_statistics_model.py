@@ -9,18 +9,10 @@ from dateutil.parser import isoparse
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.match_team_statistics_model_entity import (
-        MatchTeamStatisticsModelEntity,
-    )
-    from ..models.match_team_statistics_model_fixture import (
-        MatchTeamStatisticsModelFixture,
-    )
-    from ..models.match_team_statistics_model_organization import (
-        MatchTeamStatisticsModelOrganization,
-    )
-    from ..models.match_team_statistics_model_statistics import (
-        MatchTeamStatisticsModelStatistics,
-    )
+    from ..models.match_team_statistics_model_entity import MatchTeamStatisticsModelEntity
+    from ..models.match_team_statistics_model_fixture import MatchTeamStatisticsModelFixture
+    from ..models.match_team_statistics_model_organization import MatchTeamStatisticsModelOrganization
+    from ..models.match_team_statistics_model_statistics import MatchTeamStatisticsModelStatistics
 
 
 T = TypeVar("T", bound="MatchTeamStatisticsModel")
@@ -114,18 +106,10 @@ class MatchTeamStatisticsModel:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.match_team_statistics_model_entity import (
-            MatchTeamStatisticsModelEntity,
-        )
-        from ..models.match_team_statistics_model_fixture import (
-            MatchTeamStatisticsModelFixture,
-        )
-        from ..models.match_team_statistics_model_organization import (
-            MatchTeamStatisticsModelOrganization,
-        )
-        from ..models.match_team_statistics_model_statistics import (
-            MatchTeamStatisticsModelStatistics,
-        )
+        from ..models.match_team_statistics_model_entity import MatchTeamStatisticsModelEntity
+        from ..models.match_team_statistics_model_fixture import MatchTeamStatisticsModelFixture
+        from ..models.match_team_statistics_model_organization import MatchTeamStatisticsModelOrganization
+        from ..models.match_team_statistics_model_statistics import MatchTeamStatisticsModelStatistics
 
         d = dict(src_dict)
         _entity_id = d.pop("entityId", UNSET)

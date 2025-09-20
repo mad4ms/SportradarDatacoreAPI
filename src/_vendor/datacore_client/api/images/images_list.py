@@ -7,9 +7,9 @@ import httpx
 from ...client import AuthenticatedClient, Client
 from ...models.images_list_base_type import ImagesListBaseType
 from ...models.images_list_image_type import ImagesListImageType
-from ...models.images_list_images_response import ImagesListImagesResponse
 from ...models.images_list_rating import ImagesListRating
 from ...models.images_list_response_default import ImagesListResponseDefault
+from ...models.images_response import ImagesResponse
 from ...types import UNSET, Response, Unset
 
 
@@ -77,9 +77,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[ImagesListImagesResponse, ImagesListResponseDefault]:
+) -> Union[ImagesListResponseDefault, ImagesResponse]:
     if response.status_code == 200:
-        response_200 = ImagesListImagesResponse.from_dict(response.json())
+        response_200 = ImagesResponse.from_dict(response.json())
 
         return response_200
 
@@ -90,7 +90,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[Union[ImagesListImagesResponse, ImagesListResponseDefault]]:
+) -> Response[Union[ImagesListResponseDefault, ImagesResponse]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -114,7 +114,7 @@ def sync_detailed(
     offset: Union[Unset, int] = UNSET,
     rating: Union[Unset, ImagesListRating] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[Union[ImagesListImagesResponse, ImagesListResponseDefault]]:
+) -> Response[Union[ImagesListResponseDefault, ImagesResponse]]:
     """Get a list of images
 
      Return a list of images for the type
@@ -139,7 +139,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[ImagesListImagesResponse, ImagesListResponseDefault]]
+        Response[Union[ImagesListResponseDefault, ImagesResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -179,7 +179,7 @@ def sync(
     offset: Union[Unset, int] = UNSET,
     rating: Union[Unset, ImagesListRating] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[Union[ImagesListImagesResponse, ImagesListResponseDefault]]:
+) -> Optional[Union[ImagesListResponseDefault, ImagesResponse]]:
     """Get a list of images
 
      Return a list of images for the type
@@ -204,7 +204,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[ImagesListImagesResponse, ImagesListResponseDefault]
+        Union[ImagesListResponseDefault, ImagesResponse]
     """
 
     return sync_detailed(
@@ -239,7 +239,7 @@ async def asyncio_detailed(
     offset: Union[Unset, int] = UNSET,
     rating: Union[Unset, ImagesListRating] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[Union[ImagesListImagesResponse, ImagesListResponseDefault]]:
+) -> Response[Union[ImagesListResponseDefault, ImagesResponse]]:
     """Get a list of images
 
      Return a list of images for the type
@@ -264,7 +264,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[ImagesListImagesResponse, ImagesListResponseDefault]]
+        Response[Union[ImagesListResponseDefault, ImagesResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -302,7 +302,7 @@ async def asyncio(
     offset: Union[Unset, int] = UNSET,
     rating: Union[Unset, ImagesListRating] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[Union[ImagesListImagesResponse, ImagesListResponseDefault]]:
+) -> Optional[Union[ImagesListResponseDefault, ImagesResponse]]:
     """Get a list of images
 
      Return a list of images for the type
@@ -327,7 +327,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[ImagesListImagesResponse, ImagesListResponseDefault]
+        Union[ImagesListResponseDefault, ImagesResponse]
     """
 
     return (

@@ -7,12 +7,7 @@ import httpx
 
 from ...client import AuthenticatedClient, Client
 from ...models.awards_list_seasons_award import AwardsListSeasonsAward
-from ...models.awards_list_seasons_awards_response import (
-    AwardsListSeasonsAwardsResponse,
-)
-from ...models.awards_list_seasons_response_default import (
-    AwardsListSeasonsResponseDefault,
-)
+from ...models.awards_list_seasons_response_default import AwardsListSeasonsResponseDefault
 from ...types import UNSET, Response, Unset
 
 
@@ -114,12 +109,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[AwardsListSeasonsAwardsResponse, AwardsListSeasonsResponseDefault]:
-    if response.status_code == 200:
-        response_200 = AwardsListSeasonsAwardsResponse.from_dict(response.json())
-
-        return response_200
-
+) -> AwardsListSeasonsResponseDefault:
     response_default = AwardsListSeasonsResponseDefault.from_dict(response.json())
 
     return response_default
@@ -127,7 +117,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[Union[AwardsListSeasonsAwardsResponse, AwardsListSeasonsResponseDefault]]:
+) -> Response[AwardsListSeasonsResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -156,7 +146,7 @@ def sync_detailed(
     person_id: Union[Unset, UUID] = UNSET,
     season_id: Union[Unset, UUID] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[Union[AwardsListSeasonsAwardsResponse, AwardsListSeasonsResponseDefault]]:
+) -> Response[AwardsListSeasonsResponseDefault]:
     """Get a list of season awards
 
      Return a list of awards for the organization (linked to seasons)
@@ -186,7 +176,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[AwardsListSeasonsAwardsResponse, AwardsListSeasonsResponseDefault]]
+        Response[AwardsListSeasonsResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -236,7 +226,7 @@ def sync(
     person_id: Union[Unset, UUID] = UNSET,
     season_id: Union[Unset, UUID] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[Union[AwardsListSeasonsAwardsResponse, AwardsListSeasonsResponseDefault]]:
+) -> Optional[AwardsListSeasonsResponseDefault]:
     """Get a list of season awards
 
      Return a list of awards for the organization (linked to seasons)
@@ -266,7 +256,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[AwardsListSeasonsAwardsResponse, AwardsListSeasonsResponseDefault]
+        AwardsListSeasonsResponseDefault
     """
 
     return sync_detailed(
@@ -311,7 +301,7 @@ async def asyncio_detailed(
     person_id: Union[Unset, UUID] = UNSET,
     season_id: Union[Unset, UUID] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[Union[AwardsListSeasonsAwardsResponse, AwardsListSeasonsResponseDefault]]:
+) -> Response[AwardsListSeasonsResponseDefault]:
     """Get a list of season awards
 
      Return a list of awards for the organization (linked to seasons)
@@ -341,7 +331,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[AwardsListSeasonsAwardsResponse, AwardsListSeasonsResponseDefault]]
+        Response[AwardsListSeasonsResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -389,7 +379,7 @@ async def asyncio(
     person_id: Union[Unset, UUID] = UNSET,
     season_id: Union[Unset, UUID] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[Union[AwardsListSeasonsAwardsResponse, AwardsListSeasonsResponseDefault]]:
+) -> Optional[AwardsListSeasonsResponseDefault]:
     """Get a list of season awards
 
      Return a list of awards for the organization (linked to seasons)
@@ -419,7 +409,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[AwardsListSeasonsAwardsResponse, AwardsListSeasonsResponseDefault]
+        AwardsListSeasonsResponseDefault
     """
 
     return (

@@ -5,12 +5,7 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.entity_group_delete_entity_groups_response import (
-    EntityGroupDeleteEntityGroupsResponse,
-)
-from ...models.entity_group_delete_response_default import (
-    EntityGroupDeleteResponseDefault,
-)
+from ...models.entity_group_delete_response_default import EntityGroupDeleteResponseDefault
 from ...types import UNSET, Response, Unset
 
 
@@ -49,12 +44,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[EntityGroupDeleteEntityGroupsResponse, EntityGroupDeleteResponseDefault]:
-    if response.status_code == 200:
-        response_200 = EntityGroupDeleteEntityGroupsResponse.from_dict(response.json())
-
-        return response_200
-
+) -> EntityGroupDeleteResponseDefault:
     response_default = EntityGroupDeleteResponseDefault.from_dict(response.json())
 
     return response_default
@@ -62,9 +52,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[EntityGroupDeleteEntityGroupsResponse, EntityGroupDeleteResponseDefault]
-]:
+) -> Response[EntityGroupDeleteResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -83,9 +71,7 @@ def sync_detailed(
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[EntityGroupDeleteEntityGroupsResponse, EntityGroupDeleteResponseDefault]
-]:
+) -> Response[EntityGroupDeleteResponseDefault]:
     """Delete a club
 
      Delete a specific club
@@ -105,7 +91,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[EntityGroupDeleteEntityGroupsResponse, EntityGroupDeleteResponseDefault]]
+        Response[EntityGroupDeleteResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -135,9 +121,7 @@ def sync(
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[EntityGroupDeleteEntityGroupsResponse, EntityGroupDeleteResponseDefault]
-]:
+) -> Optional[EntityGroupDeleteResponseDefault]:
     """Delete a club
 
      Delete a specific club
@@ -157,7 +141,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[EntityGroupDeleteEntityGroupsResponse, EntityGroupDeleteResponseDefault]
+        EntityGroupDeleteResponseDefault
     """
 
     return sync_detailed(
@@ -182,9 +166,7 @@ async def asyncio_detailed(
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[EntityGroupDeleteEntityGroupsResponse, EntityGroupDeleteResponseDefault]
-]:
+) -> Response[EntityGroupDeleteResponseDefault]:
     """Delete a club
 
      Delete a specific club
@@ -204,7 +186,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[EntityGroupDeleteEntityGroupsResponse, EntityGroupDeleteResponseDefault]]
+        Response[EntityGroupDeleteResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -232,9 +214,7 @@ async def asyncio(
     force_delete: Union[Unset, bool] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[EntityGroupDeleteEntityGroupsResponse, EntityGroupDeleteResponseDefault]
-]:
+) -> Optional[EntityGroupDeleteResponseDefault]:
     """Delete a club
 
      Delete a specific club
@@ -254,7 +234,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[EntityGroupDeleteEntityGroupsResponse, EntityGroupDeleteResponseDefault]
+        EntityGroupDeleteResponseDefault
     """
 
     return (

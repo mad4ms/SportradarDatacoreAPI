@@ -7,18 +7,10 @@ from attrs import define as _attrs_define
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.season_standings_stages_pools_model_organization import (
-        SeasonStandingsStagesPoolsModelOrganization,
-    )
-    from ..models.season_standings_stages_pools_model_pool import (
-        SeasonStandingsStagesPoolsModelPool,
-    )
-    from ..models.season_standings_stages_pools_model_season import (
-        SeasonStandingsStagesPoolsModelSeason,
-    )
-    from ..models.season_standings_stages_pools_model_stage import (
-        SeasonStandingsStagesPoolsModelStage,
-    )
+    from ..models.season_standings_stages_pools_model_organization import SeasonStandingsStagesPoolsModelOrganization
+    from ..models.season_standings_stages_pools_model_pool import SeasonStandingsStagesPoolsModelPool
+    from ..models.season_standings_stages_pools_model_season import SeasonStandingsStagesPoolsModelSeason
+    from ..models.season_standings_stages_pools_model_stage import SeasonStandingsStagesPoolsModelStage
 
 
 T = TypeVar("T", bound="SeasonStandingsStagesPoolsModel")
@@ -107,15 +99,9 @@ class SeasonStandingsStagesPoolsModel:
         from ..models.season_standings_stages_pools_model_organization import (
             SeasonStandingsStagesPoolsModelOrganization,
         )
-        from ..models.season_standings_stages_pools_model_pool import (
-            SeasonStandingsStagesPoolsModelPool,
-        )
-        from ..models.season_standings_stages_pools_model_season import (
-            SeasonStandingsStagesPoolsModelSeason,
-        )
-        from ..models.season_standings_stages_pools_model_stage import (
-            SeasonStandingsStagesPoolsModelStage,
-        )
+        from ..models.season_standings_stages_pools_model_pool import SeasonStandingsStagesPoolsModelPool
+        from ..models.season_standings_stages_pools_model_season import SeasonStandingsStagesPoolsModelSeason
+        from ..models.season_standings_stages_pools_model_stage import SeasonStandingsStagesPoolsModelStage
 
         d = dict(src_dict)
         _season_id = d.pop("seasonId", UNSET)
@@ -139,9 +125,7 @@ class SeasonStandingsStagesPoolsModel:
         if isinstance(_organization, Unset):
             organization = UNSET
         else:
-            organization = SeasonStandingsStagesPoolsModelOrganization.from_dict(
-                _organization
-            )
+            organization = SeasonStandingsStagesPoolsModelOrganization.from_dict(_organization)
 
         def _parse_stage_code(data: object) -> Union[None, Unset, str]:
             if data is None:

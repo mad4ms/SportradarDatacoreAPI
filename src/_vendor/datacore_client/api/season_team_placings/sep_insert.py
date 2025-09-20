@@ -5,13 +5,8 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
+from ...models.seasonteam_placings_post_body import SEASONTEAMPlacingsPostBody
 from ...models.sep_insert_response_default import SepInsertResponseDefault
-from ...models.sep_insert_season_entity_placings_response import (
-    SepInsertSeasonEntityPlacingsResponse,
-)
-from ...models.sep_insert_seasonteam_placings_post_body import (
-    SepInsertSEASONTEAMPlacingsPostBody,
-)
 from ...types import UNSET, Response, Unset
 
 
@@ -19,7 +14,7 @@ def _get_kwargs(
     organization_id: str,
     season_id: UUID,
     *,
-    body: SepInsertSEASONTEAMPlacingsPostBody,
+    body: SEASONTEAMPlacingsPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
@@ -55,12 +50,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[SepInsertResponseDefault, SepInsertSeasonEntityPlacingsResponse]:
-    if response.status_code == 200:
-        response_200 = SepInsertSeasonEntityPlacingsResponse.from_dict(response.json())
-
-        return response_200
-
+) -> SepInsertResponseDefault:
     response_default = SepInsertResponseDefault.from_dict(response.json())
 
     return response_default
@@ -68,7 +58,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[Union[SepInsertResponseDefault, SepInsertSeasonEntityPlacingsResponse]]:
+) -> Response[SepInsertResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -82,12 +72,12 @@ def sync_detailed(
     season_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: SepInsertSEASONTEAMPlacingsPostBody,
+    body: SEASONTEAMPlacingsPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[Union[SepInsertResponseDefault, SepInsertSeasonEntityPlacingsResponse]]:
+) -> Response[SepInsertResponseDefault]:
     """Create a new season team placing
 
      Add a new season team placing
@@ -100,14 +90,14 @@ def sync_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (SepInsertSEASONTEAMPlacingsPostBody):
+        body (SEASONTEAMPlacingsPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SepInsertResponseDefault, SepInsertSeasonEntityPlacingsResponse]]
+        Response[SepInsertResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -132,12 +122,12 @@ def sync(
     season_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: SepInsertSEASONTEAMPlacingsPostBody,
+    body: SEASONTEAMPlacingsPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[Union[SepInsertResponseDefault, SepInsertSeasonEntityPlacingsResponse]]:
+) -> Optional[SepInsertResponseDefault]:
     """Create a new season team placing
 
      Add a new season team placing
@@ -150,14 +140,14 @@ def sync(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (SepInsertSEASONTEAMPlacingsPostBody):
+        body (SEASONTEAMPlacingsPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SepInsertResponseDefault, SepInsertSeasonEntityPlacingsResponse]
+        SepInsertResponseDefault
     """
 
     return sync_detailed(
@@ -177,12 +167,12 @@ async def asyncio_detailed(
     season_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: SepInsertSEASONTEAMPlacingsPostBody,
+    body: SEASONTEAMPlacingsPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[Union[SepInsertResponseDefault, SepInsertSeasonEntityPlacingsResponse]]:
+) -> Response[SepInsertResponseDefault]:
     """Create a new season team placing
 
      Add a new season team placing
@@ -195,14 +185,14 @@ async def asyncio_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (SepInsertSEASONTEAMPlacingsPostBody):
+        body (SEASONTEAMPlacingsPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SepInsertResponseDefault, SepInsertSeasonEntityPlacingsResponse]]
+        Response[SepInsertResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -225,12 +215,12 @@ async def asyncio(
     season_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: SepInsertSEASONTEAMPlacingsPostBody,
+    body: SEASONTEAMPlacingsPostBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[Union[SepInsertResponseDefault, SepInsertSeasonEntityPlacingsResponse]]:
+) -> Optional[SepInsertResponseDefault]:
     """Create a new season team placing
 
      Add a new season team placing
@@ -243,14 +233,14 @@ async def asyncio(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (SepInsertSEASONTEAMPlacingsPostBody):
+        body (SEASONTEAMPlacingsPostBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SepInsertResponseDefault, SepInsertSeasonEntityPlacingsResponse]
+        SepInsertResponseDefault
     """
 
     return (

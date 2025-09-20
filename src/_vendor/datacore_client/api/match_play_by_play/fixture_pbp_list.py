@@ -6,9 +6,7 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.fixture_pbp_list_fixture_pbp_event_response import (
-    FixturePbpListFixturePbpEventResponse,
-)
+from ...models.fixture_pbp_event_response import FixturePbpEventResponse
 from ...models.fixture_pbp_list_period_id import FixturePbpListPeriodId
 from ...models.fixture_pbp_list_response_default import FixturePbpListResponseDefault
 from ...types import UNSET, Response, Unset
@@ -71,9 +69,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[FixturePbpListFixturePbpEventResponse, FixturePbpListResponseDefault]:
+) -> Union[FixturePbpEventResponse, FixturePbpListResponseDefault]:
     if response.status_code == 200:
-        response_200 = FixturePbpListFixturePbpEventResponse.from_dict(response.json())
+        response_200 = FixturePbpEventResponse.from_dict(response.json())
 
         return response_200
 
@@ -84,9 +82,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[FixturePbpListFixturePbpEventResponse, FixturePbpListResponseDefault]
-]:
+) -> Response[Union[FixturePbpEventResponse, FixturePbpListResponseDefault]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -109,9 +105,7 @@ def sync_detailed(
     offset: Union[Unset, int] = UNSET,
     period_id: Union[Unset, FixturePbpListPeriodId] = UNSET,
     to_timestamp: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[
-    Union[FixturePbpListFixturePbpEventResponse, FixturePbpListResponseDefault]
-]:
+) -> Response[Union[FixturePbpEventResponse, FixturePbpListResponseDefault]]:
     """Get a list play-by-play records for a match
 
      Return a list of play-by-play records for a match
@@ -135,7 +129,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[FixturePbpListFixturePbpEventResponse, FixturePbpListResponseDefault]]
+        Response[Union[FixturePbpEventResponse, FixturePbpListResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -173,9 +167,7 @@ def sync(
     offset: Union[Unset, int] = UNSET,
     period_id: Union[Unset, FixturePbpListPeriodId] = UNSET,
     to_timestamp: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[
-    Union[FixturePbpListFixturePbpEventResponse, FixturePbpListResponseDefault]
-]:
+) -> Optional[Union[FixturePbpEventResponse, FixturePbpListResponseDefault]]:
     """Get a list play-by-play records for a match
 
      Return a list of play-by-play records for a match
@@ -199,7 +191,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[FixturePbpListFixturePbpEventResponse, FixturePbpListResponseDefault]
+        Union[FixturePbpEventResponse, FixturePbpListResponseDefault]
     """
 
     return sync_detailed(
@@ -232,9 +224,7 @@ async def asyncio_detailed(
     offset: Union[Unset, int] = UNSET,
     period_id: Union[Unset, FixturePbpListPeriodId] = UNSET,
     to_timestamp: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[
-    Union[FixturePbpListFixturePbpEventResponse, FixturePbpListResponseDefault]
-]:
+) -> Response[Union[FixturePbpEventResponse, FixturePbpListResponseDefault]]:
     """Get a list play-by-play records for a match
 
      Return a list of play-by-play records for a match
@@ -258,7 +248,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[FixturePbpListFixturePbpEventResponse, FixturePbpListResponseDefault]]
+        Response[Union[FixturePbpEventResponse, FixturePbpListResponseDefault]]
     """
 
     kwargs = _get_kwargs(
@@ -294,9 +284,7 @@ async def asyncio(
     offset: Union[Unset, int] = UNSET,
     period_id: Union[Unset, FixturePbpListPeriodId] = UNSET,
     to_timestamp: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[
-    Union[FixturePbpListFixturePbpEventResponse, FixturePbpListResponseDefault]
-]:
+) -> Optional[Union[FixturePbpEventResponse, FixturePbpListResponseDefault]]:
     """Get a list play-by-play records for a match
 
      Return a list of play-by-play records for a match
@@ -320,7 +308,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[FixturePbpListFixturePbpEventResponse, FixturePbpListResponseDefault]
+        Union[FixturePbpEventResponse, FixturePbpListResponseDefault]
     """
 
     return (

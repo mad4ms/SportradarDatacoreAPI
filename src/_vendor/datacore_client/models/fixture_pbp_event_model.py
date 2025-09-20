@@ -11,14 +11,10 @@ from ..models.fixture_pbp_event_model_period_id import FixturePBPEventModelPerio
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.fixture_pbp_event_model_current_scores import (
-        FixturePBPEventModelCurrentScores,
-    )
+    from ..models.current_scores import CurrentScores
     from ..models.fixture_pbp_event_model_entity import FixturePBPEventModelEntity
     from ..models.fixture_pbp_event_model_fixture import FixturePBPEventModelFixture
-    from ..models.fixture_pbp_event_model_organization import (
-        FixturePBPEventModelOrganization,
-    )
+    from ..models.fixture_pbp_event_model_organization import FixturePBPEventModelOrganization
     from ..models.fixture_pbp_event_model_person import FixturePBPEventModelPerson
 
 
@@ -84,7 +80,7 @@ class FixturePBPEventModel:
         official_id (Union[Unset, UUID]): The unique ID of the official making this decision Example:
             009e9276-5c80-11e8-9c2d-fa7ae01bbebc.
         zone (Union[Unset, str]): See [Event Types]() for more information
-        scores (Union['FixturePBPEventModelCurrentScores', None, Unset]): The current scores
+        scores (Union['CurrentScores', None, Unset]): The current scores
         timestamp (Union[Unset, datetime.datetime]): The date/time (UTC) this event was sent. Example:
             2016-09-08T02:02:00Z.
         client_type (Union[Unset, str]): Type of the client that sent the event Example: InGame.
@@ -124,7 +120,7 @@ class FixturePBPEventModel:
     event_time: Union[Unset, datetime.datetime] = UNSET
     official_id: Union[Unset, UUID] = UNSET
     zone: Union[Unset, str] = UNSET
-    scores: Union["FixturePBPEventModelCurrentScores", None, Unset] = UNSET
+    scores: Union["CurrentScores", None, Unset] = UNSET
     timestamp: Union[Unset, datetime.datetime] = UNSET
     client_type: Union[Unset, str] = UNSET
     client_id: Union[Unset, str] = UNSET
@@ -134,9 +130,7 @@ class FixturePBPEventModel:
     sequence: Union[None, Unset, int] = UNSET
 
     def to_dict(self) -> dict[str, Any]:
-        from ..models.fixture_pbp_event_model_current_scores import (
-            FixturePBPEventModelCurrentScores,
-        )
+        from ..models.current_scores import CurrentScores
 
         organization_id = self.organization_id
 
@@ -223,7 +217,7 @@ class FixturePBPEventModel:
         scores: Union[None, Unset, dict[str, Any]]
         if isinstance(self.scores, Unset):
             scores = UNSET
-        elif isinstance(self.scores, FixturePBPEventModelCurrentScores):
+        elif isinstance(self.scores, CurrentScores):
             scores = self.scores.to_dict()
         else:
             scores = self.scores
@@ -328,14 +322,10 @@ class FixturePBPEventModel:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.fixture_pbp_event_model_current_scores import (
-            FixturePBPEventModelCurrentScores,
-        )
+        from ..models.current_scores import CurrentScores
         from ..models.fixture_pbp_event_model_entity import FixturePBPEventModelEntity
         from ..models.fixture_pbp_event_model_fixture import FixturePBPEventModelFixture
-        from ..models.fixture_pbp_event_model_organization import (
-            FixturePBPEventModelOrganization,
-        )
+        from ..models.fixture_pbp_event_model_organization import FixturePBPEventModelOrganization
         from ..models.fixture_pbp_event_model_person import FixturePBPEventModelPerson
 
         d = dict(src_dict)
@@ -460,9 +450,7 @@ class FixturePBPEventModel:
 
         zone = d.pop("zone", UNSET)
 
-        def _parse_scores(
-            data: object,
-        ) -> Union["FixturePBPEventModelCurrentScores", None, Unset]:
+        def _parse_scores(data: object) -> Union["CurrentScores", None, Unset]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -470,12 +458,12 @@ class FixturePBPEventModel:
             try:
                 if not isinstance(data, dict):
                     raise TypeError()
-                scores_type_0 = FixturePBPEventModelCurrentScores.from_dict(data)
+                scores_type_0 = CurrentScores.from_dict(data)
 
                 return scores_type_0
             except:  # noqa: E722
                 pass
-            return cast(Union["FixturePBPEventModelCurrentScores", None, Unset], data)
+            return cast(Union["CurrentScores", None, Unset], data)
 
         scores = _parse_scores(d.pop("scores", UNSET))
 

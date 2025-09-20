@@ -5,8 +5,7 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.awards_update_award_put_body import AwardsUpdateAwardPutBody
-from ...models.awards_update_awards_response import AwardsUpdateAwardsResponse
+from ...models.award_put_body import AwardPutBody
 from ...models.awards_update_response_default import AwardsUpdateResponseDefault
 from ...types import UNSET, Response, Unset
 
@@ -15,7 +14,7 @@ def _get_kwargs(
     organization_id: str,
     award_id: UUID,
     *,
-    body: AwardsUpdateAwardPutBody,
+    body: AwardPutBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
@@ -51,12 +50,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[AwardsUpdateAwardsResponse, AwardsUpdateResponseDefault]:
-    if response.status_code == 200:
-        response_200 = AwardsUpdateAwardsResponse.from_dict(response.json())
-
-        return response_200
-
+) -> AwardsUpdateResponseDefault:
     response_default = AwardsUpdateResponseDefault.from_dict(response.json())
 
     return response_default
@@ -64,7 +58,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[Union[AwardsUpdateAwardsResponse, AwardsUpdateResponseDefault]]:
+) -> Response[AwardsUpdateResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -78,12 +72,12 @@ def sync_detailed(
     award_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: AwardsUpdateAwardPutBody,
+    body: AwardPutBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[Union[AwardsUpdateAwardsResponse, AwardsUpdateResponseDefault]]:
+) -> Response[AwardsUpdateResponseDefault]:
     """Update an award
 
      Change the information of a specific award
@@ -96,14 +90,14 @@ def sync_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (AwardsUpdateAwardPutBody):
+        body (AwardPutBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[AwardsUpdateAwardsResponse, AwardsUpdateResponseDefault]]
+        Response[AwardsUpdateResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -128,12 +122,12 @@ def sync(
     award_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: AwardsUpdateAwardPutBody,
+    body: AwardPutBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[Union[AwardsUpdateAwardsResponse, AwardsUpdateResponseDefault]]:
+) -> Optional[AwardsUpdateResponseDefault]:
     """Update an award
 
      Change the information of a specific award
@@ -146,14 +140,14 @@ def sync(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (AwardsUpdateAwardPutBody):
+        body (AwardPutBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[AwardsUpdateAwardsResponse, AwardsUpdateResponseDefault]
+        AwardsUpdateResponseDefault
     """
 
     return sync_detailed(
@@ -173,12 +167,12 @@ async def asyncio_detailed(
     award_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: AwardsUpdateAwardPutBody,
+    body: AwardPutBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[Union[AwardsUpdateAwardsResponse, AwardsUpdateResponseDefault]]:
+) -> Response[AwardsUpdateResponseDefault]:
     """Update an award
 
      Change the information of a specific award
@@ -191,14 +185,14 @@ async def asyncio_detailed(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (AwardsUpdateAwardPutBody):
+        body (AwardPutBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[AwardsUpdateAwardsResponse, AwardsUpdateResponseDefault]]
+        Response[AwardsUpdateResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -221,12 +215,12 @@ async def asyncio(
     award_id: UUID,
     *,
     client: AuthenticatedClient,
-    body: AwardsUpdateAwardPutBody,
+    body: AwardPutBody,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[Union[AwardsUpdateAwardsResponse, AwardsUpdateResponseDefault]]:
+) -> Optional[AwardsUpdateResponseDefault]:
     """Update an award
 
      Change the information of a specific award
@@ -239,14 +233,14 @@ async def asyncio(
             teams[name,details/metrics/*,tags(id)].
         hide_null (Union[Unset, bool]):  Example: True.
         include (Union[Unset, str]):  Example: organizations,fixtures,entities.
-        body (AwardsUpdateAwardPutBody):
+        body (AwardPutBody):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[AwardsUpdateAwardsResponse, AwardsUpdateResponseDefault]
+        AwardsUpdateResponseDefault
     """
 
     return (

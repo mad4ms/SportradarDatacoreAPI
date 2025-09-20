@@ -4,18 +4,9 @@ from typing import Any, Optional, Union
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.images_insert_organization_base_type import (
-    ImagesInsertOrganizationBaseType,
-)
-from ...models.images_insert_organization_image_type import (
-    ImagesInsertOrganizationImageType,
-)
-from ...models.images_insert_organization_images_response import (
-    ImagesInsertOrganizationImagesResponse,
-)
-from ...models.images_insert_organization_response_default import (
-    ImagesInsertOrganizationResponseDefault,
-)
+from ...models.images_insert_organization_base_type import ImagesInsertOrganizationBaseType
+from ...models.images_insert_organization_image_type import ImagesInsertOrganizationImageType
+from ...models.images_insert_organization_response_default import ImagesInsertOrganizationResponseDefault
 from ...types import UNSET, File, Response, Unset
 
 
@@ -24,9 +15,7 @@ def _get_kwargs(
     image_type: ImagesInsertOrganizationImageType,
     *,
     body: File,
-    base_type: Union[
-        Unset, ImagesInsertOrganizationBaseType
-    ] = ImagesInsertOrganizationBaseType.ORGANIZATION,
+    base_type: Union[Unset, ImagesInsertOrganizationBaseType] = ImagesInsertOrganizationBaseType.ORGANIZATION,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
@@ -68,28 +57,15 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[
-    ImagesInsertOrganizationImagesResponse, ImagesInsertOrganizationResponseDefault
-]:
-    if response.status_code == 200:
-        response_200 = ImagesInsertOrganizationImagesResponse.from_dict(response.json())
-
-        return response_200
-
-    response_default = ImagesInsertOrganizationResponseDefault.from_dict(
-        response.json()
-    )
+) -> ImagesInsertOrganizationResponseDefault:
+    response_default = ImagesInsertOrganizationResponseDefault.from_dict(response.json())
 
     return response_default
 
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[
-        ImagesInsertOrganizationImagesResponse, ImagesInsertOrganizationResponseDefault
-    ]
-]:
+) -> Response[ImagesInsertOrganizationResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -104,18 +80,12 @@ def sync_detailed(
     *,
     client: AuthenticatedClient,
     body: File,
-    base_type: Union[
-        Unset, ImagesInsertOrganizationBaseType
-    ] = ImagesInsertOrganizationBaseType.ORGANIZATION,
+    base_type: Union[Unset, ImagesInsertOrganizationBaseType] = ImagesInsertOrganizationBaseType.ORGANIZATION,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        ImagesInsertOrganizationImagesResponse, ImagesInsertOrganizationResponseDefault
-    ]
-]:
+) -> Response[ImagesInsertOrganizationResponseDefault]:
     """Upload a new image for the organization
 
      Add a new image for the organization.
@@ -165,7 +135,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[ImagesInsertOrganizationImagesResponse, ImagesInsertOrganizationResponseDefault]]
+        Response[ImagesInsertOrganizationResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -192,18 +162,12 @@ def sync(
     *,
     client: AuthenticatedClient,
     body: File,
-    base_type: Union[
-        Unset, ImagesInsertOrganizationBaseType
-    ] = ImagesInsertOrganizationBaseType.ORGANIZATION,
+    base_type: Union[Unset, ImagesInsertOrganizationBaseType] = ImagesInsertOrganizationBaseType.ORGANIZATION,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        ImagesInsertOrganizationImagesResponse, ImagesInsertOrganizationResponseDefault
-    ]
-]:
+) -> Optional[ImagesInsertOrganizationResponseDefault]:
     """Upload a new image for the organization
 
      Add a new image for the organization.
@@ -253,7 +217,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[ImagesInsertOrganizationImagesResponse, ImagesInsertOrganizationResponseDefault]
+        ImagesInsertOrganizationResponseDefault
     """
 
     return sync_detailed(
@@ -275,18 +239,12 @@ async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
     body: File,
-    base_type: Union[
-        Unset, ImagesInsertOrganizationBaseType
-    ] = ImagesInsertOrganizationBaseType.ORGANIZATION,
+    base_type: Union[Unset, ImagesInsertOrganizationBaseType] = ImagesInsertOrganizationBaseType.ORGANIZATION,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Response[
-    Union[
-        ImagesInsertOrganizationImagesResponse, ImagesInsertOrganizationResponseDefault
-    ]
-]:
+) -> Response[ImagesInsertOrganizationResponseDefault]:
     """Upload a new image for the organization
 
      Add a new image for the organization.
@@ -336,7 +294,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[ImagesInsertOrganizationImagesResponse, ImagesInsertOrganizationResponseDefault]]
+        Response[ImagesInsertOrganizationResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -361,18 +319,12 @@ async def asyncio(
     *,
     client: AuthenticatedClient,
     body: File,
-    base_type: Union[
-        Unset, ImagesInsertOrganizationBaseType
-    ] = ImagesInsertOrganizationBaseType.ORGANIZATION,
+    base_type: Union[Unset, ImagesInsertOrganizationBaseType] = ImagesInsertOrganizationBaseType.ORGANIZATION,
     external: Union[Unset, str] = UNSET,
     fields: Union[Unset, str] = UNSET,
     hide_null: Union[Unset, bool] = UNSET,
     include: Union[Unset, str] = UNSET,
-) -> Optional[
-    Union[
-        ImagesInsertOrganizationImagesResponse, ImagesInsertOrganizationResponseDefault
-    ]
-]:
+) -> Optional[ImagesInsertOrganizationResponseDefault]:
     """Upload a new image for the organization
 
      Add a new image for the organization.
@@ -422,7 +374,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[ImagesInsertOrganizationImagesResponse, ImagesInsertOrganizationResponseDefault]
+        ImagesInsertOrganizationResponseDefault
     """
 
     return (

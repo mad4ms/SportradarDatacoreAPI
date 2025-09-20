@@ -21,9 +21,7 @@ class SeasonFixtureStagesPoolsModelOrganization:
         id (Union[Unset, str]): Unique identifier for this resource Example: 9.
     """
 
-    resource_type: Union[
-        Unset, SeasonFixtureStagesPoolsModelOrganizationResourceType
-    ] = UNSET
+    resource_type: Union[Unset, SeasonFixtureStagesPoolsModelOrganizationResourceType] = UNSET
     id: Union[Unset, str] = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
@@ -48,15 +46,11 @@ class SeasonFixtureStagesPoolsModelOrganization:
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         d = dict(src_dict)
         _resource_type = d.pop("resourceType", UNSET)
-        resource_type: Union[
-            Unset, SeasonFixtureStagesPoolsModelOrganizationResourceType
-        ]
+        resource_type: Union[Unset, SeasonFixtureStagesPoolsModelOrganizationResourceType]
         if isinstance(_resource_type, Unset):
             resource_type = UNSET
         else:
-            resource_type = SeasonFixtureStagesPoolsModelOrganizationResourceType(
-                _resource_type
-            )
+            resource_type = SeasonFixtureStagesPoolsModelOrganizationResourceType(_resource_type)
 
         id = d.pop("id", UNSET)
 

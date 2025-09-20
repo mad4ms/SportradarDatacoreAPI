@@ -4,24 +4,14 @@ from uuid import UUID
 
 from attrs import define as _attrs_define
 
-from ..models.season_fixture_stages_pools_model_fixture_type import (
-    SeasonFixtureStagesPoolsModelFixtureType,
-)
+from ..models.season_fixture_stages_pools_model_fixture_type import SeasonFixtureStagesPoolsModelFixtureType
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.season_fixture_stages_pools_model_organization import (
-        SeasonFixtureStagesPoolsModelOrganization,
-    )
-    from ..models.season_fixture_stages_pools_model_pool import (
-        SeasonFixtureStagesPoolsModelPool,
-    )
-    from ..models.season_fixture_stages_pools_model_season import (
-        SeasonFixtureStagesPoolsModelSeason,
-    )
-    from ..models.season_fixture_stages_pools_model_stage import (
-        SeasonFixtureStagesPoolsModelStage,
-    )
+    from ..models.season_fixture_stages_pools_model_organization import SeasonFixtureStagesPoolsModelOrganization
+    from ..models.season_fixture_stages_pools_model_pool import SeasonFixtureStagesPoolsModelPool
+    from ..models.season_fixture_stages_pools_model_season import SeasonFixtureStagesPoolsModelSeason
+    from ..models.season_fixture_stages_pools_model_stage import SeasonFixtureStagesPoolsModelStage
 
 
 T = TypeVar("T", bound="SeasonFixtureStagesPoolsModel")
@@ -123,18 +113,10 @@ class SeasonFixtureStagesPoolsModel:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.season_fixture_stages_pools_model_organization import (
-            SeasonFixtureStagesPoolsModelOrganization,
-        )
-        from ..models.season_fixture_stages_pools_model_pool import (
-            SeasonFixtureStagesPoolsModelPool,
-        )
-        from ..models.season_fixture_stages_pools_model_season import (
-            SeasonFixtureStagesPoolsModelSeason,
-        )
-        from ..models.season_fixture_stages_pools_model_stage import (
-            SeasonFixtureStagesPoolsModelStage,
-        )
+        from ..models.season_fixture_stages_pools_model_organization import SeasonFixtureStagesPoolsModelOrganization
+        from ..models.season_fixture_stages_pools_model_pool import SeasonFixtureStagesPoolsModelPool
+        from ..models.season_fixture_stages_pools_model_season import SeasonFixtureStagesPoolsModelSeason
+        from ..models.season_fixture_stages_pools_model_stage import SeasonFixtureStagesPoolsModelStage
 
         d = dict(src_dict)
         _season_id = d.pop("seasonId", UNSET)
@@ -158,9 +140,7 @@ class SeasonFixtureStagesPoolsModel:
         if isinstance(_organization, Unset):
             organization = UNSET
         else:
-            organization = SeasonFixtureStagesPoolsModelOrganization.from_dict(
-                _organization
-            )
+            organization = SeasonFixtureStagesPoolsModelOrganization.from_dict(_organization)
 
         def _parse_stage_code(data: object) -> Union[None, Unset, str]:
             if data is None:

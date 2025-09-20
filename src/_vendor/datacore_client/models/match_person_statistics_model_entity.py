@@ -4,9 +4,7 @@ from typing import Any, TypeVar, Union
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-from ..models.match_person_statistics_model_entity_resource_type import (
-    MatchPersonStatisticsModelEntityResourceType,
-)
+from ..models.match_person_statistics_model_entity_resource_type import MatchPersonStatisticsModelEntityResourceType
 from ..types import UNSET, Unset
 
 T = TypeVar("T", bound="MatchPersonStatisticsModelEntity")

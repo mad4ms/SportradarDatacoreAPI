@@ -6,14 +6,10 @@ from uuid import UUID
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.roles_list_non_fixtures_response_default import (
-    RolesListNonFixturesResponseDefault,
-)
+from ...models.roles_list_non_fixtures_response_default import RolesListNonFixturesResponseDefault
 from ...models.roles_list_non_fixtures_role import RolesListNonFixturesRole
-from ...models.roles_list_non_fixtures_roles_response import (
-    RolesListNonFixturesRolesResponse,
-)
 from ...models.roles_list_non_fixtures_status import RolesListNonFixturesStatus
+from ...models.roles_response import RolesResponse
 from ...types import UNSET, Response, Unset
 
 
@@ -143,9 +139,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[RolesListNonFixturesResponseDefault, RolesListNonFixturesRolesResponse]:
+) -> Union[RolesListNonFixturesResponseDefault, RolesResponse]:
     if response.status_code == 200:
-        response_200 = RolesListNonFixturesRolesResponse.from_dict(response.json())
+        response_200 = RolesResponse.from_dict(response.json())
 
         return response_200
 
@@ -156,9 +152,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[
-    Union[RolesListNonFixturesResponseDefault, RolesListNonFixturesRolesResponse]
-]:
+) -> Response[Union[RolesListNonFixturesResponseDefault, RolesResponse]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -195,9 +189,7 @@ def sync_detailed(
     sort_by: Union[Unset, str] = UNSET,
     status: Union[Unset, RolesListNonFixturesStatus] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[
-    Union[RolesListNonFixturesResponseDefault, RolesListNonFixturesRolesResponse]
-]:
+) -> Response[Union[RolesListNonFixturesResponseDefault, RolesResponse]]:
     """Get a list of non-match roles
 
      Return a list of roles for the organization (not linked to matches)
@@ -237,7 +229,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[RolesListNonFixturesResponseDefault, RolesListNonFixturesRolesResponse]]
+        Response[Union[RolesListNonFixturesResponseDefault, RolesResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -303,9 +295,7 @@ def sync(
     sort_by: Union[Unset, str] = UNSET,
     status: Union[Unset, RolesListNonFixturesStatus] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[
-    Union[RolesListNonFixturesResponseDefault, RolesListNonFixturesRolesResponse]
-]:
+) -> Optional[Union[RolesListNonFixturesResponseDefault, RolesResponse]]:
     """Get a list of non-match roles
 
      Return a list of roles for the organization (not linked to matches)
@@ -345,7 +335,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[RolesListNonFixturesResponseDefault, RolesListNonFixturesRolesResponse]
+        Union[RolesListNonFixturesResponseDefault, RolesResponse]
     """
 
     return sync_detailed(
@@ -406,9 +396,7 @@ async def asyncio_detailed(
     sort_by: Union[Unset, str] = UNSET,
     status: Union[Unset, RolesListNonFixturesStatus] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Response[
-    Union[RolesListNonFixturesResponseDefault, RolesListNonFixturesRolesResponse]
-]:
+) -> Response[Union[RolesListNonFixturesResponseDefault, RolesResponse]]:
     """Get a list of non-match roles
 
      Return a list of roles for the organization (not linked to matches)
@@ -448,7 +436,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[RolesListNonFixturesResponseDefault, RolesListNonFixturesRolesResponse]]
+        Response[Union[RolesListNonFixturesResponseDefault, RolesResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -512,9 +500,7 @@ async def asyncio(
     sort_by: Union[Unset, str] = UNSET,
     status: Union[Unset, RolesListNonFixturesStatus] = UNSET,
     updated: Union[Unset, datetime.datetime] = UNSET,
-) -> Optional[
-    Union[RolesListNonFixturesResponseDefault, RolesListNonFixturesRolesResponse]
-]:
+) -> Optional[Union[RolesListNonFixturesResponseDefault, RolesResponse]]:
     """Get a list of non-match roles
 
      Return a list of roles for the organization (not linked to matches)
@@ -554,7 +540,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[RolesListNonFixturesResponseDefault, RolesListNonFixturesRolesResponse]
+        Union[RolesListNonFixturesResponseDefault, RolesResponse]
     """
 
     return (

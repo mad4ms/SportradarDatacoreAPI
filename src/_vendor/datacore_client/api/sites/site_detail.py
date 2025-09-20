@@ -6,7 +6,6 @@ import httpx
 
 from ...client import AuthenticatedClient, Client
 from ...models.site_detail_response_default import SiteDetailResponseDefault
-from ...models.site_detail_sites_response import SiteDetailSitesResponse
 from ...types import UNSET, Response, Unset
 
 
@@ -48,12 +47,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Union[SiteDetailResponseDefault, SiteDetailSitesResponse]:
-    if response.status_code == 200:
-        response_200 = SiteDetailSitesResponse.from_dict(response.json())
-
-        return response_200
-
+) -> SiteDetailResponseDefault:
     response_default = SiteDetailResponseDefault.from_dict(response.json())
 
     return response_default
@@ -61,7 +55,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[Union[SiteDetailResponseDefault, SiteDetailSitesResponse]]:
+) -> Response[SiteDetailResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -81,7 +75,7 @@ def sync_detailed(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Response[Union[SiteDetailResponseDefault, SiteDetailSitesResponse]]:
+) -> Response[SiteDetailResponseDefault]:
     """Get a site
 
      Return detailed information about a specific site
@@ -102,7 +96,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SiteDetailResponseDefault, SiteDetailSitesResponse]]
+        Response[SiteDetailResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -134,7 +128,7 @@ def sync(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Optional[Union[SiteDetailResponseDefault, SiteDetailSitesResponse]]:
+) -> Optional[SiteDetailResponseDefault]:
     """Get a site
 
      Return detailed information about a specific site
@@ -155,7 +149,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SiteDetailResponseDefault, SiteDetailSitesResponse]
+        SiteDetailResponseDefault
     """
 
     return sync_detailed(
@@ -182,7 +176,7 @@ async def asyncio_detailed(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Response[Union[SiteDetailResponseDefault, SiteDetailSitesResponse]]:
+) -> Response[SiteDetailResponseDefault]:
     """Get a site
 
      Return detailed information about a specific site
@@ -203,7 +197,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[SiteDetailResponseDefault, SiteDetailSitesResponse]]
+        Response[SiteDetailResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -233,7 +227,7 @@ async def asyncio(
     include: Union[Unset, str] = UNSET,
     limit: Union[Unset, int] = 10,
     offset: Union[Unset, int] = UNSET,
-) -> Optional[Union[SiteDetailResponseDefault, SiteDetailSitesResponse]]:
+) -> Optional[SiteDetailResponseDefault]:
     """Get a site
 
      Return detailed information about a specific site
@@ -254,7 +248,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[SiteDetailResponseDefault, SiteDetailSitesResponse]
+        SiteDetailResponseDefault
     """
 
     return (
