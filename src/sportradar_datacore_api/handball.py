@@ -135,6 +135,7 @@ class HandballAPI(DataCoreAPI):
             season_id=season_id,
             include="entities,organizations",
             limit=100,
+            # fields=
         )
 
         if resp.status_code != 200:
