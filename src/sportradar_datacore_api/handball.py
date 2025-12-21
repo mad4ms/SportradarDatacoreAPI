@@ -11,18 +11,37 @@ import logging
 from typing import Any, Dict, List
 
 from datacore_client.api.competitions import competition_list
+from datacore_client.api.match_persons import fixture_persons_list
 from datacore_client.api.match_play_by_play import fixture_pbp_export
-from datacore_client.api.matches import fixture_list
+from datacore_client.api.matches import fixture_detail, fixture_list
+from datacore_client.api.persons import person_list
+from datacore_client.api.season_persons import season_persons_list
 from datacore_client.api.seasons import season_list
+from datacore_client.api.season_teams import season_entities_list
+from datacore_client.api.teams import entity_detail
+
+# from datacore_client.api.teams import entity_list
 from datacore_client.models import (
     CompetitionListCompetitionsResponse,
     CompetitionListResponseDefault,
+    FixtureDetailFixturesResponse,
+    FixtureDetailResponseDefault,
     FixtureListFixturesResponse,
     FixtureListResponseDefault,
     FixturePbpExportResponseDefault,
     FixturePbpExportSuccessResponse,
+    FixturePersonsListFixturePersonsResponse,
+    FixturePersonsListResponseDefault,
+    PersonListPersonsResponse,
+    PersonListResponseDefault,
     SeasonListResponseDefault,
     SeasonListSeasonsResponse,
+    SeasonPersonsListResponseDefault,
+    SeasonPersonsListSeasonPersonsListResponse,
+    EntityDetailEntitiesResponse,
+    EntityDetailResponseDefault,
+    SeasonEntitiesListResponseDefault,
+    SeasonEntitiesListSeasonEntitiesListResponse,
 )
 
 from sportradar_datacore_api.api import DataCoreAPI
@@ -60,14 +79,19 @@ class HandballAPI(DataCoreAPI):
             for c in competitions:
                 comp_id = c.competition_id
 
-                if c.name_local and c.name_local.lower() == competition_name.lower():
+                if (
+                    c.name_local
+                    and c.name_local.lower() == competition_name.lower()
+                ):
                     return comp_id
         else:
             # Default/error schema from API (typed)
             err: CompetitionListResponseDefault = parsed
             raise RuntimeError(f"API error: {err}")
 
-    def get_season_id_by_year(self, competition_id: str, season_year: int) -> str:
+    def get_season_id_by_year(
+        self, competition_id: str, season_year: int
+    ) -> str:
         """
         Resolve a season UUID by name under a given competition.
         Tries exact (case-insensitive) match on common name fields, then 'contains'.
@@ -89,7 +113,9 @@ class HandballAPI(DataCoreAPI):
                 for c in seasons:
                     season_id = c.season_id
 
-                    logging.debug("Checking season: %s (%s)", c.name_local, season_id)
+                    logging.debug(
+                        "Checking season: %s (%s)", c.name_local, season_id
+                    )
 
                     if c.year == season_year:
                         return season_id
@@ -97,7 +123,90 @@ class HandballAPI(DataCoreAPI):
                 err: SeasonListResponseDefault = parsed
                 raise RuntimeError(f"API error: {err}")
 
-    def get_list_matches_by_season_id(self, season_id: str) -> List[Dict[str, Any]]:
+    def get_teams_by_season_id(self, season_id: str) -> List[Dict[str, Any]]:
+        """
+        Return all teams for the given season as a list of dicts.
+        """
+        if not season_id:
+            raise ValueError("season_id must be provided.")
+        resp = season_entities_list.sync_detailed(
+            client=self.client,
+            organization_id=self.org_id,
+            season_id=season_id,
+            include="entities,organizations",
+            limit=100,
+            # fields=
+        )
+
+        if resp.status_code != 200:
+            raise RuntimeError(f"HTTP {resp.status_code}: {resp.content!r}")
+
+        parsed = resp.parsed
+
+        if isinstance(parsed, SeasonEntitiesListSeasonEntitiesListResponse):
+            return parsed.data or []
+        else:
+            err: SeasonEntitiesListResponseDefault = parsed
+            raise RuntimeError(f"API error: {err}")
+
+    def get_players_by_season_id(self, season_id: str) -> List[Dict[str, Any]]:
+        """
+        Return all players for the given season as a list of dicts.
+        """
+        if not season_id:
+            raise ValueError("season_id must be provided.")
+        resp = season_persons_list.sync_detailed(
+            client=self.client,
+            organization_id=self.org_id,
+            season_id=season_id,
+            include="entities,organizations",
+        )
+
+        if resp.status_code != 200:
+            raise RuntimeError(f"HTTP {resp.status_code}: {resp.content!r}")
+
+        parsed = resp.parsed
+
+        if isinstance(parsed, SeasonPersonsListSeasonPersonsListResponse):
+            players = list(parsed.data or [])
+            if players and players[0].players:
+                return [player.model_dump() for player in players[0].players]
+            else:
+                return []
+        else:
+            err: SeasonPersonsListResponseDefault = parsed
+            raise RuntimeError(f"API error: {err}")
+
+    def get_players_by_match_id(self, match_id: str) -> List[Dict[str, Any]]:
+        """
+        Return all players for the given season as a list of dicts.
+        """
+        if not match_id:
+            raise ValueError("match_id must be provided.")
+        resp = fixture_persons_list.sync_detailed(
+            client=self.client,
+            organization_id=self.org_id,
+            fixture_id=match_id,
+        )
+
+        if resp.status_code != 200:
+            raise RuntimeError(f"HTTP {resp.status_code}: {resp.content!r}")
+
+        parsed = resp.parsed
+
+        if isinstance(parsed, FixturePersonsListFixturePersonsResponse):
+            players = list(parsed.data or [])
+            if players and players[0].players:
+                return [player.model_dump() for player in players[0].players]
+            else:
+                return []
+        else:
+            err: FixturePersonsListResponseDefault = parsed
+            raise RuntimeError(f"API error: {err}")
+
+    def get_list_matches_by_season_id(
+        self, season_id: str
+    ) -> List[Dict[str, Any]]:
         """
         Return all fixtures (matches) for the given season as a list of dicts.
         """
@@ -107,7 +216,9 @@ class HandballAPI(DataCoreAPI):
             client=self.client,
             organization_id=self.org_id,
             season_id=season_id,
-            limit=500,  # Adjust limit as needed
+            external="entityId,personId",
+            include="organizations,entities",
+            limit=500,
         )
 
         if resp.status_code != 200:
@@ -121,7 +232,55 @@ class HandballAPI(DataCoreAPI):
             err: FixtureListResponseDefault = parsed
             raise RuntimeError(f"API error: {err}")
 
-    def get_fixture_events_by_id(self, fixture_id: str) -> Dict[str, Any]:
+    def get_team_by_id(self, entity_id: str) -> Dict[str, Any]:
+        """
+        Return the full entity (team) metadata for a given entity ID.
+        """
+        if not entity_id:
+            raise ValueError("entity_id must be provided.")
+        resp = entity_detail.sync_detailed(
+            client=self.client,
+            organization_id=self.org_id,
+            entity_id=entity_id,
+            include="entities,organizations",
+        )
+        if resp.status_code != 200:
+            raise RuntimeError(f"HTTP {resp.status_code}: {resp.content!r}")
+        parsed = resp.parsed
+        if isinstance(parsed, EntityDetailEntitiesResponse):
+            return parsed.data or {}
+        else:
+            err: EntityDetailResponseDefault = parsed
+            raise RuntimeError(f"API error: {err}")
+
+    def get_fixture_by_id(self, fixture_id: str) -> Dict[str, Any]:
+        """
+        Return the full fixture (match) metadata for a given fixture ID.
+        """
+        if not fixture_id:
+            raise ValueError("fixture_id must be provided.")
+        resp = fixture_detail.sync_detailed(
+            client=self.client,
+            organization_id=self.org_id,
+            fixture_id=fixture_id,
+            include="entities,organizations,persons",
+            external="entityId,personId",
+            hide_null=False,
+            limit=1000,
+        )
+
+        if resp.status_code != 200:
+            raise RuntimeError(f"HTTP {resp.status_code}: {resp.content!r}")
+        parsed = resp.parsed
+        if isinstance(parsed, FixtureDetailFixturesResponse):
+            return parsed.data or {}
+        else:
+            err: FixtureDetailResponseDefault = parsed
+            raise RuntimeError(f"API error: {err}")
+
+    def get_fixture_events_by_id(
+        self, fixture_id: str, setup_only: bool, with_scores: bool
+    ) -> Dict[str, Any]:
         """
         Return the full fixture (match) metadata for a given fixture ID.
         """
@@ -131,6 +290,9 @@ class HandballAPI(DataCoreAPI):
             client=self.client,
             organization_id=self.org_id,
             fixture_id=fixture_id,
+            limit=1000,
+            only_setup=setup_only,
+            with_scores=with_scores,
         )
 
         if resp.status_code != 200:
@@ -141,6 +303,29 @@ class HandballAPI(DataCoreAPI):
             return content_dict.get("data") or {}
         else:
             err: FixturePbpExportResponseDefault = parsed
+            raise RuntimeError(f"API error: {err}")
+
+    def get_players_by_ids(self, person_ids: str) -> Dict[str, Any]:
+        """
+        Return the full player metadata for a given player ID.
+        """
+        if not person_ids:
+            raise ValueError("person_ids must be provided.")
+        resp = person_list.sync_detailed(
+            client=self.client,
+            organization_id=self.org_id,
+            person_ids=person_ids,
+            limit=500,
+        )
+
+        if resp.status_code != 200:
+            raise RuntimeError(f"HTTP {resp.status_code}: {resp.content!r}")
+        parsed = resp.parsed
+        if isinstance(parsed, PersonListPersonsResponse):
+            content_dict = json.loads(resp.content)
+            return content_dict.get("data") or {}
+        else:
+            err: PersonListResponseDefault = parsed
             raise RuntimeError(f"API error: {err}")
 
     def save_events_to_csv(self, events: List[dict], file_path: str) -> None:

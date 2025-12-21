@@ -5,7 +5,7 @@ description = "A Python wrapper for accessing and processing Sportradar DataCore
 authors = [{ name = "Michael Adams", email = "m@ad4ms.de" }]
 license = { text = "MIT" }
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.12"
 
 # Runtime deps for  wrapper + generated client
 dependencies = [

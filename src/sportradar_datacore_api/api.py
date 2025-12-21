@@ -39,6 +39,7 @@ class DataCoreAPI:
         scopes: Optional[List[str]] = None,
         timeout: int = 5,
         rate_limit_sleep: float = 1.0,
+        connect_on_init: bool = True,
     ) -> None:
         self.base_url = base_url.rstrip("/")
         self.auth_url = auth_url
@@ -53,6 +54,8 @@ class DataCoreAPI:
         self._token: Optional[str] = None
         self._expires_at: float = 0.0
 
+        self.client: Optional[AuthenticatedClient] = None
+
         self.session = httpx.Client()
         self.session.headers.update(
             {
@@ -60,6 +63,12 @@ class DataCoreAPI:
                 "Content-Type": "application/json",
             }
         )
+        if connect_on_init:
+            self.connect()
+
+    def connect(
+        self,
+    ) -> None:
         self._authenticate()
 
         self.client = AuthenticatedClient(
@@ -90,7 +99,9 @@ class DataCoreAPI:
         data = response.json().get("data", {})
         self._token = data.get("token")
         if not self._token:
-            raise APIAuthenticationError("Token missing in authentication response.")
+            raise APIAuthenticationError(
+                "Token missing in authentication response."
+            )
 
         expires_in = data.get("expires_in", 3600)
         self._expires_at = time.time() + expires_in - self._TOKEN_BUFFER
