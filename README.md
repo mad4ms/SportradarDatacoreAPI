@@ -4,20 +4,20 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Code style: ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 
-A robust, typed Python wrapper for the Sportradar DataCore API (Handball). 
+A Python wrapper for the Sportradar DataCore REST API (Handball). 
 
 This library simplifies interaction with the Sportradar API by handling OpenID Connect (OIDC) authentication automatically and providing a fully typed interface for all API endpoints.
 
-## 🌟 Features
+## Features
 
 - **Automated Authentication**: Handles OAuth2 token acquisition, caching, and transparent refreshing.
 - **Fully Typed**: Built on top of a generated OpenAPI client, ensuring 100% type safety for requests and response models.
-- **High-Level Helpers**: Convenient methods for common workflows (e.g., resolving `Season IDs` from `Years`, fetching fixtures).
+- **High-Level Helpers**: Convenient methods for common workflows (e.g., resolving `Season IDs` from `Years`, fetching fixtures, players, events, etc.).
 - **Hybrid Architecture**: 
   - Use high-level helpers in `sportradar_datacore_api` for ease of use.
   - Access the underlying `datacore_client` for raw access to every single API endpoint generated from the official spec.
 
-## 📦 Installation
+## Installation
 
 This project requires **Python 3.12+**.
 
@@ -39,7 +39,7 @@ cd SportradarDatacoreAPI
 uv pip install .
 ```
 
-## ⚙️ Configuration
+## Configuration
 
 The library uses **pydantic** and **python-dotenv** to manage configuration. You can provide credentials via a `.env` file in your project root or via environment variables.
 
@@ -53,7 +53,7 @@ CLIENT_SECRET=your_client_secret
 CLIENT_ORGANIZATION_ID=your_org_id
 ```
 
-## 🚀 Usage
+## Usage
 
 ### Basic Example
 
@@ -112,16 +112,16 @@ if response.status_code == 200:
     print(data.data[0].name_local)
 ```
 
-## 🏗 Architecture
+## Architecture
 
 This project uses a **Wrapper Pattern** around a generated OpenAPI client.
 
 - **`src/sportradar_datacore_api/`**: The public-facing code. Contains the `HandballAPI` class, authentication logic, and user-friendly helpers.
 - **`src/_vendor/datacore_client/`**: The low-level client code generated from the Sportradar OpenAPI specification.
   - *Note*: This directory allows us to ship the generated code without external dependencies or versioning conflicts.
-  - ⚠️ **Do not edit files in `_vendor` manually.** They are overwritten during code generation.
+  - **Do not edit files in `_vendor` manually.** They are overwritten during code generation.
 
-## 🛠 Development
+## Development
 
 ### Setup
 
@@ -150,6 +150,10 @@ If the Sportradar OpenAPI specification changes, you can regenerate the client:
 ./scripts/codegen.sh
 ```
 
-## 📄 License
+## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
+
+## Contributing
+
+Contributions are welcome! Please open issues or pull requests on GitHub.
