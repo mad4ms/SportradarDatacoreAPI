@@ -9,6 +9,8 @@ $GEN_PKG    = Join-Path $GEN_OUT "datacore_client"      # generated importable p
 $VENDOR_DIR = Join-Path $ROOT "src\_vendor"
 $TARGET     = Join-Path $VENDOR_DIR "datacore_client"
 
+$URL_SPEC  = "https://developer.connect.sportradar.com/datacore/handball_rest.json"
+
 $SPEC_IN    = Join-Path $ROOT "openapi\handball_rest.json"
 $SPEC_OUT   = Join-Path $ROOT "openapi\handball_rest.get.json"
 $CONFIG     = Join-Path $ROOT "openapi\config.yaml"
@@ -26,6 +28,12 @@ function Write-Utf8NoBom {
   param([Parameter(Mandatory)][string]$Path, [Parameter(Mandatory)][string]$Content)
   $enc = New-Object System.Text.UTF8Encoding($false) # no BOM
   [System.IO.File]::WriteAllText($Path, $Content, $enc)
+}
+
+# ---------- Download spec if missing ----------
+if (-not (Test-Path $SPEC_IN)) {
+  Write-Host "Downloading spec from $URL_SPEC ..."
+  Invoke-WebRequest -Uri $URL_SPEC -OutFile $SPEC_IN
 }
 
 # ---------- Pre-flight ----------

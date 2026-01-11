@@ -1,42 +1,49 @@
 # Sportradar DataCore API (Handball)
 
-A Python package that authenticates against Sportradar DataCore and provides a convenient, typed interface to Handball data. It wraps a generated OpenAPI client and exposes high-level helpers for common workflows (competitions, seasons, fixtures, play-by-play exports).
+[![Python](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Code style: ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 
-- OAuth2 token acquisition, caching, and auto-refresh
-- Typed client generated from the official Handball REST OpenAPI spec
-- High-level helpers for handball data access
-- Example notebook for season downloads
-- Simple CSV export of play-by-play events
+A Python wrapper for the Sportradar DataCore REST API (Handball). 
 
+This library simplifies interaction with the Sportradar API by handling OpenID Connect (OIDC) authentication automatically and providing a fully typed interface for all API endpoints.
 
-## Requirements
+## Features
 
-- Python 3.10+
-- Package Manager 'uv': `python -m pip install uv`
-- Valid Sportradar DataCore credentials (Client ID, Secret, Organization ID)
-
+- **Automated Authentication**: Handles OAuth2 token acquisition, caching, and transparent refreshing.
+- **Fully Typed**: Built on top of a generated OpenAPI client, ensuring 100% type safety for requests and response models.
+- **High-Level Helpers**: Convenient methods for common workflows (e.g., resolving `Season IDs` from `Years`, fetching fixtures, players, events, etc.).
+- **Hybrid Architecture**: 
+  - Use high-level helpers in `sportradar_datacore_api` for ease of use.
+  - Access the underlying `datacore_client` for raw access to every single API endpoint generated from the official spec.
 
 ## Installation
 
-Clone and install the package:
+This project requires **Python 3.12+**.
+
+### Standard Installation
+Clone the repository and install using pip:
 
 ```bash
 git clone https://github.com/mad4ms/SportradarDatacoreAPI.git
 cd SportradarDatacoreAPI
-uv pip install -U pip   # optional, updates pip inside the environment uv manages
+pip install .
+```
+
+### Using uv (Recommended)
+If you use [uv](https://github.com/astral-sh/uv) for fast package management:
+
+```bash
+git clone https://github.com/mad4ms/SportradarDatacoreAPI.git
+cd SportradarDatacoreAPI
 uv pip install .
 ```
 
-
-This project vendors the generated client under `src/_vendor/datacore_client`. Import wiring is handled automatically in `sportradar_datacore_api/api.py`.
-Vendor was imported using `openapi-python-client` with REST OpenAPI description.
-
-
 ## Configuration
 
-Provide credentials via environment variables (a `.env` file is supported via `python-dotenv`).
+The library uses **pydantic** and **python-dotenv** to manage configuration. You can provide credentials via a `.env` file in your project root or via environment variables.
 
-Example `.env` placed in the repository root:
+Create a `.env` file:
 
 ```env
 BASE_URL=https://api.dc.connect.sportradar.com/v1
@@ -46,17 +53,21 @@ CLIENT_SECRET=your_client_secret
 CLIENT_ORGANIZATION_ID=your_org_id
 ```
 
+## Usage
 
-## Quickstart
+### Basic Example
+
+The main entry point is the `HandballAPI` class.
 
 ```python
-from dotenv import load_dotenv
 import os
+from dotenv import load_dotenv
 from sportradar_datacore_api.handball import HandballAPI
 
-# Load .env if present
+# 1. Load configuration
 load_dotenv()
 
+# 2. Initialize the API
 api = HandballAPI(
     base_url=os.getenv("BASE_URL", ""),
     auth_url=os.getenv("AUTH_URL", ""),
@@ -67,130 +78,82 @@ api = HandballAPI(
     sport="handball",
 )
 
-competition_name = "1. Handball-Bundesliga"
-season_year = 2024  # integer year
+# 3. Use high-level helpers
+# Resolve the ID for "1. Handball-Bundesliga"
+comp_id = api.get_competition_id_by_name("1. Handball-Bundesliga")
+print(f"Competition ID: {comp_id}")
 
-comp_id = api.get_competition_id_by_name(competition_name)
-print(f"Competition: {competition_name} -> {comp_id}")
+# Get the season ID for the year 2024
+season_id = api.get_season_id_by_year(comp_id, 2024)
+print(f"Season ID: {season_id}")
 
-season_id = api.get_season_id_by_year(comp_id, season_year)
-print(f"Season year {season_year} -> {season_id}")
-
+# Fetch fixtures
 fixtures = api.get_list_matches_by_season_id(season_id)
-print(f"Found {len(fixtures)} fixtures")
-
-first_fixture_id = fixtures[0].fixture_id
-print("First fixture id:", first_fixture_id)
-
-# Export play-by-play (PBP) events for one fixture
-pbp = api.get_fixture_events_by_id(first_fixture_id)
-
-# Some responses encapsulate events under a key; normalize for CSV helper
-if isinstance(pbp, dict) and "events" in pbp:
-    events = pbp["events"]
-else:
-    events = pbp  # already list-like in some cases
-
-api.save_events_to_csv(events, f"fixture_{first_fixture_id}_events.csv")
-print("Saved CSV:", f"fixture_{first_fixture_id}_events.csv")
+print(f"Found {len(fixtures)} matches.")
 ```
 
-Notes:
-- The helpers come from `sportradar_datacore_api.handball.HandballAPI`.
-- Under the hood, a typed OpenAPI client is used for requests and models.
+### Advanced: Accessing Raw Client
 
+For endpoints not covered by high-level helpers, accessing the generated client directly is supported and encouraged. The generated client resides in `api.client`.
 
-## Project structure (high level)
+```python
+from datacore_client.api.competitions import competition_list
+from datacore_client.models import CompetitionListCompetitionsResponse
 
-- `src/sportradar_datacore_api/`
-  - `api.py` — Core OAuth2 client (`DataCoreAPI`)
-  - `handball.py` — Handball-specific helpers (`HandballAPI`):
-    - `get_competition_id_by_name(name: str) -> str`
-    - `get_season_id_by_year(competition_id: str, season_year: int) -> str`
-    - `get_list_matches_by_season_id(season_id: str) -> list`
-    - `get_fixture_events_by_id(fixture_id: str) -> dict`
-    - `save_events_to_csv(events: list[dict], file_path: str) -> None`
-- `src/_vendor/datacore_client/` — Generated client (vendored)
-- `openapi/` — Handball REST spec (`handball_rest.json` ignored due to size) and generator config
-- `scripts/` — Client regeneration scripts for Windows/macOS/Linux
-- `notebooks/` — Jupyter examples (see `download_season_events.ipynb`)
-- `test/` — Basic tests (`test_handball.py`)
-- `log/` — Sample JSONs/CSVs from exploratory runs
+# You can access the authenticated low-level client via `api.client`
+response = competition_list.sync_detailed(
+    client=api.client,
+    organization_id=api.org_id
+)
 
+if response.status_code == 200:
+    # Full type support for the response model
+    data: CompetitionListCompetitionsResponse = response.parsed
+    print(data.data[0].name_local)
+```
 
-## Regenerate the OpenAPI client (optional)
+## Architecture
 
-The typed client is generated from `openapi/handball_rest.json` using `openapi-python-client` and then vendored into `src/_vendor/datacore_client`.
+This project uses a **Wrapper Pattern** around a generated OpenAPI client.
 
-Prerequisites:
+- **`src/sportradar_datacore_api/`**: The public-facing code. Contains the `HandballAPI` class, authentication logic, and user-friendly helpers.
+- **`src/_vendor/datacore_client/`**: The low-level client code generated from the Sportradar OpenAPI specification.
+  - *Note*: This directory allows us to ship the generated code without external dependencies or versioning conflicts.
+  - **Do not edit files in `_vendor` manually.** They are overwritten during code generation.
+
+## Development
+
+### Setup
 
 ```bash
-# ensure dev tools are installed
-pip install -e .[dev]
+# Install dependencies including dev tools
+uv pip install -e ".[dev]"
 ```
 
-- Windows (PowerShell):
+### Running Tests
 
+```bash
+pytest
+```
+
+### Code Generation
+
+If the Sportradar OpenAPI specification changes, you can regenerate the client:
+
+**Windows (PowerShell)**:
 ```powershell
-# create and activate a virtual env (if you don't already have one)
-python -m venv .venv; .\.venv\Scripts\Activate.ps1
-# run the generator script
 ./scripts/codegen.ps1
 ```
 
-- macOS/Linux (bash):
-
+**Linux / Mac**:
 ```bash
-python -m venv .venv
-source .venv/bin/activate
 ./scripts/codegen.sh
 ```
 
-The script will:
-- Generate the client into a temporary folder
-- Move it into `src/_vendor/datacore_client`
-- Clean up the temp output
-
-
-## Notebooks
-
-`notebooks/download_season_events.ipynb` demonstrates the full flow:
-- Load credentials via `.env`
-- Resolve competition + season
-- List fixtures
-- Download play-by-play and export CSV
-
-Open the notebook in VS Code or Jupyter and run cells sequentially.
-
-
-## Testing
-
-Run tests with pytest:
-
-```bash
-pytest -q
-```
-
-You can also run a specific test file:
-
-```bash
-pytest -q test/test_handball.py
-```
-
-
-## Troubleshooting
-
-- 401/403 errors: verify `CLIENT_ID`, `CLIENT_SECRET`, and organization access for the sport.
-- Empty results: confirm organization scope (`read:organization`) and that IDs belong to the same org.
-- TLS/SSL: the client enforces SSL verification; ensure certificates are valid on your system.
-
-
-
 ## License
 
-MIT — see `LICENSE`.
+Distributed under the MIT License. See `LICENSE` for more information.
 
+## Contributing
 
-## Disclaimer
-
-This project is an unofficial helper/wrapper and is not affiliated with or endorsed by Sportradar. API access requires a valid contract and credentials from Sportradar.
+Contributions are welcome! Please open issues or pull requests on GitHub.
