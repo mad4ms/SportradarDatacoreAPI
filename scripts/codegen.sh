@@ -7,6 +7,7 @@ GEN_OUT="$ROOT/datacore-client"
 GEN_PKG="$GEN_OUT/datacore_client"
 VENDOR_DIR="$ROOT/src/_vendor"
 TARGET="$VENDOR_DIR/datacore_client"
+URL_SPEC="https://developer.connect.sportradar.com/datacore/handball_rest.json"
 
 # Clean previous vendor
 if [ -d "$TARGET" ]; then
@@ -21,6 +22,12 @@ if [ -f "$ACTIVATE_SCRIPT" ]; then
 else
     echo "Virtual environment not found at $VENV_PATH"
     exit 1
+fi
+
+# ---------- Download spec if missing ----------
+if [ ! -f "$ROOT/openapi/handball_rest.json" ]; then
+    echo "Downloading spec from $URL_SPEC ..."
+    curl -o "$ROOT/openapi/handball_rest.json" "$URL_SPEC"
 fi
 
 # Run generator
