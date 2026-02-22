@@ -190,3 +190,7 @@ dist/
 
 # ignore this notebook
 notebooks/explore_season_events.ipynb
+
+log/
+
+.vscode/
