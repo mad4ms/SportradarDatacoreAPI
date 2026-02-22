@@ -64,6 +64,9 @@ exclude = [".venv", "src/_vendor"]
 select = ["E","F","I","UP","B","SIM","PGH","PL","RUF"]
 ignore = ["E203"]  # formatter compatibility
 
+[tool.ruff.lint.isort]
+known-first-party = ["sportradar_datacore_api"]
+
 [tool.ruff.format]
 
 # --- pytest ---
