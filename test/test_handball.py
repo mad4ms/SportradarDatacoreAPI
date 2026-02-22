@@ -38,8 +38,21 @@ def log_dir():
 
 def save_result(log_dir, title: str, data) -> None:
     """Utility to save test results to JSON files."""
+    if os.getenv("SRD_SKIP_TEST_LOGS") == "1":
+        return None
     path = log_dir / f"{title.lower().replace(' ', '_')}.json"
     path.write_text(json.dumps(data, indent=2, default=str), encoding="utf-8")
+    return None
+
+
+def _first_fixture_id(fixtures):
+    for fixture in fixtures:
+        if isinstance(fixture, dict):
+            fixture_id = fixture.get("fixture_id") or fixture.get("fixtureId")
+        else:
+            fixture_id = getattr(fixture, "fixture_id", None)
+        if fixture_id:
+            return fixture_id
     return None
 
 
@@ -75,15 +88,17 @@ def test_fixture_events(api, log_dir):
     season_id = api.get_season_id_by_year(comp_id, 2023)
     fixtures = api.get_list_matches_by_season_id(season_id)
     assert fixtures, "No fixtures found"
-    fixture = fixtures[0]
-    fixture_id = getattr(fixture, "fixture_id", None) or fixture.get("fixture_id")
+    fixture_id = _first_fixture_id(fixtures)
     assert fixture_id, "No fixture ID found"
-    events = api.get_fixture_events_by_id(fixture_id)
+    events = api.get_fixture_events_by_id(
+        fixture_id, setup_only=False, with_scores=True
+    )
     assert events is not None, "No events found"
     save_result(log_dir, "fixture_events", events)
-    # Optionally test CSV export
-    csv_path = log_dir / f"fixture_{fixture_id}_events.csv"
-    api.save_events_to_csv(events, str(csv_path))
+    if os.getenv("SRD_SKIP_TEST_LOGS") != "1":
+        # Optionally test CSV export
+        csv_path = log_dir / f"fixture_{fixture_id}_events.csv"
+        api.save_events_to_csv(events, str(csv_path))
 
 
 def test_full_flow(api, log_dir):
@@ -94,13 +109,15 @@ def test_full_flow(api, log_dir):
     assert season_id, "No season ID found"
     fixtures = api.get_list_matches_by_season_id(season_id)
     assert fixtures, "No fixtures found"
-    fixture = fixtures[0]
-    fixture_id = getattr(fixture, "fixture_id", None) or fixture.get("fixture_id")
+    fixture_id = _first_fixture_id(fixtures)
     assert fixture_id, "No fixture ID found"
-    events = api.get_fixture_events_by_id(fixture_id)
+    events = api.get_fixture_events_by_id(
+        fixture_id, setup_only=False, with_scores=True
+    )
     assert events is not None, "No events found"
-    csv_path = log_dir / f"fixture_{fixture_id}_events.csv"
-    api.save_events_to_csv(events, str(csv_path))
+    if os.getenv("SRD_SKIP_TEST_LOGS") != "1":
+        csv_path = log_dir / f"fixture_{fixture_id}_events.csv"
+        api.save_events_to_csv(events, str(csv_path))
 
 
 if __name__ == "__main__":

@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Code style: ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 
-A Python wrapper for the Sportradar DataCore REST API (Handball). 
+A Python wrapper for the Sportradar DataCore REST API (Handball).
 
 This library simplifies interaction with the Sportradar API by handling OpenID Connect (OIDC) authentication automatically and providing a fully typed interface for all API endpoints.
 
@@ -13,7 +13,7 @@ This library simplifies interaction with the Sportradar API by handling OpenID C
 - **Automated Authentication**: Handles OAuth2 token acquisition, caching, and transparent refreshing.
 - **Fully Typed**: Built on top of a generated OpenAPI client, ensuring 100% type safety for requests and response models.
 - **High-Level Helpers**: Convenient methods for common workflows (e.g., resolving `Season IDs` from `Years`, fetching fixtures, players, events, etc.).
-- **Hybrid Architecture**: 
+- **Hybrid Architecture**:
   - Use high-level helpers in `sportradar_datacore_api` for ease of use.
   - Access the underlying `datacore_client` for raw access to every single API endpoint generated from the official spec.
 
@@ -120,6 +120,19 @@ This project uses a **Wrapper Pattern** around a generated OpenAPI client.
 - **`src/_vendor/datacore_client/`**: The low-level client code generated from the Sportradar OpenAPI specification.
   - *Note*: This directory allows us to ship the generated code without external dependencies or versioning conflicts.
   - **Do not edit files in `_vendor` manually.** They are overwritten during code generation.
+
+## Repository Layout
+
+- **`src/sportradar_datacore_api/`**: Hand-written wrapper and helper APIs.
+- **`src/_vendor/datacore_client/`**: Generated OpenAPI client (do not edit by hand).
+- **`scripts/`**: Code generation helpers for the OpenAPI client.
+- **`test/`**: Test suite executed with `pytest`.
+- **`notebooks/`**: Example notebooks for data extraction and analysis.
+
+## AI Assistance
+
+If you are using GitHub Copilot in this repo, see the project-specific guidance in
+`.github/copilot-instructions.md`.
 
 ## Development
 

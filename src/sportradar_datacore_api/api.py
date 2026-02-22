@@ -5,11 +5,14 @@ Provides methods to access various endpoints.
 Author: Michael Adams, 2025
 """
 
+import logging
 import time
-from typing import Any, Dict, List, Optional
+from typing import Any, Optional
 
 import httpx
 from datacore_client import AuthenticatedClient
+
+logger = logging.getLogger(__name__)
 
 
 class APIAuthenticationError(Exception):
@@ -36,7 +39,7 @@ class DataCoreAPI:
         client_secret: str,
         sport: str,
         org_id: Optional[str] = None,
-        scopes: Optional[List[str]] = None,
+        scopes: Optional[list[str]] = None,
         timeout: int = 5,
         rate_limit_sleep: float = 1.0,
         connect_on_init: bool = True,
@@ -47,7 +50,7 @@ class DataCoreAPI:
         self.client_secret = client_secret
         self.sport = sport
         self.org_id = org_id
-        self.scopes = scopes or ["read:organization"]
+        self.scopes: list[str] = scopes or ["read:organization"]
         self.timeout = timeout
         self.rate_limit_sleep = rate_limit_sleep
 
@@ -69,17 +72,10 @@ class DataCoreAPI:
     def connect(
         self,
     ) -> None:
-        self._authenticate()
-
-        self.client = AuthenticatedClient(
-            base_url=self.base_url,
-            token=self._token,
-            verify_ssl=True,  # enforce SSL in production
-            raise_on_unexpected_status=True,
-        )
+        self._ensure_client()
 
     def _authenticate(self) -> None:
-        payload: Dict[str, Any] = {
+        payload: dict[str, Any] = {
             "credentialId": self.client_id,
             "credentialSecret": self.client_secret,
             "sport": self.sport,
@@ -99,14 +95,41 @@ class DataCoreAPI:
         data = response.json().get("data", {})
         self._token = data.get("token")
         if not self._token:
-            raise APIAuthenticationError(
-                "Token missing in authentication response."
-            )
+            raise APIAuthenticationError("Token missing in authentication response.")
+
+        logger.debug("Authenticated successfully")
 
         expires_in = data.get("expires_in", 3600)
         self._expires_at = time.time() + expires_in - self._TOKEN_BUFFER
         self.session.headers.update({"Authorization": f"Bearer {self._token}"})
 
+        if self.client is not None:
+            self.client.token = self._token
+
     def _ensure_token(self) -> None:
         if not self._token or time.time() >= self._expires_at:
+            logger.info("Refreshing access token")
             self._authenticate()
+
+    def _ensure_client(self) -> AuthenticatedClient:
+        self._ensure_token()
+        if self.client is None:
+            self.client = AuthenticatedClient(
+                base_url=self.base_url,
+                token=self._token,
+                verify_ssl=True,  # enforce SSL in production
+                raise_on_unexpected_status=True,
+            )
+        else:
+            self.client.token = self._token
+        return self.client
+
+    def close(self) -> None:
+        self.session.close()
+
+    def __enter__(self) -> "DataCoreAPI":
+        self._ensure_client()
+        return self
+
+    def __exit__(self, exc_type, exc, traceback) -> None:
+        self.close()
