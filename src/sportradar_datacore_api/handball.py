@@ -49,6 +49,7 @@ from datacore_client.models import (
 from sportradar_datacore_api.api import DataCoreAPI
 
 logger = logging.getLogger(__name__)
+HTTP_OK = 200
 
 
 class HandballAPI(DataCoreAPI):
@@ -67,7 +68,7 @@ class HandballAPI(DataCoreAPI):
 
     @staticmethod
     def _ensure_ok(response: Any, context: str) -> None:
-        if response.status_code != 200:
+        if response.status_code != HTTP_OK:
             raise RuntimeError(
                 f"{context}: HTTP {response.status_code}: {response.content!r}"
             )

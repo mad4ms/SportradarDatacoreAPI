@@ -9,7 +9,6 @@ from pathlib import Path
 
 import pytest
 from dotenv import load_dotenv
-
 from sportradar_datacore_api.handball import HandballAPI
 
 

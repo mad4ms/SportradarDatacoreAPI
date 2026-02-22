@@ -7,7 +7,7 @@ Author: Michael Adams, 2025
 
 import logging
 import time
-from typing import Any, Optional
+from typing import Any
 
 import httpx
 from datacore_client import AuthenticatedClient
@@ -31,15 +31,15 @@ class DataCoreAPI:
 
     _TOKEN_BUFFER = 60  # seconds before actual expiry to refresh
 
-    def __init__(
+    def __init__(  # noqa: PLR0913
         self,
         base_url: str,
         auth_url: str,
         client_id: str,
         client_secret: str,
         sport: str,
-        org_id: Optional[str] = None,
-        scopes: Optional[list[str]] = None,
+        org_id: str | None = None,
+        scopes: list[str] | None = None,
         timeout: int = 5,
         rate_limit_sleep: float = 1.0,
         connect_on_init: bool = True,
@@ -54,10 +54,10 @@ class DataCoreAPI:
         self.timeout = timeout
         self.rate_limit_sleep = rate_limit_sleep
 
-        self._token: Optional[str] = None
+        self._token: str | None = None
         self._expires_at: float = 0.0
 
-        self.client: Optional[AuthenticatedClient] = None
+        self.client: AuthenticatedClient | None = None
 
         self.session = httpx.Client()
         self.session.headers.update(
