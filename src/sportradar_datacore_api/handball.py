@@ -187,8 +187,8 @@ class HandballAPI(DataCoreAPI):
         )
 
         self._ensure_ok(response, "season_list")
-        logging.info("Seasons fetched successfully.")
-        logging.debug("Status Code: %s", response.status_code)
+        logger.info("Seasons fetched successfully.")
+        logger.debug("Status Code: %s", response.status_code)
         parsed = response.parsed
         if isinstance(parsed, SeasonListSeasonsResponse):
             seasons = list(parsed.data or [])
