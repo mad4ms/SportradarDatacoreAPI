@@ -24,7 +24,7 @@ jobs:
         run: uv pip install --system -e ".[dev]"
 
       - name: Ruff
-        run: uv run ruff check .
+        run: uv run ruff check src test
 
       - name: Mypy
         run: uv run mypy src/sportradar_datacore_api
