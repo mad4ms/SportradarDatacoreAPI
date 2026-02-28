@@ -17,7 +17,7 @@ jobs:
     container: astral/uv:python${{ matrix.python-version }}-bookworm-slim
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       # If you have uv.lock → prefer: uv sync --locked
       - name: Install deps
@@ -38,7 +38,7 @@ jobs:
     container: astral/uv:python3.13-bookworm-slim
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Build package
         run: uv build
