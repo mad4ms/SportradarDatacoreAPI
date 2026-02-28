@@ -5,7 +5,9 @@ Author: Michael Adams, 2025
 
 import json
 import os
+from collections.abc import Sequence
 from pathlib import Path
+from typing import Any
 
 import pytest
 from dotenv import load_dotenv
@@ -14,7 +16,7 @@ from sportradar_datacore_api.handball import HandballAPI
 
 
 @pytest.fixture(scope="module")
-def api():
+def api() -> HandballAPI:
     """Fixture to initialize the HandballAPI client."""
     load_dotenv(".env", override=True)
     return HandballAPI(
@@ -29,14 +31,14 @@ def api():
 
 
 @pytest.fixture(scope="module")
-def log_dir():
+def log_dir() -> Path:
     """Fixture to create a log directory for test outputs."""
     path = Path("log")
     path.mkdir(parents=True, exist_ok=True)
     return path
 
 
-def save_result(log_dir, title: str, data) -> None:
+def save_result(log_dir: Path, title: str, data: Any) -> None:
     """Utility to save test results to JSON files."""
     if os.getenv("SRD_SKIP_TEST_LOGS") == "1":
         return None
@@ -45,7 +47,7 @@ def save_result(log_dir, title: str, data) -> None:
     return None
 
 
-def _first_fixture_id(fixtures):
+def _first_fixture_id(fixtures: Sequence[Any]) -> str | None:
     for fixture in fixtures:
         if isinstance(fixture, dict):
             fixture_id = fixture.get("fixture_id") or fixture.get("fixtureId")
@@ -56,14 +58,14 @@ def _first_fixture_id(fixtures):
     return None
 
 
-def test_competition_id(api, log_dir):
+def test_competition_id(api: HandballAPI, log_dir: Path) -> None:
     """Test resolving competition ID by name."""
     comp_id = api.get_competition_id_by_name("1. Handball-Bundesliga")
     assert comp_id, "No competition ID found"
     save_result(log_dir, "competition_id", {"competition_id": comp_id})
 
 
-def test_season_id(api, log_dir):
+def test_season_id(api: HandballAPI, log_dir: Path) -> None:
     """Test resolving season ID by year."""
     comp_id = api.get_competition_id_by_name("1. Handball-Bundesliga")
     season_id = api.get_season_id_by_year(comp_id, 2023)
@@ -71,7 +73,7 @@ def test_season_id(api, log_dir):
     save_result(log_dir, "season_id", {"season_id": season_id})
 
 
-def test_list_fixtures(api, log_dir):
+def test_list_fixtures(api: HandballAPI, log_dir: Path) -> None:
     """Test listing fixtures for a season."""
     comp_id = api.get_competition_id_by_name("1. Handball-Bundesliga")
     season_id = api.get_season_id_by_year(comp_id, 2023)
@@ -82,7 +84,7 @@ def test_list_fixtures(api, log_dir):
     save_result(log_dir, "fixtures", fixtures_dict)
 
 
-def test_fixture_events(api, log_dir):
+def test_fixture_events(api: HandballAPI, log_dir: Path) -> None:
     """Test getting events for a fixture."""
     comp_id = api.get_competition_id_by_name("1. Handball-Bundesliga")
     season_id = api.get_season_id_by_year(comp_id, 2023)
@@ -101,7 +103,7 @@ def test_fixture_events(api, log_dir):
         api.save_events_to_csv(events, str(csv_path))
 
 
-def test_full_flow(api, log_dir):
+def test_full_flow(api: HandballAPI, log_dir: Path) -> None:
     """Run the full test flow."""
     comp_id = api.get_competition_id_by_name("1. Handball-Bundesliga")
     assert comp_id, "No competition ID found"

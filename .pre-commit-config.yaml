@@ -20,6 +20,15 @@ repos:
       - id: ruff-format
         exclude: ^src/_vendor/
 
+  # mypy: static typing
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.10.0
+    hooks:
+      - id: mypy
+        exclude: ^src/_vendor/
+        additional_dependencies:
+          - pydantic>=2.6
+
   # Strip notebook outputs
   - repo: https://github.com/kynan/nbstripout
     rev: 0.7.1
@@ -31,6 +40,6 @@ repos:
     hooks:
       - id: pytest
         name: pytest
-        entry: uv run pytest
+        entry: uv run pytest test
         language: system
         pass_filenames: false

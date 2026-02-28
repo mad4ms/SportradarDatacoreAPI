@@ -361,7 +361,11 @@ class HandballAPI(DataCoreAPI):
         if isinstance(parsed, FixtureListFixturesResponse):
             fixtures = self._to_plain(parsed.data or [])
             return [
-                self._normalize_fixture_id(item) if isinstance(item, Mapping) else item
+                (
+                    self._normalize_fixture_id(item)
+                    if isinstance(item, Mapping)
+                    else item
+                )
                 for item in fixtures
             ]
         else:
@@ -515,11 +519,11 @@ class HandballAPI(DataCoreAPI):
             return
 
         # Collect all keys for CSV header
-        fieldnames: set[str] = set()
+        fieldnames_set: set[str] = set()
         for row in data_rows:
             if isinstance(row, Mapping):
-                fieldnames.update(row.keys())
-        fieldnames = sorted(fieldnames)
+                fieldnames_set.update(row.keys())
+        fieldnames = sorted(fieldnames_set)
 
         with open(file_path, "w", encoding="utf-8", newline="") as csvfile:
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)

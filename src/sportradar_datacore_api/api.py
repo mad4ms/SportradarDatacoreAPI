@@ -7,6 +7,7 @@ Author: Michael Adams, 2025
 
 import logging
 import time
+from types import TracebackType
 from typing import Any
 
 import httpx
@@ -131,5 +132,10 @@ class DataCoreAPI:
         self._ensure_client()
         return self
 
-    def __exit__(self, exc_type, exc, traceback) -> None:
+    def __exit__(
+        self,
+        exc_type: type[BaseException] | None,
+        exc: BaseException | None,
+        traceback: TracebackType | None,
+    ) -> None:
         self.close()
