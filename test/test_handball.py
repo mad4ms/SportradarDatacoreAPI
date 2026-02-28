@@ -5,7 +5,9 @@ Author: Michael Adams, 2025
 
 import json
 import os
+from collections.abc import Sequence
 from pathlib import Path
+from typing import Any
 
 import pytest
 from dotenv import load_dotenv
@@ -14,9 +16,22 @@ from sportradar_datacore_api.handball import HandballAPI
 
 
 @pytest.fixture(scope="module")
-def api():
+def api() -> HandballAPI:
     """Fixture to initialize the HandballAPI client."""
     load_dotenv(".env", override=True)
+    required = [
+        "BASE_URL",
+        "AUTH_URL",
+        "CLIENT_ID",
+        "CLIENT_SECRET",
+        "CLIENT_ORGANIZATION_ID",
+    ]
+    missing = [key for key in required if not os.getenv(key)]
+    if missing:
+        pytest.skip(
+            "Missing required environment variables for live API tests: "
+            + ", ".join(missing)
+        )
     return HandballAPI(
         base_url=os.getenv("BASE_URL", ""),
         auth_url=os.getenv("AUTH_URL", ""),
@@ -29,14 +44,14 @@ def api():
 
 
 @pytest.fixture(scope="module")
-def log_dir():
+def log_dir() -> Path:
     """Fixture to create a log directory for test outputs."""
     path = Path("log")
     path.mkdir(parents=True, exist_ok=True)
     return path
 
 
-def save_result(log_dir, title: str, data) -> None:
+def save_result(log_dir: Path, title: str, data: Any) -> None:
     """Utility to save test results to JSON files."""
     if os.getenv("SRD_SKIP_TEST_LOGS") == "1":
         return None
@@ -45,7 +60,7 @@ def save_result(log_dir, title: str, data) -> None:
     return None
 
 
-def _first_fixture_id(fixtures):
+def _first_fixture_id(fixtures: Sequence[Any]) -> str | None:
     for fixture in fixtures:
         if isinstance(fixture, dict):
             fixture_id = fixture.get("fixture_id") or fixture.get("fixtureId")
@@ -56,14 +71,14 @@ def _first_fixture_id(fixtures):
     return None
 
 
-def test_competition_id(api, log_dir):
+def test_competition_id(api: HandballAPI, log_dir: Path) -> None:
     """Test resolving competition ID by name."""
     comp_id = api.get_competition_id_by_name("1. Handball-Bundesliga")
     assert comp_id, "No competition ID found"
     save_result(log_dir, "competition_id", {"competition_id": comp_id})
 
 
-def test_season_id(api, log_dir):
+def test_season_id(api: HandballAPI, log_dir: Path) -> None:
     """Test resolving season ID by year."""
     comp_id = api.get_competition_id_by_name("1. Handball-Bundesliga")
     season_id = api.get_season_id_by_year(comp_id, 2023)
@@ -71,53 +86,42 @@ def test_season_id(api, log_dir):
     save_result(log_dir, "season_id", {"season_id": season_id})
 
 
-def test_list_fixtures(api, log_dir):
+def test_list_fixtures(api: HandballAPI, log_dir: Path) -> None:
     """Test listing fixtures for a season."""
     comp_id = api.get_competition_id_by_name("1. Handball-Bundesliga")
     season_id = api.get_season_id_by_year(comp_id, 2023)
-    fixtures = api.get_list_matches_by_season_id(season_id)
+    fixtures = api.list_matches_by_season(season_id)
     assert fixtures, "No fixtures found"
     # Convert objects to dicts for JSON serialization
     fixtures_dict = [f.__dict__ if hasattr(f, "__dict__") else f for f in fixtures]
     save_result(log_dir, "fixtures", fixtures_dict)
 
 
-def test_fixture_events(api, log_dir):
+def test_fixture_events(api: HandballAPI, log_dir: Path) -> None:
     """Test getting events for a fixture."""
     comp_id = api.get_competition_id_by_name("1. Handball-Bundesliga")
     season_id = api.get_season_id_by_year(comp_id, 2023)
-    fixtures = api.get_list_matches_by_season_id(season_id)
+    fixtures = api.list_matches_by_season(season_id)
     assert fixtures, "No fixtures found"
     fixture_id = _first_fixture_id(fixtures)
     assert fixture_id, "No fixture ID found"
-    events = api.get_fixture_events_by_id(
-        fixture_id, setup_only=False, with_scores=True
-    )
+    events = api.get_match_events(fixture_id, setup_only=False, with_scores=True)
     assert events is not None, "No events found"
     save_result(log_dir, "fixture_events", events)
-    if os.getenv("SRD_SKIP_TEST_LOGS") != "1":
-        # Optionally test CSV export
-        csv_path = log_dir / f"fixture_{fixture_id}_events.csv"
-        api.save_events_to_csv(events, str(csv_path))
 
 
-def test_full_flow(api, log_dir):
+def test_full_flow(api: HandballAPI, log_dir: Path) -> None:
     """Run the full test flow."""
     comp_id = api.get_competition_id_by_name("1. Handball-Bundesliga")
     assert comp_id, "No competition ID found"
     season_id = api.get_season_id_by_year(comp_id, 2023)
     assert season_id, "No season ID found"
-    fixtures = api.get_list_matches_by_season_id(season_id)
+    fixtures = api.list_matches_by_season(season_id)
     assert fixtures, "No fixtures found"
     fixture_id = _first_fixture_id(fixtures)
     assert fixture_id, "No fixture ID found"
-    events = api.get_fixture_events_by_id(
-        fixture_id, setup_only=False, with_scores=True
-    )
+    events = api.get_match_events(fixture_id, setup_only=False, with_scores=True)
     assert events is not None, "No events found"
-    if os.getenv("SRD_SKIP_TEST_LOGS") != "1":
-        csv_path = log_dir / f"fixture_{fixture_id}_events.csv"
-        api.save_events_to_csv(events, str(csv_path))
 
 
 if __name__ == "__main__":

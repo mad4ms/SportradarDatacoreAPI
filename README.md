@@ -88,7 +88,7 @@ season_id = api.get_season_id_by_year(comp_id, 2024)
 print(f"Season ID: {season_id}")
 
 # Fetch fixtures
-fixtures = api.get_list_matches_by_season_id(season_id)
+fixtures = api.list_matches_by_season(season_id)
 print(f"Found {len(fixtures)} matches.")
 ```
 
