@@ -21,22 +21,19 @@ This library simplifies interaction with the Sportradar API by handling OpenID C
 
 This project requires **Python 3.12+**.
 
-### Standard Installation
-Clone the repository and install using pip:
-
-```bash
-git clone https://github.com/mad4ms/SportradarDatacoreAPI.git
-cd SportradarDatacoreAPI
-pip install .
-```
-
 ### Using uv (Recommended)
 If you use [uv](https://github.com/astral-sh/uv) for fast package management:
 
 ```bash
 git clone https://github.com/mad4ms/SportradarDatacoreAPI.git
 cd SportradarDatacoreAPI
-uv pip install .
+uv sync
+```
+
+If you prefer an editable install instead of syncing a lockfile:
+
+```bash
+uv pip install -e "."
 ```
 
 ## Configuration
@@ -90,6 +87,11 @@ print(f"Season ID: {season_id}")
 # Fetch fixtures
 fixtures = api.list_matches_by_season(season_id)
 print(f"Found {len(fixtures)} matches.")
+
+# Fetch match details and events
+match = api.get_match_by_id(fixtures[0].fixture_id)
+events = api.get_match_events(match.fixture_id, setup_only=False, with_scores=True)
+players = api.list_players_by_match(match.fixture_id)
 ```
 
 ### Advanced: Accessing Raw Client
@@ -127,7 +129,6 @@ This project uses a **Wrapper Pattern** around a generated OpenAPI client.
 - **`src/_vendor/datacore_client/`**: Generated OpenAPI client (do not edit by hand).
 - **`scripts/`**: Code generation helpers for the OpenAPI client.
 - **`test/`**: Test suite executed with `pytest`.
-- **`notebooks/`**: Example notebooks for data extraction and analysis.
 
 ## AI Assistance
 
@@ -148,6 +149,9 @@ uv pip install -e ".[dev]"
 ```bash
 pytest
 ```
+
+Note: The test suite uses live API calls and will be skipped if required
+environment variables are not set.
 
 ### Code Generation
 
