@@ -5,12 +5,12 @@ Provides methods to access handball-related endpoints.
 Author: Michael Adams, 2025
 """
 
-import csv
 import json
 import logging
 import uuid
-from collections.abc import Mapping, Sequence
-from typing import Any
+from collections.abc import Sequence
+from typing import Any, cast
+from uuid import UUID
 
 from datacore_client.api.competitions import competition_list
 from datacore_client.api.match_persons import fixture_persons_list
@@ -25,28 +25,32 @@ from datacore_client.api.teams import entity_detail
 # from datacore_client.api.teams import entity_list
 from datacore_client.models import (
     CompetitionListCompetitionsResponse,
-    CompetitionListResponseDefault,
+    CompetitionModel,
     EntityDetailEntitiesResponse,
-    EntityDetailResponseDefault,
     FixtureDetailFixturesResponse,
-    FixtureDetailResponseDefault,
     FixtureListFixturesResponse,
-    FixtureListResponseDefault,
-    FixturePbpExportResponseDefault,
     FixturePbpExportSuccessResponse,
     FixturePersonsListFixturePersonsResponse,
-    FixturePersonsListResponseDefault,
+    MatchModel,
+    MatchPersonsModel,
     PersonListPersonsResponse,
-    PersonListResponseDefault,
-    SeasonEntitiesListResponseDefault,
+    PersonModel,
     SeasonEntitiesListSeasonEntitiesListResponse,
-    SeasonListResponseDefault,
+    SeasonEntitiesModel,
     SeasonListSeasonsResponse,
-    SeasonPersonsListResponseDefault,
+    SeasonModel,
     SeasonPersonsListSeasonPersonsListResponse,
+    SeasonPersonsModel,
+    TeamModel,
 )
+from datacore_client.types import Unset
 
 from sportradar_datacore_api.api import DataCoreAPI
+from sportradar_datacore_api.errors import (
+    NotFoundError,
+    UnexpectedResponseError,
+    ValidationError,
+)
 
 logger = logging.getLogger(__name__)
 HTTP_OK = 200
@@ -61,15 +65,15 @@ class HandballAPI(DataCoreAPI):
 
     # --- Public helpers requested -----------------------------------------
 
-    @staticmethod
-    def _require_value(name: str, value: str) -> None:
-        if not value:
-            raise ValueError(f"{name} must be provided.")
+    def _require_org_id(self) -> str:
+        if not self.org_id:
+            raise ValidationError("org_id must be provided.")
+        return self.org_id
 
     @staticmethod
     def _ensure_ok(response: Any, context: str) -> None:
         if response.status_code != HTTP_OK:
-            raise RuntimeError(
+            raise UnexpectedResponseError(
                 f"{context}: HTTP {response.status_code}: {response.content!r}"
             )
 
@@ -90,19 +94,10 @@ class HandballAPI(DataCoreAPI):
         try:
             payload = json.loads(response.content)
         except json.JSONDecodeError as exc:
-            raise RuntimeError(f"{context}: invalid JSON response") from exc
+            raise UnexpectedResponseError(f"{context}: invalid JSON response") from exc
         if not isinstance(payload, dict):
-            raise RuntimeError(f"{context}: unexpected JSON shape")
+            raise UnexpectedResponseError(f"{context}: unexpected JSON shape")
         return cls._to_plain(payload.get("data"))
-
-    @staticmethod
-    def _normalize_fixture_id(item: Mapping[str, Any]) -> dict[str, Any]:
-        data = dict(item)
-        if "fixtureId" in data and "fixture_id" not in data:
-            data["fixture_id"] = data["fixtureId"]
-        if "fixture_id" in data and "fixtureId" not in data:
-            data["fixtureId"] = data["fixture_id"]
-        return data
 
     @staticmethod
     def _log_request(context: str, **details: Any) -> None:
@@ -131,35 +126,39 @@ class HandballAPI(DataCoreAPI):
             offset=offset,
         )
 
+        organization_id = self._require_org_id()
+        offset_value = self._as_offset(offset)
+
         resp = competition_list.sync_detailed(
             client=self._ensure_client(),
-            organization_id=self.org_id,
+            organization_id=organization_id,
             name_local_contains=competition_name,  # Filter for Bundesliga competitions
             limit=limit,  # Increase limit for efficiency if expecting many results
             hide_null=True,  # Avoid null UUID fields that break model parsing
-            offset=offset,
+            offset=offset_value,
         )
 
         self._ensure_ok(resp, "competition_list")
 
-        parsed = resp.parsed
-        if isinstance(parsed, CompetitionListCompetitionsResponse):
-            competitions = list(parsed.data or [])
-            for c in competitions:
-                if (
-                    c.name_local
-                    and c.name_local.casefold() == competition_name.casefold()
-                ):
-                    return c.competition_id
-            raise LookupError(f"No competition found matching '{competition_name}'.")
-        else:
-            # Default/error schema from API (typed)
-            err: CompetitionListResponseDefault = parsed
-            raise RuntimeError(f"API error: {err}")
+        parsed = self._unwrap_response(
+            resp.parsed,
+            CompetitionListCompetitionsResponse,
+            "competition_list",
+        )
+        data = parsed.data
+        competitions: list[CompetitionModel] = (
+            [] if isinstance(data, Unset) else list(data)
+        )
+        for c in competitions:
+            if isinstance(c.name_local, str) and (
+                c.name_local.casefold() == competition_name.casefold()
+            ):
+                return self._uuid_to_str(c.competition_id, "competition_id")
+        raise NotFoundError(f"No competition found matching '{competition_name}'.")
 
     def get_season_id_by_year(
         self,
-        competition_id: str,
+        competition_id: str | UUID,
         season_year: int,
         *,
         limit: int = 200,
@@ -169,241 +168,251 @@ class HandballAPI(DataCoreAPI):
         Resolve a season UUID by name under a given competition.
         Tries exact (case-insensitive) match on common name fields, then 'contains'.
         """
-        self._require_value("competition_id", competition_id)
+        self._require_value("competition_id", str(competition_id))
+        competition_uuid = self._as_uuid(competition_id, "competition_id")
 
         self._log_request(
             "season_list",
-            competition_id=competition_id,
+            competition_id=str(competition_uuid),
             season_year=season_year,
             limit=limit,
             offset=offset,
         )
 
+        organization_id = self._require_org_id()
+        offset_value = self._as_offset(offset)
+
         response = season_list.sync_detailed(
             client=self._ensure_client(),
-            organization_id=self.org_id,
-            competition_id=competition_id,
+            organization_id=organization_id,
+            competition_id=competition_uuid,
             limit=limit,
-            offset=offset,
+            offset=offset_value,
         )
 
         self._ensure_ok(response, "season_list")
         logger.info("Seasons fetched successfully.")
         logger.debug("Status Code: %s", response.status_code)
-        parsed = response.parsed
-        if isinstance(parsed, SeasonListSeasonsResponse):
-            seasons = list(parsed.data or [])
+        parsed = self._unwrap_response(
+            response.parsed, SeasonListSeasonsResponse, "season_list"
+        )
+        data = parsed.data
+        seasons: list[SeasonModel] = [] if isinstance(data, Unset) else list(data)
 
-            for c in seasons:
-                logging.debug("Checking season: %s (%s)", c.name_local, c.season_id)
+        for c in seasons:
+            logger.debug("Checking season: %s (%s)", c.name_local, c.season_id)
 
-                if c.year == season_year:
-                    return c.season_id
+            if c.year == season_year:
+                return self._uuid_to_str(c.season_id, "season_id")
 
-            raise LookupError(
-                f"No season found for competition '{competition_id}' in {season_year}."
-            )
-        else:
-            err: SeasonListResponseDefault = parsed
-            raise RuntimeError(f"API error: {err}")
+        raise NotFoundError(
+            f"No season found for competition '{competition_uuid}' in {season_year}."
+        )
 
     def get_teams_by_season_id(
         self,
-        season_id: str,
+        season_id: str | UUID,
         *,
         limit: int = 100,
         offset: int | None = None,
-    ) -> list[dict[str, Any]]:
+    ) -> list[SeasonEntitiesModel]:
         """
-        Return all teams for the given season as a list of dicts.
+        Return all teams for the given season.
         """
-        self._require_value("season_id", season_id)
+        self._require_value("season_id", str(season_id))
+        season_uuid = self._as_uuid(season_id, "season_id")
 
         self._log_request(
             "season_entities_list",
-            season_id=season_id,
+            season_id=str(season_uuid),
             limit=limit,
             offset=offset,
         )
+        organization_id = self._require_org_id()
+        offset_value = self._as_offset(offset)
         resp = season_entities_list.sync_detailed(
             client=self._ensure_client(),
-            organization_id=self.org_id,
-            season_id=season_id,
+            organization_id=organization_id,
+            season_id=season_uuid,
             include="entities,organizations",
             limit=limit,
-            offset=offset,
+            offset=offset_value,
             # fields=
         )
 
         self._ensure_ok(resp, "season_entities_list")
 
-        parsed = resp.parsed
-
-        if isinstance(parsed, SeasonEntitiesListSeasonEntitiesListResponse):
-            return self._to_plain(parsed.data or [])
-        else:
-            err: SeasonEntitiesListResponseDefault = parsed
-            raise RuntimeError(f"API error: {err}")
+        parsed = self._unwrap_response(
+            resp.parsed,
+            SeasonEntitiesListSeasonEntitiesListResponse,
+            "season_entities_list",
+        )
+        data = parsed.data
+        if isinstance(data, Unset):
+            return []
+        return list(data)
 
     def get_players_by_season_id(
         self,
-        season_id: str,
+        season_id: str | UUID,
         *,
         limit: int = 200,
         offset: int | None = None,
-    ) -> list[dict[str, Any]]:
+    ) -> list[SeasonPersonsModel]:
         """
-        Return all players for the given season as a list of dicts.
+        Return all players for the given season.
         """
-        self._require_value("season_id", season_id)
+        self._require_value("season_id", str(season_id))
+        season_uuid = self._as_uuid(season_id, "season_id")
 
         self._log_request(
             "season_persons_list",
-            season_id=season_id,
+            season_id=str(season_uuid),
             limit=limit,
             offset=offset,
         )
+        organization_id = self._require_org_id()
+        offset_value = self._as_offset(offset)
         resp = season_persons_list.sync_detailed(
             client=self._ensure_client(),
-            organization_id=self.org_id,
-            season_id=season_id,
+            organization_id=organization_id,
+            season_id=season_uuid,
             include="entities,organizations",
             limit=limit,
-            offset=offset,
+            offset=offset_value,
         )
 
         self._ensure_ok(resp, "season_persons_list")
 
-        parsed = resp.parsed
+        parsed = self._unwrap_response(
+            resp.parsed,
+            SeasonPersonsListSeasonPersonsListResponse,
+            "season_persons_list",
+        )
+        data = parsed.data
+        if isinstance(data, Unset):
+            return []
+        return list(data)
 
-        if isinstance(parsed, SeasonPersonsListSeasonPersonsListResponse):
-            players: list[Any] = []
-            for entry in list(parsed.data or []):
-                if entry.players:
-                    players.extend(entry.players)
-            return self._to_plain(players)
-        else:
-            err: SeasonPersonsListResponseDefault = parsed
-            raise RuntimeError(f"API error: {err}")
-
-    def get_players_by_match_id(
+    def list_players_by_match(
         self,
-        match_id: str,
+        match_id: str | UUID,
         *,
         limit: int = 200,
         offset: int | None = None,
-    ) -> list[dict[str, Any]]:
+    ) -> list[MatchPersonsModel]:
         """
-        Return all players for the given match as a list of dicts.
+        Return all players for the given match.
         """
-        self._require_value("match_id", match_id)
+        self._require_value("match_id", str(match_id))
+        fixture_uuid = self._as_uuid(match_id, "match_id")
 
         self._log_request(
             "fixture_persons_list",
-            match_id=match_id,
+            match_id=str(fixture_uuid),
             limit=limit,
             offset=offset,
         )
+        organization_id = self._require_org_id()
+        offset_value = self._as_offset(offset)
         resp = fixture_persons_list.sync_detailed(
             client=self._ensure_client(),
-            organization_id=self.org_id,
-            fixture_id=match_id,
+            organization_id=organization_id,
+            fixture_id=fixture_uuid,
             limit=limit,
-            offset=offset,
+            offset=offset_value,
         )
 
         self._ensure_ok(resp, "fixture_persons_list")
 
-        parsed = resp.parsed
+        parsed = self._unwrap_response(
+            resp.parsed,
+            FixturePersonsListFixturePersonsResponse,
+            "fixture_persons_list",
+        )
+        data = parsed.data
+        if isinstance(data, Unset):
+            return []
+        return list(data)
 
-        if isinstance(parsed, FixturePersonsListFixturePersonsResponse):
-            players: list[Any] = []
-            for entry in list(parsed.data or []):
-                if entry.players:
-                    players.extend(entry.players)
-            return self._to_plain(players)
-        else:
-            err: FixturePersonsListResponseDefault = parsed
-            raise RuntimeError(f"API error: {err}")
-
-    def get_list_matches_by_season_id(
+    def list_matches_by_season(
         self,
-        season_id: str,
+        season_id: str | UUID,
         *,
         limit: int = 500,
         offset: int | None = None,
-    ) -> list[dict[str, Any]]:
+    ) -> list[MatchModel]:
         """
-        Return all fixtures (matches) for the given season as a list of dicts.
+        Return all matches for the given season.
         """
-        self._require_value("season_id", season_id)
+        self._require_value("season_id", str(season_id))
+        season_uuid = self._as_uuid(season_id, "season_id")
 
         self._log_request(
             "fixture_list",
-            season_id=season_id,
+            season_id=str(season_uuid),
             limit=limit,
             offset=offset,
         )
+        organization_id = self._require_org_id()
+        offset_value = self._as_offset(offset)
         resp = fixture_list.sync_detailed(
             client=self._ensure_client(),
-            organization_id=self.org_id,
-            season_id=season_id,
+            organization_id=organization_id,
+            season_id=season_uuid,
             external="entityId,personId",
             include="organizations,entities",
             limit=limit,
-            offset=offset,
+            offset=offset_value,
         )
 
         self._ensure_ok(resp, "fixture_list")
 
-        parsed = resp.parsed
+        parsed = self._unwrap_response(
+            resp.parsed, FixtureListFixturesResponse, "fixture_list"
+        )
+        data = parsed.data
+        if isinstance(data, Unset):
+            return []
+        return list(data)
 
-        if isinstance(parsed, FixtureListFixturesResponse):
-            fixtures = self._to_plain(parsed.data or [])
-            return [
-                (
-                    self._normalize_fixture_id(item)
-                    if isinstance(item, Mapping)
-                    else item
-                )
-                for item in fixtures
-            ]
-        else:
-            err: FixtureListResponseDefault = parsed
-            raise RuntimeError(f"API error: {err}")
-
-    def get_team_by_id(self, entity_id: str) -> dict[str, Any]:
+    def get_team_by_id(self, entity_id: str | UUID) -> TeamModel:
         """
         Return the full entity (team) metadata for a given entity ID.
         """
-        self._require_value("entity_id", entity_id)
+        self._require_value("entity_id", str(entity_id))
+        entity_uuid = self._as_uuid(entity_id, "entity_id")
 
-        self._log_request("entity_detail", entity_id=entity_id)
+        self._log_request("entity_detail", entity_id=str(entity_uuid))
+        organization_id = self._require_org_id()
         resp = entity_detail.sync_detailed(
             client=self._ensure_client(),
-            organization_id=self.org_id,
-            entity_id=entity_id,
+            organization_id=organization_id,
+            entity_id=entity_uuid,
             include="entities,organizations",
         )
         self._ensure_ok(resp, "entity_detail")
-        parsed = resp.parsed
-        if isinstance(parsed, EntityDetailEntitiesResponse):
-            return self._to_plain(parsed.data or {})
-        else:
-            err: EntityDetailResponseDefault = parsed
-            raise RuntimeError(f"API error: {err}")
+        parsed = self._unwrap_response(
+            resp.parsed, EntityDetailEntitiesResponse, "entity_detail"
+        )
+        data = parsed.data
+        if isinstance(data, Unset) or not data:
+            raise NotFoundError(f"No team found for entity '{entity_uuid}'.")
+        return data[0]
 
-    def get_fixture_by_id(self, fixture_id: str) -> dict[str, Any]:
+    def get_match_by_id(self, match_id: str | UUID) -> MatchModel:
         """
-        Return the full fixture (match) metadata for a given fixture ID.
+        Return the full match metadata for a given match ID.
         """
-        self._require_value("fixture_id", fixture_id)
+        self._require_value("match_id", str(match_id))
+        fixture_uuid = self._as_uuid(match_id, "match_id")
 
-        self._log_request("fixture_detail", fixture_id=fixture_id)
+        self._log_request("fixture_detail", fixture_id=str(fixture_uuid))
+        organization_id = self._require_org_id()
         resp = fixture_detail.sync_detailed(
             client=self._ensure_client(),
-            organization_id=self.org_id,
-            fixture_id=fixture_id,
+            organization_id=organization_id,
+            fixture_id=fixture_uuid,
             include="entities,organizations,persons",
             external="entityId,personId",
             hide_null=False,
@@ -411,125 +420,96 @@ class HandballAPI(DataCoreAPI):
         )
 
         self._ensure_ok(resp, "fixture_detail")
-        parsed = resp.parsed
-        if isinstance(parsed, FixtureDetailFixturesResponse):
-            data = self._to_plain(parsed.data or {})
-            if isinstance(data, Mapping):
-                return self._normalize_fixture_id(data)
-            return data
-        else:
-            err: FixtureDetailResponseDefault = parsed
-            raise RuntimeError(f"API error: {err}")
+        parsed = self._unwrap_response(
+            resp.parsed, FixtureDetailFixturesResponse, "fixture_detail"
+        )
+        data = parsed.data
+        if isinstance(data, Unset) or not data:
+            raise NotFoundError(f"No fixture found for id '{fixture_uuid}'.")
+        return data[0]
 
-    def get_fixture_events_by_id(
-        self, fixture_id: str, setup_only: bool, with_scores: bool
+    def get_match_events(
+        self, match_id: str | UUID, setup_only: bool, with_scores: bool
     ) -> list[dict[str, Any]]:
         """
-        Return the fixture events for a given fixture ID.
+        Return the match events for a given match ID.
         """
-        self._require_value("fixture_id", fixture_id)
+        self._require_value("match_id", str(match_id))
+        fixture_uuid = self._as_uuid(match_id, "match_id")
 
         self._log_request(
             "fixture_pbp_export",
-            fixture_id=fixture_id,
+            fixture_id=str(fixture_uuid),
             setup_only=setup_only,
             with_scores=with_scores,
         )
+        organization_id = self._require_org_id()
         resp = fixture_pbp_export.sync_detailed(
             client=self._ensure_client(),
-            organization_id=self.org_id,
-            fixture_id=fixture_id,
+            organization_id=organization_id,
+            fixture_id=fixture_uuid,
             limit=1000,
             only_setup=setup_only,
             with_scores=with_scores,
         )
 
         self._ensure_ok(resp, "fixture_pbp_export")
-        parsed = resp.parsed
-        if isinstance(parsed, FixturePbpExportSuccessResponse):
-            data = self._json_data_from_response(resp, "fixture_pbp_export")
-            if data is None:
-                return []
-            if not isinstance(data, list):
-                raise RuntimeError("fixture_pbp_export: unexpected data shape")
-            return data
-        else:
-            err: FixturePbpExportResponseDefault = parsed
-            raise RuntimeError(f"API error: {err}")
+        self._unwrap_response(
+            resp.parsed, FixturePbpExportSuccessResponse, "fixture_pbp_export"
+        )
+        data = self._json_data_from_response(resp, "fixture_pbp_export")
+        if data is None:
+            return []
+        if not isinstance(data, list):
+            raise UnexpectedResponseError("fixture_pbp_export: unexpected data shape")
+        return data
 
     def get_players_by_ids(
-        self, person_ids: str, *, limit: int = 500, offset: int | None = None
-    ) -> list[dict[str, Any]]:
+        self,
+        person_ids: str | Sequence[str | UUID],
+        *,
+        limit: int = 500,
+        offset: int | None = None,
+    ) -> list[PersonModel]:
         """
         Return the full player metadata for given player IDs (comma-separated).
         """
-        self._require_value("person_ids", person_ids)
+        if isinstance(person_ids, str):
+            ids_list = [item.strip() for item in person_ids.split(",") if item.strip()]
+        else:
+            ids_list = [str(item) for item in person_ids if str(item).strip()]
+        ids_text = ",".join(ids_list)
+        self._require_value("person_ids", ids_text)
 
         self._log_request(
             "person_list",
-            person_ids=person_ids,
+            person_ids=ids_text,
             limit=limit,
             offset=offset,
         )
+        organization_id = self._require_org_id()
+        offset_value = self._as_offset(offset)
+        person_id_arg: Any
+        if len(ids_list) == 1:
+            try:
+                person_id_arg = self._as_uuid(ids_list[0], "person_ids")
+            except ValidationError:
+                person_id_arg = cast(Any, ids_text)
+        else:
+            person_id_arg = cast(Any, ids_text)
         resp = person_list.sync_detailed(
             client=self._ensure_client(),
-            organization_id=self.org_id,
-            person_ids=person_ids,
+            organization_id=organization_id,
+            person_ids=person_id_arg,
             limit=limit,
-            offset=offset,
+            offset=offset_value,
         )
 
         self._ensure_ok(resp, "person_list")
-        parsed = resp.parsed
-        if isinstance(parsed, PersonListPersonsResponse):
-            data = self._json_data_from_response(resp, "person_list")
-            if data is None:
-                return []
-            if not isinstance(data, list):
-                raise RuntimeError("person_list: unexpected data shape")
-            return data
-        else:
-            err: PersonListResponseDefault = parsed
-            raise RuntimeError(f"API error: {err}")
-
-    def save_events_to_csv(
-        self, events: Sequence[Mapping[str, Any]], file_path: str
-    ) -> None:
-        """
-        Save a list of event dicts (from a single fixture) to a CSV file.
-        Each row in the CSV will represent one event's 'data' field.
-        """
-        if not events:
-            raise ValueError("events must be provided.")
-        if not file_path:
-            raise ValueError("file_path must be provided.")
-
-        # Extract the 'data' field from each event if present
-        data_rows = []
-        for event in events:
-            if isinstance(event, Mapping) and "data" in event:
-                data_rows.append(event["data"])
-            elif isinstance(event, Mapping):
-                data_rows.append(event)
-            else:
-                logging.warning("Skipping non-mapping event: %r", event)
-
-        if not data_rows:
-            logging.error("No event data found to save.")
-            return
-
-        # Collect all keys for CSV header
-        fieldnames_set: set[str] = set()
-        for row in data_rows:
-            if isinstance(row, Mapping):
-                fieldnames_set.update(row.keys())
-        fieldnames = sorted(fieldnames_set)
-
-        with open(file_path, "w", encoding="utf-8", newline="") as csvfile:
-            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-            writer.writeheader()
-            for row in data_rows:
-                if isinstance(row, Mapping):
-                    writer.writerow(row)
-
-        logging.debug("Events saved to %s", file_path)
+        parsed = self._unwrap_response(
+            resp.parsed, PersonListPersonsResponse, "person_list"
+        )
+        data = parsed.data
+        if isinstance(data, Unset):
+            return []
+        return list(data)

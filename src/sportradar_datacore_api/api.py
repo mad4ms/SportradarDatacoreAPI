@@ -7,27 +7,32 @@ Author: Michael Adams, 2025
 
 import logging
 import time
+from threading import RLock
 from types import TracebackType
-from typing import Any
+from typing import Any, TypeVar
+from uuid import UUID
 
 import httpx
 from datacore_client import AuthenticatedClient
+from datacore_client.types import UNSET, Unset
+
+from sportradar_datacore_api.errors import (
+    AuthenticationError,
+    NotFoundError,
+    TransportError,
+    UnexpectedResponseError,
+    ValidationError,
+)
 
 logger = logging.getLogger(__name__)
 
-
-class APIAuthenticationError(Exception):
-    """Exception raised for authentication errors."""
-
-
-class APIRequestError(Exception):
-    """Exception raised for request errors."""
+T = TypeVar("T")
 
 
 class DataCoreAPI:
     """
     OAuth2-authenticated wrapper for Sportradar DataCore.
-    Handles token acquisition, caching, renewal, and rate-limiting.
+    Handles token acquisition, caching, and renewal.
     """
 
     _TOKEN_BUFFER = 60  # seconds before actual expiry to refresh
@@ -42,7 +47,6 @@ class DataCoreAPI:
         org_id: str | None = None,
         scopes: list[str] | None = None,
         timeout: int = 5,
-        rate_limit_sleep: float = 1.0,
         connect_on_init: bool = True,
     ) -> None:
         self.base_url = base_url.rstrip("/")
@@ -53,10 +57,10 @@ class DataCoreAPI:
         self.org_id = org_id
         self.scopes: list[str] = scopes or ["read:organization"]
         self.timeout = timeout
-        self.rate_limit_sleep = rate_limit_sleep
 
         self._token: str | None = None
         self._expires_at: float = 0.0
+        self._lock = RLock()
 
         self.client: AuthenticatedClient | None = None
 
@@ -91,12 +95,12 @@ class DataCoreAPI:
             )
             response.raise_for_status()
         except httpx.HTTPError as e:
-            raise APIAuthenticationError(f"Authentication failed: {e}") from e
+            raise TransportError(f"Authentication failed: {e}") from e
 
         data = response.json().get("data", {})
         self._token = data.get("token")
         if not self._token:
-            raise APIAuthenticationError("Token missing in authentication response.")
+            raise AuthenticationError("Token missing in authentication response.")
 
         logger.debug("Authenticated successfully")
 
@@ -108,22 +112,59 @@ class DataCoreAPI:
             self.client.token = self._token
 
     def _ensure_token(self) -> None:
-        if not self._token or time.time() >= self._expires_at:
-            logger.info("Refreshing access token")
-            self._authenticate()
+        with self._lock:
+            if not self._token or time.time() >= self._expires_at:
+                logger.info("Refreshing access token")
+                self._authenticate()
 
     def _ensure_client(self) -> AuthenticatedClient:
-        self._ensure_token()
-        if self.client is None:
-            self.client = AuthenticatedClient(
-                base_url=self.base_url,
-                token=self._token,
-                verify_ssl=True,  # enforce SSL in production
-                raise_on_unexpected_status=True,
-            )
-        else:
-            self.client.token = self._token
-        return self.client
+        with self._lock:
+            self._ensure_token()
+            if self._token is None:
+                raise AuthenticationError("Authentication token was not initialized.")
+            token = self._token
+            if self.client is None:
+                self.client = AuthenticatedClient(
+                    base_url=self.base_url,
+                    token=token,
+                    verify_ssl=True,  # enforce SSL in production
+                    raise_on_unexpected_status=True,
+                    timeout=httpx.Timeout(self.timeout),
+                )
+            else:
+                self.client.token = token
+            return self.client
+
+    @staticmethod
+    def _require_value(name: str, value: str) -> None:
+        if not value:
+            raise ValidationError(f"{name} must be provided.")
+
+    @staticmethod
+    def _as_uuid(value: str | UUID, name: str) -> UUID:
+        if isinstance(value, UUID):
+            return value
+        try:
+            return UUID(str(value))
+        except ValueError as exc:
+            raise ValidationError(f"{name} must be a valid UUID.") from exc
+
+    @staticmethod
+    def _as_offset(offset: int | None) -> int | Unset:
+        return UNSET if offset is None else offset
+
+    @staticmethod
+    def _uuid_to_str(value: UUID | Unset | None, name: str) -> str:
+        if value is None or isinstance(value, Unset):
+            raise NotFoundError(f"{name} is missing in response.")
+        return str(value)
+
+    def _unwrap_response(self, parsed: Any, success_type: type[T], context: str) -> T:
+        if parsed is None:
+            raise UnexpectedResponseError(f"{context}: empty response")
+        if isinstance(parsed, success_type):
+            return parsed
+        raise UnexpectedResponseError(f"{context}: API error: {parsed}")
 
     def close(self) -> None:
         self.session.close()

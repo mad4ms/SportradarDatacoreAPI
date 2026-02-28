@@ -77,7 +77,7 @@ def test_list_fixtures(api: HandballAPI, log_dir: Path) -> None:
     """Test listing fixtures for a season."""
     comp_id = api.get_competition_id_by_name("1. Handball-Bundesliga")
     season_id = api.get_season_id_by_year(comp_id, 2023)
-    fixtures = api.get_list_matches_by_season_id(season_id)
+    fixtures = api.list_matches_by_season(season_id)
     assert fixtures, "No fixtures found"
     # Convert objects to dicts for JSON serialization
     fixtures_dict = [f.__dict__ if hasattr(f, "__dict__") else f for f in fixtures]
@@ -88,19 +88,13 @@ def test_fixture_events(api: HandballAPI, log_dir: Path) -> None:
     """Test getting events for a fixture."""
     comp_id = api.get_competition_id_by_name("1. Handball-Bundesliga")
     season_id = api.get_season_id_by_year(comp_id, 2023)
-    fixtures = api.get_list_matches_by_season_id(season_id)
+    fixtures = api.list_matches_by_season(season_id)
     assert fixtures, "No fixtures found"
     fixture_id = _first_fixture_id(fixtures)
     assert fixture_id, "No fixture ID found"
-    events = api.get_fixture_events_by_id(
-        fixture_id, setup_only=False, with_scores=True
-    )
+    events = api.get_match_events(fixture_id, setup_only=False, with_scores=True)
     assert events is not None, "No events found"
     save_result(log_dir, "fixture_events", events)
-    if os.getenv("SRD_SKIP_TEST_LOGS") != "1":
-        # Optionally test CSV export
-        csv_path = log_dir / f"fixture_{fixture_id}_events.csv"
-        api.save_events_to_csv(events, str(csv_path))
 
 
 def test_full_flow(api: HandballAPI, log_dir: Path) -> None:
@@ -109,17 +103,12 @@ def test_full_flow(api: HandballAPI, log_dir: Path) -> None:
     assert comp_id, "No competition ID found"
     season_id = api.get_season_id_by_year(comp_id, 2023)
     assert season_id, "No season ID found"
-    fixtures = api.get_list_matches_by_season_id(season_id)
+    fixtures = api.list_matches_by_season(season_id)
     assert fixtures, "No fixtures found"
     fixture_id = _first_fixture_id(fixtures)
     assert fixture_id, "No fixture ID found"
-    events = api.get_fixture_events_by_id(
-        fixture_id, setup_only=False, with_scores=True
-    )
+    events = api.get_match_events(fixture_id, setup_only=False, with_scores=True)
     assert events is not None, "No events found"
-    if os.getenv("SRD_SKIP_TEST_LOGS") != "1":
-        csv_path = log_dir / f"fixture_{fixture_id}_events.csv"
-        api.save_events_to_csv(events, str(csv_path))
 
 
 if __name__ == "__main__":
