@@ -19,6 +19,19 @@ from sportradar_datacore_api.handball import HandballAPI
 def api() -> HandballAPI:
     """Fixture to initialize the HandballAPI client."""
     load_dotenv(".env", override=True)
+    required = [
+        "BASE_URL",
+        "AUTH_URL",
+        "CLIENT_ID",
+        "CLIENT_SECRET",
+        "CLIENT_ORGANIZATION_ID",
+    ]
+    missing = [key for key in required if not os.getenv(key)]
+    if missing:
+        pytest.skip(
+            "Missing required environment variables for live API tests: "
+            + ", ".join(missing)
+        )
     return HandballAPI(
         base_url=os.getenv("BASE_URL", ""),
         auth_url=os.getenv("AUTH_URL", ""),
