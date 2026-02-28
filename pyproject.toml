@@ -80,7 +80,7 @@ testpaths = ["test"]
 [tool.mypy]
 python_version = "3.12"
 plugins = ["pydantic.mypy"]
-mypy_path = ["src"]
+mypy_path = ["src", "src/_vendor"]
 exclude = 'src/_vendor/'
 
 warn_unused_ignores = true
