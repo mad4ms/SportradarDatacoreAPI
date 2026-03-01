@@ -80,11 +80,18 @@ testpaths = ["test"]
 [tool.mypy]
 python_version = "3.12"
 plugins = ["pydantic.mypy"]
+
 mypy_path = ["src", "src/_vendor"]
-exclude = 'src/_vendor/'
+
+exclude = ["^src/_vendor/"]
 
 warn_unused_ignores = true
 warn_redundant_casts = true
 strict_optional = true
 check_untyped_defs = true
 disallow_untyped_defs = true
+
+[[tool.mypy.overrides]]
+module = "datacore_client.*"
+follow_imports = "skip"
+ignore_errors = true
