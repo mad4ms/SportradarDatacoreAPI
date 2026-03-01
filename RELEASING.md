@@ -16,6 +16,9 @@ git push origin vX.Y.Z
 
 ## 3) What happens automatically
 - GitHub Action `release.yml` verifies tag matches `pyproject.toml` version
-- Builds `sdist` + `wheel`
+- Runs ruff, mypy, and pytest before building
+- Builds `sdist` + `wheel` with `uv`
 - Publishes to PyPI via trusted publishing
 - Artifacts are attached to a GitHub Release for the tag
+- GitHub Release notes are auto-generated
+- SBOM is generated and build provenance is attested
