@@ -1,6 +1,6 @@
 [project]
 name = "sportradar-datacore-api"
-version = "0.1.0"
+version = "0.1.1"
 description = "A Python wrapper for accessing and processing Sportradar DataCore data."
 readme = "README.md"
 requires-python = ">=3.12"
@@ -48,7 +48,7 @@ Repository = "https://github.com/mad4ms/SportradarDatacoreAPI"
 
 [tool.setuptools.packages.find]
 where = ["src"]
-exclude = ["_vendor*", "_vendor.*"]  # do not package vendored client
+include = ["sportradar_datacore_api*", "_vendor*"]
 
 # --- build ---
 [build-system]
@@ -80,11 +80,18 @@ testpaths = ["test"]
 [tool.mypy]
 python_version = "3.12"
 plugins = ["pydantic.mypy"]
+
 mypy_path = ["src", "src/_vendor"]
-exclude = 'src/_vendor/'
+
+exclude = ["^src/_vendor/"]
 
 warn_unused_ignores = true
 warn_redundant_casts = true
 strict_optional = true
 check_untyped_defs = true
 disallow_untyped_defs = true
+
+[[tool.mypy.overrides]]
+module = "datacore_client.*"
+follow_imports = "skip"
+ignore_errors = true
