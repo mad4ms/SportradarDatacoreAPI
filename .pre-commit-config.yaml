@@ -28,6 +28,7 @@ repos:
         exclude: ^src/_vendor/
         additional_dependencies:
           - pydantic>=2.6
+          - attrs>=23.2
 
   # Strip notebook outputs
   - repo: https://github.com/kynan/nbstripout
