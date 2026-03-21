@@ -26,6 +26,10 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
+stream = [
+    "paho-mqtt>=2.1",
+]
+
 dev = [
     "openapi-python-client>=0.26",
     "openapi-spec-validator>=0.7",
