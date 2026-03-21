@@ -132,8 +132,7 @@ This project uses a **Wrapper Pattern** around a generated OpenAPI client.
 
 ## AI Assistance
 
-If you are using GitHub Copilot in this repo, see the project-specific guidance in
-`.github/copilot-instructions.md`.
+AI coding assistants should read [AGENTS.md](AGENTS.md) for project-specific guidance and rules.
 
 ## Development
 
