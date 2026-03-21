@@ -23,3 +23,11 @@ class NotFoundError(APIError):
 
 class ValidationError(APIError):
     """Invalid user input or parameters."""
+
+
+class StreamingError(APIError):
+    """Streaming transport or protocol errors."""
+
+
+class DependencyError(APIError):
+    """Optional dependency required for a feature is not installed."""

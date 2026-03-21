@@ -18,3 +18,22 @@ if importlib_util.find_spec("datacore_client") is None:
         _vendored = None
     else:
         sys.modules.setdefault("datacore_client", _vendored)
+
+from sportradar_datacore_api.handball import HandballAPI
+from sportradar_datacore_api.stream_models import (
+    StreamAccessGrant,
+    StreamMessage,
+    StreamPublishResult,
+    StreamTopicGrant,
+)
+from sportradar_datacore_api.streaming import HandballStreamClient, HandballStreamingAPI
+
+__all__ = [
+    "HandballAPI",
+    "HandballStreamClient",
+    "HandballStreamingAPI",
+    "StreamAccessGrant",
+    "StreamMessage",
+    "StreamPublishResult",
+    "StreamTopicGrant",
+]
