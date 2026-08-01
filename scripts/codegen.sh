@@ -5,33 +5,33 @@ set -e
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 GEN_OUT="$ROOT/datacore-client"
 GEN_PKG="$GEN_OUT/datacore_client"
-VENDOR_DIR="$ROOT/src/_vendor"
+VENDOR_DIR="$ROOT/src"
 TARGET="$VENDOR_DIR/datacore_client"
 URL_SPEC="https://developer.connect.sportradar.com/datacore/handball_rest.json"
+SPEC_IN="$ROOT/openapi/handball_rest.json"
+SPEC_OUT="$ROOT/openapi/handball_rest.get.json"
+CONFIG="$ROOT/openapi/config.yaml"
 
-# Clean previous vendor
+# ---------- Download spec if missing ----------
+if [ ! -f "$SPEC_IN" ]; then
+    echo "Downloading spec from $URL_SPEC ..."
+    curl --fail --location --silent --show-error -o "$SPEC_IN" "$URL_SPEC"
+fi
+
+# Prepare and validate the exact input used for generation.
+uv run python "$ROOT/scripts/prepare_openapi_spec.py" "$SPEC_IN" "$SPEC_OUT"
+uv run openapi-spec-validator "$SPEC_OUT"
+
+# Clean previous vendor only after preparation succeeded.
 if [ -d "$TARGET" ]; then
     rm -rf "$TARGET"
 fi
 
-# Activate virtual environment
-VENV_PATH="$ROOT/.venv"
-ACTIVATE_SCRIPT="$VENV_PATH/Scripts/activate"
-if [ -f "$ACTIVATE_SCRIPT" ]; then
-    source "$ACTIVATE_SCRIPT"
-else
-    echo "Virtual environment not found at $VENV_PATH"
-    exit 1
-fi
-
-# ---------- Download spec if missing ----------
-if [ ! -f "$ROOT/openapi/handball_rest.json" ]; then
-    echo "Downloading spec from $URL_SPEC ..."
-    curl -o "$ROOT/openapi/handball_rest.json" "$URL_SPEC"
-fi
-
 # Run generator
-openapi-python-client generate --path "openapi/handball_rest.json" --config "openapi/config.yaml"
+uv run openapi-python-client generate \
+    --path "$SPEC_OUT" \
+    --config "$CONFIG" \
+    --overwrite
 
 # Move generated code
 if [ ! -d "$VENDOR_DIR" ]; then

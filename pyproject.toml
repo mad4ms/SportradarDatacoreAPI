@@ -16,18 +16,22 @@ classifiers = [
 ]
 
 dependencies = [
-    "httpx>=0.27",
-    "pydantic>=2.6",
-    "typing-extensions>=4.8",
-    "pandas>=2.2",
-    "python-dotenv>=1.1",
-    "requests>=2.32",
-    "attrs>=25.3",
+    "httpx>=0.28.1",
+    "pydantic>=2.13.4",
+    "typing-extensions>=4.16.0",
+    "pandas>=3.0.5",
+    "python-dotenv>=1.2.2",
+    "requests>=2.34.2",
+    "attrs>=26.1.0",
 ]
 
 [project.optional-dependencies]
+stream = [
+    "paho-mqtt>=2.1",
+]
+
 dev = [
-    "openapi-python-client>=0.26",
+    "openapi-python-client==0.26.1",
     "openapi-spec-validator>=0.7",
     "pytest>=8.4",
     "pytest-order>=1.3",
@@ -48,7 +52,7 @@ Repository = "https://github.com/mad4ms/SportradarDatacoreAPI"
 
 [tool.setuptools.packages.find]
 where = ["src"]
-include = ["sportradar_datacore_api*", "_vendor*", "datacore_client*"]
+include = ["sportradar_datacore_api*", "datacore_client*"]
 
 # --- build ---
 [build-system]
@@ -59,7 +63,7 @@ build-backend = "setuptools.build_meta"
 [tool.ruff]
 line-length = 88
 target-version = "py312"
-exclude = [".venv", "src/_vendor"]
+exclude = [".venv", "src/datacore_client"]
 
 [tool.ruff.lint]
 select = ["E","F","I","UP","B","SIM","PGH","PL","RUF"]
@@ -72,7 +76,7 @@ known-first-party = ["sportradar_datacore_api"]
 
 # --- pytest ---
 [tool.pytest.ini_options]
-pythonpath = ["src", "src/_vendor"]
+pythonpath = ["src"]
 addopts = "-q -ra --maxfail=1"
 testpaths = ["test"]
 
@@ -81,9 +85,9 @@ testpaths = ["test"]
 python_version = "3.12"
 plugins = ["pydantic.mypy"]
 
-mypy_path = ["src", "src/_vendor"]
+mypy_path = ["src"]
 
-exclude = ["^src/_vendor/"]
+exclude = ["^src/datacore_client/"]
 
 warn_unused_ignores = true
 warn_redundant_casts = true

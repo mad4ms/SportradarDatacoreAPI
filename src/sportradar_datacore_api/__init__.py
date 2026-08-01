@@ -3,18 +3,23 @@
 Author: Michael Adams, 2025
 """
 
-from __future__ import annotations
+from sportradar_datacore_api.config import DataCoreSettings
+from sportradar_datacore_api.handball import HandballAPI
+from sportradar_datacore_api.stream_models import (
+    StreamAccessGrant,
+    StreamMessage,
+    StreamPublishResult,
+    StreamTopicGrant,
+)
+from sportradar_datacore_api.streaming import HandballStreamClient, HandballStreamingAPI
 
-import sys
-from importlib import import_module
-from importlib import util as importlib_util
-from types import ModuleType
-
-if importlib_util.find_spec("datacore_client") is None:
-    _vendored: ModuleType | None
-    try:
-        _vendored = import_module("_vendor.datacore_client")
-    except ModuleNotFoundError:
-        _vendored = None
-    else:
-        sys.modules.setdefault("datacore_client", _vendored)
+__all__ = [
+    "HandballAPI",
+    "DataCoreSettings",
+    "HandballStreamClient",
+    "HandballStreamingAPI",
+    "StreamAccessGrant",
+    "StreamMessage",
+    "StreamPublishResult",
+    "StreamTopicGrant",
+]
