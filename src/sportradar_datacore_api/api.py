@@ -9,13 +9,14 @@ import logging
 import time
 from threading import RLock
 from types import TracebackType
-from typing import Any, TypeVar
+from typing import Any, Self, TypeVar
 from uuid import UUID
 
 import httpx
 from datacore_client import AuthenticatedClient
 from datacore_client.types import UNSET, Unset
 
+from sportradar_datacore_api.config import DataCoreSettings
 from sportradar_datacore_api.errors import (
     AuthenticationError,
     NotFoundError,
@@ -47,7 +48,6 @@ class DataCoreAPI:
         org_id: str | None = None,
         scopes: list[str] | None = None,
         timeout: int = 5,
-        connect_on_init: bool = True,
     ) -> None:
         self.base_url = base_url.rstrip("/")
         self.auth_url = auth_url
@@ -71,8 +71,25 @@ class DataCoreAPI:
                 "Content-Type": "application/json",
             }
         )
-        if connect_on_init:
-            self.connect()
+
+    @classmethod
+    def from_settings(cls, settings: DataCoreSettings) -> Self:
+        """Create an API client from explicit settings."""
+        return cls(
+            base_url=settings.base_url,
+            auth_url=settings.auth_url,
+            client_id=settings.client_id,
+            client_secret=settings.client_secret,
+            sport=settings.sport,
+            org_id=settings.org_id,
+            scopes=list(settings.scopes),
+            timeout=settings.timeout,
+        )
+
+    @classmethod
+    def from_env(cls, *, dotenv_path: str | None = None) -> Self:
+        """Create an API client from environment variables."""
+        return cls.from_settings(DataCoreSettings.from_env(dotenv_path=dotenv_path))
 
     def connect(
         self,

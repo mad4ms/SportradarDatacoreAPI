@@ -24,11 +24,18 @@ HandballAPI(
     org_id: str | None = None,
     scopes: list[str] | None = None,  # default: ["read:organization"]
     timeout: int = 5,
-    connect_on_init: bool = True,
 )
 ```
 
-Authenticates immediately on construction (unless `connect_on_init=False`). Tokens are refreshed automatically on expiry.
+Construction does not perform network access. Authentication happens on the first API call or when `connect()` is called explicitly. Tokens are refreshed automatically on expiry.
+
+For environment-based configuration:
+
+```python
+from sportradar_datacore_api import HandballAPI
+
+api = HandballAPI.from_env()
+```
 
 ### Context Manager
 
@@ -302,7 +309,7 @@ Incoming messages are exposed as `StreamMessage` objects. If the payload contain
 
 ## Return Model Packages
 
-All return types come from `src/_vendor/datacore_client/models`. Key models:
+All return types come from `src/datacore_client/models`. Key models:
 
 | Model | Used by |
 |---|---|

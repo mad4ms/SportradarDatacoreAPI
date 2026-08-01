@@ -63,8 +63,8 @@ The `.pre-commit-config.yaml` enforces:
 - Trailing whitespace / end-of-file fixers
 - YAML validity check
 - Merge conflict marker detection
-- `ruff` lint + format + import sort (excluding `src/_vendor/`)
-- `mypy` static type checking (excluding `src/_vendor/`)
+- `ruff` lint + format + import sort (excluding `src/datacore_client/`)
+- `mypy` static type checking (excluding `src/datacore_client/`)
 - `nbstripout` for Jupyter notebooks
 - `pytest` on every commit
 
@@ -82,11 +82,13 @@ When the upstream Sportradar OpenAPI spec changes, regenerate the vendor client:
 
 The script:
 1. Downloads `handball_rest.json` from the Sportradar developer portal (cached in `openapi/`)
-2. Runs `openapi-python-client generate` using `openapi/config.yaml`
-3. Moves the generated `datacore_client` package into `src/_vendor/`
-4. Cleans up the temporary output directory
+2. Runs `scripts/prepare_openapi_spec.py` to keep GET operations and remove code samples
+3. Validates the prepared spec with `openapi-spec-validator`
+4. Runs `openapi-python-client` through `uv run` using `openapi/config.yaml`
+5. Moves the generated `datacore_client` package into `src/datacore_client/`
+6. Cleans up the temporary output directory
 
-Never edit `src/_vendor/` manually — changes are overwritten on the next codegen run.
+Never edit `src/datacore_client/` manually — changes are overwritten on the next codegen run.
 
 ## CI Pipeline
 
@@ -116,7 +118,7 @@ src/sportradar_datacore_api/
   errors.py     # Typed exception hierarchy
   __init__.py
 
-src/_vendor/datacore_client/   # Generated — do not edit
+src/datacore_client/             # Generated — do not edit
 scripts/
   codegen.sh    # Client regeneration (Linux/Mac)
   codegen.ps1   # Client regeneration (Windows)

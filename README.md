@@ -46,7 +46,7 @@ uv pip install -e ".[stream]"
 
 ## Configuration
 
-The library uses **pydantic** and **python-dotenv** to manage configuration. You can provide credentials via a `.env` file in your project root or via environment variables.
+The library uses an explicit typed settings object and **python-dotenv** for optional `.env` loading. You can provide credentials via a `.env` file in your project root or via environment variables.
 
 Create a `.env` file:
 
@@ -70,25 +70,12 @@ STREAM_VENUE_ID=your_venue_id
 The main entry point is the `HandballAPI` class.
 
 ```python
-import os
-from dotenv import load_dotenv
-from sportradar_datacore_api.handball import HandballAPI
+from sportradar_datacore_api import HandballAPI
 
-# 1. Load configuration
-load_dotenv()
+# Configuration is read from the environment and optional .env file.
+api = HandballAPI.from_env()
 
-# 2. Initialize the API
-api = HandballAPI(
-    base_url=os.getenv("BASE_URL", ""),
-    auth_url=os.getenv("AUTH_URL", ""),
-    client_id=os.getenv("CLIENT_ID", ""),
-    client_secret=os.getenv("CLIENT_SECRET", ""),
-    org_id=os.getenv("CLIENT_ORGANIZATION_ID"),
-    scopes=["read:organization"],
-    sport="handball",
-)
-
-# 3. Use high-level helpers
+# Use high-level helpers
 # Resolve the ID for "1. Handball-Bundesliga"
 comp_id = api.get_competition_id_by_name("1. Handball-Bundesliga")
 print(f"Competition ID: {comp_id}")
@@ -208,14 +195,13 @@ This project uses a **Wrapper Pattern** around a generated OpenAPI client.
 
 - **`src/sportradar_datacore_api/`**: The public-facing code. Contains the `HandballAPI` class, authentication logic, and user-friendly helpers.
 - **`src/sportradar_datacore_api/streaming.py`**: Separate streaming access and MQTT client.
-- **`src/_vendor/datacore_client/`**: The low-level client code generated from the Sportradar OpenAPI specification.
-  - *Note*: This directory allows us to ship the generated code without external dependencies or versioning conflicts.
-  - **Do not edit files in `_vendor` manually.** They are overwritten during code generation.
+- **`src/datacore_client/`**: The low-level client code generated from the Sportradar OpenAPI specification.
+  - **Do not edit generated files manually.** They are overwritten during code generation.
 
 ## Repository Layout
 
 - **`src/sportradar_datacore_api/`**: Hand-written wrapper and helper APIs.
-- **`src/_vendor/datacore_client/`**: Generated OpenAPI client (do not edit by hand).
+- **`src/datacore_client/`**: Generated OpenAPI client (do not edit by hand).
 - **`scripts/`**: Code generation helpers for the OpenAPI client.
 - **`test/`**: Test suite executed with `pytest`.
 

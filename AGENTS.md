@@ -7,12 +7,12 @@ Guidance for AI assistants (Claude Code, GitHub Copilot, Cursor, etc.) working i
 Python 3.12+ wrapper around the Sportradar DataCore REST API (Handball).
 
 - Public API: `src/sportradar_datacore_api/` — centered on `HandballAPI`
-- Generated OpenAPI client: `src/_vendor/datacore_client/` (mirrors `build/`)
+- Generated OpenAPI client: `src/datacore_client/`
 - Full architecture: [docs/architecture.md](docs/architecture.md)
 
 ## Hard Rules
 
-- **Never edit `src/_vendor/` or `build/` by hand.** These are fully generated. Regenerate via `scripts/codegen.sh` (Linux/Mac) or `scripts/codegen.ps1` (Windows).
+- **Never edit `src/datacore_client/` or `build/` by hand.** These are fully generated. Regenerate via `scripts/codegen.sh` (Linux/Mac) or `scripts/codegen.ps1` (Windows).
 - **Never commit `.env` or credential files.** Credentials are managed through environment variables only. See [README.md](README.md#configuration) for required variable names.
 - **Never add `# type: ignore` or `Any` casts in `src/sportradar_datacore_api/`.** Maintain full type safety in hand-written code. Vendor code is excluded from mypy via config.
 
@@ -51,7 +51,7 @@ When the upstream OpenAPI spec changes, regenerate the vendor client:
 ./scripts/codegen.ps1
 ```
 
-The generator fetches the spec from the Sportradar developer portal, runs `openapi-python-client`, and moves the output into `src/_vendor/datacore_client/`.
+The generator fetches the spec from the Sportradar developer portal, runs `openapi-python-client`, and moves the output into `src/datacore_client/`.
 
 ## Repository Layout
 
@@ -62,8 +62,7 @@ src/
     handball.py              # HandballAPI: high-level helpers
     errors.py                # Typed exception hierarchy
     __init__.py
-  _vendor/
-    datacore_client/         # Generated OpenAPI client (do not edit)
+  datacore_client/           # Generated OpenAPI client (do not edit)
 scripts/
   codegen.sh                 # Client regeneration (Linux/Mac)
   codegen.ps1                # Client regeneration (Windows)
