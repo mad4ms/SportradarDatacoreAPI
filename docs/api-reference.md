@@ -181,6 +181,27 @@ api.get_match_events(
 
 Returns play-by-play events for a match as a list of plain dicts. Set `setup_only=False` to include all events. Set `with_scores=True` to include running score in each event.
 
+### `get_live_match_events`
+
+```python
+api.get_live_match_events(
+    match_id: str | UUID,
+    *,
+    limit: int = 1000,
+    offset: int | None = None,
+) -> list[dict[str, Any]]
+```
+
+Returns play-by-play events for a match currently in progress, as a list of plain dicts. Once the match is complete, this returns the same data as `get_match_events`.
+
+Requires the `read:organization_live` scope in addition to `read:organization`:
+
+```python
+api = HandballAPI(..., scopes=["read:organization", "read:organization_live"])
+```
+
+Without it, the call fails with a 403 explicit-deny rather than an auth error — the token itself is still valid, it just wasn't issued for this resource.
+
 ---
 
 ## Low-Level Access

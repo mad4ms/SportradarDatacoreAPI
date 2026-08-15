@@ -14,7 +14,10 @@ from uuid import UUID
 
 from datacore_client.api.competitions import competition_list
 from datacore_client.api.match_persons import fixture_persons_list
-from datacore_client.api.match_play_by_play import fixture_pbp_export
+from datacore_client.api.match_play_by_play import (
+    fixture_pbp_export,
+    fixture_pbp_list_live,
+)
 from datacore_client.api.matches import fixture_detail, fixture_list
 from datacore_client.api.persons import person_list
 from datacore_client.api.season_persons import season_persons_list
@@ -30,6 +33,7 @@ from datacore_client.models import (
     FixtureDetailFixturesResponse,
     FixtureListFixturesResponse,
     FixturePbpExportSuccessResponse,
+    FixturePbpListLiveFixturePbpEventResponse,
     FixturePersonsListFixturePersonsResponse,
     MatchModel,
     MatchPersonsModel,
@@ -462,6 +466,56 @@ class HandballAPI(DataCoreAPI):
             return []
         if not isinstance(data, list):
             raise UnexpectedResponseError("fixture_pbp_export: unexpected data shape")
+        return data
+
+    def get_live_match_events(
+        self,
+        match_id: str | UUID,
+        *,
+        limit: int = 1000,
+        offset: int | None = None,
+    ) -> list[dict[str, Any]]:
+        """
+        Return play-by-play events for a match currently in progress.
+
+        Requires the `read:organization_live` scope in addition to
+        `read:organization` — pass both to the ``HandballAPI`` constructor
+        (or via ``scopes=[...]``), otherwise the API responds with a 403
+        explicit-deny rather than an auth error. Once the match is
+        complete, this call returns the same data as `get_match_events`.
+        """
+        self._require_value("match_id", str(match_id))
+        fixture_uuid = self._as_uuid(match_id, "match_id")
+
+        self._log_request(
+            "fixture_pbp_list_live",
+            fixture_id=str(fixture_uuid),
+            limit=limit,
+            offset=offset,
+        )
+        organization_id = self._require_org_id()
+        offset_value = self._as_offset(offset)
+        resp = fixture_pbp_list_live.sync_detailed(
+            client=self._ensure_client(),
+            organization_id=organization_id,
+            fixture_id=fixture_uuid,
+            limit=limit,
+            offset=offset_value,
+        )
+
+        self._ensure_ok(resp, "fixture_pbp_list_live")
+        self._unwrap_response(
+            resp.parsed,
+            FixturePbpListLiveFixturePbpEventResponse,
+            "fixture_pbp_list_live",
+        )
+        data = self._json_data_from_response(resp, "fixture_pbp_list_live")
+        if data is None:
+            return []
+        if not isinstance(data, list):
+            raise UnexpectedResponseError(
+                "fixture_pbp_list_live: unexpected data shape"
+            )
         return data
 
     def get_players_by_ids(

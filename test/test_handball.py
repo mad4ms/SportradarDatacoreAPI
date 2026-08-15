@@ -38,7 +38,7 @@ def api() -> HandballAPI:
         client_id=os.getenv("CLIENT_ID", ""),
         client_secret=os.getenv("CLIENT_SECRET", ""),
         org_id=os.getenv("CLIENT_ORGANIZATION_ID"),
-        scopes=["read:organization"],
+        scopes=["read:organization", "read:organization_live"],
         sport="handball",
     )
 
@@ -108,6 +108,24 @@ def test_fixture_events(api: HandballAPI, log_dir: Path) -> None:
     events = api.get_match_events(fixture_id, setup_only=False, with_scores=True)
     assert events is not None, "No events found"
     save_result(log_dir, "fixture_events", events)
+
+
+def test_live_fixture_events(api: HandballAPI, log_dir: Path) -> None:
+    """Test getting live events for a fixture.
+
+    Requires the `read:organization_live` scope on top of
+    `read:organization`; the API responds with a 403 explicit-deny if
+    that scope is missing rather than a normal auth error.
+    """
+    comp_id = api.get_competition_id_by_name("1. Handball-Bundesliga")
+    season_id = api.get_season_id_by_year(comp_id, 2023)
+    fixtures = api.list_matches_by_season(season_id)
+    assert fixtures, "No fixtures found"
+    fixture_id = _first_fixture_id(fixtures)
+    assert fixture_id, "No fixture ID found"
+    events = api.get_live_match_events(fixture_id)
+    assert events is not None, "No events found"
+    save_result(log_dir, "live_fixture_events", events)
 
 
 def test_full_flow(api: HandballAPI, log_dir: Path) -> None:

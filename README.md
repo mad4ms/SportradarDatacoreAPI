@@ -94,6 +94,30 @@ events = api.get_match_events(match.fixture_id, setup_only=False, with_scores=Tr
 players = api.list_players_by_match(match.fixture_id)
 ```
 
+### Live Play-by-Play
+
+`get_live_match_events` returns events for a match currently in progress. It
+requires the `read:organization_live` scope in addition to
+`read:organization` — pass both explicitly, since the default is
+`["read:organization"]` only:
+
+```python
+api = HandballAPI(
+    base_url=os.getenv("BASE_URL", ""),
+    auth_url=os.getenv("AUTH_URL", ""),
+    client_id=os.getenv("CLIENT_ID", ""),
+    client_secret=os.getenv("CLIENT_SECRET", ""),
+    org_id=os.getenv("CLIENT_ORGANIZATION_ID"),
+    sport="handball",
+    scopes=["read:organization", "read:organization_live"],
+)
+
+live_events = api.get_live_match_events(match.fixture_id)
+```
+
+Without the extra scope, the call fails with a 403 explicit-deny — the
+token is still valid, it just wasn't issued access to this resource.
+
 ### Advanced: Accessing Raw Client
 
 For endpoints not covered by high-level helpers, accessing the generated client directly is supported and encouraged. The generated client resides in `api.client`.
