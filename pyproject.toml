@@ -31,7 +31,7 @@ stream = [
 ]
 
 dev = [
-    "openapi-python-client==0.26.1",
+    "openapi-python-client==0.29.1",
     "openapi-spec-validator>=0.7",
     "pytest>=8.4",
     "pytest-order>=1.3",
