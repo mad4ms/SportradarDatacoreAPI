@@ -48,7 +48,6 @@ from datacore_client.models import (
     TeamModel,
 )
 from datacore_client.types import Unset
-
 from sportradar_datacore_api.api import DataCoreAPI
 from sportradar_datacore_api.errors import (
     NotFoundError,

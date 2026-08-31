@@ -13,9 +13,9 @@ from typing import Any, Self, TypeVar
 from uuid import UUID
 
 import httpx
+
 from datacore_client import AuthenticatedClient
 from datacore_client.types import UNSET, Unset
-
 from sportradar_datacore_api.config import DataCoreSettings
 from sportradar_datacore_api.errors import (
     AuthenticationError,

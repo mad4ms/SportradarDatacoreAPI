@@ -14,8 +14,8 @@ from sportradar_datacore_api.stream_models import (
 from sportradar_datacore_api.streaming import HandballStreamClient, HandballStreamingAPI
 
 __all__ = [
-    "HandballAPI",
     "DataCoreSettings",
+    "HandballAPI",
     "HandballStreamClient",
     "HandballStreamingAPI",
     "StreamAccessGrant",
