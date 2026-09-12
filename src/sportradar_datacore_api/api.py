@@ -38,7 +38,7 @@ class DataCoreAPI:
 
     _TOKEN_BUFFER = 60  # seconds before actual expiry to refresh
 
-    def __init__(  # noqa: PLR0913
+    def __init__(  # noqa: PLR0913, PLR0917
         self,
         base_url: str,
         auth_url: str,
