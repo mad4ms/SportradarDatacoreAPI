@@ -125,8 +125,20 @@ class DataCoreAPI:
         self._expires_at = time.time() + expires_in - self._TOKEN_BUFFER
         self.session.headers.update({"Authorization": f"Bearer {self._token}"})
 
-        if self.client is not None:
-            self.client.token = self._token
+        self._discard_client()
+
+    def _discard_client(self) -> None:
+        """Drop the generated client so the next call rebuilds its headers.
+
+        `AuthenticatedClient` writes the Authorization header into an
+        `httpx.Client` the first time it is used and caches that client.
+        Assigning `.token` afterwards updates the attribute and nothing else,
+        so the expired token keeps going out on the wire until the process
+        restarts. A token change has to replace the client, not mutate it.
+        """
+        previous, self.client = self.client, None
+        if previous is not None:
+            previous.get_httpx_client().close()
 
     def _ensure_token(self) -> None:
         with self._lock:
@@ -140,6 +152,8 @@ class DataCoreAPI:
             if self._token is None:
                 raise AuthenticationError("Authentication token was not initialized.")
             token = self._token
+            # A surviving client always carries the current token: every
+            # refresh goes through _discard_client().
             if self.client is None:
                 self.client = AuthenticatedClient(
                     base_url=self.base_url,
@@ -148,8 +162,6 @@ class DataCoreAPI:
                     raise_on_unexpected_status=True,
                     timeout=httpx.Timeout(self.timeout),
                 )
-            else:
-                self.client.token = token
             return self.client
 
     @staticmethod
@@ -184,6 +196,7 @@ class DataCoreAPI:
         raise UnexpectedResponseError(f"{context}: API error: {parsed}")
 
     def close(self) -> None:
+        self._discard_client()
         self.session.close()
 
     def __enter__(self) -> "DataCoreAPI":
